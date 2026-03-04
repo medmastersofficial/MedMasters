@@ -1321,8 +1321,8 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
     <div class="paper-card" onclick="openPaper2()">
       <div class="paper-num">2</div>
       <div class="paper-label">Paper Two</div>
-      <div class="paper-count">3,629 MCQs</div>
-      <div class="paper-topics">CVS · Gastroenterology · Haematology · Pulmonology · CNS · Paediatrics · Dermatology · Hepatology</div>
+      <div class="paper-count">5,129 MCQs</div>
+      <div class="paper-topics">CVS · Gastroenterology · Haematology · Pulmonology · CNS · Paediatrics · Dermatology · Hepatology · Nephrology · Endocrinology · Infectious Diseases · Rheumatology</div>
     </div>
   </div>
 </div>
@@ -1411,7 +1411,7 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
     <button class="back-btn" onclick="showPage('paper')">← Paper 2</button>
     <div>
       <div class="ph-title">Paper 2 — Medicine &amp; Allied</div>
-      <div class="ph-sub" id="p2-sub-count">2,028 MCQs across 4 subjects · Study mode</div>
+      <div class="ph-sub" id="p2-sub-count">5,129 MCQs across 12 subjects · Study mode</div>
     </div>
   </div>
   <div class="p1-subjects-grid" id="p2-subjects-grid">
@@ -1419,8 +1419,9 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
   </div>
   <div class="p1-practice-cta">
     <div style="font-size:32px;margin-bottom:10px;">⚡</div>
-    <div class="p1-cta-title">More subjects coming soon!</div>
-    <div class="p1-cta-sub">Nephrology, Endocrinology, Rheumatology, Infectious Diseases and more are being added.</div>
+    <div class="p1-cta-title">Want to Practice & Assess Yourself?</div>
+    <div class="p1-cta-sub">Choose a Paper 2 subject, pick 20, 50, or 100 MCQs — and get a timed, scored session with full explanations to test your preparation level.</div>
+    <button class="p1-cta-btn" onclick="openP2Practice()">Start Practice Session →</button>
   </div>
 </div>
 
@@ -1464,6 +1465,30 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
       <div class="prac-count-opt" onclick="selectPracCount(100,this)"><div class="prac-count-num">100</div><div class="prac-count-lbl">Full Drill</div></div>
     </div>
     <button class="prac-start-btn" id="prac-start-btn" onclick="startPractice()">Select subject and count first</button>
+  </div>
+</div>
+
+<!-- ══════════════ P2 PRACTICE SETUP PAGE ══════════════ -->
+<div id="p2-practice-setup-page" class="page">
+  <div class="page-header">
+    <button class="back-btn" onclick="showPage('p2-subjects')">← Paper 2</button>
+    <div>
+      <div class="ph-title">⚡ Practice Session</div>
+      <div class="ph-sub">Paper 2 — Medicine &amp; Allied</div>
+    </div>
+  </div>
+  <div class="practice-setup">
+    <div class="prac-step-label">Step 1 — Choose Subject</div>
+    <div class="prac-subject-grid" id="p2-prac-subject-grid">
+      <!-- rendered by JS -->
+    </div>
+    <div class="prac-step-label">Step 2 — How Many MCQs?</div>
+    <div class="prac-count-grid">
+      <div class="prac-count-opt" onclick="selectP2PracCount(20,this)"><div class="prac-count-num">20</div><div class="prac-count-lbl">Quick Set</div></div>
+      <div class="prac-count-opt" onclick="selectP2PracCount(50,this)"><div class="prac-count-num">50</div><div class="prac-count-lbl">Standard</div></div>
+      <div class="prac-count-opt" onclick="selectP2PracCount(100,this)"><div class="prac-count-num">100</div><div class="prac-count-lbl">Full Drill</div></div>
+    </div>
+    <button class="prac-start-btn" id="p2-prac-start-btn" onclick="startP2Practice()">Select subject and count first</button>
   </div>
 </div>
 
@@ -1514,7 +1539,7 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
       <div class="r-stat"><div class="r-val" id="pr-time">0:00</div><div class="r-lbl">Time</div></div>
     </div>
     <div class="res-actions">
-      <button class="btn-primary" onclick="showPage('practice-setup')">⚡ Practice Again</button>
+      <button class="btn-primary" id="prac-again-btn" onclick="showPage('practice-setup')">⚡ Practice Again</button>
       <button class="btn-outline" onclick="showPage('dashboard')">🏠 Dashboard</button>
     </div>
   </div>
@@ -2100,13 +2125,18 @@ function openPaper1(){
 
 // ══════════ PAPER 2 ══════════
 const P2_SUBJECTS=[
-  {key:'med_p2_derma',  label:'Dermatology',        icon:'🩺', count:250,  sections:['Dermatology']},
-  {key:'med_p2_hepato', label:'Hepatology',          icon:'🫀', count:250,  sections:['Hepatology']},
-  {key:'med_p2_haemo',  label:'Haematology',         icon:'🩸', count:529,  sections:['Haematology']},
-  {key:'med_p2_cns',    label:'CNS / Neurology',     icon:'🧠', count:500,  sections:['CNS / Neurology']},
-  {key:'med_p2_gastro', label:'Gastroenterology',    icon:'🫁', count:600,  sections:['Gastroenterology']},
-  {key:'med_p2_pulmo',  label:'Pulmonology',         icon:'🫧', count:500,  sections:['Pulmonology']},
-  {key:'med_p2_paeds',  label:'Paediatric Medicine', icon:'👶', count:500,  sections:['Paediatric Medicine']},
+  {key:'med_p2_cvs',    label:'Cardiovascular',      icon:'❤️', count:600,  sections:['Cardiovascular']},
+  {key:'med_p2_derma',  label:'Dermatology',         icon:'🩺', count:250,  sections:['Dermatology']},
+  {key:'med_p2_hepato', label:'Hepatology',           icon:'🫀', count:250,  sections:['Hepatology']},
+  {key:'med_p2_haemo',  label:'Haematology',          icon:'🩸', count:529,  sections:['Haematology']},
+  {key:'med_p2_cns',    label:'CNS / Neurology',      icon:'🧠', count:500,  sections:['CNS / Neurology']},
+  {key:'med_p2_gastro', label:'Gastroenterology',     icon:'🫁', count:600,  sections:['Gastroenterology']},
+  {key:'med_p2_pulmo',  label:'Pulmonology',          icon:'🫧', count:500,  sections:['Pulmonology']},
+  {key:'med_p2_paeds',  label:'Paediatric Medicine',  icon:'👶', count:500,  sections:['Paediatric Medicine']},
+  {key:'med_p2_nephro', label:'Nephrology',           icon:'🫘', count:400,  sections:['Nephrology']},
+  {key:'med_p2_endo',   label:'Endocrinology',        icon:'🔬', count:400,  sections:['Endocrinology']},
+  {key:'med_p2_infect', label:'Infectious Diseases',  icon:'🦠', count:350,  sections:['Infectious Diseases']},
+  {key:'med_p2_rheuma', label:'Rheumatology',         icon:'🦴', count:250,  sections:['Rheumatology']},
 ];
 const P2_DATA={};
 const P2_LOADED=new Set();
@@ -2339,6 +2369,54 @@ async function getAIExplanation(question,correctAnswer){
 
 // ═══════════ PRACTICE MODE ═══════════
 let PR={subj:'',count:0,qs:[],qi:0,correct:0,wrong:0,timerInt:null,timeLeft:90,startTime:0};
+let PR2={subj:'',count:0,qs:[],qi:0,correct:0,wrong:0,timerInt:null,timeLeft:90,startTime:0};
+
+function openP2Practice(){
+  PR2.subj=''; PR2.count=0;
+  renderP2PracticeSubjects();
+  _showPage('p2-practice-setup-page'); setHash('#p2practice');
+}
+function renderP2PracticeSubjects(){
+  const grid=document.getElementById('p2-prac-subject-grid');
+  if(!grid) return;
+  grid.innerHTML=P2_SUBJECTS.map(s=>`
+    <div class="prac-subj-opt" onclick="selectP2PracSubj('${s.key}',this)">${s.icon} ${s.label}</div>
+  `).join('');
+}
+function selectP2PracSubj(key,el){
+  PR2.subj=key;
+  document.querySelectorAll('#p2-prac-subject-grid .prac-subj-opt').forEach(e=>e.classList.remove('sel'));
+  el.classList.add('sel'); checkP2PracReady();
+}
+function selectP2PracCount(n,el){
+  PR2.count=n;
+  document.querySelectorAll('#p2-practice-setup-page .prac-count-opt').forEach(e=>e.classList.remove('sel'));
+  el.classList.add('sel'); checkP2PracReady();
+}
+function checkP2PracReady(){
+  const btn=document.getElementById('p2-prac-start-btn');
+  if(PR2.subj&&PR2.count){ btn.classList.add('ready'); btn.textContent=`Start ${PR2.count} MCQs →`; }
+  else{ btn.classList.remove('ready'); btn.textContent='Select subject and count first'; }
+}
+async function startP2Practice(){
+  if(!PR2.subj||!PR2.count) return;
+  const s=P2_SUBJECTS.find(x=>x.key===PR2.subj);
+  document.getElementById('prac-subj-tag').textContent=(s?s.label:'').toUpperCase();
+  _showPage('prac-mcq'); setHash('#practice');
+  document.getElementById('prac-q').textContent='Loading MCQs…';
+  document.getElementById('prac-opts').innerHTML='';
+  const all=await loadP2SubjectData(PR2.subj);
+  const mcqs=all.map((m,i)=>convertMCQ(m,i));
+  PR2.qs=[...mcqs].sort(()=>Math.random()-0.5).slice(0,Math.min(PR2.count,mcqs.length));
+  PR2.qi=0; PR2.correct=0; PR2.wrong=0; PR2.startTime=Date.now();
+  document.getElementById('prac-tot').textContent=PR2.qs.length;
+  document.getElementById('prac-correct').textContent=0;
+  document.getElementById('prac-wrong').textContent=0;
+  // hijack PR so shared prac render/nav/result functions work seamlessly
+  PR.qs=PR2.qs; PR.qi=0; PR.correct=0; PR.wrong=0; PR.startTime=PR2.startTime;
+  PR._isP2=true;
+  renderPracQ();
+}
 
 function renderPracticeSubjects(){
   const grid=document.getElementById('prac-subject-grid');
@@ -2349,7 +2427,7 @@ function renderPracticeSubjects(){
 }
 function selectPracSubj(key,el){
   PR.subj=key;
-  document.querySelectorAll('.prac-subj-opt').forEach(e=>e.classList.remove('sel'));
+  document.querySelectorAll('#prac-subject-grid .prac-subj-opt').forEach(e=>e.classList.remove('sel'));
   el.classList.add('sel'); checkPracReady();
 }
 function selectPracCount(n,el){
@@ -2365,6 +2443,7 @@ function checkPracReady(){
 
 async function startPractice(){
   if(!PR.subj||!PR.count) return;
+  PR._isP2=false;
   const s=SUBJECTS.find(x=>x.key===PR.subj);
   document.getElementById('prac-subj-tag').textContent=(s?s.label:'').toUpperCase();
   _showPage('prac-mcq'); setHash('#practice');
@@ -2467,6 +2546,9 @@ function showPracResults(){
   document.getElementById('prac-res-title').textContent=title;
   document.getElementById('prac-res-sub').textContent=`${PR.correct} of ${tot} correct`;
   document.getElementById('prac-score-ring').style.background=`conic-gradient(#C9A84C ${pct*3.6}deg,#12161C ${pct*3.6}deg)`;
+  // Update "Practice Again" button destination based on source paper
+  const againBtn=document.getElementById('prac-again-btn');
+  if(againBtn){ againBtn.onclick=PR._isP2 ? ()=>openP2Practice() : ()=>showPage('practice-setup'); }
   _showPage('prac-results'); setHash('#results');
 }
 
