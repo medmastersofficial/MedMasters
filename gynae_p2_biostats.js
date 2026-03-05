@@ -1,0 +1,47 @@
+// MedMasters — Gynae & Obs Paper 2: Biostatistics, Research & Biophysics
+// 40 MCQs
+(function(){
+  if(!window.MM) window.MM={};
+  window.MM['gynae_p2_biostats'] = [
+    {q:'Maternal mortality ratio (MMR) is defined as:',o:['Number of maternal deaths per 10,000 live births','Number of maternal deaths per 1,000 women of reproductive age','Number of maternal deaths per 100,000 live births','Number of maternal deaths per 10,000 pregnancies'],a:2},
+    {q:'The major cause of maternal mortality in developing countries including Pakistan is:',o:['Obstructed labour','Hypertensive disorders','Hemorrhage','Sepsis'],a:2},
+    {q:'Perinatal mortality rate includes:',o:['Stillbirths only','Early neonatal deaths only','Maternal deaths and stillbirths','Stillbirths and early neonatal deaths'],a:3},
+    {q:'Neonatal mortality rate refers to deaths occurring within:',o:['First 7 days of life','First 28 days of life','First 3 months of life','First year of life'],a:1},
+    {q:'Infant mortality rate measures deaths of infants within:',o:['6 months of life','1 year of life','2 years of life','5 years of life'],a:1},
+    {q:'The most appropriate study design for investigating rare diseases in obstetrics is:',o:['Cross-sectional study','Cohort study','Case-control study','Ecological study'],a:2},
+    {q:'A cohort study is best suited to determine:',o:['Disease prevalence','Incidence of disease','Diagnostic accuracy','Case fatality rate'],a:1},
+    {q:'Randomized controlled trials are mainly used to:',o:['Estimate disease prevalence','Determine effectiveness of interventions','Study disease distribution','Identify risk factors only'],a:1},
+    {q:'The prevalence of a disease refers to:',o:['Number of new cases in a population over time','Total number of existing cases at a specific time','Number of deaths from a disease','Rate of complications in patients'],a:1},
+    {q:'Incidence rate measures:',o:['Total number of cases in a population','New cases occurring in a population over time','Number of deaths due to disease','Risk of complications only'],a:1},
+    {q:'Sensitivity of a diagnostic test refers to its ability to:',o:['Detect true positives','Detect true negatives','Detect false positives','Detect false negatives'],a:0},
+    {q:'Specificity of a diagnostic test refers to its ability to:',o:['Identify diseased individuals correctly','Identify non-diseased individuals correctly','Increase prevalence rate','Reduce incidence rate'],a:1},
+    {q:'Positive predictive value depends strongly on:',o:['Disease prevalence','Study duration','Sample size only','Mortality rate'],a:0},
+    {q:'The p-value in statistical testing represents:',o:['Probability that the null hypothesis is true','Probability that results occurred by chance','Strength of association','Absolute risk of disease'],a:1},
+    {q:'A p-value less than 0.05 usually indicates:',o:['No statistical significance','Statistical significance','Experimental bias','Data error'],a:1},
+    {q:'Relative risk is best calculated in:',o:['Case-control studies','Cohort studies','Cross-sectional studies','Ecological studies'],a:1},
+    {q:'Odds ratio is most commonly used in:',o:['Cohort studies','Case-control studies','Randomized trials','Cross-sectional studies'],a:1},
+    {q:'A screening test for cervical cancer widely used worldwide is:',o:['Mammography','Pap smear','CT scan','MRI'],a:1},
+    {q:'The main purpose of screening programs in obstetrics and gynecology is to:',o:['Cure disease','Detect disease early in asymptomatic individuals','Replace treatment methods','Prevent genetic mutations'],a:1},
+    {q:'Bias in research refers to:',o:['Random variation in results','Systematic error affecting study validity','Sample size calculation','Statistical significance'],a:1},
+    {q:'Selection bias occurs when:',o:['Random errors affect results','Participants are not representative of the population','Data is analyzed incorrectly','Sample size is large'],a:1},
+    {q:'Recall bias commonly occurs in:',o:['Cohort studies','Randomized trials','Case-control studies','Cross-sectional studies'],a:2},
+    {q:'Confounding occurs when:',o:['Two variables are unrelated','An external factor distorts the relationship between exposure and outcome','Data collection is incomplete','Random error occurs'],a:1},
+    {q:'Double-blind studies help reduce:',o:['Sampling error','Observer bias','Random variation','Sample size errors'],a:1},
+    {q:'The most common cause of maternal mortality in Pakistan according to epidemiological data is:',o:['Hypertensive disorders','Postpartum hemorrhage','Sepsis','Unsafe abortion'],a:1},
+    {q:'Total fertility rate (TFR) refers to:',o:['Number of children born per woman during reproductive years','Number of births per hospital','Number of pregnancies per population','Rate of maternal deaths'],a:0},
+    {q:'A cross-sectional study measures:',o:['Incidence over time','Disease prevalence at a specific time','Treatment outcomes','Mortality trends only'],a:1},
+    {q:'The main goal of epidemiology in obstetrics is to:',o:['Study disease distribution and determinants','Perform surgical procedures','Diagnose diseases only','Replace clinical medicine'],a:0},
+    {q:'A large sample size in research primarily improves:',o:['Statistical power','Random error','Bias','Confounding'],a:0},
+    {q:'Ethical approval for clinical research is obtained from:',o:['Hospital administration','Ethics review committee','Ministry of health','Pharmaceutical companies'],a:1},
+    {q:'A study in Pakistan evaluates whether antenatal iron supplementation reduces maternal anemia by comparing women who received supplements with those who did not over time. Which study design is most appropriate for this research?',o:['Cross-sectional study','Cohort study','Case-control study','Ecological study'],a:1},
+    {q:'A screening test for cervical cancer has a sensitivity of 95% but specificity of 60%. What is the most likely consequence of this screening test?',o:['High false-negative rate','High false-positive rate','Low disease detection','Low predictive value'],a:1},
+    {q:'In a study examining risk factors for postpartum hemorrhage, women who experienced hemorrhage are compared with women who did not. Past obstetric histories are analyzed. What type of study design is this?',o:['Cohort study','Randomized trial','Case-control study','Cross-sectional study'],a:2},
+    {q:'A diagnostic test for preeclampsia correctly identifies 90 of 100 women who truly have the disease but also incorrectly identifies 20 healthy women as positive. Which parameter reflects the test\'s ability to correctly identify diseased individuals?',o:['Specificity','Sensitivity','Positive predictive value','Negative predictive value'],a:1},
+    {q:'Researchers conduct a clinical trial comparing two drugs for prevention of preterm labor. Participants are randomly assigned to treatment groups and neither investigators nor participants know which drug is administered. This design primarily reduces:',o:['Confounding','Selection bias','Observer bias','Random error'],a:2},
+    {q:'In epidemiology, the measure that compares the probability of disease occurrence in exposed versus non-exposed individuals is:',o:['Prevalence rate','Odds ratio','Relative risk','Incidence density'],a:2},
+    {q:'A community-based study reports that 12% of women currently have anemia during pregnancy at the time of survey. Which epidemiological measure is being described?',o:['Incidence','Prevalence','Mortality rate','Case fatality rate'],a:1},
+    {q:'In evaluating a screening test for cervical cancer, which parameter represents the probability that a woman with a positive test actually has the disease?',o:['Sensitivity','Specificity','Positive predictive value','Negative predictive value'],a:2},
+    {q:'A researcher studying maternal mortality identifies that rural women have higher mortality rates due to limited access to healthcare services. Which epidemiological concept explains this inequality?',o:['Confounding','Risk factor','Bias','Social determinants of health'],a:3},
+    {q:'A new diagnostic test for gestational diabetes detects 80% of true positive cases and correctly identifies 90% of non-diseased individuals. Which statistical measures correspond to these values respectively?',o:['Specificity and prevalence','Sensitivity and specificity','Positive predictive value and sensitivity','Incidence and prevalence'],a:1}
+  ];
+})();
