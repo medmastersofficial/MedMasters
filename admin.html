@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedMasters — Admin Panel</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#C9A84C;--gold-bright:#E0B030;--gold-glow:rgba(201,168,76,0.25);
+  --bg:#0A0C10;--card:#12161C;--card2:#181D25;
+  --border:rgba(201,168,76,0.18);--border-soft:rgba(201,168,76,0.08);
+  --cream:#E1DAC8;--text:#8A8278;--text-mid:#B0A898;--white:#F0EBE0;
+  --green:#2ECC71;--red:#E74C3C;--yellow:#F39C12;--blue:#3498DB;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--white);min-height:100vh;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
+
+/* LOGIN */
+.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;}
+.login-box{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:44px;max-width:400px;width:100%;text-align:center;}
+.login-logo{font-size:42px;margin-bottom:10px;}
+.login-title{font-size:22px;font-weight:800;margin-bottom:4px;}
+.login-sub{font-size:13px;color:var(--text-mid);margin-bottom:28px;}
+.admin-input{
+  width:100%;background:var(--bg);border:1px solid var(--border);
+  color:var(--white);padding:13px 18px;border-radius:10px;
+  font-size:14px;font-family:'Poppins',sans-serif;outline:none;
+  transition:border-color 0.2s;margin-bottom:12px;
+}
+.admin-input:focus{border-color:var(--gold);}
+.admin-input.err{border-color:var(--red);}
+.login-err{font-size:12px;color:var(--red);min-height:18px;margin-bottom:8px;}
+.btn-gold{
+  width:100%;background:linear-gradient(135deg,var(--gold),var(--gold-bright));
+  color:#0A0C10;padding:13px;border-radius:10px;font-weight:700;font-size:15px;
+  cursor:pointer;border:none;font-family:'Poppins',sans-serif;transition:all 0.2s;
+}
+.btn-gold:hover{transform:translateY(-1px);box-shadow:0 6px 22px var(--gold-glow);}
+
+/* DASHBOARD */
+#dashboard{display:none;}
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(10,12,16,0.97);border-bottom:1px solid var(--border);
+  padding:0 5%;height:64px;display:flex;align-items:center;justify-content:space-between;
+  backdrop-filter:blur(20px);
+}
+.nav-brand{font-size:17px;font-weight:800;}
+.nav-brand span{color:var(--gold);}
+.nav-badge{background:rgba(201,168,76,0.12);border:1px solid var(--border);color:var(--gold);font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:1px;margin-left:10px;}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.btn-sm{
+  padding:7px 16px;border-radius:7px;font-size:12px;font-weight:700;
+  cursor:pointer;border:none;font-family:'Poppins',sans-serif;transition:all 0.2s;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.btn-danger{background:rgba(231,76,60,0.12);color:var(--red);border:1px solid rgba(231,76,60,0.25);}
+.btn-danger:hover{background:rgba(231,76,60,0.22);}
+.btn-green{background:rgba(46,204,113,0.12);color:var(--green);border:1px solid rgba(46,204,113,0.25);}
+.btn-green:hover{background:rgba(46,204,113,0.22);}
+.btn-blue{background:rgba(52,152,219,0.12);color:var(--blue);border:1px solid rgba(52,152,219,0.25);}
+.btn-blue:hover{background:rgba(52,152,219,0.22);}
+.btn-outline-gold{background:transparent;color:var(--gold);border:1px solid var(--border);}
+.btn-outline-gold:hover{background:rgba(201,168,76,0.08);}
+
+.main{max-width:1300px;margin:0 auto;padding:32px 5%;}
+
+/* STAT CARDS */
+.stats-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:32px;}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 24px;}
+.stat-card-num{font-size:32px;font-weight:900;color:var(--gold);}
+.stat-card-label{font-size:11px;color:var(--text);text-transform:uppercase;letter-spacing:0.8px;margin-top:3px;}
+.stat-card.red .stat-card-num{color:var(--red);}
+.stat-card.yellow .stat-card-num{color:var(--yellow);}
+.stat-card.green .stat-card-num{color:var(--green);}
+
+/* ALERTS */
+.alert-section{margin-bottom:28px;}
+.alert-title{font-size:13px;font-weight:700;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.alert-row{
+  background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:14px 18px;margin-bottom:8px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
+}
+.alert-row.expiring{border-color:rgba(243,156,18,0.35);background:rgba(243,156,18,0.04);}
+.alert-row.expired{border-color:rgba(231,76,60,0.35);background:rgba(231,76,60,0.04);}
+.alert-info{display:flex;flex-direction:column;gap:2px;}
+.alert-name{font-size:14px;font-weight:700;}
+.alert-meta{font-size:11px;color:var(--text-mid);}
+.alert-actions{display:flex;gap:8px;flex-wrap:wrap;}
+.wa-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#128C7E;color:white;padding:7px 14px;border-radius:7px;
+  font-size:12px;font-weight:700;text-decoration:none;transition:all 0.2s;
+  border:none;cursor:pointer;font-family:'Poppins',sans-serif;
+}
+.wa-btn:hover{background:#0e7b6e;}
+
+/* CONTROLS */
+.controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px;}
+.search-input{
+  flex:1;min-width:200px;background:var(--card);border:1px solid var(--border);
+  color:var(--white);padding:10px 16px;border-radius:9px;
+  font-size:13px;font-family:'Poppins',sans-serif;outline:none;transition:border-color 0.2s;
+}
+.search-input:focus{border-color:var(--gold);}
+.filter-select{
+  background:var(--card);border:1px solid var(--border);color:var(--white);
+  padding:10px 14px;border-radius:9px;font-size:13px;font-family:'Poppins',sans-serif;
+  outline:none;cursor:pointer;
+}
+
+/* TABLE */
+.table-wrap{overflow-x:auto;border-radius:14px;border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;background:var(--card);}
+thead{background:var(--card2);border-bottom:1px solid var(--border);}
+th{padding:13px 16px;text-align:left;font-size:10px;font-weight:700;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;}
+td{padding:13px 16px;font-size:13px;border-bottom:1px solid var(--border-soft);vertical-align:middle;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(201,168,76,0.02);}
+.badge{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.3px;white-space:nowrap;}
+.badge-active{background:rgba(46,204,113,0.12);color:var(--green);border:1px solid rgba(46,204,113,0.25);}
+.badge-expiring{background:rgba(243,156,18,0.12);color:var(--yellow);border:1px solid rgba(243,156,18,0.25);}
+.badge-expired{background:rgba(231,76,60,0.12);color:var(--red);border:1px solid rgba(231,76,60,0.25);}
+.badge-inactive{background:rgba(255,255,255,0.06);color:var(--text);border:1px solid rgba(255,255,255,0.1);}
+.days-pill{font-size:12px;font-weight:700;}
+.days-green{color:var(--green);}
+.days-yellow{color:var(--yellow);}
+.days-red{color:var(--red);}
+.td-actions{display:flex;gap:6px;flex-wrap:wrap;}
+.empty-state{text-align:center;padding:48px;color:var(--text-mid);}
+.empty-state div{font-size:32px;margin-bottom:8px;}
+
+/* ADD STUDENT SECTION */
+.section-title{font-size:16px;font-weight:800;margin-bottom:18px;display:flex;align-items:center;gap:9px;}
+.add-form{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;margin-bottom:32px;}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:18px;}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-label{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.5px;text-transform:uppercase;}
+.form-input{
+  background:var(--bg);border:1px solid var(--border);color:var(--white);
+  padding:11px 14px;border-radius:9px;font-size:13px;font-family:'Poppins',sans-serif;
+  outline:none;transition:border-color 0.2s;
+}
+.form-input:focus{border-color:var(--gold);}
+.form-input.err{border-color:var(--red);}
+.form-select{
+  background:var(--bg);border:1px solid var(--border);color:var(--white);
+  padding:11px 14px;border-radius:9px;font-size:13px;font-family:'Poppins',sans-serif;
+  outline:none;cursor:pointer;transition:border-color 0.2s;
+}
+.form-select:focus{border-color:var(--gold);}
+.form-msg{font-size:12px;min-height:18px;margin-top:4px;}
+.form-msg.ok{color:var(--green);}
+.form-msg.err{color:var(--red);}
+
+/* EXTEND MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.88);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:20px;}
+.modal-overlay.open{display:flex;}
+.modal{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:36px;max-width:420px;width:100%;position:relative;animation:popIn 0.25s ease;}
+.modal-close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--text);font-size:20px;cursor:pointer;}
+.modal h3{font-size:18px;font-weight:800;margin-bottom:6px;}
+.modal p{font-size:13px;color:var(--text-mid);margin-bottom:20px;line-height:1.65;}
+.days-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px;}
+.day-opt{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;cursor:pointer;transition:all 0.2s;}
+.day-opt:hover,.day-opt.selected{border-color:var(--gold);background:rgba(201,168,76,0.08);}
+.day-opt-num{font-size:20px;font-weight:800;color:var(--gold);}
+.day-opt-label{font-size:10px;color:var(--text);margin-top:2px;}
+
+@keyframes popIn{from{opacity:0;transform:scale(0.92)}to{opacity:1;transform:scale(1)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* LOADING */
+.loading{text-align:center;padding:40px;color:var(--text-mid);}
+.spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 12px;}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+@media(max-width:768px){
+  .stats-row{grid-template-columns:1fr 1fr;}
+  .form-grid{grid-template-columns:1fr;}
+  .days-grid{grid-template-columns:repeat(2,1fr);}
+  th,td{padding:10px 12px;}
+}
+
+/* TOAST NOTIFICATION */
+.toast{
+  position:fixed;bottom:24px;right:24px;z-index:9999;
+  background:var(--card2);border:1px solid rgba(243,156,18,0.4);
+  border-radius:14px;padding:16px 20px;max-width:360px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.5);
+  animation:slideInToast 0.35s ease;
+  display:flex;align-items:flex-start;gap:12px;
+}
+.toast.hidden{animation:slideOutToast 0.3s ease forwards;}
+@keyframes slideInToast{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideOutToast{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(20px)}}
+.toast-icon{font-size:22px;flex-shrink:0;margin-top:1px;}
+.toast-body{flex:1;}
+.toast-title{font-size:13px;font-weight:700;color:var(--yellow);margin-bottom:4px;}
+.toast-msg{font-size:12px;color:var(--text-mid);line-height:1.55;}
+.toast-close{background:none;border:none;color:var(--text);cursor:pointer;font-size:16px;padding:0;flex-shrink:0;}
+.toast-bar{position:absolute;bottom:0;left:0;height:3px;background:var(--yellow);border-radius:0 0 14px 14px;transition:width linear;}
+
+/* REVENUE DASHBOARD */
+.revenue-section{margin-bottom:32px;}
+.revenue-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:20px;}
+.rev-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;}
+.rev-card-num{font-size:28px;font-weight:900;color:var(--gold);}
+.rev-card-label{font-size:11px;color:var(--text);text-transform:uppercase;letter-spacing:0.8px;margin-top:3px;}
+.rev-card.green .rev-card-num{color:var(--green);}
+.rev-card.red .rev-card-num{color:var(--red);}
+.rev-card.blue .rev-card-num{color:var(--blue);}
+
+/* REFERRAL REWARD MODAL */
+.reward-row{background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);border-radius:10px;padding:14px 18px;margin-bottom:12px;}
+.reward-row-name{font-size:14px;font-weight:700;margin-bottom:4px;}
+.reward-row-amount{font-size:13px;color:var(--gold);font-weight:700;margin-bottom:10px;}
+.reward-btns{display:flex;gap:8px;flex-wrap:wrap;}
+
+/* SOFT ALERT (7-day) */
+.alert-row.soft{border-color:rgba(243,156,18,0.2);background:rgba(243,156,18,0.02);}
+.alert-section-soft{margin-bottom:20px;}
+
+</style>
+</head>
+<body>
+
+<!-- ══════ LOGIN ══════ -->
+<div id="login-screen" class="login-wrap">
+  <div class="login-box">
+    <div class="login-logo">🛡️</div>
+    <div class="login-title">Admin Panel</div>
+    <div class="login-sub">MedMasters — Restricted Access</div>
+    <input class="admin-input" id="admin-pass" type="password" placeholder="Enter admin password" onkeydown="if(event.key==='Enter')adminLogin()">
+    <div class="login-err" id="login-err"></div>
+    <button class="btn-gold" onclick="adminLogin()">Sign In →</button>
+  </div>
+</div>
+
+<!-- ══════ DASHBOARD ══════ -->
+<div id="dashboard">
+
+  <!-- NAVBAR -->
+  <nav>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="nav-brand">Med<span>Masters</span></div>
+      <span class="nav-badge">ADMIN</span>
+    </div>
+    <div class="nav-right">
+      <span style="font-size:12px;color:var(--text-mid);" id="last-refreshed"></span>
+      <button class="btn-sm btn-outline-gold" onclick="loadAll()">🔄 Refresh</button>
+      <button class="btn-sm btn-danger" onclick="adminLogout()">Sign Out</button>
+    </div>
+  </nav>
+
+  <div class="main">
+
+    <!-- 7-DAY SOFT TOAST (injected by JS) -->
+    <div id="soft-toast" style="display:none;" class="toast">
+      <div class="toast-icon">⚠️</div>
+      <div class="toast-body">
+        <div class="toast-title">Upcoming Expirations</div>
+        <div class="toast-msg" id="soft-toast-msg"></div>
+      </div>
+      <button class="toast-close" onclick="dismissToast()">✕</button>
+      <div class="toast-bar" id="toast-bar" style="width:100%;"></div>
+    </div>
+
+    <!-- STATS ROW -->
+    <div class="stats-row" id="stats-row">
+      <div class="stat-card"><div class="stat-card-num" id="s-total">—</div><div class="stat-card-label">Total Students</div></div>
+      <div class="stat-card green"><div class="stat-card-num" id="s-active">—</div><div class="stat-card-label">Active</div></div>
+      <div class="stat-card yellow"><div class="stat-card-num" id="s-expiring">—</div><div class="stat-card-label">Expiring in 3 Days</div></div>
+      <div class="stat-card red"><div class="stat-card-num" id="s-expired">—</div><div class="stat-card-label">Expired</div></div>
+      <div class="stat-card"><div class="stat-card-num" id="s-inactive">—</div><div class="stat-card-label">Deactivated</div></div>
+    </div>
+
+    <!-- REVENUE DASHBOARD -->
+    <div class="revenue-section">
+      <div class="section-title">💰 Revenue Dashboard</div>
+      <div class="revenue-grid">
+        <div class="rev-card"><div class="rev-card-num" id="r-gross">—</div><div class="rev-card-label">Gross Revenue (PKR)</div></div>
+        <div class="rev-card red"><div class="rev-card-num" id="r-rewards">—</div><div class="rev-card-label">Rewards Paid Out (PKR)</div></div>
+        <div class="rev-card green"><div class="rev-card-num" id="r-net">—</div><div class="rev-card-label">Net Revenue (PKR)</div></div>
+        <div class="rev-card blue"><div class="rev-card-num" id="r-avg">—</div><div class="rev-card-label">Avg. Plan Value (PKR)</div></div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 22px;">
+        <div style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">📊 Revenue by Plan</div>
+        <div id="rev-by-plan" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;"></div>
+      </div>
+    </div>
+
+    <!-- ALERTS: 3-DAY URGENT -->
+    <div class="alert-section" id="alerts-section" style="display:none;">
+      <div class="alert-title">🔴 Urgent — Expiring in 3 Days or Expired</div>
+      <div id="alerts-list"></div>
+    </div>
+
+    <!-- ADD STUDENT -->
+    <div class="add-form">
+      <div class="section-title">➕ Add New Doctor</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label">Dr Name</label>
+          <input class="form-input" id="f-name" placeholder="Dr. Ahmed Ali" type="text" oninput="autoGenerateCode()">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input class="form-input" id="f-email" placeholder="doctor@email.com" type="email" oninput="autoGenerateCode()">
+        </div>
+        <div class="form-group">
+          <label class="form-label">WhatsApp Number <span style="color:var(--text);font-weight:400;font-size:10px;">(with country code)</span></label>
+          <input class="form-input" id="f-phone" placeholder="923001234567" type="tel">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Access Code <span style="color:var(--green);font-weight:400;font-size:10px;">✦ Auto-generated</span></label>
+          <div style="position:relative;">
+            <input class="form-input" id="f-code" placeholder="Fill name & email first…" type="text" readonly
+              style="cursor:default;background:rgba(201,168,76,0.06);border-color:rgba(201,168,76,0.3);color:var(--gold);font-weight:700;letter-spacing:1px;padding-right:44px;">
+            <button onclick="regenerateCode()" title="Regenerate code" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:16px;color:var(--gold);">🔄</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Subject / Specialty</label>
+          <select class="form-select" id="f-subject">
+            <option value="medicine">Medicine & Allied (JCAT)</option>
+            <option value="surgery">Surgery & Allied (JCAT)</option>
+            <option value="dentistry">Dentistry (MDS)</option>
+            <option value="psychiatry">Psychiatry</option>
+            <option value="anesthesia">Anesthesiology</option>
+            <option value="ophthalmology">Ophthalmology</option>
+            <option value="ent">ENT (ORL)</option>
+            <option value="gynaecology">Gynae & Obs</option>
+            <option value="radiology">Diagnostic Radiology</option>
+            <option value="nts">NTS MO/WMO</option>
+            <option value="all">All Subjects</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Plan Duration</label>
+          <select class="form-select" id="f-plan" onchange="calcExpiry()">
+            <option value="30">30 Days — PKR 3,000 (JCAT)</option>
+            <option value="90">3 Months — PKR 5,000 (JCAT)</option>
+            <option value="180">6 Months — PKR 7,500 (JCAT)</option>
+            <option value="365">1 Year — PKR 9,500 (JCAT)</option>
+            <option value="30nts">30 Days — PKR 4,000 (NTS)</option>
+            <option value="90nts">3 Months — PKR 6,000 (NTS)</option>
+            <option value="180nts">6 Months — PKR 9,000 (NTS)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Expiry Date (auto-calculated)</label>
+          <input class="form-input" id="f-expiry" type="date" readonly style="cursor:default;opacity:0.7;">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Referred By <span style="color:var(--text);font-weight:400;font-size:10px;">(code, optional)</span></label>
+          <input class="form-input" id="f-referred-by" placeholder="MM-2024-XXXX" type="text" oninput="this.value=this.value.toUpperCase()">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Amount Paid <span style="color:var(--text);font-weight:400;font-size:10px;">(PKR, internal only)</span></label>
+          <input class="form-input" id="f-amount-paid" placeholder="Actual amount received (leave blank if not paid yet)" type="number" min="0">
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <button class="btn-gold" style="width:auto;padding:11px 28px;" onclick="addStudent()">✦ Add &amp; Send WhatsApp →</button>
+        <div class="form-msg" id="f-msg"></div>
+      </div>
+      <!-- PREVIEW -->
+      <div id="wa-preview" style="display:none;margin-top:18px;background:rgba(18,140,126,0.08);border:1px solid rgba(18,140,126,0.25);border-radius:10px;padding:16px;">
+        <div style="font-size:10px;font-weight:700;color:#2ECC71;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;">📋 WhatsApp Message Preview</div>
+        <div id="wa-preview-text" style="font-size:13px;color:var(--text-mid);line-height:1.75;white-space:pre-line;"></div>
+      </div>
+    </div>
+
+    <!-- STUDENT TABLE -->
+    <div class="section-title">👥 All Students</div>
+    <div class="controls">
+      <input class="search-input" id="search-input" placeholder="🔍  Search by name, email or code…" oninput="renderTable()">
+      <select class="filter-select" id="filter-status" onchange="renderTable()">
+        <option value="all">All Statuses</option>
+        <option value="active">Active</option>
+        <option value="expiring">Expiring Soon</option>
+        <option value="expired">Expired</option>
+        <option value="inactive">Deactivated</option>
+      </select>
+      <select class="filter-select" id="filter-subject" onchange="renderTable()">
+        <option value="all">All Subjects</option>
+        <option value="nts">NTS MO/WMO</option>
+        <option value="medicine">Medicine</option>
+        <option value="surgery">Surgery</option>
+        <option value="dentistry">Dentistry</option>
+        <option value="psychiatry">Psychiatry</option>
+        <option value="anesthesia">Anesthesiology</option>
+        <option value="ophthalmology">Ophthalmology</option>
+        <option value="ent">ENT</option>
+        <option value="gynaecology">Gynae & Obs</option>
+        <option value="radiology">Radiology</option>
+      </select>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Student</th>
+            <th>Code</th>
+            <th>Subject</th>
+            <th>Plan</th>
+            <th>Paid (PKR)</th>
+            <th>Expiry Date</th>
+            <th>Days Left</th>
+            <th>Logins</th>
+            <th>Devices</th>
+            <th>Referrals</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="students-tbody">
+          <tr><td colspan="14"><div class="loading"><div class="spinner"></div>Loading students…</div></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- /main -->
+</div><!-- /dashboard -->
+
+<!-- ══════ REFERRAL REWARD MODAL ══════ -->
+<div class="modal-overlay" id="reward-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('reward-modal')">✕</button>
+    <h3>🎁 Referral Reward</h3>
+    <p id="reward-modal-desc">Choose how to reward the referrer.</p>
+    <div id="reward-modal-body"></div>
+    <div class="form-msg" id="reward-msg" style="margin-top:10px;text-align:center;"></div>
+  </div>
+</div>
+
+<!-- ══════ EXTEND MODAL ══════ -->
+<div class="modal-overlay" id="extend-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeExtendModal()">✕</button>
+    <h3>Extend Access</h3>
+    <p id="extend-modal-desc">Choose how many days to add to this student's access.</p>
+    <div class="days-grid">
+      <div class="day-opt" onclick="selectExtendDays(30,this)"><div class="day-opt-num">30</div><div class="day-opt-label">Days</div></div>
+      <div class="day-opt" onclick="selectExtendDays(90,this)"><div class="day-opt-num">90</div><div class="day-opt-label">Days</div></div>
+      <div class="day-opt" onclick="selectExtendDays(180,this)"><div class="day-opt-num">180</div><div class="day-opt-label">Days</div></div>
+      <div class="day-opt" onclick="selectExtendDays(365,this)"><div class="day-opt-num">365</div><div class="day-opt-label">Days</div></div>
+    </div>
+    <button class="btn-gold" id="extend-confirm-btn" onclick="confirmExtend()" disabled style="opacity:0.5;">Select a duration first</button>
+    <div class="form-msg" id="extend-msg" style="margin-top:10px;text-align:center;"></div>
+  </div>
+</div>
+
+<script>
+// ═══════════ CONFIG ═══════════
+const SUPABASE_URL  = 'https://muxpykycdafzhzzopock.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im11eHB5a3ljZGFmemh6em9wb2NrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI1NDY0MDUsImV4cCI6MjA4ODEyMjQwNX0.BEn5p2NLBQev63GGj3SbbOlcvvYeX3U_FVGnT4xMiJI';
+const ADMIN_PASSWORD = 'MedMasters@Admin2026';
+
+// ═══════════ SUPABASE ═══════════
+const sb = {
+  async getAll(){
+    const r = await fetch(SUPABASE_URL+'/rest/v1/access_codes?select=*&order=created_at.desc',{
+      headers:{'apikey':SUPABASE_ANON,'Authorization':'Bearer '+SUPABASE_ANON}
+    });
+    if(!r.ok) throw new Error('DB_ERR_'+r.status);
+    return r.json();
+  },
+  async insert(data){
+    const r = await fetch(SUPABASE_URL+'/rest/v1/access_codes',{
+      method:'POST',
+      headers:{'apikey':SUPABASE_ANON,'Authorization':'Bearer '+SUPABASE_ANON,'Content-Type':'application/json','Prefer':'return=representation'},
+      body:JSON.stringify(data)
+    });
+    if(!r.ok){const e=await r.json();throw new Error(e.message||'DB_ERR_'+r.status);}
+    return r.json();
+  },
+  async patch(code, data){
+    const r = await fetch(SUPABASE_URL+'/rest/v1/access_codes?code=eq.'+encodeURIComponent(code),{
+      method:'PATCH',
+      headers:{'apikey':SUPABASE_ANON,'Authorization':'Bearer '+SUPABASE_ANON,'Content-Type':'application/json','Prefer':'return=representation'},
+      body:JSON.stringify(data)
+    });
+    if(!r.ok) throw new Error('DB_ERR_'+r.status);
+    return r.json();
+  }
+};
+
+// ═══════════ STATE ═══════════
+let allStudents = [];
+let extendTarget = null;
+let extendDays = null;
+let rewardTarget = null;
+let toastTimer = null;
+
+// ═══════════ LOGIN ═══════════
+function adminLogin(){
+  const pass = document.getElementById('admin-pass').value;
+  const err = document.getElementById('login-err');
+  if(pass === ADMIN_PASSWORD){
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('dashboard').style.display = 'block';
+    sessionStorage.setItem('mm_admin','1');
+    loadAll();
+  } else {
+    err.textContent = '✕ Incorrect password.';
+    document.getElementById('admin-pass').classList.add('err');
+    setTimeout(()=>err.textContent='',3000);
+  }
+}
+function adminLogout(){
+  sessionStorage.removeItem('mm_admin');
+  location.reload();
+}
+if(sessionStorage.getItem('mm_admin')==='1'){
+  document.getElementById('login-screen').style.display='none';
+  document.getElementById('dashboard').style.display='block';
+  loadAll();
+}
+document.getElementById('admin-pass').addEventListener('keydown',e=>{if(e.key==='Enter')adminLogin();});
+
+// ═══════════ LOAD DATA ═══════════
+async function loadAll(){
+  document.getElementById('last-refreshed').textContent = '';
+  document.getElementById('students-tbody').innerHTML = '<tr><td colspan="14"><div class="loading"><div class="spinner"></div>Loading…</div></td></tr>';
+  try{
+    allStudents = await sb.getAll();
+    renderStats();
+    renderRevenue();
+    renderAlerts();
+    showSoftToast();
+    renderTable();
+    const now = new Date();
+    document.getElementById('last-refreshed').textContent = 'Updated '+now.toLocaleTimeString();
+  }catch(e){
+    document.getElementById('students-tbody').innerHTML = `<tr><td colspan="14"><div class="empty-state"><div>⚠️</div>Failed to load: ${e.message}</div></td></tr>`;
+  }
+}
+
+// ═══════════ HELPERS ═══════════
+function getStatus(rec){
+  if(!rec.is_active) return 'inactive';
+  const days = daysLeft(rec.expires_at);
+  if(days < 0) return 'expired';
+  if(days <= 3) return 'expiring';
+  return 'active';
+}
+function daysLeft(expires_at){
+  return Math.ceil((new Date(expires_at)-new Date())/(1000*60*60*24));
+}
+function getPlanLabel(r){
+  if(!r.created_at||!r.expires_at) return '—';
+  const days = Math.round((new Date(r.expires_at)-new Date(r.created_at))/(1000*60*60*24));
+  const isNTS = (r.subject||'').toLowerCase().includes('nts')||(r.subject||'').toLowerCase().includes('mowmo')||(r.subject||'').toLowerCase().includes('mo/wmo');
+  if(isNTS){
+    if(days<=31) return '30-Day (NTS)';
+    if(days<=95) return '3-Month (NTS)';
+    return '6-Month (NTS)';
+  }
+  if(days<=31) return '30-Day';
+  if(days<=95) return '3-Month';
+  if(days<=185) return '6-Month';
+  return '1-Year';
+}
+function getPlanPrice(r){
+  const label = getPlanLabel(r);
+  if(label==='30-Day (NTS)') return 4000;
+  if(label==='3-Month (NTS)') return 6000;
+  if(label==='6-Month (NTS)') return 9000;
+  if(label==='30-Day') return 3000;
+  if(label==='3-Month') return 5000;
+  if(label==='6-Month') return 7500;
+  if(label==='1-Year') return 9500;
+  return 0;
+}
+
+// ═══════════ STATS ═══════════
+function renderStats(){
+  const total = allStudents.length;
+  const active = allStudents.filter(r=>getStatus(r)==='active').length;
+  const expiring = allStudents.filter(r=>getStatus(r)==='expiring').length;
+  const expired = allStudents.filter(r=>getStatus(r)==='expired').length;
+  const inactive = allStudents.filter(r=>getStatus(r)==='inactive').length;
+  document.getElementById('s-total').textContent = total;
+  document.getElementById('s-active').textContent = active;
+  document.getElementById('s-expiring').textContent = expiring;
+  document.getElementById('s-expired').textContent = expired;
+  document.getElementById('s-inactive').textContent = inactive;
+}
+
+function renderRevenue(){
+  // Only count students who have amount_paid recorded — avoids estimation errors
+  const paid = allStudents.filter(r=>r.amount_paid>0);
+  const gross = paid.reduce((sum,r)=>sum+Number(r.amount_paid),0);
+  const rewardsCash = allStudents.reduce((sum,r)=>sum+(r.referral_reward_cash||0),0);
+  const net = gross - rewardsCash;
+  const avg = paid.length ? Math.round(gross/paid.length) : 0;
+  document.getElementById('r-gross').textContent = gross.toLocaleString();
+  document.getElementById('r-rewards').textContent = rewardsCash.toLocaleString();
+  document.getElementById('r-net').textContent = net.toLocaleString();
+  document.getElementById('r-avg').textContent = avg.toLocaleString();
+  // Breakdown by plan — count all students, revenue only from those with amount_paid
+  const plans = {};
+  allStudents.forEach(r=>{
+    const label = getPlanLabel(r);
+    if(!plans[label]) plans[label]={count:0,revenue:0};
+    plans[label].count++;
+    if(r.amount_paid>0) plans[label].revenue+=Number(r.amount_paid);
+  });
+  document.getElementById('rev-by-plan').innerHTML = Object.entries(plans).map(([label,d])=>`
+    <div style="background:var(--bg);border:1px solid var(--border-soft);border-radius:10px;padding:14px 16px;">
+      <div style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">${label}</div>
+      <div style="font-size:18px;font-weight:800;">${d.count} <span style="font-size:12px;color:var(--text-mid);font-weight:400;">students</span></div>
+      <div style="font-size:12px;color:var(--green);margin-top:2px;">PKR ${d.revenue.toLocaleString()}</div>
+    </div>`).join('');
+}
+
+// ═══════════ 7-DAY SOFT TOAST ═══════════
+function showSoftToast(){
+  // Only show once per day
+  const today = new Date().toDateString();
+  const lastShown = sessionStorage.getItem('mm_toast_date');
+  if(lastShown === today) return;
+  const soft = allStudents.filter(r=>{
+    if(!r.is_active) return false;
+    const d = daysLeft(r.expires_at);
+    return d >= 4 && d <= 7; // 7-day window, before 3-day urgent takes over
+  });
+  if(!soft.length) return;
+  sessionStorage.setItem('mm_toast_date', today);
+  const names = soft.map(r=>r.student_name||r.email).join(', ');
+  document.getElementById('soft-toast-msg').textContent =
+    `${soft.length} student${soft.length>1?'s':''} expiring in 4–7 days: ${names}`;
+  const toast = document.getElementById('soft-toast');
+  toast.style.display = 'flex';
+  // Animate bar countdown
+  const bar = document.getElementById('toast-bar');
+  bar.style.width = '100%';
+  bar.style.transitionDuration = '30s';
+  setTimeout(()=>bar.style.width='0%', 50);
+  // Auto-dismiss after 30 seconds
+  toastTimer = setTimeout(()=>dismissToast(), 30000);
+}
+function dismissToast(){
+  clearTimeout(toastTimer);
+  const toast = document.getElementById('soft-toast');
+  toast.classList.add('hidden');
+  setTimeout(()=>toast.style.display='none', 350);
+}
+
+// ═══════════ 3-DAY URGENT ALERTS ═══════════
+function renderAlerts(){
+  const urgent = allStudents.filter(r=>getStatus(r)==='expiring'||getStatus(r)==='expired');
+  const section = document.getElementById('alerts-section');
+  const list = document.getElementById('alerts-list');
+  if(!urgent.length){section.style.display='none';return;}
+  section.style.display='block';
+  list.innerHTML = urgent.map(r=>{
+    const days = daysLeft(r.expires_at);
+    const isExpired = days < 0;
+    const daysText = isExpired
+      ? `Expired ${Math.abs(days)} day${Math.abs(days)!==1?'s':''} ago`
+      : `Expires in ${days} day${days!==1?'s':''}`;
+    const waMsg = encodeURIComponent(buildExpiryWAMessage(r, days));
+    const phone = r.whatsapp||r.phone||'';
+    return `<div class="alert-row ${isExpired?'expired':'expiring'}">
+      <div class="alert-info">
+        <div class="alert-name">${r.student_name||'—'} &nbsp;<span style="font-size:11px;color:var(--text-mid);font-weight:400;">${r.email}</span></div>
+        <div class="alert-meta">Code: ${r.code} &nbsp;·&nbsp; <span style="color:${isExpired?'var(--red)':'var(--yellow)'}">${daysText}</span></div>
+      </div>
+      <div class="alert-actions">
+        ${phone?`<a class="wa-btn" href="https://wa.me/${phone}?text=${waMsg}" target="_blank">💬 Remind on WhatsApp</a>`:'<span style="font-size:11px;color:var(--text);">No phone on file</span>'}
+        <button class="btn-sm btn-green" onclick="openExtendModal('${r.code}','${(r.student_name||r.email).replace(/'/g,"\\'")}','${r.expires_at}')">➕ Extend</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function buildExpiryWAMessage(r, days){
+  const name = r.student_name||'Doctor';
+  const isExpired = days < 0;
+  if(isExpired){
+    return `Hi ${name}! Your MedMasters access expired ${Math.abs(days)} day${Math.abs(days)!==1?'s':''} ago. Renew now to continue your exam preparation. WhatsApp us to get instant access. — MedMasters Team`;
+  }
+  if(days===1) return `Hi ${name}! Your MedMasters access expires tomorrow. Don't break your study streak — renew now and keep preparing. — MedMasters Team`;
+  return `Hi ${name}! Your MedMasters access expires in ${days} days. Renew now to keep studying without interruption. — MedMasters Team`;
+}
+
+// ═══════════ TABLE ═══════════
+function renderTable(){
+  const search = document.getElementById('search-input').value.toLowerCase();
+  const filterStatus = document.getElementById('filter-status').value;
+  const filterSubject = document.getElementById('filter-subject').value;
+  const NTS_SUBJECTS = ['nts','mowmo','mo/wmo','mo','wmo'];
+  let data = allStudents.filter(r=>{
+    const status = getStatus(r);
+    const subj = (r.subject||'').toLowerCase();
+    const matchSearch = !search || (r.student_name||'').toLowerCase().includes(search) || r.email.toLowerCase().includes(search) || r.code.toLowerCase().includes(search);
+    const matchStatus = filterStatus==='all' || status===filterStatus;
+    // NTS filter matches all NTS-variant subjects
+    const matchSubject = filterSubject==='all'
+      || (filterSubject==='nts' ? NTS_SUBJECTS.some(n=>subj.includes(n)) : subj===filterSubject);
+    return matchSearch && matchStatus && matchSubject;
+  });
+  if(!data.length){
+    document.getElementById('students-tbody').innerHTML = '<tr><td colspan="14"><div class="empty-state"><div>🔍</div>No students match your filters.</div></td></tr>';
+    return;
+  }
+  const subjectNames = {
+    medicine:'Medicine',surgery:'Surgery',dentistry:'Dentistry',
+    psychiatry:'Psychiatry',anesthesia:'Anesthesia',ophthalmology:'Ophthalmology',
+    ent:'ENT',gynaecology:'Gynae & Obs',radiology:'Radiology',
+    nts:'NTS MO/WMO',mowmo:'NTS MO/WMO','mo/wmo':'NTS MO/WMO',mo:'NTS MO',wmo:'WMO',all:'All'
+  };
+  document.getElementById('students-tbody').innerHTML = data.map((r,i)=>{
+    const status = getStatus(r);
+    const days = daysLeft(r.expires_at);
+    const expDate = new Date(r.expires_at).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
+    const lastLogin = r.last_login ? new Date(r.last_login).toLocaleDateString('en-GB',{day:'2-digit',month:'short'}) : 'Never';
+    const deviceCount = (r.devices||[]).length;
+    const location = [r.location_city,r.location_country].filter(Boolean).join(', ')||'—';
+    const amountPaid = r.amount_paid ? `PKR ${Number(r.amount_paid).toLocaleString()}` : '—';
+    const refCount = r.referral_count||0;
+    let statusBadge='',daysHtml='';
+    if(status==='active'){statusBadge='<span class="badge badge-active">● Active</span>';}
+    else if(status==='expiring'){statusBadge='<span class="badge badge-expiring">⚠ Expiring</span>';}
+    else if(status==='expired'){statusBadge='<span class="badge badge-expired">✕ Expired</span>';}
+    else{statusBadge='<span class="badge badge-inactive">○ Inactive</span>';}
+    if(days<0) daysHtml=`<span class="days-pill days-red">${Math.abs(days)}d ago</span>`;
+    else if(days<=3) daysHtml=`<span class="days-pill days-yellow">${days}d left</span>`;
+    else daysHtml=`<span class="days-pill days-green">${days}d left</span>`;
+    const phone = r.whatsapp||r.phone||'';
+    const waMsg = encodeURIComponent(`Hi ${r.student_name||''}! Your MedMasters access expires on ${expDate}. Renew now to keep studying. — MedMasters`);
+    return `<tr>
+      <td style="color:var(--text);font-size:12px;">${i+1}</td>
+      <td>
+        <div style="font-weight:700;font-size:13px;">${r.student_name||'—'}</div>
+        <div style="font-size:11px;color:var(--text-mid);">${r.email}</div>
+        <div style="font-size:10px;color:var(--text);margin-top:2px;">Last login: ${lastLogin}</div>
+        ${r.referred_by?`<div style="font-size:10px;color:var(--gold);margin-top:1px;">Ref: ${r.referred_by}</div>`:''}
+      </td>
+      <td><span style="font-family:monospace;font-size:13px;color:var(--gold);font-weight:700;">${r.code}</span></td>
+      <td style="font-size:12px;">${subjectNames[r.subject]||r.subject||'—'}</td>
+      <td style="font-size:12px;color:var(--text-mid);">${getPlanLabel(r)}</td>
+      <td style="font-size:12px;color:var(--green);">${amountPaid}</td>
+      <td style="font-size:12px;white-space:nowrap;">${expDate}</td>
+      <td>${daysHtml}</td>
+      <td style="font-size:13px;text-align:center;">${r.login_count||0}</td>
+      <td style="font-size:13px;text-align:center;">${deviceCount} / 2</td>
+      <td style="font-size:12px;text-align:center;">
+        ${refCount>0?`<span style="color:var(--gold);font-weight:700;">${refCount}</span>${refCount>=3?` <button class="btn-sm btn-green" onclick="openRewardModal('${r.code}','${(r.student_name||r.email).replace(/'/g,"\\'")}',${refCount})" style="padding:3px 8px;font-size:10px;">🎁</button>`:''}`:
+        '<span style="color:var(--text);">—</span>'}
+      </td>
+      <td style="font-size:11px;color:var(--text-mid);">${location}</td>
+      <td>${statusBadge}</td>
+      <td>
+        <div class="td-actions">
+          ${phone?`<a class="btn-sm btn-blue" href="https://wa.me/${phone}?text=${waMsg}" target="_blank" title="Send WhatsApp reminder">💬</a>`:''}
+          <button class="btn-sm btn-green" onclick="openExtendModal('${r.code}','${(r.student_name||r.email).replace(/'/g,"\\'")}','${r.expires_at}')" title="Extend access">➕</button>
+          <button class="btn-sm btn-blue" onclick="resetDevices('${r.code}')" title="Reset devices">📱</button>
+          ${r.is_active
+            ? `<button class="btn-sm btn-danger" onclick="toggleActive('${r.code}',false)" title="Deactivate">🚫</button>`
+            : `<button class="btn-sm btn-green" onclick="toggleActive('${r.code}',true)" title="Activate">✅</button>`}
+        </div>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+// ═══════════ ADD STUDENT ═══════════
+function generateCode(){
+  const year = new Date().getFullYear();
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let suffix = '';
+  for(let i=0;i<4;i++) suffix += chars[Math.floor(Math.random()*chars.length)];
+  return `MM-${year}-${suffix}`;
+}
+function autoGenerateCode(){
+  const name = document.getElementById('f-name').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const codeEl = document.getElementById('f-code');
+  if(name.length >= 2 && email.includes('@')){
+    if(!codeEl.dataset.locked){ codeEl.value = generateCode(); updateWAPreview(); }
+  } else {
+    if(!codeEl.dataset.locked){ codeEl.value = ''; document.getElementById('wa-preview').style.display='none'; }
+  }
+}
+function regenerateCode(){
+  const codeEl = document.getElementById('f-code');
+  delete codeEl.dataset.locked;
+  codeEl.value = generateCode();
+  updateWAPreview();
+}
+function updateWAPreview(){
+  const name = document.getElementById('f-name').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const code = document.getElementById('f-code').value.trim();
+  const plan = document.getElementById('f-plan');
+  const planText = plan.options[plan.selectedIndex].text;
+  const expiry = document.getElementById('f-expiry').value;
+  const expiryFmt = expiry ? new Date(expiry).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}) : '—';
+  if(!name || !code) return;
+  const msg = buildWAMessage(name, email, code, planText, expiryFmt);
+  document.getElementById('wa-preview-text').textContent = msg;
+  document.getElementById('wa-preview').style.display = 'block';
+}
+function buildWAMessage(name, email, code, planText, expiryDate){
+  return `Hello, ${name}! 🎓\n\nWelcome to MedMasters — Pakistan's #1 MCQ Bank!\n\nHere are your access details:\n\n📧 Email: ${email}\n🔑 Access Code: ${code}\n📅 Plan: ${planText}\n⏳ Valid Until: ${expiryDate}\n\nTo start practising:\n1️⃣ Go to medmasters.academy\n2️⃣ Click "Enter Code"\n3️⃣ Enter your email + code above\n\nYou can use it on 1 mobile + 1 laptop.\n\nBest of luck in your exams! 💪\n— MedMasters Team`;
+}
+function calcExpiry(){
+  const planVal = document.getElementById('f-plan').value;
+  const days = parseInt(planVal); // works for both '30' and '30nts'
+  const d = new Date();
+  d.setDate(d.getDate()+days);
+  document.getElementById('f-expiry').value = d.toISOString().split('T')[0];
+  updateWAPreview();
+}
+calcExpiry();
+document.getElementById('f-plan').addEventListener('change', updateWAPreview);
+
+async function addStudent(){
+  const name = document.getElementById('f-name').value.trim();
+  const email = document.getElementById('f-email').value.trim().toLowerCase();
+  const phone = document.getElementById('f-phone').value.trim().replace(/\D/g,'');
+  const code = document.getElementById('f-code').value.trim().toUpperCase();
+  const subject = document.getElementById('f-subject').value;
+  const plan = document.getElementById('f-plan');
+  const planText = plan.options[plan.selectedIndex].text;
+  const expiry = document.getElementById('f-expiry').value;
+  const referredBy = document.getElementById('f-referred-by').value.trim().toUpperCase()||null;
+  const amountPaidInput = document.getElementById('f-amount-paid').value.trim();
+  const amountPaid = amountPaidInput ? parseInt(amountPaidInput) : 0;
+  const msg = document.getElementById('f-msg');
+  if(!name||!email||!code||!expiry){msg.textContent='✕ Please fill in all fields.';msg.className='form-msg err';return;}
+  if(!email.includes('@')){msg.textContent='✕ Invalid email.';msg.className='form-msg err';return;}
+  if(!phone){msg.textContent='✕ Please enter the doctor\'s WhatsApp number.';msg.className='form-msg err';return;}
+  if(!/^MM-\d{4}-[A-Z0-9]{4}$/.test(code)){msg.textContent='✕ Invalid code format.';msg.className='form-msg err';return;}
+  msg.textContent='Adding…';msg.className='form-msg';
+  try{
+    const insertData = {
+      code, email, student_name:name, subject,
+      expires_at: new Date(expiry+'T23:59:59Z').toISOString(),
+      is_active:true, devices:[], login_count:0,
+      whatsapp:phone, amount_paid:amountPaid,
+      referral_count:0, referral_reward_cash:0, referral_reward_days:0
+    };
+    if(referredBy) insertData.referred_by = referredBy;
+    await sb.insert(insertData);
+    // If referred_by set, increment referrer's referral_count
+    if(referredBy){
+      const referrer = allStudents.find(r=>r.code===referredBy);
+      if(referrer){
+        await sb.patch(referredBy, {referral_count:(referrer.referral_count||0)+1});
+      }
+    }
+    msg.textContent=`✓ ${name} added! Opening WhatsApp…`;msg.className='form-msg ok';
+    const expiryFmt = new Date(expiry).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
+    const waText = buildWAMessage(name, email, code, planText, expiryFmt);
+    const waNum = phone.startsWith('92') ? phone : '92'+phone.replace(/^0/,'');
+    setTimeout(()=>{ window.open(`https://wa.me/${waNum}?text=${encodeURIComponent(waText)}`, '_blank'); }, 400);
+    // Reset form
+    ['f-name','f-email','f-phone','f-code','f-referred-by','f-amount-paid'].forEach(id=>document.getElementById(id).value='');
+    document.getElementById('wa-preview').style.display='none';
+    calcExpiry();
+    await loadAll();
+    setTimeout(()=>msg.textContent='',5000);
+  }catch(e){
+    msg.textContent='✕ '+e.message;msg.className='form-msg err';
+  }
+}
+function getPlanPriceByDays(planVal){
+  const isNTS = String(planVal).includes('nts');
+  const days = parseInt(planVal);
+  if(isNTS){
+    if(days<=31) return 4000;
+    if(days<=95) return 6000;
+    return 9000;
+  }
+  if(days<=31) return 3000;
+  if(days<=95) return 5000;
+  if(days<=185) return 7500;
+  return 9500;
+}
+
+// ═══════════ ACTIONS ═══════════
+async function toggleActive(code, activate){
+  if(!confirm(`Are you sure you want to ${activate?'activate':'deactivate'} code ${code}?`)) return;
+  try{ await sb.patch(code,{is_active:activate}); await loadAll(); }catch(e){alert('Error: '+e.message);}
+}
+async function resetDevices(code){
+  if(!confirm(`Reset all registered devices for ${code}?\n\nThe student will be able to register on new devices.`)) return;
+  try{ await sb.patch(code,{devices:[]}); await loadAll(); alert('✓ Devices reset.'); }catch(e){alert('Error: '+e.message);}
+}
+
+// ═══════════ EXTEND MODAL ═══════════
+function openExtendModal(code, name, currentExpiry){
+  extendTarget = {code, name, currentExpiry};
+  extendDays = null;
+  document.getElementById('extend-modal-desc').textContent = `Extending access for: ${name} (${code})`;
+  document.getElementById('extend-confirm-btn').disabled = true;
+  document.getElementById('extend-confirm-btn').style.opacity = '0.5';
+  document.getElementById('extend-confirm-btn').textContent = 'Select a duration first';
+  document.getElementById('extend-msg').textContent = '';
+  document.querySelectorAll('.day-opt').forEach(d=>d.classList.remove('selected'));
+  document.getElementById('extend-modal').classList.add('open');
+}
+function closeExtendModal(){ document.getElementById('extend-modal').classList.remove('open'); extendTarget=null; extendDays=null; }
+function selectExtendDays(days, el){
+  extendDays = days;
+  document.querySelectorAll('.day-opt').forEach(d=>d.classList.remove('selected'));
+  el.classList.add('selected');
+  const btn = document.getElementById('extend-confirm-btn');
+  btn.disabled=false; btn.style.opacity='1'; btn.textContent=`Extend by ${days} Days →`;
+}
+async function confirmExtend(){
+  if(!extendTarget||!extendDays) return;
+  const btn = document.getElementById('extend-confirm-btn');
+  const msg = document.getElementById('extend-msg');
+  btn.disabled=true; btn.textContent='Extending…';
+  try{
+    const base = new Date(extendTarget.currentExpiry) > new Date() ? new Date(extendTarget.currentExpiry) : new Date();
+    base.setDate(base.getDate()+extendDays);
+    await sb.patch(extendTarget.code,{expires_at:base.toISOString(),is_active:true});
+    msg.textContent=`✓ Extended! New expiry: ${base.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'})}`;
+    msg.className='form-msg ok';
+    await loadAll();
+    setTimeout(()=>closeExtendModal(),2000);
+  }catch(e){
+    msg.textContent='✕ '+e.message; msg.className='form-msg err';
+    btn.disabled=false; btn.textContent=`Extend by ${extendDays} Days →`;
+  }
+}
+document.getElementById('extend-modal').addEventListener('click',e=>{if(e.target===document.getElementById('extend-modal'))closeExtendModal();});
+
+// ═══════════ REFERRAL REWARD MODAL ═══════════
+function openRewardModal(code, name, refCount){
+  rewardTarget = {code, name, refCount};
+  const rec = allStudents.find(r=>r.code===code);
+  const planPrice = rec ? getPlanPrice(rec) : 0;
+  const rewardAmount = Math.round(planPrice * 0.30);
+  const rewardDays = planPrice ? Math.round(rewardAmount / (planPrice / getPlanDays(getPlanLabel(rec)))) : 30;
+  document.getElementById('reward-modal-desc').textContent = `Reward for ${name} (${code}) — ${refCount} referral${refCount>1?'s':''}`;
+  document.getElementById('reward-msg').textContent = '';
+  document.getElementById('reward-modal-body').innerHTML = `
+    <div class="reward-row">
+      <div class="reward-row-name">30% Referral Reward</div>
+      <div class="reward-row-amount">PKR ${rewardAmount.toLocaleString()} (≈ ${rewardDays} days of access)</div>
+      <div class="reward-btns">
+        <button class="btn-gold" style="width:auto;padding:9px 20px;" onclick="giveRewardDays('${code}',${rewardDays},${rewardAmount})">➕ Add ${rewardDays} Days to Account</button>
+        <button class="btn-sm btn-green" style="padding:9px 16px;" onclick="markRewardCash('${code}',${rewardAmount})">💵 Mark as Cash Paid (PKR ${rewardAmount.toLocaleString()})</button>
+      </div>
+    </div>`;
+  document.getElementById('reward-modal').classList.add('open');
+}
+function getPlanDays(label){
+  if(label==='30-Day'||label==='30-Day (NTS)') return 30;
+  if(label==='3-Month'||label==='3-Month (NTS)') return 90;
+  if(label==='6-Month'||label==='6-Month (NTS)') return 180;
+  return 365;
+}
+async function giveRewardDays(code, days, amount){
+  const rec = allStudents.find(r=>r.code===code);
+  if(!rec){alert('Student not found');return;}
+  const msg = document.getElementById('reward-msg');
+  msg.textContent='Processing…'; msg.className='form-msg';
+  try{
+    const base = new Date(rec.expires_at) > new Date() ? new Date(rec.expires_at) : new Date();
+    base.setDate(base.getDate()+days);
+    await sb.patch(code,{
+      expires_at:base.toISOString(),
+      is_active:true,
+      referral_reward_days:(rec.referral_reward_days||0)+days
+    });
+    msg.textContent=`✓ ${days} days added! New expiry: ${base.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'})}`;
+    msg.className='form-msg ok';
+    await loadAll();
+    setTimeout(()=>closeModal('reward-modal'),2500);
+  }catch(e){ msg.textContent='✕ '+e.message; msg.className='form-msg err'; }
+}
+async function markRewardCash(code, amount){
+  const rec = allStudents.find(r=>r.code===code);
+  if(!rec){alert('Student not found');return;}
+  const msg = document.getElementById('reward-msg');
+  msg.textContent='Marking…'; msg.className='form-msg';
+  try{
+    await sb.patch(code,{referral_reward_cash:(rec.referral_reward_cash||0)+amount});
+    msg.textContent=`✓ PKR ${amount.toLocaleString()} marked as cash paid.`;
+    msg.className='form-msg ok';
+    await loadAll();
+    setTimeout(()=>closeModal('reward-modal'),2000);
+  }catch(e){ msg.textContent='✕ '+e.message; msg.className='form-msg err'; }
+}
+function closeModal(id){ document.getElementById(id).classList.remove('open'); }
+document.getElementById('reward-modal').addEventListener('click',e=>{if(e.target===document.getElementById('reward-modal'))closeModal('reward-modal');});
+</script>
+</body>
+</html>
