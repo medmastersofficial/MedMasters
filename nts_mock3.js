@@ -399,7 +399,7 @@ window.NTS_MOCK3_DATA = [
       "Heart rate is the primary determinant of stroke volume"
     ],
     "ans": 2,
-    "exp": "The Frank-Starling law states that the strength of ventricular contraction and hence stroke volume increases proportionally with the degree of myocardial fibre stretch caused by greater end-diastolic filling (preload). This intrinsic autoregulation matches cardiac output to venous return. Option A is the opposite of the law. Option B directly contradicts the Starling relationship. Option D incorrectly identifies heart rate as the primary determinant; preload (end-diastolic volume) governs stroke volume in the Starling mechanism."
+    "exp": "The Frank-Starling law states that the strength of ventricular contraction and hence stroke volume increases proportionally with the degree of myocardial fibre stretch caused by greater end-diastolic filling (preload). Guyton and Hall describe this as the heart's intrinsic mechanism for matching cardiac output to venous return, independent of neural or hormonal inputs. Option A is the opposite of the law. Option B directly contradicts the Starling relationship. Option D incorrectly identifies heart rate as the primary determinant; preload (end-diastolic volume) governs stroke volume in the Starling mechanism."
   },
   {
     "num": 32,
@@ -435,7 +435,7 @@ window.NTS_MOCK3_DATA = [
       "Decreased bicarbonate reabsorption in the proximal tubule"
     ],
     "ans": 2,
-    "exp": "Central chemoreceptors in the medulla are exquisitely sensitive to changes in PCO2 through its conversion to H2CO3 and subsequent H+ generation in the CSF. A rise in arterial PCO2 directly stimulates these receptors to increase minute ventilation, the primary mechanism for correcting hypercapnia. CO2 causes cerebral vasodilation (not constriction, ruling out B). CO2 causes peripheral vasodilation, not vasoconstriction (ruling out A). Proximal tubular bicarbonate reabsorption increases in chronic hypercapnia as a compensatory mechanism (ruling out D)."
+    "exp": "Central chemoreceptors in the medulla are exquisitely sensitive to changes in PCO2 through its conversion to H2CO3 and subsequent H+ generation in the CSF, a relationship Guyton describes as the dominant short-term regulator of ventilation. A rise in arterial PCO2 directly stimulates these receptors to increase minute ventilation, the primary mechanism for correcting hypercapnia. CO2 causes cerebral vasodilation (not constriction, ruling out B). CO2 causes peripheral vasodilation, not vasoconstriction (ruling out A). Proximal tubular bicarbonate reabsorption increases in chronic hypercapnia as a compensatory mechanism (ruling out D)."
   },
   {
     "num": 35,
@@ -483,7 +483,7 @@ window.NTS_MOCK3_DATA = [
       "Axillary nerve"
     ],
     "ans": 3,
-    "exp": "The axillary nerve (C5, C6) winds around the surgical neck of the humerus in the quadrilateral space and is the nerve most commonly injured in surgical neck fractures and anterior glenohumeral dislocations. Injury results in paralysis of deltoid and teres minor with loss of lateral arm sensation. Radial nerve (A) is injured at the mid-shaft (spiral groove). Ulnar nerve (B) at the medial epicondyle. Musculocutaneous nerve (C) in the coracobrachialis or with brachial plexus injuries."
+    "exp": "The axillary nerve (C5, C6) winds around the surgical neck of the humerus in the quadrilateral space and is the nerve most commonly injured in surgical neck fractures and anterior glenohumeral dislocations. Snell's Clinical Anatomy highlights this relationship as a key applied anatomy point, with injury resulting in paralysis of deltoid and teres minor with loss of lateral arm sensation. Radial nerve (A) is injured at the mid-shaft (spiral groove). Ulnar nerve (B) at the medial epicondyle. Musculocutaneous nerve (C) in the coracobrachialis or with brachial plexus injuries."
   },
   {
     "num": 39,
@@ -531,7 +531,7 @@ window.NTS_MOCK3_DATA = [
       "Common hepatic duct"
     ],
     "ans": 2,
-    "exp": "Hartmann's pouch is a pathological or anatomical saccular dilatation at the neck of the gallbladder, clinically important because gallstones frequently impact here, causing obstruction. When a large stone in Hartmann's pouch erodes into the adjacent common bile duct (Mirizzi syndrome), it can cause obstructive jaundice. It is not a feature of the bile ducts (A, B, D)."
+    "exp": "Hartmann's pouch is a pathological or anatomical saccular dilatation at the neck of the gallbladder, clinically important because gallstones frequently impact here, causing obstruction. KLM identifies this as a key surgical anatomy landmark, noting that a large impacted stone eroding into the adjacent common bile duct produces Mirizzi syndrome with obstructive jaundice. It is not a feature of the bile ducts (A, B, D)."
   },
   {
     "num": 43,
@@ -579,7 +579,7 @@ window.NTS_MOCK3_DATA = [
       "Blocking intestinal glucose absorption"
     ],
     "ans": 1,
-    "exp": "Metformin primarily activates AMPK (AMP-activated protein kinase) in hepatocytes, which inhibits hepatic gluconeogenesis and reduces fasting glucose. It also improves peripheral insulin sensitivity and reduces intestinal glucose absorption to a lesser extent. It does not stimulate insulin secretion (A), so it does not cause hypoglycaemia when used alone. Renal glucose excretion (C) is the mechanism of SGLT-2 inhibitors. Intestinal alpha-glucosidase inhibition is the mechanism of acarbose (D)."
+    "exp": "Metformin primarily activates AMPK (AMP-activated protein kinase) in hepatocytes, which inhibits hepatic gluconeogenesis and reduces fasting glucose. Katzung's Basic and Clinical Pharmacology presents this hepatic mechanism as the dominant action, while peripheral insulin sensitisation and reduced intestinal absorption contribute secondarily. It does not stimulate insulin secretion (A), so it does not cause hypoglycaemia when used alone. Renal glucose excretion (C) is the mechanism of SGLT-2 inhibitors. Intestinal alpha-glucosidase inhibition is the mechanism of acarbose (D)."
   },
   {
     "num": 47,
@@ -603,7 +603,7 @@ window.NTS_MOCK3_DATA = [
       "Warfarin resistance due to enzyme induction"
     ],
     "ans": 2,
-    "exp": "Fluconazole is a potent inhibitor of CYP2C9, the primary enzyme responsible for warfarin (S-warfarin) metabolism. Inhibition reduces warfarin clearance, causing accumulation and an elevated INR with increased bleeding risk. This is a clinically significant and potentially dangerous interaction. Enzyme inducers (D) such as rifampicin would have the opposite effect. This drug interaction is a classic high-yield pharmacokinetics topic."
+    "exp": "Fluconazole is a potent inhibitor of CYP2C9, the primary enzyme responsible for warfarin (S-warfarin) metabolism. Inhibition reduces warfarin clearance, causing accumulation and an elevated INR with increased bleeding risk. Katzung uses this interaction as a model example of CYP-mediated drug interactions in clinical practice. Enzyme inducers such as rifampicin would have the opposite effect. This interaction is a classic high-yield pharmacokinetics topic."
   },
   {
     "num": 49,
@@ -651,7 +651,7 @@ window.NTS_MOCK3_DATA = [
       "Gastric carcinoma"
     ],
     "ans": 1,
-    "exp": "The combination of chronic alcohol use, stigmata of portal hypertension (spider naevi, splenomegaly, caput medusae), and haematemesis is pathognomonic of bleeding oesophageal varices due to portal hypertension. Varices develop as collateral channels bypass the obstructed portal circulation. This is a life-threatening emergency with high mortality per episode. Peptic ulcer (A) does not cause stigmata of portal hypertension. Mallory-Weiss tears (C) follow forceful vomiting. Gastric carcinoma (D) causes chronic blood loss rather than acute haematemesis in this context."
+    "exp": "The combination of chronic alcohol use, stigmata of portal hypertension (spider naevi, splenomegaly, caput medusae), and haematemesis is pathognomonic of bleeding oesophageal varices due to portal hypertension. Davidson's Medicine classifies this as a life-threatening emergency, with each bleeding episode carrying a mortality rate of 15 to 20% in established cirrhosis. Varices develop as collateral channels bypass the obstructed portal circulation. Peptic ulcer (A) does not cause stigmata of portal hypertension. Mallory-Weiss tears (C) follow forceful vomiting. Gastric carcinoma (D) causes chronic blood loss rather than acute haematemesis in this context."
   },
   {
     "num": 53,
@@ -687,7 +687,7 @@ window.NTS_MOCK3_DATA = [
       "Foreign body obstruction"
     ],
     "ans": 1,
-    "exp": "Progressive dysphagia beginning with solids then progressing to liquids over weeks to months, combined with significant weight loss (alarm feature) and chronic smoking history in an older male, is highly suspicious for oesophageal carcinoma until proven otherwise. Squamous cell carcinoma predominates in smokers. Achalasia (A) is a motility disorder affecting both solids and liquids equally from onset, without weight loss as a prominent feature. Peptic stricture (C) occurs in younger patients with reflux history. Foreign body (D) causes acute onset dysphagia."
+    "exp": "Progressive dysphagia beginning with solids then progressing to liquids over weeks to months, combined with significant weight loss and a chronic smoking history in an older male, is highly suspicious for oesophageal carcinoma until proven otherwise. Davidson's lists this symptom progression alongside weight loss as alarm features mandating urgent endoscopy. Squamous cell carcinoma predominates in smokers. Achalasia (A) is a motility disorder affecting both solids and liquids equally from onset, without weight loss as a prominent feature. Peptic stricture (C) occurs in younger patients with reflux history. Foreign body (D) causes acute onset dysphagia."
   },
   {
     "num": 56,
@@ -711,7 +711,7 @@ window.NTS_MOCK3_DATA = [
       "Oesophageal rupture"
     ],
     "ans": 2,
-    "exp": "Acute aortic dissection classically presents with a sudden-onset severe tearing or ripping chest pain radiating to the back, with inter-arm blood pressure differential (>20 mmHg) due to involvement of subclavian artery origins. Risk factors include hypertension, connective tissue disorders, and bicuspid aortic valve. This is a cardiovascular emergency. AMI (A) causes crushing central chest pain without inter-arm BP differential. PE (B) causes pleuritic chest pain with dyspnoea. Oesophageal rupture (D) follows forceful vomiting."
+    "exp": "Acute aortic dissection classically presents with a sudden-onset severe tearing or ripping chest pain radiating to the back, with inter-arm blood pressure differential exceeding 20 mmHg due to involvement of subclavian artery origins. Davidson's Medicine identifies hypertension as the single most important modifiable risk factor, alongside connective tissue disorders and bicuspid aortic valve. This is a cardiovascular emergency requiring immediate imaging and surgical consultation. AMI (A) causes crushing central chest pain without inter-arm BP differential. PE (B) causes pleuritic chest pain with dyspnoea. Oesophageal rupture (D) follows forceful vomiting."
   },
   {
     "num": 58,
