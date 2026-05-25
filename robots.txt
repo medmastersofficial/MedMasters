@@ -1,4 +1,20 @@
+# robots.txt for MedMasters Academy
+# https://www.medmasters.academy/
+
 User-agent: *
+Allow: /
+
+# Allow all major crawlers full access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
 Allow: /
 
 User-agent: facebookexternalhit
@@ -7,4 +23,8 @@ Allow: /
 User-agent: Twitterbot
 Allow: /
 
-Sitemap: https://medmasters.academy/sitemap.xml
+User-agent: WhatsApp
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.medmasters.academy/sitemap.xml
