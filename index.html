@@ -10462,7 +10462,7 @@ function promptResumeOrFresh(key, subjList, dataLoader, openFn){
   else if(_k.startsWith('gynae_p2')) _need = _famIsFCPS ? 'fcps_gynaecology_part1' : 'gynaecology';
   else if(_k.startsWith('psych_p2')) _need = _famIsFCPS ? 'fcps_psychiatry_part1'  : 'psychiatry';
   else if(_k.startsWith('ent_p2'))   _need = _famIsFCPS ? 'fcps_ent_part1'         : 'ent';
-  else if(_k.startsWith('oph_p2'))   _need = _famIsFCPS ? 'fcps_ophthal_part1'     : 'ophthalmology';
+  else if(_k.startsWith('oph_p2'))   _need = _famIsFCPS ? ['fcps_ophthal_part1','fcps_ophthalmology_part1'] : 'ophthalmology';
   else if(_k.startsWith('radio_p2')) _need = _famIsFCPS ? 'fcps_radiology_part1'   : 'radiology';
   else if(_k.startsWith('med_p2'))   _need = _famIsFCPS ? 'fcps_medicine_part1'    : 'medicine';
   else if(_k.startsWith('p2_'))      _need = _famIsFCPS ? 'fcps_medicine_part1'    : 'medicine';
@@ -10490,8 +10490,9 @@ function promptResumeOrFresh(key, subjList, dataLoader, openFn){
     openCodeModal(null); return;
   }
   // Tier-specific check
-  if(_need !== null && _eff !== _need){
-    openCodeModal(null); return;
+  if(_need !== null){
+    const _ok = Array.isArray(_need) ? _need.indexOf(_eff) !== -1 : _eff === _need;
+    if(!_ok){ openCodeModal(null); return; }
   }
   // ─── End tier gate ──────────────────────────────────────────────────
   const lastPage = getStudyLastPage(key);
