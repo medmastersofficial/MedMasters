@@ -1148,7 +1148,7 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
   <div class="nav-links">
     <a onclick="showPage('home')">Home</a>
     <a onclick="openJCAT()">JCAT</a>
-    <a onclick="openFCPS()">FCPS</a>
+    <a href="/fcps-part-1/">FCPS</a>
     <a onclick="showLockedModal('USMLE')">USMLE</a>
     <a onclick="showLockedModal('PLAB')">PLAB</a>
     <a onclick="showLockedModal('AMC')">AMC</a>
@@ -1504,7 +1504,7 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
       <div class="f-col">
         <h4>Exam Banks</h4>
         <a onclick="openJCAT()">JCAT MCQ Bank ●</a>
-        <a onclick="openFCPS()">FCPS Part 1</a>
+        <a href="/fcps-part-1/">FCPS Part 1</a>
         <a onclick="showLockedModal('USMLE')">USMLE</a>
         <a onclick="showLockedModal('PLAB')">PLAB</a>
         <a onclick="showLockedModal('AMC')">AMC</a>
@@ -4574,18 +4574,17 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
   <div class="modal">
     <button class="modal-close" onclick="closeModal('code-modal')">✕</button>
     <img class="modal-logo-img" id="modal-logo-img" src="" alt="MedMasters">
-    <h2>Unlock Full Access</h2>
-    <p>Enter your registered email &amp; access code, or get one in seconds via WhatsApp.</p>
+    <h2>Enter Access Code</h2>
+    <p>Enter your registered email and access code to unlock your MCQ bank.</p>
     <input class="code-input" id="email-input" type="email" placeholder="Your email address" style="letter-spacing:0;font-size:14px;font-weight:500;margin-bottom:10px;" onkeydown="if(event.key==='Enter')verifyCode()">
     <input class="code-input" id="code-input" type="text" placeholder="MM-2026-XXXX" maxlength="14" oninput="fmtCode(this)" onkeydown="if(event.key==='Enter')verifyCode()">
     <div class="code-error" id="code-err"></div>
     <button class="btn-verify" onclick="verifyCode()">Unlock Access →</button>
     <div style="margin-top:18px;padding-top:16px;border-top:1px solid var(--border);text-align:center;">
-      <p style="font-size:12px;color:var(--text);margin-bottom:8px;">New to MedMasters?</p>
-      <a href="https://wa.me/923019339553?text=Hi!%20I%20want%20to%20subscribe%20to%20MedMasters.%20Please%20guide%20me." target="_blank" style="display:inline-flex;align-items:center;justify-content:center;gap:6px;background:#128C7E;color:white;padding:11px 18px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;line-height:1.2;white-space:nowrap;transition:all 0.2s;" onmouseover="this.style.background='#0e7b6e'" onmouseout="this.style.background='#128C7E'">
-        Subscribe via&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="18" height="18" style="flex-shrink:0;display:inline-block;vertical-align:middle;"><path fill="#25D366" d="M16 .395C7.164.395 0 7.559 0 16.395c0 2.872.756 5.667 2.193 8.13L.057 32l7.711-2.083a16.005 16.005 0 0 0 8.232 2.265h.007C24.84 32.182 32 25.018 32 16.182 32 7.559 24.836.395 16 .395zm0 28.85h-.005a13.27 13.27 0 0 1-6.764-1.853l-.485-.288-5.026 1.358 1.343-4.93-.317-.504a13.297 13.297 0 0 1-2.04-7.105c.002-7.342 5.974-13.314 13.32-13.314 3.557 0 6.9 1.387 9.413 3.903a13.227 13.227 0 0 1 3.896 9.418c-.005 7.342-5.977 13.315-13.335 13.315zm7.31-9.97c-.4-.2-2.37-1.17-2.74-1.305-.367-.133-.635-.2-.902.2-.267.4-1.035 1.305-1.27 1.572-.234.267-.467.3-.867.1-.4-.2-1.69-.624-3.22-1.987-1.19-1.06-1.995-2.37-2.228-2.77-.234-.4-.025-.616.175-.815.18-.18.4-.467.6-.7.2-.234.267-.4.4-.667.133-.267.067-.5-.033-.7-.1-.2-.9-2.17-1.233-2.97-.325-.78-.654-.674-.9-.687a16.13 16.13 0 0 0-.767-.013c-.267 0-.7.1-1.067.5-.367.4-1.4 1.367-1.4 3.337 0 1.97 1.435 3.873 1.635 4.14.2.267 2.823 4.314 6.842 6.05.957.413 1.703.66 2.285.846.96.305 1.834.262 2.524.16.77-.115 2.37-.97 2.703-1.905.335-.935.335-1.737.234-1.905-.1-.167-.367-.267-.767-.467z"/></svg>&nbsp;: +92301 9339553
+      <p style="font-size:12px;color:var(--text);margin-bottom:8px;">Need a code?</p>
+      <a href="https://wa.me/923019339553?text=Hi!%20I%20want%20to%20purchase%20a%20MedMasters%20access%20code." target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#128C7E;color:white;padding:11px 22px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;transition:all 0.2s;" onmouseover="this.style.background='#0e7b6e'" onmouseout="this.style.background='#128C7E'">
+        💬 WhatsApp: +92301 9339553
       </a>
-      <p style="font-size:11px;color:var(--text-mid);margin-top:12px;margin-bottom:0;font-style:italic;">Trusted by 27,000+ doctors across Pakistan</p>
     </div>
   </div>
 </div>
@@ -5009,21 +5008,21 @@ const HASH_MAP = {
   '#paper2':   ()=>{ if(S.auth){ loadP2MCQData(); _showPage('p2-subjects'); } else _showPage('home'); },
   '#surgpaper2':()=>{ if(S.auth){ loadSurgP2MCQData(); _showPage('surg-p2-subjects'); } else _showPage('home'); },
   '#psychpaper2':()=>{ if(S.auth){ loadPsychP2MCQData(); _showPage('psych-p2-subjects'); } else _showPage('home'); },
-  '#medpink':    ()=>{ openMedPinkHub(); },
-  '#medpink-1819':()=>{ if(S.auth && hasMedPinkAccess()){ openMedPinkBatch('medpink_18_19'); } else { openMedPinkHub(); showMedPinkUpsell(); } },
-  '#medpink-1417':()=>{ if(S.auth && hasMedPinkAccess()){ openMedPinkBatch('medpink_14_17'); } else { openMedPinkHub(); showMedPinkUpsell(); } },
-  '#medpink-913': ()=>{ if(S.auth && hasMedPinkAccess()){ openMedPinkBatch('medpink_9_13'); } else { openMedPinkHub(); showMedPinkUpsell(); } },
-  '#medpink-58':  ()=>{ if(S.auth && hasMedPinkAccess()){ openMedPinkBatch('medpink_5_8'); } else { openMedPinkHub(); showMedPinkUpsell(); } },
-  '#medpink-14':  ()=>{ if(S.auth && hasMedPinkAccess()){ openMedPinkBatch('medpink_1_4'); } else { openMedPinkHub(); showMedPinkUpsell(); } },
-  '#medgolden':            ()=>{ openMedGoldenHub(); },
-  '#medgolden-1-6':        ()=>{ if(S.auth&&hasMedGoldenAccess()){ openMedGoldenBatch('radio_golden_1_6'); } else { openMedGoldenHub(); showMedGoldenUpsell(); } },
-  '#medgolden-7-12':       ()=>{ if(S.auth&&hasMedGoldenAccess()){ openMedGoldenBatch('radio_golden_7_12'); } else { openMedGoldenHub(); showMedGoldenUpsell(); } },
-  '#medgolden-13-18':      ()=>{ if(S.auth&&hasMedGoldenAccess()){ openMedGoldenBatch('radio_golden_13_18'); } else { openMedGoldenHub(); showMedGoldenUpsell(); } },
-  '#medgolden-19-23':      ()=>{ if(S.auth&&hasMedGoldenAccess()){ openMedGoldenBatch('radio_golden_19_23'); } else { openMedGoldenHub(); showMedGoldenUpsell(); } },
-  '#medgolden-24':         ()=>{ openMedGoldenHub(); MEDGOLDEN_EXPANDED['radio_golden_24']=true; renderMedGoldenBatches(); if(!(S.auth&&hasMedGoldenAccess())) showMedGoldenUpsell(); },
-  '#medgolden-2025':       ()=>{ openMedGoldenHub(); MEDGOLDEN_EXPANDED['radio_golden_2025']=true; renderMedGoldenBatches(); if(!(S.auth&&hasMedGoldenAccess())) showMedGoldenUpsell(); },
-  '#medgolden-2026':       ()=>{ openMedGoldenHub(); MEDGOLDEN_EXPANDED['radio_golden_2026']=true; renderMedGoldenBatches(); if(!(S.auth&&hasMedGoldenAccess())) showMedGoldenUpsell(); },
-  '#medgolden-practice':   ()=>{ if(S.auth&&hasMedGoldenAccess()){ openMedGoldenPractice(); } else { openMedGoldenHub(); showMedGoldenUpsell(); } },
+  '#medpink':    ()=>{ if(S.auth && hasMedPinkAccess()){ openMedPinkHub(); } else { showLockedModal('MedPink Files'); } },
+  '#medpink-1819':()=>{ if(S.auth && hasMedPinkAccess()){ openMedPinkBatch('medpink_18_19'); } else { showLockedModal('MedPink Files'); } },
+  '#medpink-1417':()=>{ if(S.auth && hasMedPinkAccess()){ openMedPinkBatch('medpink_14_17'); } else { showLockedModal('MedPink Files'); } },
+  '#medpink-913': ()=>{ if(S.auth && hasMedPinkAccess()){ openMedPinkBatch('medpink_9_13'); } else { showLockedModal('MedPink Files'); } },
+  '#medpink-58':  ()=>{ if(S.auth && hasMedPinkAccess()){ openMedPinkBatch('medpink_5_8'); } else { showLockedModal('MedPink Files'); } },
+  '#medpink-14':  ()=>{ if(S.auth && hasMedPinkAccess()){ openMedPinkBatch('medpink_1_4'); } else { showLockedModal('MedPink Files'); } },
+  '#medgolden':            ()=>{ if(S.auth&&hasMedGoldenAccess()){ openMedGoldenHub(); } else { showLockedModal('MedGolden for Radiology'); } },
+  '#medgolden-1-6':        ()=>{ if(S.auth&&hasMedGoldenAccess()){ openMedGoldenBatch('radio_golden_1_6'); } else { showLockedModal('MedGolden for Radiology'); } },
+  '#medgolden-7-12':       ()=>{ if(S.auth&&hasMedGoldenAccess()){ openMedGoldenBatch('radio_golden_7_12'); } else { showLockedModal('MedGolden for Radiology'); } },
+  '#medgolden-13-18':      ()=>{ if(S.auth&&hasMedGoldenAccess()){ openMedGoldenBatch('radio_golden_13_18'); } else { showLockedModal('MedGolden for Radiology'); } },
+  '#medgolden-19-23':      ()=>{ if(S.auth&&hasMedGoldenAccess()){ openMedGoldenBatch('radio_golden_19_23'); } else { showLockedModal('MedGolden for Radiology'); } },
+  '#medgolden-24':         ()=>{ if(S.auth&&hasMedGoldenAccess()){ openMedGoldenHub(); MEDGOLDEN_EXPANDED['radio_golden_24']=true; renderMedGoldenBatches(); } else { showLockedModal('MedGolden for Radiology'); } },
+  '#medgolden-2025':       ()=>{ if(S.auth&&hasMedGoldenAccess()){ openMedGoldenHub(); MEDGOLDEN_EXPANDED['radio_golden_2025']=true; renderMedGoldenBatches(); } else { showLockedModal('MedGolden for Radiology'); } },
+  '#medgolden-2026':       ()=>{ if(S.auth&&hasMedGoldenAccess()){ openMedGoldenHub(); MEDGOLDEN_EXPANDED['radio_golden_2026']=true; renderMedGoldenBatches(); } else { showLockedModal('MedGolden for Radiology'); } },
+  '#medgolden-practice':   ()=>{ if(S.auth&&hasMedGoldenAccess()){ openMedGoldenPractice(); } else { showLockedModal('MedGolden for Radiology'); } },
   '#surgp2practice':()=>{ if(S.auth){ openSurgP2Practice(); } else _showPage('home'); },
   '#dashboard':()=>{ if(S.auth){ _showPage('dashboard'); mergeFromCloud().then(()=>loadDashboard()); } else _showPage('home'); },
   '#install':  ()=>{ _showPage('home'); setTimeout(()=>handleInstallClick(),400); },
@@ -5128,15 +5127,6 @@ const META_MAP = {
   '#medpink-913':   {title:"🌸 MedPink 9-13 — FCPS Gynae Past Papers Sep 2019–Dec 2021 | MedMasters",     desc:"1,515 solved FCPS Part 1 Gynaecology & Obstetrics MCQs from September 2019 to December 2021. Year-wise past papers with detailed explanations on MedMasters.", img:"https://www.medmasters.academy/og-image.png"},
   '#medpink-58':    {title:"🌸 MedPink 5-8 — FCPS Gynae Past Papers Sep 2017–Apr 2019 | MedMasters",      desc:"830 solved FCPS Part 1 Gynaecology & Obstetrics MCQs from September 2017 to April 2019. Year-wise past papers with full explanations on MedMasters.",   img:"https://www.medmasters.academy/og-image.png"},
   '#medpink-14':    {title:"🌸 MedPink 1-4 — FCPS Gynae Past Papers Feb 2014–Jul 2017 | MedMasters",      desc:"1,430 solved FCPS Part 1 Gynaecology & Obstetrics MCQs from February 2014 to July 2017. Year-wise past papers with detailed explanations on MedMasters.", img:"https://www.medmasters.academy/og-image.png"},
-  '#medgolden':           {title:"🏅 MedGolden for Radiology — FCPS Part 1 Diagnostic Radiology Past Papers | MedMasters", desc:"6,290 recall-based MCQs across 24+ batches plus 2025 and 2026 sessions, compiled from FCPS Part 1 Diagnostic Radiology candidate recalls. Equally beneficial for JCAT MS Diagnostic Radiology candidates.", img:"https://www.medmasters.academy/og-image.png"},
-  '#medgolden-1-6':       {title:"🏅 MedGolden 1–6 — FCPS Radiology Recall MCQs | MedMasters",           desc:"Recall-based MCQs from FCPS Part 1 Diagnostic Radiology past papers, Batches 1 to 6, with full explanations.",  img:"https://www.medmasters.academy/og-image.png"},
-  '#medgolden-7-12':      {title:"🏅 MedGolden 7–12 — FCPS Radiology Recall MCQs | MedMasters",          desc:"Recall-based MCQs from FCPS Part 1 Diagnostic Radiology past papers, Batches 7 to 12, with full explanations.", img:"https://www.medmasters.academy/og-image.png"},
-  '#medgolden-13-18':     {title:"🏅 MedGolden 13–18 — FCPS Radiology Recall MCQs | MedMasters",         desc:"Recall-based MCQs from FCPS Part 1 Diagnostic Radiology past papers, Batches 13 to 18, with full explanations.",img:"https://www.medmasters.academy/og-image.png"},
-  '#medgolden-19-23':     {title:"🏅 MedGolden 19–23 — FCPS Radiology Recall MCQs | MedMasters",         desc:"Recall-based MCQs from FCPS Part 1 Diagnostic Radiology past papers, Batches 19 to 23, with full explanations.",img:"https://www.medmasters.academy/og-image.png"},
-  '#medgolden-24':        {title:"🏅 MedGolden 24 — FCPS Radiology Recall MCQs | MedMasters",            desc:"Recall-based MCQs from FCPS Part 1 Diagnostic Radiology past papers, Batch 24, with full explanations.",       img:"https://www.medmasters.academy/og-image.png"},
-  '#medgolden-2025':      {title:"🏅 MedGolden 2025 — FCPS Radiology Recall Papers | MedMasters",        desc:"Recall-based MCQs from the 2025 FCPS Part 1 Diagnostic Radiology sittings, with full explanations.",          img:"https://www.medmasters.academy/og-image.png"},
-  '#medgolden-2026':      {title:"🏅 MedGolden 2026 — FCPS Radiology Recall Papers | MedMasters",        desc:"Recall-based MCQs from the 2026 FCPS Part 1 Diagnostic Radiology sittings, with full explanations.",          img:"https://www.medmasters.academy/og-image.png"},
-  '#medgolden-practice':  {title:"🏅 MedGolden Practice — FCPS Radiology Mixed Practice | MedMasters",   desc:"Mixed practice mode for MedGolden for Radiology — randomised MCQs across all FCPS Part 1 Diagnostic Radiology recall batches.", img:"https://www.medmasters.academy/og-image.png"},
 };
 function _showPage(p){
   // Normalise — strip trailing '-page' if caller included it
@@ -5250,7 +5240,7 @@ function nav(action){
   document.getElementById('mobile-menu').classList.remove('open');
   if(action==='home'){ showPage('home'); setHash('#home'); }
   else if(action==='jcat-mobile'){ _showPage('jcat'); setHash('#jcat'); }
-  else if(action==='fcps-mobile'){ openFCPS(); }
+  else if(action==='fcps-mobile'){ window.location.href='/fcps-part-1/'; }
   else if(action==='usmle-mobile'){ setHash('#usmle'); _showPage('home'); setTimeout(()=>showLockedModal('USMLE'),150); }
   else if(action==='plab-mobile'){ setHash('#plab'); _showPage('home'); setTimeout(()=>showLockedModal('PLAB'),150); }
   else if(action==='amc-mobile'){ setHash('#amc'); _showPage('home'); setTimeout(()=>showLockedModal('AMC'),150); }
@@ -5276,7 +5266,6 @@ function _showMockUpgradeToast(){
   t._timer=setTimeout(()=>{ t.style.display='none'; },4000);
 }
 function openNTS(){
-  _browseContext = null;
   if(hasMockOnlyAccess()){
     _showPage('nts');
     setHash('#nts');
@@ -5312,7 +5301,6 @@ function _applyNTSLockedState(){
   });
 }
 function openCTS(){
-  _browseContext = null;
   _showPage('cts'); setHash('#cts');
 }
 function hasNTSAccess(){
@@ -5341,7 +5329,6 @@ function openCTSUnifiedPractice(){ openNTSUnifiedPractice(); }
 
 // MO/WMO generic wrappers — same MCQ bank, mo_wmo branding
 function openMOWMOPage(){
-  _browseContext = null;
   _showPage('mo-wmo'); setHash('#mo-wmo');
 }
 // Smart back navigation — routes to correct hub based on user's plan
@@ -7173,85 +7160,13 @@ function openCodeModal(subject){
   document.getElementById('code-input').value='';
   document.getElementById('code-err').textContent='';
   document.getElementById('code-input').className='code-input';
-  // Update the WhatsApp button's href so the pre-filled message reflects
-  // the exam/specialty the user is currently exploring. Generic fallback
-  // for home/nav-bar/hero triggers where no browse context is set.
-  try {
-    const _waBtn = document.querySelector('#code-modal a[href*="wa.me/923019339553"]');
-    if(_waBtn){
-      const _msg = _computeCodeModalWAMessage();
-      _waBtn.setAttribute('href','https://wa.me/923019339553?text='+encodeURIComponent(_msg));
-    }
-  } catch(e){}
   document.getElementById('code-modal').classList.add('open');
   setTimeout(()=>{ const e=document.getElementById('email-input'); if(e)e.focus(); },300);
-}
-
-// Computes the pre-filled WhatsApp message for the code-modal based on the
-// user's current browse context. Specific contexts → specific subscription
-// intent. Home/nav-bar/unknown → generic message.
-function _computeCodeModalWAMessage(){
-  // JCAT specialty (set by selectSpecialty)
-  if(typeof _browseContext === 'string' && _browseContext){
-    if(_browseContext.startsWith('jcat:')){
-      const jName = {
-        medicine:'Medicine & Allied', surgery:'Surgery & Allied',
-        gynaecology:'Gynae & Obs', psychiatry:'Psychiatry',
-        ent:'ENT', ophthalmology:'Ophthalmology',
-        radiology:'Diagnostic Radiology',
-        dentistry:'Dentistry', anesthesia:'Anesthesiology'
-      }[_browseContext.split(':')[1]];
-      if(jName) return 'Hi, I want to subscribe for JCAT '+jName+'.';
-    }
-    if(_browseContext.startsWith('fcps:')){
-      const fcpsName = (typeof FCPS_SPECIALTY_NAMES === 'object' && FCPS_SPECIALTY_NAMES[_browseContext.split(':')[1]]) || '';
-      if(fcpsName) return 'Hi, I want to subscribe for FCPS Part 1 '+fcpsName+'.';
-    }
-  }
-  // Hash-based detection for hub pages without _browseContext
-  const _h = (location.hash || '').toLowerCase();
-  if(_h === '#nts' || _h.startsWith('#nts-'))   return 'Hi, I want to subscribe for NTS MO/WMO.';
-  if(_h === '#cts' || _h.startsWith('#cts-'))   return 'Hi, I want to subscribe for CTS MO/WMO.';
-  if(_h === '#mo-wmo' || _h === '#mowmo')        return 'Hi, I want to subscribe for MO/WMO.';
-  if(_h === '#medpink' || _h.startsWith('#medpink-'))
-    return 'Hi, I want to subscribe for MedPink Files (FCPS Part 1 Gynae & Obs).';
-  if(_h === '#medgolden' || _h.startsWith('#medgolden-'))
-    return 'Hi, I want to subscribe for MedGolden for Radiology (FCPS Part 1 Diagnostic Radiology).';
-  // Generic fallback (home, nav-bar, hero CTA, unknown contexts)
-  return 'Hi, I want to subscribe to MedMasters. Please guide me.';
 }
 function closeModal(id){ document.getElementById(id).classList.remove('open'); }
 function showLockedModal(name){
   document.getElementById('locked-title').textContent=name+' — Coming Soon';
   document.getElementById('locked-desc').textContent=`${name} is currently being developed. Join our WhatsApp broadcast to be first when it launches.`;
-  document.getElementById('locked-modal').classList.add('open');
-}
-
-// ── MedPink / MedGolden upsell modals ──
-// Reuses the locked-modal but swaps the WhatsApp CTA text and removes the
-// "DashboardCo" wording. Used when a non-subscriber clicks a batch/session.
-function showMedPinkUpsell(){
-  const t=document.getElementById('locked-title');
-  const d=document.getElementById('locked-desc');
-  const a=document.querySelector('#locked-modal .btn-whatsapp');
-  if(t) t.textContent='🌸 MedPink Files — Locked';
-  if(d) d.textContent='MedPink Files (FCPS Part 1 Gynae & Obs past papers, 2014–2025) is included with the Gynae & Obs subscription. Get access via WhatsApp.';
-  if(a){
-    a.textContent='💬 Sub via WhatsApp: +92301 9339553';
-    a.setAttribute('href','https://wa.me/923019339553?text=Hi!%20I%20want%20to%20subscribe%20for%20MedPink%20Files%20(FCPS%20Part%201%20Gynae%20%26%20Obs).%20Please%20guide%20me.');
-  }
-  document.getElementById('locked-modal').classList.add('open');
-}
-function showMedGoldenUpsell(){
-  const t=document.getElementById('locked-title');
-  const d=document.getElementById('locked-desc');
-  const a=document.querySelector('#locked-modal .btn-whatsapp');
-  if(t) t.textContent='🏅 MedGolden for Radiology — Locked';
-  if(d) d.textContent='MedGolden for Radiology (FCPS Part 1 Diagnostic Radiology past papers) is included with the Radiology subscription. Get access via WhatsApp.';
-  if(a){
-    a.textContent='💬 Sub via WhatsApp: +92301 9339553';
-    a.setAttribute('href','https://wa.me/923019339553?text=Hi!%20I%20want%20to%20subscribe%20for%20MedGolden%20for%20Radiology%20(FCPS%20Part%201%20Diagnostic%20Radiology).%20Please%20guide%20me.');
-  }
   document.getElementById('locked-modal').classList.add('open');
 }
 function fmtCode(inp){
@@ -8585,9 +8500,15 @@ function injectMedPinkPaperCard(pageId, shouldShow){
 }
 
 function openMedGoldenFromPaperPage(){
-  // Non-subs are allowed to enter the hub (view-only). Upsell modal fires
-  // when they actually click a batch/session card inside the hub.
-  openMedGoldenHub();
+  if(S.auth && hasMedGoldenAccess()){ openMedGoldenHub(); return; }
+  const modal=document.getElementById('locked-modal');
+  if(modal){
+    const t=document.getElementById('locked-title');
+    const d=document.getElementById('locked-desc');
+    if(t) t.textContent='🏅 MedGolden for Radiology — Locked';
+    if(d) d.textContent='MedGolden for Radiology (FCPS Part 1 Diagnostic Radiology past papers) is included with the Radiology subscription. Get access via WhatsApp.';
+    modal.classList.add('open');
+  } else { showLockedModal('MedGolden for Radiology'); }
 }
 
 function injectMedGoldenPaperCard(pageId, shouldShow){
@@ -8614,9 +8535,18 @@ function injectMedGoldenPaperCard(pageId, shouldShow){
 }
 
 function openMedPinkFromPaperPage(){
-  // Non-subs are allowed to enter the hub (view-only). Upsell modal fires
-  // when they actually click a batch card inside the hub.
-  openMedPinkHub();
+  if(S.auth && hasMedPinkAccess()){ openMedPinkHub(); return; }
+  // Non-subscriber or wrong specialty subscription → locked modal
+  const modal=document.getElementById('locked-modal');
+  if(modal){
+    const t=document.getElementById('locked-title');
+    const d=document.getElementById('locked-desc');
+    if(t) t.textContent='🌸 MedPink Files — Locked';
+    if(d) d.textContent='MedPink Files (FCPS Part 1 Gynae & Obs past papers, 2014–2025) is included with the Gynae & Obs DashboardCo subscription. Get access via WhatsApp.';
+    modal.classList.add('open');
+  } else {
+    showLockedModal('MedPink Files');
+  }
 }
 
 function selectSpecialty(subj){
@@ -9934,8 +9864,8 @@ async function loadMedGoldenBatchData(key){
 }
 
 function openMedGoldenHub(){
-  // Non-subscribers can view the hub. Upsell fires at batch/session click.
-  _browseContext = null;
+  if(!S.auth){ openCodeModal(null); return; }
+  if(!hasMedGoldenAccess()){ showLockedModal('MedGolden for Radiology'); return; }
   renderMedGoldenBatches();
   _showPage('medgolden-hub'); setHash('#medgolden');
 }
@@ -10003,7 +9933,8 @@ function toggleMedGoldenGroup(key){
 }
 
 function openMedGoldenBatch(key){
-  if(!S.auth || !hasMedGoldenAccess()){ showMedGoldenUpsell(); return; }
+  if(!S.auth){ openCodeModal(null); return; }
+  if(!hasMedGoldenAccess()){ showLockedModal('MedGolden for Radiology'); return; }
   // Find in both top-level and session arrays
   let b=MEDGOLDEN_BATCHES.find(x=>x.key===key);
   if(!b){
@@ -10042,7 +9973,8 @@ async function _doOpenMedGoldenBatch(key, startPage){
 const MEDGOLDEN_PR={key:null,count:0};
 
 function openMedGoldenPractice(){
-  if(!S.auth || !hasMedGoldenAccess()){ showMedGoldenUpsell(); return; }
+  if(!S.auth){ openCodeModal(null); return; }
+  if(!hasMedGoldenAccess()){ showLockedModal('MedGolden for Radiology'); return; }
   MEDGOLDEN_PR.key=null; MEDGOLDEN_PR.count=0;
   renderMedGoldenPracBatches();
   _showPage('medgolden-prac-setup'); setHash('#medgolden-practice');
@@ -10115,8 +10047,8 @@ async function loadMedPinkBatchData(key){
 }
 
 function openMedPinkHub(){
-  // Non-subscribers can view the hub. Upsell fires at batch click.
-  _browseContext = null;
+  if(!S.auth){ openCodeModal(null); return; }
+  if(!hasMedPinkAccess()){ showLockedModal('MedPink Files'); return; }
   renderMedPinkBatches();
   _showPage('medpink-hub'); setHash('#medpink');
 }
@@ -10146,7 +10078,8 @@ function renderMedPinkBatches(){
 }
 
 function openMedPinkBatch(key){
-  if(!S.auth || !hasMedPinkAccess()){ showMedPinkUpsell(); return; }
+  if(!S.auth){ openCodeModal(null); return; }
+  if(!hasMedPinkAccess()){ showLockedModal('MedPink Files'); return; }
   const b=MEDPINK_BATCHES.find(x=>x.key===key);
   if(!b) return;
   promptResumeOrFresh(key, MEDPINK_BATCHES, loadMedPinkBatchData, _doOpenMedPinkBatch);
@@ -10529,7 +10462,7 @@ function promptResumeOrFresh(key, subjList, dataLoader, openFn){
   else if(_k.startsWith('gynae_p2')) _need = _famIsFCPS ? 'fcps_gynaecology_part1' : 'gynaecology';
   else if(_k.startsWith('psych_p2')) _need = _famIsFCPS ? 'fcps_psychiatry_part1'  : 'psychiatry';
   else if(_k.startsWith('ent_p2'))   _need = _famIsFCPS ? 'fcps_ent_part1'         : 'ent';
-  else if(_k.startsWith('oph_p2'))   _need = _famIsFCPS ? ['fcps_ophthal_part1','fcps_ophthalmology_part1'] : 'ophthalmology';
+  else if(_k.startsWith('oph_p2'))   _need = _famIsFCPS ? 'fcps_ophthal_part1'     : 'ophthalmology';
   else if(_k.startsWith('radio_p2')) _need = _famIsFCPS ? 'fcps_radiology_part1'   : 'radiology';
   else if(_k.startsWith('med_p2'))   _need = _famIsFCPS ? 'fcps_medicine_part1'    : 'medicine';
   else if(_k.startsWith('p2_'))      _need = _famIsFCPS ? 'fcps_medicine_part1'    : 'medicine';
@@ -10556,10 +10489,9 @@ function promptResumeOrFresh(key, subjList, dataLoader, openFn){
   if((_famIsJCAT && _subIsFCPS) || (_famIsFCPS && !_subIsFCPS)){
     openCodeModal(null); return;
   }
-  // Tier-specific check. _need may be a string (single tier) or array (multiple acceptable variants).
-  if(_need !== null){
-    const _ok = Array.isArray(_need) ? _need.indexOf(_eff) !== -1 : _eff === _need;
-    if(!_ok){ openCodeModal(null); return; }
+  // Tier-specific check
+  if(_need !== null && _eff !== _need){
+    openCodeModal(null); return;
   }
   // ─── End tier gate ──────────────────────────────────────────────────
   const lastPage = getStudyLastPage(key);
