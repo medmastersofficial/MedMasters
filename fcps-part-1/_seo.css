@@ -34,13 +34,19 @@ img{max-width:100%;height:auto;}
   background:rgba(10,12,16,.96); backdrop-filter:blur(10px);
   border-bottom:1px solid var(--border-soft);
   padding:14px 24px;
+  padding-top:calc(14px + env(safe-area-inset-top));
+  padding-left:calc(24px + env(safe-area-inset-left));
+  padding-right:calc(24px + env(safe-area-inset-right));
   display:flex; align-items:center; justify-content:space-between;
 }
 .seo-nav-logo{
   display:flex; align-items:center; gap:10px;
   font-weight:800; font-size:18px; color:var(--white);
 }
-.seo-nav-logo img{width:34px; height:34px; border-radius:50%;}
+.seo-nav-logo img{
+  width:34px; height:34px; border-radius:50%;
+  background:#0A0C10; object-fit:cover;
+}
 .seo-nav-logo span b{color:var(--gold);}
 .seo-nav-links{display:flex; gap:20px; align-items:center;}
 .seo-nav-links a{
@@ -55,7 +61,7 @@ img{max-width:100%;height:auto;}
 .seo-nav-cta:hover{filter:brightness(1.1);}
 @media(max-width:640px){
   .seo-nav-links a:not(.seo-nav-cta){display:none;}
-  .seo-nav{padding:12px 16px;}
+  .seo-nav{padding:12px 16px; padding-top:calc(12px + env(safe-area-inset-top));}
 }
 
 /* ── BREADCRUMBS ── */
