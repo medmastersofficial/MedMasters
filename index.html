@@ -10441,13 +10441,11 @@ function promptResumeOrFresh(key, subjList, dataLoader, openFn){
     const _h = (location.hash || '').toLowerCase();
     if(_h === '#fcps'){
       _famIsFCPS = true; _famIsJCAT = false;
-    } else if(_h === '#paper' || _h === '#paper1' || _h === '#paper2'){
-      // Strictly JCAT hashes
-      _famIsFCPS = false; _famIsJCAT = true;
-    } else if(_h === '#surgpaper2' || _h === '#psychpaper2' || _h === '#gynaepaper2'
-           || _h === '#entpaper2'  || _h === '#ophpaper2'   || _h === '#radiopaper2'){
-      // SHARED P2 hashes (used by both JCAT and FCPS).
-      // Infer from subscriber's tier.
+    } else if(_h === '#paper'       || _h === '#paper1'     || _h === '#paper2'
+           || _h === '#surgpaper2'  || _h === '#psychpaper2'|| _h === '#gynaepaper2'
+           || _h === '#entpaper2'   || _h === '#ophpaper2'  || _h === '#radiopaper2'){
+      // SHARED hashes (used by both JCAT and FCPS Medicine/specialty flows).
+      // Infer family from subscriber's own tier.
       _famIsFCPS = _eff.startsWith('fcps_');
       _famIsJCAT = !_famIsFCPS;
     } else {
