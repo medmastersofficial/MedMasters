@@ -1825,14 +1825,14 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
     <button class="share-btn" id="share-mo-wmo" onclick="shareLink('#mo-wmo','share-mo-wmo')">🔗 Share</button>
   </div>
   <div class="subjects-grid">
+    <div class="subj-card" onclick="openMOWMOEnglish()">
+      <div class="subj-icon">✍️</div>
+      <div><div class="subj-name">English</div><div class="subj-meta">20 marks for FPSC MO/WMO</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
     <div class="subj-card" onclick="selectMOWMOCategory('nts_basic')">
       <div class="subj-icon">🔬</div>
       <div><div class="subj-name">Basic Sciences</div><div class="subj-meta">Anatomy, Physio, Pharma, Biochem, Patho, Micro &amp; more</div></div>
-      <div class="subj-arrow">›</div>
-    </div>
-    <div class="subj-card" onclick="openMOWMOVAQ()">
-      <div class="subj-icon">🧠</div>
-      <div><div class="subj-name">Verbal, Analytical &amp; Quantitative</div><div class="subj-meta">500 MCQs · Reasoning &amp; Aptitude</div></div>
       <div class="subj-arrow">›</div>
     </div>
     <div class="subj-card" onclick="selectMOWMOCategory('nts_medicine')">
@@ -1870,9 +1870,47 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
       <div><div class="subj-name">Edition 3 · 6001–7000</div><div class="subj-meta">All Topics</div></div>
       <div class="subj-arrow">›</div>
     </div>
+    <div class="subj-card" onclick="openMOWMOVAQ()">
+      <div class="subj-icon">🧠</div>
+      <div><div class="subj-name">Verbal, Analytical &amp; Quantitative</div><div class="subj-meta">500 MCQs · Reasoning &amp; Aptitude</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
     <div class="subj-card" onclick="openMOWMOUnifiedPractice()" style="border-color:rgba(201,168,76,0.3);">
       <div class="subj-icon">⚡</div>
       <div><div class="subj-name">Practice &amp; Assess</div><div class="subj-meta">All Categories · Timed · Scored · Mixed</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ MO/WMO ENGLISH PAGE ══════════════ -->
+<div id="mo-wmo-english-page" class="page">
+  <div class="page-header">
+    <button class="back-btn" onclick="_showPage('mo-wmo-page');setHash('#mo-wmo');">← MO/WMO</button>
+    <div>
+      <div class="ph-title">✍️ English</div>
+      <div class="ph-sub">20 Marks for FPSC MO/WMO</div>
+    </div>
+    <button class="share-btn" id="share-mo-wmo-english" onclick="shareLink('#mo-wmo-english','share-mo-wmo-english')">🔗 Share</button>
+  </div>
+  <div class="p1-cta" style="margin:16px 16px 0;">
+    <div class="p1-cta-title">1,500 MCQs · 3 Subjects</div>
+    <div class="p1-cta-sub">Aligned to the FPSC MO/WMO English paper. Select a subject below to start studying.</div>
+  </div>
+  <div class="subjects-grid" style="margin-top:12px;">
+    <div class="subj-card" onclick="openMOWMOEnglishSubject('vocabulary')">
+      <div class="subj-icon">📖</div>
+      <div><div class="subj-name">Vocabulary</div><div class="subj-meta">500 MCQs · Synonyms, Antonyms &amp; Word Usage</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+    <div class="subj-card" onclick="openMOWMOEnglishSubject('grammar')">
+      <div class="subj-icon">🔤</div>
+      <div><div class="subj-name">Grammar Usage</div><div class="subj-meta">500 MCQs · Tenses, Articles, Prepositions &amp; more</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+    <div class="subj-card" onclick="openMOWMOEnglishSubject('sentence')">
+      <div class="subj-icon">🧩</div>
+      <div><div class="subj-name">Sentence Structuring</div><div class="subj-meta">500 MCQs · Sentence Correction &amp; Construction</div></div>
       <div class="subj-arrow">›</div>
     </div>
   </div>
@@ -5068,6 +5106,7 @@ const HASH_MAP = {
   '#pricing-cts':  ()=>_showPage('pricing-cts'),
   '#pricing-mo-wmo': ()=>_showPage('pricing-mo-wmo'),
   '#mo-wmo':       ()=>_showPage('mo-wmo'),
+  '#mo-wmo-english': ()=>{ if(S.auth&&hasMOWMOAccess()){ _showPage('mo-wmo-english'); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
   '#nts-basic':    ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())&&!hasMockOnlyAccess()){ _showPage('nts-basic'); } else if(hasMockOnlyAccess()){ openNTSMockHub(); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
   '#nts-medicine': ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ _showPage('nts-medicine'); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
   '#nts-surgery':  ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ _showPage('nts-surgery'); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
@@ -5353,6 +5392,18 @@ function selectMOWMOCategory(cat){
 function openMOWMOVAQ(){
   if(!S.auth||!hasMOWMOAccess()){ openCodeModal('nts'); return; }
   openNTSVAQ();
+}
+function openMOWMOEnglish(){
+  if(!S.auth||!hasMOWMOAccess()){ openCodeModal('nts'); return; }
+  _showPage('mo-wmo-english-page');
+  setHash('#mo-wmo-english');
+}
+function openMOWMOEnglishSubject(key){
+  if(!S.auth||!hasMOWMOAccess()){ openCodeModal('nts'); return; }
+  // MCQ banks for English subjects are being finalised — show friendly notice for now.
+  const _names = {vocabulary:'Vocabulary', grammar:'Grammar Usage', sentence:'Sentence Structuring'};
+  const _label = _names[key] || 'English';
+  alert(_label + ' MCQs are being finalised and will be unlocked shortly. Stay tuned.');
 }
 function openMOWMOPsychiatry(){
   if(!S.auth||!hasMOWMOAccess()){ openCodeModal('nts'); return; }
