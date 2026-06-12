@@ -5400,10 +5400,82 @@ function openMOWMOEnglish(){
 }
 function openMOWMOEnglishSubject(key){
   if(!S.auth||!hasMOWMOAccess()){ openCodeModal('nts'); return; }
-  // MCQ banks for English subjects are being finalised — show friendly notice for now.
-  const _names = {vocabulary:'Vocabulary', grammar:'Grammar Usage', sentence:'Sentence Structuring'};
-  const _label = _names[key] || 'English';
-  alert(_label + ' MCQs are being finalised and will be unlocked shortly. Stay tuned.');
+  startMOWMOEnglishStudy(key);
+}
+// ── English MCQ data: config, loader, and study launcher ──
+const ENGLISH_CONFIG = {
+  vocabulary: {label:'Vocabulary',          file:'english_vocab',    varname:"window.MM&&window.MM['english_vocab']",    total:500},
+  grammar:    {label:'Grammar Usage',       file:'english_grammar',  varname:"window.MM&&window.MM['english_grammar']",  total:500},
+  sentence:   {label:'Sentence Structuring',file:'english_sentence', varname:"window.MM&&window.MM['english_sentence']", total:500}
+};
+const ENGLISH_DATA = {};
+const ENGLISH_LOADED = {};
+async function loadEnglishData(key){
+  const cfg = ENGLISH_CONFIG[key];
+  if(!cfg) return [];
+  if(ENGLISH_LOADED[key]) return ENGLISH_DATA[key] || [];
+  // 1. If already in window.MM (script already loaded earlier)
+  if(window.MM && window.MM[cfg.file] && window.MM[cfg.file].length){
+    ENGLISH_DATA[key] = window.MM[cfg.file];
+    ENGLISH_LOADED[key] = true;
+    return ENGLISH_DATA[key];
+  }
+  // 2. Inject <script> tag — file lives at repo root (/english_vocab.js etc.)
+  return new Promise(resolve=>{
+    const script = document.createElement('script');
+    script.src = '/' + cfg.file + '.js?v=' + Date.now();
+    script.onload = ()=>{
+      if(window.MM && window.MM[cfg.file]) ENGLISH_DATA[key] = window.MM[cfg.file];
+      ENGLISH_LOADED[key] = true;
+      resolve(ENGLISH_DATA[key] || []);
+    };
+    script.onerror = ()=>{ ENGLISH_LOADED[key] = true; resolve([]); };
+    document.head.appendChild(script);
+  });
+}
+async function startMOWMOEnglishStudy(key, startPage){
+  if(!hasMOWMOAccess()){ openCodeModal('nts'); return; }
+  const cfg = ENGLISH_CONFIG[key];
+  if(!cfg){ return; }
+  const subjKey = 'english_' + (key === 'vocabulary' ? 'vocab' : key === 'grammar' ? 'grammar' : 'sentence');
+
+  // Resume / fresh prompt
+  if(startPage === undefined){
+    const prog = getProgress();
+    const done = Object.keys(prog.answers).filter(k=>k.startsWith(subjKey+'_')).length;
+    const lastPg = getStudyLastPage(subjKey);
+    if(done > 0 || lastPg > 0){
+      const totalPgs = Math.ceil(cfg.total / 50);
+      document.getElementById('resume-modal-subject').textContent = cfg.label;
+      document.getElementById('resume-modal-progress').textContent =
+        done + ' MCQs answered · Last on page ' + (lastPg+1) + ' of ' + totalPgs;
+      _pendingStudyFn = { fn: startMOWMOEnglishStudy, key, page: lastPg };
+      document.getElementById('resume-modal').classList.add('open');
+      return;
+    }
+    startPage = 0;
+  }
+
+  document.getElementById('study-subj-tag').textContent = cfg.label.toUpperCase();
+  _showPage('study'); setHash('#study');
+  document.getElementById('study-batch-container').innerHTML = '<div style="padding:40px;text-align:center;color:var(--text);">Loading MCQs…</div>';
+  const data = await loadEnglishData(key);
+  if(!data || !data.length){
+    document.getElementById('study-batch-container').innerHTML = '<div style="padding:40px;text-align:center;color:#888;">Could not load MCQs. Please refresh and try again.</div>';
+    return;
+  }
+  ST.subj = subjKey; ST.pageAnswered = {};
+  ST.qs = data.map((m,i)=>convertMCQ(m,i));
+  ST.pageSize = calcPageSize(ST.qs.slice(0,20));
+  const maxPage = Math.max(0, Math.ceil(ST.qs.length/ST.pageSize)-1);
+  ST.page = Math.min(startPage || 0, maxPage);
+  renderStudyPage();
+}
+function startMOWMOEnglishFresh(key){
+  if(!hasMOWMOAccess()){ openCodeModal('nts'); return; }
+  const subjKey = 'english_' + (key === 'vocabulary' ? 'vocab' : key === 'grammar' ? 'grammar' : 'sentence');
+  try{ localStorage.removeItem('mm_lp_'+(S.code||'x')+'_'+subjKey); }catch(e){}
+  startMOWMOEnglishStudy(key, 0);
 }
 function openMOWMOPsychiatry(){
   if(!S.auth||!hasMOWMOAccess()){ openCodeModal('nts'); return; }
@@ -7594,8 +7666,8 @@ function loadDashboard(){
     const accCard=document.getElementById('dash-accuracy-card');
     if(accCard){ accCard.style.cursor='pointer'; accCard.setAttribute('onclick','_showMockUpgradeToast()'); }
   } else if(isNTS||isCTS||isMOWMO){
-    // NTS=23033, CTS=25948, MO/WMO=25948 (same expanded basic sciences)
-    const NTS_TOTAL = (isCTS||isMOWMO) ? 25948 : 23033;
+    // NTS=23033, CTS=25948, MO/WMO=27448 (CTS basic sciences + 1,500 English MCQs)
+    const NTS_TOTAL = isMOWMO ? 27448 : (isCTS ? 25948 : 23033);
     setRing('ring-studied', Math.min(done/NTS_TOTAL,1));
     document.getElementById('dash-total-done').textContent=done>=1000?(done/1000).toFixed(1)+'k':done.toLocaleString();
     document.getElementById('dash-studied-total').textContent='/'+NTS_TOTAL.toLocaleString();
@@ -8038,6 +8110,9 @@ function renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWM
     const basicSubjects = (isCTS||isMOWMO) ? CTS_BASIC_SUBJECTS : NTS_BASIC_SUBJECTS;
     const basicTotal = (isCTS||isMOWMO) ? 7100 : 4185;
     const NTS_DASH_CATS = [
+      // English category — shown ONLY for MO/WMO subscribers (FPSC MO/WMO syllabus)
+      ...(isMOWMO ? [{ label:'English', icon:'✍️', color:'linear-gradient(90deg,#16A085,#1ABC9C)',
+        keys: ['english_vocab','english_grammar','english_sentence'], total: 1500 }] : []),
       { label:'Basic Sciences',         icon:'🔬', color:'linear-gradient(90deg,var(--gold),var(--gold-bright))',
         keys: basicSubjects.map(s=>s.key), total: basicTotal },
       { label:'Verbal, Analytical & Quantitative', icon:'🧠', color:'linear-gradient(90deg,#9B59B6,#D7BDE2)',
