@@ -3999,6 +3999,33 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
   </div>
 </div>
 
+<!-- ══════════════ REVISION SPRINT PREVIOUS RESULT MODAL (NTS Mock style) ══════════════ -->
+<div class="modal-overlay" id="rs-prev-result-modal" style="z-index:1300;">
+  <div class="modal-box" style="max-width:380px;text-align:center;">
+    <div style="font-size:36px;margin-bottom:8px;">📊</div>
+    <div style="font-size:18px;font-weight:900;margin-bottom:4px;">Your Previous Result</div>
+    <div id="rs-prev-attempt-label" style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;"></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px;">
+      <div style="background:var(--card2);border:1px solid rgba(46,204,113,0.25);border-radius:10px;padding:12px;">
+        <div id="rs-prev-score" style="font-size:22px;font-weight:900;color:#2ECC71;">—</div>
+        <div style="font-size:10px;color:var(--text-mid);margin-top:2px;">Score</div>
+      </div>
+      <div style="background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:12px;">
+        <div id="rs-prev-pct" style="font-size:22px;font-weight:900;color:var(--gold);">—</div>
+        <div style="font-size:10px;color:var(--text-mid);margin-top:2px;">Percentage</div>
+      </div>
+      <div style="background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:12px;">
+        <div id="rs-prev-pctile" style="font-size:22px;font-weight:900;color:var(--gold);">—</div>
+        <div style="font-size:10px;color:var(--text-mid);margin-top:2px;">Percentile</div>
+      </div>
+    </div>
+    <div id="rs-prev-date" style="font-size:12px;color:var(--text);margin-bottom:18px;"></div>
+    <button id="rs-prev-view-btn" onclick="_rsViewPrevResults()" style="width:100%;padding:13px;background:linear-gradient(135deg,var(--gold),var(--gold-bright));color:#0A0C10;font-weight:800;font-size:14px;border:none;border-radius:10px;cursor:pointer;margin-bottom:10px;font-family:'Poppins',sans-serif;">📋 View Full Results &amp; Review</button>
+    <button id="rs-prev-reattempt-btn" onclick="_rsReAttempt()" style="width:100%;padding:12px;background:transparent;color:var(--red);font-weight:700;font-size:13px;border:1px solid rgba(231,76,60,0.35);border-radius:10px;cursor:pointer;margin-bottom:8px;font-family:'Poppins',sans-serif;">🔄 Re-attempt Sprint</button>
+    <div style="font-size:11px;color:var(--text);margin-top:4px;">Re-attempting will start a fresh exam. Previous score will be replaced.</div>
+  </div>
+</div>
+
 <!-- ══════════════ START CONFIRMATION MODAL FOR RS EXAM (NTS Mock style) ══════════════ -->
 <div class="modal-overlay" id="rs-confirm-modal" style="z-index:1300;">
   <div class="modal-box" style="max-width:380px;text-align:center;">
@@ -7340,6 +7367,57 @@ function openRS(n){
     openCodeModal(null);
     return;
   }
+  if(window._examActive){ _rsStartExam(n); return; }
+  const prev = _rsGetLatest(n);
+  if(prev && prev.submittedAt){ _rsShowPrevResultModal(n, prev); return; }
+  _rsStartExam(n);
+}
+
+function _rsGetLatest(n){ try{ return JSON.parse(localStorage.getItem('mm_rs'+n+'_latest_'+(S.code||'x'))||'null'); }catch(e){ return null; } }
+
+function _rsGetAttempts(n){ try{ return JSON.parse(localStorage.getItem('mm_rs'+n+'_attempts_'+(S.code||'x'))||'[]'); }catch(e){ return []; } }
+
+function _rsShowPrevResultModal(n, res){
+  const cfg = RS_CONFIG[n];
+  const attempts = _rsGetAttempts(n);
+  const attemptNum = res.attemptNum || attempts.length || 1;
+  document.getElementById('rs-prev-attempt-label').textContent = 'Attempt '+attemptNum;
+  const scoreCol = res.pct>=70?'#2ECC71':res.pct>=50?'var(--gold)':'var(--red)';
+  const scoreEl = document.getElementById('rs-prev-score');
+  if(scoreEl){ scoreEl.textContent = res.correct+' / '+res.total; scoreEl.style.color = scoreCol; }
+  const pctEl = document.getElementById('rs-prev-pct');
+  if(pctEl){ pctEl.textContent = res.pct+'%'; pctEl.style.color = scoreCol; }
+  // Percentile (same formula as result page)
+  const z = (res.pct - 65) / 10;
+  const pctile = Math.max(1, Math.min(99, Math.round(50 + (z * 34))));
+  const pctileEl = document.getElementById('rs-prev-pctile');
+  if(pctileEl){
+    if(res.pct >= 50){ const ord=function(p){ const s=p%100; if(s>=11&&s<=13) return p+'th'; const r=p%10; return p+(r===1?'st':r===2?'nd':r===3?'rd':'th'); }; pctileEl.textContent = ord(pctile); pctileEl.style.color='var(--gold)'; }
+    else { pctileEl.textContent = '—'; pctileEl.style.color='var(--text-mid)'; }
+  }
+  const d = new Date(res.submittedAt);
+  document.getElementById('rs-prev-date').textContent = 'Attempted: '+d.toLocaleDateString('en-PK',{day:'numeric',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'});
+  const reBtn = document.getElementById('rs-prev-reattempt-btn');
+  if(reBtn){ reBtn.textContent = '🔄 Re-attempt '+cfg.short; reBtn.setAttribute('onclick','_rsReAttempt('+n+')'); }
+  const viewBtn = document.getElementById('rs-prev-view-btn');
+  if(viewBtn) viewBtn.setAttribute('onclick','_rsViewPrevResults('+n+')');
+  window._pendingRSn = n;
+  document.getElementById('rs-prev-result-modal').classList.add('open');
+}
+
+function _rsViewPrevResults(n){
+  if(!n) n = window._pendingRSn;
+  closeModal('rs-prev-result-modal');
+  const attempts = _rsGetAttempts(n);
+  if(!attempts.length) return;
+  const last = attempts[attempts.length-1];
+  // Reconstruct result and route to result page using stored wrongList
+  _rsShowResult(n, {correct:last.correct, wrong:last.wrong, skipped:last.skipped, total:last.total, pct:last.pct, timeTaken:last.timeTaken, timeUp:last.timeUp, wrongList:last.wrongList||[]});
+}
+
+function _rsReAttempt(n){
+  if(!n) n = window._pendingRSn;
+  closeModal('rs-prev-result-modal');
   _rsStartExam(n);
 }
 
@@ -7675,8 +7753,13 @@ function _rsSubmitExam(timeUp){
   try {
     const key = 'mm_rs'+st.n+'_attempts_'+(S.code||'x');
     const attempts = JSON.parse(localStorage.getItem(key)||'[]');
-    attempts.push({correct:correct, wrong:wrong, skipped:skipped, total:total, pct:pct, timeTaken:timeTaken, timeUp:timeUp, at:Date.now()});
+    const attemptNum = attempts.length + 1;
+    const record = {correct:correct, wrong:wrong, skipped:skipped, total:total, pct:pct, timeTaken:timeTaken, timeUp:timeUp, at:Date.now(), submittedAt:Date.now(), attemptNum:attemptNum, wrongList:wrongList};
+    attempts.push(record);
     localStorage.setItem(key, JSON.stringify(attempts));
+    // Save "latest" snapshot for prev-result modal — without wrongList in latest to keep small (full snapshot still in attempts[])
+    const latest = {correct:correct, wrong:wrong, skipped:skipped, total:total, pct:pct, timeTaken:timeTaken, timeUp:timeUp, submittedAt:record.submittedAt, attemptNum:attemptNum};
+    localStorage.setItem('mm_rs'+st.n+'_latest_'+(S.code||'x'), JSON.stringify(latest));
   } catch(e){}
   // Show result page
   _rsShowResult(st.n, {correct:correct, wrong:wrong, skipped:skipped, total:total, pct:pct, timeTaken:timeTaken, timeUp:timeUp, wrongList:wrongList});
