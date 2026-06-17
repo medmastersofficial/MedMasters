@@ -3918,7 +3918,7 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
 <!-- ══════════════ DASHBOARD PAGE ══════════════ -->
 
 <!-- ══════════════ REVISION SPRINT EXAM PAGE (generic for all 10) ══════════════ -->
-<div id="revision-sprint-exam-page" class="page" oncopy="return false;" oncut="return false;" style="padding-top:68px;">
+<div id="revision-sprint-exam-page" class="page" oncopy="return false;" oncut="return false;" oncontextmenu="return false;" onselectstart="return false;" style="padding-top:68px;user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;">
   <div class="study-topbar">
     <div style="display:flex;align-items:center;gap:10px;">
       <button class="back-btn" onclick="_rsTryLeave()">✕ Exit</button>
@@ -3996,6 +3996,21 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
         <button class="btn-danger" onclick="_rsForceLeave()" style="padding:10px 22px;background:var(--red);color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;">Leave &amp; Submit</button>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- ══════════════ RS TAB-SWITCH / FOCUS-LOSS WARNING MODAL ══════════════ -->
+<div class="modal-overlay" id="rs-tabswitch-modal" style="z-index:1400;">
+  <div class="modal-box" style="max-width:380px;text-align:center;">
+    <div style="font-size:42px;margin-bottom:10px;">⚠️</div>
+    <div style="font-size:19px;font-weight:900;color:var(--red);margin-bottom:8px;" id="rs-tabswitch-title">Tab Switch Detected</div>
+    <div style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:14px;" id="rs-tabswitch-msg">You moved away from this exam tab. This is being monitored for exam integrity.</div>
+    <div style="background:rgba(231,76,60,0.08);border:1px solid rgba(231,76,60,0.25);border-radius:10px;padding:12px;margin-bottom:18px;">
+      <div style="font-size:11px;color:var(--text-mid);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Warnings</div>
+      <div style="font-size:22px;font-weight:900;color:var(--red);" id="rs-tabswitch-count">1 / 3</div>
+      <div style="font-size:11px;color:var(--text-mid);margin-top:4px;">3rd violation auto-submits your exam</div>
+    </div>
+    <button onclick="closeModal('rs-tabswitch-modal')" style="width:100%;padding:13px;background:linear-gradient(135deg,var(--gold),var(--gold-bright));color:#0A0C10;font-weight:800;font-size:14px;border:none;border-radius:10px;cursor:pointer;font-family:'Poppins',sans-serif;">I Understand — Continue Exam</button>
   </div>
 </div>
 
@@ -7527,6 +7542,8 @@ async function _rsLaunchExam(n){
   _rsState.n = n;
   _rsState.startedAt = Date.now();
   _rsState.timeUp = false;
+  _rsState.tabSwitches = 0;
+  _rsInstallProctoring();
   _showPage('revision-sprint-exam'); setHash('#rs-'+n+'-exam');
   // Update tag
   const tagEl = document.getElementById('rs-exam-tag');
@@ -7583,7 +7600,64 @@ function _rsForceLeave(){
   closeModal('rs-leave-modal');
   if(_rsState.timerInt){ clearInterval(_rsState.timerInt); _rsState.timerInt=null; }
   window._examActive = false;
+  _rsUninstallProctoring();
   _rsSubmitExam(false);
+}
+
+// ─── Proctoring: tab-switch / focus-loss watchdog + beforeunload guard ───
+function _rsHandleFocusLoss(){
+  if(!window._examActive || !window._rsExamN) return;
+  // Ignore if user opened our own modals/intentional in-app blur
+  if(document.querySelector('.modal-overlay.open')) return;
+  _rsState.tabSwitches = (_rsState.tabSwitches||0) + 1;
+  const n = _rsState.tabSwitches;
+  if(n >= 3){
+    // Auto-submit on 3rd violation
+    if(_rsState.timerInt){ clearInterval(_rsState.timerInt); _rsState.timerInt=null; }
+    window._examActive = false;
+    _rsUninstallProctoring();
+    alert('⚠️ Exam auto-submitted: 3 tab-switches detected. Your current answers have been submitted.');
+    _rsSubmitExam(false);
+    return;
+  }
+  const titleEl = document.getElementById('rs-tabswitch-title');
+  const msgEl = document.getElementById('rs-tabswitch-msg');
+  const countEl = document.getElementById('rs-tabswitch-count');
+  if(titleEl) titleEl.textContent = n === 1 ? '⚠️ First Warning' : '⚠️ Final Warning';
+  if(msgEl) msgEl.textContent = n === 1
+    ? 'Tab switching, leaving the exam window, or switching apps is monitored for exam integrity. Stay on this tab until you finish.'
+    : 'This is your final warning. One more tab switch will auto-submit your exam.';
+  if(countEl) countEl.textContent = n + ' / 3';
+  document.getElementById('rs-tabswitch-modal').classList.add('open');
+}
+
+function _rsBeforeUnloadGuard(e){
+  if(window._examActive && window._rsExamN){
+    e.preventDefault();
+    e.returnValue = 'You are in an active exam. Leaving will submit your current answers.';
+    return e.returnValue;
+  }
+}
+
+function _rsInstallProctoring(){
+  // Visibility change (covers tab switch on desktop + app switch on mobile)
+  document.addEventListener('visibilitychange', _rsVisibilityHandler);
+  window.addEventListener('blur', _rsBlurHandler);
+  window.addEventListener('beforeunload', _rsBeforeUnloadGuard);
+}
+function _rsUninstallProctoring(){
+  document.removeEventListener('visibilitychange', _rsVisibilityHandler);
+  window.removeEventListener('blur', _rsBlurHandler);
+  window.removeEventListener('beforeunload', _rsBeforeUnloadGuard);
+}
+function _rsVisibilityHandler(){ if(document.hidden) _rsHandleFocusLoss(); }
+function _rsBlurHandler(){
+  // Small delay to ensure visibility/focus settles — avoids double-firing with visibilitychange
+  setTimeout(function(){
+    if(document.hasFocus && document.hasFocus()) return; // user came right back
+    if(document.hidden) return; // already handled by visibilitychange
+    _rsHandleFocusLoss();
+  }, 200);
 }
 
 function _rsStartTimer(){
@@ -7736,6 +7810,7 @@ function _rsNext(){
 function _rsSubmitExam(timeUp){
   if(_rsState.timerInt){ clearInterval(_rsState.timerInt); _rsState.timerInt=null; }
   window._examActive = false;
+  _rsUninstallProctoring();
   const st = _rsState;
   const cfg = RS_CONFIG[st.n];
   let correct = 0, wrong = 0, skipped = 0;
@@ -7747,22 +7822,26 @@ function _rsSubmitExam(timeUp){
     else { wrong++; wrongList.push({q:q, given:a}); }
   });
   const total = st.qs.length;
+  const answered = correct + wrong;
   const pct = Math.round((correct/total)*100);
   const timeTaken = cfg.durationS - st.timeLeft;
-  // Save attempt
-  try {
-    const key = 'mm_rs'+st.n+'_attempts_'+(S.code||'x');
-    const attempts = JSON.parse(localStorage.getItem(key)||'[]');
-    const attemptNum = attempts.length + 1;
-    const record = {correct:correct, wrong:wrong, skipped:skipped, total:total, pct:pct, timeTaken:timeTaken, timeUp:timeUp, at:Date.now(), submittedAt:Date.now(), attemptNum:attemptNum, wrongList:wrongList};
-    attempts.push(record);
-    localStorage.setItem(key, JSON.stringify(attempts));
-    // Save "latest" snapshot for prev-result modal — without wrongList in latest to keep small (full snapshot still in attempts[])
-    const latest = {correct:correct, wrong:wrong, skipped:skipped, total:total, pct:pct, timeTaken:timeTaken, timeUp:timeUp, submittedAt:record.submittedAt, attemptNum:attemptNum};
-    localStorage.setItem('mm_rs'+st.n+'_latest_'+(S.code||'x'), JSON.stringify(latest));
-  } catch(e){}
-  // Show result page
-  _rsShowResult(st.n, {correct:correct, wrong:wrong, skipped:skipped, total:total, pct:pct, timeTaken:timeTaken, timeUp:timeUp, wrongList:wrongList});
+  // Save attempt only if user attempted at least 50 MCQs — guards against unintentional/partial submits being counted
+  const countAsAttempt = answered >= 50;
+  if(countAsAttempt){
+    try {
+      const key = 'mm_rs'+st.n+'_attempts_'+(S.code||'x');
+      const attempts = JSON.parse(localStorage.getItem(key)||'[]');
+      const attemptNum = attempts.length + 1;
+      const record = {correct:correct, wrong:wrong, skipped:skipped, total:total, pct:pct, timeTaken:timeTaken, timeUp:timeUp, at:Date.now(), submittedAt:Date.now(), attemptNum:attemptNum, wrongList:wrongList};
+      attempts.push(record);
+      localStorage.setItem(key, JSON.stringify(attempts));
+      // Save "latest" snapshot for prev-result modal — without wrongList in latest to keep small (full snapshot still in attempts[])
+      const latest = {correct:correct, wrong:wrong, skipped:skipped, total:total, pct:pct, timeTaken:timeTaken, timeUp:timeUp, submittedAt:record.submittedAt, attemptNum:attemptNum};
+      localStorage.setItem('mm_rs'+st.n+'_latest_'+(S.code||'x'), JSON.stringify(latest));
+    } catch(e){}
+  }
+  // Show result page (always — user still sees their score even if not counted as attempt)
+  _rsShowResult(st.n, {correct:correct, wrong:wrong, skipped:skipped, total:total, pct:pct, timeTaken:timeTaken, timeUp:timeUp, wrongList:wrongList, countAsAttempt:countAsAttempt, answered:answered});
 }
 
 function _rsShowResult(n, res){
@@ -7771,6 +7850,23 @@ function _rsShowResult(n, res){
   document.getElementById('rs-res-sub').textContent = cfg.short + ' · Surgery & Allied';
   document.getElementById('rs-res-attempt').textContent = cfg.label;
   document.getElementById('rs-res-score').textContent = res.correct + ' / ' + res.total;
+  // Not-counted banner (if user attempted <50 MCQs)
+  const timeupBanner = document.getElementById('rs-res-timeup');
+  if(res.countAsAttempt === false){
+    timeupBanner.style.background = 'rgba(243,156,18,0.1)';
+    timeupBanner.style.borderColor = 'rgba(243,156,18,0.3)';
+    timeupBanner.style.color = '#F39C12';
+    timeupBanner.textContent = 'ℹ️ Not counted as an attempt — you answered ' + (res.answered||0) + ' of ' + res.total + ' MCQs (minimum 50 required). Click Sprint card to start fresh.';
+    timeupBanner.style.display = 'block';
+  } else if(res.timeUp){
+    timeupBanner.style.background = 'rgba(231,76,60,0.1)';
+    timeupBanner.style.borderColor = 'rgba(231,76,60,0.3)';
+    timeupBanner.style.color = 'var(--red)';
+    timeupBanner.textContent = '⏰ Time\'s up — exam auto-submitted';
+    timeupBanner.style.display = 'block';
+  } else {
+    timeupBanner.style.display = 'none';
+  }
   document.getElementById('rs-res-pct').textContent = res.pct + '%';
   // Grade band
   let grade = '', gradeColor = '';
