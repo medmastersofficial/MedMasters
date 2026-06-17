@@ -3999,19 +3999,22 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
   </div>
 </div>
 
-<!-- ══════════════ START CONFIRMATION MODAL FOR RS EXAM ══════════════ -->
-<div class="modal-overlay" id="rs-confirm-modal">
-  <div class="modal-content" style="max-width:380px;">
-    <div style="text-align:center;padding:8px 4px 4px;">
-      <div style="font-size:36px;margin-bottom:10px;">🏃</div>
-      <div style="font-size:18px;font-weight:800;color:var(--cream);margin-bottom:8px;" id="rs-confirm-title">Start Sprint?</div>
-      <div style="font-size:13px;color:var(--text-mid);line-height:1.6;margin-bottom:6px;" id="rs-confirm-meta">100 MCQs · 90 Minutes · Timed</div>
-      <div style="font-size:12px;color:var(--text-mid);line-height:1.6;margin-bottom:18px;">Single attempt session. Timer starts immediately and cannot be paused. Exit mid-exam submits your current answers.</div>
-      <div style="display:flex;gap:10px;justify-content:center;">
-        <button class="btn-secondary" onclick="closeModal('rs-confirm-modal')" style="padding:10px 22px;">Cancel</button>
-        <button class="btn-primary" id="rs-confirm-start-btn" onclick="_rsConfirmStart()" style="padding:10px 22px;">Start Now →</button>
-      </div>
+<!-- ══════════════ START CONFIRMATION MODAL FOR RS EXAM (NTS Mock style) ══════════════ -->
+<div class="modal-overlay" id="rs-confirm-modal" style="z-index:1300;">
+  <div class="modal-box" style="max-width:380px;text-align:center;">
+    <div style="font-size:44px;margin-bottom:10px;">🏆</div>
+    <div style="font-size:20px;font-weight:900;margin-bottom:6px;">Ready to Begin?</div>
+    <div style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:6px;">You're about to start <strong style="color:var(--cream);" id="rs-confirm-name">Sprint 1</strong></div>
+    <div style="display:flex;justify-content:center;gap:24px;margin:16px 0 18px;">
+      <div style="text-align:center;"><div style="font-size:22px;font-weight:900;color:var(--gold);" id="rs-confirm-mcqs">100</div><div style="font-size:10px;color:var(--text);text-transform:uppercase;letter-spacing:0.8px;margin-top:2px;">MCQs</div></div>
+      <div style="width:1px;background:var(--border);"></div>
+      <div style="text-align:center;"><div style="font-size:22px;font-weight:900;color:var(--gold);" id="rs-confirm-dur">90 min</div><div style="font-size:10px;color:var(--text);text-transform:uppercase;letter-spacing:0.8px;margin-top:2px;">Duration</div></div>
+      <div style="width:1px;background:var(--border);"></div>
+      <div style="text-align:center;"><div style="font-size:22px;font-weight:900;color:var(--gold);" id="rs-confirm-marks">100</div><div style="font-size:10px;color:var(--text);text-transform:uppercase;letter-spacing:0.8px;margin-top:2px;">Marks</div></div>
     </div>
+    <div style="font-size:12px;color:var(--text-mid);margin-bottom:20px;line-height:1.65;">The timer starts the moment you begin. Flag questions you're unsure about and revisit them before submitting. You've got this! 💪</div>
+    <button id="rs-confirm-start-btn" onclick="_rsConfirmStart()" style="width:100%;padding:14px;background:linear-gradient(135deg,var(--gold),var(--gold-bright));color:#0A0C10;font-weight:800;font-size:15px;border:none;border-radius:10px;cursor:pointer;margin-bottom:10px;font-family:'Poppins',sans-serif;transition:all 0.2s;">▶ Start Exam — I'm Ready!</button>
+    <button onclick="closeModal('rs-confirm-modal')" style="width:100%;padding:11px;background:transparent;color:var(--text-mid);font-weight:600;font-size:13px;border:1px solid var(--border);border-radius:10px;cursor:pointer;font-family:'Poppins',sans-serif;">Not Yet — Go Back</button>
   </div>
 </div>
 
@@ -4085,6 +4088,11 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
         <div class="dash-action-icon" id="dash-p2-icon">🩺</div>
         <div class="dash-action-title" id="dash-p2-title">Study Paper 2</div>
         <div class="dash-action-sub" id="dash-p2-sub">5,129 MCQs · Medicine &amp; Allied</div>
+      </div>
+      <div class="dash-action-btn" id="dash-rs-btn" onclick="openRevisionSprintHub()" style="display:none;border-color:rgba(201,168,76,0.45);background:linear-gradient(135deg,rgba(201,168,76,0.08),rgba(201,168,76,0.03));">
+        <div class="dash-action-icon">🏃</div>
+        <div class="dash-action-title">Revision Sprint</div>
+        <div class="dash-action-sub">10 Papers · 17–26 June · 6 PM PKT daily</div>
       </div>
       <div class="dash-action-btn" id="dash-mock-btn" onclick="openNTSMockHub()" style="display:none;border-color:rgba(46,204,113,0.3);">
         <div class="dash-action-icon">🏆</div>
@@ -7415,9 +7423,14 @@ const _rsState = { n:null, qs:[], answers:{}, flagged:new Set(), timeLeft:0, tim
 
 function _rsShowConfirm(n){
   const cfg = RS_CONFIG[n];
-  document.getElementById('rs-confirm-title').textContent = 'Start ' + cfg.short + '?';
-  const mins = cfg.total === 200 ? '3 Hours' : '90 Minutes';
-  document.getElementById('rs-confirm-meta').textContent = cfg.total + ' MCQs · ' + mins + ' · Timed';
+  const nameEl = document.getElementById('rs-confirm-name');
+  const mcqsEl = document.getElementById('rs-confirm-mcqs');
+  const durEl  = document.getElementById('rs-confirm-dur');
+  const marksEl= document.getElementById('rs-confirm-marks');
+  if(nameEl) nameEl.textContent = cfg.short + ': ' + cfg.label.replace(/^[^:]+:\s*/, '');
+  if(mcqsEl) mcqsEl.textContent = String(cfg.total);
+  if(durEl)  durEl.textContent  = cfg.total === 200 ? '3 hrs' : '90 min';
+  if(marksEl) marksEl.textContent = String(cfg.total);
   const startBtn = document.getElementById('rs-confirm-start-btn');
   if(startBtn) startBtn.setAttribute('onclick', '_rsConfirmStart('+n+')');
   document.getElementById('rs-confirm-modal').classList.add('open');
@@ -7595,26 +7608,26 @@ function _rsPassedThrough(qi){ return _rsState.answers[qi] !== undefined || _rsS
 function _rsAllPassedThrough(){ return _rsState.qs.every(function(_,i){ return _rsPassedThrough(i); }); }
 
 function _rsCheckPageComplete(page){
-  const allPassed = page.qIdxs.every(function(qi){ return _rsPassedThrough(qi); });
-  const allAnswered = page.qIdxs.every(function(qi){ return _rsState.answers[qi] !== undefined; });
+  const allPT = page.qIdxs.every(function(qi){ return _rsPassedThrough(qi); });
   const nextBtn = document.getElementById('rs-next-btn');
   const flagBtn = document.getElementById('rs-flag-next-btn');
-  if(allPassed){
-    if(flagBtn) flagBtn.style.display = 'none';
-    if(nextBtn){
-      nextBtn.style.display = '';
-      const isLast = _rsState.pageIdx >= _rsState.groupIdx.length - 1;
-      if(isLast && _rsAllPassedThrough()){
-        nextBtn.textContent = '✓ Submit Exam';
-        nextBtn.onclick = function(){ _rsSubmitExam(false); };
-      } else {
-        nextBtn.textContent = 'Next →';
-        nextBtn.onclick = _rsNext;
-      }
+  if(!nextBtn) return;
+  const hasUnanswered = page.qIdxs.some(function(qi){ return !_rsPassedThrough(qi); });
+  if(flagBtn) flagBtn.style.display = hasUnanswered ? 'flex' : 'none';
+  if(allPT){
+    const isLast = _rsState.pageIdx >= _rsState.groupIdx.length - 1;
+    if(isLast && _rsAllPassedThrough()){
+      nextBtn.textContent = '✓ Submit Exam';
+      nextBtn.onclick = function(){ _rsSubmitExam(false); };
+    } else {
+      nextBtn.textContent = 'Next →';
+      nextBtn.onclick = _rsNext;
     }
+    nextBtn.classList.add('show');
+    nextBtn.style.display = '';
   } else {
-    if(nextBtn) nextBtn.style.display = 'none';
-    if(flagBtn) flagBtn.style.display = page.qIdxs.some(function(qi){ return _rsState.answers[qi]===undefined && !_rsState.flagged.has(qi); }) ? 'flex' : 'none';
+    nextBtn.classList.remove('show');
+    nextBtn.style.display = 'none';
   }
 }
 
@@ -8688,6 +8701,23 @@ function loadDashboard(){
         if(p2Btn)   p2Btn.style.order   = '';
         if(pracBtn) pracBtn.style.order = '';
       }
+    }
+  }
+
+  // ── REVISION SPRINT card visibility & ordering ──
+  // Show for JCAT Surgery & Allied and FCPS Part 1 Surgery & Allied only.
+  // Order: Study P1 (1), Study P2 (2), Revision Sprint (3), Practice & Assess (4)
+  const rsBtn = document.getElementById('dash-rs-btn');
+  const isSurgeryAny = (S.subject==='surgery' || S.subject==='fcps_surgery_part1');
+  if(rsBtn){
+    if(isSurgeryAny && !isMockNTS){
+      rsBtn.style.display='';
+      if(p1Btn)   p1Btn.style.order   = '1';
+      if(p2Btn)   p2Btn.style.order   = '2';
+      rsBtn.style.order               = '3';
+      if(pracBtn) pracBtn.style.order = '4';
+    } else {
+      rsBtn.style.display='none';
     }
   }
 }
