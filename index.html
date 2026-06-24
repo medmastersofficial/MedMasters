@@ -10537,10 +10537,6 @@ async function _doOpenAnaesP2Topic(key, startPage){
   _showPage('study'); setHash('#study');
   document.getElementById('study-batch-container').innerHTML='<div style="padding:40px;text-align:center;color:var(--text);">Loading MCQs\u2026</div>';
   const data=await _loadAnaesP2SubjectData(key);
-  if(!data.length){
-    document.getElementById('study-batch-container').innerHTML='<div style="padding:40px;text-align:center;color:var(--text);"><div style="font-size:32px;margin-bottom:12px;">🔄</div><div style="font-weight:700;font-size:15px;margin-bottom:8px;">MCQs Being Finalised</div><div style="font-size:13px;opacity:0.7;">This topic\'s MCQs are being uploaded. Check back soon!</div></div>';
-    return;
-  }
   ST.subj=key; ST.pageAnswered={};
   ST.qs=data.map((m,i)=>convertMCQ(m,i));
   ST.pageSize=calcPageSize(ST.qs.slice(0,20));
