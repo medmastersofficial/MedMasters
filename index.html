@@ -8307,7 +8307,7 @@ const FCPS_P2_AVAILABLE={
   'fcps_ophthal_part1':     {count:'3,000 MCQs', topics:'Ocular Anatomy · Ocular Physiology · Ocular Pathology · Ocular Pharmacology · Optical Physics · Principles of Refraction · Ophthalmic Instruments · Vitreo-retina · Glaucoma · Lens · Cornea · Uveal Tract · Neuroophthalmology · Eyelid · Conjunctiva · Orbit · Squint · Lacrimal Apparatus · Scleritis · Ocular Trauma'},
   'fcps_ophthalmology_part1':{count:'3,000 MCQs', topics:'Ocular Anatomy · Ocular Physiology · Ocular Pathology · Ocular Pharmacology · Optical Physics · Principles of Refraction · Ophthalmic Instruments · Vitreo-retina · Glaucoma · Lens · Cornea · Uveal Tract · Neuroophthalmology · Eyelid · Conjunctiva · Orbit · Squint · Lacrimal Apparatus · Scleritis · Ocular Trauma'},
   'fcps_radiology_part1':   {count:'2,000 MCQs', topics:'Brain & Spine · Respiratory & CVS · GIT, Hepato, Pancreas · Urinary & Adrenal · Paediatrics · Bones, Joints & Soft Tissue · Head & Neck (+ENT, Eye) · Women Imaging · Male Pelvis · Nuclear Imaging'},
-  'fcps_anaesthesia_part1': {count:'2,000 MCQs', topics:'Anatomy · Physiology · Pharmacology · Physics · Pathophysiology'}
+  'fcps_anaesthesia_part1': {count:'2,000 MCQs', topics:'Applied to clinical practice · Anatomy · Physiology · Pharmacology · Physics of Anesthesia · Pathophysiology'}
 };
 
 function selectFCPSSpecialty(subj){
@@ -8346,7 +8346,6 @@ function refreshFCPSPaperPage_browse(subj){
     if(typeof injectMedGoldenPaperCard === 'function') injectMedGoldenPaperCard('fcps-paper-page', subj === 'fcps_radiology_part1');
     if(typeof injectMedPinkPaperCard   === 'function') injectMedPinkPaperCard('fcps-paper-page', subj === 'fcps_gynaecology_part1');
     if(typeof injectRevisionSprintPaperCard === 'function') injectRevisionSprintPaperCard('fcps-paper-page', subj === 'fcps_surgery_part1');
-    if(typeof injectAnaesP2PaperCard === 'function') injectAnaesP2PaperCard('fcps-paper-page', subj === 'fcps_anaesthesia_part1');
   } catch(e){}
 }
 
@@ -8371,8 +8370,6 @@ function refreshFCPSPaperPage(){
   injectMedPinkPaperCard('fcps-paper-page', subj==='fcps_gynaecology_part1');
   // ── Revision Sprint card on FCPS Surgery & Allied only ──
   if(typeof injectRevisionSprintPaperCard === 'function') injectRevisionSprintPaperCard('fcps-paper-page', subj === 'fcps_surgery_part1');
-  // ── Anaesthesia P2 card on FCPS Anaesthesia paper-page ──
-  if(typeof injectAnaesP2PaperCard === 'function') injectAnaesP2PaperCard('fcps-paper-page', subj === 'fcps_anaesthesia_part1');
 }
 
 function openFCPSPaper1(){
@@ -9752,7 +9749,7 @@ function refreshPaperPage(){
       p2available:true
     },
     anesthesia:{
-      p2count:'2,000 MCQs', p2topics:'Anatomy · Physiology · Pharmacology · Physics · Pathophysiology',
+      p2count:'2,000 MCQs', p2topics:'Applied to clinical practice · Anatomy · Physiology · Pharmacology · Physics of Anesthesia · Pathophysiology',
       p2available:true
     }
   };
@@ -9778,8 +9775,6 @@ function refreshPaperPage(){
   injectMedGoldenPaperCard('paper-page', subj==='radiology' || subj==='fcps_radiology_part1');
   // ── Revision Sprint card on JCAT Surgery & Allied only ──
   if(typeof injectRevisionSprintPaperCard === 'function') injectRevisionSprintPaperCard('paper-page', subj === 'surgery');
-  // ── Anaesthesia P2 card on JCAT Anesthesia paper-page ──
-  if(typeof injectAnaesP2PaperCard === 'function') injectAnaesP2PaperCard('paper-page', subj === 'anesthesia');
 }
 
 // Injects (or removes) a MedPink Files paper-card alongside Paper One / Paper Two.
@@ -9882,7 +9877,7 @@ function refreshPaperPage_browse(subj){
     psychiatry:{p2count:'2,000 MCQs',p2topics:'Neurology · Psychiatry · Neurosurgery · Medicine · Child Psychiatry · Behavioural Sciences & Psychology',p2available:true},
     ent:{p2count:'3,000 MCQs',p2topics:'External Ear · Middle Ear · Inner Ear · External Nose & Vestibule · Nasal Cavity · Paranasal Sinuses · Oral Cavity · Oropharynx · Nasopharynx · Hypopharynx · Face · Neck · Thyroid · Salivary Glands · Congenital Lesions in Neck · Neck Space · Larynx · Oesophagus',p2available:true},
     ophthalmology:{p2count:'3,000 MCQs',p2topics:'Ocular Anatomy · Ocular Physiology · Ocular Pathology · Ocular Pharmacology · Optical Physics · Principles of Refraction · Ophthalmic Instruments · Vitreo-retina · Glaucoma · Lens · Cornea · Uveal Tract · Neuroophthalmology · Eyelid · Conjunctiva · Orbit · Squint · Lacrimal Apparatus · Scleritis · Ocular Trauma',p2available:true},
-    anesthesia:{p2count:'2,000 MCQs',p2topics:'Anatomy · Physiology · Pharmacology · Physics · Pathophysiology',p2available:true}
+    anesthesia:{p2count:'2,000 MCQs',p2topics:'Applied to clinical practice · Anatomy · Physiology · Pharmacology · Physics of Anesthesia · Pathophysiology',p2available:true}
   };
   const p1c=document.getElementById('paper1-count'); if(p1c) p1c.textContent='7,300 MCQs';
   const p1t=document.getElementById('paper1-topics'); if(p1t) p1t.textContent=p1topics;
@@ -9903,7 +9898,6 @@ function refreshPaperPage_browse(subj){
     if(typeof injectMedPinkPaperCard   === 'function') injectMedPinkPaperCard('paper-page',   subj==='gynaecology');
     if(typeof injectMedGoldenPaperCard === 'function') injectMedGoldenPaperCard('paper-page', subj==='radiology');
     if(typeof injectRevisionSprintPaperCard === 'function') injectRevisionSprintPaperCard('paper-page', subj==='surgery');
-    if(typeof injectAnaesP2PaperCard === 'function') injectAnaesP2PaperCard('paper-page', subj==='anesthesia');
   } catch(e){}
 }
 
