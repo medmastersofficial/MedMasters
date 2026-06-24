@@ -4431,7 +4431,7 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
 <!-- ══════════════ ANAESTHESIA P2 — HUB PAGE ══════════════ -->
 <div id="anaes-p2-hub-page" class="page">
   <div class="page-header">
-    <button class="back-btn" onclick="openPaper2()">← Paper 2</button>
+    <button class="back-btn" onclick="openAnaesP2Back()">← Paper 2</button>
     <div>
       <div class="ph-title">Paper 2 — Anesthesiology</div>
       <div class="ph-sub">2,000 MCQs across 5 categories · Study mode</div>
@@ -10471,6 +10471,16 @@ async function _loadAnaesP2SubjectData(key){
 
 function openAnaesP2Hub(){
   _showPage('anaes-p2-hub'); setHash('#anaes-p2');
+}
+
+function openAnaesP2Back(){
+  // Navigate to the correct paper-page regardless of JCAT vs FCPS context
+  const isFCPS = S.subject && S.subject.startsWith('fcps_');
+  if(isFCPS){
+    refreshFCPSPaperPage(); _showPage('fcps-paper'); setHash('#fcps');
+  } else {
+    refreshPaperPage(); _showPage('paper'); setHash('#paper');
+  }
 }
 
 function openAnaesP2Subject(subj){
