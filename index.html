@@ -10452,17 +10452,7 @@ async function _loadAnaesP2SubjectData(key){
   }
   return new Promise(resolve=>{
     const script=document.createElement('script');
-    // Keys belong to 5 files — derive filename from key prefix
-    const fileMap={
-      'anaes_p2_anatomy':'anaes_p2_anatomy',
-      'anaes_p2_physio' :'anaes_p2_physio',
-      'anaes_p2_pharma' :'anaes_p2_pharma',
-      'anaes_p2_physics':'anaes_p2_physics',
-      'anaes_p2_patho'  :'anaes_p2_pathophysio'
-    };
-    const prefix=Object.keys(fileMap).find(p=>key.startsWith(p))||key;
-    const fname=fileMap[prefix]||prefix;
-    script.src='/'+fname+'.js';
+    script.src='/'+key+'.js';
     script.onload=()=>{ if(window.MM&&window.MM[key]) ANAES_P2_DATA[key]=window.MM[key]; ANAES_P2_LOADED.add(key); resolve(ANAES_P2_DATA[key]||[]); };
     script.onerror=()=>{ ANAES_P2_LOADED.add(key); resolve([]); };
     document.head.appendChild(script);
