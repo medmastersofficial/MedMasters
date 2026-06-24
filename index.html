@@ -4431,7 +4431,7 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
 <!-- ══════════════ ANAESTHESIA P2 — HUB PAGE ══════════════ -->
 <div id="anaes-p2-hub-page" class="page">
   <div class="page-header">
-    <button class="back-btn" onclick="history.back()">← Paper 2</button>
+    <button class="back-btn" onclick="openPaper2()">← Paper 2</button>
     <div>
       <div class="ph-title">Paper 2 — Anesthesiology</div>
       <div class="ph-sub">2,000 MCQs across 5 categories · Study mode</div>
@@ -4442,7 +4442,6 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
       <div class="p1-subj-icon">🦴</div>
       <div style="flex:1;">
         <div class="p1-subj-name">Anatomy for Anesthesia</div>
-        <div class="p1-subj-count">400 MCQs</div>
         <div class="p1-subj-progress">Spine · Larynx & Lungs · Heart · Peripheral Nerves · CNS · ANS</div>
       </div>
       <div class="p1-subj-arrow">›</div>
@@ -4451,7 +4450,6 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
       <div class="p1-subj-icon">❤️</div>
       <div style="flex:1;">
         <div class="p1-subj-name">Physio for Anesthesia</div>
-        <div class="p1-subj-count">600 MCQs</div>
         <div class="p1-subj-progress">Respiratory · CVS · Fluids & Electrolytes · Acid-Base · Endocrinology</div>
       </div>
       <div class="p1-subj-arrow">›</div>
@@ -4460,7 +4458,6 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
       <div class="p1-subj-icon">💊</div>
       <div style="flex:1;">
         <div class="p1-subj-name">Pharma for Anesthesia</div>
-        <div class="p1-subj-count">500 MCQs</div>
         <div class="p1-subj-progress">Muscle Relaxants · IV & Inhalational Agents · Analgesics · Local Anesthetics · ANS Drugs</div>
       </div>
       <div class="p1-subj-arrow">›</div>
@@ -4469,7 +4466,6 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
       <div class="p1-subj-icon">⚗️</div>
       <div style="flex:1;">
         <div class="p1-subj-name">Physics for Anesthesia</div>
-        <div class="p1-subj-count">200 MCQs</div>
         <div class="p1-subj-progress">Gas Laws · Equipment · Monitoring · Gases · Vaporizers</div>
       </div>
       <div class="p1-subj-arrow">›</div>
@@ -4478,7 +4474,6 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
       <div class="p1-subj-icon">🔬</div>
       <div style="flex:1;">
         <div class="p1-subj-name">Pathophysio for Anesthesia</div>
-        <div class="p1-subj-count">300 MCQs</div>
         <div class="p1-subj-progress">Liver · Kidney · Respiratory Pathophysiology · Shock · Anaphylaxis · Trauma</div>
       </div>
       <div class="p1-subj-arrow">›</div>
@@ -4489,7 +4484,7 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
 <!-- ══════════════ ANAESTHESIA P2 — ANATOMY SUB-PAGE ══════════════ -->
 <div id="anaes-p2-anatomy-page" class="page">
   <div class="page-header">
-    <button class="back-btn" onclick="_showPage('anaes-p2-hub');setHash('#anaes-p2');">← Anesthesia Paper 2</button>
+    <button class="back-btn" onclick="openAnaesP2Hub()">← Anesthesia Paper 2</button>
     <div>
       <div class="ph-title">🦴 Anatomy for Anesthesia</div>
       <div class="ph-sub" id="anaes-p2-anatomy-sub-count">400 MCQs across 6 subjects · Study mode</div>
@@ -4503,7 +4498,7 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
 <!-- ══════════════ ANAESTHESIA P2 — PHYSIO SUB-PAGE ══════════════ -->
 <div id="anaes-p2-physio-page" class="page">
   <div class="page-header">
-    <button class="back-btn" onclick="_showPage('anaes-p2-hub');setHash('#anaes-p2');">← Anesthesia Paper 2</button>
+    <button class="back-btn" onclick="openAnaesP2Hub()">← Anesthesia Paper 2</button>
     <div>
       <div class="ph-title">❤️ Physio for Anesthesia</div>
       <div class="ph-sub" id="anaes-p2-physio-sub-count">600 MCQs across 9 subjects · Study mode</div>
@@ -4517,7 +4512,7 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
 <!-- ══════════════ ANAESTHESIA P2 — PHARMA SUB-PAGE ══════════════ -->
 <div id="anaes-p2-pharma-page" class="page">
   <div class="page-header">
-    <button class="back-btn" onclick="_showPage('anaes-p2-hub');setHash('#anaes-p2');">← Anesthesia Paper 2</button>
+    <button class="back-btn" onclick="openAnaesP2Hub()">← Anesthesia Paper 2</button>
     <div>
       <div class="ph-title">💊 Pharma for Anesthesia</div>
       <div class="ph-sub" id="anaes-p2-pharma-sub-count">500 MCQs across 6 subjects · Study mode</div>
@@ -4531,7 +4526,7 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
 <!-- ══════════════ ANAESTHESIA P2 — PHYSICS SUB-PAGE ══════════════ -->
 <div id="anaes-p2-physics-page" class="page">
   <div class="page-header">
-    <button class="back-btn" onclick="_showPage('anaes-p2-hub');setHash('#anaes-p2');">← Anesthesia Paper 2</button>
+    <button class="back-btn" onclick="openAnaesP2Hub()">← Anesthesia Paper 2</button>
     <div>
       <div class="ph-title">⚗️ Physics for Anesthesia</div>
       <div class="ph-sub" id="anaes-p2-physics-sub-count">200 MCQs across 5 subjects · Study mode</div>
@@ -4545,7 +4540,7 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
 <!-- ══════════════ ANAESTHESIA P2 — PATHOPHYSIO SUB-PAGE ══════════════ -->
 <div id="anaes-p2-pathophysio-page" class="page">
   <div class="page-header">
-    <button class="back-btn" onclick="_showPage('anaes-p2-hub');setHash('#anaes-p2');">← Anesthesia Paper 2</button>
+    <button class="back-btn" onclick="openAnaesP2Hub()">← Anesthesia Paper 2</button>
     <div>
       <div class="ph-title">🔬 Pathophysio for Anesthesia</div>
       <div class="ph-sub" id="anaes-p2-pathophysio-sub-count">300 MCQs across 6 subjects · Study mode</div>
@@ -10495,7 +10490,7 @@ function _renderAnaesP2Grid(subj){
       <div style="flex:1;">
         <div class="p1-subj-name">${s.label}</div>
         <div class="p1-subj-count">${actual.toLocaleString()} MCQs</div>
-        <div class="p1-subj-progress">${pct>0?'\u25CF '+pct+'% complete'+resumeHint:loaded?'Not started yet':'Ready to load'}</div>
+        <div class="p1-subj-progress">${pct>0?'\u25CF '+pct+'% complete'+resumeHint:loaded?'Not started yet':''}</div>
       </div>
       <div class="p1-subj-arrow">\u203A</div>
     </div>`;
