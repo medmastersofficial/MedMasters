@@ -9240,6 +9240,7 @@ function renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWM
         {key:'radio_p2_male_pelvis',         icon:'🚹', label:'Male Pelvis',                    total:80},
         {key:'radio_p2_nuclear',             icon:'☢️', label:'Nuclear Imaging',                total:40},
       ],
+      fcps_anaesthesia_part1: Object.values(ANAES_P2_SUBJECTS).flat().map(s=>({key:s.key,icon:s.icon,label:s.label,total:s.count})),
     };
     const P1_COLOR='linear-gradient(90deg,var(--gold),var(--gold-bright))';
     const P2_COLOR='linear-gradient(90deg,#3498DB,#5DADE2)';
@@ -9256,9 +9257,9 @@ function renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWM
     // Paper 2 rows — individual subjects, with a section header
     const p2subs=fcpsP2subjects[S.subject];
     if(p2subs&&p2subs.length){
-      const isEntFCPS=S.subject==='fcps_ent_part1'; const isOphFCPS=S.subject==='fcps_ophthal_part1'||S.subject==='fcps_ophthalmology_part1'; const isRadioFCPS=S.subject==='fcps_radiology_part1';
-      const p2HeaderColor=isEntFCPS?'#1ABC9C':isOphFCPS?'#8E44AD':isRadioFCPS?'#C9A84C':'#3498DB';
-      const p2BarColor=isEntFCPS?'linear-gradient(90deg,#1ABC9C,#48C9B0)':isOphFCPS?'linear-gradient(90deg,#8E44AD,#BB8FCE)':isRadioFCPS?'linear-gradient(90deg,#C9A84C,#E0C870)':P2_COLOR;
+      const isEntFCPS=S.subject==='fcps_ent_part1'; const isOphFCPS=S.subject==='fcps_ophthal_part1'||S.subject==='fcps_ophthalmology_part1'; const isRadioFCPS=S.subject==='fcps_radiology_part1'; const isAnaeFCPS=S.subject==='fcps_anaesthesia_part1';
+      const p2HeaderColor=isEntFCPS?'#1ABC9C':isOphFCPS?'#8E44AD':isRadioFCPS?'#C9A84C':isAnaeFCPS?'#00B4D8':'#3498DB';
+      const p2BarColor=isEntFCPS?'linear-gradient(90deg,#1ABC9C,#48C9B0)':isOphFCPS?'linear-gradient(90deg,#8E44AD,#BB8FCE)':isRadioFCPS?'linear-gradient(90deg,#C9A84C,#E0C870)':isAnaeFCPS?'linear-gradient(90deg,#00B4D8,#48CAE4)':P2_COLOR;
       rows.push(`<div style="font-size:10px;font-weight:700;color:${p2HeaderColor};letter-spacing:1px;text-transform:uppercase;margin:14px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border);">Paper 2</div>`);
       p2subs.forEach(s=>rows.push(makeBar(s.key, s.icon, s.label, s.total, p2BarColor)));
     }
@@ -9365,6 +9366,14 @@ function renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWM
     const p2Done=RADIO_P2_SUBJECTS.every(s=>Object.keys(prog.answers).filter(k=>k.startsWith(s.key+'_')).length>=s.count);
     const medGoldenRows=MEDGOLDEN_BATCHES.map(b=>_buildSubjRow({key:b.key,label:b.label,icon:b.icon,count:b.count},prog,'linear-gradient(90deg,#C9A84C,#E0C870)')).join('');
     wrap.innerHTML=_sectionHeader('📚 Paper 1 — Basic Sciences','var(--gold)')+p1rows+_sectionHeader('🩻 Paper 2 — Diagnostic Radiology','#C9A84C')+radioP2rows+_sectionHeader('🏅 MedGolden','#C9A84C')+medGoldenRows;
+    checkPaperCompletion(p1Done, p2Done, prog);
+    return;
+  }
+  if(S.subject==='anesthesia'){
+    const ANAES_P2_FLAT=Object.values(ANAES_P2_SUBJECTS).flat().map(s=>({key:s.key,label:s.label,icon:s.icon,count:s.count}));
+    const anaesP2rows=ANAES_P2_FLAT.map(s=>_buildSubjRow(s,prog,'linear-gradient(90deg,#00B4D8,#48CAE4)')).join('');
+    const p2Done=ANAES_P2_FLAT.every(s=>Object.keys(prog.answers).filter(k=>k.startsWith(s.key+'_')).length>=s.count);
+    wrap.innerHTML=_sectionHeader('📚 Paper 1 — Basic Sciences','var(--gold)')+p1rows+_sectionHeader('💉 Paper 2 — Anesthesiology','#00B4D8')+anaesP2rows;
     checkPaperCompletion(p1Done, p2Done, prog);
     return;
   }
