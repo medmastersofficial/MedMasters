@@ -4428,6 +4428,134 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
   </div>
 </div>
 
+<!-- ══════════════ ANAESTHESIA P2 — HUB PAGE ══════════════ -->
+<div id="anaes-p2-hub-page" class="page">
+  <div class="page-header">
+    <button class="back-btn" onclick="history.back()">← Paper 2</button>
+    <div>
+      <div class="ph-title">Paper 2 — Anesthesiology</div>
+      <div class="ph-sub">2,000 MCQs across 5 categories · Study mode</div>
+    </div>
+  </div>
+  <div class="p1-subjects-grid">
+    <div class="p1-subj-card" onclick="openAnaesP2Subject('anatomy')">
+      <div class="p1-subj-icon">🦴</div>
+      <div style="flex:1;">
+        <div class="p1-subj-name">Anatomy for Anesthesia</div>
+        <div class="p1-subj-count">400 MCQs</div>
+        <div class="p1-subj-progress">Spine · Larynx & Lungs · Heart · Peripheral Nerves · CNS · ANS</div>
+      </div>
+      <div class="p1-subj-arrow">›</div>
+    </div>
+    <div class="p1-subj-card" onclick="openAnaesP2Subject('physio')">
+      <div class="p1-subj-icon">❤️</div>
+      <div style="flex:1;">
+        <div class="p1-subj-name">Physio for Anesthesia</div>
+        <div class="p1-subj-count">600 MCQs</div>
+        <div class="p1-subj-progress">Respiratory · CVS · Fluids & Electrolytes · Acid-Base · Endocrinology</div>
+      </div>
+      <div class="p1-subj-arrow">›</div>
+    </div>
+    <div class="p1-subj-card" onclick="openAnaesP2Subject('pharma')">
+      <div class="p1-subj-icon">💊</div>
+      <div style="flex:1;">
+        <div class="p1-subj-name">Pharma for Anesthesia</div>
+        <div class="p1-subj-count">500 MCQs</div>
+        <div class="p1-subj-progress">Muscle Relaxants · IV & Inhalational Agents · Analgesics · Local Anesthetics · ANS Drugs</div>
+      </div>
+      <div class="p1-subj-arrow">›</div>
+    </div>
+    <div class="p1-subj-card" onclick="openAnaesP2Subject('physics')">
+      <div class="p1-subj-icon">⚗️</div>
+      <div style="flex:1;">
+        <div class="p1-subj-name">Physics for Anesthesia</div>
+        <div class="p1-subj-count">200 MCQs</div>
+        <div class="p1-subj-progress">Gas Laws · Equipment · Monitoring · Gases · Vaporizers</div>
+      </div>
+      <div class="p1-subj-arrow">›</div>
+    </div>
+    <div class="p1-subj-card" onclick="openAnaesP2Subject('pathophysio')">
+      <div class="p1-subj-icon">🔬</div>
+      <div style="flex:1;">
+        <div class="p1-subj-name">Pathophysio for Anesthesia</div>
+        <div class="p1-subj-count">300 MCQs</div>
+        <div class="p1-subj-progress">Liver · Kidney · Respiratory Pathophysiology · Shock · Anaphylaxis · Trauma</div>
+      </div>
+      <div class="p1-subj-arrow">›</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ ANAESTHESIA P2 — ANATOMY SUB-PAGE ══════════════ -->
+<div id="anaes-p2-anatomy-page" class="page">
+  <div class="page-header">
+    <button class="back-btn" onclick="_showPage('anaes-p2-hub');setHash('#anaes-p2');">← Anesthesia Paper 2</button>
+    <div>
+      <div class="ph-title">🦴 Anatomy for Anesthesia</div>
+      <div class="ph-sub" id="anaes-p2-anatomy-sub-count">400 MCQs across 6 subjects · Study mode</div>
+    </div>
+  </div>
+  <div class="p1-subjects-grid" id="anaes-p2-anatomy-grid">
+    <!-- rendered by JS -->
+  </div>
+</div>
+
+<!-- ══════════════ ANAESTHESIA P2 — PHYSIO SUB-PAGE ══════════════ -->
+<div id="anaes-p2-physio-page" class="page">
+  <div class="page-header">
+    <button class="back-btn" onclick="_showPage('anaes-p2-hub');setHash('#anaes-p2');">← Anesthesia Paper 2</button>
+    <div>
+      <div class="ph-title">❤️ Physio for Anesthesia</div>
+      <div class="ph-sub" id="anaes-p2-physio-sub-count">600 MCQs across 9 subjects · Study mode</div>
+    </div>
+  </div>
+  <div class="p1-subjects-grid" id="anaes-p2-physio-grid">
+    <!-- rendered by JS -->
+  </div>
+</div>
+
+<!-- ══════════════ ANAESTHESIA P2 — PHARMA SUB-PAGE ══════════════ -->
+<div id="anaes-p2-pharma-page" class="page">
+  <div class="page-header">
+    <button class="back-btn" onclick="_showPage('anaes-p2-hub');setHash('#anaes-p2');">← Anesthesia Paper 2</button>
+    <div>
+      <div class="ph-title">💊 Pharma for Anesthesia</div>
+      <div class="ph-sub" id="anaes-p2-pharma-sub-count">500 MCQs across 6 subjects · Study mode</div>
+    </div>
+  </div>
+  <div class="p1-subjects-grid" id="anaes-p2-pharma-grid">
+    <!-- rendered by JS -->
+  </div>
+</div>
+
+<!-- ══════════════ ANAESTHESIA P2 — PHYSICS SUB-PAGE ══════════════ -->
+<div id="anaes-p2-physics-page" class="page">
+  <div class="page-header">
+    <button class="back-btn" onclick="_showPage('anaes-p2-hub');setHash('#anaes-p2');">← Anesthesia Paper 2</button>
+    <div>
+      <div class="ph-title">⚗️ Physics for Anesthesia</div>
+      <div class="ph-sub" id="anaes-p2-physics-sub-count">200 MCQs across 5 subjects · Study mode</div>
+    </div>
+  </div>
+  <div class="p1-subjects-grid" id="anaes-p2-physics-grid">
+    <!-- rendered by JS -->
+  </div>
+</div>
+
+<!-- ══════════════ ANAESTHESIA P2 — PATHOPHYSIO SUB-PAGE ══════════════ -->
+<div id="anaes-p2-pathophysio-page" class="page">
+  <div class="page-header">
+    <button class="back-btn" onclick="_showPage('anaes-p2-hub');setHash('#anaes-p2');">← Anesthesia Paper 2</button>
+    <div>
+      <div class="ph-title">🔬 Pathophysio for Anesthesia</div>
+      <div class="ph-sub" id="anaes-p2-pathophysio-sub-count">300 MCQs across 6 subjects · Study mode</div>
+    </div>
+  </div>
+  <div class="p1-subjects-grid" id="anaes-p2-pathophysio-grid">
+    <!-- rendered by JS -->
+  </div>
+</div>
+
 <!-- ══════════════ MEDGOLDEN FOR RADIOLOGY — HUB PAGE ══════════════ -->
 <div id="medgolden-hub-page" class="page">
   <div style="background:var(--card);border-bottom:1px solid var(--border);margin-top:68px;padding:14px 5%;position:relative;min-height:64px;display:flex;align-items:center;justify-content:center;">
@@ -5013,7 +5141,7 @@ document.addEventListener('DOMContentLoaded',async ()=>{
   });
   // Public pages work without login — show them IMMEDIATELY from the URL hash
   // so shared links like medmasters.academy/#pricing always land on the right page
-  const PUBLIC=['#home','#jcat','#mowmo','#jobs','#pricing','#pricing-jcat','#pricing-nts','#pricing-fcps','#pricing-cts','#pricing-mo-wmo','#features','#about','#fcps','#usmle','#plab','#amc','#install','#nts','#cts','#mo-wmo','#nts-mock-hub','#revision-sprint','#rs-1','#rs-2','#rs-3','#rs-4','#rs-5','#rs-6','#rs-7','#rs-8','#rs-9','#rs-10'];
+  const PUBLIC=['#home','#jcat','#mowmo','#jobs','#pricing','#pricing-jcat','#pricing-nts','#pricing-fcps','#pricing-cts','#pricing-mo-wmo','#features','#about','#fcps','#usmle','#plab','#amc','#install','#nts','#cts','#mo-wmo','#nts-mock-hub','#revision-sprint','#rs-1','#rs-2','#rs-3','#rs-4','#rs-5','#rs-6','#rs-7','#rs-8','#rs-9','#rs-10','#anaes-p2','#anaes-p2-anatomy','#anaes-p2-physio','#anaes-p2-pharma','#anaes-p2-physics','#anaes-p2-pathophysio'];
   const startHash=window.location.hash||'#home';
   if(PUBLIC.includes(startHash)){
     const action=HASH_MAP[startHash];
@@ -5438,6 +5566,12 @@ const HASH_MAP = {
   '#nts-vaq-analytical':   ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ openNTSVAQ(); setTimeout(()=>openNTSVAQSubject('analytical'),100); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
   '#nts-vaq-quant':        ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ openNTSVAQ(); setTimeout(()=>openNTSVAQSubject('quant'),100); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
   '#nts-vaq-practice':     ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ openNTSVAQ(); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
+  '#anaes-p2':           ()=>{ openAnaesP2Hub(); },
+  '#anaes-p2-anatomy':   ()=>{ openAnaesP2Subject('anatomy'); },
+  '#anaes-p2-physio':    ()=>{ openAnaesP2Subject('physio'); },
+  '#anaes-p2-pharma':    ()=>{ openAnaesP2Subject('pharma'); },
+  '#anaes-p2-physics':   ()=>{ openAnaesP2Subject('physics'); },
+  '#anaes-p2-pathophysio':()=>{ openAnaesP2Subject('pathophysio'); },
   '#pricing':      ()=>_showPage('pricing'),
   '#pricing-jcat': ()=>_showPage('pricing-jcat'),
   '#pricing-nts':  ()=>_showPage('pricing-nts'),
@@ -5474,6 +5608,12 @@ const META_MAP = {
   '#medpink-913':   {title:"🌸 MedPink 9-13 — FCPS Gynae Past Papers Sep 2019–Dec 2021 | MedMasters",     desc:"1,515 solved FCPS Part 1 Gynaecology & Obstetrics MCQs from September 2019 to December 2021. Year-wise past papers with detailed explanations on MedMasters.", img:"https://www.medmasters.academy/og-image.png"},
   '#medpink-58':    {title:"🌸 MedPink 5-8 — FCPS Gynae Past Papers Sep 2017–Apr 2019 | MedMasters",      desc:"830 solved FCPS Part 1 Gynaecology & Obstetrics MCQs from September 2017 to April 2019. Year-wise past papers with full explanations on MedMasters.",   img:"https://www.medmasters.academy/og-image.png"},
   '#medpink-14':    {title:"🌸 MedPink 1-4 — FCPS Gynae Past Papers Feb 2014–Jul 2017 | MedMasters",      desc:"1,430 solved FCPS Part 1 Gynaecology & Obstetrics MCQs from February 2014 to July 2017. Year-wise past papers with detailed explanations on MedMasters.", img:"https://www.medmasters.academy/og-image.png"},
+  '#anaes-p2':          {title:"💉 Anesthesiology Paper 2 MCQ Bank — MedMasters | 2,000 MCQs",        desc:"2,000 Anesthesiology Paper 2 MCQs covering Anatomy, Physiology, Pharmacology, Physics and Pathophysiology for JCAT & FCPS Part 1 Anaesthesia. Pakistan's most comprehensive anaesthesia MCQ bank.", img:"https://www.medmasters.academy/og-image.png"},
+  '#anaes-p2-anatomy':  {title:"🦴 Anatomy for Anesthesia MCQs — MedMasters | 400 MCQs",              desc:"400 Anatomy MCQs for Anaesthesia — Spine, Larynx & Trachea, Heart, Peripheral Nerves, CNS, ANS. JCAT & FCPS Part 1 Anaesthesia preparation on MedMasters.", img:"https://www.medmasters.academy/og-image.png"},
+  '#anaes-p2-physio':   {title:"❤️ Physiology for Anesthesia MCQs — MedMasters | 600 MCQs",          desc:"600 Physiology MCQs for Anaesthesia — Respiratory, CVS, Neuromuscular, Fluids & Electrolytes, Acid-Base Balance, Endocrinology. JCAT & FCPS Anaesthesia preparation.", img:"https://www.medmasters.academy/og-image.png"},
+  '#anaes-p2-pharma':   {title:"💊 Pharmacology for Anesthesia MCQs — MedMasters | 500 MCQs",        desc:"500 Pharmacology MCQs for Anaesthesia — Muscle Relaxants, IV Anesthetics, Inhalational Agents, Analgesics, Local Anesthetics, ANS Drugs. JCAT & FCPS Anaesthesia.", img:"https://www.medmasters.academy/og-image.png"},
+  '#anaes-p2-physics':  {title:"⚗️ Physics for Anesthesia MCQs — MedMasters | 200 MCQs",             desc:"200 Physics MCQs for Anaesthesia — Gas Laws, Equipment, Monitoring, Medical Gases, Vaporizers. JCAT & FCPS Part 1 Anaesthesia preparation on MedMasters.", img:"https://www.medmasters.academy/og-image.png"},
+  '#anaes-p2-pathophysio':{title:"🔬 Pathophysiology for Anesthesia MCQs — MedMasters | 300 MCQs",  desc:"300 Pathophysiology MCQs for Anaesthesia — Liver, Kidney, Respiratory Pathophysiology, Shock, Anaphylaxis, Trauma. JCAT & FCPS Anaesthesia preparation.", img:"https://www.medmasters.academy/og-image.png"},
 };
 function _showPage(p){
   // Normalise — strip trailing '-page' if caller included it
@@ -8166,7 +8306,8 @@ const FCPS_P2_AVAILABLE={
   'fcps_ent_part1':         {count:'3,000 MCQs', topics:'External Ear · Middle Ear · Inner Ear · External Nose & Vestibule · Nasal Cavity · Paranasal Sinuses · Oral Cavity · Oropharynx · Nasopharynx · Hypopharynx · Face · Neck · Thyroid · Salivary Glands · Congenital Lesions in Neck · Neck Space · Larynx · Oesophagus'},
   'fcps_ophthal_part1':     {count:'3,000 MCQs', topics:'Ocular Anatomy · Ocular Physiology · Ocular Pathology · Ocular Pharmacology · Optical Physics · Principles of Refraction · Ophthalmic Instruments · Vitreo-retina · Glaucoma · Lens · Cornea · Uveal Tract · Neuroophthalmology · Eyelid · Conjunctiva · Orbit · Squint · Lacrimal Apparatus · Scleritis · Ocular Trauma'},
   'fcps_ophthalmology_part1':{count:'3,000 MCQs', topics:'Ocular Anatomy · Ocular Physiology · Ocular Pathology · Ocular Pharmacology · Optical Physics · Principles of Refraction · Ophthalmic Instruments · Vitreo-retina · Glaucoma · Lens · Cornea · Uveal Tract · Neuroophthalmology · Eyelid · Conjunctiva · Orbit · Squint · Lacrimal Apparatus · Scleritis · Ocular Trauma'},
-  'fcps_radiology_part1':   {count:'2,000 MCQs', topics:'Brain & Spine · Respiratory & CVS · GIT, Hepato, Pancreas · Urinary & Adrenal · Paediatrics · Bones, Joints & Soft Tissue · Head & Neck (+ENT, Eye) · Women Imaging · Male Pelvis · Nuclear Imaging'}
+  'fcps_radiology_part1':   {count:'2,000 MCQs', topics:'Brain & Spine · Respiratory & CVS · GIT, Hepato, Pancreas · Urinary & Adrenal · Paediatrics · Bones, Joints & Soft Tissue · Head & Neck (+ENT, Eye) · Women Imaging · Male Pelvis · Nuclear Imaging'},
+  'fcps_anaesthesia_part1': {count:'2,000 MCQs', topics:'Anatomy · Physiology · Pharmacology · Physics · Pathophysiology'}
 };
 
 function selectFCPSSpecialty(subj){
@@ -8205,6 +8346,7 @@ function refreshFCPSPaperPage_browse(subj){
     if(typeof injectMedGoldenPaperCard === 'function') injectMedGoldenPaperCard('fcps-paper-page', subj === 'fcps_radiology_part1');
     if(typeof injectMedPinkPaperCard   === 'function') injectMedPinkPaperCard('fcps-paper-page', subj === 'fcps_gynaecology_part1');
     if(typeof injectRevisionSprintPaperCard === 'function') injectRevisionSprintPaperCard('fcps-paper-page', subj === 'fcps_surgery_part1');
+    if(typeof injectAnaesP2PaperCard === 'function') injectAnaesP2PaperCard('fcps-paper-page', subj === 'fcps_anaesthesia_part1');
   } catch(e){}
 }
 
@@ -8229,6 +8371,8 @@ function refreshFCPSPaperPage(){
   injectMedPinkPaperCard('fcps-paper-page', subj==='fcps_gynaecology_part1');
   // ── Revision Sprint card on FCPS Surgery & Allied only ──
   if(typeof injectRevisionSprintPaperCard === 'function') injectRevisionSprintPaperCard('fcps-paper-page', subj === 'fcps_surgery_part1');
+  // ── Anaesthesia P2 card on FCPS Anaesthesia paper-page ──
+  if(typeof injectAnaesP2PaperCard === 'function') injectAnaesP2PaperCard('fcps-paper-page', subj === 'fcps_anaesthesia_part1');
 }
 
 function openFCPSPaper1(){
@@ -8257,6 +8401,7 @@ function openFCPSPaper2(){
   else if(_ctxSubj==='fcps_ophthal_part1'){ loadOphP2MCQData(); _showPage('oph-p2-subjects'); setHash('#ophpaper2'); }
   else if(_ctxSubj==='fcps_ophthalmology_part1'){ loadOphP2MCQData(); _showPage('oph-p2-subjects'); setHash('#ophpaper2'); }
   else if(_ctxSubj==='fcps_radiology_part1'){ loadRadioP2MCQData(); _showPage('radio-p2-subjects'); setHash('#radiopaper2'); }
+  else if(_ctxSubj==='fcps_anaesthesia_part1'){ openAnaesP2Hub(); }
 }
 // ═══════════ END FCPS PART 1 ═══════════
 document.addEventListener('click',e=>{
@@ -9605,6 +9750,10 @@ function refreshPaperPage(){
     ophthalmology:{
       p2count:'3,000 MCQs', p2topics:'Ocular Anatomy · Ocular Physiology · Ocular Pathology · Ocular Pharmacology · Optical Physics · Principles of Refraction · Ophthalmic Instruments · Vitreo-retina · Glaucoma · Lens · Cornea · Uveal Tract · Neuroophthalmology · Eyelid · Conjunctiva · Orbit · Squint · Lacrimal Apparatus · Scleritis · Ocular Trauma',
       p2available:true
+    },
+    anesthesia:{
+      p2count:'2,000 MCQs', p2topics:'Anatomy · Physiology · Pharmacology · Physics · Pathophysiology',
+      p2available:true
     }
   };
   const p1c=document.getElementById('paper1-count'); if(p1c) p1c.textContent='7,300 MCQs';
@@ -9629,6 +9778,8 @@ function refreshPaperPage(){
   injectMedGoldenPaperCard('paper-page', subj==='radiology' || subj==='fcps_radiology_part1');
   // ── Revision Sprint card on JCAT Surgery & Allied only ──
   if(typeof injectRevisionSprintPaperCard === 'function') injectRevisionSprintPaperCard('paper-page', subj === 'surgery');
+  // ── Anaesthesia P2 card on JCAT Anesthesia paper-page ──
+  if(typeof injectAnaesP2PaperCard === 'function') injectAnaesP2PaperCard('paper-page', subj === 'anesthesia');
 }
 
 // Injects (or removes) a MedPink Files paper-card alongside Paper One / Paper Two.
@@ -9730,7 +9881,8 @@ function refreshPaperPage_browse(subj){
     gynaecology:{p2count:'3,000 MCQs',p2topics:'Anatomy of Reproductive Tract · Reproductive Physiology · Biochemistry · Maternal Pharmacology · Antenatal & Natal Care · Pathology in Obs & Gyne · Common Congenital Anomalies · Infections · Biostatistics, Research & Biophysics',p2available:true},
     psychiatry:{p2count:'2,000 MCQs',p2topics:'Neurology · Psychiatry · Neurosurgery · Medicine · Child Psychiatry · Behavioural Sciences & Psychology',p2available:true},
     ent:{p2count:'3,000 MCQs',p2topics:'External Ear · Middle Ear · Inner Ear · External Nose & Vestibule · Nasal Cavity · Paranasal Sinuses · Oral Cavity · Oropharynx · Nasopharynx · Hypopharynx · Face · Neck · Thyroid · Salivary Glands · Congenital Lesions in Neck · Neck Space · Larynx · Oesophagus',p2available:true},
-    ophthalmology:{p2count:'3,000 MCQs',p2topics:'Ocular Anatomy · Ocular Physiology · Ocular Pathology · Ocular Pharmacology · Optical Physics · Principles of Refraction · Ophthalmic Instruments · Vitreo-retina · Glaucoma · Lens · Cornea · Uveal Tract · Neuroophthalmology · Eyelid · Conjunctiva · Orbit · Squint · Lacrimal Apparatus · Scleritis · Ocular Trauma',p2available:true}
+    ophthalmology:{p2count:'3,000 MCQs',p2topics:'Ocular Anatomy · Ocular Physiology · Ocular Pathology · Ocular Pharmacology · Optical Physics · Principles of Refraction · Ophthalmic Instruments · Vitreo-retina · Glaucoma · Lens · Cornea · Uveal Tract · Neuroophthalmology · Eyelid · Conjunctiva · Orbit · Squint · Lacrimal Apparatus · Scleritis · Ocular Trauma',p2available:true},
+    anesthesia:{p2count:'2,000 MCQs',p2topics:'Anatomy · Physiology · Pharmacology · Physics · Pathophysiology',p2available:true}
   };
   const p1c=document.getElementById('paper1-count'); if(p1c) p1c.textContent='7,300 MCQs';
   const p1t=document.getElementById('paper1-topics'); if(p1t) p1t.textContent=p1topics;
@@ -9751,6 +9903,7 @@ function refreshPaperPage_browse(subj){
     if(typeof injectMedPinkPaperCard   === 'function') injectMedPinkPaperCard('paper-page',   subj==='gynaecology');
     if(typeof injectMedGoldenPaperCard === 'function') injectMedGoldenPaperCard('paper-page', subj==='radiology');
     if(typeof injectRevisionSprintPaperCard === 'function') injectRevisionSprintPaperCard('paper-page', subj==='surgery');
+    if(typeof injectAnaesP2PaperCard === 'function') injectAnaesP2PaperCard('paper-page', subj==='anesthesia');
   } catch(e){}
 }
 
@@ -10236,6 +10389,186 @@ async function startRadioP2Practice(){
   const bankSet=[...mcqs].sort(()=>Math.random()-0.5).slice(0,RADIO_PR2.count);
   startPracSession(bankSet);
 }
+
+// ══════════════════════════════════════════════════════════════
+// ANESTHESIA PAPER 2
+// ══════════════════════════════════════════════════════════════
+const ANAES_P2_SUBJECTS = {
+  anatomy: [
+    {key:'anaes_p2_anatomy_spine',      label:'Anatomy of Spine',          icon:'🦴', count:80},
+    {key:'anaes_p2_anatomy_larynx',     label:'Larynx, Trachea & Lungs',   icon:'🫁', count:60},
+    {key:'anaes_p2_anatomy_heart',      label:'Heart',                      icon:'❤️', count:60},
+    {key:'anaes_p2_anatomy_periph',     label:'Peripheral Nervous System',  icon:'⚡', count:80},
+    {key:'anaes_p2_anatomy_cns',        label:'CNS',                        icon:'🧠', count:60},
+    {key:'anaes_p2_anatomy_ans',        label:'ANS',                        icon:'🔄', count:60},
+  ],
+  physio: [
+    {key:'anaes_p2_physio_resp',        label:'Respiratory System',         icon:'🫁', count:80},
+    {key:'anaes_p2_physio_cns',         label:'CNS',                        icon:'🧠', count:40},
+    {key:'anaes_p2_physio_cvs',         label:'CVS',                        icon:'❤️', count:100},
+    {key:'anaes_p2_physio_neuromusc',   label:'Neuromuscular Physiology',   icon:'⚡', count:40},
+    {key:'anaes_p2_physio_kidney',      label:'Kidney / Liver',             icon:'🫘', count:40},
+    {key:'anaes_p2_physio_fluids',      label:'Fluids & Electrolytes',      icon:'💧', count:100},
+    {key:'anaes_p2_physio_acidbase',    label:'Acid-Base Balance',          icon:'⚗️', count:60},
+    {key:'anaes_p2_physio_blood',       label:'Blood & Components',         icon:'🩸', count:40},
+    {key:'anaes_p2_physio_endo',        label:'Endocrinology',              icon:'🦋', count:100},
+  ],
+  pharma: [
+    {key:'anaes_p2_pharma_muscle',      label:'Muscle Relaxants',           icon:'💪', count:80},
+    {key:'anaes_p2_pharma_iv',          label:'IV Anesthetics',             icon:'💉', count:80},
+    {key:'anaes_p2_pharma_inhal',       label:'Inhalational Agents',        icon:'🌬️', count:80},
+    {key:'anaes_p2_pharma_analgesics',  label:'Analgesics',                 icon:'💊', count:80},
+    {key:'anaes_p2_pharma_local',       label:'Local Anesthetics',          icon:'🔵', count:80},
+    {key:'anaes_p2_pharma_ans',         label:'Autonomic Nervous System Drugs',icon:'🔄',count:100},
+  ],
+  physics: [
+    {key:'anaes_p2_physics_gaslaws',    label:'Gas Laws',                   icon:'⚗️', count:40},
+    {key:'anaes_p2_physics_equip',      label:'Equipment (Pipelines & Cylinders)',icon:'🔧',count:40},
+    {key:'anaes_p2_physics_monitor',    label:'Monitoring',                 icon:'📊', count:40},
+    {key:'anaes_p2_physics_gases',      label:'Gases (N₂O, O₂)',            icon:'💨', count:40},
+    {key:'anaes_p2_physics_vapor',      label:'Vaporizers',                 icon:'🌡️', count:40},
+  ],
+  pathophysio: [
+    {key:'anaes_p2_patho_liver',        label:'Liver',                      icon:'🫀', count:40},
+    {key:'anaes_p2_patho_kidney',       label:'Kidney',                     icon:'🫘', count:40},
+    {key:'anaes_p2_patho_resp',         label:'Respiratory Pathophysiology',icon:'🫁', count:40},
+    {key:'anaes_p2_patho_shock',        label:'Types of Shock',             icon:'⚡', count:40},
+    {key:'anaes_p2_patho_anaphylaxis',  label:'Anaphylaxis',                icon:'⚠️', count:40},
+    {key:'anaes_p2_patho_trauma',       label:'Trauma',                     icon:'🏥', count:100},
+  ]
+};
+
+const ANAES_P2_DATA   = {};
+const ANAES_P2_LOADED = new Set();
+
+function _anaesP2HasAccess(){
+  if(!S.auth) return false;
+  const sub = (S.subject||'').toLowerCase();
+  return sub === 'anesthesia' || sub === 'fcps_anaesthesia_part1';
+}
+
+async function _loadAnaesP2SubjectData(key){
+  if(ANAES_P2_LOADED.has(key)) return ANAES_P2_DATA[key]||[];
+  if(window.MM && window.MM[key] && window.MM[key].length){
+    ANAES_P2_DATA[key]=window.MM[key]; ANAES_P2_LOADED.add(key); return ANAES_P2_DATA[key];
+  }
+  return new Promise(resolve=>{
+    const script=document.createElement('script');
+    // Keys belong to 5 files — derive filename from key prefix
+    const fileMap={
+      'anaes_p2_anatomy':'anaes_p2_anatomy',
+      'anaes_p2_physio' :'anaes_p2_physio',
+      'anaes_p2_pharma' :'anaes_p2_pharma',
+      'anaes_p2_physics':'anaes_p2_physics',
+      'anaes_p2_patho'  :'anaes_p2_pathophysio'
+    };
+    const prefix=Object.keys(fileMap).find(p=>key.startsWith(p))||key;
+    const fname=fileMap[prefix]||prefix;
+    script.src='/'+fname+'.js';
+    script.onload=()=>{ if(window.MM&&window.MM[key]) ANAES_P2_DATA[key]=window.MM[key]; ANAES_P2_LOADED.add(key); resolve(ANAES_P2_DATA[key]||[]); };
+    script.onerror=()=>{ ANAES_P2_LOADED.add(key); resolve([]); };
+    document.head.appendChild(script);
+  });
+}
+
+function openAnaesP2Hub(){
+  _showPage('anaes-p2-hub'); setHash('#anaes-p2');
+}
+
+function openAnaesP2Subject(subj){
+  const subjects=ANAES_P2_SUBJECTS[subj];
+  if(!subjects) return;
+  _showPage('anaes-p2-'+subj); setHash('#anaes-p2-'+subj);
+  _renderAnaesP2Grid(subj);
+}
+
+function _renderAnaesP2Grid(subj){
+  const subjects=ANAES_P2_SUBJECTS[subj];
+  if(!subjects) return;
+  const grid=document.getElementById('anaes-p2-'+subj+'-grid');
+  if(!grid) return;
+  const prog=getProgress();
+  grid.innerHTML=subjects.map(s=>{
+    const loaded=ANAES_P2_DATA[s.key];
+    const actual=loaded?loaded.length:s.count;
+    const done=Object.keys(prog.answers).filter(k=>k.startsWith(s.key+'_')).length;
+    const pct=actual?Math.round(done/actual*100):0;
+    const lastPg=getStudyLastPage(s.key);
+    const totalPgs=Math.ceil(actual/50);
+    const resumeHint=lastPg>0?` \u00B7 page ${lastPg+1}/${totalPgs}`:'';
+    return `<div class="p1-subj-card" onclick="startAnaesP2Topic('${s.key}')">
+      <div class="p1-subj-icon">${s.icon}</div>
+      <div style="flex:1;">
+        <div class="p1-subj-name">${s.label}</div>
+        <div class="p1-subj-count">${actual.toLocaleString()} MCQs</div>
+        <div class="p1-subj-progress">${pct>0?'\u25CF '+pct+'% complete'+resumeHint:loaded?'Not started yet':'Ready to load'}</div>
+      </div>
+      <div class="p1-subj-arrow">\u203A</div>
+    </div>`;
+  }).join('');
+}
+
+function startAnaesP2Topic(key){
+  // Find which category this key belongs to
+  let subjList=null;
+  for(const cat of Object.values(ANAES_P2_SUBJECTS)){
+    if(cat.find(s=>s.key===key)){ subjList=cat; break; }
+  }
+  if(!subjList) return;
+  promptResumeOrFresh(key, subjList, _loadAnaesP2SubjectData, _doOpenAnaesP2Topic);
+}
+
+async function _doOpenAnaesP2Topic(key, startPage){
+  let subjList=null;
+  for(const cat of Object.values(ANAES_P2_SUBJECTS)){
+    const found=cat.find(s=>s.key===key);
+    if(found){ subjList=cat; break; }
+  }
+  const s=subjList?subjList.find(x=>x.key===key):null;
+  document.getElementById('study-subj-tag').textContent=(s?s.label:'').toUpperCase();
+  _showPage('study'); setHash('#study');
+  document.getElementById('study-batch-container').innerHTML='<div style="padding:40px;text-align:center;color:var(--text);">Loading MCQs\u2026</div>';
+  const data=await _loadAnaesP2SubjectData(key);
+  if(!data.length){
+    document.getElementById('study-batch-container').innerHTML='<div style="padding:40px;text-align:center;color:var(--text);"><div style="font-size:32px;margin-bottom:12px;">🔄</div><div style="font-weight:700;font-size:15px;margin-bottom:8px;">MCQs Being Finalised</div><div style="font-size:13px;opacity:0.7;">This topic\'s MCQs are being uploaded. Check back soon!</div></div>';
+    return;
+  }
+  ST.subj=key; ST.pageAnswered={};
+  ST.qs=data.map((m,i)=>convertMCQ(m,i));
+  ST.pageSize=calcPageSize(ST.qs.slice(0,20));
+  const maxPage=Math.max(0,Math.ceil(ST.qs.length/ST.pageSize)-1);
+  ST.page=Math.min(startPage||0,maxPage);
+  renderStudyPage();
+}
+
+// Inject (or remove) the Anaesthesia Paper 2 card on the paper-page alongside Paper 1 & 2.
+// Visible to ALL users (subscribers + non-subscribers + wrong-tier browsers).
+// Click fires auth gate — auth gate is inside startAnaesP2Topic via promptResumeOrFresh.
+function injectAnaesP2PaperCard(pageId, shouldShow){
+  const pageEl=document.getElementById(pageId);
+  if(!pageEl) return;
+  const grid=pageEl.querySelector('.paper-grid');
+  if(!grid) return;
+  const CARD_ID='anaes-p2-paper-card';
+  let card=document.getElementById(CARD_ID);
+  if(!shouldShow){
+    if(card) card.remove();
+    return;
+  }
+  if(card) return; // already present
+  card=document.createElement('div');
+  card.id=CARD_ID;
+  card.className='paper-card';
+  card.style.borderColor='rgba(201,168,76,0.5)';
+  card.onclick=openAnaesP2Hub;
+  card.innerHTML=`
+    <div class="paper-num" style="font-size:26px;">💉</div>
+    <div class="paper-label">Paper 2</div>
+    <div class="paper-count">2,000 MCQs</div>
+    <div class="paper-topics">Anatomy \u00B7 Physiology \u00B7 Pharmacology \u00B7 Physics \u00B7 Pathophysiology</div>`;
+  grid.appendChild(card);
+}
+// ══════════════ END ANESTHESIA PAPER 2 ══════════════════════
 function openNTSPractice(cat){
   if(!S.auth){ openCodeModal('nts'); return; }
   if(!hasNTSAccess()&&!hasCTSAccess()&&!hasMOWMOAccess()){ openCodeModal('nts'); return; }
@@ -11491,6 +11824,7 @@ function openPaper2(){
   if(_ctxSubj==='ent'){ openEntPaper2(); return; }
   if(_ctxSubj==='ophthalmology'){ openOphPaper2(); return; }
   if(_ctxSubj==='radiology'){ openRadioPaper2(); return; }
+  if(_ctxSubj==='anesthesia'){ openAnaesP2Hub(); return; }
   if(_ctxSubj!=='medicine'){
     const specialtyNames={dentistry:'Dentistry (MDS)',anesthesia:'Anesthesiology',ophthalmology:'Ophthalmology',ent:'ENT (ORL)',radiology:'Diagnostic Radiology'};
     showLockedModal((specialtyNames[_ctxSubj]||_ctxSubj)+' Paper 2');
@@ -11623,6 +11957,7 @@ function promptResumeOrFresh(key, subjList, dataLoader, openFn){
   else if(_k.startsWith('ent_p2'))   _need = _famIsFCPS ? 'fcps_ent_part1'         : 'ent';
   else if(_k.startsWith('oph_p2'))   _need = _famIsFCPS ? ['fcps_ophthal_part1','fcps_ophthalmology_part1'] : 'ophthalmology';
   else if(_k.startsWith('radio_p2')) _need = _famIsFCPS ? 'fcps_radiology_part1'   : 'radiology';
+  else if(_k.startsWith('anaes_p2')) _need = _famIsFCPS ? 'fcps_anaesthesia_part1' : 'anesthesia';
   else if(_k.startsWith('med_p2'))   _need = _famIsFCPS ? 'fcps_medicine_part1'    : 'medicine';
   else if(_k.startsWith('p2_'))      _need = _famIsFCPS ? 'fcps_medicine_part1'    : 'medicine';
   // Paper 1 basic sciences — disambiguate by context
