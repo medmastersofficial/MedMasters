@@ -5033,8 +5033,8 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
     <img class="modal-logo-img" id="modal-logo-img" src="" alt="MedMasters" style="width:66px;height:66px;border-radius:50%;object-fit:cover;margin:0 auto 16px;display:block;border:2px solid var(--gold);box-shadow:0 0 16px rgba(201,168,76,0.4);">
     <h2 style="font-size:21px;font-weight:800;color:#F0EBE0;margin:0 0 10px;letter-spacing:-0.2px;">Unlock Full Access</h2>
     <p style="font-size:13px;color:rgba(240,235,224,0.55);margin:0 0 20px;line-height:1.5;">Enter your registered email &amp; access code, or<br>get one in seconds via WhatsApp.</p>
-    <input class="code-input" id="email-input" type="email" placeholder="Your email address" style="letter-spacing:0;font-size:13.5px;font-weight:500;text-align:center;text-transform:none;margin-bottom:10px;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,0.03);border:1.5px solid rgba(240,235,224,0.14);color:#F0EBE0;" onkeydown="if(event.key==='Enter')verifyCode()">
-    <input class="code-input" id="code-input" type="text" placeholder="MM-2026-XXXX" maxlength="14" oninput="fmtCode(this)" style="letter-spacing:2px;font-size:14px;font-weight:700;text-align:center;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,0.03);border:1.5px solid rgba(240,235,224,0.14);color:#F0EBE0;margin-bottom:0;" onkeydown="if(event.key==='Enter')verifyCode()">
+    <input class="code-input" id="email-input" type="email" placeholder="Your email address" style="letter-spacing:0;font-size:14.5px;font-weight:500;text-align:center;text-transform:none;margin-bottom:10px;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,0.03);border:1.5px solid rgba(240,235,224,0.14);color:#F0EBE0;" onkeydown="if(event.key==='Enter')verifyCode()">
+    <input class="code-input" id="code-input" type="text" placeholder="MM-2026-XXXX" maxlength="14" oninput="fmtCode(this)" style="letter-spacing:2px;font-size:15px;font-weight:700;text-align:center;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,0.03);border:1.5px solid rgba(240,235,224,0.14);color:#F0EBE0;margin-bottom:0;" onkeydown="if(event.key==='Enter')verifyCode()">
     <div class="code-error" id="code-err"></div>
     <button class="btn-verify" onclick="verifyCode()" style="width:100%;margin-top:16px;padding:15px;font-size:15px;font-weight:800;letter-spacing:0.2px;border-radius:14px;">Unlock Access →</button>
     <div style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(240,235,224,0.08);text-align:center;">
@@ -8772,7 +8772,14 @@ function normalizeSubject(raw){
   return s;
 }
 function loadDashboard(){
-  _browseContext = null;
+  // Only clear _browseContext when the dashboard is the page actually being
+  // shown. loadDashboard() is also called from background refreshes (e.g.
+  // the visibilitychange handler on app foreground/background) which can
+  // fire while the person is still sitting on another specialty's paper
+  // page — clearing it there wrongly makes promptResumeOrFresh fall back
+  // to the subscriber's own tier, re-opening access to that other specialty.
+  const _dashEl = document.getElementById('dashboard-page');
+  if(_dashEl && _dashEl.classList.contains('active')){ _browseContext = null; }
   const names={medicine:'Medicine & Allied',surgery:'Surgery & Allied',dentistry:'Dentistry (MDS)',psychiatry:'Psychiatry',anesthesia:'Anesthesiology',ophthalmology:'Ophthalmology',ent:'ENT (ORL)',gynaecology:'Gynae & Obs',radiology:'Diagnostic Radiology'};
   const isMockNTS = hasMockOnlyAccess();
   const isNTS = hasNTSAccess();
