@@ -8835,7 +8835,7 @@ function loadDashboard(){
     document.getElementById('dash-studied-total').textContent='/'+NTS_TOTAL.toLocaleString();
   } else if(isFCPS){
     // FCPS: always Paper 1 (7300) + Paper 2 if available
-    const fcpsP2={fcps_medicine_part1:5129,fcps_surgery_part1:2000,fcps_gynaecology_part1:3000,fcps_psychiatry_part1:2000,fcps_ent_part1:3000,fcps_ophthal_part1:3000,fcps_ophthalmology_part1:3000};
+    const fcpsP2={fcps_medicine_part1:5129,fcps_surgery_part1:2000,fcps_gynaecology_part1:3000,fcps_psychiatry_part1:2000,fcps_ent_part1:3000,fcps_ophthal_part1:3000,fcps_ophthalmology_part1:3000,fcps_anaesthesia_part1:2000};
     const isFcpsRadio=(S.subject==='fcps_radiology_part1');
     const FCPS_TOTAL=(S.subject==='fcps_ent_part1'||S.subject==='fcps_ophthal_part1'||S.subject==='fcps_ophthalmology_part1')?10300:isFcpsRadio?15590:7300+(fcpsP2[S.subject]||0);
     setRing('ring-studied', Math.min(done/FCPS_TOTAL,1));
@@ -8848,7 +8848,8 @@ function loadDashboard(){
     const isENT=S.subject==='ent';
     const isOph=S.subject==='ophthalmology';
     const isRadio=S.subject==='radiology';
-    const P1_TOTAL=7300, P2_TOTAL=isSurgery?2000:isGynaeForTotal?3000:isPsych?2000:isENT?3000:isOph?3000:isRadio?2000:5129, COMBINED=(isENT||isOph)?10300:isRadio?15590:P1_TOTAL+P2_TOTAL;
+    const isAnaesthesia=S.subject==='anesthesia';
+    const P1_TOTAL=7300, P2_TOTAL=isSurgery?2000:isGynaeForTotal?3000:isPsych?2000:isENT?3000:isOph?3000:isRadio?2000:isAnaesthesia?2000:5129, COMBINED=(isENT||isOph)?10300:isRadio?15590:P1_TOTAL+P2_TOTAL;
     setRing('ring-studied', Math.min(done/COMBINED,1));
     document.getElementById('dash-total-done').textContent=done>=1000?(done/1000).toFixed(1)+'k':done.toLocaleString();
     document.getElementById('dash-studied-total').textContent='/'+COMBINED.toLocaleString();
@@ -10571,6 +10572,82 @@ function injectAnaesP2PaperCard(pageId, shouldShow){
     <div class="paper-count">2,000 MCQs</div>
     <div class="paper-topics">Anatomy \u00B7 Physiology \u00B7 Pharmacology \u00B7 Physics \u00B7 Pathophysiology</div>`;
   grid.appendChild(card);
+}
+
+// ── Anesthesia Paper 2 — timed PRACTICE mode (separate from study-mode hub above) ──
+// Reuses the generic p2-prac-setup-page exactly like plain Medicine's openP2Practice,
+// flattening the 5 ANAES_P2_SUBJECTS categories into one subject-picker grid.
+// Uses the shared PR2 state object (not a separate one) because the count
+// buttons baked into the p2-prac-setup-page markup always call selectP2PracCount,
+// which writes into PR2 — matching openMixedPractice's same approach.
+function openAnaesP2Practice(){
+  PR2.subj=''; PR2.count=0;
+  const labels=document.querySelectorAll('#p2-prac-setup-page .prac-step-label');
+  const grid=document.getElementById('p2-prac-subject-grid');
+  if(labels[0]) labels[0].textContent='Step 1 — Choose Subject';
+  if(labels[1]) labels[1].textContent='Step 2 — How Many MCQs?';
+  if(grid) grid.style.display='';
+  const btn=document.getElementById('p2-prac-start-btn');
+  if(btn){ btn.onclick=startAnaesP2Practice; btn.classList.remove('ready'); btn.textContent='Select subject and count first'; }
+  renderAnaesP2PracticeSubjects();
+  _showPage('p2-prac-setup'); setHash('#anaesp2practice');
+}
+function renderAnaesP2PracticeSubjects(){
+  const grid=document.getElementById('p2-prac-subject-grid');
+  if(!grid) return;
+  const flat=Object.values(ANAES_P2_SUBJECTS).flat();
+  grid.innerHTML=flat.map(s=>`<div class="prac-subj-opt" onclick="selectAnaesP2PracSubj('${s.key}',this)">${s.icon} ${s.label}</div>`).join('');
+}
+function selectAnaesP2PracSubj(key,el){
+  PR2.subj=key;
+  document.querySelectorAll('#p2-prac-subject-grid .prac-subj-opt').forEach(e=>e.classList.remove('sel'));
+  el.classList.add('sel'); checkP2PracReady();
+}
+async function startAnaesP2Practice(){
+  if(!PR2.subj||!PR2.count) return;
+  const flat=Object.values(ANAES_P2_SUBJECTS).flat();
+  const s=flat.find(x=>x.key===PR2.subj);
+  document.getElementById('prac-subj-tag').textContent=(s?s.label:'').toUpperCase();
+  _showPage('prac-mcq'); setHash('#practice');
+  document.getElementById('prac-q').textContent='Loading MCQs…';
+  document.getElementById('prac-opts').innerHTML='';
+  const all=await _loadAnaesP2SubjectData(PR2.subj);
+  const mcqs=all.map((m,i)=>convertMCQ(m,i));
+  const bankSet=[...mcqs].sort(()=>Math.random()-0.5).slice(0,Math.min(PR2.count,mcqs.length));
+  startPracSession(bankSet);
+}
+
+// ── Anesthesia Mixed Practice — Paper 1 (8 basic-science subjects) + Paper 2 (5 categories) ──
+async function openAnaesMixedPractice(){
+  PR2.subj='__anaesmixed__'; PR2.count=0;
+  const labels=document.querySelectorAll('#p2-prac-setup-page .prac-step-label');
+  const grid=document.getElementById('p2-prac-subject-grid');
+  if(labels[0]) labels[0].textContent='\u{1F500} Mixed Practice \u2014 Paper 1 + Anesthesia Paper 2';
+  if(labels[1]) labels[1].textContent='Step 1 \u2014 How Many MCQs?';
+  if(grid) grid.style.display='none';
+  const btn=document.getElementById('p2-prac-start-btn');
+  if(btn){ btn.onclick=startAnaesMixedPractice; btn.classList.remove('ready'); btn.textContent='Select count first'; }
+  _showPage('p2-prac-setup'); setHash('#anaesmixedpractice');
+}
+async function startAnaesMixedPractice(){
+  if(!PR2.count) return;
+  document.getElementById('prac-subj-tag').textContent='MIXED';
+  _showPage('prac-mcq'); setHash('#practice');
+  document.getElementById('prac-q').textContent='Loading MCQs…';
+  document.getElementById('prac-opts').innerHTML='';
+  const p1All=await Promise.all(SUBJECTS.map(s=>loadSubjectData(s.key)));
+  const anaesP2Flat=Object.values(ANAES_P2_SUBJECTS).flat();
+  const p2All=await Promise.all(anaesP2Flat.map(s=>_loadAnaesP2SubjectData(s.key)));
+  const allMCQs=[...p1All.flat(),...p2All.flat()].map((m,i)=>convertMCQ(m,i));
+  const bankSet=[...allMCQs].sort(()=>Math.random()-0.5).slice(0,Math.min(PR2.count,allMCQs.length));
+  PR2.qs=bankSet;
+  PR2.qi=0; PR2.correct=0; PR2.wrong=0; PR2.startTime=Date.now();
+  document.getElementById('prac-tot').textContent=PR2.qs.length;
+  document.getElementById('prac-correct').textContent=0;
+  document.getElementById('prac-wrong').textContent=0;
+  PR.qs=PR2.qs; PR.qi=0; PR.correct=0; PR.wrong=0; PR.startTime=PR2.startTime;
+  PR._isP2=false; PR._isMixed=true;
+  renderPracQ();
 }
 // ══════════════ END ANESTHESIA PAPER 2 ══════════════════════
 function openNTSPractice(cat){
@@ -12330,6 +12407,10 @@ function openPracticePicker(){
     if(p2icon) p2icon.textContent='🩻';
     if(p2sub)  p2sub.textContent='Diagnostic Radiology · 2,000 MCQs · Choose subject & set size';
     if(mixsub) mixsub.textContent='Paper 1 & Radiology Paper 2 combined · Choose set size';
+  } else if(S.subject==='anesthesia'||S.subject==='fcps_anaesthesia_part1'){
+    if(p2icon) p2icon.textContent='💉';
+    if(p2sub)  p2sub.textContent='Anesthesiology · 2,000 MCQs · Choose subject & set size';
+    if(mixsub) mixsub.textContent='Paper 1 & Anesthesia Paper 2 combined · Choose set size';
   } else {
     if(p2icon) p2icon.textContent='🔒';
     if(p2sub)  p2sub.textContent='Paper 2 · Coming Soon for your specialty';
@@ -12349,6 +12430,7 @@ function openPracticePickerP2(){
   else if(S.subject==='ent'||S.subject==='fcps_ent_part1') openEntP2Practice();
   else if(S.subject==='ophthalmology'||S.subject==='fcps_ophthal_part1'||S.subject==='fcps_ophthalmology_part1') openOphP2Practice();
   else if(S.subject==='radiology'||S.subject==='fcps_radiology_part1') openRadioP2Practice();
+  else if(S.subject==='anesthesia'||S.subject==='fcps_anaesthesia_part1') openAnaesP2Practice();
   else {
     closePracticePicker();
     const specialtyNames={dentistry:'Dentistry (MDS)',anesthesia:'Anesthesiology',ophthalmology:'Ophthalmology',ent:'ENT (ORL)',radiology:'Diagnostic Radiology',fcps_dentistry_part1:'FCPS Dentistry',fcps_anaesthesia_part1:'FCPS Anaesthesia',fcps_ophthalmology_part1:'FCPS Ophthalmology',fcps_ent_part1:'FCPS ENT',fcps_pathology_part1:'FCPS Pathology',fcps_community_part1:'FCPS Community Medicine',fcps_radiology_part1:'FCPS Diagnostic Radiology'};
@@ -12360,6 +12442,7 @@ function openPracticePickerMixed(){
   else if(S.subject==='gynaecology'||S.subject==='fcps_gynaecology_part1') openGynaeMixedPractice();
   else if(S.subject==='medicine'||S.subject==='fcps_medicine_part1') openMixedPractice();
   else if(S.subject==='psychiatry'||S.subject==='fcps_psychiatry_part1') openPsychMixedPractice();
+  else if(S.subject==='anesthesia'||S.subject==='fcps_anaesthesia_part1') openAnaesMixedPractice();
   else openPracticePickerP1();
 }
 function closePracticePicker(){
