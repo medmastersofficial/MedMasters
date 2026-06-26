@@ -11978,7 +11978,10 @@ function promptResumeOrFresh(key, subjList, dataLoader, openFn){
     openCodeModal(null); return;
   }
   // Tier-specific check
-  if(_need !== null){
+  // NTS / CTS / MO-WMO-General subscribers have full access to ALL NTS subject
+  // keys — skip the per-subject tier check for them entirely.
+  const _isNTSFamily = (_eff==='nts'||_eff.includes('nts')||_eff.includes('mowmo')||_eff.includes('mo/wmo')||_eff==='mo'||_eff==='wmo'||_eff==='cts'||_eff.includes('cts')||_eff==='mo_wmo'||_eff.includes('mo_wmo'));
+  if(_need !== null && !_isNTSFamily){
     const _ok = Array.isArray(_need) ? _need.indexOf(_eff) !== -1 : _eff === _need;
     if(!_ok){ openCodeModal(null); return; }
   }
