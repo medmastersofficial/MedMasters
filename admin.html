@@ -5,7 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MedMasters — Admin Panel</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+  // Fallback to jsDelivr if cdnjs didn't load (network block, regional issue, etc.)
+  window.addEventListener('DOMContentLoaded', function(){
+    if(typeof Chart === 'undefined'){
+      const s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js';
+      s.onload = function(){ if(window._revenuePanelLoaded) renderRevenueCharts(); };
+      document.head.appendChild(s);
+    }
+  });
+</script>
 <style>
 :root{
   --gold:#C9A84C;--gold-bright:#E0B030;--gold-glow:rgba(201,168,76,0.25);
@@ -1227,7 +1238,32 @@ function getLastNMonths(n){
   return months;
 }
 function renderRevenueCharts(){
-  if(typeof Chart === 'undefined') return; // CDN blocked/offline — fail silently, rest of dashboard still works
+  window._revenuePanelLoaded = true; // so the CDN fallback retry knows to re-render once Chart.js arrives
+  const canvasIds = ['chart-monthly','chart-growth','chart-course-pie'];
+  if(typeof Chart === 'undefined'){
+    canvasIds.forEach(id=>{
+      const el = document.getElementById(id);
+      if(!el) return;
+      let note = el.parentElement.querySelector('.chart-load-note');
+      if(!note){
+        note = document.createElement('div');
+        note.className = 'chart-load-note';
+        note.style.cssText = 'text-align:center;padding:30px 10px;color:var(--text-mid);font-size:11px;line-height:1.5;';
+        note.textContent = '⚠️ Chart library still loading… if this stays here, your network may be blocking the chart CDN. Try refreshing.';
+        el.style.display = 'none';
+        el.parentElement.appendChild(note);
+      }
+    });
+    return;
+  }
+  // Chart.js is available — make sure canvases are visible and any loading note is removed
+  canvasIds.forEach(id=>{
+    const el = document.getElementById(id);
+    if(!el) return;
+    el.style.display = '';
+    const note = el.parentElement.querySelector('.chart-load-note');
+    if(note) note.remove();
+  });
   const paid = allStudents.filter(r=>r.amount_paid>0); // charts always show full history regardless of filter, for trend context
   const months = getLastNMonths(12);
   const monthlyRevenue = months.map(m=>paid.filter(r=>{const d=new Date(r.created_at);return d>=m.start&&d<=m.end;}).reduce((s,r)=>s+Number(r.amount_paid),0));
