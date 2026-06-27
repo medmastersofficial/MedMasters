@@ -71,7 +71,9 @@ nav{
 
 /* STAT CARDS */
 .stats-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:32px;}
-.stat-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 24px;}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 24px;cursor:pointer;transition:all 0.2s;}
+.stat-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.3);}
+.stat-card:active{transform:translateY(0);}
 .stat-card-num{font-size:32px;font-weight:900;color:var(--gold);}
 .stat-card-label{font-size:11px;color:var(--text);text-transform:uppercase;letter-spacing:0.8px;margin-top:3px;}
 .stat-card.red .stat-card-num{color:var(--red);}
@@ -249,11 +251,12 @@ tr:hover td{background:rgba(201,168,76,0.02);}
 .admin-panel{display:none;animation:fadeIn 0.25s ease;}
 .admin-panel.open{display:block;}
 .panel-back{
-  display:inline-flex;align-items:center;gap:6px;background:none;border:none;
-  color:var(--text-mid);font-size:12px;font-weight:700;cursor:pointer;
-  font-family:'Poppins',sans-serif;margin-bottom:18px;padding:0;
+  display:inline-flex;align-items:center;gap:8px;background:var(--card);
+  border:1px solid var(--border);color:var(--text-mid);font-size:15px;font-weight:700;cursor:pointer;
+  font-family:'Poppins',sans-serif;margin-bottom:22px;padding:11px 20px;border-radius:10px;
+  transition:all 0.2s;
 }
-.panel-back:hover{color:var(--gold);}
+.panel-back:hover{color:var(--gold);border-color:var(--gold);background:rgba(201,168,76,0.08);}
 
 </style>
 </head>
@@ -302,13 +305,13 @@ tr:hover td{background:rgba(201,168,76,0.02);}
 
     <!-- STATS ROW -->
     <div class="stats-row" id="stats-row">
-      <div class="stat-card"><div class="stat-card-num" id="s-subscribers">—</div><div class="stat-card-label">Total Subscribers</div></div>
-      <div class="stat-card green"><div class="stat-card-num" id="s-active-today">—</div><div class="stat-card-label">Active Today 🟢</div></div>
-      <div class="stat-card green"><div class="stat-card-num" id="s-active">—</div><div class="stat-card-label">Active Subscribers</div></div>
-      <div class="stat-card yellow"><div class="stat-card-num" id="s-expiring">—</div><div class="stat-card-label">Expiring in 3 Days</div></div>
-      <div class="stat-card red"><div class="stat-card-num" id="s-expired">—</div><div class="stat-card-label">Expired</div></div>
-      <div class="stat-card"><div class="stat-card-num" id="s-inactive">—</div><div class="stat-card-label">Deactivated</div></div>
-      <div class="stat-card" style="grid-column:span 2;"><div class="stat-card-num" id="s-time-spent" style="font-size:24px;">—</div><div class="stat-card-label">⏱ Total Study Time (All Subscribers)</div></div>
+      <div class="stat-card" onclick="openStudentsFiltered('all')"><div class="stat-card-num" id="s-subscribers">—</div><div class="stat-card-label">Total Subscribers</div></div>
+      <div class="stat-card green" onclick="openStudentsFiltered('active_today')"><div class="stat-card-num" id="s-active-today">—</div><div class="stat-card-label">Active Today 🟢</div></div>
+      <div class="stat-card green" onclick="openStudentsFiltered('active')"><div class="stat-card-num" id="s-active">—</div><div class="stat-card-label">Active Subscribers</div></div>
+      <div class="stat-card yellow" onclick="openStudentsFiltered('expiring')"><div class="stat-card-num" id="s-expiring">—</div><div class="stat-card-label">Expiring in 3 Days</div></div>
+      <div class="stat-card red" onclick="openStudentsFiltered('expired')"><div class="stat-card-num" id="s-expired">—</div><div class="stat-card-label">Expired</div></div>
+      <div class="stat-card" onclick="openStudentsFiltered('inactive')"><div class="stat-card-num" id="s-inactive">—</div><div class="stat-card-label">Deactivated</div></div>
+      <div class="stat-card" style="grid-column:span 2;cursor:default;"><div class="stat-card-num" id="s-time-spent" style="font-size:24px;">—</div><div class="stat-card-label">⏱ Total Study Time (All Subscribers)</div></div>
     </div>
 
     <!-- CATEGORY NAV -->
@@ -462,6 +465,7 @@ tr:hover td{background:rgba(201,168,76,0.02);}
       <select class="filter-select" id="filter-status" onchange="renderTable()">
         <option value="all">All Statuses</option>
         <option value="active">Active</option>
+        <option value="active_today">Active Today</option>
         <option value="expiring">Expiring Soon</option>
         <option value="expired">Expired</option>
         <option value="inactive">Deactivated</option>
@@ -636,6 +640,12 @@ function closePanel(){
     document.getElementById('panel-'+id).classList.remove('open');
     document.getElementById('cat-card-'+id).classList.remove('active');
   });
+}
+function openStudentsFiltered(statusValue){
+  document.getElementById('filter-status').value = statusValue;
+  document.getElementById('search-input').value = '';
+  openPanel('students');
+  renderTable();
 }
 
 // ═══════════ LOGIN ═══════════
@@ -915,7 +925,8 @@ function renderTable(){
     const status = getStatus(r);
     const subj = (r.subject||'').toLowerCase();
     const matchSearch = !search || (r.student_name||'').toLowerCase().includes(search) || r.email.toLowerCase().includes(search) || r.code.toLowerCase().includes(search);
-    const matchStatus = filterStatus==='all' || status===filterStatus;
+    const isActiveToday = r.last_login && ((new Date()-new Date(r.last_login))/(1000*60*60)) <= 24;
+    const matchStatus = filterStatus==='all' || (filterStatus==='active_today' ? isActiveToday : status===filterStatus);
     // NTS filter matches all NTS-variant subjects
     const matchSubject = filterSubject==='all'
       || (filterSubject==='nts' ? NTS_SUBJECTS.some(n=>subj.includes(n)) : filterSubject==='mo_wmo' ? subj==='mo_wmo' : subj===filterSubject || subj.startsWith(filterSubject));
