@@ -207,6 +207,11 @@ tr:hover td{background:rgba(201,168,76,0.02);}
   .drill-table-wrap{overflow-x:auto;}
   .drill-table{min-width:560px;}
   .rev-filters select, .rev-filters input{font-size:11px;padding:8px 10px;}
+  .prog-mini-stats{grid-template-columns:repeat(2,1fr);}
+  .prog-list{grid-template-columns:1fr;}
+  .prog-stat-grid{grid-template-columns:1fr 1fr;}
+  .prog-msg-tabs{gap:6px;}
+  .prog-msg-tab{font-size:10px;padding:5px 10px;}
 }
 
 /* TOAST NOTIFICATION */
@@ -337,6 +342,68 @@ tr:hover td{background:rgba(201,168,76,0.02);}
 }
 .panel-back:hover{color:var(--gold);border-color:var(--gold);background:rgba(201,168,76,0.08);}
 
+/* DR PROGRESS PANEL */
+.prog-tabs{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap;}
+.prog-tab{
+  flex:1;min-width:160px;padding:16px 20px;border-radius:12px;cursor:pointer;
+  border:1px solid var(--border);background:var(--card);transition:all 0.2s;text-align:center;
+}
+.prog-tab:hover{border-color:var(--gold);transform:translateY(-1px);}
+.prog-tab.active{border-color:var(--gold);background:rgba(201,168,76,0.08);box-shadow:0 0 0 1px var(--gold) inset;}
+.prog-tab-num{font-size:28px;font-weight:900;}
+.prog-tab-num.green{color:var(--green);}
+.prog-tab-num.red{color:var(--red);}
+.prog-tab-label{font-size:11px;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.7px;margin-top:3px;}
+
+.prog-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;}
+.prog-card{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:18px 20px;cursor:pointer;transition:all 0.2s;
+}
+.prog-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.3);}
+.prog-card-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;}
+.prog-card-name{font-size:14px;font-weight:800;}
+.prog-card-meta{font-size:11px;color:var(--text-mid);margin-top:2px;}
+.prog-card-code{font-family:monospace;font-size:11px;color:var(--gold);font-weight:700;}
+.prog-mini-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:10px;}
+.prog-mini-stat{background:var(--bg);border-radius:8px;padding:8px 6px;text-align:center;}
+.prog-mini-stat-val{font-size:14px;font-weight:800;color:var(--gold);}
+.prog-mini-stat-label{font-size:9px;color:var(--text);text-transform:uppercase;letter-spacing:0.4px;margin-top:2px;}
+.prog-bar-row{display:flex;align-items:center;gap:8px;margin-bottom:5px;}
+.prog-bar-label{font-size:10px;color:var(--text-mid);width:90px;flex-shrink:0;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
+.prog-bar-track{flex:1;height:5px;background:var(--bg);border-radius:3px;overflow:hidden;}
+.prog-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-bright));border-radius:3px;}
+.prog-bar-pct{font-size:10px;color:var(--text-mid);width:28px;text-align:right;flex-shrink:0;}
+
+/* DR PROGRESS DETAIL MODAL */
+#prog-modal .modal{max-width:560px;max-height:88vh;overflow-y:auto;}
+.prog-detail-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:20px;}
+.prog-detail-name{font-size:18px;font-weight:900;}
+.prog-detail-sub{font-size:12px;color:var(--text-mid);margin-top:2px;}
+.prog-stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:20px;}
+.prog-stat-box{background:var(--bg);border-radius:10px;padding:14px 16px;text-align:center;}
+.prog-stat-box-val{font-size:22px;font-weight:900;color:var(--gold);}
+.prog-stat-box-label{font-size:10px;color:var(--text);text-transform:uppercase;letter-spacing:0.5px;margin-top:3px;}
+.prog-stat-box.green .prog-stat-box-val{color:var(--green);}
+.prog-stat-box.blue .prog-stat-box-val{color:var(--blue);}
+.prog-stat-box.red .prog-stat-box-val{color:var(--red);}
+.prog-section-label{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:10px;}
+.prog-subject-bars{margin-bottom:20px;}
+.prog-subject-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.prog-subject-bar-name{font-size:12px;font-weight:600;width:110px;flex-shrink:0;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
+.prog-subject-bar-track{flex:1;height:8px;background:var(--bg);border-radius:4px;overflow:hidden;}
+.prog-subject-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-bright));border-radius:4px;}
+.prog-subject-bar-pct{font-size:11px;color:var(--text-mid);width:36px;text-align:right;flex-shrink:0;}
+.prog-msg-section{margin-top:20px;}
+.prog-msg-tabs{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
+.prog-msg-tab{padding:6px 14px;border-radius:8px;font-size:11px;font-weight:700;cursor:pointer;border:1px solid var(--border);background:var(--bg);color:var(--text-mid);font-family:'Poppins',sans-serif;transition:all 0.2s;}
+.prog-msg-tab:hover,.prog-msg-tab.active{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,0.08);}
+.prog-msg-preview{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:12px;line-height:1.7;color:var(--text-mid);white-space:pre-line;min-height:80px;margin-bottom:12px;}
+.prog-wa-send{display:inline-flex;align-items:center;gap:8px;background:#128C7E;color:white;padding:10px 20px;border-radius:9px;font-size:13px;font-weight:700;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;font-family:'Poppins',sans-serif;}
+.prog-wa-send:hover{background:#0e7b6e;}
+.prog-no-phone{font-size:12px;color:var(--text);background:rgba(255,255,255,0.04);border:1px solid var(--border-soft);border-radius:8px;padding:10px 14px;}
+
+
 </style>
 </head>
 <body>
@@ -407,6 +474,12 @@ tr:hover td{background:rgba(201,168,76,0.02);}
         <div class="cat-card-sub">Gross, net &amp; plan breakdown</div>
         <div class="cat-card-chevron">›</div>
       </div>
+      <div class="cat-card" id="cat-card-progress" onclick="openPanel('progress')">
+        <div class="cat-card-icon">📊</div>
+        <div class="cat-card-title">View Drs' Progress</div>
+        <div class="cat-card-sub">Dashboard, accuracy &amp; subject progress</div>
+        <div class="cat-card-chevron">›</div>
+      </div>
       <div class="cat-card" id="cat-card-students" onclick="openPanel('students')">
         <div class="cat-card-icon">👥</div>
         <div class="cat-card-title">All Students</div>
@@ -421,6 +494,34 @@ tr:hover td{background:rgba(201,168,76,0.02);}
         <div class="cat-card-chevron">›</div>
       </div>
     </div>
+
+    <!-- VIEW DRS' PROGRESS -->
+    <div class="admin-panel" id="panel-progress">
+      <button class="panel-back" onclick="closePanel()">← Back to categories</button>
+      <div class="section-title">📊 Drs' Progress</div>
+
+      <!-- Active / Expired toggle tabs -->
+      <div class="prog-tabs">
+        <div class="prog-tab active" id="prog-tab-active" onclick="switchProgTab('active')">
+          <div class="prog-tab-num green" id="prog-count-active">—</div>
+          <div class="prog-tab-label">Active Subscribers</div>
+        </div>
+        <div class="prog-tab" id="prog-tab-expired" onclick="switchProgTab('expired')">
+          <div class="prog-tab-num red" id="prog-count-expired">—</div>
+          <div class="prog-tab-label">Expired Subscribers</div>
+        </div>
+      </div>
+
+      <!-- Search inside progress panel -->
+      <div style="margin-bottom:18px;">
+        <input class="search-input" id="prog-search" placeholder="🔍  Search by name, code or specialty…" oninput="renderProgList()" style="width:100%;max-width:420px;">
+      </div>
+
+      <!-- Cards grid -->
+      <div class="prog-list" id="prog-list">
+        <div class="loading"><div class="spinner"></div>Loading…</div>
+      </div>
+    </div><!-- /panel-progress -->
 
     <!-- REVENUE DASHBOARD -->
     <div class="admin-panel" id="panel-revenue">
@@ -685,6 +786,64 @@ tr:hover td{background:rgba(201,168,76,0.02);}
   </div><!-- /main -->
 </div><!-- /dashboard -->
 
+<!-- ══════ DR PROGRESS DETAIL MODAL ══════ -->
+<div class="modal-overlay" id="prog-modal" onclick="if(event.target===this)closeProgModal()">
+  <div class="modal" style="max-width:560px;max-height:88vh;overflow-y:auto;">
+    <button class="modal-close" onclick="closeProgModal()">✕</button>
+
+    <div class="prog-detail-header">
+      <div>
+        <div class="prog-detail-name" id="pm-name">—</div>
+        <div class="prog-detail-sub" id="pm-meta">—</div>
+      </div>
+      <span id="pm-status-badge"></span>
+    </div>
+
+    <!-- 4 key stats -->
+    <div class="prog-stat-grid">
+      <div class="prog-stat-box">
+        <div class="prog-stat-box-val" id="pm-days-studied">—</div>
+        <div class="prog-stat-box-label">Days Studied</div>
+      </div>
+      <div class="prog-stat-box green">
+        <div class="prog-stat-box-val" id="pm-mcqs">—</div>
+        <div class="prog-stat-box-label">MCQs Completed</div>
+      </div>
+      <div class="prog-stat-box blue">
+        <div class="prog-stat-box-val" id="pm-accuracy">—</div>
+        <div class="prog-stat-box-label">Practice Accuracy</div>
+      </div>
+      <div class="prog-stat-box">
+        <div class="prog-stat-box-val" id="pm-streak">—</div>
+        <div class="prog-stat-box-label">Day Streak 🔥</div>
+      </div>
+    </div>
+
+    <!-- Subject-wise progress bars -->
+    <div class="prog-section-label">📚 Subject-wise Progress</div>
+    <div class="prog-subject-bars" id="pm-subject-bars">
+      <div style="color:var(--text);font-size:12px;">No subject data available.</div>
+    </div>
+
+    <!-- Study time -->
+    <div class="prog-section-label">⏱ Study Time</div>
+    <div style="font-size:22px;font-weight:900;color:var(--gold);margin-bottom:20px;" id="pm-time">—</div>
+
+    <!-- WhatsApp message composer -->
+    <div class="prog-msg-section">
+      <div class="prog-section-label">💬 Send WhatsApp Message</div>
+      <div class="prog-msg-tabs">
+        <button class="prog-msg-tab active" onclick="selectMsgType('progress',this)">📈 Progress Update</button>
+        <button class="prog-msg-tab" onclick="selectMsgType('tip',this)">💡 Study Tip</button>
+        <button class="prog-msg-tab" onclick="selectMsgType('reminder',this)">⏰ Reminder</button>
+        <button class="prog-msg-tab" onclick="selectMsgType('motivate',this)">🔥 Motivation</button>
+      </div>
+      <div class="prog-msg-preview" id="pm-msg-preview"></div>
+      <div id="pm-wa-action"></div>
+    </div>
+  </div>
+</div>
+
 <!-- ══════ REFERRAL REWARD MODAL ══════ -->
 <div class="modal-overlay" id="reward-modal">
   <div class="modal">
@@ -775,7 +934,7 @@ let rewardTarget = null;
 let toastTimer = null;
 
 // ═══════════ CATEGORY PANEL NAV ═══════════
-const PANEL_IDS = ['add','revenue','students','urgent'];
+const PANEL_IDS = ['add','revenue','progress','students','urgent'];
 function openPanel(name){
   if(!PANEL_IDS.includes(name)) return;
   document.getElementById('cat-grid').style.display = 'none';
@@ -783,6 +942,7 @@ function openPanel(name){
     document.getElementById('panel-'+id).classList.toggle('open', id===name);
     document.getElementById('cat-card-'+id).classList.toggle('active', id===name);
   });
+  if(name==='progress') renderProgList();
   window.scrollTo({top:0, behavior:'smooth'});
 }
 function closePanel(){
@@ -1777,6 +1937,227 @@ function showDeviceDetails(cell, code){
 }
 function closeDeviceModal(){
   document.getElementById('device-modal').classList.remove('open');
+}
+
+// ═══════════ DR PROGRESS PANEL ═══════════
+let progTab = 'active'; // 'active' | 'expired'
+let progTarget = null;  // currently open dr record
+let progMsgType = 'progress'; // current WA message type
+
+function switchProgTab(tab){
+  progTab = tab;
+  document.getElementById('prog-tab-active').classList.toggle('active', tab==='active');
+  document.getElementById('prog-tab-expired').classList.toggle('active', tab==='expired');
+  renderProgList();
+}
+
+function renderProgList(){
+  const search = (document.getElementById('prog-search')||{value:''}).value.toLowerCase();
+
+  const active  = allStudents.filter(r=> r.is_active && daysLeft(r.expires_at) >= 0);
+  const expired = allStudents.filter(r=> !r.is_active || daysLeft(r.expires_at) < 0);
+
+  document.getElementById('prog-count-active').textContent  = active.length;
+  document.getElementById('prog-count-expired').textContent = expired.length;
+
+  const pool = progTab === 'active' ? active : expired;
+  let data = pool;
+  if(search){
+    data = pool.filter(r=>
+      (r.student_name||'').toLowerCase().includes(search) ||
+      r.code.toLowerCase().includes(search) ||
+      (r.email||'').toLowerCase().includes(search) ||
+      (r.subject||'').toLowerCase().includes(search)
+    );
+  }
+
+  const container = document.getElementById('prog-list');
+  if(!data.length){
+    container.innerHTML = '<div class="empty-state"><div>🔍</div>No doctors match your search.</div>';
+    return;
+  }
+
+  container.innerHTML = data.map(r => buildProgCard(r)).join('');
+}
+
+function buildProgCard(r){
+  const progress  = r.progress || {};
+  const subjects  = Object.entries(progress);
+  const mcqs      = r.questions_answered || subjects.reduce((s,[,v])=>s+(v.answered||0),0) || 0;
+  const accuracy  = r.practice_accuracy != null ? r.practice_accuracy : calcAccuracy(progress);
+  const streak    = r.day_streak || 0;
+  const studyDays = r.days_studied || 0;
+  const planLabel = getPlanLabel(r);
+  const dLeft     = daysLeft(r.expires_at);
+  const expTxt    = dLeft < 0 ? `Expired ${Math.abs(dLeft)}d ago` : `${dLeft}d left`;
+  const statusCol = dLeft < 0 ? 'var(--red)' : dLeft <= 3 ? 'var(--yellow)' : 'var(--green)';
+  const subjectNames = {
+    medicine:'Medicine',surgery:'Surgery',dentistry:'Dentistry',psychiatry:'Psychiatry',
+    anesthesia:'Anaesthesia',ophthalmology:'Ophthalmology',ent:'ENT',gynaecology:'Gynae & Obs',radiology:'Radiology',
+    nts:'NTS',cts:'CTS',mo_wmo:'MO/WMO',mock_nts:'Mocks',
+    fcps_medicine_part1:'FCPS Med',fcps_surgery_part1:'FCPS Surg',fcps_anaesthesia_part1:'FCPS Anaes',
+    fcps_gynaecology_part1:'FCPS Gynae',fcps_ophthalmology_part1:'FCPS Oph',fcps_ent_part1:'FCPS ENT',
+    fcps_pathology_part1:'FCPS Path',fcps_psychiatry_part1:'FCPS Psych',fcps_community_part1:'FCPS Comm',
+    fcps_radiology_part1:'FCPS Radio',fcps_dentistry_part1:'FCPS Dent'
+  };
+
+  // Top 3 subjects for preview bars
+  const topSubjects = subjects
+    .map(([key,v])=>({ key, label: subjectNames[key]||key, pct: Math.min(100, Math.round(((v.answered||0)/Math.max(1,v.total||100))*100)) }))
+    .sort((a,b)=>b.pct-a.pct).slice(0,3);
+
+  const bars = topSubjects.map(s=>`
+    <div class="prog-bar-row">
+      <span class="prog-bar-label" title="${s.label}">${s.label}</span>
+      <div class="prog-bar-track"><div class="prog-bar-fill" style="width:${s.pct}%"></div></div>
+      <span class="prog-bar-pct">${s.pct}%</span>
+    </div>`).join('') || '<div style="font-size:11px;color:var(--text);margin-top:4px;">No progress data yet</div>';
+
+  return `<div class="prog-card" onclick="openProgModal('${r.code}')">
+    <div class="prog-card-header">
+      <div>
+        <div class="prog-card-name">${r.student_name||'—'}</div>
+        <div class="prog-card-meta">${r.email||''}</div>
+        <div class="prog-card-code">${r.code} &nbsp;·&nbsp; ${subjectNames[(r.subject||'').toLowerCase()]||r.subject||'—'} &nbsp;·&nbsp; <span style="color:${statusCol}">${expTxt}</span></div>
+      </div>
+    </div>
+    <div class="prog-mini-stats">
+      <div class="prog-mini-stat"><div class="prog-mini-stat-val">${studyDays != null ? studyDays : '—'}</div><div class="prog-mini-stat-label">Days</div></div>
+      <div class="prog-mini-stat"><div class="prog-mini-stat-val">${mcqs||'—'}</div><div class="prog-mini-stat-label">MCQs</div></div>
+      <div class="prog-mini-stat"><div class="prog-mini-stat-val">${accuracy!=null?accuracy+'%':'—'}</div><div class="prog-mini-stat-label">Accuracy</div></div>
+      <div class="prog-mini-stat"><div class="prog-mini-stat-val">${streak != null ? streak : '—'}</div><div class="prog-mini-stat-label">Streak</div></div>
+    </div>
+    ${bars}
+  </div>`;
+}
+
+function calcAccuracy(progress){
+  let correct=0, total=0;
+  Object.values(progress||{}).forEach(v=>{ correct+=(v.correct||0); total+=(v.answered||0); });
+  return total>0 ? Math.round((correct/total)*100) : null;
+}
+
+function openProgModal(code){
+  const r = allStudents.find(s=>s.code===code);
+  if(!r) return;
+  progTarget = r;
+  progMsgType = 'progress';
+
+  const progress = r.progress || {};
+  const subjects = Object.entries(progress);
+  const mcqs     = r.questions_answered || subjects.reduce((s,[,v])=>s+(v.answered||0),0) || 0;
+  const accuracy = r.practice_accuracy != null ? r.practice_accuracy : calcAccuracy(progress);
+  const streak   = r.day_streak || 0;
+  const studyDays= r.days_studied || 0;
+  const dLeft    = daysLeft(r.expires_at);
+  const statusCol= dLeft<0?'var(--red)':dLeft<=3?'var(--yellow)':'var(--green)';
+  const statusTxt= dLeft<0?`Expired ${Math.abs(dLeft)}d ago`:dLeft<=3?`Expiring in ${dLeft}d`:`${dLeft} days left`;
+  const planLabel= getPlanLabel(r);
+
+  const subjectNames = {
+    medicine:'Medicine & Allied',surgery:'Surgery & Allied',dentistry:'Dentistry',psychiatry:'Psychiatry',
+    anesthesia:'Anaesthesiology',ophthalmology:'Ophthalmology',ent:'ENT (ORL)',gynaecology:'Gynae & Obs',radiology:'Radiology',
+    nts:'NTS MO/WMO',cts:'CTS MO/WMO',mo_wmo:'MO/WMO',mock_nts:'Past & Mocks NTS',
+    fcps_medicine_part1:'FCPS Medicine',fcps_surgery_part1:'FCPS Surgery',fcps_anaesthesia_part1:'FCPS Anaesthesia',
+    fcps_gynaecology_part1:'FCPS Gynae',fcps_ophthalmology_part1:'FCPS Ophthalmology',fcps_ent_part1:'FCPS ENT',
+    fcps_pathology_part1:'FCPS Pathology',fcps_psychiatry_part1:'FCPS Psychiatry',fcps_community_part1:'FCPS Community',
+    fcps_radiology_part1:'FCPS Radiology',fcps_dentistry_part1:'FCPS Dentistry'
+  };
+
+  document.getElementById('pm-name').textContent = r.student_name||'—';
+  document.getElementById('pm-meta').textContent = `${subjectNames[(r.subject||'').toLowerCase()]||r.subject||'—'} · ${planLabel} · ${r.email||''}`;
+  document.getElementById('pm-status-badge').innerHTML = `<span class="badge" style="color:${statusCol};border-color:${statusCol};background:transparent;">${statusTxt}</span>`;
+  document.getElementById('pm-days-studied').textContent = studyDays != null ? studyDays : '—';
+  document.getElementById('pm-mcqs').textContent = mcqs ? mcqs.toLocaleString() : '—';
+  document.getElementById('pm-accuracy').textContent = accuracy!=null ? accuracy+'%' : '—';
+  document.getElementById('pm-streak').textContent = streak != null ? streak : '—';
+  document.getElementById('pm-time').textContent = formatStudyTime(r.time_spent_seconds||0);
+
+  // Subject bars
+  const allBars = subjects
+    .map(([key,v])=>({ label: subjectNames[key]||key, answered: v.answered||0, total: v.total||100, pct: Math.min(100,Math.round(((v.answered||0)/Math.max(1,v.total||100))*100)) }))
+    .sort((a,b)=>b.pct-a.pct);
+
+  document.getElementById('pm-subject-bars').innerHTML = allBars.length
+    ? allBars.map(s=>`
+      <div class="prog-subject-bar-row">
+        <span class="prog-subject-bar-name" title="${s.label}">${s.label}</span>
+        <div class="prog-subject-bar-track"><div class="prog-subject-bar-fill" style="width:${s.pct}%"></div></div>
+        <span class="prog-subject-bar-pct">${s.pct}%</span>
+      </div>`).join('')
+    : '<div style="font-size:12px;color:var(--text);">No subject data available yet. This doctor hasn\'t started practising.</div>';
+
+  // Set active msg tab
+  document.querySelectorAll('.prog-msg-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.prog-msg-tab')[0].classList.add('active');
+  renderProgMsg();
+
+  document.getElementById('prog-modal').classList.add('open');
+}
+function closeProgModal(){
+  document.getElementById('prog-modal').classList.remove('open');
+  progTarget = null;
+}
+
+function selectMsgType(type, el){
+  progMsgType = type;
+  document.querySelectorAll('.prog-msg-tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  renderProgMsg();
+}
+
+function renderProgMsg(){
+  if(!progTarget) return;
+  const r = progTarget;
+  const firstName = (r.student_name||'Doctor').replace(/^Dr\.?\s*/i,'').split(' ')[0];
+  const progress  = r.progress || {};
+  const subjects  = Object.entries(progress);
+  const mcqs      = r.questions_answered || subjects.reduce((s,[,v])=>s+(v.answered||0),0) || 0;
+  const accuracy  = r.practice_accuracy != null ? r.practice_accuracy : calcAccuracy(progress);
+  const streak    = r.day_streak || 0;
+  const dLeft     = daysLeft(r.expires_at);
+
+  let msg = '';
+  if(progMsgType==='progress'){
+    msg = `Hi Dr. ${firstName}! 👋\n\nHere's a quick look at your MedMasters progress:\n\n` +
+      `📝 MCQs Done: ${mcqs.toLocaleString()}\n` +
+      `🎯 Practice Accuracy: ${accuracy!=null?accuracy+'%':'—'}\n` +
+      `🔥 Day Streak: ${streak||0}\n` +
+      (dLeft>=0?`⏳ Days Remaining: ${dLeft}\n`:'')+
+      `\nYou're doing great — keep the momentum going! Every MCQ you attempt brings you closer to your goal. 💪\n\n— MedMasters Team`;
+  } else if(progMsgType==='tip'){
+    const tips = [
+      'Focus on your weakest subjects first — targeted revision beats broad reading every time.',
+      'Don\'t just mark answers — read every explanation, especially when you get something wrong.',
+      'Short daily sessions beat cramming. Even 30 focused MCQs a day adds up fast.',
+      'Revisit questions you marked wrong at least once more before your exam.',
+      'Try doing a timed mini-test — it simulates exam pressure and sharpens your speed.'
+    ];
+    const tip = tips[Math.floor(Math.random()*tips.length)];
+    msg = `Hi Dr. ${firstName}! 💡\n\nA quick study tip from MedMasters:\n\n"${tip}"\n\nYour accuracy is at ${accuracy!=null?accuracy+'%':'—'} — there's great room to push higher with smart revision. We believe in you!\n\n— MedMasters Team`;
+  } else if(progMsgType==='reminder'){
+    if(dLeft<0){
+      msg = `Hi Dr. ${firstName}! ⏳\n\nYour MedMasters subscription expired ${Math.abs(dLeft)} day${Math.abs(dLeft)!==1?'s':''} ago. Your exam prep shouldn\'t stop — renew today and pick up right where you left off.\n\nYour progress, streaks, and history are all saved and waiting for you. 💾\n\nRenew now: medmasters.academy\n\n— MedMasters Team`;
+    } else if(dLeft<=7){
+      msg = `Hi Dr. ${firstName}! ⚠️\n\nJust a heads-up — your MedMasters access expires in ${dLeft} day${dLeft!==1?'s':''}. Don\'t lose your momentum!\n\nRenew now to keep your streak alive and stay on track for your exam. 📚\n\n— MedMasters Team`;
+    } else {
+      msg = `Hi Dr. ${firstName}! 📅\n\nYou have ${dLeft} days left on your MedMasters subscription. Make the most of it!\n\nYou\'ve completed ${mcqs.toLocaleString()} MCQs so far${accuracy!=null?' with '+accuracy+'% accuracy':''} — solid work. Keep going and finish strong. 💪\n\n— MedMasters Team`;
+    }
+  } else if(progMsgType==='motivate'){
+    msg = `Hi Dr. ${firstName}! 🌟\n\nWe checked your MedMasters dashboard and we just want to say — you\'re putting in real effort.\n\n${mcqs>0?`${mcqs.toLocaleString()} MCQs done. ${accuracy!=null?accuracy+'% accuracy. ':''}${streak>0?'A '+streak+'-day streak. ':''}`:''}That consistency is exactly what separates those who pass from those who almost pass.\n\nYour exam is coming. You\'re more prepared than you think. Back yourself. 🏆\n\n— MedMasters Team`;
+  }
+
+  document.getElementById('pm-msg-preview').textContent = msg;
+
+  const phone = r.whatsapp||r.phone||'';
+  const waAction = document.getElementById('pm-wa-action');
+  if(phone){
+    const ph = phone.replace(/\D/g,'');
+    const intPhone = ph.startsWith('0') ? '92'+ph.slice(1) : ph;
+    waAction.innerHTML = `<a class="prog-wa-send" href="https://wa.me/${intPhone}?text=${encodeURIComponent(msg)}" target="_blank">💬 Send on WhatsApp</a>`;
+  } else {
+    waAction.innerHTML = `<div class="prog-no-phone">⚠️ No WhatsApp number on file for this doctor. Add it via the All Students panel.</div>`;
+  }
 }
 
 // ═══════════ EXTEND MODAL ═══════════
