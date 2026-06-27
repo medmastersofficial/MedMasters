@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MedMasters — Admin Panel</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
 <style>
 :root{
   --gold:#C9A84C;--gold-bright:#E0B030;--gold-glow:rgba(201,168,76,0.25);
@@ -186,6 +187,15 @@ tr:hover td{background:rgba(201,168,76,0.02);}
   .form-grid{grid-template-columns:1fr;}
   .days-grid{grid-template-columns:repeat(2,1fr);}
   th,td{padding:10px 12px;}
+  .cat-grid{grid-template-columns:1fr 1fr;}
+  .revenue-grid{grid-template-columns:1fr 1fr;}
+  .qi-grid{grid-template-columns:1fr 1fr;}
+  .course-grid{grid-template-columns:1fr;}
+  .chart-grid{grid-template-columns:1fr;}
+  .chart-canvas-wrap{height:200px;}
+  .drill-table-wrap{overflow-x:auto;}
+  .drill-table{min-width:560px;}
+  .rev-filters select, .rev-filters input{font-size:11px;padding:8px 10px;}
 }
 
 /* TOAST NOTIFICATION */
@@ -216,6 +226,64 @@ tr:hover td{background:rgba(201,168,76,0.02);}
 .rev-card.green .rev-card-num{color:var(--green);}
 .rev-card.red .rev-card-num{color:var(--red);}
 .rev-card.blue .rev-card-num{color:var(--blue);}
+.rev-card-sub{font-size:11px;margin-top:6px;font-weight:600;}
+.rev-card-sub.up{color:var(--green);}
+.rev-card-sub.down{color:var(--red);}
+
+/* Revenue sub-section headers */
+.rev-block{margin-bottom:28px;}
+.rev-block-title{font-size:13px;font-weight:700;color:var(--gold);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px;justify-content:space-between;}
+
+/* Quick insights strip */
+.qi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-bottom:28px;}
+.qi-card{background:var(--card2);border:1px solid var(--border-soft);border-radius:12px;padding:14px 16px;}
+.qi-card-num{font-size:18px;font-weight:800;color:var(--white);}
+.qi-card-label{font-size:10px;color:var(--text);text-transform:uppercase;letter-spacing:0.5px;margin-top:2px;}
+
+/* Course drill-down cards */
+.course-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;}
+.course-card{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:20px 22px;cursor:pointer;transition:all 0.2s;position:relative;
+}
+.course-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.3);}
+.course-card-name{font-size:15px;font-weight:800;margin-bottom:8px;}
+.course-card-rev{font-size:22px;font-weight:900;color:var(--gold);}
+.course-card-meta{font-size:11px;color:var(--text-mid);margin-top:6px;display:flex;justify-content:space-between;gap:8px;}
+.course-card-bar{height:5px;background:var(--bg);border-radius:3px;margin-top:12px;overflow:hidden;}
+.course-card-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-bright));border-radius:3px;}
+.course-card-pct{position:absolute;top:18px;right:20px;font-size:11px;font-weight:700;color:var(--text-mid);}
+
+.breadcrumb{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:18px;font-size:13px;}
+.breadcrumb-item{color:var(--text-mid);cursor:pointer;font-weight:600;}
+.breadcrumb-item:hover{color:var(--gold);}
+.breadcrumb-item.current{color:var(--gold);cursor:default;}
+.breadcrumb-sep{color:var(--text);opacity:0.5;}
+
+.drill-table{width:100%;border-collapse:collapse;}
+.drill-table th{padding:10px 14px;text-align:left;font-size:10px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid var(--border);}
+.drill-table td{padding:12px 14px;font-size:13px;border-bottom:1px solid var(--border-soft);}
+.drill-table tr:last-child td{border-bottom:none;}
+.drill-table tr.clickable{cursor:pointer;transition:background 0.15s;}
+.drill-table tr.clickable:hover td{background:rgba(201,168,76,0.04);}
+.drill-table-wrap{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+
+/* Charts */
+.chart-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;}
+.chart-box{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;}
+.chart-box-title{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:0.8px;text-transform:uppercase;margin-bottom:14px;}
+.chart-canvas-wrap{position:relative;height:240px;}
+
+/* Filters */
+.rev-filters{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:24px;}
+.rev-filters select, .rev-filters input{
+  background:var(--card);border:1px solid var(--border);color:var(--white);
+  padding:9px 13px;border-radius:9px;font-size:12px;font-family:'Poppins',sans-serif;outline:none;cursor:pointer;
+}
+.rev-filters input[type="date"]{cursor:default;}
+.rev-filters select:focus, .rev-filters input:focus{border-color:var(--gold);}
+
+.data-note{font-size:11px;color:var(--text);background:rgba(255,255,255,0.03);border:1px solid var(--border-soft);border-radius:9px;padding:10px 14px;margin-bottom:20px;line-height:1.5;}
 
 /* REFERRAL REWARD MODAL */
 .reward-row{background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);border-radius:10px;padding:14px 18px;margin-bottom:12px;}
@@ -347,16 +415,88 @@ tr:hover td{background:rgba(201,168,76,0.02);}
     <div class="admin-panel" id="panel-revenue">
       <button class="panel-back" onclick="closePanel()">← Back to categories</button>
       <div class="section-title">💰 Revenue Dashboard</div>
-      <div class="revenue-grid">
-        <div class="rev-card"><div class="rev-card-num" id="r-gross">—</div><div class="rev-card-label">Gross Revenue (PKR)</div></div>
-        <div class="rev-card red"><div class="rev-card-num" id="r-rewards">—</div><div class="rev-card-label">Rewards Paid Out (PKR)</div></div>
-        <div class="rev-card green"><div class="rev-card-num" id="r-net">—</div><div class="rev-card-label">Net Revenue (PKR)</div></div>
-        <div class="rev-card blue"><div class="rev-card-num" id="r-avg">—</div><div class="rev-card-label">Avg. Plan Value (PKR)</div></div>
+
+      <div class="data-note">📌 Figures are built from <code>amount_paid</code> on each access code (updated when a doctor's plan is created or extended). There's no payment gateway, country, coupon, or refund tracking in the system yet — those fields aren't shown because there's no real data behind them.</div>
+
+      <!-- FILTERS -->
+      <div class="rev-filters">
+        <select id="rf-course" onchange="onRevFilterChange()">
+          <option value="all">All Courses</option>
+          <option value="jcat">JCAT</option>
+          <option value="fcps">FCPS Part 1</option>
+          <option value="nts">NTS MO/WMO</option>
+          <option value="cts">CTS MO/WMO</option>
+          <option value="mo_wmo">MO/WMO (Other)</option>
+          <option value="mock_nts">Past &amp; Mocks NTS</option>
+        </select>
+        <select id="rf-range" onchange="onRevFilterChange()">
+          <option value="all">All Time</option>
+          <option value="this_month">This Month</option>
+          <option value="last_month">Last Month</option>
+          <option value="last_3m">Last 3 Months</option>
+          <option value="this_year">This Year</option>
+          <option value="custom">Custom Range</option>
+        </select>
+        <input type="date" id="rf-from" style="display:none;" onchange="onRevFilterChange()">
+        <input type="date" id="rf-to" style="display:none;" onchange="onRevFilterChange()">
+        <button class="btn-sm btn-outline-gold" onclick="exportRevenueCSV()">⬇ Export CSV</button>
       </div>
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 22px;">
-        <div style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">📊 Revenue by Plan</div>
-        <div id="rev-by-plan" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;"></div>
+
+      <!-- EXECUTIVE OVERVIEW -->
+      <div class="rev-block">
+        <div class="rev-block-title">📊 Executive Overview</div>
+        <div class="revenue-grid">
+          <div class="rev-card"><div class="rev-card-num" id="r-gross">—</div><div class="rev-card-label">Total Revenue (PKR)</div></div>
+          <div class="rev-card green"><div class="rev-card-num" id="r-this-month">—</div><div class="rev-card-label">Revenue This Month</div><div class="rev-card-sub" id="r-month-growth"></div></div>
+          <div class="rev-card"><div class="rev-card-num" id="r-last-month">—</div><div class="rev-card-label">Revenue Last Month</div></div>
+          <div class="rev-card blue"><div class="rev-card-num" id="r-active-subs">—</div><div class="rev-card-label">Total Active Subscribers</div></div>
+          <div class="rev-card green"><div class="rev-card-num" id="r-new-subs">—</div><div class="rev-card-label">New Subscribers This Month</div></div>
+          <div class="rev-card blue"><div class="rev-card-num" id="r-arpu">—</div><div class="rev-card-label">Avg. Revenue / User (PKR)</div></div>
+          <div class="rev-card"><div class="rev-card-num" id="r-transactions">—</div><div class="rev-card-label">Total Paid Records</div></div>
+          <div class="rev-card red"><div class="rev-card-num" id="r-rewards">—</div><div class="rev-card-label">Referral Rewards Paid (PKR)</div></div>
+        </div>
       </div>
+
+      <!-- QUICK INSIGHTS -->
+      <div class="rev-block">
+        <div class="rev-block-title">⚡ Quick Insights</div>
+        <div class="qi-grid">
+          <div class="qi-card"><div class="qi-card-num" id="qi-today">—</div><div class="qi-card-label">Revenue Today</div></div>
+          <div class="qi-card"><div class="qi-card-num" id="qi-yesterday">—</div><div class="qi-card-label">Revenue Yesterday</div></div>
+          <div class="qi-card"><div class="qi-card-num" id="qi-week">—</div><div class="qi-card-label">Revenue This Week</div></div>
+          <div class="qi-card"><div class="qi-card-num" id="qi-new-today">—</div><div class="qi-card-label">New Subscribers Today</div></div>
+          <div class="qi-card"><div class="qi-card-num" id="qi-best-course">—</div><div class="qi-card-label">Best-Selling Course</div></div>
+          <div class="qi-card"><div class="qi-card-num" id="qi-best-plan">—</div><div class="qi-card-label">Best-Selling Plan</div></div>
+        </div>
+      </div>
+
+      <!-- DRILL-DOWN: Course → Specialty → Plan -->
+      <div class="rev-block">
+        <div class="rev-block-title">🔍 Revenue Breakdown</div>
+        <div class="breadcrumb" id="rev-breadcrumb"></div>
+        <div id="rev-drill-body"></div>
+      </div>
+
+      <!-- MONTHLY ANALYTICS / CHARTS -->
+      <div class="rev-block">
+        <div class="rev-block-title">📈 Monthly Revenue Analytics</div>
+        <div class="chart-grid">
+          <div class="chart-box">
+            <div class="chart-box-title">Revenue by Month</div>
+            <div class="chart-canvas-wrap"><canvas id="chart-monthly"></canvas></div>
+          </div>
+          <div class="chart-box">
+            <div class="chart-box-title">Month-over-Month Growth %</div>
+            <div class="chart-canvas-wrap"><canvas id="chart-growth"></canvas></div>
+          </div>
+          <div class="chart-box">
+            <div class="chart-box-title">Revenue Share by Course</div>
+            <div class="chart-canvas-wrap"><canvas id="chart-course-pie"></canvas></div>
+          </div>
+        </div>
+        <div class="rev-card-sub" id="rev-month-highlights" style="margin-top:14px;font-size:12px;color:var(--text-mid);"></div>
+      </div>
+
     </div><!-- /panel-revenue -->
 
     <!-- ALERTS: 3-DAY URGENT -->
@@ -806,31 +946,355 @@ function renderStats(){
   document.getElementById('s-time-spent').textContent = formatStudyTime(totalSecs);
 }
 
+// ═══════════ REVENUE: COURSE TAXONOMY ═══════════
+const COURSE_MAP = {
+  jcat: {
+    label: 'JCAT',
+    subjects: ['medicine','surgery','dentistry','psychiatry','anesthesia','ophthalmology','ent','gynaecology','radiology']
+  },
+  fcps: {
+    label: 'FCPS Part 1',
+    subjects: ['fcps_medicine_part1','fcps_surgery_part1','fcps_dentistry_part1','fcps_anaesthesia_part1','fcps_gynaecology_part1','fcps_ophthalmology_part1','fcps_ent_part1','fcps_pathology_part1','fcps_psychiatry_part1','fcps_community_part1','fcps_radiology_part1']
+  },
+  nts: { label: 'NTS MO/WMO', subjects: ['nts'] },
+  cts: { label: 'CTS MO/WMO', subjects: ['cts'] },
+  mo_wmo: { label: 'MO/WMO (Other)', subjects: ['mo_wmo'] },
+  mock_nts: { label: 'Past & Mocks NTS', subjects: ['mock_nts'] }
+};
+const SPECIALTY_LABELS = {
+  medicine:'Medicine & Allied', surgery:'Surgery & Allied', dentistry:'Dentistry (MDS)',
+  psychiatry:'Psychiatry', anesthesia:'Anesthesiology', ophthalmology:'Ophthalmology',
+  ent:'ENT (ORL)', gynaecology:'Gynae & Obs', radiology:'Diagnostic Radiology',
+  fcps_medicine_part1:'Medicine', fcps_surgery_part1:'Surgery', fcps_dentistry_part1:'Dentistry',
+  fcps_anaesthesia_part1:'Anaesthesia', fcps_gynaecology_part1:'Gynae & Obs', fcps_ophthalmology_part1:'Ophthalmology',
+  fcps_ent_part1:'ENT', fcps_pathology_part1:'Pathology', fcps_psychiatry_part1:'Psychiatry',
+  fcps_community_part1:'Community Medicine', fcps_radiology_part1:'Radiology',
+  nts:'NTS MO/WMO', cts:'CTS MO/WMO', mo_wmo:'MO/WMO (Other)', mock_nts:'Mocks'
+};
+function getCourseKey(subj){
+  subj = (subj||'').toLowerCase();
+  for(const [key,c] of Object.entries(COURSE_MAP)){
+    if(c.subjects.includes(subj)) return key;
+  }
+  return 'mock_nts'===subj ? 'mock_nts' : 'jcat'; // fallback bucket, never silently drop revenue
+}
+
+// ═══════════ REVENUE: FILTER STATE ═══════════
+let revFilteredStudents = []; // current filtered dataset for the panel
+let revDrillPath = []; // e.g. ['fcps'] or ['fcps','fcps_anaesthesia_part1']
+
+function onRevFilterChange(){
+  const range = document.getElementById('rf-range').value;
+  document.getElementById('rf-from').style.display = range==='custom' ? 'inline-block':'none';
+  document.getElementById('rf-to').style.display = range==='custom' ? 'inline-block':'none';
+  revDrillPath = []; // reset drill-down when filters change
+  renderRevenue();
+}
+
+function getDateRangeFilter(){
+  const range = document.getElementById('rf-range').value;
+  const now = new Date();
+  let from=null, to=null;
+  if(range==='this_month'){ from=new Date(now.getFullYear(),now.getMonth(),1); to=now; }
+  else if(range==='last_month'){ from=new Date(now.getFullYear(),now.getMonth()-1,1); to=new Date(now.getFullYear(),now.getMonth(),0,23,59,59); }
+  else if(range==='last_3m'){ from=new Date(now.getFullYear(),now.getMonth()-3,1); to=now; }
+  else if(range==='this_year'){ from=new Date(now.getFullYear(),0,1); to=now; }
+  else if(range==='custom'){
+    const f=document.getElementById('rf-from').value, t=document.getElementById('rf-to').value;
+    if(f) from=new Date(f);
+    if(t) to=new Date(t+'T23:59:59');
+  }
+  return {from,to};
+}
+
+function applyRevFilters(){
+  const courseFilter = document.getElementById('rf-course').value;
+  const {from,to} = getDateRangeFilter();
+  return allStudents.filter(r=>{
+    if(!r.amount_paid || Number(r.amount_paid)<=0) return false; // only paid records count as revenue
+    if(courseFilter!=='all' && getCourseKey(r.subject)!==courseFilter) return false;
+    if(from && new Date(r.created_at) < from) return false;
+    if(to && new Date(r.created_at) > to) return false;
+    return true;
+  });
+}
+
+// ═══════════ REVENUE: MAIN RENDER ═══════════
 function renderRevenue(){
-  // Only count students who have amount_paid recorded — avoids estimation errors
-  const paid = allStudents.filter(r=>r.amount_paid>0);
+  revFilteredStudents = applyRevFilters();
+  renderRevenueOverview();
+  renderQuickInsights();
+  renderRevenueDrill();
+  renderRevenueCharts();
+}
+
+function renderRevenueOverview(){
+  const paid = revFilteredStudents;
   const gross = paid.reduce((sum,r)=>sum+Number(r.amount_paid),0);
   const rewardsCash = allStudents.reduce((sum,r)=>sum+(r.referral_reward_cash||0),0);
-  const net = gross - rewardsCash;
-  const avg = paid.length ? Math.round(gross/paid.length) : 0;
+  const now = new Date();
+  const thisMonthStart = new Date(now.getFullYear(),now.getMonth(),1);
+  const lastMonthStart = new Date(now.getFullYear(),now.getMonth()-1,1);
+  const lastMonthEnd = new Date(now.getFullYear(),now.getMonth(),0,23,59,59);
+
+  const thisMonthRevenue = paid.filter(r=>new Date(r.created_at)>=thisMonthStart).reduce((s,r)=>s+Number(r.amount_paid),0);
+  const lastMonthRevenue = paid.filter(r=>{const d=new Date(r.created_at);return d>=lastMonthStart&&d<=lastMonthEnd;}).reduce((s,r)=>s+Number(r.amount_paid),0);
+  const growth = lastMonthRevenue>0 ? Math.round(((thisMonthRevenue-lastMonthRevenue)/lastMonthRevenue)*100) : (thisMonthRevenue>0?100:0);
+
+  const activeSubs = allStudents.filter(r=>getStatus(r)==='active'||getStatus(r)==='expiring').length;
+  const newSubsThisMonth = allStudents.filter(r=>new Date(r.created_at)>=thisMonthStart).length;
+  const arpu = paid.length ? Math.round(gross/paid.length) : 0;
+
   document.getElementById('r-gross').textContent = gross.toLocaleString();
+  document.getElementById('r-this-month').textContent = thisMonthRevenue.toLocaleString();
+  document.getElementById('r-last-month').textContent = lastMonthRevenue.toLocaleString();
+  document.getElementById('r-active-subs').textContent = activeSubs;
+  document.getElementById('r-new-subs').textContent = newSubsThisMonth;
+  document.getElementById('r-arpu').textContent = arpu.toLocaleString();
+  document.getElementById('r-transactions').textContent = paid.length;
   document.getElementById('r-rewards').textContent = rewardsCash.toLocaleString();
-  document.getElementById('r-net').textContent = net.toLocaleString();
-  document.getElementById('r-avg').textContent = avg.toLocaleString();
-  // Breakdown by plan — count all students, revenue only from those with amount_paid
-  const plans = {};
+
+  const growthEl = document.getElementById('r-month-growth');
+  if(lastMonthRevenue>0 || thisMonthRevenue>0){
+    growthEl.textContent = (growth>=0?'▲ ':'▼ ')+Math.abs(growth)+'% vs last month';
+    growthEl.className = 'rev-card-sub '+(growth>=0?'up':'down');
+  } else { growthEl.textContent=''; }
+}
+
+function renderQuickInsights(){
+  const paid = allStudents.filter(r=>r.amount_paid>0);
+  const now = new Date();
+  const startOfToday = new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  const startOfYesterday = new Date(startOfToday); startOfYesterday.setDate(startOfYesterday.getDate()-1);
+  const startOfWeek = new Date(startOfToday); startOfWeek.setDate(startOfWeek.getDate()-startOfWeek.getDay());
+
+  const revToday = paid.filter(r=>new Date(r.created_at)>=startOfToday).reduce((s,r)=>s+Number(r.amount_paid),0);
+  const revYesterday = paid.filter(r=>{const d=new Date(r.created_at);return d>=startOfYesterday&&d<startOfToday;}).reduce((s,r)=>s+Number(r.amount_paid),0);
+  const revWeek = paid.filter(r=>new Date(r.created_at)>=startOfWeek).reduce((s,r)=>s+Number(r.amount_paid),0);
+  const newToday = allStudents.filter(r=>new Date(r.created_at)>=startOfToday).length;
+
+  // Best-selling course / plan by revenue (all-time, unfiltered — this is a global insight)
+  const courseRev = {};
+  const planRev = {};
   allStudents.forEach(r=>{
-    const label = getPlanLabel(r);
-    if(!plans[label]) plans[label]={count:0,revenue:0};
-    plans[label].count++;
-    if(r.amount_paid>0) plans[label].revenue+=Number(r.amount_paid);
+    if(!(r.amount_paid>0)) return;
+    const ck = getCourseKey(r.subject);
+    courseRev[ck] = (courseRev[ck]||0) + Number(r.amount_paid);
+    const pl = getPlanLabel(r);
+    planRev[pl] = (planRev[pl]||0) + Number(r.amount_paid);
   });
-  document.getElementById('rev-by-plan').innerHTML = Object.entries(plans).map(([label,d])=>`
-    <div style="background:var(--bg);border:1px solid var(--border-soft);border-radius:10px;padding:14px 16px;">
-      <div style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">${label}</div>
-      <div style="font-size:18px;font-weight:800;">${d.count} <span style="font-size:12px;color:var(--text-mid);font-weight:400;">students</span></div>
-      <div style="font-size:12px;color:var(--green);margin-top:2px;">PKR ${d.revenue.toLocaleString()}</div>
-    </div>`).join('');
+  const bestCourse = Object.entries(courseRev).sort((a,b)=>b[1]-a[1])[0];
+  const bestPlan = Object.entries(planRev).sort((a,b)=>b[1]-a[1])[0];
+
+  document.getElementById('qi-today').textContent = 'PKR '+revToday.toLocaleString();
+  document.getElementById('qi-yesterday').textContent = 'PKR '+revYesterday.toLocaleString();
+  document.getElementById('qi-week').textContent = 'PKR '+revWeek.toLocaleString();
+  document.getElementById('qi-new-today').textContent = newToday;
+  document.getElementById('qi-best-course').textContent = bestCourse ? COURSE_MAP[bestCourse[0]].label : '—';
+  document.getElementById('qi-best-plan').textContent = bestPlan ? bestPlan[0] : '—';
+}
+
+// ═══════════ REVENUE: DRILL-DOWN (Course → Specialty → Plan) ═══════════
+function drillInto(level, key){
+  revDrillPath = revDrillPath.slice(0, level);
+  revDrillPath.push(key);
+  renderRevenueDrill();
+}
+function drillTo(level){
+  revDrillPath = revDrillPath.slice(0, level);
+  renderRevenueDrill();
+}
+
+function renderRevenueDrill(){
+  const breadcrumb = document.getElementById('rev-breadcrumb');
+  const body = document.getElementById('rev-drill-body');
+  const data = revFilteredStudents;
+
+  // Build breadcrumb
+  let crumbs = [`<span class="breadcrumb-item${revDrillPath.length===0?' current':''}" onclick="drillTo(0)">All Courses</span>`];
+  if(revDrillPath[0]){
+    const courseLabel = COURSE_MAP[revDrillPath[0]] ? COURSE_MAP[revDrillPath[0]].label : revDrillPath[0];
+    crumbs.push(`<span class="breadcrumb-sep">›</span><span class="breadcrumb-item${revDrillPath.length===1?' current':''}" onclick="drillTo(1)">${courseLabel}</span>`);
+  }
+  if(revDrillPath[1]){
+    const specLabel = SPECIALTY_LABELS[revDrillPath[1]] || revDrillPath[1];
+    crumbs.push(`<span class="breadcrumb-sep">›</span><span class="breadcrumb-item current">${specLabel}</span>`);
+  }
+  breadcrumb.innerHTML = crumbs.join('');
+
+  if(revDrillPath.length===0){ renderCourseLevel(data, body); return; }
+  if(revDrillPath.length===1){ renderSpecialtyLevel(data, revDrillPath[0], body); return; }
+  if(revDrillPath.length===2){ renderPlanLevel(data, revDrillPath[1], body); return; }
+}
+
+function renderCourseLevel(data, body){
+  const totalRevenue = data.reduce((s,r)=>s+Number(r.amount_paid),0);
+  const byCourse = {};
+  Object.keys(COURSE_MAP).forEach(k=>byCourse[k]={revenue:0,count:0});
+  data.forEach(r=>{
+    const ck = getCourseKey(r.subject);
+    byCourse[ck].revenue += Number(r.amount_paid);
+    byCourse[ck].count++;
+  });
+  const now = new Date();
+  const thisMonthStart = new Date(now.getFullYear(),now.getMonth(),1);
+  const lastMonthStart = new Date(now.getFullYear(),now.getMonth()-1,1);
+  const lastMonthEnd = new Date(now.getFullYear(),now.getMonth(),0,23,59,59);
+
+  const cards = Object.entries(byCourse).filter(([,d])=>d.count>0).sort((a,b)=>b[1].revenue-a[1].revenue).map(([key,d])=>{
+    const pct = totalRevenue>0 ? Math.round((d.revenue/totalRevenue)*100) : 0;
+    const thisM = data.filter(r=>getCourseKey(r.subject)===key && new Date(r.created_at)>=thisMonthStart).reduce((s,r)=>s+Number(r.amount_paid),0);
+    const lastM = data.filter(r=>getCourseKey(r.subject)===key && new Date(r.created_at)>=lastMonthStart && new Date(r.created_at)<=lastMonthEnd).reduce((s,r)=>s+Number(r.amount_paid),0);
+    const trend = lastM>0 ? Math.round(((thisM-lastM)/lastM)*100) : (thisM>0?100:0);
+    const trendStr = (lastM>0||thisM>0) ? `${trend>=0?'▲':'▼'} ${Math.abs(trend)}%` : '—';
+    return `<div class="course-card" onclick="drillInto(0,'${key}')">
+      <div class="course-card-pct">${pct}%</div>
+      <div class="course-card-name">${COURSE_MAP[key].label}</div>
+      <div class="course-card-rev">PKR ${d.revenue.toLocaleString()}</div>
+      <div class="course-card-meta"><span>${d.count} purchase${d.count!==1?'s':''}</span><span>${trendStr} MoM</span></div>
+      <div class="course-card-bar"><div class="course-card-bar-fill" style="width:${pct}%;"></div></div>
+    </div>`;
+  }).join('');
+  body.innerHTML = cards ? `<div class="course-grid">${cards}</div>` : `<div class="empty-state"><div>💤</div>No revenue recorded for this selection.</div>`;
+}
+
+function renderSpecialtyLevel(data, courseKey, body){
+  const course = COURSE_MAP[courseKey];
+  const scoped = data.filter(r=>getCourseKey(r.subject)===courseKey);
+  const totalRevenue = scoped.reduce((s,r)=>s+Number(r.amount_paid),0);
+  const bySpec = {};
+  scoped.forEach(r=>{
+    const subj = (r.subject||'').toLowerCase();
+    if(!bySpec[subj]) bySpec[subj]={revenue:0,count:0};
+    bySpec[subj].revenue += Number(r.amount_paid);
+    bySpec[subj].count++;
+  });
+  const rows = Object.entries(bySpec).sort((a,b)=>b[1].revenue-a[1].revenue).map(([subj,d])=>{
+    const pct = totalRevenue>0 ? Math.round((d.revenue/totalRevenue)*100) : 0;
+    const avg = d.count ? Math.round(d.revenue/d.count) : 0;
+    const label = SPECIALTY_LABELS[subj] || subj;
+    return `<tr class="clickable" onclick="drillInto(1,'${subj}')">
+      <td>${label}</td>
+      <td>PKR ${d.revenue.toLocaleString()}</td>
+      <td>${d.count}</td>
+      <td>PKR ${avg.toLocaleString()}</td>
+      <td>${pct}%</td>
+    </tr>`;
+  }).join('');
+  if(course.subjects.length>1){
+    body.innerHTML = `<div class="drill-table-wrap"><table class="drill-table">
+        <thead><tr><th>Specialty</th><th>Revenue</th><th>Subscribers</th><th>Avg. Value</th><th>% of ${course.label}</th></tr></thead>
+        <tbody>${rows || `<tr><td colspan="5" style="text-align:center;color:var(--text-mid);padding:24px;">No revenue recorded.</td></tr>`}</tbody>
+      </table></div>`;
+  } else {
+    // Single-subject courses (NTS/CTS/MO-WMO/Mocks) skip straight to plan level
+    renderPlanLevel(data, course.subjects[0], body);
+  }
+}
+
+function renderPlanLevel(data, subjectKey, body){
+  const scoped = data.filter(r=>(r.subject||'').toLowerCase()===subjectKey);
+  const totalRevenue = scoped.reduce((s,r)=>s+Number(r.amount_paid),0);
+  const byPlan = {};
+  scoped.forEach(r=>{
+    const label = getPlanLabel(r);
+    if(!byPlan[label]) byPlan[label]={revenue:0,count:0};
+    byPlan[label].revenue += Number(r.amount_paid);
+    byPlan[label].count++;
+  });
+  const rows = Object.entries(byPlan).sort((a,b)=>b[1].revenue-a[1].revenue).map(([label,d])=>{
+    const pct = totalRevenue>0 ? Math.round((d.revenue/totalRevenue)*100) : 0;
+    const avg = d.count ? Math.round(d.revenue/d.count) : 0;
+    return `<tr><td>${label}</td><td>PKR ${d.revenue.toLocaleString()}</td><td>${d.count}</td><td>PKR ${avg.toLocaleString()}</td><td>${pct}%</td></tr>`;
+  }).join('');
+  const html = `<div class="drill-table-wrap"><table class="drill-table">
+    <thead><tr><th>Plan Duration</th><th>Revenue</th><th>Purchases</th><th>Avg. / Purchase</th><th>% of Specialty</th></tr></thead>
+    <tbody>${rows || `<tr><td colspan="5" style="text-align:center;color:var(--text-mid);padding:24px;">No revenue recorded.</td></tr>`}</tbody>
+  </table></div>`;
+  if(body){ body.innerHTML = html; return true; }
+  return html;
+}
+
+// ═══════════ REVENUE: MONTHLY CHARTS ═══════════
+let _chartMonthly=null, _chartGrowth=null, _chartCoursePie=null;
+function getLastNMonths(n){
+  const months=[];
+  const now = new Date();
+  for(let i=n-1;i>=0;i--){
+    const d = new Date(now.getFullYear(), now.getMonth()-i, 1);
+    months.push({key:`${d.getFullYear()}-${d.getMonth()}`, label:d.toLocaleDateString('en-US',{month:'short',year:'2-digit'}), start:d, end:new Date(d.getFullYear(),d.getMonth()+1,0,23,59,59)});
+  }
+  return months;
+}
+function renderRevenueCharts(){
+  if(typeof Chart === 'undefined') return; // CDN blocked/offline — fail silently, rest of dashboard still works
+  const paid = allStudents.filter(r=>r.amount_paid>0); // charts always show full history regardless of filter, for trend context
+  const months = getLastNMonths(12);
+  const monthlyRevenue = months.map(m=>paid.filter(r=>{const d=new Date(r.created_at);return d>=m.start&&d<=m.end;}).reduce((s,r)=>s+Number(r.amount_paid),0));
+  const growthPct = monthlyRevenue.map((v,i)=> i===0?0: monthlyRevenue[i-1]>0 ? Math.round(((v-monthlyRevenue[i-1])/monthlyRevenue[i-1])*100) : (v>0?100:0));
+
+  const gold = '#C9A84C', green='#2ECC71', red='#E74C3C', textMid='#B0A898';
+  const baseGrid = {color:'rgba(255,255,255,0.06)'};
+  const baseTicks = {color:textMid, font:{size:10}};
+
+  if(_chartMonthly) _chartMonthly.destroy();
+  _chartMonthly = new Chart(document.getElementById('chart-monthly'), {
+    type:'line',
+    data:{labels:months.map(m=>m.label), datasets:[{label:'Revenue (PKR)', data:monthlyRevenue, borderColor:gold, backgroundColor:'rgba(201,168,76,0.12)', fill:true, tension:0.35, pointRadius:3}]},
+    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{x:{grid:baseGrid,ticks:baseTicks},y:{grid:baseGrid,ticks:baseTicks}}}
+  });
+
+  if(_chartGrowth) _chartGrowth.destroy();
+  _chartGrowth = new Chart(document.getElementById('chart-growth'), {
+    type:'bar',
+    data:{labels:months.map(m=>m.label), datasets:[{label:'MoM Growth %', data:growthPct, backgroundColor:growthPct.map(v=>v>=0?green:red)}]},
+    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{x:{grid:baseGrid,ticks:baseTicks},y:{grid:baseGrid,ticks:baseTicks}}}
+  });
+
+  const courseRev = {};
+  paid.forEach(r=>{ const ck=getCourseKey(r.subject); courseRev[ck]=(courseRev[ck]||0)+Number(r.amount_paid); });
+  const courseEntries = Object.entries(courseRev).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]);
+  if(_chartCoursePie) _chartCoursePie.destroy();
+  const pieColors = ['#C9A84C','#2ECC71','#3498DB','#E74C3C','#F39C12','#9B59B6'];
+  _chartCoursePie = new Chart(document.getElementById('chart-course-pie'), {
+    type:'doughnut',
+    data:{labels:courseEntries.map(([k])=>COURSE_MAP[k].label), datasets:[{data:courseEntries.map(([,v])=>v), backgroundColor:pieColors, borderColor:'#12161C', borderWidth:2}]},
+    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom', labels:{color:textMid, font:{size:10}, padding:8}}}}
+  });
+
+  // Highest/lowest revenue month (only months with actual data)
+  const withData = months.map((m,i)=>({label:m.label, val:monthlyRevenue[i]})).filter(m=>m.val>0);
+  const highlightsEl = document.getElementById('rev-month-highlights');
+  if(withData.length){
+    const highest = withData.reduce((a,b)=>b.val>a.val?b:a);
+    const lowest = withData.reduce((a,b)=>b.val<a.val?b:a);
+    highlightsEl.textContent = `📈 Highest revenue month: ${highest.label} (PKR ${highest.val.toLocaleString()}) · 📉 Lowest: ${lowest.label} (PKR ${lowest.val.toLocaleString()})`;
+  } else { highlightsEl.textContent=''; }
+}
+
+// ═══════════ REVENUE: CSV EXPORT ═══════════
+function exportRevenueCSV(){
+  const rows = [['Doctor','Email','Code','Course','Specialty','Plan','Amount Paid (PKR)','Created At','Expires At','Status']];
+  revFilteredStudents.forEach(r=>{
+    rows.push([
+      r.student_name||'', r.email||'', r.code||'',
+      COURSE_MAP[getCourseKey(r.subject)].label,
+      SPECIALTY_LABELS[(r.subject||'').toLowerCase()] || r.subject || '',
+      getPlanLabel(r),
+      r.amount_paid||0,
+      r.created_at ? new Date(r.created_at).toLocaleDateString('en-GB') : '',
+      r.expires_at ? new Date(r.expires_at).toLocaleDateString('en-GB') : '',
+      getStatus(r)
+    ]);
+  });
+  const csv = rows.map(row=>row.map(cell=>`"${String(cell).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `medmasters_revenue_${new Date().toISOString().slice(0,10)}.csv`;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }
 
 // ═══════════ 7-DAY SOFT TOAST ═══════════
