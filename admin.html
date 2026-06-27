@@ -225,6 +225,36 @@ tr:hover td{background:rgba(201,168,76,0.02);}
 .alert-row.soft{border-color:rgba(243,156,18,0.2);background:rgba(243,156,18,0.02);}
 .alert-section-soft{margin-bottom:20px;}
 
+/* CATEGORY NAV (compact admin home) */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:32px;}
+.cat-card{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:24px 22px;cursor:pointer;transition:all 0.2s;position:relative;
+  display:flex;flex-direction:column;gap:8px;
+}
+.cat-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.3);}
+.cat-card.active{border-color:var(--gold);background:rgba(201,168,76,0.06);box-shadow:0 0 0 1px var(--gold) inset;}
+.cat-card-icon{font-size:26px;}
+.cat-card-title{font-size:15px;font-weight:800;color:var(--white);}
+.cat-card-sub{font-size:11px;color:var(--text-mid);}
+.cat-card-badge{
+  position:absolute;top:16px;right:16px;
+  background:rgba(231,76,60,0.15);color:var(--red);border:1px solid rgba(231,76,60,0.35);
+  font-size:11px;font-weight:800;padding:2px 9px;border-radius:20px;
+}
+.cat-card-badge.zero{display:none;}
+.cat-card-chevron{position:absolute;bottom:18px;right:20px;color:var(--text);font-size:13px;opacity:0.5;transition:transform 0.2s;}
+.cat-card.active .cat-card-chevron{transform:rotate(90deg);color:var(--gold);opacity:1;}
+
+.admin-panel{display:none;animation:fadeIn 0.25s ease;}
+.admin-panel.open{display:block;}
+.panel-back{
+  display:inline-flex;align-items:center;gap:6px;background:none;border:none;
+  color:var(--text-mid);font-size:12px;font-weight:700;cursor:pointer;
+  font-family:'Poppins',sans-serif;margin-bottom:18px;padding:0;
+}
+.panel-back:hover{color:var(--gold);}
+
 </style>
 </head>
 <body>
@@ -281,8 +311,38 @@ tr:hover td{background:rgba(201,168,76,0.02);}
       <div class="stat-card" style="grid-column:span 2;"><div class="stat-card-num" id="s-time-spent" style="font-size:24px;">—</div><div class="stat-card-label">⏱ Total Study Time (All Subscribers)</div></div>
     </div>
 
+    <!-- CATEGORY NAV -->
+    <div class="cat-grid" id="cat-grid">
+      <div class="cat-card" id="cat-card-add" onclick="openPanel('add')">
+        <div class="cat-card-icon">➕</div>
+        <div class="cat-card-title">Add New Doctor</div>
+        <div class="cat-card-sub">Create access code &amp; send WhatsApp</div>
+        <div class="cat-card-chevron">›</div>
+      </div>
+      <div class="cat-card" id="cat-card-revenue" onclick="openPanel('revenue')">
+        <div class="cat-card-icon">💰</div>
+        <div class="cat-card-title">Revenue Dashboard</div>
+        <div class="cat-card-sub">Gross, net &amp; plan breakdown</div>
+        <div class="cat-card-chevron">›</div>
+      </div>
+      <div class="cat-card" id="cat-card-students" onclick="openPanel('students')">
+        <div class="cat-card-icon">👥</div>
+        <div class="cat-card-title">All Students</div>
+        <div class="cat-card-sub">Search, filter &amp; manage</div>
+        <div class="cat-card-chevron">›</div>
+      </div>
+      <div class="cat-card" id="cat-card-urgent" onclick="openPanel('urgent')">
+        <div class="cat-card-icon">🔴</div>
+        <div class="cat-card-title">Urgent</div>
+        <div class="cat-card-sub">Expiring in 3 days or expired</div>
+        <span class="cat-card-badge zero" id="cat-urgent-badge">0</span>
+        <div class="cat-card-chevron">›</div>
+      </div>
+    </div>
+
     <!-- REVENUE DASHBOARD -->
-    <div class="revenue-section">
+    <div class="admin-panel" id="panel-revenue">
+      <button class="panel-back" onclick="closePanel()">← Back to categories</button>
       <div class="section-title">💰 Revenue Dashboard</div>
       <div class="revenue-grid">
         <div class="rev-card"><div class="rev-card-num" id="r-gross">—</div><div class="rev-card-label">Gross Revenue (PKR)</div></div>
@@ -294,16 +354,24 @@ tr:hover td{background:rgba(201,168,76,0.02);}
         <div style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">📊 Revenue by Plan</div>
         <div id="rev-by-plan" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;"></div>
       </div>
-    </div>
+    </div><!-- /panel-revenue -->
 
     <!-- ALERTS: 3-DAY URGENT -->
-    <div class="alert-section" id="alerts-section" style="display:none;">
-      <div class="alert-title">🔴 Urgent — Expiring in 3 Days or Expired</div>
-      <div id="alerts-list"></div>
-    </div>
+    <div class="admin-panel" id="panel-urgent">
+      <button class="panel-back" onclick="closePanel()">← Back to categories</button>
+      <div class="alert-section" id="alerts-section" style="display:none;">
+        <div class="alert-title">🔴 Urgent — Expiring in 3 Days or Expired</div>
+        <div id="alerts-list"></div>
+      </div>
+      <div class="empty-state" id="urgent-empty" style="display:none;">
+        <div>✅</div>No urgent expirations right now. Everyone's in good standing.
+      </div>
+    </div><!-- /panel-urgent -->
 
     <!-- ADD STUDENT -->
-    <div class="add-form">
+    <div class="admin-panel" id="panel-add">
+      <button class="panel-back" onclick="closePanel()">← Back to categories</button>
+      <div class="add-form">
       <div class="section-title">➕ Add New Doctor</div>
       <div class="form-grid">
         <div class="form-group">
@@ -382,10 +450,13 @@ tr:hover td{background:rgba(201,168,76,0.02);}
         <div style="font-size:10px;font-weight:700;color:#2ECC71;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;">📋 WhatsApp Message Preview</div>
         <div id="wa-preview-text" style="font-size:13px;color:var(--text-mid);line-height:1.75;white-space:pre-line;"></div>
       </div>
-    </div>
+      </div><!-- /add-form -->
+    </div><!-- /panel-add -->
 
     <!-- STUDENT TABLE -->
-    <div class="section-title">👥 All Students</div>
+    <div class="admin-panel" id="panel-students">
+      <button class="panel-back" onclick="closePanel()">← Back to categories</button>
+      <div class="section-title">👥 All Students</div>
     <div class="controls">
       <input class="search-input" id="search-input" placeholder="🔍  Search by name, email or code…" oninput="renderTable()">
       <select class="filter-select" id="filter-status" onchange="renderTable()">
@@ -453,7 +524,8 @@ tr:hover td{background:rgba(201,168,76,0.02);}
           <tr><td colspan="14"><div class="loading"><div class="spinner"></div>Loading students…</div></td></tr>
         </tbody>
       </table>
-    </div>
+    </div><!-- /table-wrap -->
+    </div><!-- /panel-students -->
 
   </div><!-- /main -->
 </div><!-- /dashboard -->
@@ -546,6 +618,25 @@ let extendTarget = null;
 let extendDays = null;
 let rewardTarget = null;
 let toastTimer = null;
+
+// ═══════════ CATEGORY PANEL NAV ═══════════
+const PANEL_IDS = ['add','revenue','students','urgent'];
+function openPanel(name){
+  if(!PANEL_IDS.includes(name)) return;
+  document.getElementById('cat-grid').style.display = 'none';
+  PANEL_IDS.forEach(id=>{
+    document.getElementById('panel-'+id).classList.toggle('open', id===name);
+    document.getElementById('cat-card-'+id).classList.toggle('active', id===name);
+  });
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function closePanel(){
+  document.getElementById('cat-grid').style.display = 'grid';
+  PANEL_IDS.forEach(id=>{
+    document.getElementById('panel-'+id).classList.remove('open');
+    document.getElementById('cat-card-'+id).classList.remove('active');
+  });
+}
 
 // ═══════════ LOGIN ═══════════
 function adminLogin(){
@@ -770,7 +861,18 @@ function renderAlerts(){
   const urgent = allStudents.filter(r=>getStatus(r)==='expiring'||getStatus(r)==='expired');
   const section = document.getElementById('alerts-section');
   const list = document.getElementById('alerts-list');
-  if(!urgent.length){section.style.display='none';return;}
+  const emptyState = document.getElementById('urgent-empty');
+  const badge = document.getElementById('cat-urgent-badge');
+  if(badge){
+    badge.textContent = urgent.length;
+    badge.classList.toggle('zero', urgent.length===0);
+  }
+  if(!urgent.length){
+    section.style.display='none';
+    if(emptyState) emptyState.style.display='block';
+    return;
+  }
+  if(emptyState) emptyState.style.display='none';
   section.style.display='block';
   list.innerHTML = urgent.map(r=>{
     const days = daysLeft(r.expires_at);
