@@ -76,6 +76,8 @@ nav{
 .btn-green:hover{background:rgba(46,204,113,0.22);}
 .btn-blue{background:rgba(52,152,219,0.12);color:var(--blue);border:1px solid rgba(52,152,219,0.25);}
 .btn-blue:hover{background:rgba(52,152,219,0.22);}
+.btn-upgrade{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.4);}
+.btn-upgrade:hover{background:rgba(201,168,76,0.25);}
 .btn-outline-gold{background:transparent;color:var(--gold);border:1px solid var(--border);}
 .btn-outline-gold:hover{background:rgba(201,168,76,0.08);}
 
@@ -141,6 +143,7 @@ tr:hover td{background:rgba(201,168,76,0.02);}
 .badge-expiring{background:rgba(243,156,18,0.12);color:var(--yellow);border:1px solid rgba(243,156,18,0.25);}
 .badge-expired{background:rgba(231,76,60,0.12);color:var(--red);border:1px solid rgba(231,76,60,0.25);}
 .badge-inactive{background:rgba(255,255,255,0.06);color:var(--text);border:1px solid rgba(255,255,255,0.1);}
+.badge-trial{background:rgba(201,168,76,0.12);color:var(--gold);border:1px solid rgba(201,168,76,0.3);}
 .days-pill{font-size:12px;font-weight:700;}
 .days-green{color:var(--green);}
 .days-yellow{color:var(--yellow);}
@@ -700,6 +703,8 @@ tr:hover td{background:rgba(201,168,76,0.02);}
         <div class="form-group">
           <label class="form-label">Expiry Date (auto-calculated)</label>
           <input class="form-input" id="f-expiry" type="date" readonly style="cursor:default;opacity:0.7;">
+          <input type="hidden" id="f-trial-expiry-iso">
+          <div id="f-trial-expiry-note" style="display:none;font-size:11px;color:var(--gold);margin-top:6px;font-weight:600;"></div>
         </div>
         <div class="form-group">
           <label class="form-label">Amount Paid <span style="color:var(--text);font-weight:400;font-size:10px;">(PKR, internal only)</span> <span style="color:#e74c3c;font-size:11px;">*</span></label>
@@ -732,6 +737,7 @@ tr:hover td{background:rgba(201,168,76,0.02);}
         <option value="all">All Statuses</option>
         <option value="active">Active</option>
         <option value="active_today">Active Today</option>
+        <option value="trial">🎯 Free Trial</option>
         <option value="expiring">Expiring Soon</option>
         <option value="expired">Expired</option>
         <option value="inactive">Deactivated</option>
@@ -925,6 +931,22 @@ tr:hover td{background:rgba(201,168,76,0.02);}
   </div>
 </div>
 
+<!-- ══════════════ UPGRADE TRIAL TO SUBSCRIBER MODAL ══════════════ -->
+<div class="modal-overlay" id="upgrade-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeUpgradeModal()">✕</button>
+    <h3>🎯 Upgrade Trial to Subscription</h3>
+    <p id="upgrade-modal-desc">Choose the plan this doctor is upgrading to.</p>
+    <div class="days-grid" id="upgrade-plan-grid"></div>
+    <div class="form-group" style="margin-bottom:16px;">
+      <label class="form-label">Amount Paid <span style="color:var(--text);font-weight:400;font-size:10px;">(PKR, logged to revenue)</span> <span style="color:#e74c3c;font-size:11px;">*</span></label>
+      <input class="form-input" id="upgrade-amount-paid" placeholder="Enter amount received" type="number" min="0" style="width:100%;">
+    </div>
+    <button class="btn-gold" id="upgrade-confirm-btn" onclick="confirmUpgrade()" disabled style="opacity:0.5;">Select a plan first</button>
+    <div class="form-msg" id="upgrade-msg" style="margin-top:10px;text-align:center;"></div>
+  </div>
+</div>
+
 <script>
 // ═══════════ CONFIG ═══════════
 const SUPABASE_URL  = 'https://muxpykycdafzhzzopock.supabase.co';
@@ -964,6 +986,8 @@ const sb = {
 let allStudents = [];
 let extendTarget = null;
 let extendDays = null;
+let upgradeTarget = null;
+let upgradePlan = null;
 let rewardTarget = null;
 let toastTimer = null;
 
@@ -1054,6 +1078,9 @@ async function loadAll(){
 // ═══════════ HELPERS ═══════════
 function getStatus(rec){
   if(!rec.is_active) return 'inactive';
+  if(rec.plan_type==='trial'){
+    return new Date(rec.expires_at) < new Date() ? 'expired' : 'trial';
+  }
   const days = daysLeft(rec.expires_at);
   if(days < 0) return 'expired';
   if(days <= 3) return 'expiring';
@@ -1062,7 +1089,15 @@ function getStatus(rec){
 function daysLeft(expires_at){
   return Math.ceil((new Date(expires_at)-new Date())/(1000*60*60*24));
 }
+function getTrialTimeLeft(expires_at){
+  const ms = new Date(expires_at) - new Date();
+  if(ms <= 0) return 'Expired';
+  const h = Math.floor(ms/(1000*60*60));
+  const m = Math.floor((ms%(1000*60*60))/(1000*60));
+  return `${h}h ${m}m left`;
+}
 function getPlanLabel(r){
+  if(r.plan_type==='trial') return '🎯 Free Trial';
   if(!r.created_at||!r.expires_at) return '—';
   const days = Math.round((new Date(r.expires_at)-new Date(r.created_at))/(1000*60*60*24));
   const subj = (r.subject||'').toLowerCase();
@@ -1128,10 +1163,11 @@ function renderStats(){
   const expiring = allStudents.filter(r=>getStatus(r)==='expiring').length;
   const expired = allStudents.filter(r=>getStatus(r)==='expired').length;
   const inactive = allStudents.filter(r=>getStatus(r)==='inactive').length;
+  const trialing = allStudents.filter(r=>getStatus(r)==='trial').length;
   // Total Subscribers = every row ever in the database
   const subscribers = total;
-  // Active Subscribers = everyone except expired and deactivated
-  const active = total - expired - inactive;
+  // Active Subscribers = everyone except expired, deactivated, and trial (trials are not paying subscribers)
+  const active = total - expired - inactive - trialing;
   // Active Today = students whose last_login was within the last 24 hours
   const now = new Date();
   const activeToday = allStudents.filter(r=>{
@@ -1654,11 +1690,14 @@ function renderTable(){
     const amountPaid = r.amount_paid ? `PKR ${Number(r.amount_paid).toLocaleString()}` : '—';
     const refCount = r.referral_count||0;
     let statusBadge='',daysHtml='';
-    if(status==='active'){statusBadge='<span class="badge badge-active">● Active</span>';}
+    if(status==='trial'){statusBadge='<span class="badge badge-trial">🎯 Trial</span>';}
+    else if(status==='active'){statusBadge='<span class="badge badge-active">● Active</span>';}
     else if(status==='expiring'){statusBadge='<span class="badge badge-expiring">⚠ Expiring</span>';}
     else if(status==='expired'){statusBadge='<span class="badge badge-expired">✕ Expired</span>';}
     else{statusBadge='<span class="badge badge-inactive">○ Inactive</span>';}
-    if(days<0) daysHtml=`<span class="days-pill days-red">${Math.abs(days)}d ago</span>`;
+    if(status==='trial'){
+      daysHtml = `<span class="days-pill days-yellow">${getTrialTimeLeft(r.expires_at)}</span>`;
+    } else if(days<0){ daysHtml=`<span class="days-pill days-red">${Math.abs(days)}d ago</span>`; }
     else if(days<=3) daysHtml=`<span class="days-pill days-yellow">${days}d left</span>`;
     else daysHtml=`<span class="days-pill days-green">${days}d left</span>`;
     const phone = r.whatsapp||r.phone||'';
@@ -1691,7 +1730,9 @@ function renderTable(){
       <td>
         <div class="td-actions">
           ${phone?`<a class="btn-sm btn-blue" href="https://wa.me/${phone}?text=${waMsg}" target="_blank" title="Send WhatsApp reminder">💬</a>`:''}
-          <button class="btn-sm btn-green" onclick="openExtendModal('${r.code}','${(r.student_name||r.email).replace(/'/g,"\\'")}','${r.expires_at}')" title="Extend access">➕</button>
+          ${status==='trial'
+            ? `<button class="btn-sm btn-upgrade" onclick="openUpgradeModal('${r.code}','${(r.student_name||r.email).replace(/'/g,"\\'")}')" title="Upgrade to paid subscription">⬆ Upgrade</button>`
+            : `<button class="btn-sm btn-green" onclick="openExtendModal('${r.code}','${(r.student_name||r.email).replace(/'/g,"\\'")}','${r.expires_at}')" title="Extend access">➕</button>`}
           <button class="btn-sm btn-blue" onclick="resetDevices('${r.code}')" title="Reset devices">📱</button>
           ${r.is_active
             ? `<button class="btn-sm btn-danger" onclick="toggleActive('${r.code}',false)" title="Deactivate">🚫</button>`
@@ -1731,6 +1772,7 @@ function updateWAPreview(){
   const email = document.getElementById('f-email').value.trim();
   const code = document.getElementById('f-code').value.trim();
   const plan = document.getElementById('f-plan');
+  const planVal = plan.value;
   const planDuration = plan.options[plan.selectedIndex].text;
   const exam = document.getElementById('f-exam').value;
   const examNames = {jcat:'JCAT',fcps:'FCPS Part 1',nts:'NTS MO/WMO',cts:'CTS MO/WMO',mo_wmo:'MO/WMO',mock_nts:'Past & Mocks NTS'};
@@ -1739,9 +1781,17 @@ function updateWAPreview(){
     const subjSel = document.getElementById('f-subject');
     if(subjSel&&subjSel.selectedIndex>=0) planName += ' — '+subjSel.options[subjSel.selectedIndex].text;
   }
+  if(!name || !code) return;
+  if(planVal === 'trial'){
+    const isoVal = document.getElementById('f-trial-expiry-iso').value;
+    const expiryTimeFmt = isoVal ? new Date(isoVal).toLocaleTimeString('en-US',{timeZone:'Asia/Karachi',hour:'numeric',minute:'2-digit',hour12:true}) : '—';
+    const msg = buildTrialWAMessage(name, email, code, planName, expiryTimeFmt);
+    document.getElementById('wa-preview-text').textContent = msg;
+    document.getElementById('wa-preview').style.display = 'block';
+    return;
+  }
   const expiry = document.getElementById('f-expiry').value;
   const expiryFmt = expiry ? new Date(expiry).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}) : '—';
-  if(!name || !code) return;
   const msg = buildWAMessage(name, email, code, planName, planDuration, expiryFmt);
   document.getElementById('wa-preview-text').textContent = msg;
   document.getElementById('wa-preview').style.display = 'block';
@@ -1752,6 +1802,10 @@ function buildExtensionWAMessage(name, days, newExpiry){
 }
 function buildWAMessage(name, email, code, planName, planDuration, expiryDate){
   return `Hello, ${name}! 🎓\n\nWelcome to MedMasters — Pakistan's #1 MCQ Bank!\n\nHere are your access details:\n\n📧 Email: ${email}\n🔑 Access Code: ${code}\n\n📚 Plan: ${planName}\n📅 Duration: ${planDuration}\n⏳ Valid Until: ${expiryDate}\n\nTo start practising:\n1️⃣ Go to medmasters.academy\n2️⃣ Add to home screen:\n   📱 iPhone: tap Share → "Add to Home Screen"\n   📱 Android: tap ⋮ → "Install App"\n   💻 Laptop/Tab: click 📲 Install button on the site\n3️⃣ Click "Enter Code"\n4️⃣ Enter your email + code above\n\nYou can use it on 1 mobile + 1 laptop.\n\nBest of luck in your exams! 💪\n— MedMasters Team`;
+}
+function buildTrialWAMessage(name, email, code, planName, expiryTimeFmt){
+  const cleanName = (name||'').replace(/^Dr\.?\s+/i,'');
+  return `🩺 MedMasters Free Trial Activated!\n\nHello, Dr ${cleanName}! 🎓\n\nWelcome to your MedMasters Free Trial! 🎯\n\nHere are your access details:\n\n📧 Email: ${email}\n🔑 Access Code: ${code}\n\n📚 Plan: ${planName}\n⏳ Valid Until: ${expiryTimeFmt} today (6-hour trial)\n\nTo start practising:\n1️⃣ Go to medmasters.academy\n2️⃣ Click "Enter Code"\n3️⃣ Enter your email + code above\n\nLoved it? Message us anytime to upgrade to full access! 💪\n— MedMasters Team`;
 }
 // ── EXAM / SPECIALTY CONFIG ───────────────────────────────
 const JCAT_SPECIALTIES = [
@@ -1779,21 +1833,26 @@ const FCPS_SPECIALTIES = [
   {value:'fcps_radiology_part1',    label:'Diagnostic Radiology'},
 ];
 const PLANS = {
-  jcat:  [{value:'30',  label:'30 Days — PKR 3,000'},
+  jcat:  [{value:'trial',label:'🎯 Free Trial — 6 Hours'},
+          {value:'30',  label:'30 Days — PKR 3,000'},
           {value:'90',  label:'3 Months — PKR 5,000'},
           {value:'180', label:'6 Months — PKR 7,500'},
           {value:'365', label:'1 Year — PKR 9,500'}],
-  fcps:  [{value:'30',  label:'30 Days — PKR 3,000'},
+  fcps:  [{value:'trial',label:'🎯 Free Trial — 6 Hours'},
+          {value:'30',  label:'30 Days — PKR 3,000'},
           {value:'90',  label:'3 Months — PKR 5,000'},
           {value:'180', label:'6 Months — PKR 7,500'},
           {value:'365', label:'1 Year — PKR 9,500'}],
-  nts:   [{value:'30',  label:'1 Month — PKR 4,000'},
+  nts:   [{value:'trial',label:'🎯 Free Trial — 6 Hours'},
+          {value:'30',  label:'1 Month — PKR 4,000'},
           {value:'90',  label:'3 Months — PKR 6,000'},
           {value:'180', label:'6 Months — PKR 9,000'}],
-  cts:   [{value:'30',  label:'1 Month — PKR 4,000'},
+  cts:   [{value:'trial',label:'🎯 Free Trial — 6 Hours'},
+          {value:'30',  label:'1 Month — PKR 4,000'},
           {value:'90',  label:'3 Months — PKR 6,000'},
           {value:'180', label:'6 Months — PKR 9,000'}],
-  mo_wmo:[{value:'30',  label:'1 Month — PKR 4,000'},
+  mo_wmo:[{value:'trial',label:'🎯 Free Trial — 6 Hours'},
+          {value:'30',  label:'1 Month — PKR 4,000'},
           {value:'90',  label:'3 Months — PKR 6,000'},
           {value:'180', label:'6 Months — PKR 9,000'}],
   mock_nts:[{value:'15', label:'15 Days — PKR 1,500'},
@@ -1837,6 +1896,20 @@ function getSubjectValue(){
 
 function calcExpiry(){
   const planVal = document.getElementById('f-plan').value;
+  const noteEl = document.getElementById('f-trial-expiry-note');
+  const isoEl = document.getElementById('f-trial-expiry-iso');
+  if(planVal === 'trial'){
+    const expiryDate = new Date(Date.now() + 6*60*60*1000); // exactly 6 hours from activation
+    isoEl.value = expiryDate.toISOString();
+    document.getElementById('f-expiry').value = expiryDate.toISOString().split('T')[0];
+    const timeFmt = expiryDate.toLocaleTimeString('en-US',{timeZone:'Asia/Karachi',hour:'numeric',minute:'2-digit',hour12:true});
+    noteEl.textContent = `🎯 Trial expires at ${timeFmt} today (6 hours from activation)`;
+    noteEl.style.display = 'block';
+    updateWAPreview();
+    return;
+  }
+  noteEl.style.display = 'none';
+  isoEl.value = '';
   const days = parseInt(planVal);
   const d = new Date();
   d.setDate(d.getDate()+days);
@@ -1854,8 +1927,11 @@ async function addStudent(){
   const code = document.getElementById('f-code').value.trim().toUpperCase();
   const subject = getSubjectValue();
   const plan = document.getElementById('f-plan');
+  const planVal = plan.value;
+  const isTrial = planVal === 'trial';
   const planText = plan.options[plan.selectedIndex].text;
   const expiry = document.getElementById('f-expiry').value;
+  const trialExpiryIso = document.getElementById('f-trial-expiry-iso').value;
   const referredBy = document.getElementById('f-referred-by').value.trim().toUpperCase()||null;
   const amountPaidInput = document.getElementById('f-amount-paid').value.trim();
   const amountPaid = amountPaidInput ? parseInt(amountPaidInput) : 0;
@@ -1864,16 +1940,23 @@ async function addStudent(){
   if(!email.includes('@')){msg.textContent='✕ Invalid email.';msg.className='form-msg err';return;}
   if(!phone){msg.textContent='✕ Please enter the doctor\'s WhatsApp number.';msg.className='form-msg err';return;}
   if(!/^MM-\d{4}-[A-Z0-9]{4}$/.test(code)){msg.textContent='✕ Invalid code format.';msg.className='form-msg err';return;}
-  if(!amountPaidInput||isNaN(Number(amountPaidInput))||Number(amountPaidInput)<0){msg.textContent='✕ Please enter the amount paid.';msg.className='form-msg err';return;}
+  // Trial accounts are free — amount paid is not required and is forced to 0
+  if(!isTrial && (!amountPaidInput||isNaN(Number(amountPaidInput))||Number(amountPaidInput)<0)){msg.textContent='✕ Please enter the amount paid.';msg.className='form-msg err';return;}
+  if(isTrial && !trialExpiryIso){msg.textContent='✕ Trial expiry could not be calculated. Re-select the plan.';msg.className='form-msg err';return;}
   msg.textContent='Adding…';msg.className='form-msg';
   try{
     const insertData = {
       code, email, student_name:name, subject,
-      expires_at: new Date(expiry+'T23:59:59Z').toISOString(),
+      expires_at: isTrial ? trialExpiryIso : new Date(expiry+'T23:59:59Z').toISOString(),
       is_active:true, devices:[], login_count:0,
-      whatsapp:phone, amount_paid:amountPaid,
+      whatsapp:phone, amount_paid: isTrial ? 0 : amountPaid,
       referral_count:0, referral_reward_cash:0, referral_reward_days:0
     };
+    if(isTrial){
+      insertData.plan_type = 'trial';
+      insertData.trial_started_at = new Date().toISOString();
+      insertData.trial_expires_at = trialExpiryIso;
+    }
     if(referredBy) insertData.referred_by = referredBy;
     await sb.insert(insertData);
     // If referred_by set, increment referrer's referral_count
@@ -1884,7 +1967,6 @@ async function addStudent(){
       }
     }
     msg.textContent=`✓ ${name} added! Opening WhatsApp…`;msg.className='form-msg ok';
-    const expiryFmt = new Date(expiry).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
     const examEl = document.getElementById('f-exam');
     const examVal = examEl ? examEl.value : 'nts';
     const examNames = {jcat:'JCAT',fcps:'FCPS Part 1',nts:'NTS MO/WMO',cts:'CTS MO/WMO',mo_wmo:'MO/WMO',mock_nts:'Past & Mocks NTS'};
@@ -1893,7 +1975,14 @@ async function addStudent(){
       const subjSel = document.getElementById('f-subject');
       if(subjSel&&subjSel.selectedIndex>=0) planName += ' — '+subjSel.options[subjSel.selectedIndex].text;
     }
-    const waText = buildWAMessage(name, email, code, planName, planText, expiryFmt);
+    let waText;
+    if(isTrial){
+      const expiryTimeFmt = new Date(trialExpiryIso).toLocaleTimeString('en-US',{timeZone:'Asia/Karachi',hour:'numeric',minute:'2-digit',hour12:true});
+      waText = buildTrialWAMessage(name, email, code, planName, expiryTimeFmt);
+    } else {
+      const expiryFmt = new Date(expiry).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
+      waText = buildWAMessage(name, email, code, planName, planText, expiryFmt);
+    }
     const waNum = phone.startsWith('92') ? phone : '92'+phone.replace(/^0/,'');
     setTimeout(()=>{ window.open(`https://wa.me/${waNum}?text=${encodeURIComponent(waText)}`, '_blank'); }, 400);
     // Reset form
@@ -2576,6 +2665,102 @@ async function confirmExtend(){
   }
 }
 document.getElementById('extend-modal').addEventListener('click',e=>{if(e.target===document.getElementById('extend-modal'))closeExtendModal();});
+
+// ═══════════ UPGRADE TRIAL → SUBSCRIBER MODAL ═══════════
+// Reuses the existing subject/exam already on the trial record — only
+// plan duration + price change. Sends the SAME subscriber WhatsApp message
+// (buildWAMessage) used for brand-new subscribers, per product requirement
+// that upgraded trial doctors receive the full standard welcome message.
+const UPGRADE_PLAN_OPTIONS = {
+  jcat:    [{days:30,label:'30 Days',price:3000},{days:90,label:'3 Months',price:5000},{days:180,label:'6 Months',price:7500},{days:365,label:'1 Year',price:9500}],
+  fcps:    [{days:30,label:'30 Days',price:3000},{days:90,label:'3 Months',price:5000},{days:180,label:'6 Months',price:7500},{days:365,label:'1 Year',price:9500}],
+  nts:     [{days:30,label:'1 Month',price:4000},{days:90,label:'3 Months',price:6000},{days:180,label:'6 Months',price:9000}],
+  cts:     [{days:30,label:'1 Month',price:4000},{days:90,label:'3 Months',price:6000},{days:180,label:'6 Months',price:9000}],
+  mo_wmo:  [{days:30,label:'1 Month',price:4000},{days:90,label:'3 Months',price:6000},{days:180,label:'6 Months',price:9000}],
+};
+function getExamFromSubject(subj){
+  subj = (subj||'').toLowerCase();
+  if(subj.startsWith('fcps_')) return 'fcps';
+  if(subj==='nts') return 'nts';
+  if(subj==='cts') return 'cts';
+  if(subj==='mo_wmo') return 'mo_wmo';
+  if(subj==='mock_nts') return 'mock_nts';
+  return 'jcat';
+}
+function openUpgradeModal(code, name){
+  const rec = allStudents.find(r=>r.code===code);
+  if(!rec){ alert('Could not find student record.'); return; }
+  upgradeTarget = {code, name, subject:rec.subject};
+  upgradePlan = null;
+  document.getElementById('upgrade-modal-desc').textContent = `Upgrading ${name} (${code}) from Free Trial to a paid plan.`;
+  const exam = getExamFromSubject(rec.subject);
+  const options = UPGRADE_PLAN_OPTIONS[exam] || UPGRADE_PLAN_OPTIONS.jcat;
+  document.getElementById('upgrade-plan-grid').innerHTML = options.map(o=>
+    `<div class="day-opt" data-days="${o.days}" data-price="${o.price}" onclick="selectUpgradePlan(${o.days},${o.price},'${o.label}',this)"><div class="day-opt-num">${o.label}</div><div class="day-opt-label">PKR ${o.price.toLocaleString()}</div></div>`
+  ).join('');
+  document.getElementById('upgrade-confirm-btn').disabled = true;
+  document.getElementById('upgrade-confirm-btn').style.opacity = '0.5';
+  document.getElementById('upgrade-confirm-btn').textContent = 'Select a plan first';
+  document.getElementById('upgrade-msg').textContent = '';
+  document.getElementById('upgrade-amount-paid').value = '';
+  document.getElementById('upgrade-modal').classList.add('open');
+}
+function closeUpgradeModal(){ document.getElementById('upgrade-modal').classList.remove('open'); upgradeTarget=null; upgradePlan=null; }
+function selectUpgradePlan(days, price, label, el){
+  upgradePlan = {days, price, label};
+  document.querySelectorAll('#upgrade-plan-grid .day-opt').forEach(d=>d.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('upgrade-amount-paid').value = price;
+  const btn = document.getElementById('upgrade-confirm-btn');
+  btn.disabled=false; btn.style.opacity='1'; btn.textContent=`Upgrade to ${label} →`;
+}
+async function confirmUpgrade(){
+  if(!upgradeTarget||!upgradePlan) return;
+  const btn = document.getElementById('upgrade-confirm-btn');
+  const msg = document.getElementById('upgrade-msg');
+  const amountInput = document.getElementById('upgrade-amount-paid').value.trim();
+  if(!amountInput||isNaN(Number(amountInput))||Number(amountInput)<0){ msg.textContent='✕ Please enter the amount paid.'; msg.className='form-msg err'; return; }
+  const amountPaid = Number(amountInput);
+  btn.disabled=true; btn.textContent='Upgrading…';
+  try{
+    const rec = allStudents.find(r=>r.code===upgradeTarget.code);
+    const newExpiry = new Date(); newExpiry.setDate(newExpiry.getDate()+upgradePlan.days);
+    const patchData = {
+      expires_at: newExpiry.toISOString(),
+      is_active: true,
+      plan_type: null,
+      trial_started_at: null,
+      trial_expires_at: null,
+      amount_paid: (Number(rec?.amount_paid)||0) + amountPaid
+    };
+    await sb.patch(upgradeTarget.code, patchData);
+    const newExpiryFmt = newExpiry.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
+    msg.textContent = `✓ Upgraded! New expiry: ${newExpiryFmt} · PKR ${amountPaid.toLocaleString()} logged`;
+    msg.className = 'form-msg ok';
+    await loadAll();
+    const updatedRec = allStudents.find(r=>r.code===upgradeTarget.code);
+    const rawName = updatedRec?.student_name || upgradeTarget.name || 'Doctor';
+    const exam = getExamFromSubject(upgradeTarget.subject);
+    const examNames = {jcat:'JCAT',fcps:'FCPS Part 1',nts:'NTS MO/WMO',cts:'CTS MO/WMO',mo_wmo:'MO/WMO'};
+    let planName = examNames[exam] || exam.toUpperCase();
+    if(exam==='jcat'||exam==='fcps'){
+      const subj = (upgradeTarget.subject||'').toLowerCase();
+      const labelMap = exam==='fcps' ? FCPS_SPECIALTIES : JCAT_SPECIALTIES;
+      const match = labelMap.find(s=>s.value===subj);
+      if(match) planName += ' — '+match.label;
+    }
+    const waMsg = buildWAMessage(rawName, updatedRec?.email||'', upgradeTarget.code, planName, upgradePlan.label, newExpiryFmt);
+    const phone = updatedRec?.whatsapp||updatedRec?.phone||'';
+    if(phone && phone.match(/^\d/)){
+      setTimeout(()=>{ const ph=phone.replace(/\D/g,''); const intPh=ph.startsWith('0')?'92'+ph.slice(1):ph; window.open('https://wa.me/'+intPh+'?text='+encodeURIComponent(waMsg),'_blank'); }, 600);
+    }
+    setTimeout(()=>closeUpgradeModal(),2500);
+  }catch(e){
+    msg.textContent='✕ '+e.message; msg.className='form-msg err';
+    btn.disabled=false; btn.textContent=`Upgrade to ${upgradePlan.label} →`;
+  }
+}
+document.getElementById('upgrade-modal').addEventListener('click',e=>{if(e.target===document.getElementById('upgrade-modal'))closeUpgradeModal();});
 
 // ═══════════ REFERRAL REWARD MODAL ═══════════
 function openRewardModal(code, name, refCount){
