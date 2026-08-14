@@ -1980,10 +1980,10 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
 <!-- ══════════════ MO/WMO ENGLISH PAGE ══════════════ -->
 <div id="mo-wmo-english-page" class="page">
   <div class="page-header">
-    <button class="back-btn" onclick="_showPage('mo-wmo-page');setHash('#mo-wmo');">← MO/WMO</button>
+    <button class="back-btn" id="mo-wmo-english-back-btn" onclick="_backToMOWMOHub();">← MO/WMO</button>
     <div>
       <div class="ph-title">✍️ English</div>
-      <div class="ph-sub">20 Marks for FPSC MO/WMO</div>
+      <div class="ph-sub" id="mo-wmo-english-sub">20 Marks for FPSC MO/WMO</div>
     </div>
     <button class="share-btn" id="share-mo-wmo-english" onclick="shareLink('#mo-wmo-english','share-mo-wmo-english')">🔗 Share</button>
   </div>
@@ -2113,6 +2113,11 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
     <button class="share-btn" id="share-cts" onclick="shareLink('#cts','share-cts')">🔗 Share</button>
   </div>
   <div class="subjects-grid">
+    <div class="subj-card" onclick="openMOWMOEnglish()">
+      <div class="subj-icon">✍️</div>
+      <div><div class="subj-name">English</div><div class="subj-meta">1,500 MCQs · 20 marks in CTS Paper</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
     <div class="subj-card" onclick="selectCTSCategory('nts_basic')">
       <div class="subj-icon">🔬</div>
       <div><div class="subj-name">Basic Sciences for CTS</div><div class="subj-meta">Anatomy, Physio, Pharma as per past &amp; CTS syllabus +BS</div></div>
@@ -5704,7 +5709,7 @@ const HASH_MAP = {
   '#pricing-fpsc-mo-wmo': ()=>_showPage('pricing-fpsc-mo-wmo'),
   '#mo-wmo':       ()=>_showPage('mo-wmo'),
   '#fpsc-mo-wmo':  ()=>_showPage('fpsc-mo-wmo'),
-  '#mo-wmo-english': ()=>{ if(S.auth&&hasMOWMOAccess()){ _showPage('mo-wmo-english'); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
+  '#mo-wmo-english': ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ _showPage('mo-wmo-english'); } else { S.pendingResumeHash='#mo-wmo-english'; _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
   '#nts-basic':    ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())&&!hasMockOnlyAccess()){ _showPage('nts-basic'); } else if(hasMockOnlyAccess()){ openNTSMockHub(); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
   '#nts-medicine': ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ _showPage('nts-medicine'); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
   '#nts-surgery':  ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ _showPage('nts-surgery'); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
@@ -5724,11 +5729,11 @@ const HASH_MAP = {
   '#nts-10cat-pulmo':      ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ _showPage('nts-10cat-pulmo'); } else { _showPage('nts'); setTimeout(()=>openCodeModal('nts'),150); } },
   '#nts-10cat-psychiatry': ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ _showPage('nts-10cat-psychiatry'); } else { _showPage('nts'); setTimeout(()=>openCodeModal('nts'),150); } },
   '#nts-10cat-gyne':       ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ _showPage('nts-10cat-gyne'); } else { _showPage('nts'); setTimeout(()=>openCodeModal('nts'),150); } },
-  '#nts-vaq':              ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ openNTSVAQ(); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
-  '#nts-vaq-verbal':       ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ openNTSVAQ(); setTimeout(()=>openNTSVAQSubject('verbal'),100); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
-  '#nts-vaq-analytical':   ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ openNTSVAQ(); setTimeout(()=>openNTSVAQSubject('analytical'),100); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
-  '#nts-vaq-quant':        ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ openNTSVAQ(); setTimeout(()=>openNTSVAQSubject('quant'),100); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
-  '#nts-vaq-practice':     ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ openNTSVAQ(); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
+  '#nts-vaq':              ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ openNTSVAQ(); } else { S.pendingResumeHash='#nts-vaq'; _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
+  '#nts-vaq-verbal':       ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ openNTSVAQ(); setTimeout(()=>openNTSVAQSubject('verbal'),100); } else { S.pendingResumeHash='#nts-vaq-verbal'; _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
+  '#nts-vaq-analytical':   ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ openNTSVAQ(); setTimeout(()=>openNTSVAQSubject('analytical'),100); } else { S.pendingResumeHash='#nts-vaq-analytical'; _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
+  '#nts-vaq-quant':        ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ openNTSVAQ(); setTimeout(()=>openNTSVAQSubject('quant'),100); } else { S.pendingResumeHash='#nts-vaq-quant'; _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
+  '#nts-vaq-practice':     ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ openNTSVAQ(); } else { S.pendingResumeHash='#nts-vaq-practice'; _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
   '#anaes-p2':           ()=>{ openAnaesP2Hub(); },
   '#anaes-p2-anatomy':   ()=>{ openAnaesP2Subject('anatomy'); },
   '#anaes-p2-physio':    ()=>{ openAnaesP2Subject('physio'); },
@@ -6025,12 +6030,18 @@ function openMOWMOVAQ(){
   openNTSVAQ();
 }
 function openMOWMOEnglish(){
-  if(!S.auth||!hasMOWMOAccess()){ openCodeModal('nts'); return; }
+  if(!S.auth||!(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ S.pendingResumeHash='#mo-wmo-english'; openCodeModal('nts'); return; }
+  const isCTSUser=hasCTSAccess(); const isFPSCUser=hasFPSCAccess();
+  const brandName = isCTSUser?'CTS':isFPSCUser?'FPSC MO/WMO':'MO/WMO';
+  const backBtn=document.getElementById('mo-wmo-english-back-btn');
+  if(backBtn) backBtn.textContent = _backLabel();
+  const sub=document.getElementById('mo-wmo-english-sub');
+  if(sub) sub.textContent = `20 Marks for ${brandName}`;
   _showPage('mo-wmo-english-page');
   setHash('#mo-wmo-english');
 }
 function openMOWMOEnglishSubject(key){
-  if(!S.auth||!hasMOWMOAccess()){ openCodeModal('nts'); return; }
+  if(!S.auth||!(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ S.pendingResumeHash='#mo-wmo-english'; openCodeModal('nts'); return; }
   startMOWMOEnglishStudy(key);
 }
 // ── English MCQ data: config, loader, and study launcher ──
@@ -8731,14 +8742,22 @@ async function verifyCode(){
       await loadProgressFromCloud();
       updateNavCodeBtn();
       showInstallPrompt();
-      loadDashboard();
-      showPage('dashboard');
       if(!hasMockOnlyAccess()) loadMCQData();
       if(window._startTimeTracking) window._startTimeTracking();
       // Periodic cloud sync every 30 seconds
       if(window._syncInterval) clearInterval(window._syncInterval);
       window._syncInterval = setInterval(()=>{ if(S.auth) loadProgressFromCloud(); }, 30*1000);
       startReAuthTimer(); // Silent 30-min re-auth check
+      // Resume the section the student was trying to reach (e.g. English, VAQ) if one is pending and now unlocked; otherwise show the dashboard as usual.
+      const resumeHash = S.pendingResumeHash;
+      S.pendingResumeHash = null;
+      if(resumeHash && HASH_MAP[resumeHash]){
+        if(window.location.hash !== resumeHash) window.location.hash = resumeHash;
+        handleHash();
+      } else {
+        loadDashboard();
+        showPage('dashboard');
+      }
     },400);
   }catch(err){
     errEl.textContent=err.msg||'✕ Connection error. Check internet and try again.';
@@ -11112,8 +11131,8 @@ function hasNTSVAQAccess(){
 }
 
 function openNTSVAQ(){ if(hasMockOnlyAccess()){ openNTSMockHub(); return; } 
-  if(!S.auth){ openCodeModal('nts'); return; }
-  if(!hasNTSAccess()&&!hasCTSAccess()&&!hasMOWMOAccess()){ openCodeModal('nts'); return; }
+  if(!S.auth){ S.pendingResumeHash='#nts-vaq'; openCodeModal('nts'); return; }
+  if(!hasNTSAccess()&&!hasCTSAccess()&&!hasMOWMOAccess()){ S.pendingResumeHash='#nts-vaq'; openCodeModal('nts'); return; }
   _updateNTSDynBackBtns();
   const brandName = hasCTSAccess()?'CTS':hasMOWMOAccess()?'MO/WMO':'NTS';
   const vaqSub = document.querySelector('#nts-vaq-page .ph-sub');
