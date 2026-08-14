@@ -5931,6 +5931,7 @@ function _showMockUpgradeToast(){
   t._timer=setTimeout(()=>{ t.style.display='none'; },4000);
 }
 function openNTS(){
+  if(_hubTierGuard('nts')) return;
   if(hasMockOnlyAccess()){
     _showPage('nts');
     setHash('#nts');
@@ -5966,6 +5967,7 @@ function _applyNTSLockedState(){
   });
 }
 function openCTS(){
+  if(_hubTierGuard('cts')) return;
   _showPage('cts'); setHash('#cts');
 }
 function hasNTSAccess(){
@@ -5997,10 +5999,12 @@ function hasAnyMOWMOAccess(){
 
 // MO/WMO generic wrappers — same MCQ bank, mo_wmo branding
 function openMOWMOPage(){
+  if(_hubTierGuard('mo-wmo')) return;
   _showPage('mo-wmo'); setHash('#mo-wmo');
 }
 // FPSC MO/WMO wrappers — same MCQ bank as MO/WMO (General), minus VAQ
 function openFPSCPage(){
+  if(_hubTierGuard('fpsc-mo-wmo')) return;
   _showPage('fpsc-mo-wmo'); setHash('#fpsc-mo-wmo');
 }
 // Smart back navigation — routes to correct hub based on user's plan
