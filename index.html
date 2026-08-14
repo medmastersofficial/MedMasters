@@ -8959,8 +8959,14 @@ function normalizeSubject(raw){
   if(s==='mock_nts') return 'mock_nts';
   if(s==='fpsc_mo_wmo'||s.includes('fpsc_mo_wmo')) return 'fpsc_mo_wmo';
   if(s==='mo_wmo'||s.includes('mo_wmo')) return 'mo_wmo';
-  if(s.includes('nts')||s.includes('mowmo')||s.includes('mo/wmo')||s==='mo'||s==='wmo') return 'nts';
+  // CTS must be checked before the generic NTS/MOWMO catch-all below — the
+  // product is literally named "CTS MO/WMO", so a raw subject value like
+  // "cts_mowmo" contains the substring "mowmo" and would otherwise be
+  // wrongly classified as plain NTS, silently stripping CTS students of
+  // their CTS identity (wrong dashboard branding, CTS-only pages denying
+  // access since hasCTSAccess() no longer matches).
   if(s==='cts'||s.includes('cts')) return 'cts';
+  if(s.includes('nts')||s.includes('mowmo')||s.includes('mo/wmo')||s==='mo'||s==='wmo') return 'nts';
   // FCPS Part 1 — pass through as-is (already namespaced with fcps_ prefix)
   if(s.startsWith('fcps_')) return s;
   if(s.includes('psychiatry')) return 'psychiatry';
