@@ -1586,6 +1586,11 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
       <div><div class="subj-name">MO/WMO (General) Pricing Plans</div><div class="subj-meta">1-Month · 3-Month · 6-Month · from PKR 4,000</div></div>
       <div class="subj-arrow">›</div>
     </div>
+    <div class="subj-card" onclick="_showPage('pricing-fpsc-mo-wmo'); setHash('#pricing-fpsc-mo-wmo');">
+      <div class="subj-icon">🏦</div>
+      <div><div class="subj-name">FPSC MO/WMO Pricing Plans</div><div class="subj-meta">1-Month · 3-Month · 6-Month · from PKR 4,000</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
     <div class="subj-card" onclick="showLockedModal('USMLE')" style="opacity:0.6;">
       <div class="subj-icon">🇺🇸</div>
       <div><div class="subj-name">USMLE Pricing Plans</div><div class="subj-meta">🔒 Locked</div></div>
@@ -1828,6 +1833,11 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
       <div><div class="subj-name">MO/WMO (General)</div><div class="subj-meta">25,945 MCQs · FPSC, PPSC, SPSC &amp; more</div></div>
       <div class="subj-arrow">›</div>
     </div>
+    <div class="subj-card" onclick="openFPSCPage()">
+      <div class="subj-icon">🏦</div>
+      <div><div class="subj-name">FPSC MO/WMO</div><div class="subj-meta">25,445 MCQs · Federal Public Service Commission</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
   </div>
 </div>
 
@@ -1890,6 +1900,74 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
     <div class="subj-card" onclick="openMOWMOVAQ()">
       <div class="subj-icon">🧠</div>
       <div><div class="subj-name">Verbal, Analytical &amp; Quantitative</div><div class="subj-meta">500 MCQs · Reasoning &amp; Aptitude</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+    <div class="subj-card" onclick="openMOWMOUnifiedPractice()" style="border-color:rgba(201,168,76,0.3);">
+      <div class="subj-icon">⚡</div>
+      <div><div class="subj-name">Practice &amp; Assess</div><div class="subj-meta">All Categories · Timed · Scored · Mixed</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ FPSC MO/WMO PAGE ══════════════ -->
+<div id="fpsc-mo-wmo-page" class="page">
+  <div class="page-header">
+    <button class="back-btn" onclick="_showPage('mowmo');setHash('#mowmo');">← MO/WMO</button>
+    <div>
+      <div class="ph-title">🏦 FPSC MO/WMO MCQ Bank</div>
+      <div class="ph-sub">Federal Public Service Commission · Select a category</div>
+    </div>
+    <button class="share-btn" id="share-fpsc-mo-wmo" onclick="shareLink('#fpsc-mo-wmo','share-fpsc-mo-wmo')">🔗 Share</button>
+  </div>
+  <div class="p1-cta" style="margin:16px 16px 0;">
+    <div class="p1-cta-title">25,445 MCQs · Built for the FPSC Medical Officer &amp; WMO Syllabus</div>
+    <div class="p1-cta-sub">English, Basic Sciences, Medicine, Surgery, Psychiatry, 10-Category Revision, 3 Editions and full Practice &amp; Assess — everything FPSC MO/WMO covers, with no Verbal, Analytical or Quantitative Reasoning padding.</div>
+  </div>
+  <div class="subjects-grid" style="margin-top:12px;">
+    <div class="subj-card" onclick="openMOWMOEnglish()">
+      <div class="subj-icon">✍️</div>
+      <div><div class="subj-name">English</div><div class="subj-meta">1,500 MCQs · 20 marks for FPSC MO/WMO</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+    <div class="subj-card" onclick="selectMOWMOCategory('nts_basic')">
+      <div class="subj-icon">🔬</div>
+      <div><div class="subj-name">Basic Sciences</div><div class="subj-meta">Anatomy, Physio, Pharma, Biochem, Patho, Micro &amp; more</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+    <div class="subj-card" onclick="selectMOWMOCategory('nts_medicine')">
+      <div class="subj-icon">❤️</div>
+      <div><div class="subj-name">Medicine</div><div class="subj-meta">Categorized further as per FPSC MO/WMO Syllabus</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+    <div class="subj-card" onclick="selectMOWMOCategory('nts_surgery')">
+      <div class="subj-icon">🔪</div>
+      <div><div class="subj-name">Surgery</div><div class="subj-meta">Categorized further as per FPSC MO/WMO Syllabus</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+    <div class="subj-card" onclick="openMOWMOPsychiatry()">
+      <div class="subj-icon">🧬</div>
+      <div><div class="subj-name">Psychiatry</div><div class="subj-meta">7 Marks in FPSC MO/WMO Paper</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+    <div class="subj-card" onclick="openMOWMO10Cat()">
+      <div class="subj-icon">📋</div>
+      <div><div class="subj-name">10 Categories MCQs</div><div class="subj-meta">For Short &amp; Easy Revisions</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+    <div class="subj-card" onclick="selectMOWMORange(1)">
+      <div class="subj-icon">📚</div>
+      <div><div class="subj-name">Edition 1 · 1–3000</div><div class="subj-meta">All Topics</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+    <div class="subj-card" onclick="selectMOWMORange(2)">
+      <div class="subj-icon">📖</div>
+      <div><div class="subj-name">Edition 2 · 3001–6000</div><div class="subj-meta">All Topics</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+    <div class="subj-card" onclick="selectMOWMORange(3)">
+      <div class="subj-icon">📝</div>
+      <div><div class="subj-name">Edition 3 · 6001–7000</div><div class="subj-meta">All Topics</div></div>
       <div class="subj-arrow">›</div>
     </div>
     <div class="subj-card" onclick="openMOWMOUnifiedPractice()" style="border-color:rgba(201,168,76,0.3);">
@@ -1974,6 +2052,52 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
     </div>
     <div style="background:linear-gradient(135deg,rgba(201,168,76,0.1),rgba(201,168,76,0.04));border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-top:28px;text-align:center;">
       <a class="btn-whatsapp" href="https://wa.me/923019339553?text=Hi!%20I%20want%20to%20purchase%20MedMasters%20MO%2FWMO%20Access.%20Please%20guide%20me." target="_blank" style="display:inline-flex;align-items:center;gap:8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366" style="flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Get Your MO/WMO Access Code: +92 301 9339553</a>
+    </div>
+    <p style="text-align:center;margin-top:22px;font-size:13px;color:var(--text);">Payment via Bank Transfer · JazzCash · EasyPaisa &nbsp;·&nbsp; Code delivered via WhatsApp within minutes</p>
+  </div>
+</div>
+
+<!-- ══════════════ FPSC MO/WMO PRICING PAGE ══════════════ -->
+<div id="pricing-fpsc-mo-wmo-page" class="page">
+  <div class="page-header">
+    <button class="back-btn" onclick="history.back()">← Pricing &amp; Offers</button>
+    <div>
+      <div class="ph-title">🏦 FPSC MO/WMO Pricing Plans</div>
+      <div class="ph-sub">Federal Public Service Commission Medical Officer Exams</div>
+    </div>
+    <button class="share-btn" id="share-pricing-fpsc-mo-wmo" onclick="shareLink('#pricing-fpsc-mo-wmo','share-pricing-fpsc-mo-wmo')">🔗 Share</button>
+  </div>
+  <div style="padding:32px 5% 60px;max-width:1200px;margin:0 auto;">
+    <div class="text-center" style="margin-bottom:36px;">
+      <div class="sec-title">FPSC MO/WMO<br><span style="color:var(--gold)">Pricing Plans</span></div>
+      <div class="sec-sub" style="margin:8px auto 0;">Pakistan's most comprehensive MCQ bank for the FPSC Medical Officer and Women Medical Officer written test. 25,445 MCQs across English, Basic Sciences, Medicine, Surgery and Psychiatry — aligned exactly to the FPSC MO/WMO syllabus. One attempt is all you need — prepare right.</div>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="p-subject">1-Month Access</div>
+        <div class="p-new">PKR 4,000 <small>/ plan</small></div>
+        <div class="p-save">PKR 133/day · Focused sprint before the exam</div>
+        <ul class="p-features"><li>Full FPSC MO/WMO MCQ bank access</li><li>Past Papers & Syllabus Covered</li><li>Instant explanations</li><li>1 mobile + 1 laptop</li></ul>
+        <a class="btn-primary" style="width:100%;justify-content:center;" href="https://wa.me/923019339553?text=Hi!%20I%20want%20to%20purchase%20FPSC%20MO%2FWMO%201-Month%20Access.%20Please%20guide%20me." target="_blank">Get Access Now →</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-popular">MOST POPULAR</div>
+        <div class="p-subject">3-Month Access</div>
+        <div class="p-new">PKR 6,000 <small>/ plan</small></div>
+        <div class="p-save">PKR 67/day · Best for thorough exam preparation</div>
+        <ul class="p-features"><li>Full FPSC MO/WMO MCQ bank access</li><li>Past Papers & Syllabus Covered</li><li>Instant explanations</li><li>1 mobile + 1 laptop</li></ul>
+        <a class="btn-primary" style="width:100%;justify-content:center;" href="https://wa.me/923019339553?text=Hi!%20I%20want%20to%20purchase%20FPSC%20MO%2FWMO%203-Month%20Access.%20Please%20guide%20me." target="_blank">Get Access Now →</a>
+      </div>
+      <div class="price-card">
+        <div class="p-subject">6-Month Access</div>
+        <div class="p-new">PKR 9,000 <small>/ plan</small></div>
+        <div class="p-save">PKR 50/day · Prepare across multiple hiring cycles</div>
+        <ul class="p-features"><li>Full FPSC MO/WMO MCQ bank access</li><li>Past Papers & Syllabus Covered</li><li>Instant explanations</li><li>1 mobile + 1 laptop</li></ul>
+        <a class="btn-primary" style="width:100%;justify-content:center;" href="https://wa.me/923019339553?text=Hi!%20I%20want%20to%20purchase%20FPSC%20MO%2FWMO%206-Month%20Access.%20Please%20guide%20me." target="_blank">Get Access Now →</a>
+      </div>
+    </div>
+    <div style="background:linear-gradient(135deg,rgba(201,168,76,0.1),rgba(201,168,76,0.04));border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-top:28px;text-align:center;">
+      <a class="btn-whatsapp" href="https://wa.me/923019339553?text=Hi!%20I%20want%20to%20purchase%20MedMasters%20FPSC%20MO%2FWMO%20Access.%20Please%20guide%20me." target="_blank" style="display:inline-flex;align-items:center;gap:8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366" style="flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Get Your FPSC MO/WMO Access Code: +92 301 9339553</a>
     </div>
     <p style="text-align:center;margin-top:22px;font-size:13px;color:var(--text);">Payment via Bank Transfer · JazzCash · EasyPaisa &nbsp;·&nbsp; Code delivered via WhatsApp within minutes</p>
   </div>
@@ -5168,7 +5292,7 @@ document.addEventListener('DOMContentLoaded',async ()=>{
   });
   // Public pages work without login — show them IMMEDIATELY from the URL hash
   // so shared links like medmasters.academy/#pricing always land on the right page
-  const PUBLIC=['#home','#jcat','#mowmo','#jobs','#pricing','#pricing-jcat','#pricing-nts','#pricing-fcps','#pricing-cts','#pricing-mo-wmo','#features','#about','#fcps','#usmle','#plab','#amc','#install','#nts','#cts','#mo-wmo','#nts-mock-hub','#revision-sprint','#rs-1','#rs-2','#rs-3','#rs-4','#rs-5','#rs-6','#rs-7','#rs-8','#rs-9','#rs-10','#anaes-p2','#anaes-p2-anatomy','#anaes-p2-physio','#anaes-p2-pharma','#anaes-p2-physics','#anaes-p2-pathophysio'];
+  const PUBLIC=['#home','#jcat','#mowmo','#jobs','#pricing','#pricing-jcat','#pricing-nts','#pricing-fcps','#pricing-cts','#pricing-mo-wmo','#pricing-fpsc-mo-wmo','#features','#about','#fcps','#usmle','#plab','#amc','#install','#nts','#cts','#mo-wmo','#fpsc-mo-wmo','#nts-mock-hub','#revision-sprint','#rs-1','#rs-2','#rs-3','#rs-4','#rs-5','#rs-6','#rs-7','#rs-8','#rs-9','#rs-10','#anaes-p2','#anaes-p2-anatomy','#anaes-p2-physio','#anaes-p2-pharma','#anaes-p2-physics','#anaes-p2-pathophysio'];
   const startHash=window.location.hash||'#home';
   if(PUBLIC.includes(startHash)){
     const action=HASH_MAP[startHash];
@@ -5484,7 +5608,7 @@ async function tryAutoLogin(){
     updateNavCodeBtn();
     loadDashboard();
     const inHash=window.location.hash;
-    const PUBLIC_KEEP=['#jcat','#mowmo','#jobs','#pricing','#pricing-jcat','#pricing-nts','#pricing-fcps','#pricing-cts','#pricing-mo-wmo','#features','#about','#fcps','#usmle','#plab','#amc'];
+    const PUBLIC_KEEP=['#jcat','#mowmo','#jobs','#pricing','#pricing-jcat','#pricing-nts','#pricing-fcps','#pricing-cts','#pricing-mo-wmo','#pricing-fpsc-mo-wmo','#features','#about','#fcps','#usmle','#plab','#amc'];
     if(inHash && PUBLIC_KEEP.includes(inHash)){ const a=HASH_MAP[inHash]; if(a) a(); }
     else if(inHash && HASH_MAP[inHash]){ HASH_MAP[inHash](); }
     else { showPage('dashboard'); }
@@ -5578,7 +5702,9 @@ const HASH_MAP = {
   '#cts':          ()=>{ _showPage('cts'); },
   '#pricing-cts':  ()=>_showPage('pricing-cts'),
   '#pricing-mo-wmo': ()=>_showPage('pricing-mo-wmo'),
+  '#pricing-fpsc-mo-wmo': ()=>_showPage('pricing-fpsc-mo-wmo'),
   '#mo-wmo':       ()=>_showPage('mo-wmo'),
+  '#fpsc-mo-wmo':  ()=>_showPage('fpsc-mo-wmo'),
   '#mo-wmo-english': ()=>{ if(S.auth&&hasMOWMOAccess()){ _showPage('mo-wmo-english'); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
   '#nts-basic':    ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())&&!hasMockOnlyAccess()){ _showPage('nts-basic'); } else if(hasMockOnlyAccess()){ openNTSMockHub(); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
   '#nts-medicine': ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess())){ _showPage('nts-medicine'); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
@@ -5632,7 +5758,9 @@ const META_MAP = {
   '#cts':          {title:"🏢 CTS MO/WMO MCQ Bank — MedMasters | 13,000+ MCQs",         desc:"13,000+ MCQs for the CTS MO/WMO exam. Basic Sciences, Medicine, Surgery & more. Rescue 1122, WAPDA and government department recruitment.", img:"https://www.medmasters.academy/og-image.png"},
   '#pricing-cts':  {title:"🏢 CTS MO/WMO Pricing — MedMasters | From PKR 4,000",        desc:"Affordable CTS MO/WMO MCQ bank access from PKR 4,000.",  img:"https://www.medmasters.academy/og-image.png"},
   '#pricing-mo-wmo':{title:"🩺 MO/WMO Pricing — MedMasters | From PKR 4,000",            desc:"14,000+ MCQs for FPSC, PPSC, SPSC & all MO/WMO exams. From PKR 4,000. Prepare right.",  img:"https://www.medmasters.academy/og-image.png"},
+  '#pricing-fpsc-mo-wmo':{title:"🏦 FPSC MO/WMO Pricing — MedMasters | From PKR 4,000",  desc:"25,445 MCQs built for the FPSC Medical Officer & WMO exam. From PKR 4,000. Prepare right.", img:"https://www.medmasters.academy/og-image.png"},
   '#mo-wmo':       {title:"🩺 MO/WMO MCQ Bank — MedMasters | 14,000+ MCQs",              desc:"14,000+ MCQs for Medical Officer & Women Medical Officer exams — FPSC, PPSC, SPSC, KPPSC, BPSC and all testing services in Pakistan.", img:"https://www.medmasters.academy/og-image.png"},
+  '#fpsc-mo-wmo':  {title:"🏦 FPSC MO/WMO MCQ Bank — MedMasters | 25,445 MCQs",           desc:"25,445 MCQs for the Federal Public Service Commission Medical Officer & WMO written test. English, Basic Sciences, Medicine, Surgery, Psychiatry.", img:"https://www.medmasters.academy/og-image.png"},
   '#mowmo':        {title:"🏛️ MO/WMO MCQ Bank — MedMasters | 14,000+ MCQs",             desc:"14,000+ MCQs for NTS Medical Officer & Women Medical Officer exam prep. Basic Sciences, Medicine, Surgery & more. Start today.",                       img:"https://www.medmasters.academy/og-image.png"},
   '#nts':          {title:"🏛️ NTS MO/WMO MCQ Bank — MedMasters | 23,000+ MCQs",         desc:"23,000+ MCQs for NTS Medical Officer & Women Medical Officer exam. Basic Sciences, Medicine, Surgery, VAQ & 10 full-length mock exams. Pakistan's most complete NTS prep.", img:"https://www.medmasters.academy/og-image.png"},
   '#features':     {title:"⚡ Platform Features — MedMasters | UWorld-Style Interface",  desc:"Study Mode, timed Practice Sessions, real past papers, instant detailed explanations, progress tracking — built UWorld-style for Pakistani students.",  img:"https://www.medmasters.academy/og-image.png"},
@@ -5849,6 +5977,10 @@ function hasMOWMOAccess(){
   const subj=(S.subject||'').toLowerCase();
   return subj==='mo_wmo'||subj.includes('mo_wmo');
 }
+function hasFPSCAccess(){
+  const subj=(S.subject||'').toLowerCase();
+  return subj==='fpsc_mo_wmo'||subj.includes('fpsc_mo_wmo');
+}
 function hasAnyMOWMOAccess(){
   return hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess();
 }
@@ -5864,14 +5996,20 @@ function openCTSUnifiedPractice(){ openNTSUnifiedPractice(); }
 function openMOWMOPage(){
   _showPage('mo-wmo'); setHash('#mo-wmo');
 }
+// FPSC MO/WMO wrappers — same MCQ bank as MO/WMO (General), minus VAQ
+function openFPSCPage(){
+  _showPage('fpsc-mo-wmo'); setHash('#fpsc-mo-wmo');
+}
 // Smart back navigation — routes to correct hub based on user's plan
 function _backToMOWMOHub(){
   if(hasCTSAccess()) openCTS();
+  else if(hasFPSCAccess()) openFPSCPage();
   else if(hasMOWMOAccess()) openMOWMOPage();
   else openNTS();
 }
 function _backLabel(){
   if(hasCTSAccess()) return '← CTS';
+  if(hasFPSCAccess()) return '← FPSC MO/WMO';
   if(hasMOWMOAccess()) return '← MO/WMO';
   return '← NTS';
 }
@@ -5996,9 +6134,10 @@ function selectNTSCategory(cat){
   if(!hasNTSAccess()&&!hasCTSAccess()&&!hasMOWMOAccess()){ openCodeModal('nts'); return; }
   _updateNTSDynBackBtns();
   const isCTSUser = hasCTSAccess();
+  const isFPSCUser = hasFPSCAccess();
   const isMOWMOUser = hasMOWMOAccess();
-  const brandName = isCTSUser ? 'CTS' : isMOWMOUser ? 'MO/WMO' : 'NTS';
-  const backFn = isCTSUser ? openCTS : isMOWMOUser ? openMOWMOPage : openNTS;
+  const brandName = isCTSUser ? 'CTS' : isFPSCUser ? 'FPSC MO/WMO' : isMOWMOUser ? 'MO/WMO' : 'NTS';
+  const backFn = isCTSUser ? openCTS : isFPSCUser ? openFPSCPage : isMOWMOUser ? openMOWMOPage : openNTS;
   if(cat==='nts_basic'){
     const subjects = (isCTSUser||isMOWMOUser) ? CTS_BASIC_SUBJECTS : NTS_BASIC_SUBJECTS;
     const total = (isCTSUser||isMOWMOUser) ? 7100 : 4385;
@@ -6052,9 +6191,9 @@ function openNTSPsychiatry(){ if(hasMockOnlyAccess()){ openNTSMockHub(); return;
   if(!hasNTSAccess()&&!hasCTSAccess()&&!hasMOWMOAccess()){ openCodeModal('nts'); return; }
   buildNTSPsychiatrySubjectList();
   _updateNTSDynBackBtns();
-  const isCTSUser=hasCTSAccess(); const isMOWMOUser=hasMOWMOAccess();
-  const brandName=isCTSUser?'CTS':isMOWMOUser?'MO/WMO':'NTS';
-  const backFn=isCTSUser?openCTS:isMOWMOUser?openMOWMOPage:openNTS;
+  const isCTSUser=hasCTSAccess(); const isFPSCUser=hasFPSCAccess(); const isMOWMOUser=hasMOWMOAccess();
+  const brandName=isCTSUser?'CTS':isFPSCUser?'FPSC MO/WMO':isMOWMOUser?'MO/WMO':'NTS';
+  const backFn=isCTSUser?openCTS:isFPSCUser?openFPSCPage:isMOWMOUser?openMOWMOPage:openNTS;
   const backBtn=document.querySelector('#nts-psychiatry-page .back-btn');
   const phTitle=document.querySelector('#nts-psychiatry-page .ph-title');
   const phSub=document.querySelector('#nts-psychiatry-page .ph-sub');
@@ -8800,6 +8939,7 @@ function normalizeSubject(raw){
   if(!raw) return 'medicine';
   const s=raw.toLowerCase().trim();
   if(s==='mock_nts') return 'mock_nts';
+  if(s==='fpsc_mo_wmo'||s.includes('fpsc_mo_wmo')) return 'fpsc_mo_wmo';
   if(s==='mo_wmo'||s.includes('mo_wmo')) return 'mo_wmo';
   if(s.includes('nts')||s.includes('mowmo')||s.includes('mo/wmo')||s==='mo'||s==='wmo') return 'nts';
   if(s==='cts'||s.includes('cts')) return 'cts';
@@ -8830,14 +8970,15 @@ function loadDashboard(){
   const isMockNTS = hasMockOnlyAccess();
   const isNTS = hasNTSAccess();
   const isCTS = hasCTSAccess();
+  const isFPSC = hasFPSCAccess();
   const isMOWMO = hasMOWMOAccess();
   const isFCPS = hasFCPSAccess();
   const fcpsName = isFCPS ? (FCPS_SPECIALTY_NAMES[S.subject]||S.subject) : '';
-  const sname = isNTS ? 'NTS MO/WMO' : isCTS ? 'CTS MO/WMO' : isMOWMO ? 'MO/WMO' : isFCPS ? fcpsName : (names[S.subject]||S.subject||'JCAT');
+  const sname = isNTS ? 'NTS MO/WMO' : isCTS ? 'CTS MO/WMO' : isFPSC ? 'FPSC MO/WMO' : isMOWMO ? 'MO/WMO' : isFCPS ? fcpsName : (names[S.subject]||S.subject||'JCAT');
   const firstName=S.drName?S.drName.split(' ').find(w=>!['Dr','Dr.','dr'].includes(w))||S.drName:'';
   document.getElementById('dash-title').textContent=firstName?`Dr. ${firstName}'s Dashboard`:'My Dashboard';
-  document.getElementById('dash-subtitle').textContent= isMockNTS ? 'Past & Mocks NTS' : isNTS ? 'NTS MO/WMO' : isCTS ? 'CTS MO/WMO' : isMOWMO ? 'MO/WMO' : isFCPS ? `FCPS Part 1 — ${fcpsName}` : `JCAT — ${sname}`;
-  document.getElementById('dash-plan-name').textContent= isMockNTS ? 'Past & Mocks NTS' : isNTS ? 'NTS MO/WMO' : isCTS ? 'CTS MO/WMO' : isMOWMO ? 'MO/WMO' : isFCPS ? `FCPS Part 1: ${fcpsName}` : `JCAT: ${sname}`;
+  document.getElementById('dash-subtitle').textContent= isMockNTS ? 'Past & Mocks NTS' : isNTS ? 'NTS MO/WMO' : isCTS ? 'CTS MO/WMO' : isFPSC ? 'FPSC MO/WMO' : isMOWMO ? 'MO/WMO' : isFCPS ? `FCPS Part 1 — ${fcpsName}` : `JCAT — ${sname}`;
+  document.getElementById('dash-plan-name').textContent= isMockNTS ? 'Past & Mocks NTS' : isNTS ? 'NTS MO/WMO' : isCTS ? 'CTS MO/WMO' : isFPSC ? 'FPSC MO/WMO' : isMOWMO ? 'MO/WMO' : isFCPS ? `FCPS Part 1: ${fcpsName}` : `JCAT: ${sname}`;
   const exp=new Date(S.expiresAt);
   const days=Math.ceil((exp-new Date())/(1000*60*60*24));
   document.getElementById('dash-plan-exp').textContent=`Expires on: ${exp.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'})}`;
@@ -8874,8 +9015,8 @@ function loadDashboard(){
     const accCard=document.getElementById('dash-accuracy-card');
     if(accCard){ accCard.style.cursor='pointer'; accCard.setAttribute('onclick','_showMockUpgradeToast()'); }
   } else if(isNTS||isCTS||isMOWMO){
-    // NTS=23033, CTS=25948, MO/WMO=27448 (CTS basic sciences + 1,500 English MCQs)
-    const NTS_TOTAL = isMOWMO ? 27448 : (isCTS ? 25948 : 23033);
+    // NTS=23033, CTS=25948, MO/WMO=27448 (CTS basic sciences + 1,500 English MCQs), FPSC MO/WMO=26948 (same minus 500 VAQ)
+    const NTS_TOTAL = isFPSC ? 26948 : isMOWMO ? 27448 : (isCTS ? 25948 : 23033);
     setRing('ring-studied', Math.min(done/NTS_TOTAL,1));
     document.getElementById('dash-total-done').textContent=done>=1000?(done/1000).toFixed(1)+'k':done.toLocaleString();
     document.getElementById('dash-studied-total').textContent='/'+NTS_TOTAL.toLocaleString();
@@ -8920,7 +9061,7 @@ function loadDashboard(){
   setRing('ring-streak', Math.min(streak/30,1));
   document.getElementById('dash-streak').textContent=streak;
 
-  renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWMO);
+  renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWMO, isFPSC);
 
   // Update quick-action cards
   const p2Icon=document.getElementById('dash-p2-icon');
@@ -8954,7 +9095,7 @@ function loadDashboard(){
     }
   } else if(isNTS||isCTS||isMOWMO){
     if(p1Btn){ p1Btn.setAttribute('onclick',isNTS?'openNTS()':isCTS?'openCTS()':'openMOWMOPage()'); p1Btn.style.opacity=''; p1Btn.style.filter=''; p1Btn.style.pointerEvents=''; }
-    if(p1Title) p1Title.textContent=(isCTS?'CTS':isMOWMO?'MO/WMO':'NTS')+' MCQ Bank';
+    if(p1Title) p1Title.textContent=(isCTS?'CTS':isFPSC?'FPSC MO/WMO':isMOWMO?'MO/WMO':'NTS')+' MCQ Bank';
     if(p1Sub) p1Sub.textContent='14,000+ MCQs · All Categories';
     if(pracBtn) pracBtn.style.display='none';
     if(p2Icon) p2Icon.textContent='⚡';
@@ -9143,7 +9284,7 @@ function _sectionHeader(label, color){
   return `<div style="font-size:10px;font-weight:700;color:${color};letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border);">${label}</div>`;
 }
 
-function renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWMO){
+function renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWMO, isFPSC){
   if(isMockNTS){
     const wrap=document.getElementById('dash-subject-progress');
     const NTS_DASH_CATS=[
@@ -9374,7 +9515,7 @@ function renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWM
         <div class="spr-count">${done}/${cat.total}</div>
       </div>`;
     }).join('');
-    wrap.innerHTML = _sectionHeader(`📊 ${isCTS?'CTS':isMOWMO?'MO/WMO':'NTS'} MO/WMO — Progress by Category`,'var(--gold)') + rows;
+    wrap.innerHTML = _sectionHeader(`📊 ${isCTS?'CTS':isFPSC?'FPSC':isMOWMO?'MO/WMO':'NTS'} MO/WMO — Progress by Category`,'var(--gold)') + rows;
     return;
   }
 

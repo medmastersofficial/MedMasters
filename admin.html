@@ -556,6 +556,7 @@ tr:hover td{background:rgba(201,168,76,0.02);}
           <option value="nts">NTS MO/WMO</option>
           <option value="cts">CTS MO/WMO</option>
           <option value="mo_wmo">MO/WMO (Other)</option>
+          <option value="fpsc_mo_wmo">FPSC MO/WMO</option>
           <option value="mock_nts">Past &amp; Mocks NTS</option>
         </select>
         <select id="rf-range" onchange="onRevFilterChange()">
@@ -674,6 +675,7 @@ tr:hover td{background:rgba(201,168,76,0.02);}
             <option value="nts">NTS MO/WMO</option>
             <option value="cts">CTS MO/WMO</option>
             <option value="mo_wmo">MO/WMO (Other)</option>
+          <option value="fpsc_mo_wmo">FPSC MO/WMO</option>
             <option value="mock_nts">Past &amp; Mocks NTS</option>
           </select>
         </div>
@@ -772,6 +774,7 @@ tr:hover td{background:rgba(201,168,76,0.02);}
           <option value="nts">NTS MO/WMO</option>
           <option value="cts">CTS MO/WMO</option>
           <option value="mo_wmo">MO/WMO (Other)</option>
+          <option value="fpsc_mo_wmo">FPSC MO/WMO</option>
           <option value="mock_nts">Past &amp; Mocks NTS</option>
         </optgroup>
       </select>
@@ -1105,11 +1108,17 @@ function getPlanLabel(r){
   const isNTS = !isMockNTS&&(subj.includes('nts')||subj.includes('mowmo')||subj.includes('mo/wmo'));
   const isCTS = subj==='cts'||subj.includes('cts');
   const isMOWMO = subj==='mo_wmo'||subj.includes('mo_wmo');
+  const isFPSC = subj==='fpsc_mo_wmo'||subj.includes('fpsc_mo_wmo');
   const isFCPS = subj.startsWith('fcps_');
   if(isMockNTS){
     if(days<=20) return '15-Day (Mocks)';
     if(days<=50) return '1-Month (Mocks)';
     return '3-Month (Mocks)';
+  }
+  if(isFPSC){
+    if(days<=31) return '30-Day (FPSC MO/WMO)';
+    if(days<=95) return '3-Month (FPSC MO/WMO)';
+    return '6-Month (FPSC MO/WMO)';
   }
   if(isMOWMO){
     if(days<=31) return '30-Day (MO/WMO)';
@@ -1200,6 +1209,7 @@ const COURSE_MAP = {
   nts: { label: 'NTS MO/WMO', subjects: ['nts'] },
   cts: { label: 'CTS MO/WMO', subjects: ['cts'] },
   mo_wmo: { label: 'MO/WMO (Other)', subjects: ['mo_wmo'] },
+  fpsc_mo_wmo: { label: 'FPSC MO/WMO', subjects: ['fpsc_mo_wmo'] },
   mock_nts: { label: 'Past & Mocks NTS', subjects: ['mock_nts'] }
 };
 const SPECIALTY_LABELS = {
@@ -1210,7 +1220,7 @@ const SPECIALTY_LABELS = {
   fcps_anaesthesia_part1:'Anaesthesia', fcps_gynaecology_part1:'Gynae & Obs', fcps_ophthalmology_part1:'Ophthalmology',
   fcps_ent_part1:'ENT', fcps_pathology_part1:'Pathology', fcps_psychiatry_part1:'Psychiatry',
   fcps_community_part1:'Community Medicine', fcps_radiology_part1:'Radiology',
-  nts:'NTS MO/WMO', cts:'CTS MO/WMO', mo_wmo:'MO/WMO (Other)', mock_nts:'Mocks'
+  nts:'NTS MO/WMO', cts:'CTS MO/WMO', mo_wmo:'MO/WMO (Other)', fpsc_mo_wmo:'FPSC MO/WMO', mock_nts:'Mocks'
 };
 function getCourseKey(subj){
   subj = (subj||'').toLowerCase();
@@ -1671,7 +1681,7 @@ function renderTable(){
     psychiatry:'JCAT Psychiatry',anesthesia:'JCAT Anesthesia',ophthalmology:'JCAT Ophthalmology',
     ent:'JCAT ENT',gynaecology:'JCAT Gynae & Obs',radiology:'JCAT Radiology',
     nts:'NTS MO/WMO',mowmo:'NTS MO/WMO','mo/wmo':'NTS MO/WMO',mo:'NTS MO',wmo:'WMO',
-    cts:'CTS MO/WMO',mo_wmo:'MO/WMO',mock_nts:'Past & Mocks NTS',
+    cts:'CTS MO/WMO',mo_wmo:'MO/WMO',fpsc_mo_wmo:'FPSC MO/WMO',mock_nts:'Past & Mocks NTS',
     fcps_medicine_part1:'FCPS Medicine',fcps_surgery_part1:'FCPS Surgery',
     fcps_dentistry_part1:'FCPS Dentistry',fcps_anaesthesia_part1:'FCPS Anaesthesia',
     fcps_gynaecology_part1:'FCPS Gynae',fcps_ophthalmology_part1:'FCPS Ophthalmology',
@@ -1775,7 +1785,7 @@ function updateWAPreview(){
   const planVal = plan.value;
   const planDuration = plan.options[plan.selectedIndex].text;
   const exam = document.getElementById('f-exam').value;
-  const examNames = {jcat:'JCAT',fcps:'FCPS Part 1',nts:'NTS MO/WMO',cts:'CTS MO/WMO',mo_wmo:'MO/WMO',mock_nts:'Past & Mocks NTS'};
+  const examNames = {jcat:'JCAT',fcps:'FCPS Part 1',nts:'NTS MO/WMO',cts:'CTS MO/WMO',mo_wmo:'MO/WMO',fpsc_mo_wmo:'FPSC MO/WMO',mock_nts:'Past & Mocks NTS'};
   let planName = examNames[exam] || exam.toUpperCase();
   if(exam==='jcat'||exam==='fcps'){
     const subjSel = document.getElementById('f-subject');
@@ -1855,6 +1865,10 @@ const PLANS = {
           {value:'30',  label:'1 Month — PKR 4,000'},
           {value:'90',  label:'3 Months — PKR 6,000'},
           {value:'180', label:'6 Months — PKR 9,000'}],
+  fpsc_mo_wmo:[{value:'trial',label:'🎯 Free Trial — 6 Hours'},
+          {value:'30',  label:'1 Month — PKR 4,000'},
+          {value:'90',  label:'3 Months — PKR 6,000'},
+          {value:'180', label:'6 Months — PKR 9,000'}],
   mock_nts:[{value:'15', label:'15 Days — PKR 1,500'},
             {value:'30', label:'1 Month — PKR 2,000'},
             {value:'90', label:'3 Months — PKR 3,500'}],
@@ -1890,6 +1904,7 @@ function getSubjectValue(){
   if(exam === 'nts') return 'nts';
   if(exam === 'cts') return 'cts';
   if(exam === 'mo_wmo') return 'mo_wmo';
+  if(exam === 'fpsc_mo_wmo') return 'fpsc_mo_wmo';
   if(exam === 'mock_nts') return 'mock_nts';
   return document.getElementById('f-subject').value;
 }
@@ -1969,7 +1984,7 @@ async function addStudent(){
     msg.textContent=`✓ ${name} added! Opening WhatsApp…`;msg.className='form-msg ok';
     const examEl = document.getElementById('f-exam');
     const examVal = examEl ? examEl.value : 'nts';
-    const examNames = {jcat:'JCAT',fcps:'FCPS Part 1',nts:'NTS MO/WMO',cts:'CTS MO/WMO',mo_wmo:'MO/WMO',mock_nts:'Past & Mocks NTS'};
+    const examNames = {jcat:'JCAT',fcps:'FCPS Part 1',nts:'NTS MO/WMO',cts:'CTS MO/WMO',mo_wmo:'MO/WMO',fpsc_mo_wmo:'FPSC MO/WMO',mock_nts:'Past & Mocks NTS'};
     let planName = examNames[examVal] || examVal.toUpperCase();
     if(examVal==='jcat'||examVal==='fcps'){
       const subjSel = document.getElementById('f-subject');
@@ -2072,7 +2087,7 @@ const PMD_SUBJ_NAMES = {
   medicine:'Medicine & Allied',surgery:'Surgery & Allied',dentistry:'Dentistry (MDS)',
   psychiatry:'Psychiatry',anesthesia:'Anesthesiology',ophthalmology:'Ophthalmology',
   ent:'ENT (ORL)',gynaecology:'Gynae & Obs',radiology:'Diagnostic Radiology',
-  nts:'NTS MO/WMO',cts:'CTS MO/WMO',mo_wmo:'MO/WMO',mock_nts:'Past & Mocks NTS',
+  nts:'NTS MO/WMO',cts:'CTS MO/WMO',mo_wmo:'MO/WMO',fpsc_mo_wmo:'FPSC MO/WMO',mock_nts:'Past & Mocks NTS',
   fcps_medicine_part1:'FCPS Medicine',fcps_surgery_part1:'FCPS Surgery',
   fcps_dentistry_part1:'FCPS Dentistry',fcps_anaesthesia_part1:'FCPS Anaesthesia',
   fcps_gynaecology_part1:'FCPS Gynae & Obs',fcps_ophthalmology_part1:'FCPS Ophthalmology',
@@ -2248,6 +2263,7 @@ function pmdPlanLabel(r){
   if(subj.includes('nts')){ return days<=31?'30-Day (NTS)':days<=95?'3-Month (NTS)':'6-Month (NTS)'; }
   if(subj==='cts'){ return days<=31?'30-Day (CTS)':days<=95?'3-Month (CTS)':'6-Month (CTS)'; }
   if(subj==='mo_wmo'){ return days<=31?'30-Day (MO/WMO)':days<=95?'3-Month (MO/WMO)':'6-Month (MO/WMO)'; }
+  if(subj==='fpsc_mo_wmo'){ return days<=31?'30-Day (FPSC MO/WMO)':days<=95?'3-Month (FPSC MO/WMO)':'6-Month (FPSC MO/WMO)'; }
   if(subj.startsWith('fcps_')){ return days<=31?'30-Day':days<=95?'3-Month':days<=185?'6-Month':'1-Year'; }
   return days<=31?'30-Day':days<=95?'3-Month':days<=185?'6-Month':'1-Year';
 }
@@ -2365,6 +2381,7 @@ function _pmdGetTotal(subj){
   if(subj==='nts') return NTS_TOTAL;
   if(subj==='cts') return CTS_TOTAL;
   if(subj==='mo_wmo') return MOWMO_TOTAL;
+  if(subj==='fpsc_mo_wmo') return MOWMO_TOTAL - 500; // FPSC excludes 500 VAQ MCQs
   if(subj==='mock_nts') return 0; // locked
   const p2={medicine:5129,surgery:2000,gynaecology:3000,psychiatry:2000,ent:3000,
     ophthalmology:3000,radiology:9590,anesthesia:2000,dentistry:3000,
@@ -2381,7 +2398,7 @@ function _pmdGetTopBars(subj, answers, n){
   const P2C = 'linear-gradient(90deg,#3498DB,#5DADE2)';
   const DONE_COL = 'linear-gradient(90deg,#2ECC71,#27AE60)';
   let allBars=[];
-  const isNTS=subj==='nts'||subj==='cts'||subj==='mo_wmo';
+  const isNTS=subj==='nts'||subj==='cts'||subj==='mo_wmo'||subj==='fpsc_mo_wmo';
   if(isNTS){
     PMD_NTS_CATS.forEach(cat=>{
       const done=Object.keys(answers).filter(k=>cat.keys.some(ck=>k.startsWith(ck+'_')||k===ck||k.startsWith(ck))).length;
@@ -2425,7 +2442,7 @@ function openProgModal(code){
   const expFmt  = exp.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
   const totalMCQs = _pmdGetTotal(subj);
   const isFCPS  = subj.startsWith('fcps_');
-  const isNTS   = subj==='nts'||subj==='cts'||subj==='mo_wmo';
+  const isNTS   = subj==='nts'||subj==='cts'||subj==='mo_wmo'||subj==='fpsc_mo_wmo';
   const isMock  = subj==='mock_nts';
 
   // Get first name
@@ -2677,6 +2694,7 @@ const UPGRADE_PLAN_OPTIONS = {
   nts:     [{days:30,label:'1 Month',price:4000},{days:90,label:'3 Months',price:6000},{days:180,label:'6 Months',price:9000}],
   cts:     [{days:30,label:'1 Month',price:4000},{days:90,label:'3 Months',price:6000},{days:180,label:'6 Months',price:9000}],
   mo_wmo:  [{days:30,label:'1 Month',price:4000},{days:90,label:'3 Months',price:6000},{days:180,label:'6 Months',price:9000}],
+  fpsc_mo_wmo: [{days:30,label:'1 Month',price:4000},{days:90,label:'3 Months',price:6000},{days:180,label:'6 Months',price:9000}],
 };
 function getExamFromSubject(subj){
   subj = (subj||'').toLowerCase();
@@ -2684,6 +2702,7 @@ function getExamFromSubject(subj){
   if(subj==='nts') return 'nts';
   if(subj==='cts') return 'cts';
   if(subj==='mo_wmo') return 'mo_wmo';
+  if(subj==='fpsc_mo_wmo') return 'fpsc_mo_wmo';
   if(subj==='mock_nts') return 'mock_nts';
   return 'jcat';
 }
@@ -2741,7 +2760,7 @@ async function confirmUpgrade(){
     const updatedRec = allStudents.find(r=>r.code===upgradeTarget.code);
     const rawName = updatedRec?.student_name || upgradeTarget.name || 'Doctor';
     const exam = getExamFromSubject(upgradeTarget.subject);
-    const examNames = {jcat:'JCAT',fcps:'FCPS Part 1',nts:'NTS MO/WMO',cts:'CTS MO/WMO',mo_wmo:'MO/WMO'};
+    const examNames = {jcat:'JCAT',fcps:'FCPS Part 1',nts:'NTS MO/WMO',cts:'CTS MO/WMO',mo_wmo:'MO/WMO',fpsc_mo_wmo:'FPSC MO/WMO'};
     let planName = examNames[exam] || exam.toUpperCase();
     if(exam==='jcat'||exam==='fcps'){
       const subj = (upgradeTarget.subject||'').toLowerCase();
