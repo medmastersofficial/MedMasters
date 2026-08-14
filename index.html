@@ -12318,7 +12318,12 @@ function promptResumeOrFresh(key, subjList, dataLoader, openFn){
     } else if(_famIsFCPS){
       _need = _eff.startsWith('fcps_') ? _eff : 'fcps_medicine_part1';
     } else {
-      _need = _eff.startsWith('fcps_') ? null /* mismatch family handled below */ : _eff;
+      // Must be an actual JCAT specialty the subscriber is enrolled in —
+      // NOT a tautological "does _eff equal itself" check. That flaw let
+      // ANY logged-in subscriber (NTS/CTS/MO-WMO/FPSC/anything) through,
+      // since _need was being set to the subscriber's own subject value.
+      const _JCAT_SPECIALTIES = ['medicine','surgery','dentistry','psychiatry','anesthesia','ophthalmology','ent','gynaecology','radiology'];
+      _need = (!_eff.startsWith('fcps_') && _JCAT_SPECIALTIES.includes(_eff)) ? _eff : '__no_jcat_specialty__';
     }
   }
   else if(_k.startsWith('medicine_'))      _need = 'medicine';
@@ -12336,8 +12341,12 @@ function promptResumeOrFresh(key, subjList, dataLoader, openFn){
   }
   // Tier-specific check
   // NTS / CTS / MO-WMO-General subscribers have full access to ALL NTS subject
-  // keys — skip the per-subject tier check for them entirely.
-  const _isNTSFamily = (_eff==='nts'||_eff.includes('nts')||_eff.includes('mowmo')||_eff.includes('mo/wmo')||_eff==='mo'||_eff==='wmo'||_eff==='cts'||_eff.includes('cts')||_eff==='mo_wmo'||_eff.includes('mo_wmo'));
+  // keys — skip the per-subject tier check for them entirely. FPSC MO/WMO is
+  // explicitly excluded here: its subject string 'fpsc_mo_wmo' contains the
+  // substring 'mo_wmo', which would otherwise wrongly match the checks below
+  // and skip the tier check entirely — silently granting FPSC subscribers
+  // access to JCAT and FCPS Part 1 content they never paid for.
+  const _isNTSFamily = !_eff.startsWith('fpsc') && (_eff==='nts'||_eff.includes('nts')||_eff.includes('mowmo')||_eff.includes('mo/wmo')||_eff==='mo'||_eff==='wmo'||_eff==='cts'||_eff.includes('cts')||_eff==='mo_wmo'||_eff.includes('mo_wmo'));
   if(_need !== null && !_isNTSFamily){
     const _ok = Array.isArray(_need) ? _need.indexOf(_eff) !== -1 : _eff === _need;
     if(!_ok){ openCodeModal(null); return; }
