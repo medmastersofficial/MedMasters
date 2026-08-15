@@ -12400,15 +12400,22 @@ function promptResumeOrFresh(key, subjList, dataLoader, openFn){
   }
   // Tier-specific check
   // NTS / CTS / MO-WMO-General subscribers have full access to ALL NTS subject
-  // keys — skip the per-subject tier check for them entirely. FPSC MO/WMO is
-  // NOT included: _eff is always the canonical value from normalizeSubject()
-  // ('nts'/'cts'/'mo_wmo'/'fpsc_mo_wmo'), so an exact-match list naturally
-  // excludes 'fpsc_mo_wmo' without needing a separate startsWith('fpsc')
-  // guard. The old substring version (e.g. _eff.includes('mo_wmo')) also
-  // matched 'fpsc_mo_wmo', silently granting FPSC subscribers JCAT/FCPS
-  // Part 1 content they never paid for.
+  // keys — skip the per-subject tier check for them entirely. FPSC MO/WMO
+  // stays OUT of this broader bypass so it can't slip into JCAT/FCPS Paper 1
+  // content via the P1 branch above (_eff==='fpsc_mo_wmo' would never equal
+  // a JCAT specialty like 'medicine' anyway, but keeping it excluded here
+  // keeps that branch's behavior unchanged).
   const _isNTSFamily = _eff==='nts'||_eff==='cts'||_eff==='mo_wmo';
-  if(_need !== null && !_isNTSFamily){
+  // FPSC MO/WMO subscribers DO own the shared Medicine/Surgery/Psychiatry
+  // (med_p2_/surg_p2_/psych_p2_) bank — same content as NTS/CTS/MO-WMO
+  // General, per the FPSC hub's own Medicine/Surgery/Psychiatry cards. This
+  // was missing: FPSC was excluded from every bypass, so _need ended up as
+  // the plain JCAT-specialty string ('medicine'/'surgery'/'psychiatry'),
+  // which 'fpsc_mo_wmo' can never equal — silently blocking every FPSC
+  // subscriber from these three sections. Scoped to exactly these three
+  // prefixes so nothing else about FPSC's access changes.
+  const _isFPSCMedSurgPsych = _eff==='fpsc_mo_wmo' && (_k.startsWith('med_p2')||_k.startsWith('surg_p2')||_k.startsWith('psych_p2'));
+  if(_need !== null && !_isNTSFamily && !_isFPSCMedSurgPsych){
     const _ok = Array.isArray(_need) ? _need.indexOf(_eff) !== -1 : _eff === _need;
     if(!_ok){ openCodeModal(null); return; }
   }
