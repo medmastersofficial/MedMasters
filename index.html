@@ -1924,7 +1924,7 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
     <div class="p1-cta-sub" style="text-align:justify;font-style:italic;color:var(--gold);">As per the syllabus of FPSC; English, Basic Sciences, Medicine, Surgery, Psychiatry, 10-Category Revision, 3 Editions and full Practice &amp; Assess, all in one place. Prepare with confidence, prepare right.</div>
   </div>
   <div class="subjects-grid" style="margin-top:12px;">
-    <div class="subj-card" onclick="openMOWMOEnglish()">
+    <div class="subj-card" onclick="openFPSCEnglish()">
       <div class="subj-icon">✍️</div>
       <div><div class="subj-name">English</div><div class="subj-meta">1,500 MCQs · 20 marks for FPSC MO/WMO</div></div>
       <div class="subj-arrow">›</div>
@@ -1992,17 +1992,17 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
     <div class="p1-cta-sub">Aligned to the FPSC MO/WMO English paper. Select a subject below to start studying.</div>
   </div>
   <div class="subjects-grid" style="margin-top:12px;">
-    <div class="subj-card" onclick="openMOWMOEnglishSubject('vocabulary')">
+    <div class="subj-card" data-eng-key="vocabulary" onclick="openMOWMOEnglishSubject('vocabulary')">
       <div class="subj-icon">📖</div>
       <div><div class="subj-name">Vocabulary</div><div class="subj-meta">500 MCQs · Synonyms, Antonyms &amp; Word Usage</div></div>
       <div class="subj-arrow">›</div>
     </div>
-    <div class="subj-card" onclick="openMOWMOEnglishSubject('grammar')">
+    <div class="subj-card" data-eng-key="grammar" onclick="openMOWMOEnglishSubject('grammar')">
       <div class="subj-icon">🔤</div>
       <div><div class="subj-name">Grammar Usage</div><div class="subj-meta">500 MCQs · Tenses, Articles, Prepositions &amp; more</div></div>
       <div class="subj-arrow">›</div>
     </div>
-    <div class="subj-card" onclick="openMOWMOEnglishSubject('sentence')">
+    <div class="subj-card" data-eng-key="sentence" onclick="openMOWMOEnglishSubject('sentence')">
       <div class="subj-icon">🧩</div>
       <div><div class="subj-name">Sentence Structuring</div><div class="subj-meta">500 MCQs · Sentence Correction &amp; Construction</div></div>
       <div class="subj-arrow">›</div>
@@ -2113,7 +2113,7 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
     <button class="share-btn" id="share-cts" onclick="shareLink('#cts','share-cts')">🔗 Share</button>
   </div>
   <div class="subjects-grid">
-    <div class="subj-card" onclick="openMOWMOEnglish()">
+    <div class="subj-card" onclick="openCTSEnglish()">
       <div class="subj-icon">✍️</div>
       <div><div class="subj-name">English</div><div class="subj-meta">1,500 MCQs · 20 marks in CTS Paper</div></div>
       <div class="subj-arrow">›</div>
@@ -5709,7 +5709,9 @@ const HASH_MAP = {
   '#pricing-fpsc-mo-wmo': ()=>_showPage('pricing-fpsc-mo-wmo'),
   '#mo-wmo':       ()=>{ if(_hubTierGuard('mo-wmo')) return; _showPage('mo-wmo'); },
   '#fpsc-mo-wmo':  ()=>{ if(_hubTierGuard('fpsc-mo-wmo')) return; _showPage('fpsc-mo-wmo'); },
-  '#mo-wmo-english': ()=>{ if(S.auth&&(hasCTSAccess()||hasMOWMOAccess()||hasFPSCAccess())){ _showPage('mo-wmo-english'); } else { S.pendingResumeHash='#mo-wmo-english'; _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
+  '#cts-english':    ()=>{ if(S.auth&&hasCTSAccess()){ openCTSEnglish(); } else { S.pendingResumeHash='#cts-english'; _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
+  '#mo-wmo-english': ()=>{ if(S.auth&&hasMOWMOAccess()){ openMOWMOEnglish(); } else { S.pendingResumeHash='#mo-wmo-english'; _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
+  '#fpsc-english':   ()=>{ if(S.auth&&hasFPSCAccess()){ openFPSCEnglish(); } else { S.pendingResumeHash='#fpsc-english'; _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
   '#nts-basic':    ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess()||hasFPSCAccess())&&!hasMockOnlyAccess()){ _showPage('nts-basic'); } else if(hasMockOnlyAccess()){ openNTSMockHub(); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
   '#nts-medicine': ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess()||hasFPSCAccess())){ _showPage('nts-medicine'); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
   '#nts-surgery':  ()=>{ if(S.auth&&(hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess()||hasFPSCAccess())){ _showPage('nts-surgery'); } else { _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
@@ -5971,13 +5973,16 @@ function openCTS(){
   _showPage('cts'); setHash('#cts');
 }
 function hasNTSAccess(){
-  const subj=(S.subject||'').toLowerCase();
-  if(subj==='mock_nts'||subj.includes('mock_nts')) return false; // mock-only: no full NTS access
-  return subj==='nts'||subj.includes('nts')||subj.includes('mo/wmo')||subj.includes('mowmo')||subj==='mo'||subj==='wmo';
+  // Exact match only — S.subject is always the canonical token produced by
+  // normalizeSubject(), so no substring matching is needed. Substring checks
+  // like subj.includes('mowmo') used to also match CTS/MO-WMO-General/FPSC
+  // subject strings, silently granting them NTS access too — that's what let
+  // the four MOWMO tiers bleed into each other.
+  return (S.subject||'').toLowerCase()==='nts';
 }
 function hasCTSAccess(){
-  const subj=(S.subject||'').toLowerCase();
-  return subj==='cts'||subj.includes('cts');
+  // Exact match only — see hasNTSAccess() note above.
+  return (S.subject||'').toLowerCase()==='cts';
 }
 function hasMOWMOAccess(){
   // Exact match only — S.subject is always the canonical token produced by
@@ -6024,38 +6029,72 @@ function _updateNTSDynBackBtns(){
   const label = _backLabel();
   document.querySelectorAll('.back-btn[onclick="_backToMOWMOHub()"]').forEach(b=>{ b.textContent=label; });
 }
-// Keeps NTS/CTS/MO-WMO(General)/FPSC MO-WMO fully separate at the hub-page
-// level too, not just for content. Anonymous visitors (not logged in) still
-// see every hub's public marketing page normally — that's unchanged and
-// intentional. But a subscriber who is already locked into one specific tier
-// gets redirected to their OWN hub the moment they try to view a different
-// tier's hub page, instead of being able to browse it at all.
-// Returns true if it redirected (caller should stop), false otherwise.
+// A subscriber locked into one tier (say CTS MO/WMO) must still be able to
+// freely BROWSE the other three hub pages (NTS, MO/WMO General, FPSC
+// MO/WMO) — seeing exactly what a non-subscriber sees. Real content behind
+// each hub is still walled off by each category's own exact-tier gate
+// (selectCTSCategory/selectMOWMOCategory/selectFPSCCategory/selectNTSCategory,
+// openCTSVAQ/openMOWMOVAQ, openCTSEnglish/openMOWMOEnglish/openFPSCEnglish,
+// etc.), so browsing a hub never grants access to that tier's real MCQs.
+// This function used to redirect a subscriber back to their OWN hub the
+// moment they tried to view a different tier's hub page — that redirect was
+// the bug: it made it look like every hub "landed into" the subscriber's own
+// tier. It's now a no-op (never blocks/redirects) so all four hubs are
+// always browsable, matching what a non-subscriber sees.
+// Kept as a function (rather than removing all call sites) so every hub
+// opener keeps calling it — reinstating a real guard here in future only
+// requires editing this one place.
 function _hubTierGuard(tier){
-  if(!S.auth) return false;
-  const mine = hasNTSAccess()?'nts':hasCTSAccess()?'cts':hasMOWMOAccess()?'mo-wmo':hasFPSCAccess()?'fpsc-mo-wmo':null;
-  if(!mine || mine===tier) return false;
-  const openers = {'nts':openNTS,'cts':openCTS,'mo-wmo':openMOWMOPage,'fpsc-mo-wmo':openFPSCPage};
-  openers[mine]();
-  return true;
+  return false;
 }
 function openMOWMOVAQ(){
   if(!S.auth||!hasMOWMOAccess()){ openCodeModal('nts'); return; }
   _vaqCore();
 }
+// English is walled off per tier just like every other category — three
+// exact single-tier gates (one per tier that has an English paper: CTS,
+// MO/WMO General, FPSC MO/WMO — NTS has no English paper) instead of one
+// shared three-way OR gate. They reuse the same DOM page and MCQ-loading
+// engine (the underlying English MCQ bank genuinely is shared content),
+// exactly like the existing Basic Sciences/Medicine/Surgery pattern in
+// _selectCategoryCore — but each tier can only ever reach its own entry
+// point, so there's no cross-tier bleed and no shared hash/resume state.
+function openCTSEnglish(){
+  if(!S.auth||!hasCTSAccess()){ S.pendingResumeHash='#cts-english'; openCodeModal('nts'); return; }
+  _englishCore('CTS','#cts-english',openCTSEnglishSubject);
+}
 function openMOWMOEnglish(){
-  if(!S.auth||!(hasCTSAccess()||hasMOWMOAccess()||hasFPSCAccess())){ S.pendingResumeHash='#mo-wmo-english'; openCodeModal('nts'); return; }
-  const isCTSUser=hasCTSAccess(); const isFPSCUser=hasFPSCAccess();
-  const brandName = isCTSUser?'CTS':isFPSCUser?'FPSC MO/WMO':'MO/WMO';
+  if(!S.auth||!hasMOWMOAccess()){ S.pendingResumeHash='#mo-wmo-english'; openCodeModal('nts'); return; }
+  _englishCore('MO/WMO','#mo-wmo-english',openMOWMOEnglishSubject);
+}
+function openFPSCEnglish(){
+  if(!S.auth||!hasFPSCAccess()){ S.pendingResumeHash='#fpsc-english'; openCodeModal('nts'); return; }
+  _englishCore('FPSC MO/WMO','#fpsc-english',openFPSCEnglishSubject);
+}
+function _englishCore(brandName, hash, subjectFn){
   const backBtn=document.getElementById('mo-wmo-english-back-btn');
   if(backBtn) backBtn.textContent = _backLabel();
   const sub=document.getElementById('mo-wmo-english-sub');
   if(sub) sub.textContent = `20 Marks for ${brandName}`;
+  document.querySelectorAll('#mo-wmo-english-page .subj-card[data-eng-key]').forEach(card=>{
+    const key = card.getAttribute('data-eng-key');
+    card.onclick = ()=>subjectFn(key);
+  });
+  const shareBtn=document.getElementById('share-mo-wmo-english');
+  if(shareBtn) shareBtn.setAttribute('onclick', `shareLink('${hash}','share-mo-wmo-english')`);
   _showPage('mo-wmo-english-page');
-  setHash('#mo-wmo-english');
+  setHash(hash);
+}
+function openCTSEnglishSubject(key){
+  if(!S.auth||!hasCTSAccess()){ S.pendingResumeHash='#cts-english'; openCodeModal('nts'); return; }
+  startMOWMOEnglishStudy(key);
 }
 function openMOWMOEnglishSubject(key){
-  if(!S.auth||!(hasCTSAccess()||hasMOWMOAccess()||hasFPSCAccess())){ S.pendingResumeHash='#mo-wmo-english'; openCodeModal('nts'); return; }
+  if(!S.auth||!hasMOWMOAccess()){ S.pendingResumeHash='#mo-wmo-english'; openCodeModal('nts'); return; }
+  startMOWMOEnglishStudy(key);
+}
+function openFPSCEnglishSubject(key){
+  if(!S.auth||!hasFPSCAccess()){ S.pendingResumeHash='#fpsc-english'; openCodeModal('nts'); return; }
   startMOWMOEnglishStudy(key);
 }
 // ── English MCQ data: config, loader, and study launcher ──
@@ -10929,7 +10968,7 @@ function openNTSPractice(cat){
 }
 
 function renderNTSPracSubjects(catKey){
-  const basicSubs = (hasCTSAccess()||hasMOWMOAccess()) ? CTS_BASIC_SUBJECTS : NTS_BASIC_SUBJECTS;
+  const basicSubs = (hasCTSAccess()||hasMOWMOAccess()||hasFPSCAccess()) ? CTS_BASIC_SUBJECTS : NTS_BASIC_SUBJECTS;
   const subjects={basic:basicSubs,medicine:NTS_MEDICINE_SUBJECTS,surgery:NTS_SURGERY_SUBJECTS,psychiatry:NTS_PSYCHIATRY_SUBJECTS};
   const grid=document.getElementById('nts-'+catKey+'-prac-subject-grid');
   if(!grid) return;
@@ -10960,7 +10999,8 @@ async function startNTSPractice(catKey){
   if(!hasNTSAccess()&&!hasCTSAccess()&&!hasMOWMOAccess()&&!hasFPSCAccess()){ openCodeModal('nts'); return; }
   const pr=NTS_PR[catKey];
   if(!pr.subj||!pr.count) return;
-  const subjects={basic:NTS_BASIC_SUBJECTS,medicine:NTS_MEDICINE_SUBJECTS,surgery:NTS_SURGERY_SUBJECTS,psychiatry:NTS_PSYCHIATRY_SUBJECTS};
+  const basicSubs = (hasCTSAccess()||hasMOWMOAccess()||hasFPSCAccess()) ? CTS_BASIC_SUBJECTS : NTS_BASIC_SUBJECTS;
+  const subjects={basic:basicSubs,medicine:NTS_MEDICINE_SUBJECTS,surgery:NTS_SURGERY_SUBJECTS,psychiatry:NTS_PSYCHIATRY_SUBJECTS};
   const s=(subjects[catKey]||[]).find(x=>x.key===pr.subj);
   document.getElementById('prac-subj-tag').textContent=(s?s.name:'NTS').toUpperCase();
   _showPage('prac-mcq'); setHash('#practice');
@@ -11101,7 +11141,7 @@ async function startNTSUnifiedPractice(){
   let bankSet = [];
   if(NTS_UPR.cat === 'mixed'){
     // Pull from all main categories + editions randomly
-    const basicSubs = (hasCTSAccess()||hasMOWMOAccess()) ? CTS_BASIC_SUBJECTS : NTS_BASIC_SUBJECTS;
+    const basicSubs = (hasCTSAccess()||hasMOWMOAccess()||hasFPSCAccess()) ? CTS_BASIC_SUBJECTS : NTS_BASIC_SUBJECTS;
     const allSubs = [...basicSubs.map(s=>({...s,cat:'basic'})),
                      ...NTS_MEDICINE_SUBJECTS.map(s=>({...s,cat:'medicine'})),
                      ...NTS_SURGERY_SUBJECTS.map(s=>({...s,cat:'surgery'})),
@@ -12361,11 +12401,13 @@ function promptResumeOrFresh(key, subjList, dataLoader, openFn){
   // Tier-specific check
   // NTS / CTS / MO-WMO-General subscribers have full access to ALL NTS subject
   // keys — skip the per-subject tier check for them entirely. FPSC MO/WMO is
-  // explicitly excluded here: its subject string 'fpsc_mo_wmo' contains the
-  // substring 'mo_wmo', which would otherwise wrongly match the checks below
-  // and skip the tier check entirely — silently granting FPSC subscribers
-  // access to JCAT and FCPS Part 1 content they never paid for.
-  const _isNTSFamily = !_eff.startsWith('fpsc') && (_eff==='nts'||_eff.includes('nts')||_eff.includes('mowmo')||_eff.includes('mo/wmo')||_eff==='mo'||_eff==='wmo'||_eff==='cts'||_eff.includes('cts')||_eff==='mo_wmo'||_eff.includes('mo_wmo'));
+  // NOT included: _eff is always the canonical value from normalizeSubject()
+  // ('nts'/'cts'/'mo_wmo'/'fpsc_mo_wmo'), so an exact-match list naturally
+  // excludes 'fpsc_mo_wmo' without needing a separate startsWith('fpsc')
+  // guard. The old substring version (e.g. _eff.includes('mo_wmo')) also
+  // matched 'fpsc_mo_wmo', silently granting FPSC subscribers JCAT/FCPS
+  // Part 1 content they never paid for.
+  const _isNTSFamily = _eff==='nts'||_eff==='cts'||_eff==='mo_wmo';
   if(_need !== null && !_isNTSFamily){
     const _ok = Array.isArray(_need) ? _need.indexOf(_eff) !== -1 : _eff === _need;
     if(!_ok){ openCodeModal(null); return; }
