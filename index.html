@@ -12415,7 +12415,17 @@ function promptResumeOrFresh(key, subjList, dataLoader, openFn){
   // subscriber from these three sections. Scoped to exactly these three
   // prefixes so nothing else about FPSC's access changes.
   const _isFPSCMedSurgPsych = _eff==='fpsc_mo_wmo' && (_k.startsWith('med_p2')||_k.startsWith('surg_p2')||_k.startsWith('psych_p2'));
-  if(_need !== null && !_isNTSFamily && !_isFPSCMedSurgPsych){
+  // FPSC MO/WMO also owns the shared Basic Sciences bank — same content as
+  // CTS/MO-WMO General (CTS_BASIC_SUBJECTS), per the FPSC hub's own Basic
+  // Sciences card. These 7 keys are literal JCAT Paper-1 subject keys too
+  // (anatomy/physio/etc. share the same underlying bank), so they hit the P1
+  // branch above and _need becomes '__no_jcat_specialty__' for FPSC — which
+  // 'fpsc_mo_wmo' can never equal, silently blocking every one of them
+  // except 'psych_p2_behav' (Behavioural Sciences), which was already
+  // covered by _isFPSCMedSurgPsych above. Scoped to exactly these 7 literal
+  // keys so nothing else about FPSC's — or anyone else's — access changes.
+  const _isFPSCBasicSciences = _eff==='fpsc_mo_wmo' && ['anatomy','physio','pharma','biochem','patho','micro','community'].includes(_k);
+  if(_need !== null && !_isNTSFamily && !_isFPSCMedSurgPsych && !_isFPSCBasicSciences){
     const _ok = Array.isArray(_need) ? _need.indexOf(_eff) !== -1 : _eff === _need;
     if(!_ok){ openCodeModal(null); return; }
   }
