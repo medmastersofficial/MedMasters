@@ -3908,6 +3908,80 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
   </div>
 </div>
 
+<!-- ══════════════ PGET UHS SPECIALTY PAGE ══════════════ -->
+<div id="pget-page" class="page">
+  <div class="page-header">
+    <button class="back-btn" onclick="history.back()">← Home</button>
+    <div>
+      <div class="ph-title">🎓 PGET UHS MCQ Bank</div>
+      <div class="ph-sub">Select your specialty</div>
+    </div>
+    <button class="share-btn" id="share-pget" onclick="shareLink('#pget','share-pget')">🔗 Share</button>
+  </div>
+  <div class="subjects-grid" style="justify-content:center;">
+    <div class="subj-card" onclick="selectPGETSpecialty('pget_medicine_part1')">
+      <div class="subj-icon">❤️</div>
+      <div><div class="subj-name">Medicine &amp; Allied</div><div class="subj-meta">11,000+ MCQs · Paper 1 &amp; Paper 2</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+    <div class="subj-card" onclick="selectPGETSpecialty('pget_gynaecology_part1')">
+      <div class="subj-icon">🤱</div>
+      <div><div class="subj-name">Obstetrics &amp; Gynaecology</div><div class="subj-meta">11,000+ MCQs · Paper 1 &amp; Paper 2</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+    <div class="subj-card" onclick="selectPGETSpecialty('pget_ent_part1')">
+      <div class="subj-icon">👂</div>
+      <div><div class="subj-name">Otorhinolaryngology (ENT)</div><div class="subj-meta">11,000+ MCQs · Paper 1 &amp; Paper 2</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+    <div class="subj-card" onclick="selectPGETSpecialty('pget_radiology_part1')">
+      <div class="subj-icon">🩻</div>
+      <div><div class="subj-name">Diagnostic Radiology</div><div class="subj-meta">11,000+ MCQs · Paper 1 &amp; Paper 2</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+    <div class="subj-card" onclick="selectPGETSpecialty('pget_psychiatry_part1')">
+      <div class="subj-icon">🧠</div>
+      <div><div class="subj-name">Psychiatry</div><div class="subj-meta">11,000+ MCQs · Paper 1 &amp; Paper 2</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+    <div class="subj-card" onclick="selectPGETSpecialty('pget_anaesthesia_part1')">
+      <div class="subj-icon">💉</div>
+      <div><div class="subj-name">Anaesthesia</div><div class="subj-meta">11,000+ MCQs · Paper 1 &amp; Paper 2</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+    <div class="subj-card" onclick="selectPGETSpecialty('pget_ophthalmology_part1')">
+      <div class="subj-icon">👁️</div>
+      <div><div class="subj-name">Ophthalmology</div><div class="subj-meta">11,000+ MCQs · Paper 1 &amp; Paper 2</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ PGET UHS PAPER PAGE ══════════════ -->
+<div id="pget-paper-page" class="page">
+  <div class="page-header">
+    <button class="back-btn" onclick="openPGET()">← Specialties</button>
+    <div>
+      <div class="ph-title" id="pget-paper-title">Medicine &amp; Allied</div>
+      <div class="ph-sub">PGET UHS — Select a paper</div>
+    </div>
+  </div>
+  <div class="paper-grid">
+    <div class="paper-card" onclick="openPGETPaper1()">
+      <div class="paper-num">1</div>
+      <div class="paper-label">Paper One</div>
+      <div class="paper-count">7,300 MCQs</div>
+      <div class="paper-topics">Anatomy · Physiology · Biochemistry · Pharmacology · Pathology · Microbiology · Community Medicine · Behavioural Sciences</div>
+    </div>
+    <div class="paper-card" id="pget-paper2-card" onclick="openPGETPaper2()">
+      <div class="paper-num">2</div>
+      <div class="paper-label">Paper Two</div>
+      <div class="paper-count" id="pget-paper2-count">Coming Soon</div>
+      <div class="paper-topics" id="pget-paper2-topics">Paper 2 for this specialty is under development</div>
+    </div>
+  </div>
+</div>
+
 <!-- ══════════════ REVISION SPRINT HUB PAGE ══════════════ -->
 <div id="revision-sprint-hub-page" class="page">
   <div class="page-header">
@@ -5298,7 +5372,7 @@ document.addEventListener('DOMContentLoaded',async ()=>{
   });
   // Public pages work without login — show them IMMEDIATELY from the URL hash
   // so shared links like medmasters.academy/#pricing always land on the right page
-  const PUBLIC=['#home','#jcat','#mowmo','#jobs','#pricing','#pricing-jcat','#pricing-nts','#pricing-fcps','#pricing-cts','#pricing-mo-wmo','#pricing-fpsc-mo-wmo','#features','#about','#fcps','#usmle','#plab','#amc','#install','#nts','#cts','#mo-wmo','#fpsc-mo-wmo','#nts-mock-hub','#revision-sprint','#rs-1','#rs-2','#rs-3','#rs-4','#rs-5','#rs-6','#rs-7','#rs-8','#rs-9','#rs-10','#anaes-p2','#anaes-p2-anatomy','#anaes-p2-physio','#anaes-p2-pharma','#anaes-p2-physics','#anaes-p2-pathophysio'];
+  const PUBLIC=['#home','#jcat','#mowmo','#jobs','#pricing','#pricing-jcat','#pricing-nts','#pricing-fcps','#pricing-cts','#pricing-mo-wmo','#pricing-fpsc-mo-wmo','#features','#about','#fcps','#pget','#usmle','#plab','#amc','#install','#nts','#cts','#mo-wmo','#fpsc-mo-wmo','#nts-mock-hub','#revision-sprint','#rs-1','#rs-2','#rs-3','#rs-4','#rs-5','#rs-6','#rs-7','#rs-8','#rs-9','#rs-10','#anaes-p2','#anaes-p2-anatomy','#anaes-p2-physio','#anaes-p2-pharma','#anaes-p2-physics','#anaes-p2-pathophysio'];
   const startHash=window.location.hash||'#home';
   if(PUBLIC.includes(startHash)){
     const action=HASH_MAP[startHash];
@@ -5657,6 +5731,7 @@ const HASH_MAP = {
   '#dashboard':()=>{ if(S.auth){ _showPage('dashboard'); mergeFromCloud().then(()=>loadDashboard()); } else _showPage('home'); },
   '#install':  ()=>{ _showPage('home'); setTimeout(()=>handleInstallClick(),400); },
   '#fcps':         ()=>_showPage('fcps'),
+  '#pget':         ()=>_showPage('pget'),
   '#pricing-fcps': ()=>_showPage('pricing-fcps'),
   '#usmle':    ()=>{ _showPage('home'); setTimeout(()=>showLockedModal('USMLE'),150); },
   '#plab':     ()=>{ _showPage('home'); setTimeout(()=>showLockedModal('PLAB'),150); },
@@ -5755,6 +5830,7 @@ const META_MAP = {
   '#home':      {title:"🏠 MedMasters — Pakistan's #1 MCQ Bank | 100,000+ MCQs",    desc:"100,000+ MCQs for JCAT, FCPS, USMLE & PLAB. Built by doctors, for doctors. Trusted by 27,000+ students across Pakistan.",             img:"https://www.medmasters.academy/og-image.png"},
   '#jcat':      {title:"🏥 JCAT MCQ Bank — MedMasters | 30,000+ MCQs",               desc:"30,000+ syllabus-aligned JCAT MCQs across 9 specialties — Medicine, Surgery, Dentistry, Psychiatry, Anesthesiology, Ophthalmology, ENT, Gynae & Radiology. Includes real past papers.",  img:"https://www.medmasters.academy/og-image.png"},
   '#fcps':         {title:"🔬 FCPS Part 1 MCQ Bank — MedMasters | 7,300+ MCQs",          desc:"7,300+ syllabus-aligned FCPS Part 1 MCQs across 11 specialties — Medicine, Surgery, Dentistry, Psychiatry, Anaesthesia, Ophthalmology, ENT, Pathology, Community Medicine, Gynae & Radiology.",   img:"https://www.medmasters.academy/og-image.png"},
+  '#pget':         {title:"🎓 PGET UHS MCQ Bank — MedMasters | Level-III Induction Prep", desc:"Syllabus-aligned PGET UHS MCQs for Level-III postgraduate induction (MD/MS/MDS/FCPS) — Medicine & Allied, Obs & Gynae, ENT, Radiology, Psychiatry, Anaesthesia, Ophthalmology.", img:"https://www.medmasters.academy/og-image.png"},
   '#pricing-fcps':  {title:"🔬 FCPS Part 1 Pricing — MedMasters | From PKR 3,000",         desc:"Affordable FCPS Part 1 MCQ bank access from PKR 3,000. Full Paper 1 across all specialties. Start today.",  img:"https://www.medmasters.academy/og-image.png"},
   '#usmle':     {title:"🇺🇸 USMLE Step 1 & 2 MCQ Bank — MedMasters | Coming Soon",    desc:"High-yield USMLE Step 1 and Step 2 CK MCQs crafted by doctors who have aced the exam. International-standard prep, launching soon on MedMasters.",  img:"https://www.medmasters.academy/og-image.png"},
   '#plab':      {title:"🇬🇧 PLAB 1 MCQ Bank — MedMasters | Coming Soon",               desc:"Comprehensive PLAB 1 MCQ preparation for Pakistani doctors targeting GMC registration and a career in the UK — coming soon on MedMasters.",           img:"https://www.medmasters.academy/og-image.png"},
@@ -6185,6 +6261,10 @@ function selectMOWMORange(n){
 function hasFCPSAccess(){
   const subj=(S.subject||'').toLowerCase();
   return subj.startsWith('fcps_');
+}
+function hasPGETAccess(){
+  const subj=(S.subject||'').toLowerCase();
+  return subj.startsWith('pget_');
 }
 function selectNTSCategory(cat){
   if(!S.auth||!hasNTSAccess()){ openCodeModal('nts'); return; }
@@ -7692,7 +7772,10 @@ let _rsBackContext = 'fcps';
 
 function hasRevisionSprintAccess(){
   const subj=(S.subject||'').toLowerCase();
-  return subj==='surgery' || subj==='fcps_surgery_part1';
+  // 'pget_surgery_part1' isn't a live PGET specialty yet (PGET UHS doesn't
+  // offer Surgery today) — included here so Revision Sprint activates
+  // automatically the moment it does, with no further code change needed.
+  return subj==='surgery' || subj==='fcps_surgery_part1' || subj==='pget_surgery_part1';
 }
 
 function _isRSUnlocked(n){ return new Date() >= RS_CONFIG[n].unlock; }
@@ -8674,6 +8757,117 @@ function openFCPSPaper2(){
   else if(_ctxSubj==='fcps_anaesthesia_part1'){ openAnaesP2Hub(); }
 }
 // ═══════════ END FCPS PART 1 ═══════════
+
+// ═══════════ PGET UHS ═══════════
+// PGET UHS is a fully separate exam product from FCPS Part 1 — separate
+// access codes, separate subscriptions, separate lock/unlock state. For the
+// specialties confirmed ready, PGET reuses the exact same underlying MCQ
+// content as FCPS Part 1 (same syllabus overlap at Paper 1 + Paper 2 level),
+// so rather than duplicating FCPS_SPECIALTY_NAMES/FCPS_P2_AVAILABLE, PGET
+// looks up that same data via pgetToFcpsKey() — one source of truth, and if
+// FCPS's MCQ counts/topics are ever updated, PGET automatically stays in sync.
+function pgetToFcpsKey(subj){
+  return (subj||'').replace(/^pget_/, 'fcps_');
+}
+
+const PGET_SPECIALTY_NAMES={
+  'pget_medicine_part1':      'Medicine & Allied',
+  'pget_gynaecology_part1':   'Obstetrics & Gynaecology',
+  'pget_ent_part1':           'Otorhinolaryngology (ENT)',
+  'pget_radiology_part1':     'Diagnostic Radiology',
+  'pget_psychiatry_part1':    'Psychiatry',
+  'pget_anaesthesia_part1':   'Anaesthesia',
+  'pget_ophthalmology_part1': 'Ophthalmology'
+};
+
+function openPGET(){
+  document.getElementById('mobile-menu').classList.remove('open');
+  _showPage('pget'); setHash('#pget');
+}
+
+function selectPGETSpecialty(subj){
+  let _hasSub = S.auth && S.subject;
+  if(!_hasSub){ try { const _ls = loadSession(); if(_ls && _ls.code) _hasSub = true; } catch(e){} }
+  if(!_hasSub){ S.subject = subj; }
+  _browseContext = 'pget:'+subj;
+  refreshPGETPaperPage_browse(subj);
+  _showPage('pget-paper'); setHash('#pget');
+}
+
+// Renders the PGET paper page for a given specialty (independent of S.subject)
+function refreshPGETPaperPage_browse(subj){
+  const titleEl=document.getElementById('pget-paper-title');
+  if(titleEl) titleEl.textContent=PGET_SPECIALTY_NAMES[subj]||subj;
+  const p2data=FCPS_P2_AVAILABLE[pgetToFcpsKey(subj)];
+  const p2card=document.getElementById('pget-paper2-card');
+  const p2count=document.getElementById('pget-paper2-count');
+  const p2topics=document.getElementById('pget-paper2-topics');
+  if(p2data){
+    if(p2count) p2count.textContent=p2data.count;
+    if(p2topics) p2topics.textContent=p2data.topics;
+    if(p2card){ p2card.style.opacity='1'; p2card.style.filter=''; p2card.style.pointerEvents=''; }
+  } else {
+    if(p2count) p2count.textContent='Coming Soon';
+    if(p2topics) p2topics.textContent='Paper 2 for this specialty is under development';
+    if(p2card){ p2card.style.opacity='0.45'; p2card.style.filter='grayscale(0.4)'; p2card.style.pointerEvents='none'; }
+  }
+  // MedGolden card only on Radiology paper page. MedPink card only on Gynae.
+  try {
+    if(typeof injectMedGoldenPaperCard === 'function') injectMedGoldenPaperCard('pget-paper-page', subj === 'pget_radiology_part1');
+    if(typeof injectMedPinkPaperCard   === 'function') injectMedPinkPaperCard('pget-paper-page', subj === 'pget_gynaecology_part1');
+  } catch(e){}
+}
+
+function refreshPGETPaperPage(){
+  const subj=S.subject||'pget_medicine_part1';
+  const titleEl=document.getElementById('pget-paper-title');
+  if(titleEl) titleEl.textContent=PGET_SPECIALTY_NAMES[subj]||subj;
+  const p2data=FCPS_P2_AVAILABLE[pgetToFcpsKey(subj)];
+  const p2card=document.getElementById('pget-paper2-card');
+  const p2count=document.getElementById('pget-paper2-count');
+  const p2topics=document.getElementById('pget-paper2-topics');
+  if(p2data){
+    if(p2count) p2count.textContent=p2data.count;
+    if(p2topics) p2topics.textContent=p2data.topics;
+    if(p2card){ p2card.style.opacity='1'; p2card.style.filter=''; p2card.style.pointerEvents=''; }
+  } else {
+    if(p2count) p2count.textContent='Coming Soon';
+    if(p2topics) p2topics.textContent='Paper 2 for this specialty is under development';
+    if(p2card){ p2card.style.opacity='0.45'; p2card.style.filter='grayscale(0.4)'; p2card.style.pointerEvents='none'; }
+  }
+  // MedGolden card only on Radiology paper page. MedPink card only on Gynae.
+  injectMedPinkPaperCard('pget-paper-page', subj==='pget_gynaecology_part1');
+  if(typeof injectMedGoldenPaperCard === 'function') injectMedGoldenPaperCard('pget-paper-page', subj === 'pget_radiology_part1');
+}
+
+function openPGETPaper1(){
+  if(!_browseContext || !_browseContext.startsWith('pget:')){
+    _browseContext = 'pget:' + (S.subject || 'pget_medicine_part1');
+  }
+  renderP1Subjects();
+  _showPage('p1-subjects'); setHash('#paper1');
+}
+
+function openPGETPaper2(){
+  const _ctxSubj = (_browseContext && _browseContext.startsWith('pget:'))
+                   ? _browseContext.split(':')[1]
+                   : (S.subject||'pget_medicine_part1');
+  const _fcpsKey = pgetToFcpsKey(_ctxSubj);
+  const p2data=FCPS_P2_AVAILABLE[_fcpsKey];
+  if(!p2data){
+    const specName = PGET_SPECIALTY_NAMES[_ctxSubj]||_ctxSubj;
+    showLockedModal(specName+' Paper 2');
+    return;
+  }
+  if(_fcpsKey==='fcps_medicine_part1'){ loadP2MCQData(); _showPage('p2-subjects'); setHash('#paper2'); }
+  else if(_fcpsKey==='fcps_gynaecology_part1'){ loadGynaeP2MCQData(); _showPage('gynae-p2-subjects'); setHash('#gynaepaper2'); }
+  else if(_fcpsKey==='fcps_psychiatry_part1'){ loadPsychP2MCQData(); _showPage('psych-p2-subjects'); setHash('#psychpaper2'); }
+  else if(_fcpsKey==='fcps_ent_part1'){ loadEntP2MCQData(); _showPage('ent-p2-subjects'); setHash('#entpaper2'); }
+  else if(_fcpsKey==='fcps_ophthalmology_part1'){ loadOphP2MCQData(); _showPage('oph-p2-subjects'); setHash('#ophpaper2'); }
+  else if(_fcpsKey==='fcps_radiology_part1'){ loadRadioP2MCQData(); _showPage('radio-p2-subjects'); setHash('#radiopaper2'); }
+  else if(_fcpsKey==='fcps_anaesthesia_part1'){ openAnaesP2Hub(); }
+}
+// ═══════════ END PGET UHS ═══════════
 document.addEventListener('click',e=>{
   const menu=document.getElementById('mobile-menu'), ham=document.getElementById('ham-btn');
   if(menu.classList.contains('open')&&!menu.contains(e.target)&&!ham.contains(e.target))
@@ -9055,6 +9249,11 @@ function normalizeSubject(raw){
   if(s.includes('nts')||s.includes('mowmo')||s.includes('mo/wmo')||s==='mo'||s==='wmo') return 'nts';
   // FCPS Part 1 — pass through as-is (already namespaced with fcps_ prefix)
   if(s.startsWith('fcps_')) return s;
+  // PGET UHS — pass through as-is (already namespaced with pget_ prefix).
+  // Without this, e.g. 'pget_medicine_part1' would fall through to the
+  // generic substring checks below and get flattened to plain 'medicine',
+  // silently turning a PGET subscriber into a JCAT one.
+  if(s.startsWith('pget_')) return s;
   if(s.includes('psychiatry')) return 'psychiatry';
   if(s.includes('ophthalmology')||s.includes('eye')) return 'ophthalmology';
   if(s.includes('gynae')||s.includes('gynaecology')||s.includes('obstetrics')||(s.includes('obs')&&s.includes('gynae'))) return 'gynaecology';
@@ -9083,12 +9282,14 @@ function loadDashboard(){
   const isFPSC = hasFPSCAccess();
   const isMOWMO = hasMOWMOAccess();
   const isFCPS = hasFCPSAccess();
+  const isPGET = hasPGETAccess();
   const fcpsName = isFCPS ? (FCPS_SPECIALTY_NAMES[S.subject]||S.subject) : '';
-  const sname = isNTS ? 'NTS MO/WMO' : isCTS ? 'CTS MO/WMO' : isFPSC ? 'FPSC MO/WMO' : isMOWMO ? 'MO/WMO' : isFCPS ? fcpsName : (names[S.subject]||S.subject||'JCAT');
+  const pgetName = isPGET ? (PGET_SPECIALTY_NAMES[S.subject]||S.subject) : '';
+  const sname = isNTS ? 'NTS MO/WMO' : isCTS ? 'CTS MO/WMO' : isFPSC ? 'FPSC MO/WMO' : isMOWMO ? 'MO/WMO' : isFCPS ? fcpsName : isPGET ? pgetName : (names[S.subject]||S.subject||'JCAT');
   const firstName=S.drName?S.drName.split(' ').find(w=>!['Dr','Dr.','dr'].includes(w))||S.drName:'';
   document.getElementById('dash-title').textContent=firstName?`Dr. ${firstName}'s Dashboard`:'My Dashboard';
-  document.getElementById('dash-subtitle').textContent= isMockNTS ? 'Past & Mocks NTS' : isNTS ? 'NTS MO/WMO' : isCTS ? 'CTS MO/WMO' : isFPSC ? 'FPSC MO/WMO' : isMOWMO ? 'MO/WMO' : isFCPS ? `FCPS Part 1 — ${fcpsName}` : `JCAT — ${sname}`;
-  document.getElementById('dash-plan-name').textContent= isMockNTS ? 'Past & Mocks NTS' : isNTS ? 'NTS MO/WMO' : isCTS ? 'CTS MO/WMO' : isFPSC ? 'FPSC MO/WMO' : isMOWMO ? 'MO/WMO' : isFCPS ? `FCPS Part 1: ${fcpsName}` : `JCAT: ${sname}`;
+  document.getElementById('dash-subtitle').textContent= isMockNTS ? 'Past & Mocks NTS' : isNTS ? 'NTS MO/WMO' : isCTS ? 'CTS MO/WMO' : isFPSC ? 'FPSC MO/WMO' : isMOWMO ? 'MO/WMO' : isFCPS ? `FCPS Part 1 — ${fcpsName}` : isPGET ? `PGET UHS — ${pgetName}` : `JCAT — ${sname}`;
+  document.getElementById('dash-plan-name').textContent= isMockNTS ? 'Past & Mocks NTS' : isNTS ? 'NTS MO/WMO' : isCTS ? 'CTS MO/WMO' : isFPSC ? 'FPSC MO/WMO' : isMOWMO ? 'MO/WMO' : isFCPS ? `FCPS Part 1: ${fcpsName}` : isPGET ? `PGET UHS: ${pgetName}` : `JCAT: ${sname}`;
   const exp=new Date(S.expiresAt);
   const days=Math.ceil((exp-new Date())/(1000*60*60*24));
   document.getElementById('dash-plan-exp').textContent=`Expires on: ${exp.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'})}`;
@@ -9137,6 +9338,15 @@ function loadDashboard(){
     setRing('ring-studied', Math.min(done/FCPS_TOTAL,1));
     document.getElementById('dash-total-done').textContent=done>=1000?(done/1000).toFixed(1)+'k':done.toLocaleString();
     document.getElementById('dash-studied-total').textContent='/'+FCPS_TOTAL.toLocaleString();
+  } else if(isPGET){
+    // PGET: same content/counts as FCPS for matching specialties (Paper 1 7300 + Paper 2 if available)
+    const fcpsP2={fcps_medicine_part1:5129,fcps_surgery_part1:2000,fcps_gynaecology_part1:3000,fcps_psychiatry_part1:2000,fcps_ent_part1:3000,fcps_ophthal_part1:3000,fcps_ophthalmology_part1:3000,fcps_anaesthesia_part1:2000};
+    const _fcpsKey=pgetToFcpsKey(S.subject);
+    const isPgetRadio=(_fcpsKey==='fcps_radiology_part1');
+    const PGET_TOTAL=(_fcpsKey==='fcps_ent_part1'||_fcpsKey==='fcps_ophthalmology_part1')?10300:isPgetRadio?15590:7300+(fcpsP2[_fcpsKey]||0);
+    setRing('ring-studied', Math.min(done/PGET_TOTAL,1));
+    document.getElementById('dash-total-done').textContent=done>=1000?(done/1000).toFixed(1)+'k':done.toLocaleString();
+    document.getElementById('dash-studied-total').textContent='/'+PGET_TOTAL.toLocaleString();
   } else {
     const isSurgery=S.subject==='surgery';
     const isGynaeForTotal=S.subject==='gynaecology';
@@ -9170,7 +9380,7 @@ function loadDashboard(){
   setRing('ring-streak', Math.min(streak/30,1));
   document.getElementById('dash-streak').textContent=streak;
 
-  renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWMO, isFPSC);
+  renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWMO, isFPSC, isPGET);
 
   // Update quick-action cards
   const p2Icon=document.getElementById('dash-p2-icon');
@@ -9227,6 +9437,26 @@ function loadDashboard(){
       if(p2Title) p2Title.textContent='Study Paper 2';
       if(p2Sub) p2Sub.textContent=fcpsP2.count+' · '+(FCPS_SPECIALTY_NAMES[S.subject]||'');
       if(p2Btn){ p2Btn.setAttribute('onclick','openFCPSPaper2()'); p2Btn.style.opacity='1'; p2Btn.style.pointerEvents=''; }
+    } else {
+      if(p2Icon) p2Icon.textContent='🔒';
+      if(p2Title) p2Title.textContent='Study Paper 2';
+      if(p2Sub) p2Sub.textContent='Paper 2 · Coming Soon';
+      if(p2Btn){ p2Btn.setAttribute('onclick',''); p2Btn.style.opacity='0.45'; p2Btn.style.pointerEvents='none'; }
+    }
+  } else if(isPGET){
+    const mockBtnP = document.getElementById('dash-mock-btn');
+    if(mockBtnP) mockBtnP.style.display='none';
+    if(pracBtn) pracBtn.style.display='';
+    if(p1Btn){ p1Btn.setAttribute('onclick','openPGETPaper1()'); }
+    if(p1Title) p1Title.textContent='Study Paper 1';
+    if(p1Sub) p1Sub.textContent='7,300 MCQs · Basic Sciences · No timer';
+    if(pracSub) pracSub.textContent='Paper 1 · Paper 2 · Mixed';
+    const pgetP2=FCPS_P2_AVAILABLE[pgetToFcpsKey(S.subject)];
+    if(pgetP2){
+      if(p2Icon) p2Icon.textContent='📋';
+      if(p2Title) p2Title.textContent='Study Paper 2';
+      if(p2Sub) p2Sub.textContent=pgetP2.count+' · '+(PGET_SPECIALTY_NAMES[S.subject]||'');
+      if(p2Btn){ p2Btn.setAttribute('onclick','openPGETPaper2()'); p2Btn.style.opacity='1'; p2Btn.style.pointerEvents=''; }
     } else {
       if(p2Icon) p2Icon.textContent='🔒';
       if(p2Title) p2Title.textContent='Study Paper 2';
@@ -9295,7 +9525,7 @@ function loadDashboard(){
 
   // ── MEDPINK FILES card visibility & ordering ──
   const medpinkBtn = document.getElementById('dash-medpink-btn');
-  const isGynaeAny = (S.subject==='gynaecology' || S.subject==='fcps_gynaecology_part1');
+  const isGynaeAny = (S.subject==='gynaecology' || S.subject==='fcps_gynaecology_part1' || S.subject==='pget_gynaecology_part1');
   if(medpinkBtn){
     if(isGynaeAny && !isMockNTS){
       medpinkBtn.style.display='';
@@ -9312,10 +9542,10 @@ function loadDashboard(){
   }
 
   // ── MEDGOLDEN card visibility & ordering ──
-  // Show for JCAT Radiology and FCPS Part 1 Radiology only.
+  // Show for JCAT, FCPS Part 1, and PGET UHS Radiology subscribers.
   // Order: Study P1 (1), Study P2 (2), MedGolden (3), Practice & Assess (4)
   const medgoldenBtn = document.getElementById('dash-medgolden-btn');
-  const isRadiologyAny = (S.subject==='radiology' || S.subject==='fcps_radiology_part1');
+  const isRadiologyAny = (S.subject==='radiology' || S.subject==='fcps_radiology_part1' || S.subject==='pget_radiology_part1');
   if(medgoldenBtn){
     if(isRadiologyAny && !isMockNTS){
       medgoldenBtn.style.display='';
@@ -9334,10 +9564,10 @@ function loadDashboard(){
   }
 
   // ── REVISION SPRINT card visibility & ordering ──
-  // Show for JCAT Surgery & Allied and FCPS Part 1 Surgery & Allied only.
+  // Show for JCAT, FCPS Part 1, and (once offered) PGET UHS Surgery & Allied.
   // Order: Study P1 (1), Study P2 (2), Revision Sprint (3), Practice & Assess (4)
   const rsBtn = document.getElementById('dash-rs-btn');
-  const isSurgeryAny = (S.subject==='surgery' || S.subject==='fcps_surgery_part1');
+  const isSurgeryAny = (S.subject==='surgery' || S.subject==='fcps_surgery_part1' || S.subject==='pget_surgery_part1');
   if(rsBtn){
     if(isSurgeryAny && !isMockNTS){
       rsBtn.style.display='';
@@ -9393,7 +9623,7 @@ function _sectionHeader(label, color){
   return `<div style="font-size:10px;font-weight:700;color:${color};letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border);">${label}</div>`;
 }
 
-function renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWMO, isFPSC){
+function renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWMO, isFPSC, isPGET){
   if(isMockNTS){
     const wrap=document.getElementById('dash-subject-progress');
     const NTS_DASH_CATS=[
@@ -9415,7 +9645,8 @@ function renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWM
     wrap.innerHTML=_sectionHeader('📊 NTS MO/WMO — Progress by Category','var(--gold)')+rows;
     return;
   }
-  if(isFCPS){
+  if(isFCPS||isPGET){
+    const _cmpKey = isPGET ? pgetToFcpsKey(S.subject) : S.subject;
     const wrap=document.getElementById('dash-subject-progress');
     const SUBJECTS_DATA=[
       {key:'anatomy',   label:'Anatomy',             icon:'🦴', total:1975},
@@ -9562,16 +9793,16 @@ function renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWM
     // Paper 1 rows
     let rows=SUBJECTS_DATA.map(s=>makeBar(s.key, s.icon, s.label, s.total, P1_COLOR));
     // Paper 2 rows — individual subjects, with a section header
-    const p2subs=fcpsP2subjects[S.subject];
+    const p2subs=fcpsP2subjects[_cmpKey];
     if(p2subs&&p2subs.length){
-      const isEntFCPS=S.subject==='fcps_ent_part1'; const isOphFCPS=S.subject==='fcps_ophthal_part1'||S.subject==='fcps_ophthalmology_part1'; const isRadioFCPS=S.subject==='fcps_radiology_part1'; const isAnaeFCPS=S.subject==='fcps_anaesthesia_part1';
+      const isEntFCPS=_cmpKey==='fcps_ent_part1'; const isOphFCPS=_cmpKey==='fcps_ophthal_part1'||_cmpKey==='fcps_ophthalmology_part1'; const isRadioFCPS=_cmpKey==='fcps_radiology_part1'; const isAnaeFCPS=_cmpKey==='fcps_anaesthesia_part1';
       const p2HeaderColor=isEntFCPS?'#1ABC9C':isOphFCPS?'#8E44AD':isRadioFCPS?'#C9A84C':isAnaeFCPS?'#00B4D8':'#3498DB';
       const p2BarColor=isEntFCPS?'linear-gradient(90deg,#1ABC9C,#48C9B0)':isOphFCPS?'linear-gradient(90deg,#8E44AD,#BB8FCE)':isRadioFCPS?'linear-gradient(90deg,#C9A84C,#E0C870)':isAnaeFCPS?'linear-gradient(90deg,#00B4D8,#48CAE4)':P2_COLOR;
       rows.push(`<div style="font-size:10px;font-weight:700;color:${p2HeaderColor};letter-spacing:1px;text-transform:uppercase;margin:14px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border);">Paper 2</div>`);
       p2subs.forEach(s=>rows.push(makeBar(s.key, s.icon, s.label, s.total, p2BarColor)));
     }
-    // MedGolden section — only for FCPS Radiology
-    if(S.subject==='fcps_radiology_part1' && typeof MEDGOLDEN_BATCHES!=='undefined'){
+    // MedGolden section — FCPS Radiology and PGET UHS Radiology
+    if(_cmpKey==='fcps_radiology_part1' && typeof MEDGOLDEN_BATCHES!=='undefined'){
       const mgBarColor='linear-gradient(90deg,#C9A84C,#E0C870)';
       rows.push(`<div style="font-size:10px;font-weight:700;color:#C9A84C;letter-spacing:1px;text-transform:uppercase;margin:14px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border);">🏅 MedGolden</div>`);
       MEDGOLDEN_BATCHES.forEach(b=>rows.push(makeBar(b.key, b.icon, b.label, b.count, mgBarColor)));
@@ -10110,7 +10341,7 @@ function injectMedPinkPaperCard(pageId, shouldShow){
     '<div class="paper-num" style="color:#FBBED0;">🌸</div>'
     +'<div class="paper-label">MedPink Files</div>'
     +'<div class="paper-count">6,050 MCQs</div>'
-    +'<div class="paper-topics">FCPS Part 1 Gynae &amp; Obs Past Papers · 2014 – 2025 · Year-wise batches · Equally beneficial for JCAT Gynae &amp; Obs candidates</div>';
+    +'<div class="paper-topics">Gynae &amp; Obs Past Papers · 2014 – 2025 · Year-wise batches · Equally beneficial for JCAT &amp; PGET UHS Gynae &amp; Obs candidates</div>';
   // Pink-tinted styling layered over .paper-card (does not modify global paper-card class)
   card.style.borderColor = 'rgba(236,72,153,0.28)';
   card.style.background = 'linear-gradient(135deg,rgba(236,72,153,0.05),rgba(201,168,76,0.03))';
@@ -10144,7 +10375,7 @@ function injectMedGoldenPaperCard(pageId, shouldShow){
     '<div class="paper-num" style="color:var(--gold);">🏅</div>'
     +'<div class="paper-label">MedGolden for Radiology</div>'
     +'<div class="paper-count">6,290 MCQs</div>'
-    +'<div class="paper-topics">FCPS Part 1 Diagnostic Radiology Recall-Based Past Papers · Batches 1–24 · 2025 &amp; 2026 Sessions · Equally beneficial for JCAT MS Diagnostic Radiology candidates</div>';
+    +'<div class="paper-topics">Diagnostic Radiology Recall-Based Past Papers · Batches 1–24 · 2025 &amp; 2026 Sessions · Equally beneficial for JCAT &amp; PGET UHS Diagnostic Radiology candidates</div>';
   card.style.borderColor='rgba(201,168,76,0.38)';
   card.style.background='linear-gradient(135deg,rgba(201,168,76,0.07),rgba(201,168,76,0.03))';
   // Order: P1=1, MedGolden=2 (3rd slot), P2=stays, Practice=4
@@ -11746,7 +11977,7 @@ const MEDGOLDEN_EXPANDED={};  // tracks which group cards are expanded
 
 function hasMedGoldenAccess(){
   if(!S.auth) return false;
-  return S.subject==='radiology' || S.subject==='fcps_radiology_part1';
+  return S.subject==='radiology' || S.subject==='fcps_radiology_part1' || S.subject==='pget_radiology_part1';
 }
 
 async function loadMedGoldenBatchData(key){
@@ -11927,9 +12158,9 @@ async function startMedGoldenPractice(){
 // ══════════════════════════════════════════════════════════
 
 function hasMedPinkAccess(){
-  // Available to JCAT Gynae & Obs and FCPS Part 1 Gynae & Obs subscribers only
+  // Available to JCAT, FCPS Part 1, and PGET UHS Gynae & Obs subscribers only
   if(!S.auth) return false;
-  return S.subject==='gynaecology' || S.subject==='fcps_gynaecology_part1';
+  return S.subject==='gynaecology' || S.subject==='fcps_gynaecology_part1' || S.subject==='pget_gynaecology_part1';
 }
 
 async function loadMedPinkBatchData(key){
@@ -12334,38 +12565,43 @@ function promptResumeOrFresh(key, subjList, dataLoader, openFn){
   //   1. _browseContext (set by specialty selectors)
   //   2. URL hash (e.g. #paper1 → JCAT, #fcps → FCPS)
   //   3. Subscriber's own tier (own-tier dashboard navigation)
-  let _famIsFCPS, _famIsJCAT;
+  let _famIsFCPS, _famIsJCAT, _famIsPGET;
   if(_browseContext){
     _famIsFCPS = _browseContext.startsWith('fcps:');
+    _famIsPGET = _browseContext.startsWith('pget:');
     _famIsJCAT = _browseContext.startsWith('jcat:');
   } else {
     const _h = (location.hash || '').toLowerCase();
     if(_h === '#fcps'){
-      _famIsFCPS = true; _famIsJCAT = false;
+      _famIsFCPS = true; _famIsJCAT = false; _famIsPGET = false;
+    } else if(_h === '#pget'){
+      _famIsPGET = true; _famIsFCPS = false; _famIsJCAT = false;
     } else if(_h === '#paper'       || _h === '#paper1'     || _h === '#paper2'
            || _h === '#surgpaper2'  || _h === '#psychpaper2'|| _h === '#gynaepaper2'
            || _h === '#entpaper2'   || _h === '#ophpaper2'  || _h === '#radiopaper2'){
-      // SHARED hashes (used by both JCAT and FCPS Medicine/specialty flows).
+      // SHARED hashes (used by JCAT, FCPS and PGET Medicine/specialty flows).
       // Infer family from subscriber's own tier.
       _famIsFCPS = _eff.startsWith('fcps_');
-      _famIsJCAT = !_famIsFCPS;
+      _famIsPGET = _eff.startsWith('pget_');
+      _famIsJCAT = !_famIsFCPS && !_famIsPGET;
     } else {
       // Unknown — fall back to subscriber's own tier
       _famIsFCPS = _eff.startsWith('fcps_');
-      _famIsJCAT = !_famIsFCPS;
+      _famIsPGET = _eff.startsWith('pget_');
+      _famIsJCAT = !_famIsFCPS && !_famIsPGET;
     }
   }
   // What tier the subscriber must hold to study this MCQ
   let _need = null;
   if(_k.startsWith('surg_p2'))       _need = _famIsFCPS ? 'fcps_surgery_part1'     : 'surgery';
-  else if(_k.startsWith('gynae_p2')) _need = _famIsFCPS ? 'fcps_gynaecology_part1' : 'gynaecology';
-  else if(_k.startsWith('psych_p2')) _need = _famIsFCPS ? 'fcps_psychiatry_part1'  : 'psychiatry';
-  else if(_k.startsWith('ent_p2'))   _need = _famIsFCPS ? 'fcps_ent_part1'         : 'ent';
-  else if(_k.startsWith('oph_p2'))   _need = _famIsFCPS ? ['fcps_ophthal_part1','fcps_ophthalmology_part1'] : 'ophthalmology';
-  else if(_k.startsWith('radio_p2')) _need = _famIsFCPS ? 'fcps_radiology_part1'   : 'radiology';
-  else if(_k.startsWith('anaes_p2')) _need = _famIsFCPS ? 'fcps_anaesthesia_part1' : 'anesthesia';
-  else if(_k.startsWith('med_p2'))   _need = _famIsFCPS ? 'fcps_medicine_part1'    : 'medicine';
-  else if(_k.startsWith('p2_'))      _need = _famIsFCPS ? 'fcps_medicine_part1'    : 'medicine';
+  else if(_k.startsWith('gynae_p2')) _need = _famIsFCPS ? 'fcps_gynaecology_part1' : _famIsPGET ? 'pget_gynaecology_part1' : 'gynaecology';
+  else if(_k.startsWith('psych_p2')) _need = _famIsFCPS ? 'fcps_psychiatry_part1'  : _famIsPGET ? 'pget_psychiatry_part1'  : 'psychiatry';
+  else if(_k.startsWith('ent_p2'))   _need = _famIsFCPS ? 'fcps_ent_part1'         : _famIsPGET ? 'pget_ent_part1'         : 'ent';
+  else if(_k.startsWith('oph_p2'))   _need = _famIsFCPS ? ['fcps_ophthal_part1','fcps_ophthalmology_part1'] : _famIsPGET ? 'pget_ophthalmology_part1' : 'ophthalmology';
+  else if(_k.startsWith('radio_p2')) _need = _famIsFCPS ? 'fcps_radiology_part1'   : _famIsPGET ? 'pget_radiology_part1'   : 'radiology';
+  else if(_k.startsWith('anaes_p2')) _need = _famIsFCPS ? 'fcps_anaesthesia_part1' : _famIsPGET ? 'pget_anaesthesia_part1' : 'anesthesia';
+  else if(_k.startsWith('med_p2'))   _need = _famIsFCPS ? 'fcps_medicine_part1'    : _famIsPGET ? 'pget_medicine_part1'    : 'medicine';
+  else if(_k.startsWith('p2_'))      _need = _famIsFCPS ? 'fcps_medicine_part1'    : _famIsPGET ? 'pget_medicine_part1'    : 'medicine';
   // Paper 1 basic sciences — disambiguate by context.
   // Covers both the legacy 'p1_'-prefixed keys AND the plain SUBJECTS keys
   // (anatomy, physio, biochem, pharma, patho, micro, community, behavioral)
@@ -12378,13 +12614,15 @@ function promptResumeOrFresh(key, subjList, dataLoader, openFn){
       _need = _browseContext.split(':')[1];
     } else if(_famIsFCPS){
       _need = _eff.startsWith('fcps_') ? _eff : 'fcps_medicine_part1';
+    } else if(_famIsPGET){
+      _need = _eff.startsWith('pget_') ? _eff : 'pget_medicine_part1';
     } else {
       // Must be an actual JCAT specialty the subscriber is enrolled in —
       // NOT a tautological "does _eff equal itself" check. That flaw let
       // ANY logged-in subscriber (NTS/CTS/MO-WMO/FPSC/anything) through,
       // since _need was being set to the subscriber's own subject value.
       const _JCAT_SPECIALTIES = ['medicine','surgery','dentistry','psychiatry','anesthesia','ophthalmology','ent','gynaecology','radiology'];
-      _need = (!_eff.startsWith('fcps_') && _JCAT_SPECIALTIES.includes(_eff)) ? _eff : '__no_jcat_specialty__';
+      _need = (!_eff.startsWith('fcps_') && !_eff.startsWith('pget_') && _JCAT_SPECIALTIES.includes(_eff)) ? _eff : '__no_jcat_specialty__';
     }
   }
   else if(_k.startsWith('medicine_'))      _need = 'medicine';
@@ -12394,10 +12632,11 @@ function promptResumeOrFresh(key, subjList, dataLoader, openFn){
   else if(_k.startsWith('ent_'))           _need = 'ent';
   else if(_k.startsWith('ophthalmology_')) _need = 'ophthalmology';
   else if(_k.startsWith('radiology_'))     _need = 'radiology';
-  // Cross-family check: if user is in JCAT context but subscriber is FCPS
-  // (or vice versa), always block.
+  // Cross-family check: if user is in JCAT context but subscriber is FCPS or
+  // PGET (or vice versa for any family), always block.
   const _subIsFCPS = _eff.startsWith('fcps_');
-  if((_famIsJCAT && _subIsFCPS) || (_famIsFCPS && !_subIsFCPS)){
+  const _subIsPGET = _eff.startsWith('pget_');
+  if((_famIsJCAT && (_subIsFCPS||_subIsPGET)) || (_famIsFCPS && !_subIsFCPS) || (_famIsPGET && !_subIsPGET)){
     openCodeModal(null); return;
   }
   // Tier-specific check
