@@ -64,6 +64,77 @@ gtag('config', 'G-1Z7VJGSR1Z');
 <style>
 .s p, .s li, .lead { text-align: justify; text-justify: inter-word; }
 .s ul { text-align: justify; }
+
+/* ══════════ PGET UHS PAGE THEME ══════════
+   Scoped entirely to this page. Re-declares the shared CSS variables
+   AND overrides the classes directly, so it works regardless of how
+   _seo.css defines them — without editing that shared file at all.
+   FCPS Part 1 and JCAT load a separate document and never see this. */
+:root{
+  --bg: #EAF3FB;
+  --gold: #00A876;
+  --gold-bright: #00C48C;
+  --text: #123A5E;
+  --text-mid: #4A6376;
+  --border: #CFE3F2;
+  --green: #00A876;
+}
+body{ background:#EAF3FB; }
+
+.seo-nav{ background:linear-gradient(135deg,#0E345A,#2274AF) !important; border-bottom:1px solid #0A2E52 !important; }
+.seo-nav-links a{ color:#EAF3FB !important; }
+.seo-nav-links a:hover{ color:#7FE0C0 !important; }
+.seo-nav-cta{ background:linear-gradient(135deg,#00A876,#00C48C) !important; color:#06281F !important; }
+
+.crumb{ background:#0E345A !important; color:#BFE3FA !important; }
+.crumb a{ color:#BFE3FA !important; }
+
+.hero{ background:linear-gradient(135deg,#0E345A,#2274AF) !important; }
+.hero-eyebrow{ background:rgba(255,255,255,0.12) !important; border:1px solid rgba(255,255,255,0.3) !important; color:#EAF3FB !important; }
+.hero h1{ color:#FFFFFF !important; }
+.hero .gold, .cta-section .gold{ color:#7FE0C0 !important; }
+.hero .lead{ color:#BFE3FA !important; }
+.trust-item{ color:#BFE3FA !important; }
+.trust-item b{ color:#00E0A0 !important; }
+.trust{ border-top-color: rgba(255,255,255,0.15) !important; }
+
+.btn-primary{ background:linear-gradient(135deg,#00A876,#00C48C) !important; color:#06281F !important; }
+.btn-whatsapp{ background:#00A876 !important; color:#FFFFFF !important; }
+
+.s{ background:#FFFFFF !important; }
+.s.alt{ background:#EAF3FB !important; }
+.s h2{ color:#123A5E !important; }
+.s h3{ color:#123A5E !important; }
+.gold{ color:#00875F !important; }
+.s p, .s li{ color:#4A6376 !important; }
+.sub{ color:#4A6376 !important; }
+.why-item{ background:#F3F9FD !important; border:1px solid #CFE3F2 !important; }
+.why-item h4{ color:#123A5E !important; }
+.why-item p{ color:#4A6376 !important; }
+
+.fact{ background:#F3F9FD !important; border:1px solid #CFE3F2 !important; }
+.fact-label{ color:#4A6376 !important; }
+.fact-value{ color:#123A5E !important; }
+
+.spec-card{ background:#FFFFFF !important; border:1px solid #CFE3F2 !important; }
+.spec-card h3{ color:#123A5E !important; }
+.spec-card p{ color:#4A6376 !important; }
+
+.gold-line{ border-color:#CFE3F2 !important; }
+
+.cta-section{ background:linear-gradient(135deg,#0E345A,#2274AF) !important; }
+.cta-section h2{ color:#FFFFFF !important; }
+.cta-section p{ color:#BFE3FA !important; }
+
+.faq-item{ background:#F3F9FD !important; border:1px solid #CFE3F2 !important; }
+.faq-item summary{ color:#123A5E !important; }
+.faq-item p{ color:#4A6376 !important; }
+
+.seo-footer{ background:#0E345A !important; }
+.seo-footer h4{ color:#7FE0C0 !important; }
+.seo-footer a{ color:#BFE3FA !important; }
+.seo-footer span{ color:#8FB8D8 !important; }
+.seo-footer-bottom{ color:#8FB8D8 !important; border-top-color:rgba(255,255,255,0.1) !important; }
 </style>
 </head>
 <body>
