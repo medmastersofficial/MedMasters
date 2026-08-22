@@ -553,6 +553,7 @@ tr:hover td{background:rgba(201,168,76,0.02);}
           <option value="all">All Courses</option>
           <option value="jcat">JCAT</option>
           <option value="fcps">FCPS Part 1</option>
+          <option value="pget">PGET UHS</option>
           <option value="nts">NTS MO/WMO</option>
           <option value="cts">CTS MO/WMO</option>
           <option value="mo_wmo">MO/WMO (Other)</option>
@@ -672,6 +673,7 @@ tr:hover td{background:rgba(201,168,76,0.02);}
           <select class="form-select" id="f-exam" onchange="onExamChange()">
             <option value="jcat">JCAT</option>
             <option value="fcps">FCPS Part 1</option>
+            <option value="pget">PGET UHS</option>
             <option value="nts">NTS MO/WMO</option>
             <option value="cts">CTS MO/WMO</option>
             <option value="mo_wmo">MO/WMO (Other)</option>
@@ -769,6 +771,15 @@ tr:hover td{background:rgba(201,168,76,0.02);}
           <option value="fcps_psychiatry_part1">FCPS — Psychiatry</option>
           <option value="fcps_community_part1">FCPS — Community</option>
           <option value="fcps_radiology_part1">FCPS — Radiology</option>
+        </optgroup>
+        <optgroup label="PGET UHS">
+          <option value="pget_medicine_part1">PGET — Medicine &amp; Allied</option>
+          <option value="pget_gynaecology_part1">PGET — Obs &amp; Gynae</option>
+          <option value="pget_ent_part1">PGET — ENT</option>
+          <option value="pget_radiology_part1">PGET — Radiology</option>
+          <option value="pget_psychiatry_part1">PGET — Psychiatry</option>
+          <option value="pget_anaesthesia_part1">PGET — Anaesthesia</option>
+          <option value="pget_ophthalmology_part1">PGET — Ophthalmology</option>
         </optgroup>
         <optgroup label="MO/WMO">
           <option value="nts">NTS MO/WMO</option>
@@ -1110,6 +1121,7 @@ function getPlanLabel(r){
   const isMOWMO = subj==='mo_wmo'||subj.includes('mo_wmo');
   const isFPSC = subj==='fpsc_mo_wmo'||subj.includes('fpsc_mo_wmo');
   const isFCPS = subj.startsWith('fcps_');
+  const isPGET = subj.startsWith('pget_');
   if(isMockNTS){
     if(days<=20) return '15-Day (Mocks)';
     if(days<=50) return '1-Month (Mocks)';
@@ -1136,6 +1148,12 @@ function getPlanLabel(r){
     if(days<=95) return '3-Month (FCPS)';
     if(days<=185) return '6-Month (FCPS)';
     return '1-Year (FCPS)';
+  }
+  if(isPGET){
+    if(days<=31) return '30-Day (PGET)';
+    if(days<=95) return '3-Month (PGET)';
+    if(days<=185) return '6-Month (PGET)';
+    return '1-Year (PGET)';
   }
   if(days<=31) return '30-Day (JCAT)';
   if(days<=95) return '3-Month (JCAT)';
@@ -1206,6 +1224,10 @@ const COURSE_MAP = {
     label: 'FCPS Part 1',
     subjects: ['fcps_medicine_part1','fcps_surgery_part1','fcps_dentistry_part1','fcps_anaesthesia_part1','fcps_gynaecology_part1','fcps_ophthalmology_part1','fcps_ent_part1','fcps_pathology_part1','fcps_psychiatry_part1','fcps_community_part1','fcps_radiology_part1']
   },
+  pget: {
+    label: 'PGET UHS',
+    subjects: ['pget_medicine_part1','pget_gynaecology_part1','pget_ent_part1','pget_radiology_part1','pget_psychiatry_part1','pget_anaesthesia_part1','pget_ophthalmology_part1']
+  },
   nts: { label: 'NTS MO/WMO', subjects: ['nts'] },
   cts: { label: 'CTS MO/WMO', subjects: ['cts'] },
   mo_wmo: { label: 'MO/WMO (Other)', subjects: ['mo_wmo'] },
@@ -1220,6 +1242,9 @@ const SPECIALTY_LABELS = {
   fcps_anaesthesia_part1:'Anaesthesia', fcps_gynaecology_part1:'Gynae & Obs', fcps_ophthalmology_part1:'Ophthalmology',
   fcps_ent_part1:'ENT', fcps_pathology_part1:'Pathology', fcps_psychiatry_part1:'Psychiatry',
   fcps_community_part1:'Community Medicine', fcps_radiology_part1:'Radiology',
+  pget_medicine_part1:'Medicine & Allied', pget_gynaecology_part1:'Obs & Gynae',
+  pget_ent_part1:'ENT', pget_radiology_part1:'Radiology', pget_psychiatry_part1:'Psychiatry',
+  pget_anaesthesia_part1:'Anaesthesia', pget_ophthalmology_part1:'Ophthalmology',
   nts:'NTS MO/WMO', cts:'CTS MO/WMO', mo_wmo:'MO/WMO (Other)', fpsc_mo_wmo:'FPSC MO/WMO', mock_nts:'Mocks'
 };
 function getCourseKey(subj){
@@ -1687,7 +1712,11 @@ function renderTable(){
     fcps_gynaecology_part1:'FCPS Gynae',fcps_ophthalmology_part1:'FCPS Ophthalmology',
     fcps_ent_part1:'FCPS ENT',fcps_pathology_part1:'FCPS Pathology',
     fcps_psychiatry_part1:'FCPS Psychiatry',fcps_community_part1:'FCPS Community',
-    fcps_radiology_part1:'FCPS Radiology',all:'All'
+    fcps_radiology_part1:'FCPS Radiology',
+    pget_medicine_part1:'PGET Medicine',pget_gynaecology_part1:'PGET Gynae',
+    pget_ent_part1:'PGET ENT',pget_radiology_part1:'PGET Radiology',
+    pget_psychiatry_part1:'PGET Psychiatry',pget_anaesthesia_part1:'PGET Anaesthesia',
+    pget_ophthalmology_part1:'PGET Ophthalmology',all:'All'
   };
   _allStudentData = data;
   document.getElementById('students-tbody').innerHTML = data.map((r,i)=>{
@@ -1785,9 +1814,9 @@ function updateWAPreview(){
   const planVal = plan.value;
   const planDuration = plan.options[plan.selectedIndex].text;
   const exam = document.getElementById('f-exam').value;
-  const examNames = {jcat:'JCAT',fcps:'FCPS Part 1',nts:'NTS MO/WMO',cts:'CTS MO/WMO',mo_wmo:'MO/WMO',fpsc_mo_wmo:'FPSC MO/WMO',mock_nts:'Past & Mocks NTS'};
+  const examNames = {jcat:'JCAT',fcps:'FCPS Part 1',pget:'PGET UHS',nts:'NTS MO/WMO',cts:'CTS MO/WMO',mo_wmo:'MO/WMO',fpsc_mo_wmo:'FPSC MO/WMO',mock_nts:'Past & Mocks NTS'};
   let planName = examNames[exam] || exam.toUpperCase();
-  if(exam==='jcat'||exam==='fcps'){
+  if(exam==='jcat'||exam==='fcps'||exam==='pget'){
     const subjSel = document.getElementById('f-subject');
     if(subjSel&&subjSel.selectedIndex>=0) planName += ' — '+subjSel.options[subjSel.selectedIndex].text;
   }
@@ -1842,6 +1871,15 @@ const FCPS_SPECIALTIES = [
   {value:'fcps_community_part1',    label:'Community Medicine'},
   {value:'fcps_radiology_part1',    label:'Diagnostic Radiology'},
 ];
+const PGET_SPECIALTIES = [
+  {value:'pget_medicine_part1',     label:'Medicine & Allied'},
+  {value:'pget_gynaecology_part1',  label:'Obstetrics & Gynaecology'},
+  {value:'pget_ent_part1',          label:'Otorhinolaryngology (ENT)'},
+  {value:'pget_radiology_part1',    label:'Diagnostic Radiology'},
+  {value:'pget_psychiatry_part1',   label:'Psychiatry'},
+  {value:'pget_anaesthesia_part1',  label:'Anaesthesia'},
+  {value:'pget_ophthalmology_part1',label:'Ophthalmology'},
+];
 const PLANS = {
   jcat:  [{value:'trial',label:'🎯 Free Trial — 6 Hours'},
           {value:'30',  label:'30 Days — PKR 3,000'},
@@ -1849,6 +1887,11 @@ const PLANS = {
           {value:'180', label:'6 Months — PKR 7,500'},
           {value:'365', label:'1 Year — PKR 9,500'}],
   fcps:  [{value:'trial',label:'🎯 Free Trial — 6 Hours'},
+          {value:'30',  label:'30 Days — PKR 3,000'},
+          {value:'90',  label:'3 Months — PKR 5,000'},
+          {value:'180', label:'6 Months — PKR 7,500'},
+          {value:'365', label:'1 Year — PKR 9,500'}],
+  pget:  [{value:'trial',label:'🎯 Free Trial — 6 Hours'},
           {value:'30',  label:'30 Days — PKR 3,000'},
           {value:'90',  label:'3 Months — PKR 5,000'},
           {value:'180', label:'6 Months — PKR 7,500'},
@@ -1881,11 +1924,11 @@ function onExamChange(){
   const planSel = document.getElementById('f-plan');
 
   // Show/hide specialty dropdown
-  const needsSpecialty = exam === 'jcat' || exam === 'fcps';
+  const needsSpecialty = exam === 'jcat' || exam === 'fcps' || exam === 'pget';
   specialtyGroup.style.display = needsSpecialty ? '' : 'none';
 
   // Populate specialty options
-  const specs = exam === 'jcat' ? JCAT_SPECIALTIES : exam === 'fcps' ? FCPS_SPECIALTIES : [];
+  const specs = exam === 'jcat' ? JCAT_SPECIALTIES : exam === 'fcps' ? FCPS_SPECIALTIES : exam === 'pget' ? PGET_SPECIALTIES : [];
   subjectSel.innerHTML = specs.map(s=>`<option value="${s.value}">${s.label}</option>`).join('');
 
   // Populate plan options
@@ -1984,9 +2027,9 @@ async function addStudent(){
     msg.textContent=`✓ ${name} added! Opening WhatsApp…`;msg.className='form-msg ok';
     const examEl = document.getElementById('f-exam');
     const examVal = examEl ? examEl.value : 'nts';
-    const examNames = {jcat:'JCAT',fcps:'FCPS Part 1',nts:'NTS MO/WMO',cts:'CTS MO/WMO',mo_wmo:'MO/WMO',fpsc_mo_wmo:'FPSC MO/WMO',mock_nts:'Past & Mocks NTS'};
+    const examNames = {jcat:'JCAT',fcps:'FCPS Part 1',pget:'PGET UHS',nts:'NTS MO/WMO',cts:'CTS MO/WMO',mo_wmo:'MO/WMO',fpsc_mo_wmo:'FPSC MO/WMO',mock_nts:'Past & Mocks NTS'};
     let planName = examNames[examVal] || examVal.toUpperCase();
-    if(examVal==='jcat'||examVal==='fcps'){
+    if(examVal==='jcat'||examVal==='fcps'||examVal==='pget'){
       const subjSel = document.getElementById('f-subject');
       if(subjSel&&subjSel.selectedIndex>=0) planName += ' — '+subjSel.options[subjSel.selectedIndex].text;
     }
@@ -2093,7 +2136,11 @@ const PMD_SUBJ_NAMES = {
   fcps_gynaecology_part1:'FCPS Gynae & Obs',fcps_ophthalmology_part1:'FCPS Ophthalmology',
   fcps_ent_part1:'FCPS ENT',fcps_pathology_part1:'FCPS Pathology',
   fcps_psychiatry_part1:'FCPS Psychiatry',fcps_community_part1:'FCPS Community',
-  fcps_radiology_part1:'FCPS Radiology',fcps_ophthal_part1:'FCPS Ophthalmology'
+  fcps_radiology_part1:'FCPS Radiology',fcps_ophthal_part1:'FCPS Ophthalmology',
+  pget_medicine_part1:'PGET Medicine & Allied',pget_gynaecology_part1:'PGET Obs & Gynae',
+  pget_ent_part1:'PGET ENT',pget_radiology_part1:'PGET Radiology',
+  pget_psychiatry_part1:'PGET Psychiatry',pget_anaesthesia_part1:'PGET Anaesthesia',
+  pget_ophthalmology_part1:'PGET Ophthalmology'
 };
 
 // Paper 1 subjects (same order as index.html SUBJECTS array)
@@ -2224,6 +2271,17 @@ const PMD_FCPS_P2 = {
   fcps_ent_part1: PMD_JCAT_P2.ent,
   fcps_radiology_part1: PMD_JCAT_P2.radiology,
   fcps_anaesthesia_part1: PMD_JCAT_P2.anesthesia,
+};
+
+// PGET P2 subjects — reuses the same topic breakdowns as JCAT/FCPS for matching specialties
+const PMD_PGET_P2 = {
+  pget_medicine_part1: PMD_JCAT_P2.medicine,
+  pget_gynaecology_part1: PMD_JCAT_P2.gynaecology,
+  pget_psychiatry_part1: PMD_JCAT_P2.psychiatry,
+  pget_ophthalmology_part1: PMD_JCAT_P2.ophthalmology,
+  pget_ent_part1: PMD_JCAT_P2.ent,
+  pget_radiology_part1: PMD_JCAT_P2.radiology,
+  pget_anaesthesia_part1: PMD_JCAT_P2.anesthesia,
 };
 
 // NTS categories
@@ -2411,7 +2469,7 @@ function _pmdGetTopBars(subj, answers, n){
       const pct=s.count?Math.round(done/s.count*100):0;
       allBars.push({label:s.label,icon:s.icon,pct,color:pct>=100?DONE_COL:P1C});
     });
-    const p2subs = PMD_JCAT_P2[subj] || PMD_FCPS_P2[subj] || [];
+    const p2subs = PMD_JCAT_P2[subj] || PMD_FCPS_P2[subj] || PMD_PGET_P2[subj] || [];
     p2subs.forEach(s=>{
       const done=pmdAnswerCount(answers,s.key);
       const pct=s.count?Math.round(done/s.count*100):0;
@@ -2442,6 +2500,7 @@ function openProgModal(code){
   const expFmt  = exp.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
   const totalMCQs = _pmdGetTotal(subj);
   const isFCPS  = subj.startsWith('fcps_');
+  const isPGET  = subj.startsWith('pget_');
   const isNTS   = subj==='nts'||subj==='cts'||subj==='mo_wmo'||subj==='fpsc_mo_wmo';
   const isMock  = subj==='mock_nts';
 
@@ -2450,10 +2509,10 @@ function openProgModal(code){
 
   // Header
   document.getElementById('pmd-title').textContent = `Dr. ${firstName}'s Dashboard`;
-  document.getElementById('pmd-subtitle').textContent = isFCPS?`FCPS Part 1 — ${subjName}`:isNTS?subjName:isMock?'Past & Mocks NTS':`JCAT — ${subjName}`;
+  document.getElementById('pmd-subtitle').textContent = isFCPS?`FCPS Part 1 — ${subjName}`:isPGET?`PGET UHS — ${subjName}`:isNTS?subjName:isMock?'Past & Mocks NTS':`JCAT — ${subjName}`;
 
   // Access card
-  document.getElementById('pmd-plan-name').textContent = isFCPS?`FCPS Part 1: ${subjName}`:isNTS?subjName:isMock?'Past & Mocks NTS':`JCAT: ${subjName}`;
+  document.getElementById('pmd-plan-name').textContent = isFCPS?`FCPS Part 1: ${subjName}`:isPGET?`PGET UHS: ${subjName}`:isNTS?subjName:isMock?'Past & Mocks NTS':`JCAT: ${subjName}`;
   document.getElementById('pmd-plan-exp').textContent = `Expires on: ${expFmt}`;
   const dEl = document.getElementById('pmd-days-left');
   dEl.textContent = dLeft>0 ? `Days Remaining: ${dLeft}` : 'Expired';
@@ -2539,7 +2598,7 @@ function _pmdBuildAllBars(subj, answers, isNTS, isFCPS, isMock){
   // JCAT or FCPS
   let rows='';
   // P1 section header only if has P2
-  const p2subs = PMD_JCAT_P2[subj] || PMD_FCPS_P2[subj] || [];
+  const p2subs = PMD_JCAT_P2[subj] || PMD_FCPS_P2[subj] || PMD_PGET_P2[subj] || [];
   if(p2subs.length) rows += _sec('Paper 1 — Basic Sciences','var(--gold)');
   rows += PMD_P1_SUBJECTS.map(s=>_row(s.icon,s.label,pmdAnswerCount(answers,s.key),s.count,P1C)).join('');
 
@@ -2554,6 +2613,10 @@ function _pmdBuildAllBars(subj, answers, isNTS, isFCPS, isMock){
       ent:'linear-gradient(90deg,#1ABC9C,#48C9B0)',
       radiology:'linear-gradient(90deg,#C9A84C,#E0C870)',
       anesthesia:'linear-gradient(90deg,#00B4D8,#48CAE4)',
+      pget_ent_part1:'linear-gradient(90deg,#1ABC9C,#48C9B0)',
+      pget_ophthalmology_part1:'linear-gradient(90deg,#8E44AD,#BB8FCE)',
+      pget_radiology_part1:'linear-gradient(90deg,#C9A84C,#E0C870)',
+      pget_anaesthesia_part1:'linear-gradient(90deg,#00B4D8,#48CAE4)',
     };
     const pc = p2Colors[subj]||P2C;
     rows += _sec('Paper 2','#3498DB');
@@ -2691,6 +2754,7 @@ document.getElementById('extend-modal').addEventListener('click',e=>{if(e.target
 const UPGRADE_PLAN_OPTIONS = {
   jcat:    [{days:30,label:'30 Days',price:3000},{days:90,label:'3 Months',price:5000},{days:180,label:'6 Months',price:7500},{days:365,label:'1 Year',price:9500}],
   fcps:    [{days:30,label:'30 Days',price:3000},{days:90,label:'3 Months',price:5000},{days:180,label:'6 Months',price:7500},{days:365,label:'1 Year',price:9500}],
+  pget:    [{days:30,label:'30 Days',price:3000},{days:90,label:'3 Months',price:5000},{days:180,label:'6 Months',price:7500},{days:365,label:'1 Year',price:9500}],
   nts:     [{days:30,label:'1 Month',price:4000},{days:90,label:'3 Months',price:6000},{days:180,label:'6 Months',price:9000}],
   cts:     [{days:30,label:'1 Month',price:4000},{days:90,label:'3 Months',price:6000},{days:180,label:'6 Months',price:9000}],
   mo_wmo:  [{days:30,label:'1 Month',price:4000},{days:90,label:'3 Months',price:6000},{days:180,label:'6 Months',price:9000}],
@@ -2699,6 +2763,7 @@ const UPGRADE_PLAN_OPTIONS = {
 function getExamFromSubject(subj){
   subj = (subj||'').toLowerCase();
   if(subj.startsWith('fcps_')) return 'fcps';
+  if(subj.startsWith('pget_')) return 'pget';
   if(subj==='nts') return 'nts';
   if(subj==='cts') return 'cts';
   if(subj==='mo_wmo') return 'mo_wmo';
@@ -2760,11 +2825,11 @@ async function confirmUpgrade(){
     const updatedRec = allStudents.find(r=>r.code===upgradeTarget.code);
     const rawName = updatedRec?.student_name || upgradeTarget.name || 'Doctor';
     const exam = getExamFromSubject(upgradeTarget.subject);
-    const examNames = {jcat:'JCAT',fcps:'FCPS Part 1',nts:'NTS MO/WMO',cts:'CTS MO/WMO',mo_wmo:'MO/WMO',fpsc_mo_wmo:'FPSC MO/WMO'};
+    const examNames = {jcat:'JCAT',fcps:'FCPS Part 1',pget:'PGET UHS',nts:'NTS MO/WMO',cts:'CTS MO/WMO',mo_wmo:'MO/WMO',fpsc_mo_wmo:'FPSC MO/WMO'};
     let planName = examNames[exam] || exam.toUpperCase();
-    if(exam==='jcat'||exam==='fcps'){
+    if(exam==='jcat'||exam==='fcps'||exam==='pget'){
       const subj = (upgradeTarget.subject||'').toLowerCase();
-      const labelMap = exam==='fcps' ? FCPS_SPECIALTIES : JCAT_SPECIALTIES;
+      const labelMap = exam==='fcps' ? FCPS_SPECIALTIES : exam==='pget' ? PGET_SPECIALTIES : JCAT_SPECIALTIES;
       const match = labelMap.find(s=>s.value===subj);
       if(match) planName += ' — '+match.label;
     }
