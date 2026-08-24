@@ -6211,15 +6211,19 @@ function openFPSCPage(){
   _showPage('fpsc-mo-wmo'); setHash('#fpsc-mo-wmo');
 }
 // Smart back navigation — routes to correct hub based on user's plan
+function _goToDashboard(){
+  _showPage('dashboard'); setHash('#dashboard');
+  mergeFromCloud().then(()=>loadDashboard());
+}
 function _backToMOWMOHub(){
   if(hasCTSAccess()) openCTS();
-  else if(hasFPSCAccess()) openFPSCPage();
+  else if(hasFPSCAccess()) _goToDashboard();
   else if(hasMOWMOAccess()) openMOWMOPage();
   else openNTS();
 }
 function _backLabel(){
   if(hasCTSAccess()) return '← CTS';
-  if(hasFPSCAccess()) return '← FPSC MO/WMO';
+  if(hasFPSCAccess()) return '← Dashboard';
   if(hasMOWMOAccess()) return '← MO/WMO';
   return '← NTS';
 }
@@ -6482,11 +6486,11 @@ function _psychiatryCore(){
   _updateNTSDynBackBtns();
   const isCTSUser=hasCTSAccess(); const isFPSCUser=hasFPSCAccess(); const isMOWMOUser=hasMOWMOAccess();
   const brandName=isCTSUser?'CTS':isFPSCUser?'FPSC MO/WMO':isMOWMOUser?'MO/WMO':'NTS';
-  const backFn=isCTSUser?openCTS:isFPSCUser?openFPSCPage:isMOWMOUser?openMOWMOPage:openNTS;
+  const backFn=isCTSUser?openCTS:isFPSCUser?_goToDashboard:isMOWMOUser?openMOWMOPage:openNTS;
   const backBtn=document.querySelector('#nts-psychiatry-page .back-btn');
   const phTitle=document.querySelector('#nts-psychiatry-page .ph-title');
   const phSub=document.querySelector('#nts-psychiatry-page .ph-sub');
-  if(backBtn){backBtn.onclick=backFn;backBtn.textContent='← '+brandName;}
+  if(backBtn){backBtn.onclick=backFn;backBtn.textContent=isFPSCUser?'← Dashboard':'← '+brandName;}
   if(phTitle) phTitle.textContent='Psychiatry for '+brandName;
   if(phSub) phSub.textContent=brandName+' MO/WMO';
   _showPage('nts-psychiatry'); setHash('#nts-psychiatry');
@@ -11961,6 +11965,9 @@ function openCTS10Cat() {
 }
 function openFPSC10Cat() {
   if (!S.auth||!hasFPSCAccess()) { openCodeModal('nts'); return; }
+  _updateNTSDynBackBtns();
+  const phTitle=document.querySelector('#nts-10cat-page .ph-title');
+  if(phTitle) phTitle.textContent='📋 FPSC MO/WMO 10 Categories MCQs';
   _showPage('nts-10cat'); setHash('#nts-10cat');
 }
 
