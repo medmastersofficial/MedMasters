@@ -11407,6 +11407,10 @@ const NTS_UNIFIED_CATS = [
 ];
 
 let NTS_UPR = { cat: null, subj: null, count: 0 };
+// Tracks whichever category list is actually on screen (the shared
+// NTS_UNIFIED_CATS for NTS/CTS/MO-WMO, or FPSC's own list) so lookups
+// elsewhere find FPSC-only categories too, not just the global array.
+let _currentUnifiedCats = NTS_UNIFIED_CATS;
 
 function openNTSUnifiedPractice(){ if(hasMockOnlyAccess()){ openNTSMockHub(); return; } 
   if(!S.auth||!hasNTSAccess()){ openCodeModal('nts'); return; }
@@ -11428,11 +11432,29 @@ function _unifiedPracticeCore(){
   _updateNTSDynBackBtns();
   const brandName = hasCTSAccess()?'CTS':hasFPSCAccess()?'FPSC MO/WMO':hasMOWMOAccess()?'MO/WMO':'NTS';
   const pracSub = document.querySelector('#nts-prac-setup-page .ph-sub');
-  if(pracSub) pracSub.textContent = brandName+' MO/WMO';
+  // brandName is already "FPSC MO/WMO" for FPSC, so the generic +' MO/WMO'
+  // suffix below would double it up ("FPSC MO/WMO MO/WMO") — special-cased
+  // here for FPSC only, per explicit scope; other tiers unchanged.
+  if(pracSub) pracSub.textContent = hasFPSCAccess() ? 'FPSC MO/WMO' : brandName+' MO/WMO';
   NTS_UPR = { cat:null, subj:null, count:0 };
-  // Build category grid
+  // Build category grid — FPSC MO/WMO gets its own accurate category list:
+  // no VAQ (FPSC has no VAQ paper), adds English and the 3 FPSC-exclusive
+  // topics (missing from the shared list entirely), and "Full FPSC Mix"
+  // instead of "Full NTS Mix". NTS/CTS/MO-WMO (General) untouched — they
+  // still render the original shared NTS_UNIFIED_CATS exactly as before.
+  const catsToShow = hasFPSCAccess() ? [
+    { key:'english', label:'English', icon:'✍️', subjects: ()=>[
+        {key:'vocabulary',name:'Vocabulary',icon:'📖'},{key:'grammar',name:'Grammar Usage',icon:'📝'},{key:'sentence',name:'Sentence Structuring',icon:'🔤'}
+      ], loader: (k)=>loadEnglishData(k).then(raw=>raw.map((m,i)=>convertMCQ(m,i))) },
+    ...NTS_UNIFIED_CATS.filter(c=>c.key!=='vaq' && c.key!=='mixed'),
+    { key:'fpsc_extra', label:'Govt Policies & Challenges', icon:'🏛️',
+      subjects: ()=>Object.entries(FPSC_EXTRA_CONFIG).map(([k,v])=>({key:k, name:v.label, icon:'📘'})),
+      loader: (k)=>loadFPSCExtraData(k).then(raw=>raw.map((m,i)=>convertFPSCExtraMCQ(m,i))) },
+    { key:'mixed', label:'Full FPSC Mix', icon:'🎲', subjects: ()=>[], loader: null },
+  ] : NTS_UNIFIED_CATS;
+  _currentUnifiedCats = catsToShow;
   const catGrid = document.getElementById('nts-unified-prac-cat-grid');
-  catGrid.innerHTML = NTS_UNIFIED_CATS.map(c=>
+  catGrid.innerHTML = catsToShow.map(c=>
     `<div class="prac-count-opt" onclick="selectNTSUnifiedCat('${c.key}',this)">
       <div class="prac-count-num" style="font-size:18px;">${c.icon}</div>
       <div class="prac-count-lbl">${c.label}</div>
@@ -11450,7 +11472,7 @@ function selectNTSUnifiedCat(key, el){
   NTS_UPR.cat = key; NTS_UPR.subj = null;
   document.getElementById('nts-unified-prac-cat-grid').querySelectorAll('.prac-count-opt').forEach(b=>b.classList.remove('active'));
   el.classList.add('active');
-  const cfg = NTS_UNIFIED_CATS.find(c=>c.key===key);
+  const cfg = _currentUnifiedCats.find(c=>c.key===key);
   const subjSection = document.getElementById('nts-unified-subj-section');
   const subjGrid = document.getElementById('nts-unified-prac-subj-grid');
   const subs = cfg ? cfg.subjects() : [];
@@ -11485,7 +11507,7 @@ function _maybeReadyNTSUnifiedBtn(){
   if(!btn) return;
   if(NTS_UPR.cat && NTS_UPR.count){
     btn.style.opacity='1';
-    const cfg = NTS_UNIFIED_CATS.find(c=>c.key===NTS_UPR.cat);
+    const cfg = _currentUnifiedCats.find(c=>c.key===NTS_UPR.cat);
     const subjLabel = NTS_UPR.subj
       ? (cfg ? (cfg.subjects().find(s=>s.key===NTS_UPR.subj)||{name:NTS_UPR.subj}).name : NTS_UPR.subj)
       : (cfg ? cfg.label + ' Mix' : 'Mixed');
@@ -11529,6 +11551,10 @@ async function startNTSUnifiedPractice(){
         const raw = await loadFPSCExtraData(k);
         pool.push(...raw.map((m,i)=>convertFPSCExtraMCQ(m,i)));
       }
+      for(const k of ['vocabulary','grammar','sentence']){
+        const raw = await loadEnglishData(k);
+        pool.push(...raw.map((m,i)=>convertMCQ(m,i)));
+      }
     }
     bankSet = [...pool].sort(()=>Math.random()-0.5).slice(0, NTS_UPR.count);
   } else if(NTS_UPR.cat === 'vaq'){
@@ -11567,8 +11593,28 @@ async function startNTSUnifiedPractice(){
       catPool.push(...raw.map((m,i)=>convertCAT10MCQ(m,i)));
     }
     bankSet = [...catPool].sort(()=>Math.random()-0.5).slice(0, NTS_UPR.count);
+  } else if(NTS_UPR.cat === 'english'){
+    // FPSC MO/WMO only — uses the category's own loader (from
+    // _currentUnifiedCats), not the generic loaders map below.
+    const cfg = _currentUnifiedCats.find(c=>c.key==='english');
+    const engKeys = NTS_UPR.subj ? [NTS_UPR.subj] : ['vocabulary','grammar','sentence'];
+    const engPool = [];
+    for(const k of engKeys){
+      const mcqs = await cfg.loader(k);
+      engPool.push(...mcqs);
+    }
+    bankSet = [...engPool].sort(()=>Math.random()-0.5).slice(0, NTS_UPR.count);
+  } else if(NTS_UPR.cat === 'fpsc_extra'){
+    // FPSC MO/WMO exclusive — Health Policies, Care vs Cure, Major Challenges
+    const fpscKeys = NTS_UPR.subj ? [NTS_UPR.subj] : Object.keys(FPSC_EXTRA_CONFIG);
+    const fpscPool = [];
+    for(const k of fpscKeys){
+      const raw = await loadFPSCExtraData(k);
+      fpscPool.push(...raw.map((m,i)=>convertFPSCExtraMCQ(m,i)));
+    }
+    bankSet = [...fpscPool].sort(()=>Math.random()-0.5).slice(0, NTS_UPR.count);
   } else {
-    const cfg = NTS_UNIFIED_CATS.find(c=>c.key===NTS_UPR.cat);
+    const cfg = _currentUnifiedCats.find(c=>c.key===NTS_UPR.cat);
     const loaders = {basic:k=>loadSubjectData(k), medicine:k=>loadP2SubjectData(k), surgery:k=>loadSurgP2SubjectData(k)};
     if(NTS_UPR.subj){
       const data = await loaders[NTS_UPR.cat](NTS_UPR.subj);
