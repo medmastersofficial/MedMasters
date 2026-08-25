@@ -4097,6 +4097,44 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
       <div class="paper-count" id="pget-paper2-count">Coming Soon</div>
       <div class="paper-topics" id="pget-paper2-topics">Paper 2 for this specialty is under development</div>
     </div>
+    <div class="paper-card" id="pget-practice-card" onclick="openPGETSurg2Practice()" style="display:none;">
+      <div class="paper-num">⚡</div>
+      <div class="paper-label">Practice &amp; Assess</div>
+      <div class="paper-count">Timed · Scored</div>
+      <div class="paper-topics">Paper 1 · Any Paper 2 subject · Paper 2 Mix · Full Mix</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ PGET SURGERY & ALLIED GROUP II — PRACTICE & ASSESS ══════════════
+     Scoped to this one specialty only, per explicit request. Self-contained:
+     does not touch NTS_UNIFIED_CATS, _unifiedPracticeCore(), openPracticePicker(),
+     or any other exam's Practice & Assess flow. Reuses the existing, already-shared
+     startPracSession() engine to actually run the session. -->
+<div id="pget-surg2-prac-page" class="page">
+  <div class="page-header">
+    <button class="back-btn" onclick="_showPage('pget-paper'); setHash('#pget');">← Surgery &amp; Allied Group II</button>
+    <div>
+      <div class="ph-title">⚡ Practice &amp; Assess</div>
+      <div class="ph-sub">Surgery &amp; Allied Group II</div>
+    </div>
+  </div>
+  <div style="padding:24px 5% 60px;max-width:900px;margin:0 auto;">
+    <div class="prac-step-label">STEP 1 — CHOOSE CATEGORY</div>
+    <div id="pget-surg2-cat-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:8px;"></div>
+    <div class="prac-step-label" style="margin-top:28px;">STEP 2 — HOW MANY MCQS?</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+      <div class="prac-count-opt" onclick="selectPGETSurg2Count(20,this)">
+        <div class="prac-count-num">20</div><div class="prac-count-lbl">Quick Set</div>
+      </div>
+      <div class="prac-count-opt" onclick="selectPGETSurg2Count(50,this)">
+        <div class="prac-count-num">50</div><div class="prac-count-lbl">Standard</div>
+      </div>
+      <div class="prac-count-opt" onclick="selectPGETSurg2Count(100,this)">
+        <div class="prac-count-num">100</div><div class="prac-count-lbl">Full Drill</div>
+      </div>
+    </div>
+    <button class="btn-primary" id="pget-surg2-prac-start-btn" style="width:100%;margin-top:28px;opacity:0.4;pointer-events:none;" onclick="startPGETSurg2Practice()">Select category and count first</button>
   </div>
 </div>
 
@@ -8959,6 +8997,9 @@ function refreshPGETPaperPage_browse(subj){
     if(typeof injectMedGoldenPaperCard === 'function') injectMedGoldenPaperCard('pget-paper-page', subj === 'pget_radiology_part1');
     if(typeof injectMedPinkPaperCard   === 'function') injectMedPinkPaperCard('pget-paper-page', subj === 'pget_gynaecology_part1');
   } catch(e){}
+  // Practice & Assess — scoped to Surgery & Allied Group II only, for now
+  const pracCard = document.getElementById('pget-practice-card');
+  if(pracCard) pracCard.style.display = (subj === 'pget_surgery_group2_part1') ? '' : 'none';
 }
 
 function refreshPGETPaperPage(){
@@ -8981,6 +9022,9 @@ function refreshPGETPaperPage(){
   // MedGolden card only on Radiology paper page. MedPink card only on Gynae.
   injectMedPinkPaperCard('pget-paper-page', subj==='pget_gynaecology_part1');
   if(typeof injectMedGoldenPaperCard === 'function') injectMedGoldenPaperCard('pget-paper-page', subj === 'pget_radiology_part1');
+  // Practice & Assess — scoped to Surgery & Allied Group II only, for now
+  const pracCard = document.getElementById('pget-practice-card');
+  if(pracCard) pracCard.style.display = (subj === 'pget_surgery_group2_part1') ? '' : 'none';
 }
 
 function openPGETPaper1(){
@@ -8990,6 +9034,99 @@ function openPGETPaper1(){
   renderP1Subjects();
   _showPage('p1-subjects'); setHash('#paper1');
 }
+
+// ═══════════ PGET SURGERY & ALLIED GROUP II — PRACTICE & ASSESS ═══════════
+// Deliberately scoped to this ONE specialty only, per explicit request.
+// Strict exact-match gate (S.subject !== 'pget_surgery_group2_part1'), not
+// the generic hasPGETAccess() — a Group I or any other PGET subscriber
+// must NOT be able to use this. Fully self-contained: does not touch
+// NTS_UNIFIED_CATS, _unifiedPracticeCore(), or openPracticePicker().
+const PGET_SURG2_PRAC_CATS = [
+  {key:'p1',              label:'Paper 1 (Basic Sciences)',   icon:'📘'},
+  {key:'surg_p2_gen_surg',label:'General Surgery',            icon:'🔪'},
+  {key:'surg_p2_cardiothor',label:'Cardiothoracic Surgery',   icon:'❤️'},
+  {key:'surg_p2_ortho',   label:'Orthopaedics',                icon:'🦴'},
+  {key:'surg_p2_neuro',   label:'Neurosurgery',                icon:'🧠'},
+  {key:'p2mix',           label:'Paper 2 Mix (All 4)',         icon:'🎲'},
+  {key:'fullmix',         label:'Full Mix (Paper 1 + Paper 2)',icon:'🎯'},
+];
+let PGET_SURG2_PR = { cat: null, count: 0 };
+
+function openPGETSurg2Practice(){
+  if(!S.auth || S.subject !== 'pget_surgery_group2_part1'){ openCodeModal('nts'); return; }
+  PGET_SURG2_PR = { cat: null, count: 0 };
+  const grid = document.getElementById('pget-surg2-cat-grid');
+  grid.innerHTML = PGET_SURG2_PRAC_CATS.map(c=>
+    `<div class="prac-count-opt" onclick="selectPGETSurg2Cat('${c.key}',this)">
+      <div class="prac-count-num" style="font-size:18px;">${c.icon}</div>
+      <div class="prac-count-lbl">${c.label}</div>
+    </div>`
+  ).join('');
+  document.querySelectorAll('#pget-surg2-prac-page .prac-count-opt').forEach(e=>e.classList.remove('active'));
+  const btn = document.getElementById('pget-surg2-prac-start-btn');
+  btn.style.opacity='0.4'; btn.style.pointerEvents='none'; btn.textContent='Select category and count first';
+  _showPage('pget-surg2-prac'); setHash('#pgetsurg2prac');
+}
+
+function selectPGETSurg2Cat(key, el){
+  PGET_SURG2_PR.cat = key;
+  document.getElementById('pget-surg2-cat-grid').querySelectorAll('.prac-count-opt').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  _maybeReadyPGETSurg2Btn();
+}
+function selectPGETSurg2Count(n, el){
+  PGET_SURG2_PR.count = n;
+  el.parentElement.querySelectorAll('.prac-count-opt').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  _maybeReadyPGETSurg2Btn();
+}
+function _maybeReadyPGETSurg2Btn(){
+  const btn = document.getElementById('pget-surg2-prac-start-btn');
+  if(PGET_SURG2_PR.cat && PGET_SURG2_PR.count){
+    const catLabel = PGET_SURG2_PRAC_CATS.find(c=>c.key===PGET_SURG2_PR.cat).label;
+    btn.style.opacity='1'; btn.style.pointerEvents='';
+    btn.textContent = `Start — ${catLabel} · ${PGET_SURG2_PR.count} MCQs →`;
+  }
+}
+
+async function startPGETSurg2Practice(){
+  if(!S.auth || S.subject !== 'pget_surgery_group2_part1'){ openCodeModal('nts'); return; }
+  if(!PGET_SURG2_PR.cat || !PGET_SURG2_PR.count) return;
+  const btn = document.getElementById('pget-surg2-prac-start-btn');
+  btn.textContent = 'Loading MCQs…'; btn.style.pointerEvents='none';
+  const group2Keys = PGET_SURG_GROUP_KEYS['pget_surgery_group2_part1'];
+  const pool = [];
+  const loadP1All = async ()=>{
+    for(const s of SUBJECTS){
+      const raw = await loadSubjectData(s.key);
+      pool.push(...raw.map((m,i)=>convertMCQ(m,i)));
+    }
+  };
+  const loadP2Key = async (k)=>{
+    const raw = await loadSurgP2SubjectData(k);
+    pool.push(...raw.map((m,i)=>convertMCQ(m,i)));
+  };
+  if(PGET_SURG2_PR.cat === 'p1'){
+    await loadP1All();
+  } else if(PGET_SURG2_PR.cat === 'p2mix'){
+    for(const k of group2Keys) await loadP2Key(k);
+  } else if(PGET_SURG2_PR.cat === 'fullmix'){
+    await loadP1All();
+    for(const k of group2Keys) await loadP2Key(k);
+  } else {
+    await loadP2Key(PGET_SURG2_PR.cat);
+  }
+  if(!pool.length){
+    alert('Could not load MCQs. Please try again.');
+    btn.style.opacity='1'; btn.style.pointerEvents=''; _maybeReadyPGETSurg2Btn();
+    return;
+  }
+  const bankSet = [...pool].sort(()=>Math.random()-0.5).slice(0, PGET_SURG2_PR.count);
+  PR.subj = 'pget_practice'; // marks as non-AI session, matching NTS practice convention
+  _showPage('prac-mcq'); setHash('#practice');
+  startPracSession(bankSet);
+}
+// ═══════════ END PGET SURGERY GROUP II PRACTICE & ASSESS ═══════════
 
 function openPGETPaper2(){
   const _ctxSubj = (_browseContext && _browseContext.startsWith('pget:'))
@@ -12908,7 +13045,7 @@ function promptResumeOrFresh(key, subjList, dataLoader, openFn){
   }
   // What tier the subscriber must hold to study this MCQ
   let _need = null;
-  if(_k.startsWith('surg_p2'))       _need = _browseContext ? _browseContext.split(':')[1] : (_famIsFCPS ? 'fcps_surgery_part1' : 'surgery');
+  if(_k.startsWith('surg_p2'))       _need = _browseContext ? _browseContext.split(':')[1] : (_famIsFCPS ? 'fcps_surgery_part1' : _famIsPGET ? _eff : 'surgery');
   else if(_k.startsWith('gynae_p2')) _need = _famIsFCPS ? 'fcps_gynaecology_part1' : _famIsPGET ? 'pget_gynaecology_part1' : 'gynaecology';
   else if(_k.startsWith('psych_p2')) _need = _famIsFCPS ? 'fcps_psychiatry_part1'  : _famIsPGET ? 'pget_psychiatry_part1'  : 'psychiatry';
   else if(_k.startsWith('ent_p2'))   _need = _famIsFCPS ? 'fcps_ent_part1'         : _famIsPGET ? 'pget_ent_part1'         : 'ent';
