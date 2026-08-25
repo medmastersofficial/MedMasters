@@ -780,6 +780,8 @@ tr:hover td{background:rgba(201,168,76,0.02);}
           <option value="pget_psychiatry_part1">PGET — Psychiatry</option>
           <option value="pget_anaesthesia_part1">PGET — Anaesthesia</option>
           <option value="pget_ophthalmology_part1">PGET — Ophthalmology</option>
+          <option value="pget_surgery_group1_part1">PGET — Surgery &amp; Allied Group I</option>
+          <option value="pget_surgery_group2_part1">PGET — Surgery &amp; Allied Group II</option>
         </optgroup>
         <optgroup label="MO/WMO">
           <option value="nts">NTS MO/WMO</option>
@@ -1226,7 +1228,7 @@ const COURSE_MAP = {
   },
   pget: {
     label: 'PGET UHS',
-    subjects: ['pget_medicine_part1','pget_gynaecology_part1','pget_ent_part1','pget_radiology_part1','pget_psychiatry_part1','pget_anaesthesia_part1','pget_ophthalmology_part1']
+    subjects: ['pget_medicine_part1','pget_gynaecology_part1','pget_ent_part1','pget_radiology_part1','pget_psychiatry_part1','pget_anaesthesia_part1','pget_ophthalmology_part1','pget_surgery_group1_part1','pget_surgery_group2_part1']
   },
   nts: { label: 'NTS MO/WMO', subjects: ['nts'] },
   cts: { label: 'CTS MO/WMO', subjects: ['cts'] },
@@ -1245,6 +1247,7 @@ const SPECIALTY_LABELS = {
   pget_medicine_part1:'Medicine & Allied', pget_gynaecology_part1:'Obs & Gynae',
   pget_ent_part1:'ENT', pget_radiology_part1:'Radiology', pget_psychiatry_part1:'Psychiatry',
   pget_anaesthesia_part1:'Anaesthesia', pget_ophthalmology_part1:'Ophthalmology',
+  pget_surgery_group1_part1:'Surgery & Allied Group I', pget_surgery_group2_part1:'Surgery & Allied Group II',
   nts:'NTS MO/WMO', cts:'CTS MO/WMO', mo_wmo:'MO/WMO (Other)', fpsc_mo_wmo:'FPSC MO/WMO', mock_nts:'Mocks'
 };
 function getCourseKey(subj){
@@ -1716,7 +1719,8 @@ function renderTable(){
     pget_medicine_part1:'PGET Medicine',pget_gynaecology_part1:'PGET Gynae',
     pget_ent_part1:'PGET ENT',pget_radiology_part1:'PGET Radiology',
     pget_psychiatry_part1:'PGET Psychiatry',pget_anaesthesia_part1:'PGET Anaesthesia',
-    pget_ophthalmology_part1:'PGET Ophthalmology',all:'All'
+    pget_ophthalmology_part1:'PGET Ophthalmology',
+    pget_surgery_group1_part1:'PGET Surgery Group I',pget_surgery_group2_part1:'PGET Surgery Group II',all:'All'
   };
   _allStudentData = data;
   document.getElementById('students-tbody').innerHTML = data.map((r,i)=>{
@@ -1879,6 +1883,8 @@ const PGET_SPECIALTIES = [
   {value:'pget_psychiatry_part1',   label:'Psychiatry'},
   {value:'pget_anaesthesia_part1',  label:'Anaesthesia'},
   {value:'pget_ophthalmology_part1',label:'Ophthalmology'},
+  {value:'pget_surgery_group1_part1',label:'Surgery & Allied Group I'},
+  {value:'pget_surgery_group2_part1',label:'Surgery & Allied Group II'},
 ];
 const PLANS = {
   jcat:  [{value:'trial',label:'🎯 Free Trial — 6 Hours'},
@@ -2140,7 +2146,8 @@ const PMD_SUBJ_NAMES = {
   pget_medicine_part1:'PGET Medicine & Allied',pget_gynaecology_part1:'PGET Obs & Gynae',
   pget_ent_part1:'PGET ENT',pget_radiology_part1:'PGET Radiology',
   pget_psychiatry_part1:'PGET Psychiatry',pget_anaesthesia_part1:'PGET Anaesthesia',
-  pget_ophthalmology_part1:'PGET Ophthalmology'
+  pget_ophthalmology_part1:'PGET Ophthalmology',
+  pget_surgery_group1_part1:'PGET Surgery & Allied Group I',pget_surgery_group2_part1:'PGET Surgery & Allied Group II'
 };
 
 // Paper 1 subjects (same order as index.html SUBJECTS array)
@@ -2282,6 +2289,10 @@ const PMD_PGET_P2 = {
   pget_ent_part1: PMD_JCAT_P2.ent,
   pget_radiology_part1: PMD_JCAT_P2.radiology,
   pget_anaesthesia_part1: PMD_JCAT_P2.anesthesia,
+  // Surgery Groups show only their own 4 subjects, not the full 7 — General
+  // Surgery is shared between both groups, per spec.
+  pget_surgery_group1_part1: PMD_JCAT_P2.surgery.filter(s=>['surg_p2_gen_surg','surg_p2_genito','surg_p2_paeds','surg_p2_skin'].includes(s.key)),
+  pget_surgery_group2_part1: PMD_JCAT_P2.surgery.filter(s=>['surg_p2_gen_surg','surg_p2_cardiothor','surg_p2_ortho','surg_p2_neuro'].includes(s.key)),
 };
 
 // NTS categories
