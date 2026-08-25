@@ -9544,7 +9544,7 @@ function loadDashboard(){
     if(p2Icon) p2Icon.textContent='⚡';
     if(p2Title) p2Title.textContent='Practice & Assess';
     if(p2Sub) p2Sub.textContent='All Categories · Timed · Scored';
-    if(p2Btn){ p2Btn.setAttribute('onclick','openNTSUnifiedPractice()'); p2Btn.style.opacity=''; p2Btn.style.filter=''; p2Btn.style.pointerEvents=''; }
+    if(p2Btn){ p2Btn.setAttribute('onclick', isFPSC?'openFPSCUnifiedPractice()':isCTS?'openCTSUnifiedPractice()':isMOWMO?'openMOWMOUnifiedPractice()':'openNTSUnifiedPractice()'); p2Btn.style.opacity=''; p2Btn.style.filter=''; p2Btn.style.pointerEvents=''; }
     const mockBtn = document.getElementById('dash-mock-btn');
     if(mockBtn) mockBtn.style.display=isNTS?'':'none';
   } else if(isFCPS){
