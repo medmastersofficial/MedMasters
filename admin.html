@@ -725,7 +725,10 @@ tr:hover td{background:rgba(201,168,76,0.02);}
       </div>
       <!-- PREVIEW -->
       <div id="wa-preview" style="display:none;margin-top:18px;background:rgba(18,140,126,0.08);border:1px solid rgba(18,140,126,0.25);border-radius:10px;padding:16px;">
-        <div style="font-size:10px;font-weight:700;color:#2ECC71;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;">📋 WhatsApp Message Preview</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <div style="font-size:10px;font-weight:700;color:#2ECC71;letter-spacing:1.5px;text-transform:uppercase;">📋 WhatsApp Message Preview</div>
+          <button type="button" onclick="copyToClipboard(document.getElementById('wa-preview-text').textContent, this)" style="background:rgba(46,204,113,0.15);border:1px solid rgba(46,204,113,0.4);color:#2ECC71;font-size:11px;font-weight:700;padding:5px 12px;border-radius:6px;cursor:pointer;flex-shrink:0;">📋 Copy</button>
+        </div>
         <div id="wa-preview-text" style="font-size:13px;color:var(--text-mid);line-height:1.75;white-space:pre-line;"></div>
       </div>
       </div><!-- /add-form -->
@@ -944,6 +947,13 @@ tr:hover td{background:rgba(201,168,76,0.02);}
     </div>
     <button class="btn-gold" id="extend-confirm-btn" onclick="confirmExtend()" disabled style="opacity:0.5;">Select a duration first</button>
     <div class="form-msg" id="extend-msg" style="margin-top:10px;text-align:center;"></div>
+    <div id="extend-wa-preview" style="display:none;margin-top:14px;background:rgba(18,140,126,0.08);border:1px solid rgba(18,140,126,0.25);border-radius:10px;padding:16px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-size:10px;font-weight:700;color:#2ECC71;letter-spacing:1.5px;text-transform:uppercase;">📋 WhatsApp Message</div>
+        <button type="button" onclick="copyToClipboard(document.getElementById('extend-wa-preview-text').textContent, this)" style="background:rgba(46,204,113,0.15);border:1px solid rgba(46,204,113,0.4);color:#2ECC71;font-size:11px;font-weight:700;padding:5px 12px;border-radius:6px;cursor:pointer;flex-shrink:0;">📋 Copy</button>
+      </div>
+      <div id="extend-wa-preview-text" style="font-size:13px;color:var(--text-mid);line-height:1.75;white-space:pre-line;text-align:left;"></div>
+    </div>
   </div>
 </div>
 
@@ -960,6 +970,13 @@ tr:hover td{background:rgba(201,168,76,0.02);}
     </div>
     <button class="btn-gold" id="upgrade-confirm-btn" onclick="confirmUpgrade()" disabled style="opacity:0.5;">Select a plan first</button>
     <div class="form-msg" id="upgrade-msg" style="margin-top:10px;text-align:center;"></div>
+    <div id="upgrade-wa-preview" style="display:none;margin-top:14px;background:rgba(18,140,126,0.08);border:1px solid rgba(18,140,126,0.25);border-radius:10px;padding:16px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-size:10px;font-weight:700;color:#2ECC71;letter-spacing:1.5px;text-transform:uppercase;">📋 WhatsApp Message</div>
+        <button type="button" onclick="copyToClipboard(document.getElementById('upgrade-wa-preview-text').textContent, this)" style="background:rgba(46,204,113,0.15);border:1px solid rgba(46,204,113,0.4);color:#2ECC71;font-size:11px;font-weight:700;padding:5px 12px;border-radius:6px;cursor:pointer;flex-shrink:0;">📋 Copy</button>
+      </div>
+      <div id="upgrade-wa-preview-text" style="font-size:13px;color:var(--text-mid);line-height:1.75;white-space:pre-line;text-align:left;"></div>
+    </div>
   </div>
 </div>
 
@@ -968,6 +985,32 @@ tr:hover td{background:rgba(201,168,76,0.02);}
 const SUPABASE_URL  = 'https://muxpykycdafzhzzopock.supabase.co';
 const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im11eHB5a3ljZGFmemh6em9wb2NrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI1NDY0MDUsImV4cCI6MjA4ODEyMjQwNX0.BEn5p2NLBQev63GGj3SbbOlcvvYeX3U_FVGnT4xMiJI';
 const ADMIN_PASSWORD = 'Mm@raza0909';
+
+// ═══════════ CLIPBOARD COPY (WhatsApp message fallback) ═══════════
+// Copies the exact same text used to build the wa.me link, so pasting it
+// manually into WhatsApp produces an identical message to the automated send.
+function copyToClipboard(text, btnEl){
+  const done = ()=>{
+    if(!btnEl) return;
+    const orig = btnEl.dataset.origLabel || btnEl.textContent;
+    btnEl.dataset.origLabel = orig;
+    btnEl.textContent = '✓ Copied!';
+    clearTimeout(btnEl._copyResetTimer);
+    btnEl._copyResetTimer = setTimeout(()=>{ btnEl.textContent = orig; }, 1800);
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(()=>_copyFallback(text, done));
+  } else {
+    _copyFallback(text, done);
+  }
+}
+function _copyFallback(text, done){
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try{ document.execCommand('copy'); done(); }catch(e){}
+  document.body.removeChild(ta);
+}
 
 // ═══════════ SUPABASE ═══════════
 const sb = {
@@ -2008,6 +2051,11 @@ async function addStudent(){
   if(!isTrial && (!amountPaidInput||isNaN(Number(amountPaidInput))||Number(amountPaidInput)<0)){msg.textContent='✕ Please enter the amount paid.';msg.className='form-msg err';return;}
   if(isTrial && !trialExpiryIso){msg.textContent='✕ Trial expiry could not be calculated. Re-select the plan.';msg.className='form-msg err';return;}
   msg.textContent='Adding…';msg.className='form-msg';
+  // Open the WhatsApp tab NOW, synchronously, while still inside the click
+  // handler — this is what keeps it tied to the user's tap so browsers never
+  // treat it as a blocked pop-up, even if the save below is slow. We fill in
+  // the actual URL once the message is ready.
+  const waWin = window.open('', '_blank');
   try{
     const insertData = {
       code, email, student_name:name, subject,
@@ -2048,14 +2096,17 @@ async function addStudent(){
       waText = buildWAMessage(name, email, code, planName, planText, expiryFmt);
     }
     const waNum = phone.startsWith('92') ? phone : '92'+phone.replace(/^0/,'');
-    setTimeout(()=>{ window.open(`https://wa.me/${waNum}?text=${encodeURIComponent(waText)}`, '_blank'); }, 400);
+    if(waWin){ waWin.location.href = `https://wa.me/${waNum}?text=${encodeURIComponent(waText)}`; }
+    else { window.open(`https://wa.me/${waNum}?text=${encodeURIComponent(waText)}`, '_blank'); }
     // Reset form
     ['f-name','f-email','f-phone','f-code','f-referred-by','f-amount-paid'].forEach(id=>document.getElementById(id).value='');
-    document.getElementById('wa-preview').style.display='none';
+    // Preview stays visible (with the Copy button) as a fallback in case the
+    // tab above didn't reach WhatsApp — it only clears once a new entry is typed.
     calcExpiry();
     await loadAll();
     setTimeout(()=>msg.textContent='',5000);
   }catch(e){
+    if(waWin) waWin.close();
     msg.textContent='✕ '+e.message;msg.className='form-msg err';
   }
 }
@@ -2709,6 +2760,7 @@ function openExtendModal(code, name, currentExpiry){
   document.getElementById('extend-confirm-btn').textContent = 'Select a duration first';
   document.getElementById('extend-msg').textContent = '';
   document.getElementById('extend-amount-paid').value = '';
+  document.getElementById('extend-wa-preview').style.display = 'none';
   document.querySelectorAll('.day-opt').forEach(d=>d.classList.remove('selected'));
   document.getElementById('extend-modal').classList.add('open');
 }
@@ -2727,6 +2779,13 @@ async function confirmExtend(){
   const amountInput = document.getElementById('extend-amount-paid').value.trim();
   const amountPaid = amountInput && !isNaN(Number(amountInput)) && Number(amountInput) > 0 ? Number(amountInput) : 0;
   btn.disabled=true; btn.textContent='Extending…';
+  // Phone/name for this record are already in allStudents and won't change
+  // from an extension — safe to read them now, synchronously, so we can open
+  // the WhatsApp tab immediately within the click (before any await) rather
+  // than losing the user-gesture context to a setTimeout later.
+  const preRec = allStudents.find(r=>r.code===extendTarget.code);
+  const prePhone = preRec?.whatsapp||preRec?.email||'';
+  const waWin = (prePhone && prePhone.match(/^\d/)) ? window.open('', '_blank') : null;
   try{
     const base = new Date(extendTarget.currentExpiry) > new Date() ? new Date(extendTarget.currentExpiry) : new Date();
     base.setDate(base.getDate()+extendDays);
@@ -2746,11 +2805,18 @@ async function confirmExtend(){
     const extName = rawName.replace(/^Dr\.?\s+/i,'');
     const extPhone = rec?.whatsapp||rec?.email||'';
     const extMsg = buildExtensionWAMessage(extName, extendDays, newExpiryFmt);
+    const previewBox = document.getElementById('extend-wa-preview');
+    document.getElementById('extend-wa-preview-text').textContent = extMsg;
+    if(previewBox) previewBox.style.display = 'block';
     if(extPhone && extPhone.match(/^\d/)){
-      setTimeout(()=>{ const ph=extPhone.replace(/\D/g,'');const intPh=ph.startsWith('0')?'92'+ph.slice(1):ph;window.open('https://wa.me/'+intPh+'?text='+encodeURIComponent(extMsg),'_blank'); },600);
+      const ph=extPhone.replace(/\D/g,'');const intPh=ph.startsWith('0')?'92'+ph.slice(1):ph;
+      const url = 'https://wa.me/'+intPh+'?text='+encodeURIComponent(extMsg);
+      if(waWin){ waWin.location.href = url; } else { window.open(url, '_blank'); }
+    } else if(waWin){
+      waWin.close();
     }
-    setTimeout(()=>closeExtendModal(),2500);
   }catch(e){
+    if(waWin) waWin.close();
     msg.textContent='✕ '+e.message; msg.className='form-msg err';
     btn.disabled=false; btn.textContent=`Extend by ${extendDays} Days →`;
   }
@@ -2798,6 +2864,7 @@ function openUpgradeModal(code, name){
   document.getElementById('upgrade-confirm-btn').textContent = 'Select a plan first';
   document.getElementById('upgrade-msg').textContent = '';
   document.getElementById('upgrade-amount-paid').value = '';
+  document.getElementById('upgrade-wa-preview').style.display = 'none';
   document.getElementById('upgrade-modal').classList.add('open');
 }
 function closeUpgradeModal(){ document.getElementById('upgrade-modal').classList.remove('open'); upgradeTarget=null; upgradePlan=null; }
@@ -2817,6 +2884,12 @@ async function confirmUpgrade(){
   if(!amountInput||isNaN(Number(amountInput))||Number(amountInput)<0){ msg.textContent='✕ Please enter the amount paid.'; msg.className='form-msg err'; return; }
   const amountPaid = Number(amountInput);
   btn.disabled=true; btn.textContent='Upgrading…';
+  // Phone/email for this record are already in allStudents and won't change
+  // from an upgrade — safe to read now, synchronously, so the WhatsApp tab
+  // opens within the click itself rather than a later setTimeout.
+  const preRec = allStudents.find(r=>r.code===upgradeTarget.code);
+  const prePhone = preRec?.whatsapp||preRec?.phone||'';
+  const waWin = (prePhone && prePhone.match(/^\d/)) ? window.open('', '_blank') : null;
   try{
     const rec = allStudents.find(r=>r.code===upgradeTarget.code);
     const newExpiry = new Date(); newExpiry.setDate(newExpiry.getDate()+upgradePlan.days);
@@ -2846,11 +2919,18 @@ async function confirmUpgrade(){
     }
     const waMsg = buildWAMessage(rawName, updatedRec?.email||'', upgradeTarget.code, planName, upgradePlan.label, newExpiryFmt);
     const phone = updatedRec?.whatsapp||updatedRec?.phone||'';
+    const previewBox = document.getElementById('upgrade-wa-preview');
+    document.getElementById('upgrade-wa-preview-text').textContent = waMsg;
+    if(previewBox) previewBox.style.display = 'block';
     if(phone && phone.match(/^\d/)){
-      setTimeout(()=>{ const ph=phone.replace(/\D/g,''); const intPh=ph.startsWith('0')?'92'+ph.slice(1):ph; window.open('https://wa.me/'+intPh+'?text='+encodeURIComponent(waMsg),'_blank'); }, 600);
+      const ph=phone.replace(/\D/g,''); const intPh=ph.startsWith('0')?'92'+ph.slice(1):ph;
+      const url = 'https://wa.me/'+intPh+'?text='+encodeURIComponent(waMsg);
+      if(waWin){ waWin.location.href = url; } else { window.open(url, '_blank'); }
+    } else if(waWin){
+      waWin.close();
     }
-    setTimeout(()=>closeUpgradeModal(),2500);
   }catch(e){
+    if(waWin) waWin.close();
     msg.textContent='✕ '+e.message; msg.className='form-msg err';
     btn.disabled=false; btn.textContent=`Upgrade to ${upgradePlan.label} →`;
   }
