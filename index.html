@@ -4473,7 +4473,7 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
         </svg>
         <div class="drc-lbl">Practice Accuracy</div>
       </div>
-      <div class="dash-circle-card">
+      <div class="dash-circle-card" id="dash-streak-card">
         <svg class="drc-svg" width="100" height="100" viewBox="0 0 100 100">
           <circle class="drc-track" cx="50" cy="50" r="43"/>
           <circle class="drc-fill blue" id="ring-streak" cx="50" cy="50" r="43" stroke-dasharray="270.2" stroke-dashoffset="270.2"/>
@@ -4481,6 +4481,30 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
           <text class="drc-sub" x="50" y="60" text-anchor="middle">DAYS</text>
         </svg>
         <div class="drc-lbl">Day Streak</div>
+      </div>
+      <div class="dash-circle-card" id="dash-pace-card" onclick="openStudyPaceModal()" style="cursor:pointer;">
+        <svg class="drc-svg" width="100" height="100" viewBox="0 0 100 100">
+          <circle class="drc-track" cx="50" cy="50" r="43"/>
+          <circle class="drc-fill" id="ring-pace" cx="50" cy="50" r="43" stroke-dasharray="270.2" stroke-dashoffset="270.2"/>
+          <text class="drc-val" id="dash-pace-pct" x="50" y="50" text-anchor="middle" dominant-baseline="middle">—</text>
+        </svg>
+        <div class="drc-lbl">Study Pace ›</div>
+      </div>
+      <div class="dash-circle-card" id="dash-favs-card" onclick="openFavoritesModal()" style="cursor:pointer;">
+        <svg class="drc-svg" width="100" height="100" viewBox="0 0 100 100">
+          <circle class="drc-track" cx="50" cy="50" r="43"/>
+          <circle class="drc-fill gold" id="ring-favs" cx="50" cy="50" r="43" stroke-dasharray="270.2" stroke-dashoffset="0"/>
+          <text class="drc-val" id="dash-favs-count" x="50" y="50" text-anchor="middle" dominant-baseline="middle">0</text>
+        </svg>
+        <div class="drc-lbl">Favourites ›</div>
+      </div>
+      <div class="dash-circle-card" id="dash-todo-card" onclick="openTodoModal()" style="cursor:pointer;">
+        <svg class="drc-svg" width="100" height="100" viewBox="0 0 100 100">
+          <circle class="drc-track" cx="50" cy="50" r="43"/>
+          <circle class="drc-fill" id="ring-todo" cx="50" cy="50" r="43" stroke-dasharray="270.2" stroke-dashoffset="0" style="stroke:#17A2A8;"/>
+          <text class="drc-val" id="dash-todo-count" x="50" y="50" text-anchor="middle" dominant-baseline="middle">0</text>
+        </svg>
+        <div class="drc-lbl">To-Do ›</div>
       </div>
     </div>
     <!-- Quick actions -->
@@ -4544,6 +4568,63 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
       <button onclick="closeRestartModal()" style="flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#F0EBE0;font-size:14px;font-weight:600;padding:12px;border-radius:10px;cursor:pointer;">Cancel</button>
       <button onclick="executeRestartProgress()" style="flex:1;background:linear-gradient(135deg,#E74C3C,#C0392B);border:none;color:#fff;font-size:14px;font-weight:700;padding:12px;border-radius:10px;cursor:pointer;">Yes, Reset It</button>
     </div>
+  </div>
+</div>
+
+<!-- Study Pace Detail Modal -->
+<div id="pace-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.75);align-items:center;justify-content:center;">
+  <div style="background:#151820;border:1px solid var(--border);border-radius:18px;padding:28px 24px;max-width:420px;width:92%;max-height:85vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.6);">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+      <div style="font-family:Georgia,serif;font-size:19px;font-weight:bold;color:var(--cream);">📊 Study Pace</div>
+      <span onclick="closePaceModal()" style="cursor:pointer;font-size:20px;color:var(--text-mid);line-height:1;">✕</span>
+    </div>
+    <div id="pace-modal-reminder" style="font-size:14px;font-weight:600;line-height:1.6;padding:14px 16px;border-radius:12px;margin-bottom:22px;"></div>
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:var(--text);margin-bottom:12px;">Last 14 Days · PKT</div>
+    <div style="position:relative;">
+      <div id="pace-bar-target-line" style="position:absolute;left:0;right:0;border-top:1px dashed rgba(201,168,76,0.4);"></div>
+      <div id="pace-bar-chart" style="display:flex;align-items:flex-end;gap:3px;height:110px;position:relative;"></div>
+    </div>
+    <div style="font-size:10px;color:var(--text-mid);margin-top:8px;text-align:right;">- - - 400/day target</div>
+  </div>
+</div>
+
+<!-- Favourites Modal -->
+<div id="favs-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.75);align-items:center;justify-content:center;">
+  <div style="background:#151820;border:1px solid var(--border);border-radius:18px;padding:28px 24px;max-width:460px;width:92%;max-height:85vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.6);">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+      <div style="font-family:Georgia,serif;font-size:19px;font-weight:bold;color:var(--cream);">❤️ Favourites</div>
+      <span onclick="closeFavoritesModal()" style="cursor:pointer;font-size:20px;color:var(--text-mid);line-height:1;">✕</span>
+    </div>
+    <div id="favs-modal-body"></div>
+  </div>
+</div>
+
+<!-- To-Do Modal -->
+<div id="todo-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.75);align-items:center;justify-content:center;">
+  <div style="background:#151820;border:1px solid var(--border);border-radius:18px;padding:28px 24px;max-width:420px;width:92%;max-height:85vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.6);">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+      <div style="font-family:Georgia,serif;font-size:19px;font-weight:bold;color:var(--cream);">✅ To-Do</div>
+      <span onclick="closeTodoModal()" style="cursor:pointer;font-size:20px;color:var(--text-mid);line-height:1;">✕</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:18px;">
+      <input id="todo-input" type="text" placeholder="Type a task…" onkeydown="if(event.key==='Enter')submitTodoInput();" style="flex:1;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:10px;padding:11px 14px;color:var(--cream);font-size:14px;outline:none;">
+      <button onclick="submitTodoInput()" style="background:linear-gradient(135deg,#17A2A8,#128C7E);border:none;color:#fff;font-weight:700;font-size:13px;padding:0 18px;border-radius:10px;cursor:pointer;">Add</button>
+    </div>
+    <div id="todo-list-body"></div>
+    <div style="margin-top:16px;text-align:center;">
+      <span onclick="openCompletedTodos()" style="cursor:pointer;font-size:12px;color:var(--text-mid);text-decoration:underline;text-underline-offset:2px;">View Completed</span>
+    </div>
+  </div>
+</div>
+
+<!-- Completed To-Dos Sub-Modal -->
+<div id="todo-completed-modal" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.75);align-items:center;justify-content:center;">
+  <div style="background:#151820;border:1px solid var(--border);border-radius:18px;padding:28px 24px;max-width:420px;width:92%;max-height:80vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.6);">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+      <div style="font-family:Georgia,serif;font-size:17px;font-weight:bold;color:var(--cream);">Completed (last 3 days)</div>
+      <span onclick="closeCompletedTodos()" style="cursor:pointer;font-size:20px;color:var(--text-mid);line-height:1;">✕</span>
+    </div>
+    <div id="todo-completed-body"></div>
   </div>
 </div>
 
@@ -5673,6 +5754,7 @@ let S = {
   timerInt:null, timeLeft:90, startTime:null,
   pendingSubject:null,
   isTrial:false, trialExpiresAt:null,
+  createdAt:null,
 };
 
 // Tracks which exam context the user is browsing (set by specialty selectors).
@@ -5832,6 +5914,7 @@ async function tryAutoLogin(){
     S.auth=true;S.code=sess.code;S.email=sess.email;
     S.subject=normalizeSubject(rec.subject||sess.subject||'medicine');
     S.expiresAt=rec.expires_at;S.drName=rec.student_name||sess.drName||'';
+    S.createdAt=rec.created_at||null;
     S.isTrial = rec.plan_type === 'trial';
     S.trialExpiresAt = S.isTrial ? rec.expires_at : null;
     if(S.isTrial){
@@ -9294,6 +9377,7 @@ async function verifyCode(){
     S.auth=true; S.code=code; S.email=email;
     S.subject=normalizeSubject(rec.subject||S.pendingSubject||'medicine');
     S.expiresAt=rec.expires_at; S.drName=rec.student_name||'';
+    S.createdAt=rec.created_at||null;
     S.isTrial = rec.plan_type === 'trial';
     S.trialExpiresAt = S.isTrial ? rec.expires_at : null;
     S.referralCount=rec.referral_count||0;
@@ -9670,6 +9754,34 @@ function loadDashboard(){
   const streak=prog.streak||0;
   setRing('ring-streak', Math.min(streak/30,1));
   document.getElementById('dash-streak').textContent=streak;
+
+  // Circle 4: Study Pace — 400 MCQs/day target, measured in PKT calendar days
+  const paceRing=document.getElementById('ring-pace');
+  const paceCard=document.getElementById('dash-pace-card');
+  if(isMockNTS){
+    setRing('ring-pace', 0);
+    document.getElementById('dash-pace-pct').textContent='🔒';
+    if(paceRing) paceRing.style.stroke='#3498DB';
+    if(paceCard) paceCard.setAttribute('onclick','_showMockUpgradeToast()');
+  } else {
+    const elapsedDays = pktDaysBetween(S.createdAt, new Date());
+    const expected = elapsedDays*400;
+    const ratio = expected ? done/expected : 0;
+    setRing('ring-pace', Math.min(ratio,1));
+    document.getElementById('dash-pace-pct').textContent = Math.min(Math.round(ratio*100),999)+'%';
+    let paceColor;
+    if(ratio>=1) paceColor='#2ECC71';
+    else if(ratio>=0.625) paceColor='#2ECC71';
+    else if(ratio>=0.25) paceColor='#F1C40F';
+    else paceColor='#E74C3C';
+    if(paceRing) paceRing.style.stroke=paceColor;
+    if(paceCard) paceCard.setAttribute('onclick','openStudyPaceModal()');
+    S._pace={elapsedDays, expected, done, ratio};
+  }
+
+  // Circle 5 & 6: Favourites and To-Do — plain counts, always shown regardless of tier
+  updateFavoritesRingCount();
+  updateTodoRingCount();
 
   renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWMO, isFPSC, isPGET);
 
@@ -10307,7 +10419,7 @@ async function syncProgressToCloud(prog){
     const prac=getPracticeProgress();
     // Include mock1 attempts in cloud sync
     const mock1Attempts=_mock1GetAttempts();
-    const payload={ progress_data: JSON.stringify(prog), prac_data: JSON.stringify(prac), mock1_data: JSON.stringify(mock1Attempts) };
+    const payload={ progress_data: JSON.stringify(prog), prac_data: JSON.stringify(prac), mock1_data: JSON.stringify(mock1Attempts), favorites: JSON.stringify(getFavorites()), todos: JSON.stringify(getTodos()) };
     await sb.patch('access_codes',{code:S.code}, payload);
   }catch(e){ /* silent — localStorage is source of truth */ }
 }
@@ -10319,6 +10431,7 @@ async function mergeFromCloud(){
     const rows=await sb.get('access_codes',{code:S.code});
     if(!rows||!rows[0]||!rows[0].progress_data) return;
     const row=rows[0];
+    if(row.created_at && !S.createdAt) S.createdAt=row.created_at;
     const cloud=JSON.parse(row.progress_data);
     if(!cloud||!cloud.answers) return;
     const local=getProgress();
@@ -10387,6 +10500,35 @@ async function mergeFromCloud(){
         }
       }catch(e){}
     }
+    // Merge favourites — union of both sides, most recent action wins per key
+    if(row.favorites){
+      try{
+        const cloudFavs=JSON.parse(row.favorites)||{};
+        const localFavs=getFavorites();
+        const mergedFavs=Object.assign({}, cloudFavs);
+        Object.keys(localFavs).forEach(k=>{
+          if(!mergedFavs[k]) mergedFavs[k]=localFavs[k];
+          else if(new Date(localFavs[k].at||0) > new Date(mergedFavs[k].at||0)) mergedFavs[k]=localFavs[k];
+        });
+        saveFavoritesLocal(mergedFavs);
+      }catch(e){}
+    }
+    // Merge to-dos — union by id, most recently updated copy wins
+    if(row.todos){
+      try{
+        const cloudTodos=_cleanupOldCompletedTodos(JSON.parse(row.todos)||[]);
+        const localTodos=getTodos();
+        const byId={};
+        cloudTodos.forEach(t=>{ byId[t.id]=t; });
+        localTodos.forEach(t=>{
+          const existing=byId[t.id];
+          const tStamp=new Date(t.doneAt||t.createdAt||0).getTime();
+          const eStamp=existing?new Date(existing.doneAt||existing.createdAt||0).getTime():-1;
+          if(!existing || tStamp>=eStamp) byId[t.id]=t;
+        });
+        saveTodosLocal(_cleanupOldCompletedTodos(Object.values(byId)));
+      }catch(e){}
+    }
   }catch(e){ /* silent */ }
 }
 
@@ -10440,6 +10582,81 @@ function buildCollapsibleExp(html){
     '<span class="exp-toggle" onclick="this.previousElementSibling.style.display=\'block\';this.style.display=\'none\';" style="color:var(--gold);font-size:12px;cursor:pointer;display:inline-block;margin-top:6px;">Read more &#9660;</span>';
 }
 
+// ── Favourites (Study mode) ──────────────────────────────
+// Stores a self-contained snapshot of the question (not just a key),
+// since Study mode is made of many separate specialty/exam families
+// that each load their own data differently — snapshotting means the
+// Favourites list never needs to know which loader a question came from.
+function getFavorites(){
+  try{ return JSON.parse(localStorage.getItem('mm_favs_'+(S.code||'x'))||'{}'); }
+  catch(e){ return {}; }
+}
+function saveFavoritesLocal(favs){
+  try{ localStorage.setItem('mm_favs_'+(S.code||'x'), JSON.stringify(favs)); }catch(e){}
+}
+function isFavorited(key){ return !!getFavorites()[key]; }
+function toggleFavorite(key, q, subjLabel){
+  const favs = getFavorites();
+  let nowFav;
+  if(favs[key]){ delete favs[key]; nowFav=false; }
+  else { favs[key]={ q:q.q, opts:q.opts, ans:q.ans, e:q.e, section:q.section||'', subjLabel:subjLabel||'', at:new Date().toISOString() }; nowFav=true; }
+  saveFavoritesLocal(favs);
+  scheduleSyncToCloud();
+  updateFavoritesRingCount();
+  return nowFav;
+}
+function updateFavoritesRingCount(){
+  const el=document.getElementById('dash-favs-count');
+  if(el) el.textContent=Object.keys(getFavorites()).length;
+}
+
+// ── To-Do list ────────────────────────────────────────────
+// Completed items are kept for 3 days (for a quick glance back)
+// then permanently dropped the next time todos are loaded/saved.
+function _cleanupOldCompletedTodos(todos){
+  const cutoff = Date.now() - 3*86400000;
+  return todos.filter(t=> !t.done || (t.doneAt && new Date(t.doneAt).getTime() > cutoff));
+}
+function getTodos(){
+  let todos;
+  try{ todos = JSON.parse(localStorage.getItem('mm_todos_'+(S.code||'x'))||'[]'); }
+  catch(e){ todos = []; }
+  const cleaned = _cleanupOldCompletedTodos(todos);
+  if(cleaned.length !== todos.length) saveTodosLocal(cleaned);
+  return cleaned;
+}
+function saveTodosLocal(todos){
+  try{ localStorage.setItem('mm_todos_'+(S.code||'x'), JSON.stringify(todos)); }catch(e){}
+}
+function addTodoItem(text){
+  if(!text || !text.trim()) return;
+  const todos = getTodos();
+  todos.push({ id:'t'+Date.now()+Math.random().toString(36).slice(2,6), text:text.trim(), done:false, createdAt:new Date().toISOString(), doneAt:null });
+  saveTodosLocal(todos);
+  scheduleSyncToCloud();
+  updateTodoRingCount();
+}
+function toggleTodoDone(id){
+  const todos = getTodos();
+  const t = todos.find(x=>x.id===id);
+  if(!t) return;
+  t.done = !t.done;
+  t.doneAt = t.done ? new Date().toISOString() : null;
+  saveTodosLocal(todos);
+  scheduleSyncToCloud();
+  updateTodoRingCount();
+}
+function deleteTodoItem(id){
+  const todos = getTodos().filter(x=>x.id!==id);
+  saveTodosLocal(todos);
+  scheduleSyncToCloud();
+  updateTodoRingCount();
+}
+function updateTodoRingCount(){
+  const el=document.getElementById('dash-todo-count');
+  if(el) el.textContent=getTodos().filter(t=>!t.done).length;
+}
+
 function saveProgress(key,correct){
   const prog=getProgress();
   prog.answers[key]={correct,at:new Date().toISOString()};
@@ -10453,6 +10670,42 @@ function saveProgress(key,correct){
   scheduleSyncToCloud(); // debounced — saves to Supabase 4s after last answer
 }
 
+// ── Pakistan Standard Time (UTC+5, no DST) day-boundary helpers ──
+// Used by the Study Pace ring so "today" always means 12AM-12AM PKT,
+// regardless of the doctor's device timezone or locale settings.
+function pktDateStr(isoOrDate){
+  const d = isoOrDate instanceof Date ? isoOrDate : new Date(isoOrDate);
+  const shifted = new Date(d.getTime() + 5*60*60*1000);
+  return shifted.toISOString().slice(0,10); // YYYY-MM-DD as seen in PKT
+}
+function pktDaysBetween(startIso, endDate){
+  if(!startIso) return 1;
+  const startStr = pktDateStr(startIso);
+  const endStr = pktDateStr(endDate||new Date());
+  const start = new Date(startStr+'T00:00:00Z');
+  const end = new Date(endStr+'T00:00:00Z');
+  return Math.max(1, Math.round((end-start)/86400000) + 1); // inclusive of day 1
+}
+// Buckets every answered MCQ into its PKT calendar day, then returns the
+// last `numDays` days (oldest first) ending today, zero-filled.
+function getDailyMCQCounts(prog, numDays){
+  const counts = {};
+  Object.values(prog.answers||{}).forEach(a=>{
+    if(!a.at) return;
+    const day = pktDateStr(a.at);
+    counts[day] = (counts[day]||0) + 1;
+  });
+  const todayStr = pktDateStr(new Date());
+  const list = [];
+  for(let i=numDays-1;i>=0;i--){
+    const d = new Date(todayStr+'T00:00:00Z');
+    d.setUTCDate(d.getUTCDate()-i);
+    const key = d.toISOString().slice(0,10);
+    list.push({date:key, count:counts[key]||0});
+  }
+  return list;
+}
+
 // ── Restart Progress ──────────────────────────────
 function confirmRestartProgress(){
   const m=document.getElementById('restart-modal');
@@ -10461,6 +10714,145 @@ function confirmRestartProgress(){
 function closeRestartModal(){
   const m=document.getElementById('restart-modal');
   if(m){ m.style.display='none'; }
+}
+
+// ── Study Pace detail modal ──────────────────────────────
+function openStudyPaceModal(){
+  const m=document.getElementById('pace-modal');
+  if(!m||!S._pace) return;
+  const {expected, done, ratio} = S._pace;
+  const remaining = expected - done;
+  const remEl = document.getElementById('pace-modal-reminder');
+  if(remaining > 0){
+    const behind = ratio < 0.625;
+    remEl.style.background = behind ? 'rgba(231,76,60,0.1)' : 'rgba(241,196,15,0.1)';
+    remEl.style.border = '1px solid ' + (behind ? 'rgba(231,76,60,0.3)' : 'rgba(241,196,15,0.3)');
+    remEl.style.color = behind ? '#E74C3C' : '#F1C40F';
+    remEl.innerHTML = `Do <strong>${remaining.toLocaleString()}</strong> more MCQs today to turn green.`;
+  } else {
+    remEl.style.background = 'rgba(46,204,113,0.1)';
+    remEl.style.border = '1px solid rgba(46,204,113,0.3)';
+    remEl.style.color = '#2ECC71';
+    remEl.innerHTML = `You're <strong>${Math.abs(remaining).toLocaleString()}</strong> MCQs ahead of pace. Excellent work! 🎉`;
+  }
+  const prog = getProgress();
+  const days = getDailyMCQCounts(prog, 14);
+  const maxVal = Math.max(400, ...days.map(d=>d.count));
+  const targetPct = (400/maxVal*100).toFixed(1);
+  const lineEl = document.getElementById('pace-bar-target-line');
+  if(lineEl) lineEl.style.bottom = targetPct+'%';
+  const chart = document.getElementById('pace-bar-chart');
+  chart.innerHTML = days.map(d=>{
+    const h = Math.max(2, Math.round(d.count/maxVal*100));
+    const color = d.count>=400?'#2ECC71':d.count>=250?'#F1C40F':d.count>0?'#E74C3C':'rgba(255,255,255,0.08)';
+    const dayNum = new Date(d.date+'T00:00:00Z').getUTCDate();
+    return `<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;" title="${d.count} MCQs">
+      <div style="width:100%;max-width:14px;height:${h}%;background:${color};border-radius:3px 3px 0 0;transition:height 0.4s;"></div>
+      <div style="font-size:8px;color:var(--text-mid);margin-top:5px;">${dayNum}</div>
+    </div>`;
+  }).join('');
+  m.style.display='flex';
+}
+function closePaceModal(){
+  const m=document.getElementById('pace-modal');
+  if(m) m.style.display='none';
+}
+
+// ── Favourites modal ──────────────────────────────────────
+function openFavoritesModal(){
+  const m=document.getElementById('favs-modal');
+  if(!m) return;
+  renderFavoritesList();
+  m.style.display='flex';
+}
+function closeFavoritesModal(){
+  const m=document.getElementById('favs-modal');
+  if(m) m.style.display='none';
+}
+function renderFavoritesList(){
+  const body=document.getElementById('favs-modal-body');
+  const favs=getFavorites();
+  const keys=Object.keys(favs).sort((a,b)=>new Date(favs[b].at)-new Date(favs[a].at));
+  if(!keys.length){
+    body.innerHTML='<div style="text-align:center;color:var(--text-mid);font-size:13px;padding:30px 10px;">No favourites yet. Tap the ♡ on any MCQ while studying to save it here.</div>';
+    return;
+  }
+  body.innerHTML=keys.map(key=>{
+    const f=favs[key];
+    const optsHtml=(f.opts||[]).map((o,oi)=>{
+      const isCorrect=oi===f.ans;
+      return `<div style="padding:8px 12px;margin-bottom:6px;border-radius:8px;font-size:12.5px;${isCorrect?'background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.3);color:#2ECC71;':'background:rgba(255,255,255,0.03);border:1px solid var(--border-soft,rgba(255,255,255,0.08));color:var(--text-mid);'}">${['A','B','C','D','E'][oi]}. ${o}</div>`;
+    }).join('');
+    return `<div style="background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:14px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px;">
+        <div style="font-size:9px;font-weight:700;letter-spacing:0.6px;text-transform:uppercase;color:var(--gold);">${f.subjLabel||''}${f.section?' · '+f.section:''}</div>
+        <span onclick="removeFavoriteFromModal('${key}')" style="cursor:pointer;font-size:16px;color:#E74C3C;flex-shrink:0;">♥</span>
+      </div>
+      <div style="font-size:13.5px;color:var(--cream);line-height:1.5;margin-bottom:10px;">${f.q}</div>
+      ${optsHtml}
+    </div>`;
+  }).join('');
+}
+function removeFavoriteFromModal(key){
+  const favs=getFavorites();
+  delete favs[key];
+  saveFavoritesLocal(favs);
+  scheduleSyncToCloud();
+  updateFavoritesRingCount();
+  renderFavoritesList();
+}
+
+// ── To-Do modal ───────────────────────────────────────────
+function openTodoModal(){
+  const m=document.getElementById('todo-modal');
+  if(!m) return;
+  renderTodoList();
+  m.style.display='flex';
+}
+function closeTodoModal(){
+  const m=document.getElementById('todo-modal');
+  if(m) m.style.display='none';
+}
+function submitTodoInput(){
+  const inp=document.getElementById('todo-input');
+  if(!inp.value.trim()) return;
+  addTodoItem(inp.value);
+  inp.value='';
+  renderTodoList();
+}
+function renderTodoList(){
+  const body=document.getElementById('todo-list-body');
+  const open=getTodos().filter(t=>!t.done).sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt));
+  if(!open.length){
+    body.innerHTML='<div style="text-align:center;color:var(--text-mid);font-size:13px;padding:20px 10px;">No open tasks. Add one above.</div>';
+    return;
+  }
+  body.innerHTML=open.map(t=>`
+    <div style="display:flex;align-items:center;gap:10px;padding:10px 4px;border-bottom:1px solid var(--border-soft,rgba(255,255,255,0.06));">
+      <span onclick="toggleTodoDone('${t.id}');renderTodoList();" style="cursor:pointer;width:20px;height:20px;flex-shrink:0;border-radius:50%;border:2px solid #17A2A8;display:inline-block;"></span>
+      <span style="flex:1;font-size:13.5px;color:var(--cream);">${t.text}</span>
+      <span onclick="deleteTodoItem('${t.id}');renderTodoList();" style="cursor:pointer;font-size:13px;color:var(--text-mid);">✕</span>
+    </div>`).join('');
+}
+function openCompletedTodos(){
+  const m=document.getElementById('todo-completed-modal');
+  if(!m) return;
+  const body=document.getElementById('todo-completed-body');
+  const done=getTodos().filter(t=>t.done).sort((a,b)=>new Date(b.doneAt)-new Date(a.doneAt));
+  if(!done.length){
+    body.innerHTML='<div style="text-align:center;color:var(--text-mid);font-size:13px;padding:20px 10px;">Nothing completed in the last 3 days.</div>';
+  } else {
+    body.innerHTML=done.map(t=>`
+      <div style="display:flex;align-items:center;gap:10px;padding:10px 4px;border-bottom:1px solid var(--border-soft,rgba(255,255,255,0.06));">
+        <span style="width:20px;height:20px;flex-shrink:0;border-radius:50%;background:#17A2A8;display:inline-flex;align-items:center;justify-content:center;font-size:11px;color:#fff;">✓</span>
+        <span style="flex:1;font-size:13.5px;color:var(--text-mid);text-decoration:line-through;">${t.text}</span>
+      </div>`).join('');
+  }
+  m.style.display='flex';
+}
+function closeCompletedTodos(){
+  const m=document.getElementById('todo-completed-modal');
+  if(m) m.style.display='none';
 }
 function executeRestartProgress(){
   const code=S.code||'x';
@@ -13188,10 +13580,13 @@ function renderStudyPage(){
   c.innerHTML='';ST.pageAnswered={};
   batch.forEach(function(q,bi){
     const gi=start+bi;
+    const favKey=ST.subj+'_'+q.idx;
     const div=document.createElement('div');
     div.className='study-mcq-card';div.id='study-card-'+bi;
     div.innerHTML=
-      '<div class="study-mcq-num"><span>Q '+(gi+1)+' / '+ST.qs.length+'</span>'+(q.section?'<span class="study-mcq-section">'+q.section+'</span>':'')+'</div>'+
+      '<div class="study-mcq-num"><div style="display:flex;align-items:center;gap:8px;"><span>Q '+(gi+1)+' / '+ST.qs.length+'</span>'+(q.section?'<span class="study-mcq-section">'+q.section+'</span>':'')+'</div>'+
+        '<span class="study-fav-btn" id="sfav-'+bi+'" style="cursor:pointer;font-size:17px;line-height:1;color:'+(isFavorited(favKey)?'#E74C3C':'rgba(255,255,255,0.3)')+';">'+(isFavorited(favKey)?'♥':'♡')+'</span>'+
+      '</div>'+
       '<div class="study-mcq-q">'+q.q+'</div>'+
       '<div class="study-mcq-opts" id="sopts-'+bi+'"></div>'+
       '<div class="study-mcq-exp hidden" id="sexp-'+bi+'">'+
@@ -13199,6 +13594,14 @@ function renderStudyPage(){
         '<div class="study-mcq-exp-text" id="sexp-text-'+bi+'"></div>'+
       '</div>';
     c.appendChild(div);
+    const favBtn=document.getElementById('sfav-'+bi);
+    const subjLabelEl=document.getElementById('study-subj-tag');
+    favBtn.onclick=(function(qq,fbtn,key,lbl){return function(e){
+      e.stopPropagation();
+      const nowFav=toggleFavorite(key,qq,lbl?lbl.textContent:'');
+      fbtn.textContent=nowFav?'♥':'♡';
+      fbtn.style.color=nowFav?'#E74C3C':'rgba(255,255,255,0.3)';
+    };})(q,favBtn,favKey,subjLabelEl);
     const optsEl=document.getElementById('sopts-'+bi);
     ['A','B','C','D','E'].slice(0, q.opts.length).forEach(function(l,oi){
       if(!q.opts[oi])return;
