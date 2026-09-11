@@ -414,6 +414,10 @@ tr:hover td{background:rgba(201,168,76,0.02);}
 .pmd-wa-send{display:inline-flex;align-items:center;gap:7px;background:#128C7E;color:white;padding:9px 18px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;transition:all 0.2s;}
 .pmd-wa-send:hover{background:#0e7b6e;}
 .pmd-no-phone{font-size:12px;color:var(--text);background:rgba(255,255,255,0.04);border:1px solid var(--border-soft);border-radius:8px;padding:9px 13px;}
+.pmd-pace-note{font-size:12px;font-weight:700;line-height:1.5;border-radius:10px;padding:10px 14px;margin:0 0 14px;}
+.pmd-pace-note.pmd-pace-great{color:#2ECC71;background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.25);}
+.pmd-pace-note.pmd-pace-warn{color:#F39C12;background:rgba(243,156,18,0.1);border:1px solid rgba(243,156,18,0.25);}
+.pmd-pace-note.pmd-pace-red{color:#E74C3C;background:rgba(231,76,60,0.12);border:1px solid rgba(231,76,60,0.3);}
 @media(max-width:768px){
   .prog-list{grid-template-columns:1fr;}
   .pmd-circles{gap:8px;margin:12px 14px;}
@@ -895,6 +899,7 @@ tr:hover td{background:rgba(201,168,76,0.02);}
         <button class="pmd-wa-tab" onclick="selectPmdMsg('tip',this)">💡 Study Tip</button>
         <button class="pmd-wa-tab" onclick="selectPmdMsg('reminder',this)">⏰ Reminder</button>
         <button class="pmd-wa-tab" onclick="selectPmdMsg('motivate',this)">🔥 Motivation</button>
+        <button class="pmd-wa-tab" onclick="selectPmdMsg('custom',this)">✏️ Custom Text</button>
       </div>
       <div class="pmd-wa-preview" id="pmd-wa-preview"></div>
       <div id="pmd-wa-action"></div>
@@ -2477,12 +2482,32 @@ function buildProgCard(r){
 
   return `<div class="prog-card" onclick="openProgModal('${r.code}')">
     <div class="prog-card-name">${r.student_name||'—'}</div>
-    <div class="prog-card-meta">${r.email||''}</div>
-    <div class="prog-card-code">${r.code} · ${subjName}</div>
+    <div class="prog-card-meta">${maskEmailPreview(r.email)}</div>
+    <div class="prog-card-code">${subjName}</div>
     <span class="prog-card-expiry ${expClass}">${expiryTxt}</span>
     <div class="prog-card-rings">${rings}</div>
     <div class="prog-card-bars">${barHtml}</div>
   </div>`;
+}
+
+// ── Mask an email for card previews: keep first 2 / last 2 chars
+// of the local part visible, hide the rest with asterisks. Domain
+// stays visible. Full email is still shown inside the full dashboard.
+function maskEmailPreview(email){
+  if(!email) return '';
+  const at = email.indexOf('@');
+  if(at === -1) return email; // not a real email, show as-is
+  const local = email.slice(0, at);
+  const domain = email.slice(at); // includes '@'
+  if(local.length <= 4){
+    // Too short to show 2+2 distinctly — keep first & last char only
+    if(local.length <= 2) return local[0] + '*'.repeat(Math.max(1, local.length-1)) + domain;
+    return local[0] + '*'.repeat(local.length-2) + local[local.length-1] + domain;
+  }
+  const first2 = local.slice(0, 2);
+  const last2  = local.slice(-2);
+  const stars  = '*'.repeat(local.length - 4);
+  return first2 + stars + last2 + domain;
 }
 
 // ── Parse progress_data / prac_data from Supabase row ───────
@@ -2606,7 +2631,7 @@ function openProgModal(code){
   document.getElementById('pmd-time-val').textContent = pmdFormatTime(r.time_spent_seconds||0);
 
   // Subject bars
-  document.getElementById('pmd-subject-bars').innerHTML = _pmdBuildAllBars(subj, answers, isNTS, isFCPS, isMock);
+  document.getElementById('pmd-subject-bars').innerHTML = _pmdBuildAllBars(subj, answers, isNTS, isFCPS, isMock, r.created_at);
 
   // WA message
   document.querySelectorAll('.pmd-wa-tab').forEach(t=>t.classList.remove('active'));
@@ -2623,8 +2648,38 @@ function closeProgModal(){
   progTarget = null;
 }
 
+// ── Judge study pace against a 400-MCQs-a-day target ────────
+// Calibrated so 800 done in 2 days (full 400/day) reads as great,
+// under 500 in 2 days asks the doctor to speed up, and under 200
+// in 2 days shows a red warning. Scales to any elapsed day count.
+function _pmdPaceMessage(createdAt, doneTotal){
+  if(!createdAt) return '';
+  const elapsedDays = Math.max(1, Math.floor((new Date() - new Date(createdAt)) / 86400000));
+  const expected = elapsedDays * 400;
+  const ratio = doneTotal / expected;
+  const doneStr = doneTotal.toLocaleString();
+  const dayStr = `${elapsedDays} day${elapsedDays!==1?'s':''}`;
+  let cls, emoji, text;
+  if(ratio >= 1){
+    cls='great'; emoji='🟢';
+    text=`Doing great. ${doneStr} MCQs done in ${dayStr}, right on the 400-a-day pace. Keep it up! 🎉`;
+  } else if(ratio >= 0.625){
+    cls='great'; emoji='🟢';
+    text=`Good pace. ${doneStr} MCQs done in ${dayStr}. Stay consistent and you'll hit the full 400-a-day target.`;
+  } else if(ratio >= 0.25){
+    cls='warn'; emoji='🟡';
+    text=`Falling behind. Only ${doneStr} MCQs done in ${dayStr}. Please increase your speed to stay on track.`;
+  } else {
+    cls='red'; emoji='🔴';
+    text=`Red alert. Just ${doneStr} MCQs done in ${dayStr}. This pace won't be enough, speed up now. 🚨`;
+  }
+  return `<div class="pmd-pace-note pmd-pace-${cls}">${emoji} ${text}</div>`;
+}
+
 // ── Build all subject bars (mirrors renderSubjectProgressDash exactly) ──
-function _pmdBuildAllBars(subj, answers, isNTS, isFCPS, isMock){
+function _pmdBuildAllBars(subj, answers, isNTS, isFCPS, isMock, createdAt){
+  const doneTotal = Object.keys(answers||{}).length;
+  const paceMsg = isMock ? '' : _pmdPaceMessage(createdAt, doneTotal);
   const P1C='linear-gradient(90deg,var(--gold),var(--gold-bright))';
   const P2C='linear-gradient(90deg,#3498DB,#5DADE2)';
   const DONE='linear-gradient(90deg,#2ECC71,#27AE60)';
@@ -2651,14 +2706,14 @@ function _pmdBuildAllBars(subj, answers, isNTS, isFCPS, isMock){
   }
 
   if(isNTS){
-    return _sec('📊 Progress by Category','var(--gold)')+PMD_NTS_CATS.map(cat=>{
+    return paceMsg+_sec('📊 Progress by Category','var(--gold)')+PMD_NTS_CATS.map(cat=>{
       const done=Object.keys(answers).filter(k=>cat.keys.some(ck=>k.startsWith(ck+'_')||k===ck||k.startsWith(ck))).length;
       return _row(cat.icon,cat.label,done,cat.total,cat.color);
     }).join('');
   }
 
   // JCAT or FCPS
-  let rows='';
+  let rows=paceMsg;
   // P1 section header only if has P2
   const p2subs = PMD_JCAT_P2[subj] || PMD_FCPS_P2[subj] || PMD_PGET_P2[subj] || [];
   if(p2subs.length) rows += _sec('Paper 1 — Basic Sciences','var(--gold)');
@@ -2736,6 +2791,8 @@ function _renderPmdMsg(r, prog, prac, dLeft, type){
     }
   } else if(type==='motivate'){
     msg=`Hi Dr. ${firstName}! 🌟\n\nWe checked your MedMasters dashboard and we just want to say — you're putting in real effort.\n\n${doneTotal>0?`${doneTotal.toLocaleString()} MCQs studied. ${pracAcc!=null?pracAcc+'% accuracy. ':''}${streak>0?'A '+streak+'-day streak. ':''}`:''}That consistency is exactly what separates those who pass from those who almost pass.\n\nYour exam is coming. You're more prepared than you think. Back yourself. 🏆\n\n— MedMasters Team`;
+  } else if(type==='custom'){
+    msg=`Hi Dr. ${firstName}, `;
   }
 
   document.getElementById('pmd-wa-preview').textContent=msg;
