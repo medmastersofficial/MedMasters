@@ -2456,7 +2456,7 @@ function openRedAlertModal(){
       const doneTotal = Object.keys(_pmdParseProgress(r).answers||{}).length;
       const tier = _pmdPaceTier(r.created_at, doneTotal);
       const firstName = (r.student_name||'Doctor').replace(/^Dr\.?\s+/i,'').split(' ')[0];
-      const msg = `Hi Dr. ${firstName}! 🔴\n\nWe noticed your MedMasters activity has slowed down, only ${doneTotal.toLocaleString()} MCQs done in ${tier.elapsedDays} day${tier.elapsedDays!==1?'s':''}. Your exam prep needs consistency to pay off.\n\nJump back in today, even a short session helps. We're here if you need anything.\n\nMedMasters Team`;
+      const msg = `Hi Dr. ${firstName}, 🔴\n\nWe noticed your study progress is a bit slow, only ${doneTotal.toLocaleString()} MCQs done in ${tier.elapsedDays} day${tier.elapsedDays!==1?'s':''}. Your exam prep needs consistency and speed to pay off. Therefore, we expect you to study 400 MCQs per day.\n\nStudy more MCQs today. We're here if you need anything or have any questions/problems/queries.\n\nYOU CAN DO IT AND YOU’LL DO IT, insha Allah 🌸\n\nMedMasters Team`;
       const phone = r.whatsapp||r.phone||'';
       const ph = phone.replace(/\D/g,'');
       const intPhone = ph.startsWith('0') ? '92'+ph.slice(1) : ph;
