@@ -4482,14 +4482,6 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
         </svg>
         <div class="drc-lbl">Day Streak</div>
       </div>
-      <div class="dash-circle-card" id="dash-pace-card" onclick="openStudyPaceModal()" style="cursor:pointer;">
-        <svg class="drc-svg" width="100" height="100" viewBox="0 0 100 100">
-          <circle class="drc-track" cx="50" cy="50" r="43"/>
-          <circle class="drc-fill" id="ring-pace" cx="50" cy="50" r="43" stroke-dasharray="270.2" stroke-dashoffset="270.2"/>
-          <text class="drc-val" id="dash-pace-pct" x="50" y="50" text-anchor="middle" dominant-baseline="middle">—</text>
-        </svg>
-        <div class="drc-lbl">Study Pace ›</div>
-      </div>
       <div class="dash-circle-card" id="dash-favs-card" onclick="openFavoritesModal()" style="cursor:pointer;">
         <svg class="drc-svg" width="100" height="100" viewBox="0 0 100 100">
           <circle class="drc-track" cx="50" cy="50" r="43"/>
@@ -4497,6 +4489,14 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
           <text class="drc-val" id="dash-favs-count" x="50" y="50" text-anchor="middle" dominant-baseline="middle">0</text>
         </svg>
         <div class="drc-lbl">Favourites ›</div>
+      </div>
+      <div class="dash-circle-card" id="dash-pace-card" onclick="openStudyPaceModal()" style="cursor:pointer;">
+        <svg class="drc-svg" width="100" height="100" viewBox="0 0 100 100">
+          <circle class="drc-track" cx="50" cy="50" r="43"/>
+          <circle class="drc-fill" id="ring-pace" cx="50" cy="50" r="43" stroke-dasharray="270.2" stroke-dashoffset="270.2"/>
+          <circle id="dash-pace-dot" cx="50" cy="50" r="15" fill="#3498DB"/>
+        </svg>
+        <div class="drc-lbl">Study Pace ›</div>
       </div>
       <div class="dash-circle-card" id="dash-todo-card" onclick="openTodoModal()" style="cursor:pointer;">
         <svg class="drc-svg" width="100" height="100" viewBox="0 0 100 100">
@@ -9755,26 +9755,27 @@ function loadDashboard(){
   setRing('ring-streak', Math.min(streak/30,1));
   document.getElementById('dash-streak').textContent=streak;
 
-  // Circle 4: Study Pace — 400 MCQs/day target, measured in PKT calendar days
+  // Circle: Study Pace — 400 MCQs/day target, measured in PKT calendar days
   const paceRing=document.getElementById('ring-pace');
+  const paceDot=document.getElementById('dash-pace-dot');
   const paceCard=document.getElementById('dash-pace-card');
   if(isMockNTS){
     setRing('ring-pace', 0);
-    document.getElementById('dash-pace-pct').textContent='🔒';
     if(paceRing) paceRing.style.stroke='#3498DB';
+    if(paceDot) paceDot.setAttribute('fill','#3498DB');
     if(paceCard) paceCard.setAttribute('onclick','_showMockUpgradeToast()');
   } else {
     const elapsedDays = pktDaysBetween(S.createdAt, new Date());
     const expected = elapsedDays*400;
     const ratio = expected ? done/expected : 0;
     setRing('ring-pace', Math.min(ratio,1));
-    document.getElementById('dash-pace-pct').textContent = Math.min(Math.round(ratio*100),999)+'%';
     let paceColor;
     if(ratio>=1) paceColor='#2ECC71';
     else if(ratio>=0.625) paceColor='#2ECC71';
     else if(ratio>=0.25) paceColor='#F1C40F';
     else paceColor='#E74C3C';
     if(paceRing) paceRing.style.stroke=paceColor;
+    if(paceDot) paceDot.setAttribute('fill',paceColor);
     if(paceCard) paceCard.setAttribute('onclick','openStudyPaceModal()');
     S._pace={elapsedDays, expected, done, ratio};
   }
@@ -10777,21 +10778,44 @@ function renderFavoritesList(){
     body.innerHTML='<div style="text-align:center;color:var(--text-mid);font-size:13px;padding:30px 10px;">No favourites yet. Tap the ♡ on any MCQ while studying to save it here.</div>';
     return;
   }
-  body.innerHTML=keys.map(key=>{
+  body.innerHTML=keys.map(function(key,fi){
     const f=favs[key];
-    const optsHtml=(f.opts||[]).map((o,oi)=>{
-      const isCorrect=oi===f.ans;
-      return `<div style="padding:8px 12px;margin-bottom:6px;border-radius:8px;font-size:12.5px;${isCorrect?'background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.3);color:#2ECC71;':'background:rgba(255,255,255,0.03);border:1px solid var(--border-soft,rgba(255,255,255,0.08));color:var(--text-mid);'}">${['A','B','C','D','E'][oi]}. ${o}</div>`;
+    const optsHtml=(f.opts||[]).map(function(o,oi){
+      return '<button class="study-mcq-opt" data-idx="'+oi+'"><div class="study-mcq-letter">'+['A','B','C','D','E'][oi]+'</div><div class="study-mcq-text">'+o+'</div></button>';
     }).join('');
-    return `<div style="background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:14px;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px;">
-        <div style="font-size:9px;font-weight:700;letter-spacing:0.6px;text-transform:uppercase;color:var(--gold);">${f.subjLabel||''}${f.section?' · '+f.section:''}</div>
-        <span onclick="removeFavoriteFromModal('${key}')" style="cursor:pointer;font-size:16px;color:#E74C3C;flex-shrink:0;">♥</span>
-      </div>
-      <div style="font-size:13.5px;color:var(--cream);line-height:1.5;margin-bottom:10px;">${f.q}</div>
-      ${optsHtml}
-    </div>`;
+    return '<div class="study-mcq-card" id="fav-card-'+fi+'">'+
+      '<div class="study-mcq-num"><div style="display:flex;align-items:center;gap:8px;"><span>'+(f.subjLabel||'')+'</span>'+(f.section?'<span class="study-mcq-section">'+f.section+'</span>':'')+'</div>'+
+        '<span class="study-fav-btn" onclick="removeFavoriteFromModal(\''+key+'\')" style="cursor:pointer;font-size:17px;line-height:1;color:#E74C3C;">♥</span>'+
+      '</div>'+
+      '<div class="study-mcq-q">'+f.q+'</div>'+
+      '<div class="study-mcq-opts" id="favopts-'+fi+'">'+optsHtml+'</div>'+
+      '<div class="study-mcq-exp hidden" id="favexp-'+fi+'">'+
+        '<div class="study-mcq-exp-label">📖 Explanation</div>'+
+        '<div class="study-mcq-exp-text" id="favexp-text-'+fi+'"></div>'+
+      '</div>'+
+    '</div>';
   }).join('');
+  // Wire up click handlers (kept out of the HTML string to avoid quote-escaping the option text)
+  keys.forEach(function(key,fi){
+    const f=favs[key];
+    document.querySelectorAll('#favopts-'+fi+' .study-mcq-opt').forEach(function(btn){
+      btn.onclick=function(){ favSelectAns(fi,parseInt(btn.getAttribute('data-idx')),f); };
+    });
+  });
+}
+function favSelectAns(fi,sel,f){
+  const card=document.getElementById('fav-card-'+fi);
+  if(card.classList.contains('answered')) return;
+  card.classList.add('answered');
+  document.querySelectorAll('#favopts-'+fi+' .study-mcq-opt').forEach(function(btn){
+    btn.disabled=true;
+    const oi=parseInt(btn.getAttribute('data-idx'));
+    if(oi===f.ans) btn.classList.add('correct');
+    else if(oi===sel && oi!==f.ans) btn.classList.add('incorrect');
+  });
+  const expEl=document.getElementById('favexp-'+fi);
+  expEl.classList.remove('hidden');
+  document.getElementById('favexp-text-'+fi).innerHTML = f.e ? buildCollapsibleExp(f.e) : 'Correct Answer: '+f.opts[f.ans];
 }
 function removeFavoriteFromModal(key){
   const favs=getFavorites();
