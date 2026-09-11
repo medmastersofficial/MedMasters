@@ -368,6 +368,12 @@ tr:hover td{background:rgba(201,168,76,0.02);}
 .prog-card-expiry.ok{color:var(--green);background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.2);}
 .prog-card-expiry.warn{color:var(--yellow);background:rgba(243,156,18,0.1);border:1px solid rgba(243,156,18,0.2);}
 .prog-card-expiry.red{color:var(--red);background:rgba(231,76,60,0.1);border:1px solid rgba(231,76,60,0.2);}
+.prog-card-pace{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;margin-top:4px;margin-left:6px;}
+.prog-card-pace.great{color:#2ECC71;background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.2);}
+.prog-card-pace.warn{color:#F39C12;background:rgba(243,156,18,0.1);border:1px solid rgba(243,156,18,0.2);}
+.prog-card-pace.red{color:#E74C3C;background:rgba(231,76,60,0.1);border:1px solid rgba(231,76,60,0.2);}
+.prog-card-lastwa{font-size:10px;color:var(--text);margin-top:6px;}
+.prog-card-lastwa.warn{color:#F39C12;font-weight:700;}
 /* ── DR DASHBOARD MODAL ── */
 #prog-modal{display:none;position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);align-items:flex-start;justify-content:center;overflow-y:auto;padding:20px;}
 #prog-modal.open{display:flex;}
@@ -407,6 +413,8 @@ tr:hover td{background:rgba(201,168,76,0.02);}
 .pmd-complete-badge{font-size:9px;font-weight:700;background:rgba(46,204,113,0.15);color:#2ECC71;border:1px solid rgba(46,204,113,0.3);padding:1px 6px;border-radius:4px;white-space:nowrap;margin-left:4px;}
 .pmd-wa-section{margin:0 24px 24px;}
 .pmd-wa-title{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
+.pmd-wa-lastsent{font-size:11px;color:var(--text-mid);margin:-4px 0 10px;}
+.pmd-wa-lastsent.warn{color:#F39C12;font-weight:700;}
 .pmd-wa-tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px;}
 .pmd-wa-tab{padding:5px 12px;border-radius:7px;font-size:11px;font-weight:700;cursor:pointer;border:1px solid var(--border);background:var(--bg);color:var(--text-mid);font-family:'Poppins',sans-serif;transition:all 0.2s;}
 .pmd-wa-tab:hover,.pmd-wa-tab.active{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,0.08);}
@@ -534,8 +542,15 @@ tr:hover td{background:rgba(201,168,76,0.02);}
       </div>
 
       <!-- Search inside progress panel -->
-      <div style="margin-bottom:18px;">
+      <div style="margin-bottom:14px;">
         <input class="search-input" id="prog-search" placeholder="🔍  Search by name, code or specialty…" oninput="renderProgList()" style="width:100%;max-width:420px;">
+      </div>
+
+      <!-- Bulk red-alert outreach -->
+      <div style="margin-bottom:18px;">
+        <button class="btn-sm" id="redalert-bulk-btn" onclick="openRedAlertModal()" style="background:rgba(231,76,60,0.12);border:1px solid rgba(231,76,60,0.35);color:#E74C3C;font-weight:700;display:none;">
+          🔴 Message All Red-Alert Doctors (<span id="redalert-bulk-count">0</span>)
+        </button>
       </div>
 
       <!-- Cards grid -->
@@ -894,6 +909,7 @@ tr:hover td{background:rgba(201,168,76,0.02);}
     <!-- WhatsApp message sender -->
     <div class="pmd-wa-section">
       <div class="pmd-wa-title">💬 Send WhatsApp Message</div>
+      <div class="pmd-wa-lastsent" id="pmd-wa-lastsent"></div>
       <div class="pmd-wa-tabs">
         <button class="pmd-wa-tab active" onclick="selectPmdMsg('progress',this)">📈 Progress</button>
         <button class="pmd-wa-tab" onclick="selectPmdMsg('tip',this)">💡 Study Tip</button>
@@ -916,6 +932,16 @@ tr:hover td{background:rgba(201,168,76,0.02);}
     <p id="reward-modal-desc">Choose how to reward the referrer.</p>
     <div id="reward-modal-body"></div>
     <div class="form-msg" id="reward-msg" style="margin-top:10px;text-align:center;"></div>
+  </div>
+</div>
+
+<!-- ══════ RED-ALERT BULK OUTREACH MODAL ══════ -->
+<div class="modal-overlay" id="redalert-modal" onclick="if(event.target===this)closeModal('redalert-modal')">
+  <div class="modal" style="max-width:480px;max-height:80vh;overflow-y:auto;">
+    <button class="modal-close" onclick="closeModal('redalert-modal')">✕</button>
+    <h3>🔴 Red-Alert Doctors</h3>
+    <p>Each doctor still needs one tap, WhatsApp doesn't allow sending to several contacts from a single click. This just lines them all up so you can go through them quickly.</p>
+    <div id="redalert-modal-body"></div>
   </div>
 </div>
 
@@ -1116,6 +1142,7 @@ function startAdminAutoRefresh(){
     try{
       allStudents = await sb.getAll();
       renderStats();
+      updateRedAlertBulkButton();
       document.getElementById('last-refreshed').textContent = 'Updated '+new Date().toLocaleTimeString();
     }catch(e){}
   }, 5*60*1000); // every 5 minutes
@@ -1132,6 +1159,7 @@ async function loadAll(){
     renderAlerts();
     showSoftToast();
     renderTable();
+    updateRedAlertBulkButton();
     const now = new Date();
     document.getElementById('last-refreshed').textContent = 'Updated '+now.toLocaleTimeString();
   }catch(e){
@@ -1714,7 +1742,7 @@ function renderAlerts(){
         <div class="alert-meta">Code: ${r.code} &nbsp;·&nbsp; <span style="color:${isExpired?'var(--red)':'var(--yellow)'}">${daysText}</span></div>
       </div>
       <div class="alert-actions">
-        ${phone?`<a class="wa-btn" href="https://wa.me/${phone}?text=${waMsg}" target="_blank">💬 Remind on WhatsApp</a>`:'<span style="font-size:11px;color:var(--text);">No phone on file</span>'}
+        ${phone?`<a class="wa-btn" href="https://wa.me/${phone}?text=${waMsg}" target="_blank" onclick="markWASent('${r.code}')">💬 Remind on WhatsApp</a>`:'<span style="font-size:11px;color:var(--text);">No phone on file</span>'}
         <button class="btn-sm btn-green" onclick="openExtendModal('${r.code}','${(r.student_name||r.email).replace(/'/g,"\\'")}','${r.expires_at}')">➕ Extend</button>
       </div>
     </div>`;
@@ -1725,10 +1753,10 @@ function buildExpiryWAMessage(r, days){
   const name = r.student_name||'Doctor';
   const isExpired = days < 0;
   if(isExpired){
-    return `Hi ${name}! Your MedMasters access expired ${Math.abs(days)} day${Math.abs(days)!==1?'s':''} ago. Renew now to continue your exam preparation. WhatsApp us to get instant access. — MedMasters Team`;
+    return `Hi ${name}! Your MedMasters access expired ${Math.abs(days)} day${Math.abs(days)!==1?'s':''} ago. Renew now to continue your exam preparation. WhatsApp us to get instant access.\n\nMedMasters Team`;
   }
-  if(days===1) return `Hi ${name}! Your MedMasters access expires tomorrow. Don't break your study streak — renew now and keep preparing. — MedMasters Team`;
-  return `Hi ${name}! Your MedMasters access expires in ${days} days. Renew now to keep studying without interruption. — MedMasters Team`;
+  if(days===1) return `Hi ${name}! Your MedMasters access expires tomorrow. Don't break your study streak, renew now and keep preparing.\n\nMedMasters Team`;
+  return `Hi ${name}! Your MedMasters access expires in ${days} days. Renew now to keep studying without interruption.\n\nMedMasters Team`;
 }
 
 // ═══════════ TABLE ═══════════
@@ -1792,7 +1820,7 @@ function renderTable(){
     else if(days<=3) daysHtml=`<span class="days-pill days-yellow">${days}d left</span>`;
     else daysHtml=`<span class="days-pill days-green">${days}d left</span>`;
     const phone = r.whatsapp||r.phone||'';
-    const waMsg = encodeURIComponent(`Hi ${r.student_name||''}! Your MedMasters access expires on ${expDate}. Renew now to keep studying. — MedMasters`);
+    const waMsg = encodeURIComponent(`Hi ${r.student_name||''}! Your MedMasters access expires on ${expDate}. Renew now to keep studying. MedMasters`);
     return `<tr>
       <td style="color:var(--text);font-size:12px;">${i+1}</td>
       <td>
@@ -1820,7 +1848,7 @@ function renderTable(){
       <td>${statusBadge}</td>
       <td>
         <div class="td-actions">
-          ${phone?`<a class="btn-sm btn-blue" href="https://wa.me/${phone}?text=${waMsg}" target="_blank" title="Send WhatsApp reminder">💬</a>`:''}
+          ${phone?`<a class="btn-sm btn-blue" href="https://wa.me/${phone}?text=${waMsg}" target="_blank" title="Send WhatsApp reminder" onclick="markWASent('${r.code}')">💬</a>`:''}
           ${status==='trial'
             ? `<button class="btn-sm btn-upgrade" onclick="openUpgradeModal('${r.code}','${(r.student_name||r.email).replace(/'/g,"\\'")}')" title="Upgrade to paid subscription">⬆ Upgrade</button>`
             : `<button class="btn-sm btn-green" onclick="openExtendModal('${r.code}','${(r.student_name||r.email).replace(/'/g,"\\'")}','${r.expires_at}')" title="Extend access">➕</button>`}
@@ -1870,7 +1898,7 @@ function updateWAPreview(){
   let planName = examNames[exam] || exam.toUpperCase();
   if(exam==='jcat'||exam==='fcps'||exam==='pget'){
     const subjSel = document.getElementById('f-subject');
-    if(subjSel&&subjSel.selectedIndex>=0) planName += ' — '+subjSel.options[subjSel.selectedIndex].text;
+    if(subjSel&&subjSel.selectedIndex>=0) planName += ': '+subjSel.options[subjSel.selectedIndex].text;
   }
   if(!name || !code) return;
   if(planVal === 'trial'){
@@ -1889,14 +1917,14 @@ function updateWAPreview(){
 }
 function buildExtensionWAMessage(name, days, newExpiry){
   const dur = days===15 ? '15 days' : days===30 ? '1 month' : days===90 ? '3 months' : days===180 ? '6 months' : days+' days';
-  return `Dear Dr. ${name},\n\nYour MedMasters access has been successfully extended by ${dur}.\n\n⏳ New Validity: ${newExpiry}\n\nYour progress, results, and access codes remain exactly as before — nothing changes on your end.\n\nKeep up the great work and stay consistent. We are rooting for you.\n\n— MedMasters Team`;
+  return `Dear Dr. ${name},\n\nYour MedMasters access has been successfully extended by ${dur}.\n\n⏳ New Validity: ${newExpiry}\n\nYour progress, results, and access codes remain exactly as before. Nothing changes on your end.\n\nKeep up the great work and stay consistent. We are rooting for you.\n\nMedMasters Team`;
 }
 function buildWAMessage(name, email, code, planName, planDuration, expiryDate){
-  return `Hello, ${name}! 🎓\n\nWelcome to MedMasters — Pakistan's #1 MCQ Bank!\n\nHere are your access details:\n\n📧 Email: ${email}\n🔑 Access Code: ${code}\n\n📚 Plan: ${planName}\n📅 Duration: ${planDuration}\n⏳ Valid Until: ${expiryDate}\n\nTo start practising:\n1️⃣ Go to medmasters.academy\n2️⃣ Add to home screen:\n   📱 iPhone: tap Share → "Add to Home Screen"\n   📱 Android: tap ⋮ → "Install App"\n   💻 Laptop/Tab: click 📲 Install button on the site\n3️⃣ Click "Enter Code"\n4️⃣ Enter your email + code above\n\nYou can use it on 1 mobile + 1 laptop.\n\nBest of luck in your exams! 💪\n— MedMasters Team`;
+  return `Hello, ${name}! 🎓\n\nWelcome to MedMasters, Pakistan's #1 MCQ Bank!\n\nHere are your access details:\n\n📧 Email: ${email}\n🔑 Access Code: ${code}\n\n📚 Plan: ${planName}\n📅 Duration: ${planDuration}\n⏳ Valid Until: ${expiryDate}\n\nTo start practising:\n1️⃣ Go to medmasters.academy\n2️⃣ Add to home screen:\n   📱 iPhone: tap Share → "Add to Home Screen"\n   📱 Android: tap ⋮ → "Install App"\n   💻 Laptop/Tab: click 📲 Install button on the site\n3️⃣ Click "Enter Code"\n4️⃣ Enter your email + code above\n\nYou can use it on 1 mobile + 1 laptop.\n\nBest of luck in your exams! 💪\nMedMasters Team`;
 }
 function buildTrialWAMessage(name, email, code, planName, expiryTimeFmt){
   const cleanName = (name||'').replace(/^Dr\.?\s+/i,'');
-  return `🩺 MedMasters Free Trial Activated!\n\nHello, Dr ${cleanName}! 🎓\n\nWelcome to your MedMasters Free Trial! 🎯\n\nHere are your access details:\n\n📧 Email: ${email}\n🔑 Access Code: ${code}\n\n📚 Plan: ${planName}\n⏳ Valid Until: ${expiryTimeFmt} today (6-hour trial)\n\nTo start practising:\n1️⃣ Go to medmasters.academy\n2️⃣ Click "Enter Code"\n3️⃣ Enter your email + code above\n\nLoved it? Message us anytime to upgrade to full access! 💪\n— MedMasters Team`;
+  return `🩺 MedMasters Free Trial Activated!\n\nHello, Dr ${cleanName}! 🎓\n\nWelcome to your MedMasters Free Trial! 🎯\n\nHere are your access details:\n\n📧 Email: ${email}\n🔑 Access Code: ${code}\n\n📚 Plan: ${planName}\n⏳ Valid Until: ${expiryTimeFmt} today (6-hour trial)\n\nTo start practising:\n1️⃣ Go to medmasters.academy\n2️⃣ Click "Enter Code"\n3️⃣ Enter your email + code above\n\nLoved it? Message us anytime to upgrade to full access! 💪\nMedMasters Team`;
 }
 // ── EXAM / SPECIALTY CONFIG ───────────────────────────────
 const JCAT_SPECIALTIES = [
@@ -2090,7 +2118,7 @@ async function addStudent(){
     let planName = examNames[examVal] || examVal.toUpperCase();
     if(examVal==='jcat'||examVal==='fcps'||examVal==='pget'){
       const subjSel = document.getElementById('f-subject');
-      if(subjSel&&subjSel.selectedIndex>=0) planName += ' — '+subjSel.options[subjSel.selectedIndex].text;
+      if(subjSel&&subjSel.selectedIndex>=0) planName += ': '+subjSel.options[subjSel.selectedIndex].text;
     }
     let waText;
     if(isTrial){
@@ -2401,6 +2429,51 @@ function switchProgTab(tab){
   renderProgList();
 }
 
+// ── Red-alert bulk outreach ──────────────────────────────────
+function getRedAlertDoctors(){
+  return allStudents.filter(r=>{
+    if(!r.is_active || daysLeft(r.expires_at) < 0) return false;
+    if((r.subject||'').toLowerCase()==='mock_nts') return false;
+    const doneTotal = Object.keys(_pmdParseProgress(r).answers||{}).length;
+    const tier = _pmdPaceTier(r.created_at, doneTotal);
+    return tier && tier.cls==='red';
+  });
+}
+function updateRedAlertBulkButton(){
+  const btn = document.getElementById('redalert-bulk-btn');
+  if(!btn) return;
+  const n = getRedAlertDoctors().length;
+  document.getElementById('redalert-bulk-count').textContent = n;
+  btn.style.display = n ? 'inline-flex' : 'none';
+}
+function openRedAlertModal(){
+  const list = getRedAlertDoctors();
+  const body = document.getElementById('redalert-modal-body');
+  if(!list.length){
+    body.innerHTML = '<div class="empty-state"><div>✅</div>No red-alert doctors right now.</div>';
+  } else {
+    body.innerHTML = list.map(r=>{
+      const doneTotal = Object.keys(_pmdParseProgress(r).answers||{}).length;
+      const tier = _pmdPaceTier(r.created_at, doneTotal);
+      const firstName = (r.student_name||'Doctor').replace(/^Dr\.?\s+/i,'').split(' ')[0];
+      const msg = `Hi Dr. ${firstName}! 🔴\n\nWe noticed your MedMasters activity has slowed down, only ${doneTotal.toLocaleString()} MCQs done in ${tier.elapsedDays} day${tier.elapsedDays!==1?'s':''}. Your exam prep needs consistency to pay off.\n\nJump back in today, even a short session helps. We're here if you need anything.\n\nMedMasters Team`;
+      const phone = r.whatsapp||r.phone||'';
+      const ph = phone.replace(/\D/g,'');
+      const intPhone = ph.startsWith('0') ? '92'+ph.slice(1) : ph;
+      const lastWA = formatLastWASent(r.last_wa_sent);
+      return `<div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin-bottom:10px;">
+        <div style="font-weight:700;font-size:13px;">${r.student_name||'—'}</div>
+        <div style="font-size:11px;color:var(--text-mid);margin-bottom:2px;">${maskEmailPreview(r.email)}</div>
+        <div style="font-size:10px;color:${lastWA.warn?'#F39C12':'var(--text)'};margin-bottom:8px;">💬 ${lastWA.text}</div>
+        ${phone
+          ? `<a class="pmd-wa-send" style="padding:7px 14px;font-size:11px;" href="https://wa.me/${intPhone}?text=${encodeURIComponent(msg)}" target="_blank" onclick="markWASent('${r.code}')">💬 Send</a>`
+          : `<span style="font-size:11px;color:var(--text);">No phone on file</span>`}
+      </div>`;
+    }).join('');
+  }
+  document.getElementById('redalert-modal').classList.add('open');
+}
+
 // ── Render card list ────────────────────────────────────────
 function renderProgList(){
   const search = (document.getElementById('prog-search')||{value:''}).value.toLowerCase();
@@ -2420,6 +2493,7 @@ function renderProgList(){
     );
   }
   const container = document.getElementById('prog-list');
+  updateRedAlertBulkButton();
   if(!data.length){
     container.innerHTML = '<div class="empty-state"><div>🔍</div>No doctors match your search.</div>';
     return;
@@ -2480,14 +2554,61 @@ function buildProgCard(r){
     </div>`).join('')
   : '<div style="font-size:10px;color:var(--text);margin-top:4px;">No progress yet</div>';
 
+  const subjIsMock = subj==='mock_nts';
+  const paceTier = subjIsMock ? null : _pmdPaceTier(r.created_at, doneTotal);
+  const paceBadge = paceTier ? `<span class="prog-card-pace ${paceTier.cls}">${paceTier.emoji} ${paceTier.short}</span>` : '';
+  const lastWA = formatLastWASent(r.last_wa_sent);
+
   return `<div class="prog-card" onclick="openProgModal('${r.code}')">
     <div class="prog-card-name">${r.student_name||'—'}</div>
     <div class="prog-card-meta">${maskEmailPreview(r.email)}</div>
     <div class="prog-card-code">${subjName}</div>
-    <span class="prog-card-expiry ${expClass}">${expiryTxt}</span>
+    <span class="prog-card-expiry ${expClass}">${expiryTxt}</span>${paceBadge}
+    <div class="prog-card-lastwa ${lastWA.warn?'warn':''}">💬 ${lastWA.text}</div>
     <div class="prog-card-rings">${rings}</div>
     <div class="prog-card-bars">${barHtml}</div>
   </div>`;
+}
+
+// ── Format the last-WhatsApp-sent time for a doctor. Flags same
+// calendar day so the admin doesn't double-nudge someone. ──────
+function formatLastWASent(iso){
+  if(!iso) return {text:'Not yet messaged', warn:false};
+  const sentDate = new Date(iso);
+  const now = new Date();
+  const diffMs = now - sentDate;
+  const mins = Math.floor(diffMs/60000);
+  let rel;
+  if(mins < 1) rel = 'just now';
+  else if(mins < 60) rel = `${mins}m ago`;
+  else if(mins < 1440) rel = `${Math.floor(mins/60)}h ago`;
+  else if(mins < 43200) rel = `${Math.floor(mins/1440)}d ago`;
+  else rel = sentDate.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
+  const sameDay = sentDate.getFullYear()===now.getFullYear() && sentDate.getMonth()===now.getMonth() && sentDate.getDate()===now.getDate();
+  return {text: sameDay ? `Messaged ${rel} (today)` : `Last messaged ${rel}`, warn: sameDay};
+}
+
+// ── Record a WhatsApp send so we don't double-nudge the same
+// doctor twice in one day. Fire-and-forget: never blocks the
+// wa.me navigation that's already happening in the same click. ──
+async function markWASent(code){
+  const nowIso = new Date().toISOString();
+  const rec = allStudents.find(s=>s.code===code);
+  if(rec) rec.last_wa_sent = nowIso;
+  try{ await sb.patch(code, {last_wa_sent: nowIso}); }
+  catch(e){ console.error('Failed to record last WA sent', e); }
+  if(document.getElementById('prog-list')) renderProgList();
+  if(progTarget && progTarget.code===code){
+    progTarget.last_wa_sent = nowIso;
+    _pmdRenderLastSent();
+  }
+}
+function _pmdRenderLastSent(){
+  const el = document.getElementById('pmd-wa-lastsent');
+  if(!el || !progTarget) return;
+  const lw = formatLastWASent(progTarget.last_wa_sent);
+  el.className = 'pmd-wa-lastsent' + (lw.warn ? ' warn' : '');
+  el.textContent = (lw.warn?'⚠️ ':'💬 ') + lw.text;
 }
 
 // ── Mask an email for card previews: keep first 2 / last 2 chars
@@ -2637,6 +2758,7 @@ function openProgModal(code){
   document.querySelectorAll('.pmd-wa-tab').forEach(t=>t.classList.remove('active'));
   document.querySelectorAll('.pmd-wa-tab')[0].classList.add('active');
   _renderPmdMsg(r, prog, prac, dLeft, 'progress');
+  _pmdRenderLastSent();
 
   document.getElementById('prog-modal').classList.add('open');
   document.body.style.overflow='hidden';
@@ -2652,28 +2774,32 @@ function closeProgModal(){
 // Calibrated so 800 done in 2 days (full 400/day) reads as great,
 // under 500 in 2 days asks the doctor to speed up, and under 200
 // in 2 days shows a red warning. Scales to any elapsed day count.
-function _pmdPaceMessage(createdAt, doneTotal){
-  if(!createdAt) return '';
+function _pmdPaceTier(createdAt, doneTotal){
+  if(!createdAt) return null;
   const elapsedDays = Math.max(1, Math.floor((new Date() - new Date(createdAt)) / 86400000));
   const expected = elapsedDays * 400;
   const ratio = doneTotal / expected;
+  if(ratio >= 1)     return {cls:'great', emoji:'🟢', short:'On Pace',  elapsedDays, ratio};
+  if(ratio >= 0.625) return {cls:'great', emoji:'🟢', short:'Good Pace',elapsedDays, ratio};
+  if(ratio >= 0.25)  return {cls:'warn',  emoji:'🟡', short:'Behind',   elapsedDays, ratio};
+  return                    {cls:'red',   emoji:'🔴', short:'Red Alert',elapsedDays, ratio};
+}
+function _pmdPaceMessage(createdAt, doneTotal){
+  const tier = _pmdPaceTier(createdAt, doneTotal);
+  if(!tier) return '';
   const doneStr = doneTotal.toLocaleString();
-  const dayStr = `${elapsedDays} day${elapsedDays!==1?'s':''}`;
-  let cls, emoji, text;
-  if(ratio >= 1){
-    cls='great'; emoji='🟢';
+  const dayStr = `${tier.elapsedDays} day${tier.elapsedDays!==1?'s':''}`;
+  let text;
+  if(tier.ratio >= 1){
     text=`Doing great. ${doneStr} MCQs done in ${dayStr}, right on the 400-a-day pace. Keep it up! 🎉`;
-  } else if(ratio >= 0.625){
-    cls='great'; emoji='🟢';
+  } else if(tier.ratio >= 0.625){
     text=`Good pace. ${doneStr} MCQs done in ${dayStr}. Stay consistent and you'll hit the full 400-a-day target.`;
-  } else if(ratio >= 0.25){
-    cls='warn'; emoji='🟡';
+  } else if(tier.ratio >= 0.25){
     text=`Falling behind. Only ${doneStr} MCQs done in ${dayStr}. Please increase your speed to stay on track.`;
   } else {
-    cls='red'; emoji='🔴';
     text=`Red alert. Just ${doneStr} MCQs done in ${dayStr}. This pace won't be enough, speed up now. 🚨`;
   }
-  return `<div class="pmd-pace-note pmd-pace-${cls}">${emoji} ${text}</div>`;
+  return `<div class="pmd-pace-note pmd-pace-${tier.cls}">${tier.emoji} ${text}</div>`;
 }
 
 // ── Build all subject bars (mirrors renderSubjectProgressDash exactly) ──
@@ -2770,27 +2896,30 @@ function _renderPmdMsg(r, prog, prac, dLeft, type){
       `🎯 Practice Accuracy: ${pracAcc!=null?pracAcc+'%':'—'}\n`+
       `🔥 Day Streak: ${streak} days\n`+
       (dLeft>=0?`⏳ Days Remaining: ${dLeft}\n`:'')+
-      `\nYou're doing great — keep the momentum going! Every MCQ you attempt brings you closer to your goal. 💪\n\n— MedMasters Team`;
+      `\nYou're doing great. Keep the momentum going! Every MCQ you attempt brings you closer to your goal. 💪\n\nMedMasters Team`;
   } else if(type==='tip'){
     const tips=[
-      'Focus on your weakest subjects first — targeted revision beats broad reading every time.',
-      'Don\'t just mark answers — read every explanation, especially when you get something wrong.',
+      'Focus on your weakest subjects first. Targeted revision beats broad reading every time.',
+      'Don\'t just mark answers. Read every explanation, especially when you get something wrong.',
       'Short daily sessions beat cramming. Even 30 focused MCQs a day adds up fast.',
       'Revisit questions you got wrong at least once more before your exam.',
-      'Try doing a timed mini-test — it simulates exam pressure and sharpens your speed.'
+      'Try doing a timed mini-test. It simulates exam pressure and sharpens your speed.'
     ];
     const tip=tips[Math.floor(Math.random()*tips.length)];
-    msg=`Hi Dr. ${firstName}! 💡\n\nA quick study tip from MedMasters:\n\n"${tip}"\n\nYour accuracy is at ${pracAcc!=null?pracAcc+'%':'—'} — there's great room to push higher with smart revision. We believe in you!\n\n— MedMasters Team`;
+    const accLine = pracAcc!=null
+      ? `Your accuracy is at ${pracAcc}%. There's great room to push higher with smart revision. We believe in you!`
+      : `There's great room to push higher with smart revision. We believe in you!`;
+    msg=`Hi Dr. ${firstName}! 💡\n\nA quick study tip from MedMasters:\n\n"${tip}"\n\n${accLine}\n\nMedMasters Team`;
   } else if(type==='reminder'){
     if(dLeft<0){
-      msg=`Hi Dr. ${firstName}! ⏳\n\nYour MedMasters subscription expired ${Math.abs(dLeft)} day${Math.abs(dLeft)!==1?'s':''} ago. Your exam prep shouldn't stop — renew today and pick up right where you left off.\n\nYour progress, streaks, and history are all saved. 💾\n\nRenew now: medmasters.academy\n\n— MedMasters Team`;
+      msg=`Hi Dr. ${firstName}! ⏳\n\nYour MedMasters subscription expired ${Math.abs(dLeft)} day${Math.abs(dLeft)!==1?'s':''} ago. Your exam prep shouldn't stop. Renew today and pick up right where you left off.\n\nYour progress, streaks, and history are all saved. 💾\n\nRenew now: medmasters.academy\n\nMedMasters Team`;
     } else if(dLeft<=7){
-      msg=`Hi Dr. ${firstName}! ⚠️\n\nJust a heads-up — your MedMasters access expires in ${dLeft} day${dLeft!==1?'s':''}. Don't lose your momentum!\n\nRenew now to keep your streak alive and stay on track. 📚\n\n— MedMasters Team`;
+      msg=`Hi Dr. ${firstName}! ⚠️\n\nJust a heads-up, your MedMasters access expires in ${dLeft} day${dLeft!==1?'s':''}. Don't lose your momentum!\n\nRenew now to keep your streak alive and stay on track. 📚\n\nMedMasters Team`;
     } else {
-      msg=`Hi Dr. ${firstName}! 📅\n\nYou have ${dLeft} days left on your MedMasters subscription. Make the most of it!\n\nYou've completed ${doneTotal.toLocaleString()} MCQs so far${pracAcc!=null?' with '+pracAcc+'% accuracy':''} — solid work. Keep going and finish strong. 💪\n\n— MedMasters Team`;
+      msg=`Hi Dr. ${firstName}! 📅\n\nYou have ${dLeft} days left on your MedMasters subscription. Make the most of it!\n\nYou've completed ${doneTotal.toLocaleString()} MCQs so far${pracAcc!=null?' with '+pracAcc+'% accuracy':''}. Solid work. Keep going and finish strong. 💪\n\nMedMasters Team`;
     }
   } else if(type==='motivate'){
-    msg=`Hi Dr. ${firstName}! 🌟\n\nWe checked your MedMasters dashboard and we just want to say — you're putting in real effort.\n\n${doneTotal>0?`${doneTotal.toLocaleString()} MCQs studied. ${pracAcc!=null?pracAcc+'% accuracy. ':''}${streak>0?'A '+streak+'-day streak. ':''}`:''}That consistency is exactly what separates those who pass from those who almost pass.\n\nYour exam is coming. You're more prepared than you think. Back yourself. 🏆\n\n— MedMasters Team`;
+    msg=`Hi Dr. ${firstName}! 🌟\n\nWe checked your MedMasters dashboard and we just want to say: you're putting in real effort.\n\n${doneTotal>0?`${doneTotal.toLocaleString()} MCQs studied. ${pracAcc!=null?pracAcc+'% accuracy. ':''}${streak>0?'A '+streak+'-day streak. ':''}`:''}That consistency is exactly what separates those who pass from those who almost pass.\n\nYour exam is coming. You're more prepared than you think. Back yourself. 🏆\n\nMedMasters Team`;
   } else if(type==='custom'){
     msg=`Hi Dr. ${firstName}, `;
   }
@@ -2801,7 +2930,7 @@ function _renderPmdMsg(r, prog, prac, dLeft, type){
   if(phone){
     const ph=phone.replace(/\D/g,'');
     const intPhone=ph.startsWith('0')?'92'+ph.slice(1):ph;
-    waAction.innerHTML=`<a class="pmd-wa-send" href="https://wa.me/${intPhone}?text=${encodeURIComponent(msg)}" target="_blank">💬 Send on WhatsApp</a>`;
+    waAction.innerHTML=`<a class="pmd-wa-send" href="https://wa.me/${intPhone}?text=${encodeURIComponent(msg)}" target="_blank" onclick="markWASent('${r.code}')">💬 Send on WhatsApp</a>`;
   } else {
     waAction.innerHTML=`<div class="pmd-no-phone">⚠️ No WhatsApp number on file. Add it via All Students panel.</div>`;
   }
@@ -2972,7 +3101,7 @@ async function confirmUpgrade(){
       const subj = (upgradeTarget.subject||'').toLowerCase();
       const labelMap = exam==='fcps' ? FCPS_SPECIALTIES : exam==='pget' ? PGET_SPECIALTIES : JCAT_SPECIALTIES;
       const match = labelMap.find(s=>s.value===subj);
-      if(match) planName += ' — '+match.label;
+      if(match) planName += ': '+match.label;
     }
     const waMsg = buildWAMessage(rawName, updatedRec?.email||'', upgradeTarget.code, planName, upgradePlan.label, newExpiryFmt);
     const phone = updatedRec?.whatsapp||updatedRec?.phone||'';
