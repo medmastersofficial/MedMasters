@@ -9059,7 +9059,7 @@ async function _fpscPastLaunchExam(n){
     let opts,ansIdx;
     if(Array.isArray(m.opts)){ opts=m.opts; ansIdx=typeof m.ans==='number'?m.ans:['A','B','C','D'].indexOf((m.ans||'A').toUpperCase()); }
     else { opts=[m.a||'',m.b||'',m.c||'',m.d||'']; ansIdx=['A','B','C','D'].indexOf((m.ans||'A').toUpperCase()); if(ansIdx<0) ansIdx=0; }
-    return { q:m.q||m.question||'', opts:opts, ans:ansIdx, exp:m.e||m.explanation||'', num:i+1, section:m.section||m.category||'' };
+    return { q:m.q||m.question||'', opts:opts, ans:ansIdx, exp:m.exp||m.e||m.explanation||'', num:i+1, section:m.section||m.category||'' };
   });
   _fpscPastState.qs=data; _fpscPastState.answers={}; _fpscPastState.flagged=new Set();
   _fpscPastState.timeLeft=FPSC_PAST_DURATION_S; _fpscPastState.pageIdx=0;

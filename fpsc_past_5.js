@@ -534,7 +534,7 @@ window.MM.fpsc_past_5 = [
     "num": 41
   },
   {
-    "q": "School-based deworming programmes for children are best classified under which approach?",
+    "q": "A government campaign providing iron and folic acid supplementation to adolescent girls, aiming to prevent anaemia before it develops, is best classified under which approach?",
     "opts": [
       "Cure",
       "Care (preventive, population-based)",
@@ -542,7 +542,7 @@ window.MM.fpsc_past_5 = [
       "Palliation"
     ],
     "ans": 1,
-    "exp": "Deworming programmes are preventive, delivered to whole populations of children before serious illness develops, exemplifying the 'Care' approach to health management, as detailed in Park's Textbook of Preventive and Social Medicine.",
+    "exp": "Supplementation programmes aimed at preventing a deficiency before it causes illness are population-level preventive interventions, exemplifying the 'Care' approach, as detailed in Park's Textbook of Preventive and Social Medicine.",
     "section": "Care vs Cure",
     "num": 42
   },
