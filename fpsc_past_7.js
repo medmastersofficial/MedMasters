@@ -22,7 +22,7 @@ window.MM.fpsc_past_7 = [
       "Withdrawn"
     ],
     "ans": 0,
-    "exp": "RETICENT means reluctant to speak or reveal information. Its antonym is FORTHRIGHT, meaning direct and outspoken. RESERVED (B) and TACITURN (C) are near synonyms of reticent — both implying reluctance to speak. WITHDRAWN (D) also means socially retiring, making it a synonym rather than an antonym.",
+    "exp": "RETICENT means reluctant to speak or reveal information. Its antonym is FORTHRIGHT, meaning direct and outspoken. RESERVED (B) and TACITURN (C) are near synonyms of reticent, both implying reluctance to speak. WITHDRAWN (D) also means socially retiring, making it a synonym rather than an antonym.",
     "section": "English",
     "num": 2
   },
@@ -230,7 +230,7 @@ window.MM.fpsc_past_7 = [
       "They were still published, so the results were unexpected."
     ],
     "ans": 1,
-    "exp": "'Although' correctly signals the contrast — the results were published despite being unexpected. The other options misstate the logical relationship.",
+    "exp": "'Although' correctly signals the contrast: the results were published despite being unexpected. The other options misstate the logical relationship.",
     "section": "English",
     "num": 18
   },
@@ -243,7 +243,7 @@ window.MM.fpsc_past_7 = [
       "In order to"
     ],
     "ans": 0,
-    "exp": "'Despite' introduces a contrast — the ward functioned smoothly even though there was a staff shortage. 'Because of' would incorrectly suggest the shortage helped the ward function.",
+    "exp": "'Despite' introduces a contrast: the ward functioned smoothly even though there was a staff shortage. 'Because of' would incorrectly suggest the shortage helped the ward function.",
     "section": "English",
     "num": 19
   },
@@ -282,7 +282,7 @@ window.MM.fpsc_past_7 = [
       "L1"
     ],
     "ans": 1,
-    "exp": "The umbilicus is innervated by T10 — one of the most reliably tested dermatome landmarks in clinical anatomy. Visceral pain from the appendix is also referred to the T10 dermatome, explaining periumbilical pain in early appendicitis before it localises to the right iliac fossa — a point well illustrated in Snell's Clinical Anatomy. Spinal anaesthesia for appendicectomy requires sensory block from T10 downward. T8 (A) corresponds to the costal margin. T12 (C) lies at approximately the inguinal ligament level. L1 (D) covers the groin and upper scrotal or labial region.",
+    "exp": "The umbilicus is innervated by T10, one of the most reliably tested dermatome landmarks in clinical anatomy. Visceral pain from the appendix is also referred to the T10 dermatome, explaining periumbilical pain in early appendicitis before it localises to the right iliac fossa, a point well illustrated in Snell's Clinical Anatomy. Spinal anaesthesia for appendicectomy requires sensory block from T10 downward. T8 (A) corresponds to the costal margin. T12 (C) lies at approximately the inguinal ligament level. L1 (D) covers the groin and upper scrotal or labial region.",
     "section": "Basic Sciences",
     "num": 22
   },
@@ -308,7 +308,7 @@ window.MM.fpsc_past_7 = [
       "At the pubic tubercle, immediately lateral to the femoral canal"
     ],
     "ans": 2,
-    "exp": "The femoral triangle contents from lateral to medial follow the mnemonic NAVY: Nerve, Artery, Vein, Y-fronts (lymphatics). The femoral artery lies at the mid-inguinal point — the midpoint between the anterior superior iliac spine and the pubic symphysis — medial to the femoral nerve and lateral to the femoral vein. KLM describes this as essential anatomical knowledge for femoral vascular access.",
+    "exp": "The femoral triangle contents from lateral to medial follow the mnemonic NAVY: Nerve, Artery, Vein, Y-fronts (lymphatics). The femoral artery lies at the mid-inguinal point (the midpoint between the anterior superior iliac spine and the pubic symphysis), medial to the femoral nerve and lateral to the femoral vein. KLM describes this as essential anatomical knowledge for femoral vascular access.",
     "section": "Basic Sciences",
     "num": 24
   },
@@ -373,7 +373,7 @@ window.MM.fpsc_past_7 = [
       "Topoisomerase II inhibition causing double-strand DNA breaks in proliferating cells"
     ],
     "ans": 1,
-    "exp": "Methotrexate competitively inhibits dihydrofolate reductase (DHFR), preventing conversion of dihydrofolate to tetrahydrofolate — essential as a one-carbon donor for thymidylate and purine synthesis required for DNA replication. Rapidly dividing cells (bone marrow, gut mucosa) are most affected, causing pancytopaenia and mucositis. Katzung's Basic and Clinical Pharmacology explains that folinic acid (leucovorin) rescues normal cells by bypassing the DHFR block. DNA alkylating agents (A) include cyclophosphamide. HGPRT inhibition (C) is relevant to azathioprine. Topoisomerase II inhibitors (D) include anthracyclines.",
+    "exp": "Methotrexate competitively inhibits dihydrofolate reductase (DHFR), preventing conversion of dihydrofolate to tetrahydrofolate, essential as a one-carbon donor for thymidylate and purine synthesis required for DNA replication. Rapidly dividing cells (bone marrow, gut mucosa) are most affected, causing pancytopaenia and mucositis. Katzung's Basic and Clinical Pharmacology explains that folinic acid (leucovorin) rescues normal cells by bypassing the DHFR block. DNA alkylating agents (A) include cyclophosphamide. HGPRT inhibition (C) is relevant to azathioprine. Topoisomerase II inhibitors (D) include anthracyclines.",
     "section": "Basic Sciences",
     "num": 29
   },
@@ -425,7 +425,7 @@ window.MM.fpsc_past_7 = [
       "Ethambutol"
     ],
     "ans": 1,
-    "exp": "Rifampicin causes harmless but alarming orange-red discolouration of urine, tears, sweat, and saliva — patients must be counselled about this. More critically, rifampicin is a potent inducer of hepatic cytochrome P450 enzymes (particularly CYP3A4), dramatically increasing metabolism of oral contraceptive steroids and reducing their plasma levels sufficiently to cause contraceptive failure. Women on rifampicin must use barrier contraception. Isoniazid (A) causes peripheral neuropathy and hepatotoxicity. Pyrazinamide (C) causes hyperuricaemia and gout. Ethambutol (D) causes optic neuritis with red-green colour blindness.",
+    "exp": "Rifampicin causes harmless but alarming orange-red discolouration of urine, tears, sweat, and saliva; patients must be counselled about this. More critically, rifampicin is a potent inducer of hepatic cytochrome P450 enzymes (particularly CYP3A4), dramatically increasing metabolism of oral contraceptive steroids and reducing their plasma levels sufficiently to cause contraceptive failure. Women on rifampicin must use barrier contraception. Isoniazid (A) causes peripheral neuropathy and hepatotoxicity. Pyrazinamide (C) causes hyperuricaemia and gout. Ethambutol (D) causes optic neuritis with red-green colour blindness.",
     "section": "Basic Sciences",
     "num": 33
   },
@@ -438,7 +438,7 @@ window.MM.fpsc_past_7 = [
       "Flumazenil"
     ],
     "ans": 1,
-    "exp": "Iron poisoning causes direct corrosive GI mucosal damage followed by systemic toxicity from free circulating iron. The antidote is deferoxamine (desferrioxamine), an iron chelating agent that binds free iron to form ferrioxamine, which is excreted renally — turning urine a characteristic vin rosé (pinkish-red) colour confirming chelation. It is given parenterally in moderate-to-severe poisoning. As Katzung's notes, deferoxamine is the chelating agent of choice for acute iron toxicity. N-acetylcysteine (A) is for paracetamol. Atropine (C) reverses organophosphate poisoning. Flumazenil (D) reverses benzodiazepines.",
+    "exp": "Iron poisoning causes direct corrosive GI mucosal damage followed by systemic toxicity from free circulating iron. The antidote is deferoxamine (desferrioxamine), an iron chelating agent that binds free iron to form ferrioxamine, which is excreted renally, turning urine a characteristic vin rosé (pinkish-red) colour confirming chelation. It is given parenterally in moderate-to-severe poisoning. As Katzung's notes, deferoxamine is the chelating agent of choice for acute iron toxicity. N-acetylcysteine (A) is for paracetamol. Atropine (C) reverses organophosphate poisoning. Flumazenil (D) reverses benzodiazepines.",
     "section": "Basic Sciences",
     "num": 34
   },
@@ -451,7 +451,7 @@ window.MM.fpsc_past_7 = [
       "100"
     ],
     "ans": 0,
-    "exp": "National health policy documents cite Pakistan's under-5 mortality rate improving from about 72 to 66 per 1,000 live births, though this remains high compared to regional benchmarks and neonatal mortality has remained largely stagnant.",
+    "exp": "National health policy documents cite Pakistan's under-5 mortality rate improving from about 72 to 66 per 1,000 live births, though this remains high compared to regional benchmarks and neonatal mortality has remained largely stagnant, as detailed in Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 35
   },
@@ -464,7 +464,7 @@ window.MM.fpsc_past_7 = [
       "80 per 1,000"
     ],
     "ans": 2,
-    "exp": "National health planning documents cite a stillbirth rate of approximately 43 per 1,000 births in Pakistan, a figure that has shown little improvement even as some other child health indicators have progressed.",
+    "exp": "National health planning documents cite a stillbirth rate of approximately 43 per 1,000 births in Pakistan, a figure that has shown little improvement even as some other child health indicators have progressed, as detailed in Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 36
   },
@@ -477,7 +477,7 @@ window.MM.fpsc_past_7 = [
       "50%"
     ],
     "ans": 1,
-    "exp": "National health policy documents cite hepatitis B and C affecting approximately 7.6% of the general population in Pakistan, reflecting a high endemic burden that places TB, hepatitis, and HIV among the country's major infectious disease priorities.",
+    "exp": "National health policy documents cite hepatitis B and C affecting approximately 7.6% of the general population in Pakistan, reflecting a high endemic burden that places TB, hepatitis, and HIV among the country's major infectious disease priorities (Park's Textbook of Preventive and Social Medicine).",
     "section": "Community Medicine",
     "num": 37
   },
@@ -490,7 +490,7 @@ window.MM.fpsc_past_7 = [
       "Present only in neighbouring countries"
     ],
     "ans": 1,
-    "exp": "National health policy documents describe Pakistan's HIV situation as a concentrated epidemic, with established transmission concentrated among specific high-risk groups rather than spread evenly across the general population.",
+    "exp": "National health policy documents describe Pakistan's HIV situation as a concentrated epidemic, with established transmission concentrated among specific high-risk groups rather than spread evenly across the general population, a point emphasised in Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 38
   },
@@ -503,7 +503,7 @@ window.MM.fpsc_past_7 = [
       "Northern and southern hemispheres"
     ],
     "ans": 1,
-    "exp": "National health policy documents highlight persistent geographical disparities in health service and immunization coverage between provinces, districts, and rural versus urban areas, with low-income groups disproportionately affected.",
+    "exp": "National health policy documents highlight persistent geographical disparities in health service and immunization coverage between provinces, districts, and rural versus urban areas, with low-income groups disproportionately affected, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 39
   },
@@ -516,7 +516,7 @@ window.MM.fpsc_past_7 = [
       "Palliative treatment"
     ],
     "ans": 1,
-    "exp": "Preventive counselling and early intervention before severe malnutrition develops is a population-level preventive strategy, exemplifying the 'Care' approach over reactive curative treatment.",
+    "exp": "Preventive counselling and early intervention before severe malnutrition develops is a population-level preventive strategy, exemplifying the 'Care' approach over reactive curative treatment, a point emphasised in Pakistan's National Health Vision 2016-2025.",
     "section": "Care vs Cure",
     "num": 40
   },
@@ -529,7 +529,7 @@ window.MM.fpsc_past_7 = [
       "Reducing the number of nephrologists"
     ],
     "ans": 1,
-    "exp": "Since diabetes and hypertension are leading causes of chronic kidney disease, effective primary-care prevention and control of these conditions ('Care') reduces the future demand for expensive curative dialysis services ('Cure').",
+    "exp": "Since diabetes and hypertension are leading causes of chronic kidney disease, effective primary-care prevention and control of these conditions ('Care') reduces the future demand for expensive curative dialysis services ('Cure'), a point emphasised in Pakistan's National Health Vision 2016-2025.",
     "section": "Care vs Cure",
     "num": 41
   },
@@ -542,7 +542,7 @@ window.MM.fpsc_past_7 = [
       "Palliative care"
     ],
     "ans": 1,
-    "exp": "Antenatal care aims to identify and prevent complications before they become serious, making it a clear example of the 'Care' (preventive) approach rather than curative treatment after a complication has already occurred.",
+    "exp": "Antenatal care aims to identify and prevent complications before they become serious, making it a clear example of the 'Care' (preventive) approach rather than curative treatment after a complication has already occurred, as detailed in Pakistan's National Health Vision 2016-2025.",
     "section": "Care vs Cure",
     "num": 42
   },
@@ -555,7 +555,7 @@ window.MM.fpsc_past_7 = [
       "75%"
     ],
     "ans": 0,
-    "exp": "National health policy documents note that donor funding (official development assistance) has been minimal, constituting less than 2% of total national health expenditure, meaning the health system relies overwhelmingly on domestic (largely out-of-pocket) financing.",
+    "exp": "National health policy documents note that donor funding (official development assistance) has been minimal, constituting less than 2% of total national health expenditure, meaning the health system relies overwhelmingly on domestic (largely out-of-pocket) financing (Pakistan's National Health Vision 2016-2025).",
     "section": "Health Policies of Govt",
     "num": 43
   },
@@ -568,7 +568,7 @@ window.MM.fpsc_past_7 = [
       "10%"
     ],
     "ans": 1,
-    "exp": "Pakistan Vision 2025 pledged to raise government health spending to 3% of GDP, a target set against a historical baseline of around 0.6% of GDP, aiming to substantially improve health financing.",
+    "exp": "Pakistan Vision 2025 pledged to raise government health spending to 3% of GDP, a target set against a historical baseline of around 0.6% of GDP, aiming to substantially improve health financing, as detailed in Pakistan's National Health Vision 2016-2025.",
     "section": "Health Policies of Govt",
     "num": 44
   },
@@ -581,7 +581,7 @@ window.MM.fpsc_past_7 = [
       "Public transport safety"
     ],
     "ans": 1,
-    "exp": "DRAP was established to strengthen regulation of drugs, medical devices, diagnostics, and biological products — ensuring quality control and patient safety — a priority area explicitly identified in national health policy under 'Essential Medicines & Technology'.",
+    "exp": "DRAP was established to strengthen regulation of drugs, medical devices, diagnostics, and biological products, ensuring quality control and patient safety, a priority area explicitly identified in national health policy under 'Essential Medicines & Technology', a point emphasised in Pakistan's National Health Vision 2016-2025.",
     "section": "Health Policies of Govt",
     "num": 45
   },
@@ -594,7 +594,7 @@ window.MM.fpsc_past_7 = [
       "90%"
     ],
     "ans": 1,
-    "exp": "National health policy documents cite injuries as accounting for more than 11% of Pakistan's total burden of disease, a share expected to rise further with increasing road traffic, urbanization, and conflict.",
+    "exp": "National health policy documents cite injuries as accounting for more than 11% of Pakistan's total burden of disease, a share expected to rise further with increasing road traffic, urbanization, and conflict (Pakistan's National Health Vision 2016-2025).",
     "section": "Major Challenges to Healthcare",
     "num": 46
   },
@@ -607,7 +607,7 @@ window.MM.fpsc_past_7 = [
       "Around 90%"
     ],
     "ans": 1,
-    "exp": "National health policy documents cite an unmet need for birth spacing of approximately 25%, reflecting a substantial gap between women's stated desire to space or limit births and their actual access to contraceptive services.",
+    "exp": "National health policy documents cite an unmet need for birth spacing of approximately 25%, reflecting a substantial gap between women's stated desire to space or limit births and their actual access to contraceptive services (Pakistan's National Health Vision 2016-2025).",
     "section": "Major Challenges to Healthcare",
     "num": 47
   },
@@ -620,7 +620,7 @@ window.MM.fpsc_past_7 = [
       "Only affect administrative staff"
     ],
     "ans": 1,
-    "exp": "Poor job satisfaction and difficult working conditions in the public sector drive health workers to leave their posts or the profession, compounding Pakistan's existing shortage and maldistribution of healthcare workers.",
+    "exp": "Poor job satisfaction and difficult working conditions in the public sector drive health workers to leave their posts or the profession, compounding Pakistan's existing shortage and maldistribution of healthcare workers (Pakistan's National Health Vision 2016-2025).",
     "section": "Major Challenges to Healthcare",
     "num": 48
   },
@@ -646,7 +646,7 @@ window.MM.fpsc_past_7 = [
       "Start IV antibiotics without further investigation"
     ],
     "ans": 1,
-    "exp": "A thunderclap headache — maximum intensity at onset — with meningism is subarachnoid haemorrhage (SAH) until proven otherwise. A normal CT does not exclude SAH, particularly when performed more than 6 hours after onset (sensitivity falls below 90%). Lumbar puncture must be performed to detect xanthochromia (yellow CSF from haemoglobin breakdown) and a uniform red cell count not clearing between tubes. Discharging with analgesia (C) without LP is a dangerous omission. IV antibiotics alone (D) address bacterial meningitis, not SAH.",
+    "exp": "A thunderclap headache (maximum intensity at onset) with meningism is subarachnoid haemorrhage (SAH) until proven otherwise. A normal CT does not exclude SAH, particularly when performed more than 6 hours after onset (sensitivity falls below 90%). Lumbar puncture must be performed to detect xanthochromia (yellow CSF from haemoglobin breakdown) and a uniform red cell count not clearing between tubes. Discharging with analgesia (C) without LP is a dangerous omission. IV antibiotics alone (D) address bacterial meningitis, not SAH.",
     "section": "Medicine",
     "num": 50
   },
@@ -659,7 +659,7 @@ window.MM.fpsc_past_7 = [
       "IV amphotericin B"
     ],
     "ans": 2,
-    "exp": "Amoebic liver abscess — the most common extraintestinal complication of Entamoeba histolytica, endemic in rural Pakistan — presents with fever, right upper quadrant pain, and referred right shoulder tip pain from diaphragmatic irritation. First-line treatment is oral metronidazole 400-800 mg three times daily for 5-10 days, achieving cure in over 90% of cases. Surgical drainage (A) is reserved for large abscesses (>10 cm) at rupture risk or those not responding to metronidazole. IV artesunate (B) treats malaria. IV amphotericin B (D) treats invasive fungal infections. Metronidazole is the drug of choice for this condition.",
+    "exp": "Amoebic liver abscess, the most common extraintestinal complication of Entamoeba histolytica and endemic in rural Pakistan, presents with fever, right upper quadrant pain, and referred right shoulder tip pain from diaphragmatic irritation. First-line treatment is oral metronidazole 400-800 mg three times daily for 5-10 days, achieving cure in over 90% of cases. Surgical drainage (A) is reserved for large abscesses (>10 cm) at rupture risk or those not responding to metronidazole. IV artesunate (B) treats malaria. IV amphotericin B (D) treats invasive fungal infections. Metronidazole is the drug of choice for this condition.",
     "section": "Medicine",
     "num": 51
   },
@@ -672,7 +672,7 @@ window.MM.fpsc_past_7 = [
       "Hyperthyroidism"
     ],
     "ans": 2,
-    "exp": "Phaeochromocytoma is a catecholamine-secreting tumour of the adrenal medulla presenting with paroxysmal or sustained hypertension and the classic triad of headache, sweating, and palpitations. Markedly elevated urinary metanephrines confirm the diagnosis biochemically — once found, surgical resection is curative. Carcinoid syndrome (B) causes flushing and diarrhoea from serotonin, without hypertensive crises. Hyperthyroidism (C) causes palpitations and tremor but not paroxysmal hypertensive surges with elevated metanephrines.",
+    "exp": "Phaeochromocytoma is a catecholamine-secreting tumour of the adrenal medulla presenting with paroxysmal or sustained hypertension and the classic triad of headache, sweating, and palpitations. Markedly elevated urinary metanephrines confirm the diagnosis biochemically; once found, surgical resection is curative. Carcinoid syndrome (B) causes flushing and diarrhoea from serotonin, without hypertensive crises. Hyperthyroidism (C) causes palpitations and tremor but not paroxysmal hypertensive surges with elevated metanephrines.",
     "section": "Medicine",
     "num": 52
   },
@@ -685,7 +685,7 @@ window.MM.fpsc_past_7 = [
       "Liver function"
     ],
     "ans": 1,
-    "exp": "HbA1c reflects the percentage of haemoglobin that has become glycated over the lifespan of red blood cells, providing an estimate of average blood glucose control over approximately the preceding 2-3 months, unlike a single fasting glucose reading.",
+    "exp": "HbA1c reflects the percentage of haemoglobin that has become glycated over the lifespan of red blood cells, providing an estimate of average blood glucose control over approximately the preceding 2-3 months, unlike a single fasting glucose reading (Kumar and Clark's Clinical Medicine).",
     "section": "Medicine",
     "num": 53
   },
@@ -698,7 +698,7 @@ window.MM.fpsc_past_7 = [
       "Bell's palsy"
     ],
     "ans": 1,
-    "exp": "A sudden focal neurological deficit that completely resolves within 24 hours (often within minutes to an hour, as here) is characteristic of a transient ischaemic attack, an important warning sign requiring urgent evaluation to prevent a subsequent full stroke.",
+    "exp": "A sudden focal neurological deficit that completely resolves within 24 hours (often within minutes to an hour, as here) is characteristic of a transient ischaemic attack, an important warning sign requiring urgent evaluation to prevent a subsequent full stroke, as Harrison's Principles of Internal Medicine describes.",
     "section": "Medicine",
     "num": 54
   },
@@ -711,7 +711,7 @@ window.MM.fpsc_past_7 = [
       "Beta-blockers"
     ],
     "ans": 1,
-    "exp": "Direct-acting antiviral (DAA) regimens have transformed hepatitis C treatment, achieving sustained virologic response (functional cure) in the large majority of patients, with far better tolerability than older interferon-based regimens.",
+    "exp": "Direct-acting antiviral (DAA) regimens have transformed hepatitis C treatment, achieving sustained virologic response (functional cure) in the large majority of patients, with far better tolerability than older interferon-based regimens (Harrison's Principles of Internal Medicine).",
     "section": "Medicine",
     "num": 55
   },
@@ -724,7 +724,7 @@ window.MM.fpsc_past_7 = [
       "Oesophageal varices; risk of haemorrhage"
     ],
     "ans": 1,
-    "exp": "Barrett's oesophagus is metaplastic replacement of the normal squamous epithelium with columnar epithelium due to chronic acid reflux, and is significant because it is a premalignant condition that increases the risk of oesophageal adenocarcinoma.",
+    "exp": "Barrett's oesophagus is metaplastic replacement of the normal squamous epithelium with columnar epithelium due to chronic acid reflux, and is significant because it is a premalignant condition that increases the risk of oesophageal adenocarcinoma, as detailed in Davidson's Principles and Practice of Medicine.",
     "section": "Medicine",
     "num": 56
   },
@@ -737,7 +737,7 @@ window.MM.fpsc_past_7 = [
       "6.0-7.0"
     ],
     "ans": 1,
-    "exp": "For most indications, including non-valvular atrial fibrillation, the standard target INR range for warfarin therapy is 2.0-3.0, balancing effective stroke prevention against bleeding risk.",
+    "exp": "For most indications, including non-valvular atrial fibrillation, the standard target INR range for warfarin therapy is 2.0-3.0, balancing effective stroke prevention against bleeding risk, as detailed in Kumar and Clark's Clinical Medicine.",
     "section": "Medicine",
     "num": 57
   },
@@ -750,7 +750,7 @@ window.MM.fpsc_past_7 = [
       "Osteochondroma"
     ],
     "ans": 1,
-    "exp": "Long-term corticosteroid use is a major risk factor for osteoporosis, through both direct effects on bone turnover and reduced calcium absorption, making bone density monitoring and preventive measures (calcium, vitamin D, bisphosphonates) important in these patients.",
+    "exp": "Long-term corticosteroid use is a major risk factor for osteoporosis, through both direct effects on bone turnover and reduced calcium absorption, making bone density monitoring and preventive measures (calcium, vitamin D, bisphosphonates) important in these patients, as Davidson's Principles and Practice of Medicine describes.",
     "section": "Medicine",
     "num": 58
   },
@@ -789,7 +789,7 @@ window.MM.fpsc_past_7 = [
       "Peptic oesophageal stricture"
     ],
     "ans": 1,
-    "exp": "Progressive dysphagia — solids first then liquids — combined with significant weight loss, smoking, alcohol use, and an irregular mid-oesophageal narrowing on barium swallow are hallmarks of oesophageal carcinoma (squamous cell type in the middle third). The irregular narrowing distinguishes malignancy from a benign stricture. Achalasia (A) shows a smooth bird's beak narrowing at the lower oesophagus. Pharyngeal pouch (C) causes regurgitation of undigested food. Peptic stricture (D) is smooth, at the lower third, and associated with reflux symptoms.",
+    "exp": "Progressive dysphagia (solids first then liquids) combined with significant weight loss, smoking, alcohol use, and an irregular mid-oesophageal narrowing on barium swallow are hallmarks of oesophageal carcinoma (squamous cell type in the middle third). The irregular narrowing distinguishes malignancy from a benign stricture. Achalasia (A) shows a smooth bird's beak narrowing at the lower oesophagus. Pharyngeal pouch (C) causes regurgitation of undigested food. Peptic stricture (D) is smooth, at the lower third, and associated with reflux symptoms.",
     "section": "Surgery",
     "num": 61
   },
@@ -815,7 +815,7 @@ window.MM.fpsc_past_7 = [
       "Scalp only"
     ],
     "ans": 1,
-    "exp": "Virchow's node (left supraclavicular lymphadenopathy) is a classic sign of metastatic spread from an abdominal malignancy, most notably gastric cancer, via the thoracic duct.",
+    "exp": "Virchow's node (left supraclavicular lymphadenopathy) is a classic sign of metastatic spread from an abdominal malignancy, most notably gastric cancer, via the thoracic duct, consistent with Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 63
   },
@@ -828,7 +828,7 @@ window.MM.fpsc_past_7 = [
       "Carotid body tumour"
     ],
     "ans": 1,
-    "exp": "A thyroglossal duct cyst characteristically moves upward on tongue protrusion because of its embryological attachment to the base of the tongue via the thyroglossal tract, a key distinguishing clinical feature from other neck swellings.",
+    "exp": "A thyroglossal duct cyst characteristically moves upward on tongue protrusion because of its embryological attachment to the base of the tongue via the thyroglossal tract, a key distinguishing clinical feature from other neck swellings, a point emphasised in Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 64
   },
@@ -841,7 +841,7 @@ window.MM.fpsc_past_7 = [
       "Portal vein"
     ],
     "ans": 0,
-    "exp": "The common bile duct and right hepatic duct are the structures most commonly injured during laparoscopic cholecystectomy, typically due to misidentification of anatomy in Calot's triangle, making careful dissection and clear identification of the critical view of safety essential.",
+    "exp": "The common bile duct and right hepatic duct are the structures most commonly injured during laparoscopic cholecystectomy, typically due to misidentification of anatomy in Calot's triangle, making careful dissection and clear identification of the critical view of safety essential, as Sabiston Textbook of Surgery describes.",
     "section": "Surgery",
     "num": 65
   },
@@ -854,7 +854,7 @@ window.MM.fpsc_past_7 = [
       "Molluscum contagiosum"
     ],
     "ans": 0,
-    "exp": "A pearly, rolled-edge nodule with central ulceration on sun-exposed skin is the classic description of basal cell carcinoma, the most common skin cancer, which grows slowly and rarely metastasizes but can cause significant local tissue destruction if untreated.",
+    "exp": "A pearly, rolled-edge nodule with central ulceration on sun-exposed skin is the classic description of basal cell carcinoma, the most common skin cancer, which grows slowly and rarely metastasizes but can cause significant local tissue destruction if untreated, a point emphasised in Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 66
   },
@@ -867,7 +867,7 @@ window.MM.fpsc_past_7 = [
       "Inguinal hernia"
     ],
     "ans": 1,
-    "exp": "A hydrocele is a fluid-filled sac around the testis that classically transilluminates brightly, distinguishing it from a solid testicular tumour (which does not transilluminate) on clinical examination.",
+    "exp": "A hydrocele is a fluid-filled sac around the testis that classically transilluminates brightly, distinguishing it from a solid testicular tumour (which does not transilluminate) on clinical examination, as detailed in Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 67
   },
@@ -880,7 +880,7 @@ window.MM.fpsc_past_7 = [
       "Opponens pollicis"
     ],
     "ans": 0,
-    "exp": "Flexor pollicis longus is the sole muscle responsible for flexion at the interphalangeal joint of the thumb; its laceration results in an inability to flex that joint despite other thumb movements being preserved.",
+    "exp": "Flexor pollicis longus is the sole muscle responsible for flexion at the interphalangeal joint of the thumb; its laceration results in an inability to flex that joint despite other thumb movements being preserved, as Bailey and Love's Short Practice of Surgery describes.",
     "section": "Surgery",
     "num": 68
   },
@@ -893,7 +893,7 @@ window.MM.fpsc_past_7 = [
       "Uterine rupture"
     ],
     "ans": 1,
-    "exp": "Placental abruption is premature separation of the normally sited placenta from the uterine wall, presenting with sudden painful vaginal bleeding, a tense board-like uterus (from concealed haemorrhage and uterine irritability), and fetal distress — here bradycardia of 90 bpm indicating severe compromise. Ten Teachers' Obstetrics identifies abruption as a major cause of maternal and perinatal mortality in Pakistan. Placenta praevia (A) causes painless bright red bleeding with a soft uterus. Vasa praevia (C) causes fetal bleeding on membrane rupture. Uterine rupture (D) typically occurs in obstructed labour with a scarred uterus.",
+    "exp": "Placental abruption is premature separation of the normally sited placenta from the uterine wall, presenting with sudden painful vaginal bleeding, a tense board-like uterus (from concealed haemorrhage and uterine irritability), and fetal distress, here bradycardia of 90 bpm indicating severe compromise. Ten Teachers' Obstetrics identifies abruption as a major cause of maternal and perinatal mortality in Pakistan. Placenta praevia (A) causes painless bright red bleeding with a soft uterus. Vasa praevia (C) causes fetal bleeding on membrane rupture. Uterine rupture (D) typically occurs in obstructed labour with a scarred uterus.",
     "section": "O&G",
     "num": 69
   },
@@ -906,7 +906,7 @@ window.MM.fpsc_past_7 = [
       "Missed miscarriage"
     ],
     "ans": 1,
-    "exp": "An inevitable miscarriage is defined by vaginal bleeding with an open cervical os and products of conception at the os — the pregnancy cannot continue. It differs from threatened miscarriage (A) where the os is closed and the pregnancy may still proceed. Complete miscarriage (C) has fully expelled all products with a closed os. Missed miscarriage (D) involves embryonic death with a closed os and no bleeding, detected on ultrasound.",
+    "exp": "An inevitable miscarriage is defined by vaginal bleeding with an open cervical os and products of conception at the os: the pregnancy cannot continue. It differs from threatened miscarriage (A) where the os is closed and the pregnancy may still proceed. Complete miscarriage (C) has fully expelled all products with a closed os. Missed miscarriage (D) involves embryonic death with a closed os and no bleeding, detected on ultrasound.",
     "section": "O&G",
     "num": 70
   },
@@ -932,7 +932,7 @@ window.MM.fpsc_past_7 = [
       "Oral iron supplementation"
     ],
     "ans": 1,
-    "exp": "Severe pre-eclampsia (BP ≥160/110 with significant proteinuria and symptoms like headache) requires urgent admission, antihypertensive control, and magnesium sulfate for seizure (eclampsia) prophylaxis, given the high risk of progression to eclampsia.",
+    "exp": "Severe pre-eclampsia (BP ≥160/110 with significant proteinuria and symptoms like headache) requires urgent admission, antihypertensive control, and magnesium sulfate for seizure (eclampsia) prophylaxis, given the high risk of progression to eclampsia, as detailed in Ten Teachers' Obstetrics and Gynaecology.",
     "section": "O&G",
     "num": 72
   },
@@ -945,7 +945,7 @@ window.MM.fpsc_past_7 = [
       "Hydatidiform mole"
     ],
     "ans": 1,
-    "exp": "An anembryonic pregnancy (blighted ovum) occurs when a gestational sac develops without a fetal pole, typically detected on ultrasound as an empty sac beyond the point where a fetal pole should normally be visible.",
+    "exp": "An anembryonic pregnancy (blighted ovum) occurs when a gestational sac develops without a fetal pole, typically detected on ultrasound as an empty sac beyond the point where a fetal pole should normally be visible, a point emphasised in Dutta's Textbook of Obstetrics.",
     "section": "O&G",
     "num": 73
   },
@@ -958,7 +958,7 @@ window.MM.fpsc_past_7 = [
       "Deep vein thrombosis"
     ],
     "ans": 1,
-    "exp": "Fever with foul-smelling lochia and uterine tenderness in the postpartum period is the classic presentation of postpartum endometritis, an infection of the uterine lining requiring prompt antibiotic treatment.",
+    "exp": "Fever with foul-smelling lochia and uterine tenderness in the postpartum period is the classic presentation of postpartum endometritis, an infection of the uterine lining requiring prompt antibiotic treatment, as Ten Teachers' Obstetrics and Gynaecology describes.",
     "section": "O&G",
     "num": 74
   },
@@ -971,7 +971,7 @@ window.MM.fpsc_past_7 = [
       "Asherman's syndrome"
     ],
     "ans": 1,
-    "exp": "The combination of irregular menstrual cycles, hirsutism (suggesting hyperandrogenism), and polycystic-appearing ovaries on ultrasound fulfils the classic diagnostic picture for polycystic ovary syndrome, a leading cause of anovulatory infertility.",
+    "exp": "The combination of irregular menstrual cycles, hirsutism (suggesting hyperandrogenism), and polycystic-appearing ovaries on ultrasound fulfils the classic diagnostic picture for polycystic ovary syndrome, a leading cause of anovulatory infertility, as Ten Teachers' Obstetrics and Gynaecology describes.",
     "section": "O&G",
     "num": 75
   },
@@ -984,7 +984,7 @@ window.MM.fpsc_past_7 = [
       "Staphylococcus aureus; flucloxacillin"
     ],
     "ans": 1,
-    "exp": "Acute streptococcal tonsillitis in a child with a positive rapid strep test is caused by Group A beta-haemolytic Streptococcus (Streptococcus pyogenes). First-line treatment is oral phenoxymethylpenicillin (penicillin V) for 10 days, which eradicates the organism and prevents rheumatic fever and peritonsillar abscess. Dhingra's Diseases of Ear, Nose and Throat identifies streptococcal tonsillitis as the most important bacterial cause of acute pharyngotonsillitis in children. EBV (A) causes infectious mononucleosis — amoxicillin must be avoided as it causes a widespread maculopapular rash. Fusobacterium (C) causes Lemierre's syndrome. Staphylococcal tonsillitis (D) is uncommon.",
+    "exp": "Acute streptococcal tonsillitis in a child with a positive rapid strep test is caused by Group A beta-haemolytic Streptococcus (Streptococcus pyogenes). First-line treatment is oral phenoxymethylpenicillin (penicillin V) for 10 days, which eradicates the organism and prevents rheumatic fever and peritonsillar abscess. Dhingra's Diseases of Ear, Nose and Throat identifies streptococcal tonsillitis as the most important bacterial cause of acute pharyngotonsillitis in children. EBV (A) causes infectious mononucleosis; amoxicillin must be avoided as it causes a widespread maculopapular rash. Fusobacterium (C) causes Lemierre's syndrome. Staphylococcal tonsillitis (D) is uncommon.",
     "section": "ENT",
     "num": 76
   },
@@ -997,7 +997,7 @@ window.MM.fpsc_past_7 = [
       "Acute otitis media"
     ],
     "ans": 1,
-    "exp": "Cholesteatoma is a destructive, expanding accumulation of keratinising squamous epithelium in the middle ear and mastoid, appearing as a pearly white mass typically in the pars flaccida (attic) region. Despite being histologically benign, it erodes the ossicles (causing conductive hearing loss), facial nerve canal, tegmen, and labyrinth if untreated. Cholesteatoma is the 'dangerous' type of chronic otitis media — so called because it erodes vital structures and requires mastoidectomy to prevent life-threatening complications. Otitis media with effusion (A) shows an amber fluid level behind an intact drum. Otosclerosis (C) presents in young adults with a normal-looking drum and progressive conductive loss. Acute otitis media (D) presents acutely with fever and a bulging red drum.",
+    "exp": "Cholesteatoma is a destructive, expanding accumulation of keratinising squamous epithelium in the middle ear and mastoid, appearing as a pearly white mass typically in the pars flaccida (attic) region. Despite being histologically benign, it erodes the ossicles (causing conductive hearing loss), facial nerve canal, tegmen, and labyrinth if untreated. Cholesteatoma is the 'dangerous' type of chronic otitis media, so called because it erodes vital structures and requires mastoidectomy to prevent life-threatening complications. Otitis media with effusion (A) shows an amber fluid level behind an intact drum. Otosclerosis (C) presents in young adults with a normal-looking drum and progressive conductive loss. Acute otitis media (D) presents acutely with fever and a bulging red drum.",
     "section": "ENT",
     "num": 77
   },
@@ -1010,7 +1010,7 @@ window.MM.fpsc_past_7 = [
       "CPAP machine"
     ],
     "ans": 1,
-    "exp": "Grade 3 tonsillar hypertrophy with obstructive sleep apnoea — apnoeic episodes, snoring, fragmented sleep — in a child is a clear indication for adenotonsillectomy (removal of tonsils and adenoids). This is the first-line treatment for paediatric OSA caused by adenotonsillar hypertrophy and produces dramatic improvement. OSA is the most compelling indication for tonsillectomy in children, alongside recurrent tonsillitis. Long-term antibiotics (A) do not address hypertrophy. Nasal steroids (C) have only a limited role. CPAP (D) is first-line for adult OSA but not for children with surgically correctable obstruction.",
+    "exp": "Grade 3 tonsillar hypertrophy with obstructive sleep apnoea (apnoeic episodes, snoring, fragmented sleep) in a child is a clear indication for adenotonsillectomy (removal of tonsils and adenoids). This is the first-line treatment for paediatric OSA caused by adenotonsillar hypertrophy and produces dramatic improvement. OSA is the most compelling indication for tonsillectomy in children, alongside recurrent tonsillitis. Long-term antibiotics (A) do not address hypertrophy. Nasal steroids (C) have only a limited role. CPAP (D) is first-line for adult OSA but not for children with surgically correctable obstruction.",
     "section": "ENT",
     "num": 78
   },
@@ -1023,7 +1023,7 @@ window.MM.fpsc_past_7 = [
       "Antihistamines only"
     ],
     "ans": 1,
-    "exp": "Significant, persistent adenoid hypertrophy causing mouth breathing, snoring, and hyponasal speech is definitively treated with surgical removal (adenoidectomy) when symptoms are severe or associated with complications such as obstructive sleep issues.",
+    "exp": "Significant, persistent adenoid hypertrophy causing mouth breathing, snoring, and hyponasal speech is definitively treated with surgical removal (adenoidectomy) when symptoms are severe or associated with complications such as obstructive sleep issues (Dhingra's Diseases of Ear, Nose and Throat).",
     "section": "ENT",
     "num": 79
   },
@@ -1036,7 +1036,7 @@ window.MM.fpsc_past_7 = [
       "Allergic rhinitis"
     ],
     "ans": 1,
-    "exp": "Juvenile nasopharyngeal angiofibroma, though rare, is an important differential in young males presenting with unilateral nasal obstruction and recurrent epistaxis, as it is a highly vascular tumour requiring specific management, distinct from simple nasal polyps.",
+    "exp": "Juvenile nasopharyngeal angiofibroma, though rare, is an important differential in young males presenting with unilateral nasal obstruction and recurrent epistaxis, as it is a highly vascular tumour requiring specific management, distinct from simple nasal polyps, consistent with Scott-Brown's Otorhinolaryngology.",
     "section": "ENT",
     "num": 80
   },
@@ -1049,7 +1049,7 @@ window.MM.fpsc_past_7 = [
       "Laryngomalacia"
     ],
     "ans": 1,
-    "exp": "Hoarseness following a recent viral upper respiratory infection, without red-flag features like prolonged duration, haemoptysis, or weight loss, is most commonly due to acute laryngitis, which typically resolves with voice rest and supportive care.",
+    "exp": "Hoarseness following a recent viral upper respiratory infection, without red-flag features like prolonged duration, haemoptysis, or weight loss, is most commonly due to acute laryngitis, which typically resolves with voice rest and supportive care, consistent with Dhingra's Diseases of Ear, Nose and Throat.",
     "section": "ENT",
     "num": 81
   },
@@ -1062,7 +1062,7 @@ window.MM.fpsc_past_7 = [
       "Otitis externa"
     ],
     "ans": 1,
-    "exp": "Unilateral serous otitis media in an adult without an obvious cause should raise suspicion for a nasopharyngeal mass (such as nasopharyngeal carcinoma) obstructing the Eustachian tube, and warrants nasopharyngeal examination to exclude this possibility.",
+    "exp": "Unilateral serous otitis media in an adult without an obvious cause should raise suspicion for a nasopharyngeal mass (such as nasopharyngeal carcinoma) obstructing the Eustachian tube, and warrants nasopharyngeal examination to exclude this possibility, consistent with Dhingra's Diseases of Ear, Nose and Throat.",
     "section": "ENT",
     "num": 82
   },
@@ -1114,7 +1114,7 @@ window.MM.fpsc_past_7 = [
       "Retina"
     ],
     "ans": 1,
-    "exp": "Bitemporal hemianopia results from compression at the optic chiasm, most classically caused by a pituitary adenoma, since the chiasm is where fibres from the nasal (temporal-field) retina of both eyes cross and become vulnerable to midline compression.",
+    "exp": "Bitemporal hemianopia results from compression at the optic chiasm, most classically caused by a pituitary adenoma, since the chiasm is where fibres from the nasal (temporal-field) retina of both eyes cross and become vulnerable to midline compression, as detailed in Kanski's Clinical Ophthalmology.",
     "section": "Ophthalmology",
     "num": 86
   },
@@ -1127,7 +1127,7 @@ window.MM.fpsc_past_7 = [
       "Adie's tonic pupil; parasympathetic denervation"
     ],
     "ans": 0,
-    "exp": "The triad of ptosis, miosis (constricted pupil), and anhidrosis (loss of facial sweating) on one side is classic for Horner syndrome, resulting from disruption of the sympathetic nerve supply to the eye and face on that side.",
+    "exp": "The triad of ptosis, miosis (constricted pupil), and anhidrosis (loss of facial sweating) on one side is classic for Horner syndrome, resulting from disruption of the sympathetic nerve supply to the eye and face on that side (Kanski's Clinical Ophthalmology).",
     "section": "Ophthalmology",
     "num": 87
   },
@@ -1140,7 +1140,7 @@ window.MM.fpsc_past_7 = [
       "Papilloedema; raised intracranial pressure"
     ],
     "ans": 1,
-    "exp": "New vessel formation (neovascularisation) on the retina in a diabetic patient indicates proliferative diabetic retinopathy, a sight-threatening stage driven by retinal ischaemia that requires prompt ophthalmologic treatment such as laser photocoagulation.",
+    "exp": "New vessel formation (neovascularisation) on the retina in a diabetic patient indicates proliferative diabetic retinopathy, a sight-threatening stage driven by retinal ischaemia that requires prompt ophthalmologic treatment such as laser photocoagulation, a point emphasised in Kanski's Clinical Ophthalmology.",
     "section": "Ophthalmology",
     "num": 88
   },
@@ -1153,7 +1153,7 @@ window.MM.fpsc_past_7 = [
       "Blepharitis"
     ],
     "ans": 1,
-    "exp": "Leucocoria (a white pupillary reflex instead of the normal red reflex) in a child is a red-flag sign requiring urgent ophthalmologic assessment to exclude retinoblastoma, a potentially life-threatening intraocular tumour of childhood.",
+    "exp": "Leucocoria (a white pupillary reflex instead of the normal red reflex) in a child is a red-flag sign requiring urgent ophthalmologic assessment to exclude retinoblastoma, a potentially life-threatening intraocular tumour of childhood (Parson's Diseases of the Eye).",
     "section": "Ophthalmology",
     "num": 89
   },
@@ -1166,7 +1166,7 @@ window.MM.fpsc_past_7 = [
       "Cystic fibrosis"
     ],
     "ans": 2,
-    "exp": "Bronchiectasis is permanent abnormal dilation of the bronchi from destruction of the bronchial wall, typically due to recurrent severe infection. It presents with chronic productive cough with large volumes of mucopurulent sputum, recurrent chest infections, and haemoptysis. The HRCT hallmark is the signet ring sign — dilated bronchi with diameter greater than the adjacent pulmonary artery — with bronchial wall thickening predominantly in the lower lobes. In Pakistan, post-tuberculous and post-measles bronchiectasis are common causes. Davidson's identifies HRCT as the gold standard. COPD (A) causes airflow obstruction without bronchial dilation on CT. IPF (B) shows honeycombing. CF (D) occurs in younger patients.",
+    "exp": "Bronchiectasis is permanent abnormal dilation of the bronchi from destruction of the bronchial wall, typically due to recurrent severe infection. It presents with chronic productive cough with large volumes of mucopurulent sputum, recurrent chest infections, and haemoptysis. The HRCT hallmark is the signet ring sign: dilated bronchi with diameter greater than the adjacent pulmonary artery, with bronchial wall thickening predominantly in the lower lobes. In Pakistan, post-tuberculous and post-measles bronchiectasis are common causes. Davidson's identifies HRCT as the gold standard. COPD (A) causes airflow obstruction without bronchial dilation on CT. IPF (B) shows honeycombing. CF (D) occurs in younger patients.",
     "section": "Pulmonology",
     "num": 90
   },
@@ -1179,7 +1179,7 @@ window.MM.fpsc_past_7 = [
       "Normal ABG for COPD; no supplemental oxygen needed"
     ],
     "ans": 1,
-    "exp": "Type II respiratory failure is defined by hypoxaemia (PaO2 <8 kPa) AND hypercapnia (PaCO2 >6 kPa). The elevated HCO3 (30 mEq/L) confirms chronic metabolic compensation for CO2 retention — this is chronic decompensated Type II failure. In COPD with chronic CO2 retention, hypoxia is the primary ventilatory drive. High-flow oxygen (A) suppresses this drive and worsens hypercapnia, potentially causing respiratory arrest. The target SpO2 in COPD with Type II failure is 88-92%. Davidson's Medicine and BTS guidelines both emphasise controlled low-flow oxygen in this setting.",
+    "exp": "Type II respiratory failure is defined by hypoxaemia (PaO2 <8 kPa) AND hypercapnia (PaCO2 >6 kPa). The elevated HCO3 (30 mEq/L) confirms chronic metabolic compensation for CO2 retention; this is chronic decompensated Type II failure. In COPD with chronic CO2 retention, hypoxia is the primary ventilatory drive. High-flow oxygen (A) suppresses this drive and worsens hypercapnia, potentially causing respiratory arrest. The target SpO2 in COPD with Type II failure is 88-92%. Davidson's Medicine and BTS guidelines both emphasise controlled low-flow oxygen in this setting.",
     "section": "Pulmonology",
     "num": 91
   },
@@ -1205,7 +1205,7 @@ window.MM.fpsc_past_7 = [
       "Neuromuscular weakness"
     ],
     "ans": 1,
-    "exp": "A reduced FEV1/FVC ratio indicates airflow obstruction; only partial reversibility with bronchodilator (as opposed to the marked reversibility seen in asthma) is characteristic of chronic obstructive pulmonary disease.",
+    "exp": "A reduced FEV1/FVC ratio indicates airflow obstruction; only partial reversibility with bronchodilator (as opposed to the marked reversibility seen in asthma) is characteristic of chronic obstructive pulmonary disease, a point emphasised in Davidson's Principles and Practice of Medicine.",
     "section": "Pulmonology",
     "num": 93
   },
@@ -1218,7 +1218,7 @@ window.MM.fpsc_past_7 = [
       "Sputum culture"
     ],
     "ans": 1,
-    "exp": "Sudden pleuritic chest pain and breathlessness after prolonged immobility (such as a long flight), with an elevated D-dimer, raises strong suspicion for pulmonary embolism; CT pulmonary angiography is the investigation of choice to confirm the diagnosis.",
+    "exp": "Sudden pleuritic chest pain and breathlessness after prolonged immobility (such as a long flight), with an elevated D-dimer, raises strong suspicion for pulmonary embolism; CT pulmonary angiography is the investigation of choice to confirm the diagnosis, as Davidson's Principles and Practice of Medicine describes.",
     "section": "Pulmonology",
     "num": 94
   },
@@ -1231,7 +1231,7 @@ window.MM.fpsc_past_7 = [
       "Pneumothorax"
     ],
     "ans": 0,
-    "exp": "Bilateral hilar lymphadenopathy with dry cough and mild breathlessness in a young non-smoker is a classic presentation warranting consideration of sarcoidosis, a multisystem granulomatous disease that commonly affects the lungs.",
+    "exp": "Bilateral hilar lymphadenopathy with dry cough and mild breathlessness in a young non-smoker is a classic presentation warranting consideration of sarcoidosis, a multisystem granulomatous disease that commonly affects the lungs, as detailed in Kumar and Clark's Clinical Medicine.",
     "section": "Pulmonology",
     "num": 95
   },
@@ -1244,7 +1244,7 @@ window.MM.fpsc_past_7 = [
       "Delusional disorder"
     ],
     "ans": 2,
-    "exp": "OCD is characterised by obsessions — recurrent intrusive unwanted thoughts the patient recognises as their own (ego-dystonic) — and compulsions — repetitive behaviours performed to neutralise the anxiety from obsessions. Contamination obsessions driving hand-washing compulsions for 3-4 hours daily causing significant functional impairment is the prototypical OCD presentation. The Shorter Oxford Textbook of Psychiatry identifies OCD as consuming more than one hour per day with marked functional impairment. Unlike schizophrenia (B), the patient recognises thoughts as her own — no thought insertion. GAD (A) involves pervasive worry without discrete rituals. Delusional disorder (D) involves fixed false beliefs, not ego-dystonic intrusive thoughts.",
+    "exp": "OCD is characterised by obsessions (recurrent intrusive unwanted thoughts the patient recognises as their own, ego-dystonic) and compulsions (repetitive behaviours performed to neutralise the anxiety from obsessions). Contamination obsessions driving hand-washing compulsions for 3-4 hours daily causing significant functional impairment is the prototypical OCD presentation. The Shorter Oxford Textbook of Psychiatry identifies OCD as consuming more than one hour per day with marked functional impairment. Unlike schizophrenia (B), the patient recognises thoughts as her own, with no thought insertion. GAD (A) involves pervasive worry without discrete rituals. Delusional disorder (D) involves fixed false beliefs, not ego-dystonic intrusive thoughts.",
     "section": "Psychiatry",
     "num": 96
   },
@@ -1257,7 +1257,7 @@ window.MM.fpsc_past_7 = [
       "Cyclothymia"
     ],
     "ans": 1,
-    "exp": "The current episode features decreased need for sleep (3 days without sleep), pressured speech, grandiose delusions, reckless spending, and multiple simultaneous goal-directed activities — a full manic episode. Combined with a prior severe depressive episode, this meets criteria for Bipolar I disorder. The Shorter Oxford Textbook of Psychiatry defines Bipolar I as requiring at least one lifetime manic episode, which may alternate with depressive episodes. Unipolar depression (A) does not include a manic episode. Schizoaffective disorder (C) requires concurrent prominent psychotic symptoms independent of mood episodes. Cyclothymia (D) involves subthreshold mood swings over at least 2 years.",
+    "exp": "The current episode features decreased need for sleep (3 days without sleep), pressured speech, grandiose delusions, reckless spending, and multiple simultaneous goal-directed activities: a full manic episode. Combined with a prior severe depressive episode, this meets criteria for Bipolar I disorder. The Shorter Oxford Textbook of Psychiatry defines Bipolar I as requiring at least one lifetime manic episode, which may alternate with depressive episodes. Unipolar depression (A) does not include a manic episode. Schizoaffective disorder (C) requires concurrent prominent psychotic symptoms independent of mood episodes. Cyclothymia (D) involves subthreshold mood swings over at least 2 years.",
     "section": "Psychiatry",
     "num": 97
   },
@@ -1270,7 +1270,7 @@ window.MM.fpsc_past_7 = [
       "Somatic symptom disorder"
     ],
     "ans": 1,
-    "exp": "Recurrent, intrusive, unwanted thoughts (obsessions) accompanied by repetitive behaviours performed to reduce the resulting anxiety (compulsions), with insight that the behaviour is excessive, is the classic presentation of obsessive-compulsive disorder.",
+    "exp": "Recurrent, intrusive, unwanted thoughts (obsessions) accompanied by repetitive behaviours performed to reduce the resulting anxiety (compulsions), with insight that the behaviour is excessive, is the classic presentation of obsessive-compulsive disorder, a point emphasised in DSM-5.",
     "section": "Psychiatry",
     "num": 98
   },
@@ -1283,7 +1283,7 @@ window.MM.fpsc_past_7 = [
       "Acute dystonia"
     ],
     "ans": 1,
-    "exp": "Tardive dyskinesia is a delayed-onset movement disorder characterised by involuntary, repetitive movements such as lip-smacking, tongue-thrusting, and grimacing, occurring after prolonged exposure to antipsychotic medications, particularly first-generation agents.",
+    "exp": "Tardive dyskinesia is a delayed-onset movement disorder characterised by involuntary, repetitive movements such as lip-smacking, tongue-thrusting, and grimacing, occurring after prolonged exposure to antipsychotic medications, particularly first-generation agents, consistent with the Shorter Oxford Textbook of Psychiatry.",
     "section": "Psychiatry",
     "num": 99
   },
@@ -1296,7 +1296,7 @@ window.MM.fpsc_past_7 = [
       "Agoraphobia"
     ],
     "ans": 1,
-    "exp": "Recurrent, unexpected, discrete episodes of intense fear with physical symptoms (palpitations, sweating) peaking within minutes, accompanied by fear of dying or losing control, is the defining presentation of panic disorder.",
+    "exp": "Recurrent, unexpected, discrete episodes of intense fear with physical symptoms (palpitations, sweating) peaking within minutes, accompanied by fear of dying or losing control, is the defining presentation of panic disorder, as detailed in DSM-5.",
     "section": "Psychiatry",
     "num": 100
   }

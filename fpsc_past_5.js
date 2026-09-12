@@ -126,7 +126,7 @@ window.MM.fpsc_past_5 = [
       "1-3-2-5-4"
     ],
     "ans": 0,
-    "exp": "The correct order is 'The findings were carefully peer-reviewed before publication' — subject (1), verb (3), adverb (5), participle (2), then the phrase (4).",
+    "exp": "The correct order is 'The findings were carefully peer-reviewed before publication': subject (1), verb (3), adverb (5), participle (2), then the phrase (4).",
     "section": "English",
     "num": 10
   },
@@ -139,7 +139,7 @@ window.MM.fpsc_past_5 = [
       "It was halted due to funding issues, so the trial was promising."
     ],
     "ans": 1,
-    "exp": "'Although' correctly signals the contrast — the trial showed promise, yet was still halted. The other options misstate the logical relationship between the two facts.",
+    "exp": "'Although' correctly signals the contrast: the trial showed promise, yet was still halted. The other options misstate the logical relationship between the two facts.",
     "section": "English",
     "num": 11
   },
@@ -217,7 +217,7 @@ window.MM.fpsc_past_5 = [
       "Provided that"
     ],
     "ans": 0,
-    "exp": "'Despite' introduces a contrast — the ambulance arrived quickly even though there was traffic. 'Because of' would incorrectly suggest traffic helped the ambulance arrive faster.",
+    "exp": "'Despite' introduces a contrast: the ambulance arrived quickly even though there was traffic. 'Because of' would incorrectly suggest traffic helped the ambulance arrive faster.",
     "section": "English",
     "num": 17
   },
@@ -451,7 +451,7 @@ window.MM.fpsc_past_5 = [
       "Vaccination coverage and hospital beds"
     ],
     "ans": 1,
-    "exp": "Healthy Life Expectancy (Sullivan's method) combines mortality data with morbidity/disability data to estimate the number of years a person can expect to live in full health, giving a more complete picture than life expectancy alone.",
+    "exp": "Healthy Life Expectancy (Sullivan's method) combines mortality data with morbidity/disability data to estimate the number of years a person can expect to live in full health, giving a more complete picture than life expectancy alone, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 35
   },
@@ -464,7 +464,7 @@ window.MM.fpsc_past_5 = [
       "The rate of disease transmission between individuals"
     ],
     "ans": 1,
-    "exp": "Prevalence refers to the total burden of existing disease (both newly and previously diagnosed cases) present in a population at a specific point or period, as opposed to incidence, which counts only new cases.",
+    "exp": "Prevalence refers to the total burden of existing disease (both newly and previously diagnosed cases) present in a population at a specific point or period, as opposed to incidence, which counts only new cases, a point emphasised in Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 36
   },
@@ -490,7 +490,7 @@ window.MM.fpsc_past_5 = [
       "Diphtheria"
     ],
     "ans": 1,
-    "exp": "Pakistan remains one of the last countries where wild poliovirus transmission is still endemic, alongside Afghanistan, despite a long-running national polio eradication programme.",
+    "exp": "Pakistan remains one of the last countries where wild poliovirus transmission is still endemic, alongside Afghanistan, despite a long-running national polio eradication programme, a point emphasised in Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 38
   },
@@ -503,7 +503,7 @@ window.MM.fpsc_past_5 = [
       "A billing term used in health insurance"
     ],
     "ans": 1,
-    "exp": "Pakistan's health policy documents describe a 'double burden of disease' in which communicable diseases, maternal health issues, and under-nutrition remain major problems even as non-communicable diseases, injuries, and mental health conditions are rising sharply, straining the health system on two fronts at once.",
+    "exp": "Pakistan's health policy documents describe a 'double burden of disease' in which communicable diseases, maternal health issues, and under-nutrition remain major problems even as non-communicable diseases, injuries, and mental health conditions are rising sharply, straining the health system on two fronts at once, as detailed in Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 39
   },
@@ -516,7 +516,7 @@ window.MM.fpsc_past_5 = [
       "Palliative care"
     ],
     "ans": 1,
-    "exp": "Preventing malnutrition and stunting through supplementation before disease/deficiency sets in is a population-level preventive strategy, exemplifying the 'Care' approach.",
+    "exp": "Preventing malnutrition and stunting through supplementation before disease/deficiency sets in is a population-level preventive strategy, exemplifying the 'Care' approach, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Care vs Cure",
     "num": 40
   },
@@ -529,7 +529,7 @@ window.MM.fpsc_past_5 = [
       "Neither Care nor Cure"
     ],
     "ans": 1,
-    "exp": "Official Pakistani health planning documents note that the bulk of health financing is consumed by secondary and tertiary (curative) care, leaving only a small fraction for preventive and primary health services — a documented real-world skew toward 'Cure' over 'Care'.",
+    "exp": "Official Pakistani health planning documents note that the bulk of health financing is consumed by secondary and tertiary (curative) care, leaving only a small fraction for preventive and primary health services, a documented real-world skew toward 'Cure' over 'Care', consistent with Pakistan's National Health Vision 2016-2025.",
     "section": "Care vs Cure",
     "num": 41
   },
@@ -542,7 +542,7 @@ window.MM.fpsc_past_5 = [
       "Palliation"
     ],
     "ans": 1,
-    "exp": "Deworming programmes are preventive, delivered to whole populations of children before serious illness develops, exemplifying the 'Care' approach to health management.",
+    "exp": "Deworming programmes are preventive, delivered to whole populations of children before serious illness develops, exemplifying the 'Care' approach to health management, as detailed in Park's Textbook of Preventive and Social Medicine.",
     "section": "Care vs Cure",
     "num": 42
   },
@@ -581,7 +581,7 @@ window.MM.fpsc_past_5 = [
       "95%"
     ],
     "ans": 2,
-    "exp": "National health policy documents cite out-of-pocket expenditure at approximately 70% of total health spending in Pakistan, meaning most costs are borne directly by patients and families rather than through insurance or government provision.",
+    "exp": "National health policy documents cite out-of-pocket expenditure at approximately 70% of total health spending in Pakistan, meaning most costs are borne directly by patients and families rather than through insurance or government provision, consistent with Pakistan's National Health Vision 2016-2025.",
     "section": "Health Policies of Govt",
     "num": 45
   },
@@ -594,7 +594,7 @@ window.MM.fpsc_past_5 = [
       "Overregulation of pharmaceutical pricing"
     ],
     "ans": 1,
-    "exp": "A 2023 peer-reviewed review of Pakistan's healthcare system (published in Cureus) identifies inequitable distribution of resources, inadequate healthcare spending, poor adherence to preventive healthcare, and brain drain of healthcare workers as the major problems undermining the health system.",
+    "exp": "A 2023 peer-reviewed review of Pakistan's healthcare system (published in Cureus) identifies inequitable distribution of resources, inadequate healthcare spending, poor adherence to preventive healthcare, and brain drain of healthcare workers as the major problems undermining the health system, consistent with Pakistan's National Health Vision 2016-2025.",
     "section": "Major Challenges to Healthcare",
     "num": 46
   },
@@ -607,7 +607,7 @@ window.MM.fpsc_past_5 = [
       "Around 99%"
     ],
     "ans": 1,
-    "exp": "Health system reviews report that approximately 65% of Pakistan's rural population has inadequate access to trained healthcare providers, since most physicians and specialists remain concentrated in urban centres.",
+    "exp": "Health system reviews report that approximately 65% of Pakistan's rural population has inadequate access to trained healthcare providers, since most physicians and specialists remain concentrated in urban centres, as Pakistan's National Health Vision 2016-2025 describes.",
     "section": "Major Challenges to Healthcare",
     "num": 47
   },
@@ -620,7 +620,7 @@ window.MM.fpsc_past_5 = [
       "Surplus of health financing"
     ],
     "ans": 1,
-    "exp": "The Sehat Sahulat Program is recognised as one of Pakistan's most significant health financing reforms, aiming to reduce catastrophic out-of-pocket expenditure by providing free hospitalization insurance coverage to low-income families.",
+    "exp": "The Sehat Sahulat Program is recognised as one of Pakistan's most significant health financing reforms, aiming to reduce catastrophic out-of-pocket expenditure by providing free hospitalization insurance coverage to low-income families, a point emphasised in Pakistan's National Health Vision 2016-2025.",
     "section": "Major Challenges to Healthcare",
     "num": 48
   },
@@ -724,7 +724,7 @@ window.MM.fpsc_past_5 = [
       "Irritable bowel syndrome"
     ],
     "ans": 0,
-    "exp": "Atrial fibrillation predisposes to embolus formation; sudden severe abdominal pain disproportionate to examination findings is the classic presentation of acute mesenteric ischaemia from embolic occlusion of the mesenteric vessels — a surgical emergency.",
+    "exp": "Atrial fibrillation predisposes to embolus formation; sudden severe abdominal pain disproportionate to examination findings is the classic presentation of acute mesenteric ischaemia from embolic occlusion of the mesenteric vessels, a surgical emergency, as detailed in Davidson's Principles and Practice of Medicine.",
     "section": "Medicine",
     "num": 56
   },
@@ -737,7 +737,7 @@ window.MM.fpsc_past_5 = [
       "Fibromyalgia"
     ],
     "ans": 1,
-    "exp": "A malar (butterfly) rash, joint pain, renal involvement (proteinuria), and a positive ANA with high anti-dsDNA titres are classic features of systemic lupus erythematosus (SLE), with anti-dsDNA being highly specific for the disease.",
+    "exp": "A malar (butterfly) rash, joint pain, renal involvement (proteinuria), and a positive ANA with high anti-dsDNA titres are classic features of systemic lupus erythematosus (SLE), with anti-dsDNA being highly specific for the disease, consistent with Davidson's Principles and Practice of Medicine.",
     "section": "Medicine",
     "num": 57
   },
@@ -750,7 +750,7 @@ window.MM.fpsc_past_5 = [
       "Complete absence of any acid-base disturbance"
     ],
     "ans": 1,
-    "exp": "In chronic CO2 retainers (such as COPD patients), the kidneys compensate over time by retaining bicarbonate to normalize pH despite persistently elevated CO2 — termed compensated respiratory acidosis, distinguishing it from an acute, uncompensated picture.",
+    "exp": "In chronic CO2 retainers (such as COPD patients), the kidneys compensate over time by retaining bicarbonate to normalize pH despite persistently elevated CO2, termed compensated respiratory acidosis, distinguishing it from an acute, uncompensated picture, as Davidson's Principles and Practice of Medicine describes.",
     "section": "Medicine",
     "num": 58
   },
@@ -854,7 +854,7 @@ window.MM.fpsc_past_5 = [
       "Lipoma"
     ],
     "ans": 0,
-    "exp": "A swelling that enlarges and becomes painful specifically during eating is characteristic of salivary gland obstruction by a stone. The submandibular gland is affected far more often than the parotid, because Wharton's duct is longer, runs uphill, and carries more viscous, mucous-rich, calcium-laden saliva — making it the classic answer for this presentation.",
+    "exp": "A swelling that enlarges and becomes painful specifically during eating is characteristic of salivary gland obstruction by a stone. The submandibular gland is affected far more often than the parotid, because Wharton's duct is longer, runs uphill, and carries more viscous, mucous-rich, calcium-laden saliva, making it the classic answer for this presentation, as Bailey and Love's Short Practice of Surgery describes.",
     "section": "Surgery",
     "num": 66
   },
@@ -867,7 +867,7 @@ window.MM.fpsc_past_5 = [
       "Observation with no intervention"
     ],
     "ans": 1,
-    "exp": "Symptomatic gallstone disease with a thickened gallbladder wall (suggesting cholecystitis) is best managed definitively with laparoscopic cholecystectomy, the gold-standard treatment for symptomatic cholelithiasis.",
+    "exp": "Symptomatic gallstone disease with a thickened gallbladder wall (suggesting cholecystitis) is best managed definitively with laparoscopic cholecystectomy, the gold-standard treatment for symptomatic cholelithiasis, a point emphasised in Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 67
   },
@@ -880,7 +880,7 @@ window.MM.fpsc_past_5 = [
       "Application of a tight compressive bandage"
     ],
     "ans": 1,
-    "exp": "Pain out of proportion to injury with a tense compartment after a crush injury indicates compartment syndrome, a surgical emergency requiring urgent fasciotomy to relieve pressure and prevent irreversible muscle and nerve damage.",
+    "exp": "Pain out of proportion to injury with a tense compartment after a crush injury indicates compartment syndrome, a surgical emergency requiring urgent fasciotomy to relieve pressure and prevent irreversible muscle and nerve damage, a point emphasised in Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 68
   },

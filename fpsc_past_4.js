@@ -126,7 +126,7 @@ window.MM.fpsc_past_4 = [
       "1-5-2-3-4"
     ],
     "ans": 0,
-    "exp": "The correct order is 'The vaccine was finally approved after extensive trials' — subject (1), verb (2), adverb (5), participle (3), then the remaining phrase (4).",
+    "exp": "The correct order is 'The vaccine was finally approved after extensive trials': subject (1), verb (2), adverb (5), participle (3), then the remaining phrase (4).",
     "section": "English",
     "num": 10
   },
@@ -139,7 +139,7 @@ window.MM.fpsc_past_4 = [
       "Patient care did not suffer, but the ward was short-staffed."
     ],
     "ans": 1,
-    "exp": "'Although' correctly introduces the contrast — despite being short-staffed, care did not suffer. 'So' and 'because' would incorrectly imply a causal rather than contrastive relationship.",
+    "exp": "'Although' correctly introduces the contrast: despite being short-staffed, care did not suffer. 'So' and 'because' would incorrectly imply a causal rather than contrastive relationship.",
     "section": "English",
     "num": 11
   },
@@ -451,7 +451,7 @@ window.MM.fpsc_past_4 = [
       "Half of all deaths are due to hypertension"
     ],
     "ans": 1,
-    "exp": "The Rule of Halves describes the classic gap in chronic disease management: roughly half of hypertensives are undiagnosed, of those diagnosed only half are treated, and of those treated only half achieve adequate control — highlighting major gaps in the care cascade.",
+    "exp": "The Rule of Halves describes the classic gap in chronic disease management: roughly half of hypertensives are undiagnosed, of those diagnosed only half are treated, and of those treated only half achieve adequate control, highlighting major gaps in the care cascade (Park's Textbook of Preventive and Social Medicine).",
     "section": "Community Medicine",
     "num": 35
   },
@@ -464,7 +464,7 @@ window.MM.fpsc_past_4 = [
       "The proportion of a population that is immune"
     ],
     "ans": 1,
-    "exp": "Incidence measures new cases arising over a defined period, distinguishing it from prevalence, which measures all existing cases (new and old) at a given point in time.",
+    "exp": "Incidence measures new cases arising over a defined period, distinguishing it from prevalence, which measures all existing cases (new and old) at a given point in time, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 36
   },
@@ -477,7 +477,7 @@ window.MM.fpsc_past_4 = [
       "Quaternary prevention"
     ],
     "ans": 1,
-    "exp": "Since diarrhoea has already occurred, giving ORS to prevent progression to severe dehydration and death is secondary prevention — limiting the consequences of an existing condition rather than preventing its onset.",
+    "exp": "Since diarrhoea has already occurred, giving ORS to prevent progression to severe dehydration and death is secondary prevention: limiting the consequences of an existing condition rather than preventing its onset, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 37
   },
@@ -490,7 +490,7 @@ window.MM.fpsc_past_4 = [
       "5,000 households"
     ],
     "ans": 1,
-    "exp": "Each Lady Health Worker is typically assigned to cover around 200 households (roughly 1,000 population) in her catchment area, delivering doorstep preventive and promotive health services.",
+    "exp": "Each Lady Health Worker is typically assigned to cover around 200 households (roughly 1,000 population) in her catchment area, delivering doorstep preventive and promotive health services, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 38
   },
@@ -503,7 +503,7 @@ window.MM.fpsc_past_4 = [
       "Only access to hospital care"
     ],
     "ans": 1,
-    "exp": "WHO defines health as 'a state of complete physical, mental and social well-being and not merely the absence of disease or infirmity', a holistic definition central to public health teaching.",
+    "exp": "WHO defines health as 'a state of complete physical, mental and social well-being and not merely the absence of disease or infirmity', a holistic definition central to public health teaching, a point emphasised in Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 39
   },
@@ -516,7 +516,7 @@ window.MM.fpsc_past_4 = [
       "Palliative care"
     ],
     "ans": 1,
-    "exp": "Improving water and sanitation addresses the root cause of disease before it occurs — a classic 'Care'-oriented, upstream preventive strategy, as opposed to treating diarrhoeal illness after it develops.",
+    "exp": "Improving water and sanitation addresses the root cause of disease before it occurs, a classic 'Care'-oriented, upstream preventive strategy, as opposed to treating diarrhoeal illness after it develops, consistent with Park's Textbook of Preventive and Social Medicine.",
     "section": "Care vs Cure",
     "num": 40
   },
@@ -529,7 +529,7 @@ window.MM.fpsc_past_4 = [
       "No relevance to the Care vs Cure debate"
     ],
     "ans": 1,
-    "exp": "Prioritizing expensive curative technology for the few while neglecting basic preventive and primary care for the many is a textbook example of over-emphasizing 'Cure' at the expense of 'Care'.",
+    "exp": "Prioritizing expensive curative technology for the few while neglecting basic preventive and primary care for the many is a textbook example of over-emphasizing 'Cure' at the expense of 'Care', consistent with Pakistan's National Health Vision 2016-2025.",
     "section": "Care vs Cure",
     "num": 41
   },
@@ -542,7 +542,7 @@ window.MM.fpsc_past_4 = [
       "Palliation"
     ],
     "ans": 1,
-    "exp": "Deworming programmes are preventive, delivered to whole populations of children before serious illness develops, exemplifying the 'Care' approach to health management.",
+    "exp": "Deworming programmes are preventive, delivered to whole populations of children before serious illness develops, exemplifying the 'Care' approach to health management, as detailed in Park's Textbook of Preventive and Social Medicine.",
     "section": "Care vs Cure",
     "num": 42
   },
@@ -555,7 +555,7 @@ window.MM.fpsc_past_4 = [
       "Conducting medical entrance examinations"
     ],
     "ans": 1,
-    "exp": "Provincial Healthcare Commissions (e.g., Punjab Healthcare Commission) are regulatory bodies responsible for licensing healthcare establishments and enforcing minimum quality and safety standards across public and private facilities.",
+    "exp": "Provincial Healthcare Commissions (e.g., Punjab Healthcare Commission) are regulatory bodies responsible for licensing healthcare establishments and enforcing minimum quality and safety standards across public and private facilities, a point emphasised in Pakistan's National Health Vision 2016-2025.",
     "section": "Health Policies of Govt",
     "num": 43
   },
@@ -568,7 +568,7 @@ window.MM.fpsc_past_4 = [
       "Birth only"
     ],
     "ans": 1,
-    "exp": "EPI policy in Pakistan aims for children to complete their full primary immunization schedule by 12 months of age, covering diseases such as TB, polio, diphtheria, pertussis, tetanus, hepatitis B, and measles.",
+    "exp": "EPI policy in Pakistan aims for children to complete their full primary immunization schedule by 12 months of age, covering diseases such as TB, polio, diphtheria, pertussis, tetanus, hepatitis B, and measles, as Pakistan's National Health Vision 2016-2025 describes.",
     "section": "Health Policies of Govt",
     "num": 44
   },
@@ -581,7 +581,7 @@ window.MM.fpsc_past_4 = [
       "Regulate pharmaceutical exports"
     ],
     "ans": 1,
-    "exp": "This federal initiative, later expanded and rebranded under the Sehat Sahulat Program, was designed to provide free hospitalization insurance coverage to low-income families who otherwise could not afford secondary or tertiary care.",
+    "exp": "This federal initiative, later expanded and rebranded under the Sehat Sahulat Program, was designed to provide free hospitalization insurance coverage to low-income families who otherwise could not afford secondary or tertiary care, as Pakistan's National Health Vision 2016-2025 describes.",
     "section": "Health Policies of Govt",
     "num": 45
   },
@@ -594,7 +594,7 @@ window.MM.fpsc_past_4 = [
       "Delay in medical education, delay in licensing, delay in specialization"
     ],
     "ans": 1,
-    "exp": "The 'Three Delays' model explains preventable maternal deaths through delays in deciding to seek care, in reaching an appropriate health facility, and in receiving adequate care once there — a framework widely used to analyse maternal health challenges in low-resource settings.",
+    "exp": "The 'Three Delays' model explains preventable maternal deaths through delays in deciding to seek care, in reaching an appropriate health facility, and in receiving adequate care once there, a framework widely used to analyse maternal health challenges in low-resource settings, consistent with Pakistan's National Health Vision 2016-2025.",
     "section": "Major Challenges to Healthcare",
     "num": 46
   },
@@ -607,7 +607,7 @@ window.MM.fpsc_past_4 = [
       "Overproduction of generic drugs"
     ],
     "ans": 1,
-    "exp": "With most of the population lacking health insurance, medicine costs are largely paid out-of-pocket, making even moderately priced drugs a significant financial burden for many households.",
+    "exp": "With most of the population lacking health insurance, medicine costs are largely paid out-of-pocket, making even moderately priced drugs a significant financial burden for many households, as detailed in Pakistan's National Health Vision 2016-2025.",
     "section": "Major Challenges to Healthcare",
     "num": 47
   },
@@ -620,7 +620,7 @@ window.MM.fpsc_past_4 = [
       "Eliminating the need for vaccination programmes"
     ],
     "ans": 1,
-    "exp": "Recurrent floods and extreme weather events damage health infrastructure, displace populations, and increase outbreaks of waterborne diseases (e.g., cholera) and vector-borne diseases (e.g., malaria, dengue), straining an already stretched health system.",
+    "exp": "Recurrent floods and extreme weather events damage health infrastructure, displace populations, and increase outbreaks of waterborne diseases (e.g., cholera) and vector-borne diseases (e.g., malaria, dengue), straining an already stretched health system, as detailed in Pakistan's National Health Vision 2016-2025.",
     "section": "Major Challenges to Healthcare",
     "num": 48
   },
@@ -724,7 +724,7 @@ window.MM.fpsc_past_4 = [
       "Low blood pressure"
     ],
     "ans": 0,
-    "exp": "Diabetic peripheral neuropathy causes loss of protective sensation, so repetitive minor trauma goes unnoticed and untreated, leading to painless plantar ulcers — a leading cause of diabetic foot complications.",
+    "exp": "Diabetic peripheral neuropathy causes loss of protective sensation, so repetitive minor trauma goes unnoticed and untreated, leading to painless plantar ulcers, a leading cause of diabetic foot complications, as Harrison's Principles of Internal Medicine describes.",
     "section": "Medicine",
     "num": 56
   },
@@ -737,7 +737,7 @@ window.MM.fpsc_past_4 = [
       "Myocardial infarction"
     ],
     "ans": 0,
-    "exp": "Severe epigastric pain radiating to the back with markedly elevated serum lipase (more specific than amylase) is classic for acute pancreatitis, commonly caused by gallstones or alcohol use.",
+    "exp": "Severe epigastric pain radiating to the back with markedly elevated serum lipase (more specific than amylase) is classic for acute pancreatitis, commonly caused by gallstones or alcohol use, as Davidson's Principles and Practice of Medicine describes.",
     "section": "Medicine",
     "num": 57
   },
@@ -750,7 +750,7 @@ window.MM.fpsc_past_4 = [
       "Hepatic haemangioma"
     ],
     "ans": 1,
-    "exp": "Chronic hepatitis B is a major risk factor for hepatocellular carcinoma, and a new liver mass with elevated AFP (a tumour marker for HCC) in this context strongly suggests hepatocellular carcinoma.",
+    "exp": "Chronic hepatitis B is a major risk factor for hepatocellular carcinoma, and a new liver mass with elevated AFP (a tumour marker for HCC) in this context strongly suggests hepatocellular carcinoma (Kumar and Clark's Clinical Medicine).",
     "section": "Medicine",
     "num": 58
   },
@@ -854,7 +854,7 @@ window.MM.fpsc_past_4 = [
       "Cushing's triad"
     ],
     "ans": 0,
-    "exp": "Charcot's triad (right upper quadrant pain, fever, and jaundice) is classically associated with ascending cholangitis, resulting from biliary obstruction and infection.",
+    "exp": "Charcot's triad (right upper quadrant pain, fever, and jaundice) is classically associated with ascending cholangitis, resulting from biliary obstruction and infection, a point emphasised in Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 66
   },
@@ -867,7 +867,7 @@ window.MM.fpsc_past_4 = [
       "Observation for 24 hours"
     ],
     "ans": 1,
-    "exp": "A rigid, distended abdomen with hypotension unresponsive to fluids after trauma indicates ongoing intra-abdominal haemorrhage requiring emergency laparotomy without delay for further imaging.",
+    "exp": "A rigid, distended abdomen with hypotension unresponsive to fluids after trauma indicates ongoing intra-abdominal haemorrhage requiring emergency laparotomy without delay for further imaging, consistent with Sabiston Textbook of Surgery.",
     "section": "Surgery",
     "num": 67
   },
@@ -880,7 +880,7 @@ window.MM.fpsc_past_4 = [
       "Oral antibiotics"
     ],
     "ans": 1,
-    "exp": "An abdominal aortic aneurysm of 5.5 cm or greater carries a significant risk of rupture and warrants elective surgical or endovascular repair, rather than watchful waiting alone.",
+    "exp": "An abdominal aortic aneurysm of 5.5 cm or greater carries a significant risk of rupture and warrants elective surgical or endovascular repair, rather than watchful waiting alone, a point emphasised in Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 68
   },

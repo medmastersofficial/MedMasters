@@ -126,7 +126,7 @@ window.MM.fpsc_past_6 = [
       "1-3-2-5-4"
     ],
     "ans": 0,
-    "exp": "The correct order is 'The vaccine was equitably distributed to remote areas' — subject (1), verb (3), adverb (5), participle (2), then the phrase (4).",
+    "exp": "The correct order is 'The vaccine was equitably distributed to remote areas': subject (1), verb (3), adverb (5), participle (2), then the phrase (4).",
     "section": "English",
     "num": 10
   },
@@ -139,7 +139,7 @@ window.MM.fpsc_past_6 = [
       "It lacked basic equipment, so the clinic was newly built."
     ],
     "ans": 1,
-    "exp": "'Although' correctly signals the contrast — despite being newly built, the clinic still lacked equipment. The other options misstate the logical relationship.",
+    "exp": "'Although' correctly signals the contrast: despite being newly built, the clinic still lacked equipment. The other options misstate the logical relationship.",
     "section": "English",
     "num": 11
   },
@@ -217,7 +217,7 @@ window.MM.fpsc_past_6 = [
       "In order to"
     ],
     "ans": 0,
-    "exp": "'Despite' introduces a contrast — the factory kept violating regulations even after repeated warnings. 'Because of' would incorrectly suggest the warnings caused the violations.",
+    "exp": "'Despite' introduces a contrast: the factory kept violating regulations even after repeated warnings. 'Because of' would incorrectly suggest the warnings caused the violations.",
     "section": "English",
     "num": 17
   },
@@ -230,7 +230,7 @@ window.MM.fpsc_past_6 = [
       "Vaccine"
     ],
     "ans": 1,
-    "exp": "A PANACEA is a solution or remedy claimed to be effective for all diseases or difficulties — often used figuratively for a universal fix.",
+    "exp": "A PANACEA is a solution or remedy claimed to be effective for all diseases or difficulties, often used figuratively for a universal fix.",
     "section": "English",
     "num": 18
   },
@@ -451,7 +451,7 @@ window.MM.fpsc_past_6 = [
       "Classify diseases by severity"
     ],
     "ans": 1,
-    "exp": "The SAMPLE history is a widely used structured framework for quickly and systematically gathering the essential elements of a patient's history in emergency and primary care settings, ensuring no critical detail is missed under time pressure.",
+    "exp": "The SAMPLE history is a widely used structured framework for quickly and systematically gathering the essential elements of a patient's history in emergency and primary care settings, ensuring no critical detail is missed under time pressure, a point emphasised in Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 35
   },
@@ -477,7 +477,7 @@ window.MM.fpsc_past_6 = [
       "95%"
     ],
     "ans": 2,
-    "exp": "National health data cited in Pakistan's health policy documents show skilled birth attendance improved from about 18% in the late 1990s to approximately 58% by 2015, though a large gap to universal coverage remains.",
+    "exp": "National health data cited in Pakistan's health policy documents show skilled birth attendance improved from about 18% in the late 1990s to approximately 58% by 2015, though a large gap to universal coverage remains, consistent with Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 37
   },
@@ -490,7 +490,7 @@ window.MM.fpsc_past_6 = [
       "30th highest"
     ],
     "ans": 1,
-    "exp": "Pakistan is cited in national health policy documents as having the 5th highest tuberculosis burden in the world, according to WHO Global TB Report data, making TB control a continuing national health priority.",
+    "exp": "Pakistan is cited in national health policy documents as having the 5th highest tuberculosis burden in the world, according to WHO Global TB Report data, making TB control a continuing national health priority, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 38
   },
@@ -503,7 +503,7 @@ window.MM.fpsc_past_6 = [
       "A method of measuring population height"
     ],
     "ans": 1,
-    "exp": "Vertical programmes (e.g., a dedicated polio eradication programme) are run with dedicated staff, funding, and management focused on a single disease, as distinct from horizontal, integrated delivery through general primary health services.",
+    "exp": "Vertical programmes (e.g., a dedicated polio eradication programme) are run with dedicated staff, funding, and management focused on a single disease, as distinct from horizontal, integrated delivery through general primary health services, consistent with Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 39
   },
@@ -516,7 +516,7 @@ window.MM.fpsc_past_6 = [
       "Health financing and hospital infrastructure only"
     ],
     "ans": 0,
-    "exp": "Even a well-designed preventive ('Care') policy like the EPI can fail to achieve its goals if actual service delivery, outreach, and community uptake remain weak — illustrating that 'Care' requires effective implementation, not just good policy on paper.",
+    "exp": "Even a well-designed preventive ('Care') policy like the EPI can fail to achieve its goals if actual service delivery, outreach, and community uptake remain weak, illustrating that 'Care' requires effective implementation, not just good policy on paper, as detailed in Park's Textbook of Preventive and Social Medicine.",
     "section": "Care vs Cure",
     "num": 40
   },
@@ -529,7 +529,7 @@ window.MM.fpsc_past_6 = [
       "A purely administrative issue unrelated to Care vs Cure"
     ],
     "ans": 1,
-    "exp": "Prioritizing expensive curative infrastructure while basic preventive coverage (immunization) remains low is a clear real-world example of a health system leaning toward 'Cure' at the expense of 'Care'.",
+    "exp": "Prioritizing expensive curative infrastructure while basic preventive coverage (immunization) remains low is a clear real-world example of a health system leaning toward 'Cure' at the expense of 'Care', as Pakistan's National Health Vision 2016-2025 describes.",
     "section": "Care vs Cure",
     "num": 41
   },
@@ -542,7 +542,7 @@ window.MM.fpsc_past_6 = [
       "Palliative care"
     ],
     "ans": 1,
-    "exp": "Preventing disease at its root cause (contaminated water/poor sanitation) before illness occurs is a classic upstream 'Care' intervention, contrasted with treating diarrhoeal illness after it has already developed.",
+    "exp": "Preventing disease at its root cause (contaminated water/poor sanitation) before illness occurs is a classic upstream 'Care' intervention, contrasted with treating diarrhoeal illness after it has already developed, as detailed in Park's Textbook of Preventive and Social Medicine.",
     "section": "Care vs Cure",
     "num": 42
   },
@@ -555,7 +555,7 @@ window.MM.fpsc_past_6 = [
       "4.5%"
     ],
     "ans": 2,
-    "exp": "National health policy documents cite Pakistan's population growth rate at approximately 1.9% per annum, a major driver of the country's rapidly growing population and a key challenge for health service planning.",
+    "exp": "National health policy documents cite Pakistan's population growth rate at approximately 1.9% per annum, a major driver of the country's rapidly growing population and a key challenge for health service planning (Pakistan's National Health Vision 2016-2025).",
     "section": "Health Policies of Govt",
     "num": 43
   },
@@ -581,7 +581,7 @@ window.MM.fpsc_past_6 = [
       "2020"
     ],
     "ans": 2,
-    "exp": "The 18th Constitutional Amendment, which devolved health (along with several other subjects) from federal to provincial jurisdiction, was passed in 2010, reshaping how health policy and services are planned and delivered nationally.",
+    "exp": "The 18th Constitutional Amendment, which devolved health (along with several other subjects) from federal to provincial jurisdiction, was passed in 2010, reshaping how health policy and services are planned and delivered nationally, a point emphasised in Pakistan's National Health Vision 2016-2025.",
     "section": "Health Policies of Govt",
     "num": 45
   },
@@ -594,7 +594,7 @@ window.MM.fpsc_past_6 = [
       "Cystic fibrosis"
     ],
     "ans": 0,
-    "exp": "National health policy documents cite WHO data showing Pakistan ranks 7th highest in the world for diabetes prevalence, reflecting the rising non-communicable disease burden layered on top of Pakistan's existing communicable disease challenges.",
+    "exp": "National health policy documents cite WHO data showing Pakistan ranks 7th highest in the world for diabetes prevalence, reflecting the rising non-communicable disease burden layered on top of Pakistan's existing communicable disease challenges (Pakistan's National Health Vision 2016-2025).",
     "section": "Major Challenges to Healthcare",
     "num": 46
   },
@@ -607,7 +607,7 @@ window.MM.fpsc_past_6 = [
       "It is fully preventable through vaccination"
     ],
     "ans": 1,
-    "exp": "With roughly one in four adults over 18 affected, uncontrolled hypertension substantially raises population-wide risk of stroke, ischaemic heart disease, and chronic kidney disease, making it a major driver of non-communicable disease burden in Pakistan.",
+    "exp": "With roughly one in four adults over 18 affected, uncontrolled hypertension substantially raises population-wide risk of stroke, ischaemic heart disease, and chronic kidney disease, making it a major driver of non-communicable disease burden in Pakistan (Pakistan's National Health Vision 2016-2025).",
     "section": "Major Challenges to Healthcare",
     "num": 47
   },
@@ -620,7 +620,7 @@ window.MM.fpsc_past_6 = [
       "Is already fully addressed through existing policy"
     ],
     "ans": 1,
-    "exp": "High male smoking prevalence is a major contributor to Pakistan's growing burden of chronic obstructive pulmonary disease, cardiovascular disease, and various cancers, adding significant long-term pressure on an already stretched health system.",
+    "exp": "High male smoking prevalence is a major contributor to Pakistan's growing burden of chronic obstructive pulmonary disease, cardiovascular disease, and various cancers, adding significant long-term pressure on an already stretched health system (Pakistan's National Health Vision 2016-2025).",
     "section": "Major Challenges to Healthcare",
     "num": 48
   },
@@ -724,7 +724,7 @@ window.MM.fpsc_past_6 = [
       "SAMPLE history"
     ],
     "ans": 1,
-    "exp": "The FAST assessment (Face drooping, Arm weakness, Speech difficulty, Time to call emergency services) is a widely used rapid screening tool for identifying likely stroke and prompting urgent action, since early treatment significantly improves outcomes.",
+    "exp": "The FAST assessment (Face drooping, Arm weakness, Speech difficulty, Time to call emergency services) is a widely used rapid screening tool for identifying likely stroke and prompting urgent action, since early treatment significantly improves outcomes, a point emphasised in Harrison's Principles of Internal Medicine.",
     "section": "Medicine",
     "num": 56
   },
@@ -737,7 +737,7 @@ window.MM.fpsc_past_6 = [
       "Colestyramine"
     ],
     "ans": 0,
-    "exp": "Ezetimibe lowers LDL cholesterol by selectively inhibiting cholesterol absorption at the brush border of the small intestine, making it a useful add-on therapy when statins alone do not achieve target LDL levels.",
+    "exp": "Ezetimibe lowers LDL cholesterol by selectively inhibiting cholesterol absorption at the brush border of the small intestine, making it a useful add-on therapy when statins alone do not achieve target LDL levels, a point emphasised in Harrison's Principles of Internal Medicine.",
     "section": "Medicine",
     "num": 57
   },
@@ -750,7 +750,7 @@ window.MM.fpsc_past_6 = [
       "10:1"
     ],
     "ans": 1,
-    "exp": "Current resuscitation guidelines recommend a compression-to-ventilation ratio of 30:2 for adult CPR performed by a single rescuer, prioritizing high-quality, largely uninterrupted chest compressions to maintain circulation.",
+    "exp": "Current resuscitation guidelines recommend a compression-to-ventilation ratio of 30:2 for adult CPR performed by a single rescuer, prioritizing high-quality, largely uninterrupted chest compressions to maintain circulation (Davidson's Principles and Practice of Medicine).",
     "section": "Medicine",
     "num": 58
   },
@@ -854,7 +854,7 @@ window.MM.fpsc_past_6 = [
       "Unrelated to the inferior epigastric vessels"
     ],
     "ans": 0,
-    "exp": "The deep inguinal ring lies lateral to the inferior epigastric vessels, a key anatomical landmark used to distinguish indirect inguinal hernias (which pass through the deep ring, lateral to the vessels) from direct hernias (which bulge medial to the vessels).",
+    "exp": "The deep inguinal ring lies lateral to the inferior epigastric vessels, a key anatomical landmark used to distinguish indirect inguinal hernias (which pass through the deep ring, lateral to the vessels) from direct hernias (which bulge medial to the vessels), a point emphasised in Sabiston Textbook of Surgery.",
     "section": "Surgery",
     "num": 66
   },
@@ -867,7 +867,7 @@ window.MM.fpsc_past_6 = [
       "Acute pancreatitis"
     ],
     "ans": 1,
-    "exp": "A previously stable pulsatile abdominal mass that becomes suddenly tender with severe tearing pain suggests rupture or rapid expansion of an abdominal aortic aneurysm — a surgical emergency requiring immediate intervention.",
+    "exp": "A previously stable pulsatile abdominal mass that becomes suddenly tender with severe tearing pain suggests rupture or rapid expansion of an abdominal aortic aneurysm, a surgical emergency requiring immediate intervention, as detailed in Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 67
   },
@@ -880,7 +880,7 @@ window.MM.fpsc_past_6 = [
       "Brachial plexus"
     ],
     "ans": 1,
-    "exp": "Disruption of the axillary lymphatic drainage channels during axillary lymph node dissection commonly leads to lymphoedema of the arm, a well-recognized complication of breast cancer surgery involving axillary clearance.",
+    "exp": "Disruption of the axillary lymphatic drainage channels during axillary lymph node dissection commonly leads to lymphoedema of the arm, a well-recognized complication of breast cancer surgery involving axillary clearance, as Bailey and Love's Short Practice of Surgery describes.",
     "section": "Surgery",
     "num": 68
   },
@@ -958,7 +958,7 @@ window.MM.fpsc_past_6 = [
       "Selective serotonin reuptake inhibitor (SSRI) alone as first-line"
     ],
     "ans": 1,
-    "exp": "The clinical picture of secondary amenorrhoea, vasomotor symptoms (hot flushes, night sweats), vaginal dryness, elevated FSH above 40 IU/L, and low oestradiol in a 45-year-old woman confirms premature ovarian insufficiency (POI)/menopause. Systemic hormone replacement therapy (HRT) — oestrogen with progestogen in women with an intact uterus — is the most effective treatment for vasomotor symptoms and also protects against the consequences of oestrogen deficiency including osteoporosis and cardiovascular disease. The COCP (A) could be used but is not the preferred HRT preparation for menopause management. Clomiphene (C) is an ovulation induction agent used in subfertility. SSRIs (D) may provide some benefit for vasomotor symptoms but are second-line to HRT.",
+    "exp": "The clinical picture of secondary amenorrhoea, vasomotor symptoms (hot flushes, night sweats), vaginal dryness, elevated FSH above 40 IU/L, and low oestradiol in a 45-year-old woman confirms premature ovarian insufficiency (POI)/menopause. Systemic hormone replacement therapy (HRT), oestrogen with progestogen in women with an intact uterus, is the most effective treatment for vasomotor symptoms and also protects against the consequences of oestrogen deficiency including osteoporosis and cardiovascular disease. The COCP (A) could be used but is not the preferred HRT preparation for menopause management. Clomiphene (C) is an ovulation induction agent used in subfertility. SSRIs (D) may provide some benefit for vasomotor symptoms but are second-line to HRT.",
     "section": "O&G",
     "num": 74
   },
@@ -1166,7 +1166,7 @@ window.MM.fpsc_past_6 = [
       "Bronchiectasis"
     ],
     "ans": 2,
-    "exp": "The combination of chronic productive cough (at least 3 months per year for 2 consecutive years — the definition of chronic bronchitis), progressive exertional dyspnoea, a significant smoking history, and post-bronchodilator FEV1/FVC ratio below 0.70 confirms a diagnosis of COPD. COPD encompasses chronic bronchitis and emphysema, the two pathological processes driven by tobacco smoke. Post-bronchodilator spirometry is the gold standard for confirming irreversible airflow obstruction. Asthma (A) is typically reversible, variable, often with an atopic history, and the FEV1/FVC ratio normalises post-bronchodilator. TB (B) would show constitutional symptoms, haemoptysis, and CXR infiltrates. Bronchiectasis (D) presents with copious purulent sputum, and CT chest shows dilated, thickened bronchi.",
+    "exp": "The combination of chronic productive cough (at least 3 months per year for 2 consecutive years, the definition of chronic bronchitis), progressive exertional dyspnoea, a significant smoking history, and post-bronchodilator FEV1/FVC ratio below 0.70 confirms a diagnosis of COPD. COPD encompasses chronic bronchitis and emphysema, the two pathological processes driven by tobacco smoke. Post-bronchodilator spirometry is the gold standard for confirming irreversible airflow obstruction. Asthma (A) is typically reversible, variable, often with an atopic history, and the FEV1/FVC ratio normalises post-bronchodilator. TB (B) would show constitutional symptoms, haemoptysis, and CXR infiltrates. Bronchiectasis (D) presents with copious purulent sputum, and CT chest shows dilated, thickened bronchi.",
     "section": "Pulmonology",
     "num": 90
   },
@@ -1179,7 +1179,7 @@ window.MM.fpsc_past_6 = [
       "Three months of isoniazid, rifampicin, and streptomycin"
     ],
     "ans": 2,
-    "exp": "Pulmonary tuberculosis is treated with the WHO-recommended standard short-course regimen: an intensive phase of 2 months with four drugs (isoniazid, rifampicin, pyrazinamide, ethambutol — abbreviated 2HRZE) followed by a continuation phase of 4 months with two drugs (isoniazid and rifampicin — 4HR). This 2HRZE/4HR regimen is used in Pakistan's National TB Control Programme. The four-drug intensive phase ensures rapid bacillary killing and prevents the emergence of drug resistance. Pyrazinamide and ethambutol are particularly important in killing persistent intracellular organisms and preventing resistance. Option A is insufficient. Option B is unnecessarily prolonged with four drugs. Option D includes streptomycin which is not part of first-line standard regimens.",
+    "exp": "Pulmonary tuberculosis is treated with the WHO-recommended standard short-course regimen: an intensive phase of 2 months with four drugs (isoniazid, rifampicin, pyrazinamide, ethambutol; abbreviated 2HRZE) followed by a continuation phase of 4 months with two drugs (isoniazid and rifampicin; 4HR). This 2HRZE/4HR regimen is used in Pakistan's National TB Control Programme. The four-drug intensive phase ensures rapid bacillary killing and prevents the emergence of drug resistance. Pyrazinamide and ethambutol are particularly important in killing persistent intracellular organisms and preventing resistance. Option A is insufficient. Option B is unnecessarily prolonged with four drugs. Option D includes streptomycin which is not part of first-line standard regimens.",
     "section": "Pulmonology",
     "num": 91
   },

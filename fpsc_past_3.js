@@ -126,7 +126,7 @@ window.MM.fpsc_past_3 = [
       "5-1-3-2-4"
     ],
     "ans": 0,
-    "exp": "The correct order is 'The report was submitted on time despite delays' — subject (1), verb (3), past participle (2), then the remaining phrases (4, 5).",
+    "exp": "The correct order is 'The report was submitted on time despite delays': subject (1), verb (3), past participle (2), then the remaining phrases (4, 5).",
     "section": "English",
     "num": 10
   },
@@ -139,7 +139,7 @@ window.MM.fpsc_past_3 = [
       "The results were delayed although the lab had a staff shortage."
     ],
     "ans": 0,
-    "exp": "'Because' correctly shows the causal relationship — the staff shortage caused the delay. The other options either contradict the logic or fail to connect cause and effect.",
+    "exp": "'Because' correctly shows the causal relationship: the staff shortage caused the delay. The other options either contradict the logic or fail to connect cause and effect.",
     "section": "English",
     "num": 11
   },
@@ -217,7 +217,7 @@ window.MM.fpsc_past_3 = [
       "In order to"
     ],
     "ans": 0,
-    "exp": "'Even though' introduces a contrast — the patient continued despite the cost, which fits the sentence's logic. 'Because' would incorrectly suggest the cost was the reason for continuing.",
+    "exp": "'Even though' introduces a contrast: the patient continued despite the cost, which fits the sentence's logic. 'Because' would incorrectly suggest the cost was the reason for continuing.",
     "section": "English",
     "num": 17
   },
@@ -451,7 +451,7 @@ window.MM.fpsc_past_3 = [
       "Helsinki Declaration (1964)"
     ],
     "ans": 0,
-    "exp": "The Alma-Ata Declaration of 1978 set the ambitious goal of 'Health for All by the Year 2000' through Primary Health Care as the central strategy.",
+    "exp": "The Alma-Ata Declaration of 1978 set the ambitious goal of 'Health for All by the Year 2000' through Primary Health Care as the central strategy, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 35
   },
@@ -464,7 +464,7 @@ window.MM.fpsc_past_3 = [
       "Literate to illiterate population"
     ],
     "ans": 1,
-    "exp": "The dependency ratio compares the number of dependents (children and the elderly, typically under 15 and 65+) to the working-age population (15–64), reflecting the economic burden on productive age groups.",
+    "exp": "The dependency ratio compares the number of dependents (children and the elderly, typically under 15 and 65+) to the working-age population (15–64), reflecting the economic burden on productive age groups, consistent with Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 36
   },
@@ -477,7 +477,7 @@ window.MM.fpsc_past_3 = [
       "Requiring no central coordination"
     ],
     "ans": 1,
-    "exp": "Vertical programmes are disease-specific initiatives (e.g., a dedicated TB control programme) run with their own dedicated staff, funding and management, as opposed to horizontal programmes integrated into general health services.",
+    "exp": "Vertical programmes are disease-specific initiatives (e.g., a dedicated TB control programme) run with their own dedicated staff, funding and management, as opposed to horizontal programmes integrated into general health services, as detailed in Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 37
   },
@@ -490,7 +490,7 @@ window.MM.fpsc_past_3 = [
       "Health education on smoking cessation"
     ],
     "ans": 1,
-    "exp": "Secondary prevention aims to detect disease early through screening (e.g., mammography) before symptoms appear, enabling earlier treatment. Vaccination and health education are primary prevention; rehabilitation is tertiary prevention.",
+    "exp": "Secondary prevention aims to detect disease early through screening (e.g., mammography) before symptoms appear, enabling earlier treatment. Vaccination and health education are primary prevention; rehabilitation is tertiary prevention, consistent with Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 38
   },
@@ -503,7 +503,7 @@ window.MM.fpsc_past_3 = [
       "Gross domestic product"
     ],
     "ans": 1,
-    "exp": "A population pyramid graphically displays the age and sex distribution of a population, helping planners anticipate future healthcare needs such as maternal, child, or geriatric services.",
+    "exp": "A population pyramid graphically displays the age and sex distribution of a population, helping planners anticipate future healthcare needs such as maternal, child, or geriatric services, consistent with Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 39
   },
@@ -516,7 +516,7 @@ window.MM.fpsc_past_3 = [
       "Dialysis for end-stage renal disease"
     ],
     "ans": 1,
-    "exp": "Health education is a preventive, population-level activity that falls under 'Care', whereas the other options are all advanced curative interventions delivered after disease has already occurred, falling under 'Cure'.",
+    "exp": "Health education is a preventive, population-level activity that falls under 'Care', whereas the other options are all advanced curative interventions delivered after disease has already occurred, falling under 'Cure', as detailed in Pakistan's National Health Vision 2016-2025.",
     "section": "Care vs Cure",
     "num": 40
   },
@@ -529,7 +529,7 @@ window.MM.fpsc_past_3 = [
       "Require no trained specialists"
     ],
     "ans": 1,
-    "exp": "An excessive focus on curative ('Cure') services tends to consume a disproportionate share of limited health budgets on advanced treatment for relatively few patients, leaving less funding available for cost-effective preventive ('Care') services that could benefit far larger populations.",
+    "exp": "An excessive focus on curative ('Cure') services tends to consume a disproportionate share of limited health budgets on advanced treatment for relatively few patients, leaving less funding available for cost-effective preventive ('Care') services that could benefit far larger populations, as detailed in Park's Textbook of Preventive and Social Medicine.",
     "section": "Care vs Cure",
     "num": 41
   },
@@ -542,7 +542,7 @@ window.MM.fpsc_past_3 = [
       "Emergency trauma services"
     ],
     "ans": 1,
-    "exp": "Antenatal check-ups and nutrition counselling are preventive, population-focused interventions aimed at avoiding complications before they arise — the essence of the 'Care' approach.",
+    "exp": "Antenatal check-ups and nutrition counselling are preventive, population-focused interventions aimed at avoiding complications before they arise, the essence of the 'Care' approach (Park's Textbook of Preventive and Social Medicine).",
     "section": "Care vs Cure",
     "num": 42
   },
@@ -555,7 +555,7 @@ window.MM.fpsc_past_3 = [
       "Determine judicial appointments"
     ],
     "ans": 1,
-    "exp": "Pakistan's National Health Policy documents set out the strategic direction, priorities, and reform agenda for the health sector, guiding both federal and provincial health planning.",
+    "exp": "Pakistan's National Health Policy documents set out the strategic direction, priorities, and reform agenda for the health sector, guiding both federal and provincial health planning, as detailed in Pakistan's National Health Vision 2016-2025.",
     "section": "Health Policies of Govt",
     "num": 43
   },
@@ -568,7 +568,7 @@ window.MM.fpsc_past_3 = [
       "The creation of Pakistan in 1947"
     ],
     "ans": 1,
-    "exp": "The 18th Amendment devolved health as a subject to the provinces in 2010, making Provincial Health Departments primarily responsible for planning and delivering most public health services.",
+    "exp": "The 18th Amendment devolved health as a subject to the provinces in 2010, making Provincial Health Departments primarily responsible for planning and delivering most public health services, as detailed in Pakistan's National Health Vision 2016-2025.",
     "section": "Health Policies of Govt",
     "num": 44
   },
@@ -594,7 +594,7 @@ window.MM.fpsc_past_3 = [
       "Only affect administrative staff salaries"
     ],
     "ans": 0,
-    "exp": "Weak health information systems make it difficult to track disease trends, allocate resources efficiently, and respond promptly to outbreaks, undermining evidence-based planning across the health sector.",
+    "exp": "Weak health information systems make it difficult to track disease trends, allocate resources efficiently, and respond promptly to outbreaks, undermining evidence-based planning across the health sector, as Pakistan's National Health Vision 2016-2025 describes.",
     "section": "Major Challenges to Healthcare",
     "num": 46
   },
@@ -607,7 +607,7 @@ window.MM.fpsc_past_3 = [
       "Are fully compensated for by improved sanitation"
     ],
     "ans": 1,
-    "exp": "Pockets of vaccine hesitancy reduce immunization coverage below the threshold needed for herd immunity, directly undermining disease eradication efforts such as Pakistan's ongoing polio eradication campaign.",
+    "exp": "Pockets of vaccine hesitancy reduce immunization coverage below the threshold needed for herd immunity, directly undermining disease eradication efforts such as Pakistan's ongoing polio eradication campaign, as Pakistan's National Health Vision 2016-2025 describes.",
     "section": "Major Challenges to Healthcare",
     "num": 47
   },
@@ -620,7 +620,7 @@ window.MM.fpsc_past_3 = [
       "Reduced need for referral systems"
     ],
     "ans": 1,
-    "exp": "The concentration of specialists in major urban centres forces rural patients to travel long distances for specialist care, and many forgo it entirely due to cost and distance, worsening health outcomes and inequity.",
+    "exp": "The concentration of specialists in major urban centres forces rural patients to travel long distances for specialist care, and many forgo it entirely due to cost and distance, worsening health outcomes and inequity, as Pakistan's National Health Vision 2016-2025 describes.",
     "section": "Major Challenges to Healthcare",
     "num": 48
   },
@@ -724,7 +724,7 @@ window.MM.fpsc_past_3 = [
       "Double the warfarin dose"
     ],
     "ans": 1,
-    "exp": "In a patient with a significantly elevated INR (>5) but no active bleeding, the appropriate step is to withhold warfarin and consider low-dose oral vitamin K to reduce the INR, reserving FFP or prothrombin complex concentrate for active major bleeding.",
+    "exp": "In a patient with a significantly elevated INR (>5) but no active bleeding, the appropriate step is to withhold warfarin and consider low-dose oral vitamin K to reduce the INR, reserving FFP or prothrombin complex concentrate for active major bleeding, consistent with Kumar and Clark's Clinical Medicine.",
     "section": "Medicine",
     "num": 56
   },
@@ -737,7 +737,7 @@ window.MM.fpsc_past_3 = [
       "Haemolytic anaemia"
     ],
     "ans": 0,
-    "exp": "Low haemoglobin with low ferritin (indicating depleted iron stores) and low MCV (microcytosis) is classic for iron deficiency anaemia, the most common cause of anaemia worldwide.",
+    "exp": "Low haemoglobin with low ferritin (indicating depleted iron stores) and low MCV (microcytosis) is classic for iron deficiency anaemia, the most common cause of anaemia worldwide, as detailed in Davidson's Principles and Practice of Medicine.",
     "section": "Medicine",
     "num": 57
   },
@@ -750,7 +750,7 @@ window.MM.fpsc_past_3 = [
       "Excess dietary calcium intake"
     ],
     "ans": 1,
-    "exp": "Failing kidneys cannot adequately convert vitamin D to its active form, leading to reduced calcium absorption and hypocalcaemia, which in turn stimulates a compensatory rise in parathyroid hormone (secondary hyperparathyroidism).",
+    "exp": "Failing kidneys cannot adequately convert vitamin D to its active form, leading to reduced calcium absorption and hypocalcaemia, which in turn stimulates a compensatory rise in parathyroid hormone (secondary hyperparathyroidism) (Harrison's Principles of Internal Medicine).",
     "section": "Medicine",
     "num": 58
   },
@@ -854,7 +854,7 @@ window.MM.fpsc_past_3 = [
       "Median nerve only"
     ],
     "ans": 1,
-    "exp": "The flexor digitorum profundus tendon is solely responsible for flexion at the distal interphalangeal joint; its division results in inability to flex that joint even though proximal interphalangeal flexion (via flexor digitorum superficialis) may be preserved.",
+    "exp": "The flexor digitorum profundus tendon is solely responsible for flexion at the distal interphalangeal joint; its division results in inability to flex that joint even though proximal interphalangeal flexion (via flexor digitorum superficialis) may be preserved, a point emphasised in Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 66
   },
@@ -867,7 +867,7 @@ window.MM.fpsc_past_3 = [
       "Hydrocele of the cord only"
     ],
     "ans": 1,
-    "exp": "In children, groin swellings that appear with crying/straining and are reducible are almost always indirect inguinal hernias resulting from a patent processus vaginalis, which requires surgical repair to prevent incarceration.",
+    "exp": "In children, groin swellings that appear with crying/straining and are reducible are almost always indirect inguinal hernias resulting from a patent processus vaginalis, which requires surgical repair to prevent incarceration, as detailed in Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 67
   },
@@ -880,7 +880,7 @@ window.MM.fpsc_past_3 = [
       "Compartment syndrome"
     ],
     "ans": 1,
-    "exp": "Sudden calf pain and swelling following a period of immobility (such as post-operative bed rest) is highly suggestive of deep vein thrombosis, a well-recognized complication of prolonged immobilization after surgery.",
+    "exp": "Sudden calf pain and swelling following a period of immobility (such as post-operative bed rest) is highly suggestive of deep vein thrombosis, a well-recognized complication of prolonged immobilization after surgery (Bailey and Love's Short Practice of Surgery).",
     "section": "Surgery",
     "num": 68
   },
@@ -958,7 +958,7 @@ window.MM.fpsc_past_3 = [
       "Loop excision without biopsy"
     ],
     "ans": 2,
-    "exp": "High-grade CIN (HSIL/CIN 2-3) on cervical smear requires immediate colposcopy with directed biopsy to histologically confirm the grade and extent of the lesion before definitive treatment — a protocol Ten Teachers outlines clearly in its chapter on cervical pathology. Colposcopy allows visualisation of the transformation zone with acetic acid and Lugol's iodine. Hysterectomy (B) is not the immediate step without histological confirmation. Repeat smear (A) is appropriate only for low-grade lesions. Loop excision (D) should follow histological diagnosis, not precede it.",
+    "exp": "High-grade CIN (HSIL/CIN 2-3) on cervical smear requires immediate colposcopy with directed biopsy to histologically confirm the grade and extent of the lesion before definitive treatment, a protocol Ten Teachers outlines clearly in its chapter on cervical pathology. Colposcopy allows visualisation of the transformation zone with acetic acid and Lugol's iodine. Hysterectomy (B) is not the immediate step without histological confirmation. Repeat smear (A) is appropriate only for low-grade lesions. Loop excision (D) should follow histological diagnosis, not precede it.",
     "section": "O&G",
     "num": 74
   },
@@ -971,7 +971,7 @@ window.MM.fpsc_past_3 = [
       "Subdermal implant (Implanon)"
     ],
     "ans": 3,
-    "exp": "The subdermal etonogestrel implant (Implanon/Nexplanon) has the lowest failure rate of all reversible contraceptive methods, with a Pearl Index of less than 0.1 per 100 woman-years — a figure Ten Teachers places alongside tubal ligation in efficacy, precisely because user compliance is not a variable. IUDs (C) have Pearl Index around 0.1 to 0.8. COCPs (B) have a typical-use failure rate of around 7–9% due to missed pills. Male condoms (A) have a typical-use failure rate of approximately 13%.",
+    "exp": "The subdermal etonogestrel implant (Implanon/Nexplanon) has the lowest failure rate of all reversible contraceptive methods, with a Pearl Index of less than 0.1 per 100 woman-years, a figure Ten Teachers places alongside tubal ligation in efficacy, precisely because user compliance is not a variable. IUDs (C) have Pearl Index around 0.1 to 0.8. COCPs (B) have a typical-use failure rate of around 7–9% due to missed pills. Male condoms (A) have a typical-use failure rate of approximately 13%.",
     "section": "O&G",
     "num": 75
   },
@@ -1075,7 +1075,7 @@ window.MM.fpsc_past_3 = [
       "Retinal detachment"
     ],
     "ans": 1,
-    "exp": "The 'blood and thunder' fundus with disc oedema, dilated tortuous veins, widespread flame-shaped haemorrhages in all four quadrants, and cotton-wool spots is pathognomonic of central retinal vein occlusion — a presentation Parson's Disease of the Eye describes as one of the most dramatic fundoscopic pictures in clinical ophthalmology. Painless sudden visual loss in a patient with hypertension or hyperviscosity is the typical setting. CRAO (A) causes a pale retina with a cherry-red spot and no haemorrhages. Vitreous haemorrhage (C) obscures fundal details. Retinal detachment (D) shows a greyish elevated retina.",
+    "exp": "The 'blood and thunder' fundus with disc oedema, dilated tortuous veins, widespread flame-shaped haemorrhages in all four quadrants, and cotton-wool spots is pathognomonic of central retinal vein occlusion, a presentation Parson's Disease of the Eye describes as one of the most dramatic fundoscopic pictures in clinical ophthalmology. Painless sudden visual loss in a patient with hypertension or hyperviscosity is the typical setting. CRAO (A) causes a pale retina with a cherry-red spot and no haemorrhages. Vitreous haemorrhage (C) obscures fundal details. Retinal detachment (D) shows a greyish elevated retina.",
     "section": "Ophthalmology",
     "num": 83
   },
@@ -1166,7 +1166,7 @@ window.MM.fpsc_past_3 = [
       "Reduced FEV1 with FEV1/FVC ratio below 0.70 that does not fully reverse with bronchodilator"
     ],
     "ans": 3,
-    "exp": "COPD is defined by a post-bronchodilator FEV1/FVC ratio persistently below 0.70, indicating fixed airflow obstruction that does not fully reverse with bronchodilators — the defining spirometric criterion, as reinforced in Davidson's Principles and Practice of Medicine. FEV1 is reduced proportionally more than FVC. Option A describes a restrictive pattern (e.g., pulmonary fibrosis). Option B incorrectly states that FEV1/FVC is raised in obstruction. Option C is not a recognised pattern of pathology.",
+    "exp": "COPD is defined by a post-bronchodilator FEV1/FVC ratio persistently below 0.70, indicating fixed airflow obstruction that does not fully reverse with bronchodilators, the defining spirometric criterion, as reinforced in Davidson's Principles and Practice of Medicine. FEV1 is reduced proportionally more than FVC. Option A describes a restrictive pattern (e.g., pulmonary fibrosis). Option B incorrectly states that FEV1/FVC is raised in obstruction. Option C is not a recognised pattern of pathology.",
     "section": "Pulmonology",
     "num": 90
   },

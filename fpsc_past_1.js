@@ -100,7 +100,7 @@ window.MM.fpsc_past_1 = [
       "has been"
     ],
     "ans": 1,
-    "exp": "With 'neither...nor', the verb agrees with the subject nearer to it — here 'residents' (plural), so 'were' is correct.",
+    "exp": "With 'neither...nor', the verb agrees with the subject nearer to it: here 'residents' (plural), so 'were' is correct.",
     "section": "English",
     "num": 8
   },
@@ -126,7 +126,7 @@ window.MM.fpsc_past_1 = [
       "The results will have been announced by the board tomorrow."
     ],
     "ans": 1,
-    "exp": "The active sentence is in simple future tense ('will announce'), so its passive form must also be simple future: 'will be + past participle' — 'will be announced'.",
+    "exp": "The active sentence is in simple future tense ('will announce'), so its passive form must also be simple future: 'will be + past participle': 'will be announced'.",
     "section": "English",
     "num": 10
   },
@@ -139,7 +139,7 @@ window.MM.fpsc_past_1 = [
       "He kept working through the night, and he was exhausted."
     ],
     "ans": 1,
-    "exp": "'Despite' correctly signals contrast — he continued working in spite of being exhausted. The other options either reverse the logic (C) or fail to show the contrast clearly (A, D).",
+    "exp": "'Despite' correctly signals contrast: he continued working in spite of being exhausted. The other options either reverse the logic (C) or fail to show the contrast clearly (A, D).",
     "section": "English",
     "num": 11
   },
@@ -451,7 +451,7 @@ window.MM.fpsc_past_1 = [
       "At 14 weeks of age"
     ],
     "ans": 1,
-    "exp": "BCG (Bacillus Calmette-Guérin), which protects against severe forms of tuberculosis, is administered as a single dose at birth under Pakistan's EPI schedule.",
+    "exp": "BCG (Bacillus Calmette-Guérin), which protects against severe forms of tuberculosis, is administered as a single dose at birth under Pakistan's EPI schedule, a point emphasised in Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 35
   },
@@ -464,7 +464,7 @@ window.MM.fpsc_past_1 = [
       "1998"
     ],
     "ans": 1,
-    "exp": "The International Conference on Primary Health Care held in Alma-Ata (then USSR, now Kazakhstan) in 1978 produced the Alma-Ata Declaration, a landmark document in global public health.",
+    "exp": "The International Conference on Primary Health Care held in Alma-Ata (then USSR, now Kazakhstan) in 1978 produced the Alma-Ata Declaration, a landmark document in global public health, as detailed in Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 36
   },
@@ -477,7 +477,7 @@ window.MM.fpsc_past_1 = [
       "50%"
     ],
     "ans": 2,
-    "exp": "Case fatality rate = (number of deaths from a disease ÷ number of confirmed cases of that disease) × 100 = (50/500) × 100 = 10%.",
+    "exp": "Case fatality rate = (number of deaths from a disease ÷ number of confirmed cases of that disease) × 100 = (50/500) × 100 = 10%, as detailed in Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 37
   },
@@ -490,7 +490,7 @@ window.MM.fpsc_past_1 = [
       "Negative predictive value"
     ],
     "ans": 1,
-    "exp": "Sensitivity is the proportion of people who actually have the disease who are correctly identified as positive by the test (true positive rate). Specificity, by contrast, measures correct identification of those without the disease.",
+    "exp": "Sensitivity is the proportion of people who actually have the disease who are correctly identified as positive by the test (true positive rate). Specificity, by contrast, measures correct identification of those without the disease, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 38
   },
@@ -503,7 +503,7 @@ window.MM.fpsc_past_1 = [
       "100,000 population per year"
     ],
     "ans": 1,
-    "exp": "Crude birth rate = (total live births in a year ÷ mid-year population) × 1,000, expressed as births per 1,000 population per year — a standard demographic indicator used in vital statistics.",
+    "exp": "Crude birth rate = (total live births in a year ÷ mid-year population) × 1,000, expressed as births per 1,000 population per year, a standard demographic indicator used in vital statistics, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 39
   },
@@ -516,7 +516,7 @@ window.MM.fpsc_past_1 = [
       "Prioritizing private-sector hospitals over public ones"
     ],
     "ans": 1,
-    "exp": "The 'Care vs Cure' debate in health policy centres on the argument that investing in prevention, health education, and primary-level care ('Care') yields far better population health outcomes per rupee spent than an over-reliance on expensive curative, hospital-based treatment ('Cure').",
+    "exp": "The 'Care vs Cure' debate in health policy centres on the argument that investing in prevention, health education, and primary-level care ('Care') yields far better population health outcomes per rupee spent than an over-reliance on expensive curative, hospital-based treatment ('Cure'), a point emphasised in Park's Textbook of Preventive and Social Medicine.",
     "section": "Care vs Cure",
     "num": 40
   },
@@ -529,7 +529,7 @@ window.MM.fpsc_past_1 = [
       "ICU management of a critically ill patient"
     ],
     "ans": 1,
-    "exp": "Basic Health Units deliver preventive and promotive services — immunization, antenatal care, health education — which is the essence of the 'Care' side of the debate, as opposed to hospital-based curative interventions.",
+    "exp": "Basic Health Units deliver preventive and promotive services (immunization, antenatal care, health education), which is the essence of the 'Care' side of the debate, as opposed to hospital-based curative interventions, a point emphasised in Pakistan's National Health Vision 2016-2025.",
     "section": "Care vs Cure",
     "num": 41
   },
@@ -542,7 +542,7 @@ window.MM.fpsc_past_1 = [
       "Health promotion"
     ],
     "ans": 1,
-    "exp": "Such a program tilts heavily toward 'Cure' — expensive, technology-driven curative care — at the expense of the cheaper, higher-yield preventive ('Care') strategies that address disease before it requires costly treatment.",
+    "exp": "Such a program tilts heavily toward 'Cure' (expensive, technology-driven curative care) at the expense of the cheaper, higher-yield preventive ('Care') strategies that address disease before it requires costly treatment, as detailed in Pakistan's National Health Vision 2016-2025.",
     "section": "Care vs Cure",
     "num": 42
   },
@@ -555,7 +555,7 @@ window.MM.fpsc_past_1 = [
       "Regulate the pricing of pharmaceutical companies"
     ],
     "ans": 1,
-    "exp": "The Sehat Sahulat Program provides government-funded health insurance cards to eligible families, covering the cost of hospitalization for secondary and tertiary care at empanelled public and private hospitals.",
+    "exp": "The Sehat Sahulat Program provides government-funded health insurance cards to eligible families, covering the cost of hospitalization for secondary and tertiary care at empanelled public and private hospitals, as Pakistan's National Health Vision 2016-2025 describes.",
     "section": "Health Policies of Govt",
     "num": 43
   },
@@ -581,7 +581,7 @@ window.MM.fpsc_past_1 = [
       "Manage hospital administration"
     ],
     "ans": 1,
-    "exp": "The Lady Health Worker (LHW) Programme trains community-based female health workers to deliver essential preventive services — family planning, immunization referrals, maternal and child health education — directly within underserved rural and peri-urban communities.",
+    "exp": "The Lady Health Worker (LHW) Programme trains community-based female health workers to deliver essential preventive services (family planning, immunization referrals, maternal and child health education) directly within underserved rural and peri-urban communities, as Pakistan's National Health Vision 2016-2025 describes.",
     "section": "Health Policies of Govt",
     "num": 45
   },
@@ -594,7 +594,7 @@ window.MM.fpsc_past_1 = [
       "Overuse of antibiotics in rural clinics"
     ],
     "ans": 1,
-    "exp": "'Brain drain' refers to the significant emigration of qualified healthcare professionals from Pakistan to countries offering better pay and working conditions, which worsens the existing doctor-to-population shortage at home.",
+    "exp": "'Brain drain' refers to the significant emigration of qualified healthcare professionals from Pakistan to countries offering better pay and working conditions, which worsens the existing doctor-to-population shortage at home, as detailed in Pakistan's National Health Vision 2016-2025.",
     "section": "Major Challenges to Healthcare",
     "num": 46
   },
@@ -607,7 +607,7 @@ window.MM.fpsc_past_1 = [
       "Medical education gap"
     ],
     "ans": 1,
-    "exp": "Rural-urban disparity refers to the marked difference in the availability of specialists, diagnostic facilities, and hospital infrastructure between well-resourced urban centres and under-served rural areas — one of the most cited structural challenges in Pakistan's health system.",
+    "exp": "Rural-urban disparity refers to the marked difference in the availability of specialists, diagnostic facilities, and hospital infrastructure between well-resourced urban centres and under-served rural areas, one of the most cited structural challenges in Pakistan's health system, as Pakistan's National Health Vision 2016-2025 describes.",
     "section": "Major Challenges to Healthcare",
     "num": 47
   },
@@ -620,7 +620,7 @@ window.MM.fpsc_past_1 = [
       "Deficit financing"
     ],
     "ans": 0,
-    "exp": "High out-of-pocket expenditure — where patients personally bear most healthcare costs rather than relying on insurance or free government provision — is a major driver of catastrophic health spending and a widely recognized challenge for Pakistan's health system.",
+    "exp": "High out-of-pocket expenditure (where patients personally bear most healthcare costs rather than relying on insurance or free government provision) is a major driver of catastrophic health spending and a widely recognized challenge for Pakistan's health system, a point emphasised in Pakistan's National Health Vision 2016-2025.",
     "section": "Major Challenges to Healthcare",
     "num": 48
   },
@@ -724,7 +724,7 @@ window.MM.fpsc_past_1 = [
       "Charcot's joint"
     ],
     "ans": 1,
-    "exp": "Bilateral, symmetric burning and tingling in the feet ('glove and stocking' pattern), worse at night, in a long-standing diabetic is classic for diabetic peripheral neuropathy, the most common microvascular complication of poorly controlled diabetes.",
+    "exp": "Bilateral, symmetric burning and tingling in the feet ('glove and stocking' pattern), worse at night, in a long-standing diabetic is classic for diabetic peripheral neuropathy, the most common microvascular complication of poorly controlled diabetes (Davidson's Principles and Practice of Medicine).",
     "section": "Medicine",
     "num": 56
   },
@@ -737,7 +737,7 @@ window.MM.fpsc_past_1 = [
       "Calcium channel blockers"
     ],
     "ans": 2,
-    "exp": "ACE inhibitors and ARBs reduce intraglomerular pressure by dilating the efferent arteriole, which slows the progression of diabetic and hypertensive nephropathy and reduces proteinuria — making them the preferred renoprotective agents.",
+    "exp": "ACE inhibitors and ARBs reduce intraglomerular pressure by dilating the efferent arteriole, which slows the progression of diabetic and hypertensive nephropathy and reduces proteinuria, making them the preferred renoprotective agents, consistent with Kumar and Clark's Clinical Medicine.",
     "section": "Medicine",
     "num": 57
   },
@@ -750,7 +750,7 @@ window.MM.fpsc_past_1 = [
       "Toxic multinodular goitre"
     ],
     "ans": 1,
-    "exp": "Weight gain, cold intolerance, constipation, and dry skin with high TSH and low free T4 are classic for primary hypothyroidism, most commonly caused by Hashimoto's thyroiditis.",
+    "exp": "Weight gain, cold intolerance, constipation, and dry skin with high TSH and low free T4 are classic for primary hypothyroidism, most commonly caused by Hashimoto's thyroiditis, as detailed in Davidson's Principles and Practice of Medicine.",
     "section": "Medicine",
     "num": 58
   },
@@ -854,7 +854,7 @@ window.MM.fpsc_past_1 = [
       "CT abdomen"
     ],
     "ans": 1,
-    "exp": "Any new breast lump requires 'triple assessment' — clinical examination, imaging (mammography/ultrasound depending on age), and tissue sampling (FNAC/core biopsy) — to reliably distinguish benign from malignant disease.",
+    "exp": "Any new breast lump requires 'triple assessment': clinical examination, imaging (mammography/ultrasound depending on age), and tissue sampling (FNAC/core biopsy), to reliably distinguish benign from malignant disease, a point emphasised in Sabiston Textbook of Surgery.",
     "section": "Surgery",
     "num": 66
   },
@@ -867,7 +867,7 @@ window.MM.fpsc_past_1 = [
       "Oral antibiotics only"
     ],
     "ans": 1,
-    "exp": "A hemodynamically unstable trauma patient with a positive FAST scan (suggesting hemoperitoneum) requires urgent resuscitation followed by emergency exploratory laparotomy to identify and control the source of intra-abdominal bleeding.",
+    "exp": "A hemodynamically unstable trauma patient with a positive FAST scan (suggesting hemoperitoneum) requires urgent resuscitation followed by emergency exploratory laparotomy to identify and control the source of intra-abdominal bleeding (Bailey and Love's Short Practice of Surgery).",
     "section": "Surgery",
     "num": 67
   },
@@ -880,7 +880,7 @@ window.MM.fpsc_past_1 = [
       "Acute appendicitis"
     ],
     "ans": 1,
-    "exp": "Sudden severe colicky pain radiating from the loin to the groin, accompanied by hematuria, is the classic presentation of renal or ureteric colic caused by a urinary tract stone obstructing the ureter.",
+    "exp": "Sudden severe colicky pain radiating from the loin to the groin, accompanied by hematuria, is the classic presentation of renal or ureteric colic caused by a urinary tract stone obstructing the ureter, consistent with Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 68
   },

@@ -139,7 +139,7 @@ window.MM.fpsc_past_2 = [
       "He went straight to the library, so he finished his shift."
     ],
     "ans": 1,
-    "exp": "'After finishing his shift' correctly shows the sequence of events — the shift ending before he went to the library. The other options either introduce a contrast (A) or reverse the logical sequence (D).",
+    "exp": "'After finishing his shift' correctly shows the sequence of events: the shift ending before he went to the library. The other options either introduce a contrast (A) or reverse the logical sequence (D).",
     "section": "English",
     "num": 11
   },
@@ -230,7 +230,7 @@ window.MM.fpsc_past_2 = [
       "Since"
     ],
     "ans": 0,
-    "exp": "'Despite' introduces a contrast — the surgery went ahead even though there was heavy rain. 'Because of' and 'Due to' would incorrectly suggest the rain caused the surgery to proceed.",
+    "exp": "'Despite' introduces a contrast: the surgery went ahead even though there was heavy rain. 'Because of' and 'Due to' would incorrectly suggest the rain caused the surgery to proceed.",
     "section": "English",
     "num": 18
   },
@@ -451,7 +451,7 @@ window.MM.fpsc_past_2 = [
       "Vector control programmes only"
     ],
     "ans": 1,
-    "exp": "Herd immunity occurs when a large enough proportion of a population is immune (through vaccination or prior infection) that person-to-person spread becomes unlikely, indirectly protecting those who are not immune.",
+    "exp": "Herd immunity occurs when a large enough proportion of a population is immune (through vaccination or prior infection) that person-to-person spread becomes unlikely, indirectly protecting those who are not immune, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 35
   },
@@ -464,7 +464,7 @@ window.MM.fpsc_past_2 = [
       "Incidence"
     ],
     "ans": 1,
-    "exp": "Specificity is the ability of a test to correctly identify those without the disease (true negative rate), complementary to sensitivity, which measures correct identification of those with the disease.",
+    "exp": "Specificity is the ability of a test to correctly identify those without the disease (true negative rate), complementary to sensitivity, which measures correct identification of those with the disease, a point emphasised in Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 36
   },
@@ -477,7 +477,7 @@ window.MM.fpsc_past_2 = [
       "Literacy rate"
     ],
     "ans": 1,
-    "exp": "Maternal mortality ratio (maternal deaths per 100,000 live births) is the internationally recognized key indicator of the quality and accessibility of maternal healthcare services in a population.",
+    "exp": "Maternal mortality ratio (maternal deaths per 100,000 live births) is the internationally recognized key indicator of the quality and accessibility of maternal healthcare services in a population, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 37
   },
@@ -490,7 +490,7 @@ window.MM.fpsc_past_2 = [
       "Tuberculosis"
     ],
     "ans": 1,
-    "exp": "The Pentavalent vaccine used in Pakistan's EPI protects against diphtheria, pertussis, tetanus, Hepatitis B, and Haemophilus influenzae type b — given at 6, 10, and 14 weeks of age.",
+    "exp": "The Pentavalent vaccine used in Pakistan's EPI protects against diphtheria, pertussis, tetanus, Hepatitis B, and Haemophilus influenzae type b, given at 6, 10, and 14 weeks of age (Park's Textbook of Preventive and Social Medicine).",
     "section": "Community Medicine",
     "num": 38
   },
@@ -503,7 +503,7 @@ window.MM.fpsc_past_2 = [
       "The geographic clustering of an epidemic"
     ],
     "ans": 1,
-    "exp": "The iceberg phenomenon illustrates that clinically diagnosed cases (the visible tip) are usually far outnumbered by subclinical, undiagnosed, or carrier cases in the community (the hidden bulk), a key concept in understanding true disease burden.",
+    "exp": "The iceberg phenomenon illustrates that clinically diagnosed cases (the visible tip) are usually far outnumbered by subclinical, undiagnosed, or carrier cases in the community (the hidden bulk), a key concept in understanding true disease burden, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 39
   },
@@ -516,7 +516,7 @@ window.MM.fpsc_past_2 = [
       "Scaling up community immunization drives"
     ],
     "ans": 1,
-    "exp": "Investing heavily in advanced, specialised curative infrastructure (e.g., oncology centres) rather than preventive/primary services is a 'Cure'-oriented decision, as opposed to the 'Care' emphasis on prevention.",
+    "exp": "Investing heavily in advanced, specialised curative infrastructure (e.g., oncology centres) rather than preventive/primary services is a 'Cure'-oriented decision, as opposed to the 'Care' emphasis on prevention, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Care vs Cure",
     "num": 40
   },
@@ -529,7 +529,7 @@ window.MM.fpsc_past_2 = [
       "Preventive programmes cannot reduce disease burden"
     ],
     "ans": 1,
-    "exp": "In resource-limited health systems, preventive ('Care') interventions typically achieve greater population-level health gains per rupee spent than expensive, individual-focused curative ('Cure') interventions.",
+    "exp": "In resource-limited health systems, preventive ('Care') interventions typically achieve greater population-level health gains per rupee spent than expensive, individual-focused curative ('Cure') interventions, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Care vs Cure",
     "num": 41
   },
@@ -542,7 +542,7 @@ window.MM.fpsc_past_2 = [
       "Rehabilitative care"
     ],
     "ans": 2,
-    "exp": "Immunization and health education are classic primary prevention activities delivered at the primary care level, embodying the 'Care' philosophy of stopping disease before it starts.",
+    "exp": "Immunization and health education are classic primary prevention activities delivered at the primary care level, embodying the 'Care' philosophy of stopping disease before it starts, a point emphasised in Pakistan's National Health Vision 2016-2025.",
     "section": "Care vs Cure",
     "num": 42
   },
@@ -555,7 +555,7 @@ window.MM.fpsc_past_2 = [
       "Nationalizing all private hospitals"
     ],
     "ans": 1,
-    "exp": "The 18th Amendment (2010) devolved health, along with several other subjects, from federal to provincial jurisdiction, making provinces primarily responsible for health service delivery and policy.",
+    "exp": "The 18th Amendment (2010) devolved health, along with several other subjects, from federal to provincial jurisdiction, making provinces primarily responsible for health service delivery and policy, as detailed in Pakistan's National Health Vision 2016-2025.",
     "section": "Health Policies of Govt",
     "num": 43
   },
@@ -568,7 +568,7 @@ window.MM.fpsc_past_2 = [
       "Higher Education Commission"
     ],
     "ans": 0,
-    "exp": "The Ministry of National Health Services, Regulations and Coordination is the federal body responsible for national health policy and coordination, including immunization strategy, in Pakistan.",
+    "exp": "The Ministry of National Health Services, Regulations and Coordination is the federal body responsible for national health policy and coordination, including immunization strategy, in Pakistan, a point emphasised in Pakistan's National Health Vision 2016-2025.",
     "section": "Health Policies of Govt",
     "num": 44
   },
@@ -581,7 +581,7 @@ window.MM.fpsc_past_2 = [
       "Only preventive/vaccination services"
     ],
     "ans": 1,
-    "exp": "The Sehat Sahulat Program is a hospitalization insurance scheme, covering secondary and tertiary care costs for eligible families at empanelled hospitals, rather than routine primary care.",
+    "exp": "The Sehat Sahulat Program is a hospitalization insurance scheme, covering secondary and tertiary care costs for eligible families at empanelled hospitals, rather than routine primary care, a point emphasised in Pakistan's National Health Vision 2016-2025.",
     "section": "Health Policies of Govt",
     "num": 45
   },
@@ -594,7 +594,7 @@ window.MM.fpsc_past_2 = [
       "No challenge exists in workforce distribution"
     ],
     "ans": 1,
-    "exp": "A widely cited structural challenge is that doctors and specialists disproportionately concentrate in urban tertiary-care hospitals, leaving rural primary care facilities understaffed and under-resourced.",
+    "exp": "A widely cited structural challenge is that doctors and specialists disproportionately concentrate in urban tertiary-care hospitals, leaving rural primary care facilities understaffed and under-resourced, consistent with Pakistan's National Health Vision 2016-2025.",
     "section": "Major Challenges to Healthcare",
     "num": 46
   },
@@ -607,7 +607,7 @@ window.MM.fpsc_past_2 = [
       "Health system devolution"
     ],
     "ans": 0,
-    "exp": "Pakistan faces a 'double burden' of disease — established communicable/infectious diseases have not been eliminated, even as non-communicable diseases rise sharply, straining an already limited health system.",
+    "exp": "Pakistan faces a 'double burden' of disease: established communicable/infectious diseases have not been eliminated, even as non-communicable diseases rise sharply, straining an already limited health system, consistent with Pakistan's National Health Vision 2016-2025.",
     "section": "Major Challenges to Healthcare",
     "num": 47
   },
@@ -620,7 +620,7 @@ window.MM.fpsc_past_2 = [
       "Is compensated fully by private insurance coverage"
     ],
     "ans": 1,
-    "exp": "Chronically low public health expenditure pushes the financial burden onto individual patients (out-of-pocket spending), which disproportionately harms poorer households and widens inequity in access to care.",
+    "exp": "Chronically low public health expenditure pushes the financial burden onto individual patients (out-of-pocket spending), which disproportionately harms poorer households and widens inequity in access to care, consistent with Pakistan's National Health Vision 2016-2025.",
     "section": "Major Challenges to Healthcare",
     "num": 48
   },
@@ -724,7 +724,7 @@ window.MM.fpsc_past_2 = [
       "10 years"
     ],
     "ans": 2,
-    "exp": "Breath-holding spells are a common, benign paroxysmal behaviour in toddlers that resolve spontaneously in the great majority of children by around 6 years of age, without long-term consequence.",
+    "exp": "Breath-holding spells are a common, benign paroxysmal behaviour in toddlers that resolve spontaneously in the great majority of children by around 6 years of age, without long-term consequence, as detailed in Kumar and Clark's Clinical Medicine.",
     "section": "Medicine",
     "num": 56
   },
@@ -737,7 +737,7 @@ window.MM.fpsc_past_2 = [
       "Oral corticosteroids"
     ],
     "ans": 0,
-    "exp": "Low-dose aspirin, as an antiplatelet agent, reduces the risk of major cardiovascular events in patients with established coronary artery disease, and is a cornerstone of secondary cardiovascular prevention alongside statins.",
+    "exp": "Low-dose aspirin, as an antiplatelet agent, reduces the risk of major cardiovascular events in patients with established coronary artery disease, and is a cornerstone of secondary cardiovascular prevention alongside statins, consistent with Harrison's Principles of Internal Medicine.",
     "section": "Medicine",
     "num": 57
   },
@@ -750,7 +750,7 @@ window.MM.fpsc_past_2 = [
       "Toxic adenoma"
     ],
     "ans": 1,
-    "exp": "A diffusely enlarged, non-tender goitre with markedly elevated anti-thyroid peroxidase (anti-TPO) antibodies and hypothyroid symptoms is classic for Hashimoto's (autoimmune) thyroiditis, the most common cause of hypothyroidism in iodine-sufficient areas.",
+    "exp": "A diffusely enlarged, non-tender goitre with markedly elevated anti-thyroid peroxidase (anti-TPO) antibodies and hypothyroid symptoms is classic for Hashimoto's (autoimmune) thyroiditis, the most common cause of hypothyroidism in iodine-sufficient areas, a point emphasised in Harrison's Principles of Internal Medicine.",
     "section": "Medicine",
     "num": 58
   },
@@ -854,7 +854,7 @@ window.MM.fpsc_past_2 = [
       "Needle aspiration of the mass"
     ],
     "ans": 1,
-    "exp": "A hard, painless, non-transilluminating testicular mass is highly suspicious for testicular malignancy. Scrotal ultrasound plus tumour markers (AFP, beta-hCG, LDH) are essential first-line investigations; biopsy through the scrotum is avoided due to risk of tumour seeding.",
+    "exp": "A hard, painless, non-transilluminating testicular mass is highly suspicious for testicular malignancy. Scrotal ultrasound plus tumour markers (AFP, beta-hCG, LDH) are essential first-line investigations; biopsy through the scrotum is avoided due to risk of tumour seeding, as Bailey and Love's Short Practice of Surgery describes.",
     "section": "Surgery",
     "num": 66
   },
@@ -867,7 +867,7 @@ window.MM.fpsc_past_2 = [
       "Renal calculus"
     ],
     "ans": 1,
-    "exp": "Painless gross haematuria in an older smoker must be treated as bladder carcinoma until proven otherwise, since smoking is a major risk factor; cystoscopy is typically required to exclude malignancy.",
+    "exp": "Painless gross haematuria in an older smoker must be treated as bladder carcinoma until proven otherwise, since smoking is a major risk factor; cystoscopy is typically required to exclude malignancy, as detailed in Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 67
   },
@@ -880,7 +880,7 @@ window.MM.fpsc_past_2 = [
       "CT scan of the neck"
     ],
     "ans": 1,
-    "exp": "For a euthyroid patient with a solitary thyroid nodule, ultrasound-guided FNAC is the investigation of choice to differentiate benign from malignant nodules before deciding on further management.",
+    "exp": "For a euthyroid patient with a solitary thyroid nodule, ultrasound-guided FNAC is the investigation of choice to differentiate benign from malignant nodules before deciding on further management (Sabiston Textbook of Surgery).",
     "section": "Surgery",
     "num": 68
   },
