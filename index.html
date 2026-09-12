@@ -1975,7 +1975,7 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
   <div class="page-header">
     <button class="back-btn" onclick="_showPage('mowmo');setHash('#mowmo');">← MO/WMO</button>
     <div style="flex:1;text-align:center;">
-      <div class="ph-title" style="text-align:center;">🏦 FPSC MO/WMO MCQ Bank</div>
+      <div class="ph-title" style="text-align:center;">🏦 FPSC PIMS MO/WMO MCQ Bank</div>
     </div>
     <button class="share-btn" id="share-fpsc-mo-wmo" onclick="shareLink('#fpsc-mo-wmo','share-fpsc-mo-wmo')">🔗 Share</button>
   </div>
@@ -4429,6 +4429,153 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
   </div>
 </div>
 
+<!-- ══════════════ FPSC PAST PAPERS: HUB ══════════════ -->
+<div id="fpsc-past-hub-page" class="page">
+  <div class="page-header centered-title">
+    <button class="back-btn" onclick="_showPage('dashboard');setHash('#dashboard');loadDashboard();">← Dashboard</button>
+    <div>
+      <div class="ph-title">🏆 Past & Mocks FPSC</div>
+      <div class="ph-sub">FPSC PIMS MO/WMO · 10 Timed Papers</div>
+    </div>
+  </div>
+  <div class="dash-wrap">
+    <div style="background:rgba(212,175,55,0.07);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:14px 16px;margin-bottom:20px;font-size:12.5px;line-height:1.75;color:var(--cream);">
+      Each paper is 100 MCQs · 100 minutes · negative marking of −0.25 per wrong answer, exactly like the real FPSC exam. Papers unlock on their scheduled date and stay available afterwards — attempt anytime, re-attempt anytime.
+    </div>
+    <div class="subjects-grid" id="fpsc-past-cards-grid">
+      <div class="subj-card" onclick="openFPSCPast(1)" id="fpast-1-card" style="border-color:rgba(201,168,76,0.3);"><div class="subj-icon">🏆</div><div><div class="subj-name">FPSC Past 1</div><div class="subj-meta">14 Sep 2026 · 7 PM PKT</div><div id="fpast-1-status" style="margin-top:6px;font-size:11px;font-weight:700;"></div><div id="fpast-1-countdown" style="margin-top:4px;font-size:11px;color:var(--gold);font-weight:600;"></div></div><div class="subj-arrow">›</div></div>
+      <div class="subj-card" onclick="openFPSCPast(2)" id="fpast-2-card" style="border-color:rgba(201,168,76,0.3);"><div class="subj-icon">🏆</div><div><div class="subj-name">FPSC Past 2</div><div class="subj-meta">16 Sep 2026 · 7 PM PKT</div><div id="fpast-2-status" style="margin-top:6px;font-size:11px;font-weight:700;"></div><div id="fpast-2-countdown" style="margin-top:4px;font-size:11px;color:var(--gold);font-weight:600;"></div></div><div class="subj-arrow">›</div></div>
+      <div class="subj-card" onclick="openFPSCPast(3)" id="fpast-3-card" style="border-color:rgba(201,168,76,0.3);"><div class="subj-icon">🏆</div><div><div class="subj-name">FPSC Past 3</div><div class="subj-meta">18 Sep 2026 · 7 PM PKT</div><div id="fpast-3-status" style="margin-top:6px;font-size:11px;font-weight:700;"></div><div id="fpast-3-countdown" style="margin-top:4px;font-size:11px;color:var(--gold);font-weight:600;"></div></div><div class="subj-arrow">›</div></div>
+      <div class="subj-card" onclick="openFPSCPast(4)" id="fpast-4-card" style="border-color:rgba(201,168,76,0.3);"><div class="subj-icon">🏆</div><div><div class="subj-name">FPSC Past 4</div><div class="subj-meta">20 Sep 2026 · 7 PM PKT</div><div id="fpast-4-status" style="margin-top:6px;font-size:11px;font-weight:700;"></div><div id="fpast-4-countdown" style="margin-top:4px;font-size:11px;color:var(--gold);font-weight:600;"></div></div><div class="subj-arrow">›</div></div>
+      <div class="subj-card" onclick="openFPSCPast(5)" id="fpast-5-card" style="border-color:rgba(201,168,76,0.3);"><div class="subj-icon">🏆</div><div><div class="subj-name">FPSC Past 5</div><div class="subj-meta">22 Sep 2026 · 7 PM PKT</div><div id="fpast-5-status" style="margin-top:6px;font-size:11px;font-weight:700;"></div><div id="fpast-5-countdown" style="margin-top:4px;font-size:11px;color:var(--gold);font-weight:600;"></div></div><div class="subj-arrow">›</div></div>
+      <div class="subj-card" onclick="openFPSCPast(6)" id="fpast-6-card" style="border-color:rgba(201,168,76,0.3);"><div class="subj-icon">🏆</div><div><div class="subj-name">FPSC Past 6</div><div class="subj-meta">24 Sep 2026 · 7 PM PKT</div><div id="fpast-6-status" style="margin-top:6px;font-size:11px;font-weight:700;"></div><div id="fpast-6-countdown" style="margin-top:4px;font-size:11px;color:var(--gold);font-weight:600;"></div></div><div class="subj-arrow">›</div></div>
+      <div class="subj-card" onclick="openFPSCPast(7)" id="fpast-7-card" style="border-color:rgba(201,168,76,0.3);"><div class="subj-icon">🏆</div><div><div class="subj-name">FPSC Past 7</div><div class="subj-meta">26 Sep 2026 · 7 PM PKT</div><div id="fpast-7-status" style="margin-top:6px;font-size:11px;font-weight:700;"></div><div id="fpast-7-countdown" style="margin-top:4px;font-size:11px;color:var(--gold);font-weight:600;"></div></div><div class="subj-arrow">›</div></div>
+      <div class="subj-card" onclick="openFPSCPast(8)" id="fpast-8-card" style="border-color:rgba(201,168,76,0.3);"><div class="subj-icon">🏆</div><div><div class="subj-name">FPSC Past 8</div><div class="subj-meta">28 Sep 2026 · 7 PM PKT</div><div id="fpast-8-status" style="margin-top:6px;font-size:11px;font-weight:700;"></div><div id="fpast-8-countdown" style="margin-top:4px;font-size:11px;color:var(--gold);font-weight:600;"></div></div><div class="subj-arrow">›</div></div>
+      <div class="subj-card" onclick="openFPSCPast(9)" id="fpast-9-card" style="border-color:rgba(201,168,76,0.3);"><div class="subj-icon">🏆</div><div><div class="subj-name">FPSC Past 9</div><div class="subj-meta">30 Sep 2026 · 7 PM PKT</div><div id="fpast-9-status" style="margin-top:6px;font-size:11px;font-weight:700;"></div><div id="fpast-9-countdown" style="margin-top:4px;font-size:11px;color:var(--gold);font-weight:600;"></div></div><div class="subj-arrow">›</div></div>
+      <div class="subj-card" onclick="openFPSCPast(10)" id="fpast-10-card" style="border-color:rgba(201,168,76,0.3);"><div class="subj-icon">🏆</div><div><div class="subj-name">FPSC Past 10</div><div class="subj-meta">2 Oct 2026 · 7 PM PKT</div><div id="fpast-10-status" style="margin-top:6px;font-size:11px;font-weight:700;"></div><div id="fpast-10-countdown" style="margin-top:4px;font-size:11px;color:var(--gold);font-weight:600;"></div></div><div class="subj-arrow">›</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ FPSC PAST PAPERS: LOCKED ══════════════ -->
+<div id="fpsc-past-locked-page" class="page" style="padding-top:68px;">
+  <div class="page-header centered-title">
+    <button class="back-btn" onclick="openFPSCPastHub()">← Past & Mocks FPSC</button>
+    <div>
+      <div class="ph-title" id="fpast-locked-title">🏆 FPSC Past 1</div>
+      <div class="ph-sub">100 MCQs · 100 Minutes · −0.25 Negative Marking</div>
+    </div>
+  </div>
+  <div class="dash-wrap" style="text-align:center;">
+    <div style="font-size:48px;margin-bottom:16px;">🔒</div>
+    <div style="font-size:14px;color:var(--text-mid);margin-bottom:36px;max-width:340px;margin-left:auto;margin-right:auto;line-height:1.7;">This paper unlocks at <strong style="color:var(--gold);" id="fpast-locked-date">—</strong>. Be ready; it's timed.</div>
+    <div style="display:flex;justify-content:center;gap:18px;">
+      <div style="text-align:center;"><div style="font-size:42px;font-weight:900;color:var(--gold);font-variant-numeric:tabular-nums;line-height:1;" id="fpast-cd-h">00</div><div style="font-size:9px;color:var(--text-mid);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;" id="fpast-cd-h-lbl">Hours</div></div>
+      <div style="text-align:center;"><div style="font-size:42px;font-weight:900;color:var(--gold);font-variant-numeric:tabular-nums;line-height:1;" id="fpast-cd-m">00</div><div style="font-size:9px;color:var(--text-mid);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;" id="fpast-cd-m-lbl">Minutes</div></div>
+      <div style="text-align:center;"><div style="font-size:42px;font-weight:900;color:var(--gold);font-variant-numeric:tabular-nums;line-height:1;" id="fpast-cd-s">00</div><div style="font-size:9px;color:var(--text-mid);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;" id="fpast-cd-s-lbl">Seconds</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ FPSC PAST PAPERS: EXAM ══════════════ -->
+<div id="fpsc-past-exam-page" class="page" oncopy="return false;" oncut="return false;" oncontextmenu="return false;" onselectstart="return false;" style="padding-top:68px;user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;">
+  <div class="study-topbar">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <button class="back-btn" onclick="_fpscPastTryLeave()">✕ Exit</button>
+      <span class="study-subject-tag" id="fpast-exam-tag" style="white-space:nowrap;">FPSC PAST 1</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span id="fpast-qnum" style="font-size:12px;color:var(--text-mid);">Q 1 / 100</span>
+      <span id="fpast-timer" style="font-size:14px;font-weight:800;color:var(--green);font-variant-numeric:tabular-nums;">01:40:00</span>
+    </div>
+  </div>
+  <div class="study-progress-wrap"><div id="fpast-progress" class="study-progress-fill" style="width:0%;"></div></div>
+  <div class="study-body">
+    <div id="fpast-q-area"></div>
+    <div id="fpast-review-screen" style="display:none;"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:10px;flex-wrap:wrap;">
+      <button class="btn-flag" id="fpast-flag-next-btn" onclick="_fpscPastFlagAndNext()" style="display:none;">🚩 Flag &amp; Next</button>
+      <div style="flex:1;"></div>
+      <button class="study-next-btn" id="fpast-next-btn" onclick="_fpscPastNext()" style="margin-top:0;">Next →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ FPSC PAST PAPERS: RESULT ══════════════ -->
+<div id="fpsc-past-result-page" class="page" style="padding-top:68px;">
+  <div class="page-header centered-title">
+    <button class="back-btn" onclick="openFPSCPastHub()">← Past & Mocks FPSC</button>
+    <div>
+      <div class="ph-title">📊 Paper Results</div>
+      <div class="ph-sub">FPSC PIMS MO/WMO</div>
+    </div>
+  </div>
+  <div class="dash-wrap" style="text-align:center;">
+    <div id="fpast-res-timeup" style="display:none;background:rgba(231,76,60,0.1);border:1px solid rgba(231,76,60,0.3);border-radius:10px;padding:12px;margin-bottom:20px;font-size:13px;color:var(--red);font-weight:600;">⏰ Time's up — exam auto-submitted</div>
+    <div id="fpast-res-attempt" style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;"></div>
+    <div style="font-size:48px;font-weight:900;margin-bottom:4px;" id="fpast-res-score">—</div>
+    <div style="font-size:11px;color:var(--text-mid);margin-bottom:10px;" id="fpast-res-negmark-note"></div>
+    <div style="font-size:20px;font-weight:700;margin-bottom:8px;" id="fpast-res-pct">—</div>
+    <div style="font-size:16px;font-weight:700;margin-bottom:16px;" id="fpast-res-grade">—</div>
+    <div id="fpast-res-time" style="font-size:12px;color:var(--text-mid);margin-bottom:16px;"></div>
+    <div id="fpast-res-percentile" style="background:rgba(201,168,76,0.07);border:1px solid var(--border);border-radius:10px;padding:12px;margin-bottom:20px;"></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:400px;margin:0 auto 24px;">
+      <div style="background:var(--card);border:1px solid rgba(46,204,113,0.3);border-radius:12px;padding:16px;"><div style="font-size:24px;font-weight:900;color:#2ECC71;" id="fpast-res-correct">—</div><div style="font-size:10px;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.8px;margin-top:4px;">Correct</div></div>
+      <div style="background:var(--card);border:1px solid rgba(231,76,60,0.3);border-radius:12px;padding:16px;"><div style="font-size:24px;font-weight:900;color:var(--red);" id="fpast-res-wrong">—</div><div style="font-size:10px;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.8px;margin-top:4px;">Wrong</div></div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;"><div style="font-size:24px;font-weight:900;color:var(--text-mid);" id="fpast-res-skipped">—</div><div style="font-size:10px;color:var(--text-mid);text-transform:uppercase;letter-spacing:0.8px;margin-top:4px;">Skipped</div></div>
+    </div>
+    <div id="fpast-res-category-feedback" style="display:none;text-align:left;max-width:460px;margin:0 auto 24px;"></div>
+    <button class="btn-primary" onclick="openFPSCPastHub()" style="margin:0 auto;">← Back to Past & Mocks FPSC</button>
+    <p style="font-size:12px;color:var(--text-mid);margin-top:16px;">Your result is saved. Re-attempt anytime.</p>
+  </div>
+  <div id="fpast-wrong-review" style="padding:0 16px 40px;"></div>
+</div>
+
+<!-- ══════════════ FPSC PAST PAPERS: MODALS ══════════════ -->
+<div class="modal-overlay" id="fpast-leave-modal" style="z-index:1400;">
+  <div class="modal-box" style="max-width:360px;text-align:center;">
+    <div style="font-size:36px;margin-bottom:10px;">⚠️</div>
+    <div style="font-size:18px;font-weight:900;margin-bottom:8px;">Leave the Exam?</div>
+    <div style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:20px;">The timer is still running. Leaving will exit the exam without submitting. No score will be recorded unless you complete and submit the paper from the exam screen.</div>
+    <button onclick="_fpscPastForceLeave()" style="width:100%;padding:13px;background:linear-gradient(135deg,var(--red),#C0392B);color:white;font-weight:800;font-size:14px;border:none;border-radius:10px;cursor:pointer;margin-bottom:10px;font-family:'Poppins',sans-serif;">Leave Without Submitting</button>
+    <button onclick="closeModal('fpast-leave-modal')" style="width:100%;padding:11px;background:transparent;color:var(--text-mid);font-weight:600;font-size:13px;border:1px solid var(--border);border-radius:10px;cursor:pointer;font-family:'Poppins',sans-serif;">Stay in Exam</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="fpast-prev-result-modal" style="z-index:1300;">
+  <div class="modal-box" style="max-width:380px;text-align:center;">
+    <div style="font-size:36px;margin-bottom:8px;">📊</div>
+    <div style="font-size:18px;font-weight:900;margin-bottom:4px;">Your Previous Result</div>
+    <div id="fpast-prev-attempt-label" style="font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;"></div>
+    <div style="background:var(--card2);border:1px solid rgba(46,204,113,0.25);border-radius:10px;padding:14px;margin-bottom:14px;">
+      <div id="fpast-prev-score" style="font-size:26px;font-weight:900;color:#2ECC71;">—</div>
+      <div style="font-size:10px;color:var(--text-mid);margin-top:2px;">Score (out of 100, negative marking applied)</div>
+    </div>
+    <div id="fpast-prev-date" style="font-size:12px;color:var(--text);margin-bottom:18px;"></div>
+    <button id="fpast-prev-view-btn" onclick="_fpscPastViewPrevResults()" style="width:100%;padding:13px;background:linear-gradient(135deg,var(--gold),var(--gold-bright));color:#0A0C10;font-weight:800;font-size:14px;border:none;border-radius:10px;cursor:pointer;margin-bottom:10px;font-family:'Poppins',sans-serif;">📋 View Full Results &amp; Review</button>
+    <button id="fpast-prev-reattempt-btn" onclick="_fpscPastReAttempt()" style="width:100%;padding:12px;background:transparent;color:var(--red);font-weight:700;font-size:13px;border:1px solid rgba(231,76,60,0.35);border-radius:10px;cursor:pointer;margin-bottom:8px;font-family:'Poppins',sans-serif;">🔄 Re-attempt Paper</button>
+    <div style="font-size:11px;color:var(--text);margin-top:4px;">Re-attempting will start a fresh exam. Previous score will be replaced.</div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="fpast-confirm-modal" style="z-index:1300;">
+  <div class="modal-box" style="max-width:380px;text-align:center;">
+    <div style="font-size:44px;margin-bottom:10px;">🏆</div>
+    <div style="font-size:20px;font-weight:900;margin-bottom:6px;">Ready to Begin?</div>
+    <div style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:6px;">You're about to start <strong style="color:var(--cream);" id="fpast-confirm-name">FPSC Past 1</strong></div>
+    <div style="display:flex;justify-content:center;gap:24px;margin:16px 0 18px;">
+      <div style="text-align:center;"><div style="font-size:22px;font-weight:900;color:var(--gold);">100</div><div style="font-size:10px;color:var(--text);text-transform:uppercase;letter-spacing:0.8px;margin-top:2px;">MCQs</div></div>
+      <div style="width:1px;background:var(--border);"></div>
+      <div style="text-align:center;"><div style="font-size:22px;font-weight:900;color:var(--gold);">100 min</div><div style="font-size:10px;color:var(--text);text-transform:uppercase;letter-spacing:0.8px;margin-top:2px;">Duration</div></div>
+      <div style="width:1px;background:var(--border);"></div>
+      <div style="text-align:center;"><div style="font-size:22px;font-weight:900;color:var(--red);">−0.25</div><div style="font-size:10px;color:var(--text);text-transform:uppercase;letter-spacing:0.8px;margin-top:2px;">Per Wrong</div></div>
+    </div>
+    <div style="font-size:12px;color:var(--text-mid);margin-bottom:20px;line-height:1.65;">Wrong answers cost you 0.25 marks, exactly like the real FPSC exam. Skip a question if you're unsure rather than guessing blindly. The timer starts the moment you begin. 💪</div>
+    <button id="fpast-confirm-start-btn" onclick="_fpscPastConfirmStart()" style="width:100%;padding:14px;background:linear-gradient(135deg,var(--gold),var(--gold-bright));color:#0A0C10;font-weight:800;font-size:15px;border:none;border-radius:10px;cursor:pointer;margin-bottom:10px;font-family:'Poppins',sans-serif;transition:all 0.2s;">▶ Start Exam — I'm Ready!</button>
+    <button onclick="closeModal('fpast-confirm-modal')" style="width:100%;padding:11px;background:transparent;color:var(--text-mid);font-weight:600;font-size:13px;border:1px solid var(--border);border-radius:10px;cursor:pointer;font-family:'Poppins',sans-serif;">Not Yet — Go Back</button>
+  </div>
+</div>
+
 <!-- ══════════════ DASHBOARD PAGE ══════════════ -->
 <div id="dashboard-page" class="page">
   <div class="page-header" style="border-bottom:1px solid var(--border);background:var(--card);">
@@ -4513,6 +4660,11 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
         <div class="dash-action-icon">📚</div>
         <div class="dash-action-title" id="dash-p1-title">Study Paper 1</div>
         <div class="dash-action-sub" id="dash-p1-sub">7,300 MCQs · Study mode · No timer</div>
+      </div>
+      <div class="dash-action-btn" id="dash-fpsc-past-btn" onclick="openFPSCPastHub()" style="display:none;border-color:rgba(46,204,113,0.3);">
+        <div class="dash-action-icon">🏆</div>
+        <div class="dash-action-title">Past & Mocks FPSC</div>
+        <div class="dash-action-sub">10 Papers · 100 MCQs · Timed · Negative Marking</div>
       </div>
       <div class="dash-action-btn" id="dash-prac-btn" onclick="openPracticePicker()">
         <div class="dash-action-icon">⚡</div>
@@ -6085,7 +6237,7 @@ const META_MAP = {
   '#pricing-mo-wmo':{title:"🩺 MO/WMO Pricing — MedMasters | From PKR 4,000",            desc:"14,000+ MCQs for FPSC, PPSC, SPSC & all MO/WMO exams. From PKR 4,000. Prepare right.",  img:"https://www.medmasters.academy/og-image.png"},
   '#pricing-fpsc-mo-wmo':{title:"🏦 FPSC MO/WMO Pricing — MedMasters | From PKR 4,000",  desc:"25,945 MCQs built for the FPSC Medical Officer & WMO exam. From PKR 4,000. Prepare right.", img:"https://www.medmasters.academy/og-image.png"},
   '#mo-wmo':       {title:"🩺 MO/WMO MCQ Bank — MedMasters | 14,000+ MCQs",              desc:"14,000+ MCQs for Medical Officer & Women Medical Officer exams — FPSC, PPSC, SPSC, KPPSC, BPSC and all testing services in Pakistan.", img:"https://www.medmasters.academy/og-image.png"},
-  '#fpsc-mo-wmo':  {title:"🏦 FPSC MO/WMO MCQ Bank — MedMasters | 25,945 MCQs",           desc:"25,945 MCQs for the Federal Public Service Commission Medical Officer & WMO written test. English, Basic Sciences, Medicine, Surgery, Psychiatry.", img:"https://www.medmasters.academy/og-image.png"},
+  '#fpsc-mo-wmo':  {title:"🏦 FPSC PIMS MO/WMO MCQ Bank — MedMasters | 25,945 MCQs",           desc:"25,945 MCQs for the Federal Public Service Commission Medical Officer & WMO written test. English, Basic Sciences, Medicine, Surgery, Psychiatry.", img:"https://www.medmasters.academy/og-image.png"},
   '#mowmo':        {title:"🏛️ MO/WMO MCQ Bank — MedMasters | 14,000+ MCQs",             desc:"14,000+ MCQs for NTS Medical Officer & Women Medical Officer exam prep. Basic Sciences, Medicine, Surgery & more. Start today.",                       img:"https://www.medmasters.academy/og-image.png"},
   '#nts':          {title:"🏛️ NTS MO/WMO MCQ Bank — MedMasters | 23,000+ MCQs",         desc:"23,000+ MCQs for NTS Medical Officer & Women Medical Officer exam. Basic Sciences, Medicine, Surgery, VAQ & 10 full-length mock exams. Pakistan's most complete NTS prep.", img:"https://www.medmasters.academy/og-image.png"},
   '#features':     {title:"⚡ Platform Features — MedMasters | UWorld-Style Interface",  desc:"Study Mode, timed Practice Sessions, real past papers, instant detailed explanations, progress tracking — built UWorld-style for Pakistani students.",  img:"https://www.medmasters.academy/og-image.png"},
@@ -6112,10 +6264,15 @@ function _showPage(p){
   // Lock navigation when exam is active — allow any mock exam or result page through
   const isMockPage=/^nts-mock(10|[1-9])(-locked|-result)?$/.test(pageId);
   const isRSExamPage=(pageId==='revision-sprint-exam'||pageId==='revision-sprint-result');
-  if(window._examActive && !isMockPage && !isRSExamPage){
-    // For NTS Mocks use mock1-leave-modal; for RS exam use rs-leave-modal
+  const isFpscPastExamPage=(pageId==='fpsc-past-exam'||pageId==='fpsc-past-result');
+  if(window._examActive && !isMockPage && !isRSExamPage && !isFpscPastExamPage){
+    // For NTS Mocks use mock1-leave-modal; for RS exam use rs-leave-modal; for FPSC Past use fpast-leave-modal
     const rsActive = (window._rsExamN !== undefined && window._rsExamN !== null);
-    if(rsActive){
+    const fpscPastActive = (window._fpscPastExamN !== undefined && window._fpscPastExamN !== null);
+    if(fpscPastActive){
+      const fpastModal = document.getElementById('fpast-leave-modal');
+      if(fpastModal) fpastModal.classList.add('open');
+    } else if(rsActive){
       const rsModal = document.getElementById('rs-leave-modal');
       if(rsModal) rsModal.classList.add('open');
     } else {
@@ -8688,6 +8845,477 @@ function openRevisionSprintFromPaperPage(){
 
 // ═══════════ END REVISION SPRINT ENGINE ═══════════
 
+// ═══════════ FPSC PAST PAPERS ENGINE (separate from NTS/RS — no shared state) ═══════════
+// 10 timed papers for FPSC PIMS MO/WMO subscribers. 100 MCQs · 100 minutes ·
+// -0.25 negative marking per wrong answer (net score can go negative, matching
+// how the real FPSC exam grades). Modelled structurally on the Revision Sprint
+// engine above (single dynamic page reused per paper) but fully independent —
+// nothing here touches _rsState/_mockNState or their functions.
+const FPSC_PAST_CONFIG = {
+  1:  { unlock: new Date('2026-09-14T14:00:00Z'), label: 'FPSC Past 1',  date: '14 Sep 2026' },
+  2:  { unlock: new Date('2026-09-16T14:00:00Z'), label: 'FPSC Past 2',  date: '16 Sep 2026' },
+  3:  { unlock: new Date('2026-09-18T14:00:00Z'), label: 'FPSC Past 3',  date: '18 Sep 2026' },
+  4:  { unlock: new Date('2026-09-20T14:00:00Z'), label: 'FPSC Past 4',  date: '20 Sep 2026' },
+  5:  { unlock: new Date('2026-09-22T14:00:00Z'), label: 'FPSC Past 5',  date: '22 Sep 2026' },
+  6:  { unlock: new Date('2026-09-24T14:00:00Z'), label: 'FPSC Past 6',  date: '24 Sep 2026' },
+  7:  { unlock: new Date('2026-09-26T14:00:00Z'), label: 'FPSC Past 7',  date: '26 Sep 2026' },
+  8:  { unlock: new Date('2026-09-28T14:00:00Z'), label: 'FPSC Past 8',  date: '28 Sep 2026' },
+  9:  { unlock: new Date('2026-09-30T14:00:00Z'), label: 'FPSC Past 9',  date: '30 Sep 2026' },
+  10: { unlock: new Date('2026-10-02T14:00:00Z'), label: 'FPSC Past 10', date: '2 Oct 2026' },
+};
+const FPSC_PAST_TOTAL = 100;
+const FPSC_PAST_DURATION_S = 6000; // 100 minutes
+const FPSC_PAST_NEG_MARK = 0.25;
+
+function hasFPSCPastAccess(){ return hasFPSCAccess(); }
+function _isFPSCPastUnlocked(n){ return new Date() >= FPSC_PAST_CONFIG[n].unlock; }
+
+let _fpscPastHubCountdownInt = null;
+let _fpscPastLockedCountdownInt = null;
+
+function openFPSCPastHub(){
+  if(_fpscPastLockedCountdownInt){ clearInterval(_fpscPastLockedCountdownInt); _fpscPastLockedCountdownInt=null; }
+  _showPage('fpsc-past-hub'); setHash('#fpsc-past');
+  _fpscPastRenderAllStatuses();
+  _fpscPastStartHubCountdowns();
+}
+
+function _fpscPastRenderStatus(n){
+  const cfg=FPSC_PAST_CONFIG[n];
+  const statusEl=document.getElementById('fpast-'+n+'-status');
+  const countEl=document.getElementById('fpast-'+n+'-countdown');
+  const cardEl=document.getElementById('fpast-'+n+'-card');
+  if(!statusEl||!countEl) return;
+  const now=new Date();
+  if(now>=cfg.unlock){
+    const latest=_fpscPastGetLatest(n);
+    if(latest && latest.submittedAt){
+      statusEl.textContent='✅ Completed · '+latest.marks+' / '+FPSC_PAST_TOTAL;
+      statusEl.style.color='#2ECC71';
+      countEl.textContent='Tap to re-attempt';
+    } else {
+      statusEl.textContent='● Live — Available Now';
+      statusEl.style.color='#2ECC71';
+      countEl.textContent='Unlocked: '+cfg.date+' · 7 PM PKT';
+    }
+    if(cardEl) cardEl.style.opacity='1';
+  } else {
+    const diff=cfg.unlock-now;
+    if(diff/3600000<=24){
+      const h=Math.floor(diff/3600000), m=Math.floor((diff%3600000)/60000), s=Math.floor((diff%60000)/1000);
+      statusEl.textContent='🔒 Unlocks Soon';
+      statusEl.style.color='var(--gold)';
+      countEl.textContent='Starts in: '+h+'h '+m+'m '+s+'s';
+    } else {
+      statusEl.textContent='🔒 Upcoming';
+      statusEl.style.color='var(--gold)';
+      countEl.textContent='Unlocks: '+cfg.date+' · 7:00 PM PKT';
+    }
+    if(cardEl) cardEl.style.opacity='0.8';
+  }
+}
+function _fpscPastRenderAllStatuses(){ for(let n=1;n<=10;n++) _fpscPastRenderStatus(n); }
+function _fpscPastStartHubCountdowns(){
+  if(_fpscPastHubCountdownInt) clearInterval(_fpscPastHubCountdownInt);
+  const anyLocked=Object.keys(FPSC_PAST_CONFIG).some(function(n){ return !_isFPSCPastUnlocked(parseInt(n)); });
+  if(!anyLocked) return;
+  _fpscPastHubCountdownInt=setInterval(function(){
+    _fpscPastRenderAllStatuses();
+    const stillLocked=Object.keys(FPSC_PAST_CONFIG).some(function(n){ return !_isFPSCPastUnlocked(parseInt(n)); });
+    if(!stillLocked){ clearInterval(_fpscPastHubCountdownInt); _fpscPastHubCountdownInt=null; }
+  },1000);
+}
+
+function openFPSCPast(n){
+  const cfg=FPSC_PAST_CONFIG[n];
+  if(!cfg) return;
+  if(!_isFPSCPastUnlocked(n)){ _fpscPastShowLockedPage(n); return; }
+  if(!S.auth||!hasFPSCPastAccess()){ openCodeModal(null); return; }
+  if(window._examActive){ _fpscPastShowConfirm(n); return; }
+  const prev=_fpscPastGetLatest(n);
+  if(prev && prev.submittedAt){ _fpscPastShowPrevResultModal(n,prev); return; }
+  _fpscPastShowConfirm(n);
+}
+function _fpscPastGetLatest(n){ try{ return JSON.parse(localStorage.getItem('mm_fpast'+n+'_latest_'+(S.code||'x'))||'null'); }catch(e){ return null; } }
+function _fpscPastGetAttempts(n){ try{ return JSON.parse(localStorage.getItem('mm_fpast'+n+'_attempts_'+(S.code||'x'))||'[]'); }catch(e){ return []; } }
+function _fpscPastGetAllForSync(){
+  const out={};
+  for(let n=1;n<=10;n++){
+    const attempts=_fpscPastGetAttempts(n);
+    if(attempts.length) out[n]=attempts;
+  }
+  return out;
+}
+
+function _fpscPastShowPrevResultModal(n,res){
+  const attempts=_fpscPastGetAttempts(n);
+  const attemptNum=res.attemptNum||attempts.length||1;
+  document.getElementById('fpast-prev-attempt-label').textContent='Attempt '+attemptNum;
+  const scoreCol=res.marks>=70?'#2ECC71':res.marks>=50?'var(--gold)':'var(--red)';
+  const scoreEl=document.getElementById('fpast-prev-score');
+  if(scoreEl){ scoreEl.textContent=res.marks+' / '+FPSC_PAST_TOTAL; scoreEl.style.color=scoreCol; }
+  const d=new Date(res.submittedAt);
+  document.getElementById('fpast-prev-date').textContent='Attempted: '+d.toLocaleDateString('en-PK',{day:'numeric',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'});
+  const reBtn=document.getElementById('fpast-prev-reattempt-btn');
+  if(reBtn) reBtn.setAttribute('onclick','_fpscPastReAttempt('+n+')');
+  const viewBtn=document.getElementById('fpast-prev-view-btn');
+  if(viewBtn) viewBtn.setAttribute('onclick','_fpscPastViewPrevResults('+n+')');
+  window._pendingFpscPastN=n;
+  document.getElementById('fpast-prev-result-modal').classList.add('open');
+}
+function _fpscPastViewPrevResults(n){
+  if(!n) n=window._pendingFpscPastN;
+  closeModal('fpast-prev-result-modal');
+  const attempts=_fpscPastGetAttempts(n);
+  if(!attempts.length) return;
+  const last=attempts[attempts.length-1];
+  _fpscPastShowResult(n,last);
+}
+function _fpscPastReAttempt(n){
+  if(!n) n=window._pendingFpscPastN;
+  closeModal('fpast-prev-result-modal');
+  _fpscPastShowConfirm(n);
+}
+
+function _fpscPastShowLockedPage(n){
+  const cfg=FPSC_PAST_CONFIG[n];
+  const titleEl=document.getElementById('fpast-locked-title');
+  const dateEl=document.getElementById('fpast-locked-date');
+  if(titleEl) titleEl.innerHTML='🏆 '+cfg.label+' <span style="color:var(--gold);opacity:0.5;font-weight:400;margin:0 2px;">|</span> <span style="color:var(--gold);">FPSC PIMS MO/WMO</span>';
+  if(dateEl) dateEl.textContent=cfg.date+' · 7:00 PM PKT';
+  _showPage('fpsc-past-locked'); setHash('#fpsc-past-'+n);
+  _fpscPastStartLockedCountdown(n);
+}
+function _fpscPastStartLockedCountdown(n){
+  if(_fpscPastLockedCountdownInt) clearInterval(_fpscPastLockedCountdownInt);
+  _fpscPastUpdateLockedCountdown(n);
+  _fpscPastLockedCountdownInt=setInterval(function(){
+    if(_isFPSCPastUnlocked(n)){ clearInterval(_fpscPastLockedCountdownInt); _fpscPastLockedCountdownInt=null; openFPSCPastHub(); }
+    else _fpscPastUpdateLockedCountdown(n);
+  },1000);
+}
+function _fpscPastUpdateLockedCountdown(n){
+  const cfg=FPSC_PAST_CONFIG[n];
+  const diff=Math.max(0,cfg.unlock-new Date());
+  const hEl=document.getElementById('fpast-cd-h'), mEl=document.getElementById('fpast-cd-m'), sEl=document.getElementById('fpast-cd-s');
+  const hLbl=document.getElementById('fpast-cd-h-lbl'), mLbl=document.getElementById('fpast-cd-m-lbl'), sLbl=document.getElementById('fpast-cd-s-lbl');
+  if(!hEl||!mEl||!sEl) return;
+  if(diff>=24*3600000){
+    const d=Math.floor(diff/86400000), h=Math.floor((diff%86400000)/3600000), m=Math.floor((diff%3600000)/60000);
+    hEl.textContent=String(d)+'d'; mEl.textContent=String(h).padStart(2,'0')+'h'; sEl.textContent=String(m).padStart(2,'0')+'m';
+    if(hLbl) hLbl.textContent='Days'; if(mLbl) mLbl.textContent='Hours'; if(sLbl) sLbl.textContent='Mins';
+  } else {
+    const h=Math.floor(diff/3600000), m=Math.floor((diff%3600000)/60000), s=Math.floor((diff%60000)/1000);
+    hEl.textContent=String(h).padStart(2,'0'); mEl.textContent=String(m).padStart(2,'0'); sEl.textContent=String(s).padStart(2,'0');
+    if(hLbl) hLbl.textContent='Hours'; if(mLbl) mLbl.textContent='Minutes'; if(sLbl) sLbl.textContent='Seconds';
+  }
+}
+
+function _fpscPastShowConfirm(n){
+  const cfg=FPSC_PAST_CONFIG[n];
+  const nameEl=document.getElementById('fpast-confirm-name');
+  if(nameEl) nameEl.textContent=cfg.label;
+  const startBtn=document.getElementById('fpast-confirm-start-btn');
+  if(startBtn) startBtn.setAttribute('onclick','_fpscPastConfirmStart('+n+')');
+  document.getElementById('fpast-confirm-modal').classList.add('open');
+  window._pendingFpscPastN=n;
+}
+function _fpscPastConfirmStart(n){
+  if(!n) n=window._pendingFpscPastN||1;
+  closeModal('fpast-confirm-modal');
+  _fpscPastLaunchExam(n);
+}
+
+// ── Exam state (fully independent — no NTS/RS state touched) ──
+const _fpscPastState={ n:null, qs:[], answers:{}, flagged:new Set(), timeLeft:0, timerInt:null, pageIdx:0, groupIdx:[], startedAt:null, timeUp:false };
+
+async function _fpscPastLaunchExam(n){
+  const cfg=FPSC_PAST_CONFIG[n];
+  window._examActive=true; window._fpscPastExamN=n;
+  _fpscPastState.n=n; _fpscPastState.startedAt=Date.now(); _fpscPastState.timeUp=false;
+  _showPage('fpsc-past-exam'); setHash('#fpsc-past-'+n+'-exam');
+  const tagEl=document.getElementById('fpast-exam-tag');
+  if(tagEl) tagEl.textContent=cfg.label.toUpperCase();
+  const qNum=document.getElementById('fpast-qnum'), timerEl=document.getElementById('fpast-timer');
+  if(qNum) qNum.textContent='Loading…';
+  if(timerEl) timerEl.textContent='';
+  const dataFile='fpsc_past_'+n;
+  if(!(window.MM && window.MM[dataFile] && window.MM[dataFile].length)){
+    await new Promise(function(resolve){
+      const script=document.createElement('script');
+      script.src='/'+dataFile+'.js?v='+Date.now();
+      script.onload=resolve; script.onerror=resolve;
+      document.head.appendChild(script);
+    });
+  }
+  const raw=(window.MM && window.MM[dataFile]) || [];
+  if(!raw.length){
+    window._examActive=false;
+    alert('Could not load exam data. Please check your connection and try again.');
+    openFPSCPastHub();
+    return;
+  }
+  const data=raw.map(function(m,i){
+    let opts,ansIdx;
+    if(Array.isArray(m.opts)){ opts=m.opts; ansIdx=typeof m.ans==='number'?m.ans:['A','B','C','D'].indexOf((m.ans||'A').toUpperCase()); }
+    else { opts=[m.a||'',m.b||'',m.c||'',m.d||'']; ansIdx=['A','B','C','D'].indexOf((m.ans||'A').toUpperCase()); if(ansIdx<0) ansIdx=0; }
+    return { q:m.q||m.question||'', opts:opts, ans:ansIdx, exp:m.e||m.explanation||'', num:i+1, section:m.section||m.category||'' };
+  });
+  _fpscPastState.qs=data; _fpscPastState.answers={}; _fpscPastState.flagged=new Set();
+  _fpscPastState.timeLeft=FPSC_PAST_DURATION_S; _fpscPastState.pageIdx=0;
+  _fpscPastState.groupIdx=_buildGroupIndex(data);
+  if(qNum) qNum.textContent='';
+  const reviewScreen=document.getElementById('fpast-review-screen'), qArea=document.getElementById('fpast-q-area');
+  if(reviewScreen) reviewScreen.style.display='none';
+  if(qArea) qArea.style.display='';
+  _fpscPastRenderPage();
+  _fpscPastStartTimer();
+  if(typeof _updateSoundIcon==='function') _updateSoundIcon();
+}
+
+function _fpscPastTryLeave(){ document.getElementById('fpast-leave-modal').classList.add('open'); }
+function _fpscPastForceLeave(){
+  closeModal('fpast-leave-modal');
+  if(_fpscPastState.timerInt){ clearInterval(_fpscPastState.timerInt); _fpscPastState.timerInt=null; }
+  window._examActive=false; window._fpscPastExamN=null;
+  openFPSCPastHub();
+}
+
+function _fpscPastStartTimer(){
+  if(_fpscPastState.timerInt) clearInterval(_fpscPastState.timerInt);
+  _fpscPastRenderTimer();
+  _fpscPastState.timerInt=setInterval(function(){
+    _fpscPastState.timeLeft-=1;
+    if(_fpscPastState.timeLeft<=0){
+      clearInterval(_fpscPastState.timerInt); _fpscPastState.timerInt=null;
+      _fpscPastState.timeLeft=0; _fpscPastState.timeUp=true;
+      _fpscPastRenderTimer();
+      window._examActive=false;
+      _fpscPastSubmitExam(true);
+    } else { _fpscPastRenderTimer(); }
+  },1000);
+}
+function _fpscPastRenderTimer(){
+  const el=document.getElementById('fpast-timer'); if(!el) return;
+  const t=_fpscPastState.timeLeft, h=Math.floor(t/3600), m=Math.floor((t%3600)/60), s=t%60;
+  el.textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+  el.style.color = t<=60?'var(--red)':t<=300?'var(--gold)':'var(--green)';
+}
+
+function _fpscPastRenderPage(){
+  const st=_fpscPastState;
+  const page=st.groupIdx[st.pageIdx]; if(!page) return;
+  const totalPages=st.groupIdx.length, totalQs=st.qs.length;
+  const firstQNum=st.qs[page.qIdxs[0]].num, lastQNum=st.qs[page.qIdxs[page.qIdxs.length-1]].num;
+  const qLabel=page.qIdxs.length>1?'Q '+firstQNum+'–'+lastQNum+' / '+totalQs:'Q '+firstQNum+' / '+totalQs;
+  const progEl=document.getElementById('fpast-progress'); if(progEl) progEl.style.width=((st.pageIdx/totalPages)*100)+'%';
+  const qnEl=document.getElementById('fpast-qnum'); if(qnEl) qnEl.textContent=qLabel;
+  const area=document.getElementById('fpast-q-area'); area.innerHTML='';
+  const flagBtn=document.getElementById('fpast-flag-next-btn');
+  const hasUnanswered=page.qIdxs.some(function(qi){ return st.answers[qi]===undefined && !st.flagged.has(qi); });
+  if(flagBtn) flagBtn.style.display=hasUnanswered?'flex':'none';
+  const letters=['A','B','C','D'];
+  page.qIdxs.forEach(function(qi,groupPos){
+    const q=st.qs[qi], answered=st.answers[qi], isFlagged=st.flagged.has(qi);
+    const qWrap=document.createElement('div'); qWrap.id='fpast-qwrap-'+qi;
+    if(groupPos>0){ qWrap.style.marginTop='28px'; qWrap.style.paddingTop='24px'; qWrap.style.borderTop='1px solid var(--border)'; }
+    const stemEl=document.createElement('div');
+    stemEl.style.cssText='font-size:15px;font-weight:600;color:var(--cream);line-height:1.65;margin-bottom:16px;';
+    stemEl.innerHTML='<span style="color:var(--gold);font-weight:800;margin-right:6px;">Q'+q.num+'.</span>'+_m1fmt(q.q)+(isFlagged?'<span style="margin-left:8px;font-size:12px;color:var(--gold);">🚩 Flagged</span>':'');
+    qWrap.appendChild(stemEl);
+    const optsEl=document.createElement('div'); optsEl.id='fpast-opts-'+qi;
+    optsEl.style.cssText='display:flex;flex-direction:column;gap:10px;margin-bottom:16px;';
+    letters.forEach(function(l,i){
+      if(!q.opts||!q.opts[i]) return;
+      const btn=document.createElement('button');
+      const isAnswered=answered!==undefined, isCorrect=i===q.ans, isChosen=i===answered;
+      let iconHtml='';
+      if(isAnswered){ if(isCorrect) iconHtml='<span style="margin-left:auto;font-size:16px;flex-shrink:0;">✅</span>'; else if(isChosen) iconHtml='<span style="margin-left:auto;font-size:16px;flex-shrink:0;">❌</span>'; }
+      btn.className='study-opt';
+      btn.innerHTML='<div class="study-opt-letter">'+l+'</div><div class="study-opt-text" style="flex:1;">'+_m1fmt(q.opts[i])+'</div>'+iconHtml;
+      if(isAnswered){ btn.disabled=true; if(isCorrect) btn.classList.add('correct'); else if(isChosen) btn.classList.add('incorrect'); }
+      else { btn.onclick=function(){ _fpscPastSelectAns(qi,i,page); if(typeof playClickSound==='function') playClickSound(); }; }
+      optsEl.appendChild(btn);
+    });
+    qWrap.appendChild(optsEl);
+    const expWrap=document.createElement('div'); expWrap.id='fpast-exp-'+qi; expWrap.style.display='none';
+    if(answered!==undefined){ _buildExpEl(expWrap,q,answered); expWrap.style.display='block'; }
+    qWrap.appendChild(expWrap);
+    area.appendChild(qWrap);
+  });
+  _fpscPastCheckPageComplete(page);
+}
+
+function _fpscPastSelectAns(qi,idx,page){
+  if(_fpscPastState.answers[qi]!==undefined) return;
+  _fpscPastState.answers[qi]=idx;
+  _fpscPastState.flagged.delete(qi);
+  const optsEl=document.getElementById('fpast-opts-'+qi);
+  if(optsEl){
+    const q=_fpscPastState.qs[qi];
+    optsEl.querySelectorAll('.study-opt').forEach(function(b,i){
+      b.disabled=true;
+      const isC=i===q.ans, isG=i===idx;
+      if(isC){ b.classList.add('correct'); b.querySelector('.study-opt-text').insertAdjacentHTML('afterend','<span style="margin-left:auto;font-size:16px;flex-shrink:0;">✅</span>'); }
+      else if(isG){ b.classList.add('incorrect'); b.querySelector('.study-opt-text').insertAdjacentHTML('afterend','<span style="margin-left:auto;font-size:16px;flex-shrink:0;">❌</span>'); }
+    });
+  }
+  const expWrap=document.getElementById('fpast-exp-'+qi);
+  if(expWrap){ _buildExpEl(expWrap,_fpscPastState.qs[qi],idx); expWrap.style.display='block'; }
+  _fpscPastCheckPageComplete(page);
+}
+function _fpscPastPassedThrough(qi){ return _fpscPastState.answers[qi]!==undefined || _fpscPastState.flagged.has(qi); }
+function _fpscPastAllPassedThrough(){ return _fpscPastState.qs.every(function(_,i){ return _fpscPastPassedThrough(i); }); }
+function _fpscPastCheckPageComplete(page){
+  const allPT=page.qIdxs.every(function(qi){ return _fpscPastPassedThrough(qi); });
+  const nextBtn=document.getElementById('fpast-next-btn'), flagBtn=document.getElementById('fpast-flag-next-btn');
+  if(!nextBtn) return;
+  const hasUnanswered=page.qIdxs.some(function(qi){ return !_fpscPastPassedThrough(qi); });
+  if(flagBtn) flagBtn.style.display=hasUnanswered?'flex':'none';
+  if(allPT){
+    const isLast=_fpscPastState.pageIdx>=_fpscPastState.groupIdx.length-1;
+    if(isLast && _fpscPastAllPassedThrough()){ nextBtn.textContent='✓ Submit Exam'; nextBtn.onclick=function(){ _fpscPastSubmitExam(false); }; }
+    else { nextBtn.textContent='Next →'; nextBtn.onclick=_fpscPastNext; }
+    nextBtn.style.display='';
+  } else { nextBtn.style.display='none'; }
+}
+function _fpscPastFlagAndNext(){
+  const page=_fpscPastState.groupIdx[_fpscPastState.pageIdx];
+  page.qIdxs.forEach(function(qi){ if(_fpscPastState.answers[qi]===undefined) _fpscPastState.flagged.add(qi); });
+  _fpscPastNext();
+}
+function _fpscPastNext(){
+  if(_fpscPastState.pageIdx<_fpscPastState.groupIdx.length-1){
+    _fpscPastState.pageIdx+=1; _fpscPastRenderPage(); window.scrollTo({top:0,behavior:'instant'});
+  } else if(_fpscPastAllPassedThrough()){
+    _fpscPastSubmitExam(false);
+  } else {
+    for(let p=0;p<_fpscPastState.groupIdx.length;p++){
+      const pg=_fpscPastState.groupIdx[p];
+      if(pg.qIdxs.some(function(qi){ return !_fpscPastPassedThrough(qi); })){ _fpscPastState.pageIdx=p; _fpscPastRenderPage(); window.scrollTo({top:0,behavior:'instant'}); return; }
+    }
+  }
+}
+
+function _fpscPastSubmitExam(timeUp){
+  if(_fpscPastState.timerInt){ clearInterval(_fpscPastState.timerInt); _fpscPastState.timerInt=null; }
+  window._examActive=false;
+  const st=_fpscPastState;
+  let correct=0,wrong=0,skipped=0; const wrongList=[];
+  st.qs.forEach(function(q,i){
+    const a=st.answers[i];
+    if(a===undefined) skipped++;
+    else if(a===q.ans) correct++;
+    else { wrong++; wrongList.push({q:q,given:a}); }
+    if(a!==undefined) savePracticeProgress(a===q.ans);
+  });
+  const total=st.qs.length;
+  // Negative marking: 1 mark per correct, -0.25 per wrong, 0 for skipped.
+  // Net score is allowed to go negative — matches how FPSC's real exam grades.
+  const marks=Math.round((correct-wrong*FPSC_PAST_NEG_MARK)*100)/100;
+  const pct=Math.round((marks/total)*100);
+  const timeTaken=FPSC_PAST_DURATION_S-st.timeLeft;
+  const attempts=_fpscPastGetAttempts(st.n);
+  const attemptNum=attempts.length+1;
+  const record={correct:correct,wrong:wrong,skipped:skipped,total:total,marks:marks,pct:pct,timeTaken:timeTaken,timeUp:timeUp,submittedAt:new Date().toISOString(),attemptNum:attemptNum,wrongList:wrongList};
+  try{
+    attempts.push(record);
+    localStorage.setItem('mm_fpast'+st.n+'_attempts_'+(S.code||'x'),JSON.stringify(attempts));
+    localStorage.setItem('mm_fpast'+st.n+'_latest_'+(S.code||'x'),JSON.stringify(record));
+  }catch(e){}
+  scheduleSyncToCloud();
+  _fpscPastShowResult(st.n,record);
+}
+
+function _fpscPastShowResult(n,res){
+  _showPage('fpsc-past-result'); setHash('#fpsc-past-'+n+'-result');
+  const attempts=_fpscPastGetAttempts(n);
+  const attemptNum=res.attemptNum||attempts.length||1;
+  document.getElementById('fpast-res-attempt').textContent='Attempt '+attemptNum+' · '+FPSC_PAST_CONFIG[n].label;
+  const scoreCol=res.pct>=70?'#2ECC71':res.pct>=50?'var(--gold)':res.marks<0?'var(--red)':'var(--red)';
+  const scoreEl=document.getElementById('fpast-res-score');
+  if(scoreEl){ scoreEl.textContent=res.marks+' / '+res.total; scoreEl.style.color=scoreCol; }
+  document.getElementById('fpast-res-pct').textContent=res.pct+'%';
+  document.getElementById('fpast-res-negmark-note').textContent='('+res.correct+' correct × 1) − ('+res.wrong+' wrong × 0.25) = '+res.marks+' marks';
+  let grade='',gradeColor='';
+  if(res.pct>=85){ grade='Excellent'; gradeColor='#2ECC71'; }
+  else if(res.pct>=70){ grade='Good'; gradeColor='var(--gold)'; }
+  else if(res.pct>=55){ grade='Average'; gradeColor='#F39C12'; }
+  else if(res.pct>=40){ grade='Below Average'; gradeColor='#E67E22'; }
+  else { grade='Needs Work'; gradeColor='var(--red)'; }
+  const gradeEl=document.getElementById('fpast-res-grade'); gradeEl.textContent=grade; gradeEl.style.color=gradeColor;
+  const tt=res.timeTaken, th=Math.floor(tt/3600), tm=Math.floor((tt%3600)/60), ts=tt%60;
+  document.getElementById('fpast-res-time').textContent='⏱ Time taken: '+(th>0?th+'h ':'')+tm+'m '+ts+'s / 100 min';
+  document.getElementById('fpast-res-timeup').style.display=res.timeUp?'block':'none';
+  document.getElementById('fpast-res-correct').textContent=res.correct;
+  document.getElementById('fpast-res-wrong').textContent=res.wrong;
+  document.getElementById('fpast-res-skipped').textContent=res.skipped;
+  // Percentile (normative approximation, same formula style used elsewhere on the site)
+  const z=(res.pct-65)/10;
+  const percentile=Math.max(1,Math.min(99,Math.round(50+(z*34))));
+  const pBox=document.getElementById('fpast-res-percentile');
+  if(res.pct>=50){
+    pBox.innerHTML='<div style="font-size:11px;color:var(--text-mid);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Estimated Percentile</div><div style="font-size:22px;font-weight:900;color:var(--gold);">'+percentile+'th</div><div style="font-size:11px;color:var(--text-mid);margin-top:4px;">vs. expected FPSC PIMS MO/WMO cohort</div>';
+    pBox.style.display='block';
+  } else { pBox.style.display='none'; }
+  // Category feedback — gracefully shows nothing if papers aren't tagged with q.section
+  const qs=(window.MM && window.MM['fpsc_past_'+n]) || _fpscPastState.qs || [];
+  const taggedQs=qs.map(function(m,i){ return { section: m.section||m.category||'', num:i+1 }; });
+  _fpscPastRenderCategoryFeedback(taggedQs, res.wrongList||[]);
+  // Wrong review
+  const reviewEl=document.getElementById('fpast-wrong-review');
+  reviewEl.innerHTML='';
+  if(res.wrongList && res.wrongList.length){
+    const hdr=document.createElement('div');
+    hdr.innerHTML='<div style="font-size:14px;font-weight:800;color:var(--cream);margin:24px 0 14px;text-align:center;">📖 Review · Wrong Answers ('+res.wrongList.length+')</div>';
+    reviewEl.appendChild(hdr);
+    res.wrongList.forEach(function(item){
+      const wrap=document.createElement('div');
+      wrap.style.cssText='background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:14px;';
+      wrap.innerHTML='<div style="font-size:13px;color:var(--cream);font-weight:600;line-height:1.6;margin-bottom:10px;"><span style="color:var(--gold);font-weight:800;">Q'+item.q.num+'.</span> '+_m1fmt(item.q.q)+'</div>';
+      const expWrap=document.createElement('div');
+      _buildExpEl(expWrap,item.q,item.given);
+      wrap.appendChild(expWrap);
+      reviewEl.appendChild(wrap);
+    });
+  } else if(res.skipped===0) {
+    reviewEl.innerHTML='<div style="text-align:center;padding:24px;font-size:14px;color:#2ECC71;font-weight:700;">🎯 Perfect score — no wrong answers to review!</div>';
+  }
+}
+
+// Simpler, correct category-feedback renderer (replaces the draft helper above's
+// half-finished math — kept as one function so there's a single source of truth)
+function _fpscPastRenderCategoryFeedback(taggedQs, wrongList){
+  const el=document.getElementById('fpast-res-category-feedback');
+  if(!el) return;
+  const sections={};
+  taggedQs.forEach(function(q){
+    const sec=(q.section||'').trim();
+    if(!sec) return; // untagged questions are excluded from the breakdown entirely
+    if(!sections[sec]) sections[sec]={total:0,wrong:0};
+    sections[sec].total++;
+  });
+  const sectionNames=Object.keys(sections);
+  if(!sectionNames.length){ el.style.display='none'; el.innerHTML=''; return; }
+  const wrongNums=new Set(wrongList.map(function(w){ return w.q.num; }));
+  taggedQs.forEach(function(q){
+    const sec=(q.section||'').trim();
+    if(sec && wrongNums.has(q.num)) sections[sec].wrong++;
+  });
+  let html='<div style="font-size:13px;font-weight:800;color:var(--cream);margin:24px 0 14px;">📊 Performance by Category</div>';
+  sectionNames.forEach(function(sec){
+    const s=sections[sec];
+    const correctInSec=s.total-s.wrong;
+    const acc=s.total?Math.round((correctInSec/s.total)*100):0;
+    const barColor=acc>=70?'#2ECC71':acc>=50?'var(--gold)':'var(--red)';
+    html+='<div style="margin-bottom:12px;"><div style="display:flex;justify-content:space-between;font-size:12px;color:var(--cream);margin-bottom:5px;"><span>'+sec+'</span><span style="color:var(--text-mid);">'+correctInSec+'/'+s.total+'</span></div><div style="height:7px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;"><div style="height:100%;width:'+acc+'%;background:'+barColor+';border-radius:4px;"></div></div></div>';
+  });
+  el.style.display='block';
+  el.innerHTML=html;
+}
+
+// ═══════════ END FPSC PAST PAPERS ENGINE ═══════════
+
 
 function startNTSSession(key, name){
   // Route to correct study opener based on key prefix
@@ -9659,11 +10287,11 @@ function loadDashboard(){
   const isPGET = hasPGETAccess();
   const fcpsName = isFCPS ? (FCPS_SPECIALTY_NAMES[S.subject]||S.subject) : '';
   const pgetName = isPGET ? (PGET_SPECIALTY_NAMES[S.subject]||S.subject) : '';
-  const sname = isNTS ? 'NTS MO/WMO' : isCTS ? 'CTS MO/WMO' : isFPSC ? 'FPSC MO/WMO' : isMOWMO ? 'MO/WMO' : isFCPS ? fcpsName : isPGET ? pgetName : (names[S.subject]||S.subject||'JCAT');
+  const sname = isNTS ? 'NTS MO/WMO' : isCTS ? 'CTS MO/WMO' : isFPSC ? 'FPSC PIMS MO/WMO' : isMOWMO ? 'MO/WMO' : isFCPS ? fcpsName : isPGET ? pgetName : (names[S.subject]||S.subject||'JCAT');
   const firstName=S.drName?S.drName.split(' ').find(w=>!['Dr','Dr.','dr'].includes(w))||S.drName:'';
   document.getElementById('dash-title').textContent=firstName?`Dr. ${firstName}'s Dashboard`:'My Dashboard';
-  document.getElementById('dash-subtitle').textContent= isMockNTS ? 'Past & Mocks NTS' : isNTS ? 'NTS MO/WMO' : isCTS ? 'CTS MO/WMO' : isFPSC ? 'FPSC MO/WMO' : isMOWMO ? 'MO/WMO' : isFCPS ? `FCPS Part 1 — ${fcpsName}` : isPGET ? `PGET UHS — ${pgetName}` : `JCAT — ${sname}`;
-  document.getElementById('dash-plan-name').textContent= isMockNTS ? 'Past & Mocks NTS' : isNTS ? 'NTS MO/WMO' : isCTS ? 'CTS MO/WMO' : isFPSC ? 'FPSC MO/WMO' : isMOWMO ? 'MO/WMO' : isFCPS ? `FCPS Part 1: ${fcpsName}` : isPGET ? `PGET UHS: ${pgetName}` : `JCAT: ${sname}`;
+  document.getElementById('dash-subtitle').textContent= isMockNTS ? 'Past & Mocks NTS' : isNTS ? 'NTS MO/WMO' : isCTS ? 'CTS MO/WMO' : isFPSC ? 'FPSC PIMS MO/WMO' : isMOWMO ? 'MO/WMO' : isFCPS ? `FCPS Part 1 — ${fcpsName}` : isPGET ? `PGET UHS — ${pgetName}` : `JCAT — ${sname}`;
+  document.getElementById('dash-plan-name').textContent= isMockNTS ? 'Past & Mocks NTS' : isNTS ? 'NTS MO/WMO' : isCTS ? 'CTS MO/WMO' : isFPSC ? 'FPSC PIMS MO/WMO' : isMOWMO ? 'MO/WMO' : isFCPS ? `FCPS Part 1: ${fcpsName}` : isPGET ? `PGET UHS: ${pgetName}` : `JCAT: ${sname}`;
   const exp=new Date(S.expiresAt);
   const days=Math.ceil((exp-new Date())/(1000*60*60*24));
   document.getElementById('dash-plan-exp').textContent=`Expires on: ${exp.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'})}`;
@@ -9818,7 +10446,7 @@ function loadDashboard(){
     }
   } else if(isNTS||isCTS||isMOWMO||isFPSC){
     if(p1Btn){ p1Btn.setAttribute('onclick',isNTS?'openNTS()':isCTS?'openCTS()':isFPSC?'openFPSCPage()':'openMOWMOPage()'); p1Btn.style.opacity=''; p1Btn.style.filter=''; p1Btn.style.pointerEvents=''; }
-    if(p1Title) p1Title.textContent=(isCTS?'CTS':isFPSC?'FPSC MO/WMO':isMOWMO?'MO/WMO':'NTS')+' MCQ Bank';
+    if(p1Title) p1Title.textContent=(isCTS?'CTS':isFPSC?'FPSC PIMS MO/WMO':isMOWMO?'MO/WMO':'NTS')+' MCQ Bank';
     if(p1Sub) p1Sub.textContent='14,000+ MCQs · All Categories';
     if(pracBtn) pracBtn.style.display='none';
     if(p2Icon) p2Icon.textContent='⚡';
@@ -9827,6 +10455,8 @@ function loadDashboard(){
     if(p2Btn){ p2Btn.setAttribute('onclick', isFPSC?'openFPSCUnifiedPractice()':isCTS?'openCTSUnifiedPractice()':isMOWMO?'openMOWMOUnifiedPractice()':'openNTSUnifiedPractice()'); p2Btn.style.opacity=''; p2Btn.style.filter=''; p2Btn.style.pointerEvents=''; }
     const mockBtn = document.getElementById('dash-mock-btn');
     if(mockBtn) mockBtn.style.display=isNTS?'':'none';
+    const fpscPastBtn=document.getElementById('dash-fpsc-past-btn');
+    if(fpscPastBtn) fpscPastBtn.style.display=isFPSC?'flex':'none';
   } else if(isFCPS){
     const mockBtnJ = document.getElementById('dash-mock-btn');
     if(mockBtnJ) mockBtnJ.style.display='none';
@@ -10416,13 +11046,24 @@ let _syncing=false; // guard against overlapping syncs
 
 async function syncProgressToCloud(prog){
   if(!S.code) return;
+  // Each group is sent as its own PATCH call, in its own try/catch. Supabase
+  // rejects an ENTIRE save if any single field names a column that doesn't
+  // exist yet — splitting like this means a not-yet-added column (e.g. a
+  // brand new feature's field) can never take down syncing for the others.
   try{
     const prac=getPracticeProgress();
-    // Include mock1 attempts in cloud sync
     const mock1Attempts=_mock1GetAttempts();
-    const payload={ progress_data: JSON.stringify(prog), prac_data: JSON.stringify(prac), mock1_data: JSON.stringify(mock1Attempts), favorites: JSON.stringify(getFavorites()), todos: JSON.stringify(getTodos()) };
-    await sb.patch('access_codes',{code:S.code}, payload);
+    await sb.patch('access_codes',{code:S.code}, { progress_data: JSON.stringify(prog), prac_data: JSON.stringify(prac), mock1_data: JSON.stringify(mock1Attempts) });
   }catch(e){ /* silent — localStorage is source of truth */ }
+  try{
+    await sb.patch('access_codes',{code:S.code}, { favorites: JSON.stringify(getFavorites()) });
+  }catch(e){ /* silent — needs the 'favorites' column added in Supabase */ }
+  try{
+    await sb.patch('access_codes',{code:S.code}, { todos: JSON.stringify(getTodos()) });
+  }catch(e){ /* silent — needs the 'todos' column added in Supabase */ }
+  try{
+    await sb.patch('access_codes',{code:S.code}, { fpsc_past_data: JSON.stringify(_fpscPastGetAllForSync()) });
+  }catch(e){ /* silent — needs the 'fpsc_past_data' column added in Supabase */ }
 }
 
 // Pull cloud data, merge with local, save locally only (no push — caller decides)
@@ -10528,6 +11169,28 @@ async function mergeFromCloud(){
           if(!existing || tStamp>=eStamp) byId[t.id]=t;
         });
         saveTodosLocal(_cleanupOldCompletedTodos(Object.values(byId)));
+      }catch(e){}
+    }
+    // Merge FPSC Past Papers attempts — per paper, keep whichever side has
+    // more attempts (or the more recent submission if counts tie)
+    if(row.fpsc_past_data){
+      try{
+        const cloudAll=JSON.parse(row.fpsc_past_data)||{};
+        for(let n=1;n<=10;n++){
+          const cloudAttempts=cloudAll[n]||[];
+          if(!cloudAttempts.length) continue;
+          const localAttempts=_fpscPastGetAttempts(n);
+          let winner=localAttempts;
+          if(cloudAttempts.length>localAttempts.length){
+            winner=cloudAttempts;
+          } else if(cloudAttempts.length===localAttempts.length && cloudAttempts.length>0){
+            const cloudLast=new Date(cloudAttempts[cloudAttempts.length-1].submittedAt||0).getTime();
+            const localLast=new Date(localAttempts[localAttempts.length-1].submittedAt||0).getTime();
+            if(cloudLast>localLast) winner=cloudAttempts;
+          }
+          localStorage.setItem('mm_fpast'+n+'_attempts_'+(S.code||'x'),JSON.stringify(winner));
+          if(winner.length) localStorage.setItem('mm_fpast'+n+'_latest_'+(S.code||'x'),JSON.stringify(winner[winner.length-1]));
+        }
       }catch(e){}
     }
   }catch(e){ /* silent */ }
