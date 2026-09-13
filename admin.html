@@ -892,6 +892,30 @@ tr:hover td{background:rgba(201,168,76,0.02);}
         </svg>
         <div class="pmd-drc-lbl">Day Streak</div>
       </div>
+      <div class="pmd-circle-card">
+        <svg width="100" height="100" viewBox="0 0 100 100" style="overflow:visible">
+          <circle class="pmd-drc-track" cx="50" cy="50" r="43"/>
+          <circle class="pmd-drc-fill gold" id="pmd-ring-favs" cx="50" cy="50" r="43" stroke-dasharray="270.2" stroke-dashoffset="0"/>
+          <text class="pmd-drc-val" id="pmd-favs-val" x="50" y="50" text-anchor="middle" dominant-baseline="middle">0</text>
+        </svg>
+        <div class="pmd-drc-lbl">Favourites</div>
+      </div>
+      <div class="pmd-circle-card">
+        <svg width="100" height="100" viewBox="0 0 100 100" style="overflow:visible">
+          <circle class="pmd-drc-track" cx="50" cy="50" r="43"/>
+          <circle class="pmd-drc-fill" id="pmd-ring-pace" cx="50" cy="50" r="43" stroke-dasharray="270.2" stroke-dashoffset="270.2"/>
+          <circle id="pmd-pace-dot" cx="50" cy="50" r="15" fill="#3498DB"/>
+        </svg>
+        <div class="pmd-drc-lbl">Study Pace</div>
+      </div>
+      <div class="pmd-circle-card">
+        <svg width="100" height="100" viewBox="0 0 100 100" style="overflow:visible">
+          <circle class="pmd-drc-track" cx="50" cy="50" r="43"/>
+          <circle class="pmd-drc-fill" id="pmd-ring-todo" cx="50" cy="50" r="43" stroke-dasharray="270.2" stroke-dashoffset="0" style="stroke:#17A2A8;"/>
+          <text class="pmd-drc-val" id="pmd-todo-val" x="50" y="50" text-anchor="middle" dominant-baseline="middle">0</text>
+        </svg>
+        <div class="pmd-drc-lbl">To-Do</div>
+      </div>
     </div>
 
     <!-- Study time -->
@@ -2748,6 +2772,38 @@ function openProgModal(code){
   pmdSetRing('pmd-ring-streak', Math.min(1,streak/30));
   document.getElementById('pmd-streak-val').textContent = streak;
 
+  // Ring 4: Favourites — plain count, always full gold ring (matches student dashboard)
+  let favCount = 0;
+  try{ favCount = Object.keys(JSON.parse(r.favorites||'{}')).length; }catch(e){}
+  document.getElementById('pmd-favs-val').textContent = favCount;
+
+  // Ring 5: Study Pace — same 400 MCQs/day tier logic as the pace note, but as a
+  // ring + colored dot instead of a text banner (mirrors the student dashboard)
+  const paceRing = document.getElementById('pmd-ring-pace');
+  const paceDot = document.getElementById('pmd-pace-dot');
+  if(isMock){
+    pmdSetRing('pmd-ring-pace', 0);
+    if(paceRing) paceRing.style.stroke = '#3498DB';
+    if(paceDot) paceDot.setAttribute('fill', '#3498DB');
+  } else {
+    const tier = _pmdPaceTier(r.created_at, doneTotal);
+    if(tier){
+      pmdSetRing('pmd-ring-pace', Math.min(1, tier.ratio));
+      const paceColor = tier.cls==='great' ? '#2ECC71' : tier.cls==='warn' ? '#F1C40F' : '#E74C3C';
+      if(paceRing) paceRing.style.stroke = paceColor;
+      if(paceDot) paceDot.setAttribute('fill', paceColor);
+    } else {
+      pmdSetRing('pmd-ring-pace', 0);
+      if(paceRing) paceRing.style.stroke = '#3498DB';
+      if(paceDot) paceDot.setAttribute('fill', '#3498DB');
+    }
+  }
+
+  // Ring 6: To-Do — plain count of open tasks, always full teal ring
+  let todoCount = 0;
+  try{ todoCount = JSON.parse(r.todos||'[]').filter(t=>!t.done).length; }catch(e){}
+  document.getElementById('pmd-todo-val').textContent = todoCount;
+
   // Study time
   document.getElementById('pmd-time-val').textContent = pmdFormatTime(r.time_spent_seconds||0);
 
@@ -2805,7 +2861,6 @@ function _pmdPaceMessage(createdAt, doneTotal){
 // ── Build all subject bars (mirrors renderSubjectProgressDash exactly) ──
 function _pmdBuildAllBars(subj, answers, isNTS, isFCPS, isMock, createdAt){
   const doneTotal = Object.keys(answers||{}).length;
-  const paceMsg = isMock ? '' : _pmdPaceMessage(createdAt, doneTotal);
   const P1C='linear-gradient(90deg,var(--gold),var(--gold-bright))';
   const P2C='linear-gradient(90deg,#3498DB,#5DADE2)';
   const DONE='linear-gradient(90deg,#2ECC71,#27AE60)';
@@ -2832,14 +2887,14 @@ function _pmdBuildAllBars(subj, answers, isNTS, isFCPS, isMock, createdAt){
   }
 
   if(isNTS){
-    return paceMsg+_sec('📊 Progress by Category','var(--gold)')+PMD_NTS_CATS.map(cat=>{
+    return _sec('📊 Progress by Category','var(--gold)')+PMD_NTS_CATS.map(cat=>{
       const done=Object.keys(answers).filter(k=>cat.keys.some(ck=>k.startsWith(ck+'_')||k===ck||k.startsWith(ck))).length;
       return _row(cat.icon,cat.label,done,cat.total,cat.color);
     }).join('');
   }
 
   // JCAT or FCPS
-  let rows=paceMsg;
+  let rows='';
   // P1 section header only if has P2
   const p2subs = PMD_JCAT_P2[subj] || PMD_FCPS_P2[subj] || PMD_PGET_P2[subj] || [];
   if(p2subs.length) rows += _sec('Paper 1 — Basic Sciences','var(--gold)');
