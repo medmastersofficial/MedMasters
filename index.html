@@ -9150,18 +9150,21 @@ function _fpscPastSelectAns(qi,idx,page){
   if(_fpscPastState.answers[qi]!==undefined) return;
   _fpscPastState.answers[qi]=idx;
   _fpscPastState.flagged.delete(qi);
-  const optsEl=document.getElementById('fpast-opts-'+qi);
-  if(optsEl){
-    const q=_fpscPastState.qs[qi];
-    optsEl.querySelectorAll('.study-opt').forEach(function(b,i){
-      b.disabled=true;
-      const isC=i===q.ans, isG=i===idx;
-      if(isC){ b.classList.add('correct'); b.querySelector('.study-opt-text').insertAdjacentHTML('afterend','<span style="margin-left:auto;font-size:16px;flex-shrink:0;">✅</span>'); }
-      else if(isG){ b.classList.add('incorrect'); b.querySelector('.study-opt-text').insertAdjacentHTML('afterend','<span style="margin-left:auto;font-size:16px;flex-shrink:0;">❌</span>'); }
-    });
-  }
-  const expWrap=document.getElementById('fpast-exp-'+qi);
-  if(expWrap){ _buildExpEl(expWrap,_fpscPastState.qs[qi],idx); expWrap.style.display='block'; }
+  try{
+    const optsEl=document.getElementById('fpast-opts-'+qi);
+    if(optsEl){
+      const q=_fpscPastState.qs[qi];
+      optsEl.querySelectorAll('.study-opt').forEach(function(b,i){
+        b.disabled=true;
+        const isC=i===q.ans, isG=i===idx;
+        const textEl=b.querySelector('.study-opt-text');
+        if(isC){ b.classList.add('correct'); if(textEl) textEl.insertAdjacentHTML('afterend','<span style="margin-left:auto;font-size:16px;flex-shrink:0;">✅</span>'); }
+        else if(isG){ b.classList.add('incorrect'); if(textEl) textEl.insertAdjacentHTML('afterend','<span style="margin-left:auto;font-size:16px;flex-shrink:0;">❌</span>'); }
+      });
+    }
+    const expWrap=document.getElementById('fpast-exp-'+qi);
+    if(expWrap){ _buildExpEl(expWrap,_fpscPastState.qs[qi],idx); expWrap.style.display='block'; }
+  }catch(e){ console.error('FPSC answer display error (non-blocking):', e); }
   _fpscPastCheckPageComplete(page);
 }
 function _fpscPastPassedThrough(qi){ return _fpscPastState.answers[qi]!==undefined || _fpscPastState.flagged.has(qi); }
