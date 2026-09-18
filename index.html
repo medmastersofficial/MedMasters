@@ -9180,7 +9180,7 @@ function _fpscPastCheckPageComplete(page){
       const isLast=_fpscPastState.pageIdx>=_fpscPastState.groupIdx.length-1;
       if(isLast && _fpscPastAllPassedThrough()){ nextBtn.textContent='✓ Submit Exam'; nextBtn.onclick=function(){ _fpscPastSubmitExam(false); }; }
       else { nextBtn.textContent='Next →'; nextBtn.onclick=_fpscPastNext; }
-      nextBtn.style.display='';
+      nextBtn.style.display='inline-flex';
       return;
     }
     nextBtn.style.display='none';
@@ -9189,7 +9189,7 @@ function _fpscPastCheckPageComplete(page){
     // Fail-safe: never leave the doctor with no way to proceed
     nextBtn.textContent='Next →';
     nextBtn.onclick=_fpscPastNext;
-    nextBtn.style.display='';
+    nextBtn.style.display='inline-flex';
     if(flagBtn) flagBtn.style.display='none';
   }
 }
