@@ -9170,17 +9170,28 @@ function _fpscPastSelectAns(qi,idx,page){
 function _fpscPastPassedThrough(qi){ return _fpscPastState.answers[qi]!==undefined || _fpscPastState.flagged.has(qi); }
 function _fpscPastAllPassedThrough(){ return _fpscPastState.qs.every(function(_,i){ return _fpscPastPassedThrough(i); }); }
 function _fpscPastCheckPageComplete(page){
-  const allPT=page.qIdxs.every(function(qi){ return _fpscPastPassedThrough(qi); });
   const nextBtn=document.getElementById('fpast-next-btn'), flagBtn=document.getElementById('fpast-flag-next-btn');
   if(!nextBtn) return;
-  const hasUnanswered=page.qIdxs.some(function(qi){ return !_fpscPastPassedThrough(qi); });
-  if(flagBtn) flagBtn.style.display=hasUnanswered?'flex':'none';
-  if(allPT){
-    const isLast=_fpscPastState.pageIdx>=_fpscPastState.groupIdx.length-1;
-    if(isLast && _fpscPastAllPassedThrough()){ nextBtn.textContent='✓ Submit Exam'; nextBtn.onclick=function(){ _fpscPastSubmitExam(false); }; }
-    else { nextBtn.textContent='Next →'; nextBtn.onclick=_fpscPastNext; }
+  try{
+    const allPT=page.qIdxs.every(function(qi){ return _fpscPastPassedThrough(qi); });
+    const hasUnanswered=page.qIdxs.some(function(qi){ return !_fpscPastPassedThrough(qi); });
+    if(flagBtn) flagBtn.style.display=hasUnanswered?'flex':'none';
+    if(allPT){
+      const isLast=_fpscPastState.pageIdx>=_fpscPastState.groupIdx.length-1;
+      if(isLast && _fpscPastAllPassedThrough()){ nextBtn.textContent='✓ Submit Exam'; nextBtn.onclick=function(){ _fpscPastSubmitExam(false); }; }
+      else { nextBtn.textContent='Next →'; nextBtn.onclick=_fpscPastNext; }
+      nextBtn.style.display='';
+      return;
+    }
+    nextBtn.style.display='none';
+  }catch(e){
+    console.error('FPSC page-complete check error (forcing Next visible):', e);
+    // Fail-safe: never leave the doctor with no way to proceed
+    nextBtn.textContent='Next →';
+    nextBtn.onclick=_fpscPastNext;
     nextBtn.style.display='';
-  } else { nextBtn.style.display='none'; }
+    if(flagBtn) flagBtn.style.display='none';
+  }
 }
 function _fpscPastFlagAndNext(){
   const page=_fpscPastState.groupIdx[_fpscPastState.pageIdx];
