@@ -4514,7 +4514,7 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
     <div id="fpast-res-timeup" style="display:none;background:rgba(231,76,60,0.1);border:1px solid rgba(231,76,60,0.3);border-radius:10px;padding:12px;margin-bottom:20px;font-size:13px;color:var(--red);font-weight:600;">⏰ Time's up — exam auto-submitted</div>
     <div id="fpast-res-attempt" style="font-size:11px;font-weight:700;color:#F39C12;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;"></div>
     <div style="font-size:48px;font-weight:900;margin-bottom:4px;" id="fpast-res-score">—</div>
-    <div style="font-size:11px;color:var(--text-mid);margin-bottom:10px;" id="fpast-res-negmark-note"></div>
+    <div id="fpast-res-negmark-note" style="font-size:13px;color:var(--cream);line-height:1.6;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:16px;text-align:left;"></div>
     <div style="font-size:20px;font-weight:700;margin-bottom:8px;" id="fpast-res-pct">—</div>
     <div style="font-size:16px;font-weight:700;margin-bottom:16px;" id="fpast-res-grade">—</div>
     <div id="fpast-res-time" style="font-size:12px;color:var(--text-mid);margin-bottom:16px;"></div>
@@ -9216,11 +9216,17 @@ function _fpscPastSubmitExam(timeUp){
   window._examActive=false;
   const st=_fpscPastState;
   let correct=0,wrong=0,skipped=0; const wrongList=[];
+  const categoryBreakdown={};
   st.qs.forEach(function(q,i){
     const a=st.answers[i];
-    if(a===undefined) skipped++;
-    else if(a===q.ans) correct++;
-    else { wrong++; wrongList.push({q:q,given:a}); }
+    const sec=(q.section||'').trim();
+    if(sec){
+      if(!categoryBreakdown[sec]) categoryBreakdown[sec]={correct:0,wrong:0,skipped:0,total:0};
+      categoryBreakdown[sec].total++;
+    }
+    if(a===undefined){ skipped++; if(sec) categoryBreakdown[sec].skipped++; }
+    else if(a===q.ans){ correct++; if(sec) categoryBreakdown[sec].correct++; }
+    else { wrong++; wrongList.push({q:q,given:a}); if(sec) categoryBreakdown[sec].wrong++; }
     if(a!==undefined) savePracticeProgress(a===q.ans);
   });
   const total=st.qs.length;
@@ -9231,7 +9237,7 @@ function _fpscPastSubmitExam(timeUp){
   const timeTaken=FPSC_PAST_DURATION_S-st.timeLeft;
   const attempts=_fpscPastGetAttempts(st.n);
   const attemptNum=attempts.length+1;
-  const record={correct:correct,wrong:wrong,skipped:skipped,total:total,marks:marks,pct:pct,timeTaken:timeTaken,timeUp:timeUp,submittedAt:new Date().toISOString(),attemptNum:attemptNum,wrongList:wrongList};
+  const record={correct:correct,wrong:wrong,skipped:skipped,total:total,marks:marks,pct:pct,timeTaken:timeTaken,timeUp:timeUp,submittedAt:new Date().toISOString(),attemptNum:attemptNum,wrongList:wrongList,categoryBreakdown:categoryBreakdown};
   try{
     attempts.push(record);
     localStorage.setItem('mm_fpast'+st.n+'_attempts_'+(S.code||'x'),JSON.stringify(attempts));
@@ -9250,7 +9256,9 @@ function _fpscPastShowResult(n,res){
   const scoreEl=document.getElementById('fpast-res-score');
   if(scoreEl){ scoreEl.textContent=res.marks+' / '+res.total; scoreEl.style.color=scoreCol; }
   document.getElementById('fpast-res-pct').textContent=res.pct+'%';
-  document.getElementById('fpast-res-negmark-note').textContent='('+res.correct+' correct × 1) − ('+res.wrong+' wrong × 0.25) = '+res.marks+' marks';
+  const negMarkNote = document.getElementById('fpast-res-negmark-note');
+  const deduction = Math.round(res.wrong*FPSC_PAST_NEG_MARK*100)/100;
+  negMarkNote.innerHTML = 'You got <strong style="color:#2ECC71;">'+res.correct+' correct</strong> and <strong style="color:var(--red);">'+res.wrong+' wrong</strong>'+(res.skipped?' (plus '+res.skipped+' skipped, no penalty)':'')+'.<br>Each wrong answer costs 0.25 marks, so '+res.wrong+' wrong = <strong style="color:var(--red);">&minus;'+deduction+' marks</strong>.<br>Final score: '+res.correct+' &minus; '+deduction+' = <strong style="color:var(--gold);">'+res.marks+' / '+res.total+'</strong>.';
   let grade='',gradeColor='';
   if(res.pct>=85){ grade='Excellent'; gradeColor='#2ECC71'; }
   else if(res.pct>=70){ grade='Good'; gradeColor='var(--gold)'; }
@@ -9272,10 +9280,9 @@ function _fpscPastShowResult(n,res){
     pBox.innerHTML='<div style="font-size:11px;color:var(--text-mid);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Estimated Percentile</div><div style="font-size:22px;font-weight:900;color:#F39C12;">'+percentile+'th</div><div style="font-size:11px;color:var(--text-mid);margin-top:4px;">vs. expected FPSC PIMS MO/WMO cohort</div>';
     pBox.style.display='block';
   } else { pBox.style.display='none'; }
-  // Category feedback — gracefully shows nothing if papers aren't tagged with q.section
-  const qs=(window.MM && window.MM['fpsc_past_'+n]) || _fpscPastState.qs || [];
-  const taggedQs=qs.map(function(m,i){ return { section: m.section||m.category||'', num:i+1 }; });
-  _fpscPastRenderCategoryFeedback(taggedQs, res.wrongList||[]);
+  // Category feedback — uses the exact breakdown computed at submission time
+  // (real correct/wrong/skipped per category), not reconstructed afterward
+  _fpscPastRenderCategoryFeedback(res.categoryBreakdown);
   // Wrong review
   const reviewEl=document.getElementById('fpast-wrong-review');
   reviewEl.innerHTML='';
@@ -9297,32 +9304,28 @@ function _fpscPastShowResult(n,res){
   }
 }
 
-// Simpler, correct category-feedback renderer (replaces the draft helper above's
-// half-finished math — kept as one function so there's a single source of truth)
-function _fpscPastRenderCategoryFeedback(taggedQs, wrongList){
+// Renders the category feedback bars from an accurate, pre-computed
+// per-category breakdown (correct/wrong/skipped/total), computed once at
+// submission time — never re-inferred, so skipped questions can never be
+// miscounted as correct. Category marks apply the same -0.25 negative
+// marking as the overall score, so a category isn't flattered by ignoring
+// its wrong answers.
+function _fpscPastRenderCategoryFeedback(categoryBreakdown){
   const el=document.getElementById('fpast-res-category-feedback');
   if(!el) return;
-  const sections={};
-  taggedQs.forEach(function(q){
-    const sec=(q.section||'').trim();
-    if(!sec) return; // untagged questions are excluded from the breakdown entirely
-    if(!sections[sec]) sections[sec]={total:0,wrong:0};
-    sections[sec].total++;
-  });
-  const sectionNames=Object.keys(sections);
+  const sectionNames = categoryBreakdown ? Object.keys(categoryBreakdown) : [];
   if(!sectionNames.length){ el.style.display='none'; el.innerHTML=''; return; }
-  const wrongNums=new Set(wrongList.map(function(w){ return w.q.num; }));
-  taggedQs.forEach(function(q){
-    const sec=(q.section||'').trim();
-    if(sec && wrongNums.has(q.num)) sections[sec].wrong++;
-  });
   let html='<div style="font-size:13px;font-weight:800;color:var(--cream);margin:24px 0 14px;">📊 Performance by Category</div>';
   sectionNames.forEach(function(sec){
-    const s=sections[sec];
-    const correctInSec=s.total-s.wrong;
-    const acc=s.total?Math.round((correctInSec/s.total)*100):0;
-    const barColor=acc>=70?'#2ECC71':acc>=50?'var(--gold)':'var(--red)';
-    html+='<div style="margin-bottom:12px;"><div style="display:flex;justify-content:space-between;font-size:12px;color:var(--cream);margin-bottom:5px;"><span>'+sec+'</span><span style="color:var(--text-mid);">'+correctInSec+'/'+s.total+'</span></div><div style="height:7px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;"><div style="height:100%;width:'+acc+'%;background:'+barColor+';border-radius:4px;"></div></div></div>';
+    const s=categoryBreakdown[sec];
+    const catMarks = Math.round((s.correct - s.wrong*FPSC_PAST_NEG_MARK)*100)/100;
+    const acc = s.total ? Math.max(0, Math.min(100, Math.round((catMarks/s.total)*100))) : 0;
+    const barColor = catMarks<0 ? 'var(--red)' : acc>=70 ? '#2ECC71' : acc>=50 ? 'var(--gold)' : 'var(--red)';
+    const parts = [s.correct+' ✅'];
+    if(s.wrong) parts.push(s.wrong+' ❌');
+    if(s.skipped) parts.push(s.skipped+' skipped');
+    const breakdownNote = parts.join(' · ');
+    html+='<div style="margin-bottom:14px;"><div style="display:flex;justify-content:space-between;font-size:12px;color:var(--cream);margin-bottom:3px;"><span>'+sec+'</span><span style="color:var(--text-mid);">'+catMarks+'/'+s.total+'</span></div><div style="font-size:10px;color:var(--text-mid);margin-bottom:5px;">'+breakdownNote+'</div><div style="height:7px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;"><div style="height:100%;width:'+acc+'%;background:'+barColor+';border-radius:4px;"></div></div></div>';
   });
   el.style.display='block';
   el.innerHTML=html;
