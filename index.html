@@ -6607,20 +6607,12 @@ function openNishtarPGPage(){
   renderNishtarPGCatsGrid();
 }
 function renderNishtarPGCatsGrid(){
-  const prog=getProgress();
-  const answers=prog.answers||{};
   const grid=document.getElementById('nishtar-cats-grid');
   grid.innerHTML = NISHTAR_PG_CATS.map(function(cat){
-    let done=0;
-    cat.subcats.forEach(function(sc){ done += Object.keys(answers).filter(k=>k.startsWith(sc.mmKey+'_')).length; });
-    const pct = cat.total ? Math.min(100, Math.round(done/cat.total*100)) : 0;
     const disabled = cat.total===0;
-    return '<div class="p1-subj-card" style="'+(disabled?'opacity:0.4;pointer-events:none;':'')+'flex-direction:column;align-items:flex-start;" onclick="_nishtarOpenCategory(\''+cat.key+'\')">'+
-      '<div style="display:flex;align-items:center;gap:14px;width:100%;">'+
-        '<div class="p1-subj-icon">'+cat.icon+'</div>'+
-        '<div style="flex:1;"><div class="p1-subj-name">'+cat.label+'</div><div class="p1-subj-count">'+(disabled?'Coming soon':done+' / '+cat.total)+'</div></div>'+
-      '</div>'+
-      (disabled?'':'<div style="width:100%;height:6px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden;margin-top:12px;"><div style="height:100%;width:'+pct+'%;background:linear-gradient(90deg,var(--gold),var(--gold-bright));border-radius:3px;"></div></div>')+
+    return '<div class="p1-subj-card" style="'+(disabled?'opacity:0.4;pointer-events:none;':'')+'" onclick="_nishtarOpenCategory(\''+cat.key+'\')">'+
+      '<div class="p1-subj-icon">'+cat.icon+'</div>'+
+      '<div style="flex:1;"><div class="p1-subj-name">'+cat.label+'</div><div class="p1-subj-count">'+(disabled?'Coming soon':cat.marks+' Marks in Syllabus')+'</div></div>'+
       '</div>';
   }).join('');
 }
@@ -6644,24 +6636,48 @@ function _nishtarOpenCategory(catKey){
   _showPage('nishtar-pg-subcats'); setHash('#nishtar-pg-subcats');
 }
 function _nishtarOpenSubcat(catKey, mmKey){
+  if(!S.auth||!hasNishtarPGAccess()){ openCodeModal('nishtar_pg_diploma'); return; }
   const cat = NISHTAR_PG_CATS.find(c=>c.key===catKey);
   const sc = cat.subcats.find(s=>s.mmKey===mmKey);
-  if(catKey==='medicine'){ openP2StudySubject(mmKey); }
-  else if(catKey==='surgery'){ openSurgP2StudySubject(mmKey); }
-  else if(catKey==='obs_gynae'){ openGynaeP2StudySubject(mmKey); }
+  // Call the underlying data-loading/render functions DIRECTLY, bypassing
+  // openP2StudySubject/openSurgP2StudySubject/openGynaeP2StudySubject's own
+  // promptResumeOrFresh() wrapper. That wrapper tries to guess which exam
+  // family (FCPS/JCAT/PGET) the viewer belongs to and has no concept of
+  // Nishtar PG Diploma at all — for a Nishtar subscriber it falls through
+  // to "assume JCAT", finds the key isn't part of JCAT's own subject list,
+  // and incorrectly re-prompts for an access code. Nishtar's own access
+  // check above already gates this, so the resume-prompt layer is skipped
+  // entirely and we go straight to the real loader/renderer.
+  if(catKey==='medicine'){ _doOpenP2StudySubject(mmKey); }
+  else if(catKey==='surgery'){ _doOpenSurgP2StudySubject(mmKey); }
+  else if(catKey==='obs_gynae'){ _doOpenGynaeP2StudySubject(mmKey); }
   else { openNishtarFlatBank(mmKey, sc.label); }
 }
 // Generic flat-file study opener for Nishtar's own dedicated content files
 // (English's 3 parts, Computer/IT, Analytical Reasoning, Medical Ethics,
-// Pediatric Medicine, Pathology, Research Methodology). Loads directly from
-// window.MM (already embedded, no fetch needed) and reuses the exact same
-// convertMCQ + renderStudyPage pipeline every other subject uses.
+// Pediatric Medicine, Pathology, Research Methodology). These files live as
+// separate .js files uploaded alongside index.html (not embedded inline),
+// so — matching the exact same pattern loadSubjectData/loadP2SubjectData
+// use for every other subject's external files — this dynamically injects
+// a <script> tag to fetch and populate window.MM[mmKey] if it isn't already
+// loaded, before handing off to the shared convertMCQ + renderStudyPage
+// pipeline every other subject uses.
+async function _nishtarLoadFlatData(mmKey){
+  if(window.MM && window.MM[mmKey] && window.MM[mmKey].length) return window.MM[mmKey];
+  return new Promise(resolve=>{
+    const script=document.createElement('script');
+    script.src='/'+mmKey+'.js';
+    script.onload=()=>{ resolve((window.MM && window.MM[mmKey]) || []); };
+    script.onerror=()=>{ resolve([]); };
+    document.head.appendChild(script);
+  });
+}
 async function openNishtarFlatBank(mmKey, label){
   if(!S.auth||!hasNishtarPGAccess()){ openCodeModal('nishtar_pg_diploma'); return; }
   document.getElementById('study-subj-tag').textContent=(label||'').toUpperCase();
   _showPage('study'); setHash('#study');
   document.getElementById('study-batch-container').innerHTML='<div style="padding:40px;text-align:center;color:var(--text);">Loading MCQs...</div>';
-  const data = (window.MM && window.MM[mmKey]) || [];
+  const data = await _nishtarLoadFlatData(mmKey);
   ST.subj = mmKey; ST.pageAnswered={};
   ST.qs = data.map((m,i)=>convertMCQ(m,i));
   ST.pageSize = calcPageSize(ST.qs.slice(0,20));
@@ -6695,7 +6711,7 @@ async function _nishtarPracticeStart(){
       if(cat.key==='medicine') data = await loadP2SubjectData(sc.mmKey);
       else if(cat.key==='surgery') data = await loadSurgP2SubjectData(sc.mmKey);
       else if(cat.key==='obs_gynae') data = await loadGynaeP2SubjectData(sc.mmKey);
-      else data = (window.MM && window.MM[sc.mmKey]) || [];
+      else data = await _nishtarLoadFlatData(sc.mmKey);
       (data||[]).forEach(m=>pools.push(m));
     }
   }
@@ -10503,28 +10519,28 @@ function convertMCQ(m,i){
 // Medicine use their own dedicated nishtar_* files instead (already built).
 // Research Methodology is still pending its own content.
 const NISHTAR_PG_CATS = [
-  { key:'english',            label:'English',              icon:'📝', total:1500,
+  { key:'english',            label:'English',              icon:'📝', total:1500, marks:15,
     subcats:[{mmKey:'nishtar_english_vocab',label:'Vocabulary',count:500},{mmKey:'nishtar_english_grammar',label:'Grammar',count:500},{mmKey:'nishtar_english_sentence',label:'Sentence Structuring',count:500}] },
-  { key:'research_methodology', label:'Research Methodology', icon:'🔬', total:100,
+  { key:'research_methodology', label:'Research Methodology', icon:'🔬', total:100, marks:10,
     subcats:[{mmKey:'nishtar_research_methodology',label:'Research Methodology',count:100}] },
-  { key:'computer_it',        label:'Computer / IT Skills',  icon:'💻', total:250,
+  { key:'computer_it',        label:'Computer / IT Skills',  icon:'💻', total:250, marks:10,
     subcats:[{mmKey:'nishtar_computer_it',label:'Computer / IT Skills',count:250}] },
-  { key:'analytical_reasoning', label:'Analytical Reasoning', icon:'🧠', total:100,
+  { key:'analytical_reasoning', label:'Analytical Reasoning', icon:'🧠', total:100, marks:10,
     subcats:[{mmKey:'nishtar_analytical_reasoning',label:'Analytical Reasoning',count:100}] },
-  { key:'medical_ethics',     label:'Medical Ethics',        icon:'⚖️', total:200,
+  { key:'medical_ethics',     label:'Medical Ethics',        icon:'⚖️', total:200, marks:5,
     subcats:[{mmKey:'nishtar_medical_ethics',label:'Medical Ethics',count:200}] },
   // Medicine, Surgery, Obs & Gynae: linked to FCPS Part 1 Paper 2's existing
   // data files (P2_SUBJECTS / SURG_P2_SUBJECTS / GYNAE_P2_SUBJECTS), reused
   // as-is — same MCQ content, fully separate access/subscription/navigation.
-  { key:'medicine',           label:'Medicine',              icon:'❤️', total:5129,
+  { key:'medicine',           label:'Medicine',              icon:'❤️', total:5129, marks:10,
     subcats:P2_SUBJECTS.map(s=>({mmKey:s.key,label:s.label,count:s.count,icon:s.icon})) },
-  { key:'surgery',            label:'Surgery',                icon:'🔪', total:2000,
+  { key:'surgery',            label:'Surgery',                icon:'🔪', total:2000, marks:10,
     subcats:SURG_P2_SUBJECTS.map(s=>({mmKey:s.key,label:s.label,count:s.count,icon:s.icon})) },
-  { key:'pediatric_medicine', label:'Pediatric Medicine',    icon:'🧸', total:500,
+  { key:'pediatric_medicine', label:'Pediatric Medicine',    icon:'🧸', total:500, marks:10,
     subcats:[{mmKey:'nishtar_pediatric_medicine',label:'Pediatric Medicine',count:500}] },
-  { key:'obs_gynae',          label:'Obs & Gynae',            icon:'🤰', total:3000,
+  { key:'obs_gynae',          label:'Obs & Gynae',            icon:'🤰', total:3000, marks:10,
     subcats:GYNAE_P2_SUBJECTS.map(s=>({mmKey:s.key,label:s.label,count:s.count,icon:s.icon})) },
-  { key:'pathology',          label:'Pathology',              icon:'🧪', total:1000,
+  { key:'pathology',          label:'Pathology',              icon:'🧪', total:1000, marks:10,
     subcats:[{mmKey:'nishtar_pathology',label:'Pathology',count:1000}] },
 ];
 const NISHTAR_PG_TOTAL = NISHTAR_PG_CATS.reduce((s,c)=>s+c.total,0);
