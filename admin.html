@@ -697,6 +697,7 @@ tr:hover td{background:rgba(201,168,76,0.02);}
             <option value="cts">CTS MO/WMO</option>
             <option value="mo_wmo">MO/WMO (Other)</option>
           <option value="fpsc_mo_wmo">FPSC MO/WMO</option>
+            <option value="nishtar_pg_diploma">Nishtar PG Diploma</option>
             <option value="mock_nts">Past &amp; Mocks NTS</option>
           </select>
         </div>
@@ -2018,6 +2019,10 @@ const PLANS = {
           {value:'30',  label:'1 Month — PKR 5,000'},
           {value:'90',  label:'3 Months — PKR 7,000'},
           {value:'180', label:'6 Months — PKR 10,000'}],
+  nishtar_pg_diploma:[{value:'trial',label:'🎯 Free Trial — 6 Hours'},
+          {value:'30',  label:'1 Month — PKR 5,000'},
+          {value:'90',  label:'3 Months — PKR 7,000'},
+          {value:'180', label:'6 Months — PKR 10,000'}],
   mock_nts:[{value:'15', label:'15 Days — PKR 2,500'},
             {value:'30', label:'1 Month — PKR 3,000'},
             {value:'90', label:'3 Months — PKR 4,500'}],
@@ -2054,6 +2059,7 @@ function getSubjectValue(){
   if(exam === 'cts') return 'cts';
   if(exam === 'mo_wmo') return 'mo_wmo';
   if(exam === 'fpsc_mo_wmo') return 'fpsc_mo_wmo';
+  if(exam === 'nishtar_pg_diploma') return 'nishtar_pg_diploma';
   if(exam === 'mock_nts') return 'mock_nts';
   return document.getElementById('f-subject').value;
 }
