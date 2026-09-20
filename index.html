@@ -1946,6 +1946,11 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
       <div><div class="subj-name">FPSC MO/WMO</div><div class="subj-meta">25,945 MCQs · Federal Public Service Commission</div></div>
       <div class="subj-arrow">›</div>
     </div>
+    <div class="subj-card" onclick="openNishtarPGPage()">
+      <div class="subj-icon">🎓</div>
+      <div><div class="subj-name">Nishtar PG Diploma</div><div class="subj-meta">NMU Diploma Test · Nishtar Medical University, Multan</div></div>
+      <div class="subj-arrow">›</div>
+    </div>
   </div>
 </div>
 
@@ -2226,6 +2231,31 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
 </div>
 
 <!-- ══════════════ NISHTAR PG DIPLOMA PRICING PAGE ══════════════ -->
+<!-- ══════════════ NISHTAR PG DIPLOMA — STUDY MODE ══════════════ -->
+<div id="nishtar-pg-page" class="page">
+  <div class="page-header">
+    <button class="back-btn" onclick="openDashboard()">← Home</button>
+    <div>
+      <div class="ph-title">🎓 Nishtar PG Diploma MCQ Bank</div>
+      <div class="ph-sub">Select a category</div>
+    </div>
+    <button class="share-btn" id="share-nishtar-pg" onclick="shareLink('#nishtar-pg','share-nishtar-pg')">🔗 Share</button>
+  </div>
+  <div class="p1-subjects-grid" id="nishtar-cats-grid" style="padding:24px 5% 60px;"></div>
+</div>
+
+<!-- ══════════════ NISHTAR PG DIPLOMA — SUBCATEGORY GRID (Medicine/Surgery/Obs&Gynae/English) ══════════════ -->
+<div id="nishtar-pg-subcats-page" class="page">
+  <div class="page-header">
+    <button class="back-btn" onclick="openNishtarPGPage()">← Nishtar PG Diploma</button>
+    <div>
+      <div class="ph-title" id="nishtar-subcats-title">🎓 Category</div>
+      <div class="ph-sub">Select a topic</div>
+    </div>
+  </div>
+  <div class="p1-subjects-grid" id="nishtar-subcats-grid" style="padding:24px 5% 60px;"></div>
+</div>
+
 <div id="pricing-nishtar-pg-diploma-page" class="page">
   <div class="page-header">
     <button class="back-btn" onclick="history.back()">← Pricing &amp; Offers</button>
@@ -6566,19 +6596,118 @@ function hasMOWMOAccess(){
 function hasFPSCAccess(){
   return (S.subject||'').toLowerCase()==='fpsc_mo_wmo';
 }
+// Nishtar PG Diploma Study Mode — reuses the shared study-page renderer
+// (renderStudyPage/convertMCQ) already used by every other subject on the
+// platform for the actual MCQ display, but through its own access-gated
+// entry point and its own category/subcategory navigation, entirely
+// separate from FCPS/JCAT/PGET's opening flow.
+function openNishtarPGPage(){
+  if(!S.auth||!hasNishtarPGAccess()){ openCodeModal('nishtar_pg_diploma'); return; }
+  _showPage('nishtar-pg'); setHash('#nishtar-pg');
+  renderNishtarPGCatsGrid();
+}
+function renderNishtarPGCatsGrid(){
+  const prog=getProgress();
+  const answers=prog.answers||{};
+  const grid=document.getElementById('nishtar-cats-grid');
+  grid.innerHTML = NISHTAR_PG_CATS.map(function(cat){
+    let done=0;
+    cat.subcats.forEach(function(sc){ done += Object.keys(answers).filter(k=>k.startsWith(sc.mmKey+'_')).length; });
+    const pct = cat.total ? Math.min(100, Math.round(done/cat.total*100)) : 0;
+    const disabled = cat.total===0;
+    return '<div class="p1-subj-card" style="'+(disabled?'opacity:0.4;pointer-events:none;':'')+'flex-direction:column;align-items:flex-start;" onclick="_nishtarOpenCategory(\''+cat.key+'\')">'+
+      '<div style="display:flex;align-items:center;gap:14px;width:100%;">'+
+        '<div class="p1-subj-icon">'+cat.icon+'</div>'+
+        '<div style="flex:1;"><div class="p1-subj-name">'+cat.label+'</div><div class="p1-subj-count">'+(disabled?'Coming soon':done+' / '+cat.total)+'</div></div>'+
+      '</div>'+
+      (disabled?'':'<div style="width:100%;height:6px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden;margin-top:12px;"><div style="height:100%;width:'+pct+'%;background:linear-gradient(90deg,var(--gold),var(--gold-bright));border-radius:3px;"></div></div>')+
+      '</div>';
+  }).join('');
+}
+function _nishtarOpenCategory(catKey){
+  const cat = NISHTAR_PG_CATS.find(c=>c.key===catKey);
+  if(!cat || !cat.total) return;
+  if(cat.subcats.length===1){
+    openNishtarFlatBank(cat.subcats[0].mmKey, cat.label);
+    return;
+  }
+  // Multiple subcats (Medicine, Surgery, Obs & Gynae, English): show a subcat grid
+  document.getElementById('nishtar-subcats-title').textContent = cat.icon+' '+cat.label;
+  const grid = document.getElementById('nishtar-subcats-grid');
+  grid.innerHTML = cat.subcats.map(function(sc){
+    return '<div class="p1-subj-card" onclick="_nishtarOpenSubcat(\''+catKey+'\',\''+sc.mmKey+'\')">'+
+      '<div class="p1-subj-icon">'+(sc.icon||cat.icon)+'</div>'+
+      '<div class="p1-subj-name">'+sc.label+'</div>'+
+      '<div class="p1-subj-count">'+sc.count+' MCQs</div>'+
+      '</div>';
+  }).join('');
+  _showPage('nishtar-pg-subcats'); setHash('#nishtar-pg-subcats');
+}
+function _nishtarOpenSubcat(catKey, mmKey){
+  const cat = NISHTAR_PG_CATS.find(c=>c.key===catKey);
+  const sc = cat.subcats.find(s=>s.mmKey===mmKey);
+  if(catKey==='medicine'){ openP2StudySubject(mmKey); }
+  else if(catKey==='surgery'){ openSurgP2StudySubject(mmKey); }
+  else if(catKey==='obs_gynae'){ openGynaeP2StudySubject(mmKey); }
+  else { openNishtarFlatBank(mmKey, sc.label); }
+}
+// Generic flat-file study opener for Nishtar's own dedicated content files
+// (English's 3 parts, Computer/IT, Analytical Reasoning, Medical Ethics,
+// Pediatric Medicine, Pathology, Research Methodology). Loads directly from
+// window.MM (already embedded, no fetch needed) and reuses the exact same
+// convertMCQ + renderStudyPage pipeline every other subject uses.
+async function openNishtarFlatBank(mmKey, label){
+  if(!S.auth||!hasNishtarPGAccess()){ openCodeModal('nishtar_pg_diploma'); return; }
+  document.getElementById('study-subj-tag').textContent=(label||'').toUpperCase();
+  _showPage('study'); setHash('#study');
+  document.getElementById('study-batch-container').innerHTML='<div style="padding:40px;text-align:center;color:var(--text);">Loading MCQs...</div>';
+  const data = (window.MM && window.MM[mmKey]) || [];
+  ST.subj = mmKey; ST.pageAnswered={};
+  ST.qs = data.map((m,i)=>convertMCQ(m,i));
+  ST.pageSize = calcPageSize(ST.qs.slice(0,20));
+  ST.page = 0;
+  renderStudyPage();
+}
 function hasNishtarPGAccess(){
   return (S.subject||'').toLowerCase()==='nishtar_pg_diploma';
 }
-// PLACEHOLDER — full Study Mode + Practice & Assess build pending the actual
-// MCQ content files (category pages, loaders, data format). Access-gated so
-// nothing breaks if a subscriber's dashboard button is clicked before then.
-function openNishtarPGPage(){
-  if(!S.auth||!hasNishtarPGAccess()){ openCodeModal('nishtar_pg_diploma'); return; }
-  alert('Nishtar PG Diploma content is being added — check back soon!');
-}
+// Practice & Assess — a single timed, plain-scored (no negative marking)
+// practice test mixing questions across all ready Nishtar categories.
 function openNishtarPGUnifiedPractice(){
   if(!S.auth||!hasNishtarPGAccess()){ openCodeModal('nishtar_pg_diploma'); return; }
-  alert('Practice & Assess for Nishtar PG Diploma is being added — check back soon!');
+  _nishtarPracticeStart();
+}
+// Practice & Assess — pulls a random 50-question mix from every ready
+// Nishtar category (including the linked Medicine/Surgery/Obs&Gynae content)
+// and launches it through the same interactive study viewer, so each answer
+// gets instant right/wrong feedback. Plain scoring, no negative marking.
+async function _nishtarPracticeStart(){
+  const c=document.getElementById('study-batch-container');
+  document.getElementById('study-subj-tag').textContent='PRACTICE & ASSESS — MIXED';
+  _showPage('study'); setHash('#study');
+  if(c) c.innerHTML='<div style="padding:40px;text-align:center;color:var(--text);">Building your practice set...</div>';
+
+  const pools = [];
+  for(const cat of NISHTAR_PG_CATS){
+    if(!cat.total) continue;
+    for(const sc of cat.subcats){
+      let data;
+      if(cat.key==='medicine') data = await loadP2SubjectData(sc.mmKey);
+      else if(cat.key==='surgery') data = await loadSurgP2SubjectData(sc.mmKey);
+      else if(cat.key==='obs_gynae') data = await loadGynaeP2SubjectData(sc.mmKey);
+      else data = (window.MM && window.MM[sc.mmKey]) || [];
+      (data||[]).forEach(m=>pools.push(m));
+    }
+  }
+  // Shuffle and take 50
+  for(let i=pools.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pools[i],pools[j]]=[pools[j],pools[i]]; }
+  const sample = pools.slice(0, Math.min(50, pools.length));
+
+  ST.subj = 'nishtar_practice_mixed'; ST.pageAnswered={};
+  ST.qs = sample.map((m,i)=>convertMCQ(m,i));
+  ST.pageSize = calcPageSize(ST.qs.slice(0,20));
+  ST.page = 0;
+  renderStudyPage();
 }
 function hasAnyMOWMOAccess(){
   return hasNTSAccess()||hasCTSAccess()||hasMOWMOAccess()||hasFPSCAccess();
@@ -10364,20 +10493,39 @@ function convertMCQ(m,i){
 // ═══════════ DASHBOARD ═══════════
 // ── Nishtar PG Diploma (NMU Diploma Test, Nishtar Medical University Multan) ──
 // Study Mode + Practice & Assess only — plain scoring, no negative marking.
-// Category totals below match the official 100-MCQ test's own proportions as
-// a starting placeholder; update once the real practice-bank MCQ counts per
-// category are known (the actual bank will likely be much larger than 100).
+// Medicine, Surgery, and Obs & Gynae are LINKED to the existing FCPS Part 1
+// Paper 2 data files (same window.MM keys, same underlying MCQ content —
+// no duplication) via their `subcats` arrays below. This is a DATA-LEVEL
+// link only: Nishtar PG Diploma keeps its own separate subject/access value
+// (hasNishtarPGAccess), its own subscription, and its own navigation pages —
+// nothing about FCPS/JCAT/PGET's access, code, or opening flow is shared.
+// English/Analytical Reasoning/Medical Ethics/Computer-IT/Pathology/Pediatric
+// Medicine use their own dedicated nishtar_* files instead (already built).
+// Research Methodology is still pending its own content.
 const NISHTAR_PG_CATS = [
-  { key:'english',            label:'English',              icon:'📝', total:15 },
-  { key:'research_methodology', label:'Research Methodology', icon:'🔬', total:10 },
-  { key:'computer_it',        label:'Computer / IT Skills',  icon:'💻', total:10 },
-  { key:'analytical_reasoning', label:'Analytical Reasoning', icon:'🧠', total:10 },
-  { key:'medical_ethics',     label:'Medical Ethics',        icon:'⚖️', total:5  },
-  { key:'medicine',           label:'Medicine',              icon:'❤️', total:10 },
-  { key:'surgery',            label:'Surgery',                icon:'🔪', total:10 },
-  { key:'pediatric_medicine', label:'Pediatric Medicine',    icon:'🧸', total:10 },
-  { key:'obs_gynae',          label:'Obs & Gynae',            icon:'🤰', total:10 },
-  { key:'pathology',          label:'Pathology',              icon:'🧪', total:10 },
+  { key:'english',            label:'English',              icon:'📝', total:1500,
+    subcats:[{mmKey:'nishtar_english_vocab',label:'Vocabulary',count:500},{mmKey:'nishtar_english_grammar',label:'Grammar',count:500},{mmKey:'nishtar_english_sentence',label:'Sentence Structuring',count:500}] },
+  { key:'research_methodology', label:'Research Methodology', icon:'🔬', total:100,
+    subcats:[{mmKey:'nishtar_research_methodology',label:'Research Methodology',count:100}] },
+  { key:'computer_it',        label:'Computer / IT Skills',  icon:'💻', total:250,
+    subcats:[{mmKey:'nishtar_computer_it',label:'Computer / IT Skills',count:250}] },
+  { key:'analytical_reasoning', label:'Analytical Reasoning', icon:'🧠', total:100,
+    subcats:[{mmKey:'nishtar_analytical_reasoning',label:'Analytical Reasoning',count:100}] },
+  { key:'medical_ethics',     label:'Medical Ethics',        icon:'⚖️', total:200,
+    subcats:[{mmKey:'nishtar_medical_ethics',label:'Medical Ethics',count:200}] },
+  // Medicine, Surgery, Obs & Gynae: linked to FCPS Part 1 Paper 2's existing
+  // data files (P2_SUBJECTS / SURG_P2_SUBJECTS / GYNAE_P2_SUBJECTS), reused
+  // as-is — same MCQ content, fully separate access/subscription/navigation.
+  { key:'medicine',           label:'Medicine',              icon:'❤️', total:5129,
+    subcats:P2_SUBJECTS.map(s=>({mmKey:s.key,label:s.label,count:s.count,icon:s.icon})) },
+  { key:'surgery',            label:'Surgery',                icon:'🔪', total:2000,
+    subcats:SURG_P2_SUBJECTS.map(s=>({mmKey:s.key,label:s.label,count:s.count,icon:s.icon})) },
+  { key:'pediatric_medicine', label:'Pediatric Medicine',    icon:'🧸', total:500,
+    subcats:[{mmKey:'nishtar_pediatric_medicine',label:'Pediatric Medicine',count:500}] },
+  { key:'obs_gynae',          label:'Obs & Gynae',            icon:'🤰', total:3000,
+    subcats:GYNAE_P2_SUBJECTS.map(s=>({mmKey:s.key,label:s.label,count:s.count,icon:s.icon})) },
+  { key:'pathology',          label:'Pathology',              icon:'🧪', total:1000,
+    subcats:[{mmKey:'nishtar_pathology',label:'Pathology',count:1000}] },
 ];
 const NISHTAR_PG_TOTAL = NISHTAR_PG_CATS.reduce((s,c)=>s+c.total,0);
 
@@ -10567,7 +10715,7 @@ function loadDashboard(){
   updateFavoritesRingCount();
   updateTodoRingCount();
 
-  renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWMO, isFPSC, isPGET);
+  renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWMO, isFPSC, isPGET, isNishtarPG);
 
   // Update quick-action cards
   const p2Icon=document.getElementById('dash-p2-icon');
@@ -10825,7 +10973,7 @@ function _sectionHeader(label, color){
   return `<div style="font-size:10px;font-weight:700;color:${color};letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border);">${label}</div>`;
 }
 
-function renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWMO, isFPSC, isPGET){
+function renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWMO, isFPSC, isPGET, isNishtarPG){
   if(isMockNTS){
     const wrap=document.getElementById('dash-subject-progress');
     const NTS_DASH_CATS=[
