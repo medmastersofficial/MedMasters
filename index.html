@@ -6211,7 +6211,7 @@ async function tryAutoLogin(){
     if(window._startTimeTracking) window._startTimeTracking();
     // Periodic cloud sync every 30 seconds
     if(window._syncInterval) clearInterval(window._syncInterval);
-    window._syncInterval = setInterval(()=>{ if(S.auth) loadProgressFromCloud(); }, 30*1000);
+    window._syncInterval = setInterval(()=>{ if(S.auth) loadProgressFromCloud(); }, 120*1000); // 2 min: active study already syncs via scheduleSyncToCloud() after every answer (4s debounce); this background poll only matters for idle cross-device updates, so it's safe to run less often — cuts unnecessary Disk IO from constant polling.
     startReAuthTimer(); // Silent 30-min re-auth check
     return true;
   }catch(e){return false;}
@@ -10300,7 +10300,7 @@ async function verifyCode(){
       if(window._startTimeTracking) window._startTimeTracking();
       // Periodic cloud sync every 30 seconds
       if(window._syncInterval) clearInterval(window._syncInterval);
-      window._syncInterval = setInterval(()=>{ if(S.auth) loadProgressFromCloud(); }, 30*1000);
+      window._syncInterval = setInterval(()=>{ if(S.auth) loadProgressFromCloud(); }, 120*1000); // 2 min: active study already syncs via scheduleSyncToCloud() after every answer (4s debounce); this background poll only matters for idle cross-device updates, so it's safe to run less often — cuts unnecessary Disk IO from constant polling.
       startReAuthTimer(); // Silent 30-min re-auth check
       // Resume the section the student was trying to reach (e.g. English, VAQ) if one is pending and now unlocked; otherwise show the dashboard as usual.
       const resumeHash = S.pendingResumeHash;
@@ -15371,11 +15371,18 @@ Reply to this message or click below to renew. — MedMasters Team`
   function _startTracking(){
     if(_trackStart) return;
     _trackStart = Date.now();
+    // Flush every 5 minutes instead of every 60 seconds — cuts the read+write
+    // round-trips to Supabase by 80% for every actively-studying user, which
+    // was a major contributor to Disk IO load. No data-loss risk: the
+    // visibilitychange (tab hidden) and beforeunload (tab closed) handlers
+    // below still flush immediately regardless of this interval, so the
+    // longest a session's time could go unsaved is if the browser crashes
+    // outright — same edge case that existed before this change.
     _trackInterval = setInterval(()=>{
       if(!window.S || !S.auth) return;
-      _pendingSeconds += 60;
+      _pendingSeconds += 300;
       _flush();
-    }, 60*1000);
+    }, 300*1000);
   }
 
   function _stopTracking(){
