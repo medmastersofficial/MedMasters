@@ -30,12 +30,12 @@ window.MM.fpsc_past_8 = [
     "q": "SCALPEL : SURGEON :: GAVEL : ?",
     "opts": [
       "Lawyer",
-      "Judge",
+      "Journalist",
       "Police officer",
-      "Journalist"
+      "Judge"
     ],
-    "ans": 1,
-    "exp": "A SCALPEL is the defining precision tool of a SURGEON. A GAVEL is the defining instrument used by a JUDGE to maintain order in a courtroom. A lawyer (A) argues cases but does not use a gavel. Police officers (C) and journalists (D) have no association with a gavel.",
+    "ans": 3,
+    "exp": "A SCALPEL is the defining precision tool of a SURGEON. A GAVEL is the defining instrument used by a JUDGE to maintain order in a courtroom. A lawyer (A) argues cases but does not use a gavel. Police officers (C) and journalists (B) have no association with a gavel.",
     "section": "English",
     "num": 3
   },
@@ -81,12 +81,12 @@ window.MM.fpsc_past_8 = [
   {
     "q": "Were the committee to reconsider its verdict, the appeal process _____ entirely unnecessary.",
     "opts": [
-      "will become",
       "would become",
+      "will become",
       "becomes",
       "had become"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "'Were the committee to reconsider' is an inverted, formal second conditional (equivalent to 'If the committee were to reconsider'), which requires 'would become' in the main clause.",
     "section": "English",
     "num": 7
@@ -95,11 +95,11 @@ window.MM.fpsc_past_8 = [
     "q": "Choose the option that best replaces the underlined idiom while preserving meaning: 'The negotiations reached an impasse after months of talks.'",
     "opts": [
       "a swift conclusion",
-      "a deadlock",
+      "a formal agreement",
       "a compromise",
-      "a formal agreement"
+      "a deadlock"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "An 'impasse' is a situation in which no progress is possible, i.e. a deadlock. 'Swift conclusion', 'compromise', and 'formal agreement' all describe resolution, the opposite of what 'impasse' means.",
     "section": "English",
     "num": 8
@@ -108,11 +108,11 @@ window.MM.fpsc_past_8 = [
     "q": "Which sentence correctly uses the subjunctive mood?",
     "opts": [
       "The board recommended that he attends the hearing in person.",
-      "The board recommended that he attend the hearing in person.",
       "The board recommended that he attended the hearing in person.",
+      "The board recommended that he attend the hearing in person.",
       "The board recommended he will attend the hearing in person."
     ],
-    "ans": 1,
+    "ans": 2,
     "exp": "After verbs of recommendation, demand, or suggestion ('recommended that'), the subjunctive base form is used regardless of subject: 'that he attend', not 'attends' or 'attended'.",
     "section": "English",
     "num": 9
@@ -121,11 +121,11 @@ window.MM.fpsc_past_8 = [
     "q": "Choose the word that is closest in meaning to OBFUSCATE:",
     "opts": [
       "Clarify",
-      "Deliberately confuse or obscure",
+      "Openly criticise",
       "Politely decline",
-      "Openly criticise"
+      "Deliberately confuse or obscure"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "OBFUSCATE means to render something unclear, confusing, or unintelligible, often deliberately, the opposite of clarifying.",
     "section": "English",
     "num": 10
@@ -134,11 +134,11 @@ window.MM.fpsc_past_8 = [
     "q": "Identify the sentence with correct parallel structure:",
     "opts": [
       "The report was thorough, well-researched, and it persuaded the board.",
-      "The report was thorough, well-researched, and persuasive.",
+      "The report, thorough and well-researched, it was persuasive.",
       "The report was thorough, being well-researched, and persuasive.",
-      "The report, thorough and well-researched, it was persuasive."
+      "The report was thorough, well-researched, and persuasive."
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Parallel structure requires items in a series to share the same grammatical form. 'Thorough, well-researched, and persuasive' are all adjectives in parallel; the other options break this pattern by mixing clause types.",
     "section": "English",
     "num": 11
@@ -212,11 +212,11 @@ window.MM.fpsc_past_8 = [
     "q": "Which of the following sentences avoids a dangling modifier?",
     "opts": [
       "Having reviewed the evidence, the verdict was announced.",
-      "Having reviewed the evidence, the judge announced the verdict.",
+      "Reviewing the evidence, the verdict was clear to announce.",
       "The verdict, having reviewed the evidence, was announced.",
-      "Reviewing the evidence, the verdict was clear to announce."
+      "Having reviewed the evidence, the judge announced the verdict."
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "The introductory phrase 'Having reviewed the evidence' must logically modify the subject that performed the action ('the judge'), not 'the verdict', which cannot review evidence. Only option B correctly attaches the modifier to a logical subject.",
     "section": "English",
     "num": 17
@@ -224,12 +224,12 @@ window.MM.fpsc_past_8 = [
   {
     "q": "Choose the best synonym for the word 'ANOMALY' as used in: 'The lab result was flagged as an anomaly requiring further review.'",
     "opts": [
-      "A routine finding",
       "A deviation from the expected pattern",
+      "A routine finding",
       "A confirmed diagnosis",
       "A calibration error"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "An ANOMALY is something that deviates from what is standard, normal, or expected: here, a lab result that does not fit the expected pattern, warranting further review, not necessarily a confirmed error or diagnosis.",
     "section": "English",
     "num": 18
@@ -277,12 +277,12 @@ window.MM.fpsc_past_8 = [
     "q": "A 19-year-old man sustains a mid-shaft fracture of the right humerus after a fall. The next morning he cannot extend his wrist or fingers. Which nerve is most likely injured?",
     "opts": [
       "Median nerve",
-      "Radial nerve",
       "Ulnar nerve",
+      "Radial nerve",
       "Axillary nerve"
     ],
-    "ans": 1,
-    "exp": "The radial nerve runs in the spiral (radial) groove on the posterior surface of the humeral shaft, making it vulnerable to mid-shaft fractures. Injury produces wrist drop (inability to extend the wrist and fingers) and sensory loss over the posterior forearm and anatomical snuff box. Snell's Clinical Anatomy describes the radial nerve's course in the spiral groove as the reason it is the most commonly injured nerve in humeral shaft fractures. The median nerve (A) is more often injured near the elbow or wrist. The ulnar nerve (C) is vulnerable at the medial epicondyle. The axillary nerve (D) is at risk in fractures of the surgical neck.",
+    "ans": 2,
+    "exp": "The radial nerve runs in the spiral (radial) groove on the posterior surface of the humeral shaft, making it vulnerable to mid-shaft fractures. Injury produces wrist drop (inability to extend the wrist and fingers) and sensory loss over the posterior forearm and anatomical snuff box. Snell's Clinical Anatomy describes the radial nerve's course in the spiral groove as the reason it is the most commonly injured nerve in humeral shaft fractures. The median nerve (A) is more often injured near the elbow or wrist. The ulnar nerve (B) is vulnerable at the medial epicondyle. The axillary nerve (D) is at risk in fractures of the surgical neck.",
     "section": "Basic Sciences",
     "num": 22
   },
@@ -290,12 +290,12 @@ window.MM.fpsc_past_8 = [
     "q": "During hernia repair in a female patient, the surgeon identifies a cord-like structure emerging from the deep inguinal ring and passing through the inguinal canal. What is this structure?",
     "opts": [
       "Ovarian ligament",
-      "Round ligament of the uterus",
+      "Fallopian tube",
       "Uterine artery",
-      "Fallopian tube"
+      "Round ligament of the uterus"
     ],
-    "ans": 1,
-    "exp": "The round ligament of the uterus is the female equivalent of the gubernaculum and passes through the inguinal canal from the uterine cornu to the labium majus. KLM identifies it as the structure most commonly encountered, and occasionally mistaken for hernia contents, during female inguinal hernia repair. The ovarian ligament (A) connects the ovary to the uterus and does not pass through the inguinal canal. The uterine artery (C) travels through the broad ligament in the pelvis. The fallopian tube (D) does not pass through the inguinal canal.",
+    "ans": 3,
+    "exp": "The round ligament of the uterus is the female equivalent of the gubernaculum and passes through the inguinal canal from the uterine cornu to the labium majus. KLM identifies it as the structure most commonly encountered, and occasionally mistaken for hernia contents, during female inguinal hernia repair. The ovarian ligament (A) connects the ovary to the uterus and does not pass through the inguinal canal. The uterine artery (C) travels through the broad ligament in the pelvis. The fallopian tube (B) does not pass through the inguinal canal.",
     "section": "Basic Sciences",
     "num": 23
   },
@@ -328,13 +328,13 @@ window.MM.fpsc_past_8 = [
   {
     "q": "A patient with an insulinoma (insulin-secreting pancreatic tumour) presents with episodes of confusion and sweating that resolve after eating. Which counterregulatory hormone is most rapidly secreted in response to the hypoglycaemia caused by excess insulin?",
     "opts": [
-      "Insulin",
       "Glucagon",
+      "Insulin",
       "Somatostatin",
       "Aldosterone"
     ],
-    "ans": 1,
-    "exp": "Glucagon is the principal and most rapidly acting counterregulatory hormone in response to hypoglycaemia. It stimulates hepatic glycogenolysis and gluconeogenesis, rapidly raising blood glucose. Insulin (A) is the cause of hypoglycaemia here, not the response. Somatostatin (C) inhibits both insulin and glucagon release. Aldosterone (D) regulates sodium and potassium, not blood glucose acutely.",
+    "ans": 0,
+    "exp": "Glucagon is the principal and most rapidly acting counterregulatory hormone in response to hypoglycaemia. It stimulates hepatic glycogenolysis and gluconeogenesis, rapidly raising blood glucose. Insulin (B) is the cause of hypoglycaemia here, not the response. Somatostatin (C) inhibits both insulin and glucagon release. Aldosterone (D) regulates sodium and potassium, not blood glucose acutely.",
     "section": "Basic Sciences",
     "num": 26
   },
@@ -367,13 +367,13 @@ window.MM.fpsc_past_8 = [
   {
     "q": "A 52-year-old man with hypertension and type 2 diabetes is prescribed a drug to protect his kidneys. He later develops a dry persistent cough. Which class of drug most likely caused this?",
     "opts": [
-      "Calcium channel blocker",
       "ACE inhibitor",
+      "Calcium channel blocker",
       "Angiotensin receptor blocker",
       "Beta blocker"
     ],
-    "ans": 1,
-    "exp": "ACE inhibitors (e.g., enalapril, lisinopril, ramipril) cause a dry persistent cough in 10-15% of patients, particularly in South Asian individuals, due to accumulation of bradykinin in the lungs. Calcium channel blockers (A) cause ankle oedema and flushing. ARBs (C) do not cause cough as they do not affect kinin metabolism; they are the preferred alternative when ACE inhibitor cough occurs. Beta blockers (D) cause bronchospasm but not dry cough.",
+    "ans": 0,
+    "exp": "ACE inhibitors (e.g., enalapril, lisinopril, ramipril) cause a dry persistent cough in 10-15% of patients, particularly in South Asian individuals, due to accumulation of bradykinin in the lungs. Calcium channel blockers (B) cause ankle oedema and flushing. ARBs (C) do not cause cough as they do not affect kinin metabolism; they are the preferred alternative when ACE inhibitor cough occurs. Beta blockers (D) cause bronchospasm but not dry cough.",
     "section": "Basic Sciences",
     "num": 29
   },
@@ -381,12 +381,12 @@ window.MM.fpsc_past_8 = [
     "q": "An elderly patient on gentamicin therapy for 12 days complains of difficulty hearing and ringing in both ears. Which mechanism explains this adverse effect?",
     "opts": [
       "Penicillin-like beta-lactam ring damaging the cochlea",
-      "Aminoglycoside accumulation in cochlear hair cells causing oxidative damage and irreversible sensorineural hearing loss",
+      "Ototoxicity from lactic acidosis caused by the antibiotic",
       "Hepatotoxic metabolite reaching the inner ear via the bloodstream",
-      "Ototoxicity from lactic acidosis caused by the antibiotic"
+      "Aminoglycoside accumulation in cochlear hair cells causing oxidative damage and irreversible sensorineural hearing loss"
     ],
-    "ans": 1,
-    "exp": "Gentamicin, like all aminoglycosides, accumulates selectively in the cochlear hair cells of the organ of Corti, generating free radicals that destroy the outer hair cells, particularly those processing high-frequency sounds. The damage is dose-dependent, cumulative, and irreversible. As Katzung's notes, aminoglycoside ototoxicity is enhanced by concurrent loop diuretic use. Penicillins (A) are not ototoxic. Hepatotoxic metabolites (C) and lactic acidosis (D) are not mechanisms of aminoglycoside ototoxicity.",
+    "ans": 3,
+    "exp": "Gentamicin, like all aminoglycosides, accumulates selectively in the cochlear hair cells of the organ of Corti, generating free radicals that destroy the outer hair cells, particularly those processing high-frequency sounds. The damage is dose-dependent, cumulative, and irreversible. As Katzung's notes, aminoglycoside ototoxicity is enhanced by concurrent loop diuretic use. Penicillins (A) are not ototoxic. Hepatotoxic metabolites (C) and lactic acidosis (B) are not mechanisms of aminoglycoside ototoxicity.",
     "section": "Basic Sciences",
     "num": 30
   },
@@ -394,12 +394,12 @@ window.MM.fpsc_past_8 = [
     "q": "A farmer is brought to the emergency department after collapsing in his field. He has excessive secretions, pinpoint pupils, bradycardia, and muscle fasciculations. Urine organophosphate screen is positive. What is the first-line antidote?",
     "opts": [
       "Naloxone",
-      "Atropine",
       "Flumazenil",
+      "Atropine",
       "N-acetylcysteine"
     ],
-    "ans": 1,
-    "exp": "Organophosphate compounds irreversibly inhibit acetylcholinesterase, causing accumulation of acetylcholine at muscarinic and nicotinic synapses. The muscarinic features, including excessive secretions (SLUDGE), miosis, and bradycardia, are reversed by atropine, a competitive muscarinic antagonist given in large doses until secretions dry. Pralidoxime is added as a cholinesterase reactivator if given early. Naloxone (A) reverses opioid toxicity. Flumazenil (C) reverses benzodiazepines. N-acetylcysteine (D) treats paracetamol overdose.",
+    "ans": 2,
+    "exp": "Organophosphate compounds irreversibly inhibit acetylcholinesterase, causing accumulation of acetylcholine at muscarinic and nicotinic synapses. The muscarinic features, including excessive secretions (SLUDGE), miosis, and bradycardia, are reversed by atropine, a competitive muscarinic antagonist given in large doses until secretions dry. Pralidoxime is added as a cholinesterase reactivator if given early. Naloxone (A) reverses opioid toxicity. Flumazenil (B) reverses benzodiazepines. N-acetylcysteine (D) treats paracetamol overdose.",
     "section": "Basic Sciences",
     "num": 31
   },
@@ -420,12 +420,12 @@ window.MM.fpsc_past_8 = [
     "q": "A 26-year-old woman of childbearing age is about to be prescribed a retinoid for severe cystic acne. Which statement about isotretinoin is most important to communicate?",
     "opts": [
       "It is completely safe in pregnancy when used at low doses",
-      "It is one of the most potent human teratogens and mandatory pregnancy prevention is required",
+      "It is safe as it is a natural vitamin A derivative",
       "It causes ototoxicity and audiometry should be performed before starting",
-      "It is safe as it is a natural vitamin A derivative"
+      "It is one of the most potent human teratogens and mandatory pregnancy prevention is required"
     ],
-    "ans": 1,
-    "exp": "Isotretinoin is a synthetic vitamin A derivative and one of the most potent human teratogens known, causing severe and predictable craniofacial, cardiac, and central nervous system malformations even with brief exposure in early pregnancy. Mandatory pregnancy prevention programmes (two negative pregnancy tests before starting, monthly tests during treatment, and reliable contraception) are required in all guidelines. Low-dose use (A) provides no safety margin. Ototoxicity (C) is not a recognised adverse effect of isotretinoin. Being 'natural' (D) is irrelevant to teratogenic risk.",
+    "ans": 3,
+    "exp": "Isotretinoin is a synthetic vitamin A derivative and one of the most potent human teratogens known, causing severe and predictable craniofacial, cardiac, and central nervous system malformations even with brief exposure in early pregnancy. Mandatory pregnancy prevention programmes (two negative pregnancy tests before starting, monthly tests during treatment, and reliable contraception) are required in all guidelines. Low-dose use (A) provides no safety margin. Ototoxicity (C) is not a recognised adverse effect of isotretinoin. Being 'natural' (B) is irrelevant to teratogenic risk.",
     "section": "Basic Sciences",
     "num": 33
   },
@@ -472,11 +472,11 @@ window.MM.fpsc_past_8 = [
     "q": "A study follows two groups over time to compare disease outcomes based on differing exposure status, without any intervention by the researcher. This best describes:",
     "opts": [
       "A randomised controlled trial",
-      "A prospective cohort study",
       "A case-control study",
+      "A prospective cohort study",
       "A cross-sectional study"
     ],
-    "ans": 1,
+    "ans": 2,
     "exp": "A prospective cohort study follows exposed and unexposed groups forward in time to observe outcome development, without researcher-assigned intervention, distinguishing it from an RCT (which assigns exposure) and a case-control study (which starts from outcome status, not exposure), as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 37
@@ -484,12 +484,12 @@ window.MM.fpsc_past_8 = [
   {
     "q": "An intervention reduces the relative risk of a disease by 25% in a population where the baseline (control group) risk is 40%. What is the absolute risk reduction?",
     "opts": [
-      "25%",
       "10%",
+      "25%",
       "15%",
       "40%"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Absolute risk reduction = baseline risk × relative risk reduction = 40% × 25% = 10 percentage points. Relative risk reduction alone can be misleading without knowing the baseline risk, which is why absolute risk reduction is often more clinically meaningful, a point emphasised in Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 38
@@ -497,12 +497,12 @@ window.MM.fpsc_past_8 = [
   {
     "q": "A vaccine has an efficacy of 80% in clinical trials. This figure represents:",
     "opts": [
-      "The percentage of vaccinated people who will never contract the disease under any circumstance",
       "The percentage reduction in disease incidence among vaccinated versus unvaccinated groups under trial conditions",
+      "The percentage of vaccinated people who will never contract the disease under any circumstance",
       "The percentage of the population that must be vaccinated to achieve herd immunity",
       "The percentage of vaccine doses that are effective batches"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Vaccine efficacy specifically measures the percentage reduction in disease incidence in a vaccinated group compared to an unvaccinated group under controlled trial conditions; it does not mean 80% of vaccinated individuals are fully immune while 20% are not, consistent with Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 39
@@ -524,11 +524,11 @@ window.MM.fpsc_past_8 = [
     "q": "Which of the following most precisely captures why 'Care' interventions often have a better cost-effectiveness ratio than 'Cure' interventions at a population level?",
     "opts": [
       "Care interventions are always cheaper per individual, regardless of reach",
-      "Care interventions typically reach and benefit a much larger population per unit of spending, even though each individual intervention may be low-cost",
       "Cure interventions never save any lives",
+      "Care interventions typically reach and benefit a much larger population per unit of spending, even though each individual intervention may be low-cost",
       "Cost-effectiveness cannot be compared between the two approaches"
     ],
-    "ans": 1,
+    "ans": 2,
     "exp": "The key driver of superior cost-effectiveness is scale of reach: a preventive intervention that costs little per person can be delivered to an entire population, so total health gain per rupee spent is often higher than a highly effective but narrowly-targeted curative intervention, consistent with Pakistan's National Health Vision 2016-2025.",
     "section": "Care vs Cure",
     "num": 41
@@ -537,11 +537,11 @@ window.MM.fpsc_past_8 = [
     "q": "A health ministry proposes redirecting funds from a successful immunization programme to build one additional specialist hospital. From a Care vs Cure standpoint, evaluating this trade-off requires primarily comparing:",
     "opts": [
       "The number of jobs each option creates",
-      "The marginal population-level health gain per rupee of each option, not simply the visibility or prestige of the investment",
+      "The construction cost alone",
       "Which option is politically more popular",
-      "The construction cost alone"
+      "The marginal population-level health gain per rupee of each option, not simply the visibility or prestige of the investment"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "A sound Care vs Cure resource allocation decision should be based on comparing the marginal health gain per unit of spending for each option: a well-run immunization programme reaching thousands often yields more population health benefit per rupee than a single additional hospital, regardless of the latter's visibility, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Care vs Cure",
     "num": 42
@@ -550,11 +550,11 @@ window.MM.fpsc_past_8 = [
     "q": "Pakistan's health system operates as a 'mixed health system'. In terms of health policy, this specifically means that service delivery involves:",
     "opts": [
       "Only the federal government, with no provincial role",
-      "A combination of government infrastructure, parastatal systems, private sector, and civil society/philanthropic providers",
       "Exclusively private hospitals with no government involvement",
+      "A combination of government infrastructure, parastatal systems, private sector, and civil society/philanthropic providers",
       "Only traditional and alternative medicine providers"
     ],
-    "ans": 1,
+    "ans": 2,
     "exp": "Pakistan's health policy documents describe a 'mixed health system' comprising government infrastructure, parastatal health systems, the private sector, civil society organisations, and philanthropic contributors, all operating alongside one another rather than a single unified provider, consistent with Pakistan's National Health Vision 2016-2025.",
     "section": "Health Policies of Govt",
     "num": 43
@@ -563,11 +563,11 @@ window.MM.fpsc_past_8 = [
     "q": "Within the National Health Vision's 'Governance' thematic pillar, a specifically cited weakness is:",
     "opts": [
       "Excessive regulation of the private health sector",
-      "Weak capacity to regulate both public and private health markets (medical practice, pharmaceuticals, diagnostics)",
       "Too many performance accountability mechanisms",
+      "Weak capacity to regulate both public and private health markets (medical practice, pharmaceuticals, diagnostics)",
       "Complete absence of any private health sector"
     ],
-    "ans": 1,
+    "ans": 2,
     "exp": "The Governance pillar of the National Health Vision specifically identifies weak regulatory capacity over both public and private health markets (including medical practice, pharmaceuticals, and diagnostics) as a persistent structural weakness, not over-regulation.",
     "section": "Health Policies of Govt",
     "num": 44
@@ -576,11 +576,11 @@ window.MM.fpsc_past_8 = [
     "q": "Which statement most accurately reflects the stated strategic vision for health financing in Pakistan's National Health Vision 2016-2025, beyond simply raising the budget share?",
     "opts": [
       "Spending should be treated purely as a cost to be minimised",
-      "Health spending should be reframed and advocated as an 'investment', alongside improving efficiency and pro-poor targeting of existing funds",
+      "Health financing reform is not addressed in the document",
       "Only donor funding should be used for health financing",
-      "Health financing reform is not addressed in the document"
+      "Health spending should be reframed and advocated as an 'investment', alongside improving efficiency and pro-poor targeting of existing funds"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Beyond the numerical target of 3% of GDP, the National Health Vision explicitly frames adequate health financing as an 'investment' rather than a cost, and calls for improved efficiency of existing spending and stronger pro-poor social protection, a qualitative shift in framing, not just a budget increase.",
     "section": "Health Policies of Govt",
     "num": 45
@@ -615,11 +615,11 @@ window.MM.fpsc_past_8 = [
     "q": "Why does Pakistan's 'double burden of disease' (persisting communicable diseases alongside rising non-communicable diseases) pose a more complex financing challenge than either burden alone?",
     "opts": [
       "It does not actually increase total health spending needs",
-      "It requires health systems to simultaneously fund both infectious disease control programmes and long-term chronic disease management, competing for the same limited budget",
+      "Communicable diseases have already been fully eliminated",
       "Non-communicable diseases have no financial cost",
-      "Communicable diseases have already been fully eliminated"
+      "It requires health systems to simultaneously fund both infectious disease control programmes and long-term chronic disease management, competing for the same limited budget"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "A double burden means health budgets must stretch to cover both traditional infectious disease control (vaccination, TB/malaria programmes) AND the more expensive, ongoing management of chronic non-communicable diseases (diabetes, hypertension, cancer) at the same time, intensifying competition for limited resources, a point emphasised in Pakistan's National Health Vision 2016-2025.",
     "section": "Major Challenges to Healthcare",
     "num": 48
@@ -706,11 +706,11 @@ window.MM.fpsc_past_8 = [
     "q": "A 70-year-old man with a history of chronic kidney disease is found to have a corrected serum calcium that is normal, but an unexpectedly low ionised calcium. What is the most likely explanation?",
     "opts": [
       "Laboratory error only, no physiological explanation exists",
-      "Concurrent alkalosis, which increases albumin's binding of calcium and lowers the ionised (biologically active) fraction",
+      "Ionised calcium is always identical to corrected total calcium",
       "Hypoalbuminaemia alone, without any other explanation needed",
-      "Ionised calcium is always identical to corrected total calcium"
+      "Concurrent alkalosis, which increases albumin's binding of calcium and lowers the ionised (biologically active) fraction"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Alkalosis increases albumin's affinity for calcium, reducing the ionised (physiologically active) fraction even when total corrected calcium appears normal, an important distinction in patients with acid-base disturbances, since ionised calcium better reflects true calcium status, consistent with Davidson's Principles and Practice of Medicine.",
     "section": "Medicine",
     "num": 55
@@ -718,12 +718,12 @@ window.MM.fpsc_past_8 = [
   {
     "q": "A 45-year-old man with newly diagnosed hypertension is found to have hypokalaemia and metabolic alkalosis on routine bloods, with a suppressed plasma renin and elevated aldosterone. What is the most likely underlying diagnosis?",
     "opts": [
-      "Essential (primary) hypertension",
       "Primary hyperaldosteronism (Conn's syndrome)",
+      "Essential (primary) hypertension",
       "Phaeochromocytoma",
       "Renal artery stenosis"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "The combination of hypertension, hypokalaemia, metabolic alkalosis, SUPPRESSED renin, and ELEVATED aldosterone is the classic biochemical fingerprint of primary hyperaldosteronism (Conn's syndrome), distinguishing it from renal artery stenosis, where renin would instead be elevated, consistent with Davidson's Principles and Practice of Medicine.",
     "section": "Medicine",
     "num": 56
@@ -732,11 +732,11 @@ window.MM.fpsc_past_8 = [
     "q": "A patient on long-term proton pump inhibitor (PPI) therapy is found to have a low serum magnesium that is resistant to oral replacement. What is the most appropriate next step?",
     "opts": [
       "Increase the oral magnesium dose indefinitely",
-      "Consider stopping or switching the PPI, since PPI-induced hypomagnesaemia often fails to correct until the drug is withdrawn",
+      "Ignore the result if the patient is asymptomatic",
       "Add a thiazide diuretic",
-      "Ignore the result if the patient is asymptomatic"
+      "Consider stopping or switching the PPI, since PPI-induced hypomagnesaemia often fails to correct until the drug is withdrawn"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "PPI-induced hypomagnesaemia is a recognised, dose- and duration-related adverse effect that is often refractory to oral magnesium replacement while the PPI continues; stopping or switching the causative drug is usually required for the magnesium level to normalise (Davidson's Principles and Practice of Medicine).",
     "section": "Medicine",
     "num": 57
@@ -784,12 +784,12 @@ window.MM.fpsc_past_8 = [
     "q": "A 25-year-old man presents with sudden onset severe left testicular pain that began 2 hours ago. The testis is elevated, tender, and the cremasteric reflex is absent on the left. What is the diagnosis and immediate management?",
     "opts": [
       "Epididymo-orchitis; oral antibiotics for 2 weeks",
-      "Testicular torsion; emergency surgical exploration within 6 hours",
+      "Varicocele; scrotal support and analgesia",
       "Hydrocele; aspiration and reassurance",
-      "Varicocele; scrotal support and analgesia"
+      "Testicular torsion; emergency surgical exploration within 6 hours"
     ],
-    "ans": 1,
-    "exp": "Testicular torsion presents with sudden onset severe unilateral testicular pain, a high-riding tender testis (from shortening of the twisted cord), and loss of the cremasteric reflex, which is the most sensitive clinical sign. The time window for testicular salvage is critical: surgery within 6 hours saves nearly 100% of testes, while after 24 hours the rate falls below 10%. Bailey and Love's emphasises that clinical suspicion alone warrants emergency surgical exploration without waiting for imaging. Epididymo-orchitis (A) has a more gradual onset and preserved cremasteric reflex. Hydrocele (C) is painless and transilluminates. Varicocele (D) feels like a bag of worms and is not acutely painful.",
+    "ans": 3,
+    "exp": "Testicular torsion presents with sudden onset severe unilateral testicular pain, a high-riding tender testis (from shortening of the twisted cord), and loss of the cremasteric reflex, which is the most sensitive clinical sign. The time window for testicular salvage is critical: surgery within 6 hours saves nearly 100% of testes, while after 24 hours the rate falls below 10%. Bailey and Love's emphasises that clinical suspicion alone warrants emergency surgical exploration without waiting for imaging. Epididymo-orchitis (A) has a more gradual onset and preserved cremasteric reflex. Hydrocele (C) is painless and transilluminates. Varicocele (B) feels like a bag of worms and is not acutely painful.",
     "section": "Surgery",
     "num": 61
   },
@@ -822,12 +822,12 @@ window.MM.fpsc_past_8 = [
   {
     "q": "A 65-year-old man undergoes emergency laparotomy for a perforated duodenal ulcer. Postoperatively, he develops a fever and a rising white cell count on day 5, with a CT scan showing a subphrenic collection. What is the most appropriate management?",
     "opts": [
-      "Oral antibiotics alone with no further intervention",
       "Image-guided percutaneous drainage of the collection, combined with appropriate antibiotics",
+      "Oral antibiotics alone with no further intervention",
       "Immediate re-laparotomy without imaging in every case",
       "Discharge home with outpatient follow-up"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "A postoperative subphrenic (intra-abdominal) collection identified on CT is typically managed with image-guided percutaneous drainage combined with antibiotics where feasible, reserving re-laparotomy for cases where percutaneous drainage fails or is not technically possible, as detailed in Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 64
@@ -835,12 +835,12 @@ window.MM.fpsc_past_8 = [
   {
     "q": "A 30-year-old man presents with a swelling that appears in the groin on standing and coughing, and disappears on lying down. On examination, the swelling is controlled by pressure over the deep inguinal ring, and reappears when this pressure is released while he coughs. What does this specific examination finding suggest?",
     "opts": [
-      "The hernia is direct, not indirect",
       "The hernia is indirect, since control at the deep ring prevents its reappearance through that specific point",
+      "The hernia is direct, not indirect",
       "The finding is non-specific and cannot help distinguish hernia type",
       "This confirms a femoral hernia"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "This examination technique (occlusion test) helps distinguish indirect from direct inguinal hernias: if pressure over the deep inguinal ring controls the hernia and prevents it reappearing on coughing, this suggests an indirect hernia, which passes precisely through that anatomical point, unlike a direct hernia, which bulges through a separate, weaker area of the posterior wall, consistent with Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 65
@@ -848,12 +848,12 @@ window.MM.fpsc_past_8 = [
   {
     "q": "A 55-year-old man undergoes elective right hemicolectomy for a caecal carcinoma. On the operative specimen, tumour is found within 1mm of the circumferential resection margin. What is the clinical significance of this finding?",
     "opts": [
-      "It has no bearing on prognosis or further management",
       "It indicates a high risk of local recurrence and typically prompts consideration of adjuvant therapy and closer surveillance",
+      "It has no bearing on prognosis or further management",
       "It means the operation was unsuccessful and must be repeated immediately",
       "It only matters for rectal, never for colonic, tumours"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "An involved or very close circumferential resection margin is associated with a significantly higher risk of local recurrence, and typically prompts multidisciplinary discussion regarding adjuvant chemotherapy and more intensive postoperative surveillance, regardless of whether the tumour is colonic or rectal (Bailey and Love's Short Practice of Surgery).",
     "section": "Surgery",
     "num": 66
@@ -862,11 +862,11 @@ window.MM.fpsc_past_8 = [
     "q": "A 40-year-old woman with a solitary thyroid nodule undergoes FNAC reported as 'Thy3f' (Bethesda category indeterminate, follicular lesion). What is the most appropriate next step, given that FNAC cannot reliably distinguish follicular adenoma from carcinoma?",
     "opts": [
       "Reassurance with no further action, since FNAC is always definitive",
-      "Diagnostic hemithyroidectomy, since the distinction between adenoma and carcinoma can only be made on histology after excision (capsular/vascular invasion)",
+      "Repeat FNAC only, indefinitely, until a definitive cytological answer is obtained",
       "Immediate total thyroidectomy without further discussion",
-      "Repeat FNAC only, indefinitely, until a definitive cytological answer is obtained"
+      "Diagnostic hemithyroidectomy, since the distinction between adenoma and carcinoma can only be made on histology after excision (capsular/vascular invasion)"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Follicular lesions cannot be reliably classified as benign or malignant by cytology alone, since the distinguishing features (capsular or vascular invasion) can only be assessed on histological examination of the excised specimen; hence diagnostic hemithyroidectomy is the standard next step for an indeterminate follicular FNAC result, a point emphasised in Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 67
@@ -875,11 +875,11 @@ window.MM.fpsc_past_8 = [
     "q": "A 28-year-old man sustains a high-velocity gunshot wound to the thigh with an expanding haematoma and an absent distal pulse. Ankle-brachial index cannot be reliably assessed due to pain. What is the most appropriate immediate step?",
     "opts": [
       "Discharge with elevation and outpatient vascular review",
-      "Urgent surgical exploration for suspected vascular injury, without waiting for further non-invasive testing",
+      "Compression bandage and observation for 24 hours",
       "CT angiography only, with surgery deferred until results are available regardless of clinical findings",
-      "Compression bandage and observation for 24 hours"
+      "Urgent surgical exploration for suspected vascular injury, without waiting for further non-invasive testing"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "A high-velocity penetrating injury with an expanding haematoma and absent distal pulse are 'hard signs' of vascular injury requiring urgent surgical exploration without delay; waiting for imaging in this scenario risks limb-threatening ischaemia, since hard signs alone are sufficient indication for operative exploration, consistent with Sabiston Textbook of Surgery.",
     "section": "Surgery",
     "num": 68
@@ -888,12 +888,12 @@ window.MM.fpsc_past_8 = [
     "q": "A 22-year-old primigravida at 32 weeks gestation presents with a 2-day history of frontal headache, blurred vision, and right upper quadrant pain. Blood pressure is 158/106 mmHg. Urine dipstick shows 3+ proteinuria. What is the diagnosis and the key risk being monitored?",
     "opts": [
       "Gestational hypertension without proteinuria; fetal growth restriction",
-      "Severe pre-eclampsia; risk of progression to eclampsia and maternal organ damage",
+      "Normal pregnancy discomforts; reassure and discharge",
       "Chronic hypertension in pregnancy; risk of placental abruption only",
-      "Normal pregnancy discomforts; reassure and discharge"
+      "Severe pre-eclampsia; risk of progression to eclampsia and maternal organ damage"
     ],
-    "ans": 1,
-    "exp": "Severe pre-eclampsia is defined by BP ≥160/110 mmHg after 20 weeks with significant proteinuria, plus features of end-organ involvement: frontal headache (cerebral), visual disturbances (retinal/cerebral), and RUQ pain (hepatic capsule stretching or HELLP syndrome). The immediate risk is progression to eclampsia (tonic-clonic seizures) and maternal organ damage. Ten Teachers' Obstetrics identifies severe pre-eclampsia as a leading cause of maternal mortality in Pakistan. Gestational hypertension (A) lacks proteinuria. Chronic hypertension (C) predates pregnancy. Discharging this patient (D) would be dangerous.",
+    "ans": 3,
+    "exp": "Severe pre-eclampsia is defined by BP ≥160/110 mmHg after 20 weeks with significant proteinuria, plus features of end-organ involvement: frontal headache (cerebral), visual disturbances (retinal/cerebral), and RUQ pain (hepatic capsule stretching or HELLP syndrome). The immediate risk is progression to eclampsia (tonic-clonic seizures) and maternal organ damage. Ten Teachers' Obstetrics identifies severe pre-eclampsia as a leading cause of maternal mortality in Pakistan. Gestational hypertension (A) lacks proteinuria. Chronic hypertension (C) predates pregnancy. Discharging this patient (B) would be dangerous.",
     "section": "O&G",
     "num": 69
   },
@@ -926,12 +926,12 @@ window.MM.fpsc_past_8 = [
   {
     "q": "A 30-year-old woman at 28 weeks gestation has a 1-hour glucose challenge test result of 8.2 mmol/L, prompting a diagnostic oral glucose tolerance test (OGTT). Which of the following OGTT criteria would confirm gestational diabetes?",
     "opts": [
-      "Fasting glucose below 4.0 mmol/L only",
       "Any single value meeting or exceeding the diagnostic threshold at fasting, 1-hour, or 2-hour testing",
+      "Fasting glucose below 4.0 mmol/L only",
       "Only the 2-hour value is ever considered diagnostic",
       "A random glucose reading taken outside the test"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Gestational diabetes is typically diagnosed if any single value (fasting, 1-hour, or 2-hour) on a formal OGTT meets or exceeds the defined diagnostic threshold; not all three values need to be abnormal, a nuance often missed, consistent with Ten Teachers' Obstetrics and Gynaecology.",
     "section": "O&G",
     "num": 72
@@ -940,11 +940,11 @@ window.MM.fpsc_past_8 = [
     "q": "A 34-year-old woman with a known history of two previous caesarean sections presents at 36 weeks with painless vaginal bleeding, and ultrasound confirms a placenta completely covering the internal os. Given her surgical history, which additional serious complication is she specifically at increased risk of?",
     "opts": [
       "Twin pregnancy",
-      "Placenta accreta spectrum (abnormally invasive placenta)",
+      "Rh isoimmunisation",
       "Cervical incompetence",
-      "Rh isoimmunisation"
+      "Placenta accreta spectrum (abnormally invasive placenta)"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Placenta praevia overlying a previous caesarean scar carries a significantly increased risk of placenta accreta spectrum, where the placenta abnormally invades the myometrium (or beyond), risking catastrophic haemorrhage at delivery, a risk that rises further with each additional prior caesarean, as detailed in Ten Teachers' Obstetrics and Gynaecology.",
     "section": "O&G",
     "num": 73
@@ -979,12 +979,12 @@ window.MM.fpsc_past_8 = [
     "q": "A 40-year-old man presents with a 3-week history of right-sided nasal obstruction, thick blood-stained nasal discharge, and right-sided facial pain. He works in a furniture factory in Lahore. Anterior rhinoscopy shows a mass in the right nasal cavity. What is the most important concern and next step?",
     "opts": [
       "Allergic rhinitis; prescribe antihistamines and nasal corticosteroids",
-      "Unilateral nasal mass with occupational exposure: urgent biopsy to exclude malignancy",
       "Deviated nasal septum; refer for septoplasty",
+      "Unilateral nasal mass with occupational exposure: urgent biopsy to exclude malignancy",
       "Acute sinusitis; 10-day course of amoxicillin"
     ],
-    "ans": 1,
-    "exp": "Unilateral nasal obstruction, blood-stained discharge, and a nasal mass in a wood/furniture worker raises strong suspicion for adenocarcinoma of the nasal cavity or sinuses, a recognised occupational cancer strongly associated with hardwood dust exposure. Any unilateral nasal mass in an adult is a red flag. Dhingra's Diseases of ENT emphasises that these must be biopsied urgently. Allergic rhinitis (A) causes bilateral pale watery discharge. DNS (C) causes structural obstruction without a mass. Acute sinusitis (D) does not present with a visible mass and unilateral blood-stained discharge.",
+    "ans": 2,
+    "exp": "Unilateral nasal obstruction, blood-stained discharge, and a nasal mass in a wood/furniture worker raises strong suspicion for adenocarcinoma of the nasal cavity or sinuses, a recognised occupational cancer strongly associated with hardwood dust exposure. Any unilateral nasal mass in an adult is a red flag. Dhingra's Diseases of ENT emphasises that these must be biopsied urgently. Allergic rhinitis (A) causes bilateral pale watery discharge. DNS (B) causes structural obstruction without a mass. Acute sinusitis (D) does not present with a visible mass and unilateral blood-stained discharge.",
     "section": "ENT",
     "num": 76
   },
@@ -992,12 +992,12 @@ window.MM.fpsc_past_8 = [
     "q": "A 55-year-old man presents with a 6-month progressive decline in hearing in both ears. He notices difficulty hearing in noisy environments but manages in quiet settings. Whisper test is impaired bilaterally. Rinne's test shows AC > BC bilaterally. Weber's test lateralises to neither ear. What type of hearing loss does this represent?",
     "opts": [
       "Conductive hearing loss from bilateral middle ear effusion",
-      "Bilateral sensorineural hearing loss, likely presbycusis",
+      "Central hearing loss from cortical lesion",
       "Unilateral conductive loss from cerumen impaction",
-      "Central hearing loss from cortical lesion"
+      "Bilateral sensorineural hearing loss, likely presbycusis"
     ],
-    "ans": 1,
-    "exp": "Presbycusis is age-related bilateral sensorineural hearing loss affecting high-frequency sounds first, causing difficulty in noisy environments (where high-frequency speech discrimination is critical). Rinne's test showing AC > BC bilaterally confirms sensorineural or normal hearing; in conductive loss, BC would exceed AC. Weber's not lateralising confirms symmetrical loss. Bilateral conductive loss (A) would show BC > AC on Rinne's. Unilateral loss (C) would show Weber lateralising to the affected ear in conductive loss. Central hearing loss (D) is rare and causes processing difficulties rather than pure tone loss.",
+    "ans": 3,
+    "exp": "Presbycusis is age-related bilateral sensorineural hearing loss affecting high-frequency sounds first, causing difficulty in noisy environments (where high-frequency speech discrimination is critical). Rinne's test showing AC > BC bilaterally confirms sensorineural or normal hearing; in conductive loss, BC would exceed AC. Weber's not lateralising confirms symmetrical loss. Bilateral conductive loss (A) would show BC > AC on Rinne's. Unilateral loss (C) would show Weber lateralising to the affected ear in conductive loss. Central hearing loss (B) is rare and causes processing difficulties rather than pure tone loss.",
     "section": "ENT",
     "num": 77
   },
@@ -1018,11 +1018,11 @@ window.MM.fpsc_past_8 = [
     "q": "A 45-year-old man presents with unilateral pulsatile tinnitus and a red-blue mass visible behind an intact tympanic membrane. Which investigation is most important before biopsy is considered?",
     "opts": [
       "Pure tone audiometry alone",
-      "Imaging (CT or MRI with contrast) to characterise the mass and assess vascularity before any biopsy",
       "Immediate biopsy without imaging",
+      "Imaging (CT or MRI with contrast) to characterise the mass and assess vascularity before any biopsy",
       "Tympanometry alone"
     ],
-    "ans": 1,
+    "ans": 2,
     "exp": "A red-blue vascular-appearing middle ear mass with pulsatile tinnitus is suggestive of a glomus tumour (paraganglioma); imaging is essential BEFORE any biopsy, since these are highly vascular tumours and unplanned biopsy risks severe haemorrhage, as detailed in Dhingra's Diseases of Ear, Nose and Throat.",
     "section": "ENT",
     "num": 79
@@ -1031,11 +1031,11 @@ window.MM.fpsc_past_8 = [
     "q": "A 6-year-old child presents with acute mastoiditis following inadequately treated acute otitis media. Which specific complication must be urgently excluded given the proximity of the mastoid to the intracranial cavity?",
     "opts": [
       "Simple otitis externa",
-      "Intracranial complications such as sigmoid sinus thrombosis or meningitis",
       "Allergic rhinitis",
+      "Intracranial complications such as sigmoid sinus thrombosis or meningitis",
       "Impacted cerumen"
     ],
-    "ans": 1,
+    "ans": 2,
     "exp": "Because the mastoid air cells lie close to the posterior cranial fossa and sigmoid sinus, acute mastoiditis carries a risk of serious intracranial spread, including sigmoid sinus thrombosis and meningitis, which must be actively excluded, particularly if the child develops worsening headache, neck stiffness, or altered consciousness, as detailed in Dhingra's Diseases of Ear, Nose and Throat.",
     "section": "ENT",
     "num": 80
@@ -1044,11 +1044,11 @@ window.MM.fpsc_past_8 = [
     "q": "A 55-year-old man with a long history of chronic suppurative otitis media presents with a foul-smelling discharge and a retraction pocket containing keratin debris. What is the most likely diagnosis, and why is it clinically significant?",
     "opts": [
       "Simple wax impaction; not clinically significant",
-      "Cholesteatoma; significant because it can erode surrounding bone, including the ossicles and skull base",
+      "Otosclerosis; requires only hearing aid fitting",
       "Acute otitis media; requires only oral antibiotics",
-      "Otosclerosis; requires only hearing aid fitting"
+      "Cholesteatoma; significant because it can erode surrounding bone, including the ossicles and skull base"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "A retraction pocket with keratin debris and foul discharge is characteristic of cholesteatoma, a locally destructive lesion that can progressively erode the ossicular chain and adjacent bone (including toward the inner ear and skull base), making it a surgical emergency-in-slow-motion rather than a simple infection, a point emphasised in Scott-Brown's Otorhinolaryngology.",
     "section": "ENT",
     "num": 81
@@ -1095,25 +1095,25 @@ window.MM.fpsc_past_8 = [
   {
     "q": "A 25-year-old man presents with a sudden curtain-like shadow moving across his right visual field from the top downwards, preceded by flashes of light and a shower of floaters, over 3 hours. Visual acuity is reduced. What is the diagnosis and urgency?",
     "opts": [
-      "Posterior vitreous detachment; review in one week as it is benign",
       "Retinal detachment; same-day emergency ophthalmic referral for surgical repair",
+      "Posterior vitreous detachment; review in one week as it is benign",
       "Vitreous haemorrhage; observe for spontaneous clearing",
       "Central retinal vein occlusion; arrange outpatient fluorescein angiography"
     ],
-    "ans": 1,
-    "exp": "A curtain-like progressive visual field loss, preceded by photopsia and floaters, with reduced acuity represents rhegmatogenous retinal detachment until proven otherwise. The 'curtain' rises from below as the superior retina detaches first and fluid accumulates beneath. This is a surgical emergency; every hour of delay risks extension of the detachment to involve the macula, which significantly worsens the visual prognosis. Same-day emergency referral for scleral buckling, vitrectomy, or pneumatic retinopexy is required. PVD (A) causes transient floaters and flashes without a progressive field defect. Vitreous haemorrhage (C) causes sudden floaters and loss of red reflex without a curtain effect.",
+    "ans": 0,
+    "exp": "A curtain-like progressive visual field loss, preceded by photopsia and floaters, with reduced acuity represents rhegmatogenous retinal detachment until proven otherwise. The 'curtain' rises from below as the superior retina detaches first and fluid accumulates beneath. This is a surgical emergency; every hour of delay risks extension of the detachment to involve the macula, which significantly worsens the visual prognosis. Same-day emergency referral for scleral buckling, vitrectomy, or pneumatic retinopexy is required. PVD (B) causes transient floaters and flashes without a progressive field defect. Vitreous haemorrhage (C) causes sudden floaters and loss of red reflex without a curtain effect.",
     "section": "Ophthalmology",
     "num": 85
   },
   {
     "q": "A 68-year-old man with acute angle-closure glaucoma is given intravenous acetazolamide as part of emergency management. What is the primary mechanism by which this drug lowers intraocular pressure?",
     "opts": [
-      "Increasing aqueous humour outflow through the trabecular meshwork",
       "Inhibiting carbonic anhydrase in the ciliary body, thereby reducing aqueous humour production",
+      "Increasing aqueous humour outflow through the trabecular meshwork",
       "Directly constricting the pupil",
       "Paralysing the ciliary muscle"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Acetazolamide is a carbonic anhydrase inhibitor that reduces aqueous humour PRODUCTION by the ciliary body, rapidly lowering intraocular pressure in the emergency management of acute angle-closure glaucoma, distinct from drugs that act by increasing outflow (e.g., prostaglandin analogues) or inducing pupillary constriction (e.g., pilocarpine), as detailed in Kanski's Clinical Ophthalmology.",
     "section": "Ophthalmology",
     "num": 86
@@ -1121,12 +1121,12 @@ window.MM.fpsc_past_8 = [
   {
     "q": "A 25-year-old contact lens wearer presents with severe eye pain, photophobia, and a corneal ring infiltrate. Culture confirms Acanthamoeba keratitis. Which specific contact lens habit is most strongly associated with this diagnosis?",
     "opts": [
-      "Wearing lenses for the recommended daily duration only",
       "Rinsing or storing lenses in tap water or exposure to contaminated water sources (e.g., swimming)",
+      "Wearing lenses for the recommended daily duration only",
       "Using preservative-free artificial tears",
       "Wearing glasses instead of lenses on some days"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Acanthamoeba keratitis is strongly associated with contact lens exposure to contaminated water: tap water rinsing, swimming, or hot tub use while wearing lenses, since the organism is commonly found in fresh water and can adhere to lens surfaces, making this history point clinically important to elicit, as detailed in Kanski's Clinical Ophthalmology.",
     "section": "Ophthalmology",
     "num": 87
@@ -1134,12 +1134,12 @@ window.MM.fpsc_past_8 = [
   {
     "q": "A 70-year-old woman with long-standing primary open-angle glaucoma on multiple topical drops is found to have progressive visual field loss despite intraocular pressure readings within the 'normal' range on each clinic visit. What does this scenario most likely represent?",
     "opts": [
-      "Glaucoma has definitely resolved and no further monitoring is needed",
       "Normal-tension glaucoma, or inadequate pressure control at other times of day not captured by single clinic readings",
+      "Glaucoma has definitely resolved and no further monitoring is needed",
       "A laboratory measurement error that should be disregarded",
       "Cataract formation unrelated to glaucoma"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Progressive field loss despite 'normal' clinic pressures suggests either normal-tension glaucoma (optic nerve damage occurring at statistically normal pressures) or diurnal pressure fluctuations not captured by a single daytime reading, both important concepts distinguishing glaucoma management from a single isolated IOP measurement (Parson's Diseases of the Eye).",
     "section": "Ophthalmology",
     "num": 88
@@ -1148,11 +1148,11 @@ window.MM.fpsc_past_8 = [
     "q": "A 3-year-old child fails a routine vision screening test with reduced vision in one eye despite a normal fundus examination and no refractive error explaining the finding on that side alone. What is the most likely diagnosis, and why is early intervention critical?",
     "opts": [
       "Retinoblastoma; requires enucleation regardless of findings",
-      "Amblyopia; critical to treat early because visual pathways are still developing and the deficit becomes permanent if uncorrected beyond the critical period",
+      "Optic neuritis; requires no treatment in children",
       "Presbyopia; will resolve spontaneously with age",
-      "Optic neuritis; requires no treatment in children"
+      "Amblyopia; critical to treat early because visual pathways are still developing and the deficit becomes permanent if uncorrected beyond the critical period"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Amblyopia ('lazy eye') results from abnormal visual development in childhood and must be treated within the critical period (typically before age 7-8) using patching or optical correction, since the brain's visual pathways lose plasticity with age and uncorrected amblyopia becomes permanent (Parson's Diseases of the Eye).",
     "section": "Ophthalmology",
     "num": 89
@@ -1173,13 +1173,13 @@ window.MM.fpsc_past_8 = [
   {
     "q": "A 35-year-old non-smoker male from Peshawar presents with 5 months of cough, low-grade fever, night sweats, and 7 kg weight loss. Sputum AFB smear is positive on two consecutive samples. CXR shows right upper lobe infiltrate with a cavity. What is the recommended treatment regimen?",
     "opts": [
-      "Isoniazid and rifampicin for 6 months only",
       "2 months of HRZE followed by 4 months of HR (2HRZE/4HR)",
+      "Isoniazid and rifampicin for 6 months only",
       "Isoniazid alone for 9 months as preventive therapy",
       "Azithromycin and ethambutol for 12 months"
     ],
-    "ans": 1,
-    "exp": "Smear-positive pulmonary TB is treated with the WHO and Pakistan NTP-recommended standard regimen: 2 months intensive phase with isoniazid (H), rifampicin (R), pyrazinamide (Z), and ethambutol (E), followed by 4 months continuation phase with isoniazid and rifampicin alone (2HRZE/4HR). Directly observed treatment (DOT) is emphasised to ensure adherence. This regimen is the backbone of TB control globally and in Pakistan's NTP guidelines. Isoniazid and rifampicin alone for 6 months (A) is not the standard regimen. INH alone (C) is latent TB preventive therapy. Azithromycin (D) is not part of TB treatment.",
+    "ans": 0,
+    "exp": "Smear-positive pulmonary TB is treated with the WHO and Pakistan NTP-recommended standard regimen: 2 months intensive phase with isoniazid (H), rifampicin (R), pyrazinamide (Z), and ethambutol (E), followed by 4 months continuation phase with isoniazid and rifampicin alone (2HRZE/4HR). Directly observed treatment (DOT) is emphasised to ensure adherence. This regimen is the backbone of TB control globally and in Pakistan's NTP guidelines. Isoniazid and rifampicin alone for 6 months (B) is not the standard regimen. INH alone (C) is latent TB preventive therapy. Azithromycin (D) is not part of TB treatment.",
     "section": "Pulmonology",
     "num": 91
   },
@@ -1187,12 +1187,12 @@ window.MM.fpsc_past_8 = [
     "q": "A 60-year-old man with a 20-year history of COPD presents acutely with worsening breathlessness, increased sputum production with greenish colour, and confusion. ABG: pH 7.28, PaO2 48 mmHg, PaCO2 74 mmHg, HCO3 32 mEq/L. Which intervention is most appropriate if he fails to improve with controlled oxygen and nebulisers?",
     "opts": [
       "High-flow oxygen at 15 L/min via non-rebreather mask",
-      "Non-invasive ventilation (NIV/BiPAP)",
+      "Intravenous diazepam to reduce respiratory drive",
       "Immediate intubation and mechanical ventilation",
-      "Intravenous diazepam to reduce respiratory drive"
+      "Non-invasive ventilation (NIV/BiPAP)"
     ],
-    "ans": 1,
-    "exp": "This ABG shows acute-on-chronic Type II respiratory failure: severe hypoxia, significant hypercapnia (PaCO2 74 mmHg), and a pH of 7.28 confirming decompensated respiratory acidosis, with elevated HCO3 from chronic compensation. When controlled oxygen and nebulised bronchodilators fail, non-invasive ventilation (NIV/BiPAP) is the next step, as it improves ventilation, reduces PaCO2, and avoids intubation in most COPD exacerbations. NIV has the strongest evidence base in acute hypercapnic respiratory failure and avoids intubation in most COPD exacerbations. High-flow oxygen (A) would further suppress hypoxic drive. Immediate intubation (C) is reserved for NIV failure. IV diazepam (D) is contraindicated as it would further depress respiration.",
+    "ans": 3,
+    "exp": "This ABG shows acute-on-chronic Type II respiratory failure: severe hypoxia, significant hypercapnia (PaCO2 74 mmHg), and a pH of 7.28 confirming decompensated respiratory acidosis, with elevated HCO3 from chronic compensation. When controlled oxygen and nebulised bronchodilators fail, non-invasive ventilation (NIV/BiPAP) is the next step, as it improves ventilation, reduces PaCO2, and avoids intubation in most COPD exacerbations. NIV has the strongest evidence base in acute hypercapnic respiratory failure and avoids intubation in most COPD exacerbations. High-flow oxygen (A) would further suppress hypoxic drive. Immediate intubation (C) is reserved for NIV failure. IV diazepam (B) is contraindicated as it would further depress respiration.",
     "section": "Pulmonology",
     "num": 92
   },
@@ -1200,11 +1200,11 @@ window.MM.fpsc_past_8 = [
     "q": "A 45-year-old woman with longstanding rheumatoid arthritis develops progressive exertional dyspnoea. High-resolution CT shows a 'usual interstitial pneumonia' (UIP) pattern. What is the clinical significance of this specific radiological pattern?",
     "opts": [
       "It is always reversible with corticosteroids alone",
-      "It indicates a progressive fibrotic process with a generally poorer prognosis compared to other interstitial patterns, regardless of the underlying cause",
+      "It has no bearing on prognosis",
       "It confirms the diagnosis is asthma, not interstitial lung disease",
-      "It has no bearing on prognosis"
+      "It indicates a progressive fibrotic process with a generally poorer prognosis compared to other interstitial patterns, regardless of the underlying cause"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "A UIP pattern on HRCT indicates established pulmonary fibrosis and is associated with a generally poorer prognosis than other interstitial patterns (e.g., non-specific interstitial pneumonia), whether it arises idiopathically or secondary to a connective tissue disease such as rheumatoid arthritis, and tends to respond poorly to corticosteroids alone, as detailed in Davidson's Principles and Practice of Medicine.",
     "section": "Pulmonology",
     "num": 93
@@ -1213,11 +1213,11 @@ window.MM.fpsc_past_8 = [
     "q": "A 60-year-old man with COPD on long-term oxygen therapy is noted to have a paradoxically LOW respiratory drive response to hypoxia after years of chronic CO2 retention. What is the physiological basis of this phenomenon, and its practical implication?",
     "opts": [
       "It has no practical implication for oxygen prescribing",
-      "Chronic hypercapnia blunts the central chemoreceptor response to CO2, making hypoxic drive relatively more important, so uncontrolled high-flow oxygen can suppress ventilation and worsen CO2 retention",
+      "It only affects young, otherwise healthy patients",
       "It means oxygen should never be given to COPD patients under any circumstance",
-      "It only affects young, otherwise healthy patients"
+      "Chronic hypercapnia blunts the central chemoreceptor response to CO2, making hypoxic drive relatively more important, so uncontrolled high-flow oxygen can suppress ventilation and worsen CO2 retention"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "In chronic CO2 retainers, the central chemoreceptors become desensitised to CO2 over time, making the peripheral hypoxic drive relatively more important for maintaining respiration; giving uncontrolled high-flow oxygen can blunt this hypoxic drive and precipitate worsening hypercapnia, hence the practice of controlled, titrated oxygen therapy in these patients, not withholding oxygen entirely, consistent with Kumar and Clark's Clinical Medicine.",
     "section": "Pulmonology",
     "num": 94
