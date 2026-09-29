@@ -9282,7 +9282,7 @@ function _fpscPastConfirmStart(n){
 }
 
 // ── Exam state (fully independent — no NTS/RS state touched) ──
-const _fpscPastState={ n:null, qs:[], answers:{}, flagged:new Set(), timeLeft:0, timerInt:null, pageIdx:0, groupIdx:[], startedAt:null, timeUp:false };
+const _fpscPastState={ n:null, qs:[], answers:{}, flagged:new Set(), timeLeft:0, timerInt:null, pageIdx:0, groupIdx:[], startedAt:null, examEndAt:null, timeUp:false };
 
 async function _fpscPastLaunchExam(n){
   const cfg=FPSC_PAST_CONFIG[n];
@@ -9318,6 +9318,9 @@ async function _fpscPastLaunchExam(n){
   });
   _fpscPastState.qs=data; _fpscPastState.answers={}; _fpscPastState.flagged=new Set();
   _fpscPastState.timeLeft=FPSC_PAST_DURATION_S; _fpscPastState.pageIdx=0;
+  // Timer is driven off this absolute wall-clock end time, not a tick count —
+  // see _fpscPastStartTimer for why.
+  _fpscPastState.examEndAt=Date.now()+FPSC_PAST_DURATION_S*1000;
   _fpscPastState.groupIdx=_buildGroupIndex(data);
   if(qNum) qNum.textContent='';
   const reviewScreen=document.getElementById('fpast-review-screen'), qArea=document.getElementById('fpast-q-area');
@@ -9338,18 +9341,36 @@ function _fpscPastForceLeave(){
 
 function _fpscPastStartTimer(){
   if(_fpscPastState.timerInt) clearInterval(_fpscPastState.timerInt);
-  _fpscPastRenderTimer();
-  _fpscPastState.timerInt=setInterval(function(){
-    _fpscPastState.timeLeft-=1;
-    if(_fpscPastState.timeLeft<=0){
-      clearInterval(_fpscPastState.timerInt); _fpscPastState.timerInt=null;
-      _fpscPastState.timeLeft=0; _fpscPastState.timeUp=true;
-      _fpscPastRenderTimer();
-      window._examActive=false;
-      _fpscPastSubmitExam(true);
-    } else { _fpscPastRenderTimer(); }
-  },1000);
+  _fpscPastTick();
+  // Ticks off the absolute exam-end timestamp (examEndAt), never a decremented
+  // counter. Browsers throttle or fully suspend setInterval callbacks while a
+  // tab/app is backgrounded — a counter that subtracts "1 second per tick"
+  // silently stops counting down the moment the student minimizes the app or
+  // switches to WhatsApp, since the ticks themselves stop firing. Deriving
+  // timeLeft from Date.now() vs. a fixed end-time means that even if ticks
+  // are missed or delayed while backgrounded, the instant this DOES run again
+  // it recalculates the true elapsed wall-clock time and catches up
+  // immediately — the countdown can never pause, no matter how long the app
+  // was in the background.
+  _fpscPastState.timerInt=setInterval(_fpscPastTick,1000);
 }
+function _fpscPastTick(){
+  const remaining=Math.round((_fpscPastState.examEndAt-Date.now())/1000);
+  _fpscPastState.timeLeft=Math.max(0,remaining);
+  if(_fpscPastState.timeLeft<=0){
+    clearInterval(_fpscPastState.timerInt); _fpscPastState.timerInt=null;
+    _fpscPastState.timeUp=true;
+    _fpscPastRenderTimer();
+    window._examActive=false;
+    _fpscPastSubmitExam(true);
+  } else { _fpscPastRenderTimer(); }
+}
+// Recalculate immediately when the student returns to the app, rather than
+// waiting up to a full second for the next natural tick — so the displayed
+// time is correct the instant they're back, not just eventually.
+document.addEventListener('visibilitychange', function(){
+  if(!document.hidden && _fpscPastState.timerInt && _fpscPastState.examEndAt){ _fpscPastTick(); }
+});
 function _fpscPastRenderTimer(){
   const el=document.getElementById('fpast-timer'); if(!el) return;
   const t=_fpscPastState.timeLeft, h=Math.floor(t/3600), m=Math.floor((t%3600)/60), s=t%60;
