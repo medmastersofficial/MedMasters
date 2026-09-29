@@ -1225,12 +1225,12 @@ window.MM.fpsc_past_8 = [
   {
     "q": "A 30-year-old woman presents with recurrent pneumothoraces and CT shows multiple thin-walled cysts throughout both lungs. She is otherwise healthy and a non-smoker. What rare condition, more common in women of childbearing age, should be considered?",
     "opts": [
-      "Simple emphysema",
       "Lymphangioleiomyomatosis (LAM)",
+      "Simple emphysema",
       "Community-acquired pneumonia",
       "Simple asthma"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Lymphangioleiomyomatosis is a rare cystic lung disease that predominantly affects women of childbearing age, characteristically causing recurrent pneumothoraces and diffuse thin-walled pulmonary cysts on CT, distinct from the more common causes of pneumothorax such as simple emphysema, as detailed in Kumar and Clark's Clinical Medicine.",
     "section": "Pulmonology",
     "num": 95
@@ -1239,12 +1239,12 @@ window.MM.fpsc_past_8 = [
     "q": "A 24-year-old man presents to a mental health clinic with a 3-week history of persistent low mood, complete loss of interest in his previous hobbies, poor sleep with early morning wakening, significant weight loss, and difficulty concentrating at work. He has no history of elevated mood. What is the most likely diagnosis?",
     "opts": [
       "Bipolar disorder",
-      "Major depressive disorder",
+      "Adjustment disorder",
       "Dysthymia",
-      "Adjustment disorder"
+      "Major depressive disorder"
     ],
-    "ans": 1,
-    "exp": "Major depressive disorder (MDD) is defined by at least two weeks of persistent depressed mood or anhedonia, accompanied by at least four additional symptoms from: sleep disturbance, appetite or weight change, fatigue, poor concentration, psychomotor changes, guilt, or suicidal ideation. This patient has depressed mood, anhedonia, early morning wakening (a biological feature), weight loss, and poor concentration: a classic MDD presentation. The Shorter Oxford Textbook of Psychiatry identifies early morning wakening as a particularly specific biological marker of severe depression. Bipolar disorder (A) requires at least one manic or hypomanic episode. Dysthymia (C) is milder and chronic (>2 years). Adjustment disorder (D) is precipitated by an identifiable stressor and is milder in severity.",
+    "ans": 3,
+    "exp": "Major depressive disorder (MDD) is defined by at least two weeks of persistent depressed mood or anhedonia, accompanied by at least four additional symptoms from: sleep disturbance, appetite or weight change, fatigue, poor concentration, psychomotor changes, guilt, or suicidal ideation. This patient has depressed mood, anhedonia, early morning wakening (a biological feature), weight loss, and poor concentration: a classic MDD presentation. The Shorter Oxford Textbook of Psychiatry identifies early morning wakening as a particularly specific biological marker of severe depression. Bipolar disorder (A) requires at least one manic or hypomanic episode. Dysthymia (C) is milder and chronic (>2 years). Adjustment disorder (B) is precipitated by an identifiable stressor and is milder in severity.",
     "section": "Psychiatry",
     "num": 96
   },
@@ -1265,11 +1265,11 @@ window.MM.fpsc_past_8 = [
     "q": "A 30-year-old man with a diagnosis of schizophrenia, stable on olanzapine for two years, develops significant weight gain, elevated fasting glucose, and dyslipidaemia. What is the most appropriate NEXT step in management, balancing psychiatric and physical health needs?",
     "opts": [
       "Immediately and abruptly stop olanzapine without any transition plan",
-      "Investigate and manage the metabolic abnormalities, and consider a gradual, carefully monitored switch to a lower metabolic-risk antipsychotic if clinically appropriate, without destabilising his mental state",
       "Ignore the metabolic findings since psychiatric stability is the only priority",
+      "Investigate and manage the metabolic abnormalities, and consider a gradual, carefully monitored switch to a lower metabolic-risk antipsychotic if clinically appropriate, without destabilising his mental state",
       "Add insulin therapy without addressing the antipsychotic regimen at all"
     ],
-    "ans": 1,
+    "ans": 2,
     "exp": "Second-generation antipsychotics like olanzapine carry a well-recognised risk of metabolic syndrome; management requires actively monitoring and treating the metabolic abnormalities while carefully weighing any medication change against the real risk of psychiatric relapse; abrupt cessation is not advised, but metabolic risk should not be ignored either, a point emphasised in the Shorter Oxford Textbook of Psychiatry.",
     "section": "Psychiatry",
     "num": 98
@@ -1277,12 +1277,12 @@ window.MM.fpsc_past_8 = [
   {
     "q": "A 40-year-old man describes recurrent, ego-dystonic intrusive thoughts of harming his child, which cause him severe distress, and he goes to great lengths to avoid being alone with the child, despite never having any intention or history of acting on the thoughts. What is the most likely explanation for this presentation?",
     "opts": [
-      "This is a strong predictor of imminent violent behaviour requiring immediate removal of the child",
       "This is most consistent with obsessive-compulsive disorder (harm-related obsessions), where intrusive thoughts are unwanted and distressing precisely because they conflict with the person's own values",
+      "This is a strong predictor of imminent violent behaviour requiring immediate removal of the child",
       "This is normal parenting anxiety requiring no clinical attention",
       "This indicates an untreatable, fixed intention to cause harm"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Harm-related obsessions are a recognised OCD subtype in which intrusive, unwanted, ego-dystonic thoughts cause significant distress precisely because they are contrary to the person's values and intentions; this presentation, with avoidance behaviours and no actual intent or history of harm, is far more consistent with OCD than any genuine risk of violence, though clinical assessment of risk remains important (the Shorter Oxford Textbook of Psychiatry).",
     "section": "Psychiatry",
     "num": 99
@@ -1291,11 +1291,11 @@ window.MM.fpsc_past_8 = [
     "q": "A 55-year-old man with a long history of major depressive episodes is started on an antidepressant and, within days, develops a period of markedly elevated mood, decreased need for sleep, grandiosity, and rapid speech. What does this specific sequence most strongly suggest?",
     "opts": [
       "A normal, expected response to effective antidepressant treatment",
-      "A possible underlying bipolar disorder unmasked by antidepressant-induced (hypo)mania, warranting reassessment of the diagnosis and treatment plan",
+      "An allergic drug reaction requiring only antihistamines",
       "Confirmation that his original diagnosis of depression was incorrect and he never had depression",
-      "An allergic drug reaction requiring only antihistamines"
+      "A possible underlying bipolar disorder unmasked by antidepressant-induced (hypo)mania, warranting reassessment of the diagnosis and treatment plan"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Antidepressant-induced switching into a manic or hypomanic state is a recognised phenomenon that should raise strong suspicion of an underlying bipolar spectrum disorder rather than unipolar depression, prompting reassessment of the diagnosis and a shift in treatment strategy (e.g., mood stabiliser rather than continued antidepressant monotherapy); it does NOT mean the original depressive episodes were not real, consistent with DSM-5.",
     "section": "Psychiatry",
     "num": 100
