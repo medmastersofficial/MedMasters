@@ -18,11 +18,11 @@ window.MM.fpsc_past_2 = [
     "opts": [
       "in",
       "for",
-      "at",
-      "with"
+      "with",
+      "at"
     ],
-    "ans": 2,
-    "exp": "The correct collocation is 'good at' when expressing proficiency or skill in an activity. 'Good in' (A) and 'good for' (B) are used in different contexts unrelated to personal skill, and 'good with' (D) refers to handling people or objects rather than performing an activity.",
+    "ans": 3,
+    "exp": "The correct collocation is 'good at' when expressing proficiency or skill in an activity. 'Good in' (A) and 'good for' (B) are used in different contexts unrelated to personal skill, and 'good with' (C) refers to handling people or objects rather than performing an activity.",
     "section": "English",
     "num": 2
   },
@@ -30,11 +30,11 @@ window.MM.fpsc_past_2 = [
     "q": "AUDACIOUS : TIMID ::",
     "opts": [
       "brave : courageous",
-      "verbose : laconic",
+      "kind : gentle",
       "angry : furious",
-      "kind : gentle"
+      "verbose : laconic"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "'Audacious' (bold) and 'timid' (fearful) are antonyms. The pair 'verbose' (using too many words) and 'laconic' (using very few words) is the only antonym pair among the options. A and C are synonym pairs showing degree rather than opposition, and D pairs two synonyms with no antonym relationship.",
     "section": "English",
     "num": 3
@@ -43,11 +43,11 @@ window.MM.fpsc_past_2 = [
     "q": "Which of the following is the ANTONYM of EPHEMERAL?",
     "opts": [
       "fleeting",
-      "eternal",
+      "tangible",
       "frequent",
-      "tangible"
+      "eternal"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "'Ephemeral' means lasting for a very short time. Its antonym is 'eternal,' meaning lasting forever. A (fleeting) is a synonym, not an antonym. C (frequent) refers to repetition and has no antonym relationship here. D (tangible) means real and perceptible, which is unrelated.",
     "section": "English",
     "num": 4
@@ -120,12 +120,12 @@ window.MM.fpsc_past_2 = [
   {
     "q": "She is one of the few doctors who _____ fluent in three languages.",
     "opts": [
-      "is",
       "are",
+      "is",
       "was",
       "has been"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "In the construction 'one of the + plural noun + who', the relative clause verb agrees with the plural antecedent ('doctors'), so 'are' is correct.",
     "section": "English",
     "num": 10
@@ -147,11 +147,11 @@ window.MM.fpsc_past_2 = [
     "q": "Convert to indirect speech: The consultant said, \"I have reviewed the case files.\"",
     "opts": [
       "The consultant said that he has reviewed the case files.",
-      "The consultant said that he had reviewed the case files.",
+      "The consultant said he will review the case files.",
       "The consultant says that he reviewed the case files.",
-      "The consultant said he will review the case files."
+      "The consultant said that he had reviewed the case files."
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "When the reporting verb is past tense ('said'), the present perfect ('have reviewed') shifts back to past perfect ('had reviewed') in indirect speech.",
     "section": "English",
     "num": 12
@@ -160,11 +160,11 @@ window.MM.fpsc_past_2 = [
     "q": "Choose the synonym of METICULOUS:",
     "opts": [
       "Careless",
-      "Painstaking",
+      "Indifferent",
       "Hasty",
-      "Indifferent"
+      "Painstaking"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "METICULOUS means showing great attention to detail; very careful and precise, which is closest in meaning to 'Painstaking'.",
     "section": "English",
     "num": 13
@@ -186,11 +186,11 @@ window.MM.fpsc_past_2 = [
     "q": "NURSE : HOSPITAL :: TEACHER : ?",
     "opts": [
       "Book",
-      "School",
+      "Student",
       "Chalk",
-      "Student"
+      "School"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "A nurse's typical workplace is a hospital; similarly, a teacher's typical workplace is a school. The relationship being tested is 'profession : place of work'.",
     "section": "English",
     "num": 15
@@ -199,7 +199,7 @@ window.MM.fpsc_past_2 = [
     "q": "The word 'PROLIFIC' most nearly means:",
     "opts": [
       "Extremely rare",
-      "Producing a large amount or number of something",
+      "Producing a large quantity",
       "Very slow",
       "Completely silent"
     ],
@@ -250,12 +250,12 @@ window.MM.fpsc_past_2 = [
   {
     "q": "The hospital has been running short-staffed _____ the beginning of this year.",
     "opts": [
-      "for",
       "since",
+      "for",
       "from",
       "during"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "'Since' is used with a specific starting point in time ('the beginning of this year') for an action continuing to the present. 'For' would instead be used with a duration, such as 'for six months'.",
     "section": "English",
     "num": 20
@@ -316,11 +316,11 @@ window.MM.fpsc_past_2 = [
     "q": "The normal arterial blood pH is:",
     "opts": [
       "7.25–7.30",
-      "7.35–7.45",
+      "7.20–7.25",
       "7.45–7.55",
-      "7.20–7.25"
+      "7.35–7.45"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Normal arterial blood pH is maintained between 7.35 and 7.45 by buffer systems, the respiratory system, and the kidneys. Values below 7.35 define acidosis and above 7.45 define alkalosis, as detailed in Guyton's Medical Physiology. A and D represent acidaemic values outside the normal range, and C represents alkalaemia.",
     "section": "Basic Sciences",
     "num": 25
@@ -343,7 +343,7 @@ window.MM.fpsc_past_2 = [
     "opts": [
       "Aldosterone",
       "Cortisol",
-      "Antidiuretic hormone (ADH)",
+      "Antidiuretic hormone",
       "Glucagon"
     ],
     "ans": 2,
@@ -356,7 +356,7 @@ window.MM.fpsc_past_2 = [
     "opts": [
       "Reabsorb glucose",
       "Secrete hydrogen ions",
-      "Create the medullary osmotic gradient for urine concentration",
+      "Creates the medullary gradient",
       "Filter plasma proteins"
     ],
     "ans": 2,
@@ -381,7 +381,7 @@ window.MM.fpsc_past_2 = [
     "q": "Which drug is the first-line treatment for Helicobacter pylori eradication?",
     "opts": [
       "Omeprazole alone",
-      "Triple therapy: omeprazole + amoxicillin + clarithromycin",
+      "PPI triple therapy",
       "Metronidazole alone",
       "Tetracycline + metronidazole"
     ],
@@ -406,13 +406,13 @@ window.MM.fpsc_past_2 = [
   {
     "q": "Which drug class is most appropriate for preventing migraine attacks?",
     "opts": [
-      "Opioids",
       "Beta-blockers",
+      "Opioids",
       "Antihistamines",
       "Benzodiazepines"
     ],
-    "ans": 1,
-    "exp": "Beta-blockers such as propranolol and metoprolol are first-line prophylactic agents for migraine, reducing attack frequency by stabilising neuronal excitability and modulating vascular tone. Opioids (A) are not used in migraine prevention and may cause medication overuse headache. Antihistamines (C) may have a limited role in acute attacks but not prophylaxis. Benzodiazepines (D) are not indicated.",
+    "ans": 0,
+    "exp": "Beta-blockers such as propranolol and metoprolol are first-line prophylactic agents for migraine, reducing attack frequency by stabilising neuronal excitability and modulating vascular tone. Opioids (B) are not used in migraine prevention and may cause medication overuse headache. Antihistamines (C) may have a limited role in acute attacks but not prophylaxis. Benzodiazepines (D) are not indicated.",
     "section": "Basic Sciences",
     "num": 32
   },
@@ -446,11 +446,11 @@ window.MM.fpsc_past_2 = [
     "q": "Herd immunity in a population against a communicable disease is primarily achieved through:",
     "opts": [
       "Improved nutrition alone",
-      "A sufficiently high proportion of the population being immunized or immune",
+      "Vector control programmes only",
       "Strict quarantine of all cases",
-      "Vector control programmes only"
+      "Enough of the population being immune"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Herd immunity occurs when a large enough proportion of a population is immune (through vaccination or prior infection) that person-to-person spread becomes unlikely, indirectly protecting those who are not immune, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 35
@@ -459,11 +459,11 @@ window.MM.fpsc_past_2 = [
     "q": "In a screening programme, the proportion of people who test negative and truly do not have the disease is called:",
     "opts": [
       "Sensitivity",
-      "Specificity",
+      "Incidence",
       "Prevalence",
-      "Incidence"
+      "Specificity"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Specificity is the ability of a test to correctly identify those without the disease (true negative rate), complementary to sensitivity, which measures correct identification of those with the disease, a point emphasised in Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 36
@@ -471,12 +471,12 @@ window.MM.fpsc_past_2 = [
   {
     "q": "The health indicator that best reflects the overall standard of maternal healthcare in a country is:",
     "opts": [
-      "Crude birth rate",
       "Maternal mortality ratio",
+      "Crude birth rate",
       "Infant mortality rate",
       "Literacy rate"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Maternal mortality ratio (maternal deaths per 100,000 live births) is the internationally recognized key indicator of the quality and accessibility of maternal healthcare services in a population, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 37
@@ -485,11 +485,11 @@ window.MM.fpsc_past_2 = [
     "q": "Under Pakistan's Expanded Programme on Immunization (EPI), the Pentavalent vaccine protects against five diseases, one of which is:",
     "opts": [
       "Measles",
-      "Hepatitis B",
+      "Tuberculosis",
       "Poliomyelitis",
-      "Tuberculosis"
+      "Hepatitis B"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "The Pentavalent vaccine used in Pakistan's EPI protects against diphtheria, pertussis, tetanus, Hepatitis B, and Haemophilus influenzae type b, given at 6, 10, and 14 weeks of age (Park's Textbook of Preventive and Social Medicine).",
     "section": "Community Medicine",
     "num": 38
@@ -498,11 +498,11 @@ window.MM.fpsc_past_2 = [
     "q": "The 'iceberg phenomenon' in epidemiology refers to:",
     "opts": [
       "The seasonal variation of disease outbreaks",
-      "The fact that the visible (diagnosed) cases of a disease represent only a small fraction of total cases in the community",
       "A method of measuring case fatality rate",
+      "Diagnosed cases are only a fraction of true cases",
       "The geographic clustering of an epidemic"
     ],
-    "ans": 1,
+    "ans": 2,
     "exp": "The iceberg phenomenon illustrates that clinically diagnosed cases (the visible tip) are usually far outnumbered by subclinical, undiagnosed, or carrier cases in the community (the hidden bulk), a key concept in understanding true disease burden, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 39
@@ -511,11 +511,11 @@ window.MM.fpsc_past_2 = [
     "q": "An example of a policy decision reflecting the 'Cure' end of the Care vs Cure spectrum would be:",
     "opts": [
       "Expanding school-based health education programmes",
-      "Increasing funding for advanced oncology treatment centres over rural clinics",
+      "Scaling up community immunization drives",
       "Strengthening antenatal care coverage in rural areas",
-      "Scaling up community immunization drives"
+      "Expanding oncology centres over rural clinics"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Investing heavily in advanced, specialised curative infrastructure (e.g., oncology centres) rather than preventive/primary services is a 'Cure'-oriented decision, as opposed to the 'Care' emphasis on prevention, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Care vs Cure",
     "num": 40
@@ -524,11 +524,11 @@ window.MM.fpsc_past_2 = [
     "q": "Which statement best captures the rationale behind favouring 'Care' over 'Cure' in resource-limited settings?",
     "opts": [
       "Curative treatment is always more effective than prevention",
-      "Preventive care reaches larger populations at a lower cost per person than advanced curative treatment",
+      "Preventive programmes cannot reduce disease burden",
       "Cure-based care requires no infrastructure",
-      "Preventive programmes cannot reduce disease burden"
+      "Preventive care reaches more people per rupee spent"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "In resource-limited health systems, preventive ('Care') interventions typically achieve greater population-level health gains per rupee spent than expensive, individual-focused curative ('Cure') interventions, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Care vs Cure",
     "num": 41
@@ -562,7 +562,7 @@ window.MM.fpsc_past_2 = [
   {
     "q": "The Expanded Programme on Immunization (EPI) in Pakistan operates under the overall policy guidance of the:",
     "opts": [
-      "Ministry of National Health Services, Regulations and Coordination",
+      "Ministry of National Health Services",
       "Ministry of Interior",
       "Ministry of Finance",
       "Higher Education Commission"
@@ -589,11 +589,11 @@ window.MM.fpsc_past_2 = [
     "q": "A major structural challenge in Pakistan's healthcare workforce is the imbalance between:",
     "opts": [
       "Too many nurses and too few doctors",
-      "Doctors concentrated in urban tertiary centres versus a shortage in rural primary care",
+      "No challenge exists in workforce distribution",
       "Excess Community Health Workers with no doctors at all",
-      "No challenge exists in workforce distribution"
+      "Urban doctor surplus versus rural shortage"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "A widely cited structural challenge is that doctors and specialists disproportionately concentrate in urban tertiary-care hospitals, leaving rural primary care facilities understaffed and under-resourced, consistent with Pakistan's National Health Vision 2016-2025.",
     "section": "Major Challenges to Healthcare",
     "num": 46
@@ -601,7 +601,7 @@ window.MM.fpsc_past_2 = [
   {
     "q": "The rising burden of non-communicable diseases (e.g., diabetes, hypertension) alongside persisting communicable diseases in Pakistan is referred to as:",
     "opts": [
-      "Epidemiological transition creating a 'double burden' of disease",
+      "Epidemiological transition ('double burden')",
       "Disease elimination",
       "Herd immunity failure",
       "Health system devolution"
@@ -615,7 +615,7 @@ window.MM.fpsc_past_2 = [
     "q": "Low public-sector spending on health as a percentage of GDP in Pakistan is widely considered a major challenge because it:",
     "opts": [
       "Has no effect on health outcomes",
-      "Forces greater reliance on out-of-pocket payments and widens inequity in access to care",
+      "Raises out-of-pocket spending and widens inequity",
       "Increases the number of government hospitals automatically",
       "Is compensated fully by private insurance coverage"
     ],
@@ -638,15 +638,15 @@ window.MM.fpsc_past_2 = [
     "num": 49
   },
   {
-    "q": "A 45-year-old presents with jaundice, right upper quadrant pain, and fever. Murphy's sign is positive. Diagnosis is:",
+    "q": "A 45-year-old presents with jaundice, right upper quadrant pain, and high-grade fever with rigors. He appears acutely unwell. What is the most likely diagnosis?",
     "opts": [
-      "Hepatitis",
+      "Acute hepatitis",
       "Acute cholecystitis",
-      "Peptic ulcer disease",
-      "Pancreatitis"
+      "Acute cholangitis",
+      "Acute pancreatitis"
     ],
-    "ans": 1,
-    "exp": "The classical Charcot's triad of right upper quadrant pain, fever, and jaundice combined with a positive Murphy's sign (inspiratory arrest on deep palpation beneath the right costal margin) is pathognomonic for acute cholecystitis with possible biliary obstruction. Hepatitis (A) causes jaundice without localised gallbladder signs. Peptic ulcer (C) presents with epigastric pain and Murphy's sign is absent. Pancreatitis (D) causes epigastric pain radiating to the back.",
+    "ans": 2,
+    "exp": "Charcot's triad — right upper quadrant pain, fever (often with rigors), and jaundice — is the classic clinical marker of acute cholangitis, a bacterial infection of the biliary tree usually secondary to obstruction (most commonly choledocholithiasis). The triad has high specificity but is present in only 50-70% of cases; adding hypotension and altered mental status produces Reynolds' pentad, signifying severe suppurative cholangitis requiring urgent biliary decompression. Acute hepatitis (A) causes jaundice without this acute systemic toxicity picture. Acute cholecystitis (B) is the classic trap here: it presents with RUQ pain, fever, and a positive Murphy's sign, but jaundice is not a core feature of simple cholecystitis unless a complication such as Mirizzi syndrome is present. Pancreatitis (D) causes epigastric pain radiating to the back with elevated amylase/lipase, not this triad.",
     "section": "Medicine",
     "num": 50
   },
@@ -666,12 +666,12 @@ window.MM.fpsc_past_2 = [
   {
     "q": "A 50-year-old man with longstanding GERD develops Barrett oesophagus. What is the main concern?",
     "opts": [
-      "Oesophageal stricture",
       "Adenocarcinoma of oesophagus",
+      "Oesophageal stricture",
       "Squamous cell carcinoma",
       "Oesophageal varices"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Barrett oesophagus represents intestinal metaplasia of the lower oesophageal epithelium in response to chronic acid exposure. The principal clinical concern is progression through dysplasia to oesophageal adenocarcinoma, the incidence of which has risen dramatically over recent decades. This drives the need for regular endoscopic surveillance. Squamous cell carcinoma (C) arises in the upper and middle oesophagus and is unrelated to Barrett's.",
     "section": "Medicine",
     "num": 52
@@ -692,13 +692,13 @@ window.MM.fpsc_past_2 = [
   {
     "q": "A young man presents with haematuria, bilateral flank pain, and a family history of renal disease. Ultrasound reveals enlarged kidneys with multiple cysts. Diagnosis is:",
     "opts": [
+      "Polycystic kidney disease (ADPKD)",
       "Renal cell carcinoma",
-      "Autosomal dominant polycystic kidney disease",
       "Nephrotic syndrome",
       "Pyelonephritis"
     ],
-    "ans": 1,
-    "exp": "ADPKD is the most common inherited renal disease, presenting with bilateral multiple renal cysts, haematuria, flank pain, hypertension, and progressive renal failure. The family history is a critical clue. Renal cell carcinoma (A) typically presents as a solitary mass. Nephrotic syndrome (C) presents with proteinuria and oedema. Pyelonephritis (D) is an infectious condition without bilateral cystic disease.",
+    "ans": 0,
+    "exp": "ADPKD is the most common inherited renal disease, presenting with bilateral multiple renal cysts, haematuria, flank pain, hypertension, and progressive renal failure. The family history is a critical clue. Renal cell carcinoma (B) typically presents as a solitary mass. Nephrotic syndrome (C) presents with proteinuria and oedema. Pyelonephritis (D) is an infectious condition without bilateral cystic disease.",
     "section": "Medicine",
     "num": 54
   },
@@ -745,11 +745,11 @@ window.MM.fpsc_past_2 = [
     "q": "A 40-year-old woman presents with fatigue, weight gain, and a diffusely enlarged, non-tender thyroid gland. Anti-TPO antibodies are markedly elevated. What is the most likely diagnosis?",
     "opts": [
       "Graves' disease",
-      "Hashimoto's thyroiditis",
+      "Toxic adenoma",
       "De Quervain's thyroiditis",
-      "Toxic adenoma"
+      "Hashimoto's thyroiditis"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "A diffusely enlarged, non-tender goitre with markedly elevated anti-thyroid peroxidase (anti-TPO) antibodies and hypothyroid symptoms is classic for Hashimoto's (autoimmune) thyroiditis, the most common cause of hypothyroidism in iodine-sufficient areas, a point emphasised in Harrison's Principles of Internal Medicine.",
     "section": "Medicine",
     "num": 58
@@ -758,25 +758,25 @@ window.MM.fpsc_past_2 = [
     "q": "Which investigation is the gold standard for diagnosing acute appendicitis in adults?",
     "opts": [
       "Ultrasound abdomen",
-      "CT scan abdomen and pelvis",
+      "Diagnostic laparoscopy",
       "MRI abdomen",
-      "Diagnostic laparoscopy"
+      "CT scan abdomen and pelvis"
     ],
-    "ans": 1,
-    "exp": "CT scan of the abdomen and pelvis with contrast is the gold standard imaging investigation for acute appendicitis in adults, with sensitivity exceeding 95%. It also identifies alternative diagnoses and complications such as perforation or abscess. Ultrasound (A) is preferred in children and pregnant women due to radiation concerns. Diagnostic laparoscopy (D) is both diagnostic and therapeutic but is not the initial investigation of choice.",
+    "ans": 3,
+    "exp": "CT scan of the abdomen and pelvis with contrast is the gold standard imaging investigation for acute appendicitis in adults, with sensitivity exceeding 95%. It also identifies alternative diagnoses and complications such as perforation or abscess. Ultrasound (A) is preferred in children and pregnant women due to radiation concerns. Diagnostic laparoscopy (B) is both diagnostic and therapeutic but is not the initial investigation of choice.",
     "section": "Surgery",
     "num": 59
   },
   {
     "q": "A patient presents with a pulsatile abdominal mass and hypotension. Most likely diagnosis is:",
     "opts": [
-      "Renal cell carcinoma",
       "Ruptured abdominal aortic aneurysm",
+      "Renal cell carcinoma",
       "Acute pancreatitis",
       "Mesenteric ischaemia"
     ],
-    "ans": 1,
-    "exp": "A pulsatile abdominal mass with haemodynamic instability is ruptured abdominal aortic aneurysm until proven otherwise, a vascular emergency with very high mortality requiring immediate surgical intervention. Renal cell carcinoma (A) presents as a loin mass without pulsatility. Acute pancreatitis (C) causes epigastric pain with elevated amylase. Mesenteric ischaemia (D) causes severe abdominal pain disproportionate to physical findings.",
+    "ans": 0,
+    "exp": "A pulsatile abdominal mass with haemodynamic instability is ruptured abdominal aortic aneurysm until proven otherwise, a vascular emergency with very high mortality requiring immediate surgical intervention. Renal cell carcinoma (B) presents as a loin mass without pulsatility. Acute pancreatitis (C) causes epigastric pain with elevated amylase. Mesenteric ischaemia (D) causes severe abdominal pain disproportionate to physical findings.",
     "section": "Surgery",
     "num": 60
   },
@@ -811,7 +811,7 @@ window.MM.fpsc_past_2 = [
     "opts": [
       "Pulselessness",
       "Pallor",
-      "Pain on passive stretch of muscles",
+      "Pain on passive stretch",
       "Paralysis"
     ],
     "ans": 2,
@@ -849,7 +849,7 @@ window.MM.fpsc_past_2 = [
     "q": "A 55-year-old man presents with a hard, irregular, non-tender testicular mass that does not transilluminate. What is the most appropriate next step?",
     "opts": [
       "Reassurance and follow-up in 6 months",
-      "Scrotal ultrasound and tumour markers (AFP, beta-hCG, LDH)",
+      "Scrotal ultrasound and tumour markers",
       "Antibiotics for presumed epididymitis",
       "Needle aspiration of the mass"
     ],
@@ -874,12 +874,12 @@ window.MM.fpsc_past_2 = [
   {
     "q": "During a routine neck examination, a solitary thyroid nodule is found in a 35-year-old woman with normal thyroid function tests. What is the most appropriate initial investigation?",
     "opts": [
+      "Ultrasound-guided FNAC",
       "Radioactive iodine uptake scan",
-      "Fine needle aspiration cytology (FNAC) guided by ultrasound",
       "Total thyroidectomy",
       "CT scan of the neck"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "For a euthyroid patient with a solitary thyroid nodule, ultrasound-guided FNAC is the investigation of choice to differentiate benign from malignant nodules before deciding on further management (Sabiston Textbook of Surgery).",
     "section": "Surgery",
     "num": 68
@@ -901,11 +901,11 @@ window.MM.fpsc_past_2 = [
     "q": "A 28-year-old woman at 36 weeks gestation presents with painless fresh per-vaginal bleeding. What is the most likely diagnosis?",
     "opts": [
       "Placental abruption",
-      "Placenta praevia",
+      "Bloody show",
       "Vasa praevia",
-      "Bloody show"
+      "Placenta praevia"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Placenta praevia classically presents with painless, unprovoked bright red vaginal bleeding in the third trimester, often recurrent and increasingly heavy with each episode. Ten Teachers highlights the absence of pain as the key differentiating feature from placental abruption (A), which causes painful concealed or revealed bleeding with uterine tenderness. Vasa praevia (C) is rare and catastrophic for the fetus.",
     "section": "O&G",
     "num": 70
@@ -913,13 +913,13 @@ window.MM.fpsc_past_2 = [
   {
     "q": "A G3P2 woman at 38 weeks presents with excessive uterine enlargement greater than dates and difficulty in feeling fetal parts. Ultrasound confirms excess amniotic fluid. What is the diagnosis?",
     "opts": [
-      "Oligohydramnios",
       "Polyhydramnios",
+      "Oligohydramnios",
       "Large for gestational age fetus",
       "Twin pregnancy"
     ],
-    "ans": 1,
-    "exp": "Polyhydramnios is defined as excessive accumulation of amniotic fluid (amniotic fluid index over 24 cm or deepest pool over 8 cm). Clinical clues include uterine size exceeding gestational age and difficulty palpating fetal parts due to fluid excess. Causes include fetal anomalies (oesophageal atresia, anencephaly) and gestational diabetes. Oligohydramnios (A) is the opposite. Twin pregnancy (D) may also cause large-for-dates but fetal parts remain palpable.",
+    "ans": 0,
+    "exp": "Polyhydramnios is defined as excessive accumulation of amniotic fluid (amniotic fluid index over 24 cm or deepest pool over 8 cm). Clinical clues include uterine size exceeding gestational age and difficulty palpating fetal parts due to fluid excess. Causes include fetal anomalies (oesophageal atresia, anencephaly) and gestational diabetes. Oligohydramnios (B) is the opposite. Twin pregnancy (D) may also cause large-for-dates but fetal parts remain palpable.",
     "section": "O&G",
     "num": 71
   },
@@ -1005,11 +1005,11 @@ window.MM.fpsc_past_2 = [
     "q": "A patient presents with unilateral conductive hearing loss, a bluish tinge behind an intact tympanic membrane, and pulsatile tinnitus. Most likely diagnosis is:",
     "opts": [
       "Cholesteatoma",
-      "Glomus tumour",
+      "Serous otitis media",
       "Otosclerosis",
-      "Serous otitis media"
+      "Glomus tumour"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "A glomus tympanicum or glomus jugulare tumour is a highly vascular paraganglioma that appears as a reddish-blue (flamingo-pink) pulsatile mass behind the tympanic membrane, causing conductive hearing loss and pulsatile tinnitus. The clinical picture is pathognomonic. Cholesteatoma (A) causes conductive loss but appears white/pearly. Otosclerosis (C) shows normal tympanic membrane without discolouration.",
     "section": "ENT",
     "num": 78
@@ -1043,26 +1043,26 @@ window.MM.fpsc_past_2 = [
   {
     "q": "In a patient presenting with sudden-onset unilateral sensorineural hearing loss, tinnitus, and vertigo, the most urgent investigation is:",
     "opts": [
+      "MRI of internal auditory meati",
       "Pure tone audiometry",
-      "MRI with gadolinium of the internal auditory meati",
       "CT scan of temporal bone",
       "Tympanometry"
     ],
-    "ans": 1,
-    "exp": "The combination of unilateral SNHL, tinnitus, and vertigo raises suspicion for a vestibular schwannoma (acoustic neuroma), requiring gadolinium-enhanced MRI of the internal auditory meati for definitive evaluation. This is the gold standard investigation for this presentation. Pure tone audiometry (A) confirms the hearing loss but does not identify the cause. CT (C) is poor for soft tissue masses in the posterior fossa.",
+    "ans": 0,
+    "exp": "The combination of unilateral SNHL, tinnitus, and vertigo raises suspicion for a vestibular schwannoma (acoustic neuroma), requiring gadolinium-enhanced MRI of the internal auditory meati for definitive evaluation. This is the gold standard investigation for this presentation. Pure tone audiometry (B) confirms the hearing loss but does not identify the cause. CT (C) is poor for soft tissue masses in the posterior fossa.",
     "section": "ENT",
     "num": 81
   },
   {
     "q": "The most appropriate emergency treatment for a patient with airway compromise from Ludwig angina is:",
     "opts": [
+      "Drainage plus airway management",
       "IV antibiotics alone",
-      "Incision and drainage plus airway management",
       "Tracheostomy alone",
       "Aspiration of pus only"
     ],
-    "ans": 1,
-    "exp": "Ludwig angina is a rapidly progressing bilateral submandibular space infection that threatens the airway through floor-of-mouth elevation and tongue displacement. Management requires concurrent airway protection (intubation or surgical airway) and surgical incision and drainage combined with high-dose IV antibiotics. Antibiotics alone (A) are insufficient given the rapid progression. Tracheostomy alone (C) does not address the infection.",
+    "ans": 0,
+    "exp": "Ludwig angina is a rapidly progressing bilateral submandibular space infection that threatens the airway through floor-of-mouth elevation and tongue displacement. Management requires concurrent airway protection (intubation or surgical airway) and surgical incision and drainage combined with high-dose IV antibiotics. Antibiotics alone (B) are insufficient given the rapid progression. Tracheostomy alone (C) does not address the infection.",
     "section": "ENT",
     "num": 82
   },
@@ -1070,12 +1070,12 @@ window.MM.fpsc_past_2 = [
     "q": "A 70-year-old patient presents with sudden painless loss of central vision. Fundoscopy reveals a cherry-red spot at the macula. Diagnosis is:",
     "opts": [
       "Retinal detachment",
-      "Central retinal artery occlusion",
+      "Age-related macular degeneration",
       "Vitreous haemorrhage",
-      "Age-related macular degeneration"
+      "Central retinal artery occlusion"
     ],
-    "ans": 1,
-    "exp": "A cherry-red spot at the macula is pathognomonic of central retinal artery occlusion. It occurs because infarcted, pale retina surrounds the fovea (supplied by choroidal circulation via the intact foveal reflex), creating the striking appearance. This is an ocular emergency requiring immediate management. Retinal detachment (A) causes a 'curtain' visual field defect. AMD (D) causes gradual central vision loss without this acute fundoscopic appearance.",
+    "ans": 3,
+    "exp": "A cherry-red spot at the macula is pathognomonic of central retinal artery occlusion. It occurs because infarcted, pale retina surrounds the fovea (supplied by choroidal circulation via the intact foveal reflex), creating the striking appearance. This is an ocular emergency requiring immediate management. Retinal detachment (A) causes a 'curtain' visual field defect. AMD (B) causes gradual central vision loss without this acute fundoscopic appearance.",
     "section": "Ophthalmology",
     "num": 83
   },
@@ -1083,25 +1083,25 @@ window.MM.fpsc_past_2 = [
     "q": "A 25-year-old patient with uveitis presents with pain, photophobia, and circumcorneal injection. Slit-lamp reveals keratic precipitates. Diagnosis is:",
     "opts": [
       "Conjunctivitis",
-      "Anterior uveitis",
+      "Episcleritis",
       "Glaucoma",
-      "Episcleritis"
+      "Anterior uveitis"
     ],
-    "ans": 1,
-    "exp": "Anterior uveitis (iritis/iridocyclitis) presents with circumcorneal (ciliary) injection, pain, photophobia, and keratic precipitates (inflammatory cells deposited on the corneal endothelium). It is associated with autoimmune conditions including HLA-B27 spondyloarthropathies. Conjunctivitis (A) causes diffuse injection without keratic precipitates. Glaucoma (C) causes elevated IOP and disc cupping. Episcleritis (D) causes sectoral redness without anterior chamber inflammation.",
+    "ans": 3,
+    "exp": "Anterior uveitis (iritis/iridocyclitis) presents with circumcorneal (ciliary) injection, pain, photophobia, and keratic precipitates (inflammatory cells deposited on the corneal endothelium). It is associated with autoimmune conditions including HLA-B27 spondyloarthropathies. Conjunctivitis (A) causes diffuse injection without keratic precipitates. Glaucoma (C) causes elevated IOP and disc cupping. Episcleritis (B) causes sectoral redness without anterior chamber inflammation.",
     "section": "Ophthalmology",
     "num": 84
   },
   {
     "q": "A child presents with a white reflex in the pupil (leukocoria). The most important diagnosis to exclude is:",
     "opts": [
-      "Cataract",
       "Retinoblastoma",
+      "Cataract",
       "Corneal opacity",
       "Vitreous haemorrhage"
     ],
-    "ans": 1,
-    "exp": "Leukocoria (white pupillary reflex) in a child must be investigated urgently to exclude retinoblastoma, the most common intraocular malignancy of childhood, which can be life-threatening if not treated early. It is most often detected through an abnormal red reflex photograph or parents noticing a white reflex in flash photographs. While cataract (A) and corneal opacity (C) also cause leukocoria, they are not life-threatening and must be differentiated from retinoblastoma.",
+    "ans": 0,
+    "exp": "Leukocoria (white pupillary reflex) in a child must be investigated urgently to exclude retinoblastoma, the most common intraocular malignancy of childhood, which can be life-threatening if not treated early. It is most often detected through an abnormal red reflex photograph or parents noticing a white reflex in flash photographs. While cataract (B) and corneal opacity (C) also cause leukocoria, they are not life-threatening and must be differentiated from retinoblastoma.",
     "section": "Ophthalmology",
     "num": 85
   },
@@ -1109,11 +1109,11 @@ window.MM.fpsc_past_2 = [
     "q": "The drug of first choice for primary open-angle glaucoma is:",
     "opts": [
       "Pilocarpine",
-      "Timolol",
+      "Brimonidine",
       "Atropine",
-      "Brimonidine"
+      "Timolol"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Timolol, a non-selective beta-blocker, reduces aqueous humour production and is a first-line topical agent for lowering intraocular pressure in primary open-angle glaucoma. Prostaglandin analogues such as latanoprost are increasingly preferred first-line agents due to once-daily dosing and superior IOP reduction. Pilocarpine (A) is a cholinergic miotic used in angle-closure glaucoma. Atropine (C) is contraindicated in glaucoma as it raises IOP.",
     "section": "Ophthalmology",
     "num": 86
@@ -1123,7 +1123,7 @@ window.MM.fpsc_past_2 = [
     "opts": [
       "Microaneurysms",
       "Hard exudates",
-      "New vessel formation (neovascularisation)",
+      "Neovascularisation",
       "Dot haemorrhages"
     ],
     "ans": 2,
@@ -1135,11 +1135,11 @@ window.MM.fpsc_past_2 = [
     "q": "Normal intraocular pressure (IOP) range is:",
     "opts": [
       "5–10 mmHg",
-      "10–21 mmHg",
+      "25–35 mmHg",
       "22–30 mmHg",
-      "25–35 mmHg"
+      "10–21 mmHg"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Normal IOP is maintained between 10 and 21 mmHg by the balance between aqueous humour production and drainage through the trabecular meshwork. Values consistently above 21 mmHg raise suspicion for glaucoma, though some individuals with normal-tension glaucoma develop optic nerve damage at normal pressures. A (5–10 mmHg) suggests hypotony, and C and D represent elevated pressure.",
     "section": "Ophthalmology",
     "num": 88
@@ -1147,13 +1147,13 @@ window.MM.fpsc_past_2 = [
   {
     "q": "A patient presents with sudden onset of floaters and flashes of light, followed by a dense visual field defect described as a descending curtain. Diagnosis is:",
     "opts": [
-      "Vitreous haemorrhage",
       "Retinal detachment",
+      "Vitreous haemorrhage",
       "Central retinal vein occlusion",
       "Anterior uveitis"
     ],
-    "ans": 1,
-    "exp": "The classic presentation of rhegmatogenous retinal detachment is photopsia (flashes due to vitreous traction on the retina) followed by floaters (from vitreous haemorrhage or pigment cells) and ultimately a shadow or curtain in the visual field as the detachment progresses. This is an ophthalmic emergency requiring urgent surgical reattachment. Vitreous haemorrhage (A) causes floaters without a field defect.",
+    "ans": 0,
+    "exp": "The classic presentation of rhegmatogenous retinal detachment is photopsia (flashes due to vitreous traction on the retina) followed by floaters (from vitreous haemorrhage or pigment cells) and ultimately a shadow or curtain in the visual field as the detachment progresses. This is an ophthalmic emergency requiring urgent surgical reattachment. Vitreous haemorrhage (B) causes floaters without a field defect.",
     "section": "Ophthalmology",
     "num": 89
   },
@@ -1161,12 +1161,12 @@ window.MM.fpsc_past_2 = [
     "q": "A patient presents with progressive dyspnoea and a chest X-ray showing bilateral hilar lymphadenopathy with pulmonary infiltrates. Serum ACE is elevated. Most likely diagnosis is:",
     "opts": [
       "Lymphoma",
-      "Sarcoidosis",
+      "Silicosis",
       "Pulmonary tuberculosis",
-      "Silicosis"
+      "Sarcoidosis"
     ],
-    "ans": 1,
-    "exp": "Sarcoidosis classically presents in young to middle-aged adults with bilateral hilar lymphadenopathy, pulmonary infiltrates, elevated serum ACE, and a variety of systemic features. It is a non-caseating granulomatous disease of unknown aetiology. Elevated ACE reflects granuloma burden. Lymphoma (A) rarely causes bilateral symmetrical hilar adenopathy. TB (C) typically causes unilateral or asymmetric hilar changes. Silicosis (D) shows 'eggshell' calcification.",
+    "ans": 3,
+    "exp": "Sarcoidosis classically presents in young to middle-aged adults with bilateral hilar lymphadenopathy, pulmonary infiltrates, elevated serum ACE, and a variety of systemic features. It is a non-caseating granulomatous disease of unknown aetiology. Elevated ACE reflects granuloma burden. Lymphoma (A) rarely causes bilateral symmetrical hilar adenopathy. TB (C) typically causes unilateral or asymmetric hilar changes. Silicosis (B) shows 'eggshell' calcification.",
     "section": "Pulmonology",
     "num": 90
   },
@@ -1175,7 +1175,7 @@ window.MM.fpsc_past_2 = [
     "opts": [
       "Chest X-ray",
       "ECG",
-      "CT pulmonary angiography (CTPA)",
+      "CT pulmonary angiography",
       "D-dimer"
     ],
     "ans": 2,
@@ -1186,13 +1186,13 @@ window.MM.fpsc_past_2 = [
   {
     "q": "Which of the following is the most common cause of pleural effusion in Pakistan?",
     "opts": [
-      "Congestive cardiac failure",
       "Tuberculosis",
+      "Congestive cardiac failure",
       "Malignancy",
       "Liver cirrhosis"
     ],
-    "ans": 1,
-    "exp": "In Pakistan and other high-burden countries, tuberculosis is the most common cause of pleural effusion, presenting with an exudative lymphocytic effusion with elevated ADA (adenosine deaminase). Globally, congestive cardiac failure (A) and malignancy (C) are leading causes, but in endemic regions TB predominates. High ADA levels in pleural fluid strongly support the diagnosis without the need for biopsy.",
+    "ans": 0,
+    "exp": "In Pakistan and other high-burden countries, tuberculosis is the most common cause of pleural effusion, presenting with an exudative lymphocytic effusion with elevated ADA (adenosine deaminase). Globally, congestive cardiac failure (B) and malignancy (C) are leading causes, but in endemic regions TB predominates. High ADA levels in pleural fluid strongly support the diagnosis without the need for biopsy.",
     "section": "Pulmonology",
     "num": 92
   },
@@ -1264,13 +1264,13 @@ window.MM.fpsc_past_2 = [
   {
     "q": "A 45-year-old man presents with elevated mood, decreased need for sleep, grandiosity, and excessive spending for one week, without significant impairment. He has no history of depression. What is the most likely diagnosis?",
     "opts": [
-      "Cyclothymia",
       "Hypomania",
+      "Cyclothymia",
       "Mania",
       "Bipolar I disorder"
     ],
-    "ans": 1,
-    "exp": "Hypomania is a distinct, elevated mood episode lasting at least 4 days that does not cause marked functional impairment or require hospitalisation, distinguishing it from mania (C), which is more severe and may include psychosis. The absence of prior depressive episodes and the relatively brief duration with preserved function points to hypomania. Cyclothymia (A) involves chronic fluctuations over 2 years. Bipolar I (D) requires at least one full manic episode.",
+    "ans": 0,
+    "exp": "Hypomania is a distinct, elevated mood episode lasting at least 4 days that does not cause marked functional impairment or require hospitalisation, distinguishing it from mania (C), which is more severe and may include psychosis. The absence of prior depressive episodes and the relatively brief duration with preserved function points to hypomania. Cyclothymia (B) involves chronic fluctuations over 2 years. Bipolar I (D) requires at least one full manic episode.",
     "section": "Psychiatry",
     "num": 98
   },
