@@ -2814,7 +2814,7 @@ function openProgModal(code){
   document.getElementById('pmd-time-val').textContent = pmdFormatTime(r.time_spent_seconds||0);
 
   // Subject bars
-  document.getElementById('pmd-subject-bars').innerHTML = _pmdBuildAllBars(subj, answers, isNTS, isFCPS, isMock, r.created_at);
+  document.getElementById('pmd-subject-bars').innerHTML = _pmdBuildAllBars(subj, answers, isNTS, isFCPS, isMock, r.created_at) + _pmdBuildFpscPastSection(subj, r.fpsc_past_data);
 
   // WA message
   document.querySelectorAll('.pmd-wa-tab').forEach(t=>t.classList.remove('active'));
@@ -2928,6 +2928,30 @@ function _pmdBuildAllBars(subj, answers, isNTS, isFCPS, isMock, createdAt){
   }
 
   return rows || '<div style="font-size:12px;color:var(--text);">No progress data yet.</div>';
+}
+
+// FPSC-exclusive: Marks in Past & Mocks, admin view. Shows each paper's LATEST
+// attempt score plus total attempt count, so admin can judge things like
+// "took this 3 times and still scored low" — not just the single latest score
+// the subscriber's own dashboard shows. Reads fpsc_past_data synced from the
+// subscriber's device; no Supabase schema change needed, column already live.
+function _pmdBuildFpscPastSection(subj, fpscPastDataJson){
+  if(subj !== 'fpsc_mo_wmo') return '';
+  let allAttempts = {};
+  try{ allAttempts = JSON.parse(fpscPastDataJson||'{}')||{}; }catch(e){}
+  const rows = [];
+  for(let n=1;n<=10;n++){
+    const attempts = allAttempts[n] || [];
+    if(attempts.length){
+      const latest = attempts[attempts.length-1];
+      const color = latest.marks>=70?'#2ECC71':latest.marks>=50?'var(--gold)':'var(--red)';
+      const attemptLabel = attempts.length===1 ? '1 attempt' : attempts.length+' attempts';
+      rows.push(`<div class="pmd-spr-row"><div class="pmd-spr-label">📄 Paper ${n}</div><div style="flex:1;"></div><div style="font-size:11px;color:var(--text);opacity:0.7;margin-right:10px;">${attemptLabel}</div><div style="font-size:13px;font-weight:700;color:${color};min-width:60px;text-align:right;">${latest.marks}/100</div></div>`);
+    } else {
+      rows.push(`<div class="pmd-spr-row"><div class="pmd-spr-label">📄 Paper ${n}</div><div style="flex:1;"></div><div style="font-size:12px;color:var(--text);opacity:0.5;">Not attempted</div></div>`);
+    }
+  }
+  return `<div class="pmd-spr-section" style="color:var(--gold)">📝 Marks in Past & Mocks</div>` + rows.join('');
 }
 
 // ── WA message composer ──────────────────────────────────────

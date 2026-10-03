@@ -11270,7 +11270,28 @@ function renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWM
         <div class="spr-count">${done}/${cat.total}</div>
       </div>`;
     }).join('');
-    wrap.innerHTML = _sectionHeader(`📊 ${isCTS?'CTS':isFPSC?'FPSC':isMOWMO?'MO/WMO':'NTS'} MO/WMO — Progress by Category`,'var(--gold)') + rows;
+    // FPSC-exclusive: Marks in Past & Mocks — shows each paper's LATEST attempt
+    // score (plain text, colour-coded), not a progress bar, since a test score
+    // isn't "how much of the bank is studied" and a bar would misleadingly
+    // imply that. Read from local attempt history (already synced to Supabase
+    // separately for admin's own view). NTS/CTS/MOWMO don't get this section —
+    // Past & Mocks is FPSC-only for now.
+    let fpscPastRows = '';
+    if(isFPSC){
+      const scoreRows = [];
+      for(let n=1;n<=10;n++){
+        const attempts = _fpscPastGetAttempts(n);
+        if(attempts.length){
+          const latest = attempts[attempts.length-1];
+          const color = latest.marks>=70?'#2ECC71':latest.marks>=50?'var(--gold)':'var(--red)';
+          scoreRows.push(`<div class="subj-progress-row"><div class="spr-label">📄 Paper ${n}</div><div style="flex:1;"></div><div style="font-size:13px;font-weight:700;color:${color};min-width:70px;text-align:right;">${latest.marks}/100</div></div>`);
+        } else {
+          scoreRows.push(`<div class="subj-progress-row"><div class="spr-label">📄 Paper ${n}</div><div style="flex:1;"></div><div style="font-size:12px;color:var(--text);opacity:0.5;min-width:70px;text-align:right;">Not attempted</div></div>`);
+        }
+      }
+      fpscPastRows = _sectionHeader('📝 Marks in Past & Mocks','var(--gold)') + scoreRows.join('');
+    }
+    wrap.innerHTML = _sectionHeader(`📊 ${isCTS?'CTS':isFPSC?'FPSC':isMOWMO?'MO/WMO':'NTS'} MO/WMO — Progress by Category`,'var(--gold)') + rows + fpscPastRows;
     return;
   }
 
