@@ -44,11 +44,11 @@ window.MM.fpsc_past_3 = [
     "opts": [
       "Unambiguous",
       "Definitive",
-      "Ambiguous",
-      "Conclusive"
+      "Conclusive",
+      "Ambiguous"
     ],
-    "ans": 2,
-    "exp": "EQUIVOCAL means open to more than one interpretation, uncertain or ambiguous. AMBIGUOUS is its direct synonym. UNAMBIGUOUS (A) and DEFINITIVE (B) are antonyms, describing clear and unmistakable meaning. CONCLUSIVE (D) means decisive and beyond doubt, which is also the opposite of equivocal.",
+    "ans": 3,
+    "exp": "EQUIVOCAL means open to more than one interpretation, uncertain or ambiguous. AMBIGUOUS is its direct synonym. UNAMBIGUOUS (A) and DEFINITIVE (B) are antonyms, describing clear and unmistakable meaning. CONCLUSIVE (C) means decisive and beyond doubt, which is also the opposite of equivocal.",
     "section": "English",
     "num": 4
   },
@@ -68,13 +68,13 @@ window.MM.fpsc_past_3 = [
   {
     "q": "The government launched a new initiative to _____ the spread of infectious diseases in rural areas.",
     "opts": [
-      "expedite",
       "curtail",
+      "expedite",
       "perpetuate",
       "amplify"
     ],
-    "ans": 1,
-    "exp": "The phrase 'launched a new initiative' implies positive, corrective action against disease spread. CURTAIL means to reduce or limit, making it the only contextually coherent choice for controlling disease. EXPEDITE (A) means to speed up, which would worsen spread. PERPETUATE (C) means to cause something to continue indefinitely, and AMPLIFY (D) means to increase, both of which are opposite to the intended meaning.",
+    "ans": 0,
+    "exp": "The phrase 'launched a new initiative' implies positive, corrective action against disease spread. CURTAIL means to reduce or limit, making it the only contextually coherent choice for controlling disease. EXPEDITE (B) means to speed up, which would worsen spread. PERPETUATE (C) means to cause something to continue indefinitely, and AMPLIFY (D) means to increase, both of which are opposite to the intended meaning.",
     "section": "English",
     "num": 6
   },
@@ -172,12 +172,12 @@ window.MM.fpsc_past_3 = [
   {
     "q": "SURGEON : SCALPEL :: ARTIST : ?",
     "opts": [
-      "Gallery",
       "Paintbrush",
+      "Gallery",
       "Canvas",
       "Museum"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "A surgeon's characteristic instrument is a scalpel; similarly, an artist's characteristic instrument is a paintbrush. The relationship tested is 'profession : primary tool'.",
     "section": "English",
     "num": 14
@@ -185,12 +185,12 @@ window.MM.fpsc_past_3 = [
   {
     "q": "The word 'INADVERTENT' most nearly means:",
     "opts": [
-      "Deliberate",
       "Unintentional",
+      "Deliberate",
       "Aggressive",
       "Frequent"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "INADVERTENT describes an action that is accidental or unintentional, done without conscious thought or intent.",
     "section": "English",
     "num": 15
@@ -198,12 +198,12 @@ window.MM.fpsc_past_3 = [
   {
     "q": "Identify the grammatically correct sentence:",
     "opts": [
-      "If I was you, I would consult a specialist.",
       "If I were you, I would consult a specialist.",
+      "If I was you, I would consult a specialist.",
       "If I am you, I would consult a specialist.",
       "If I would be you, I would consult a specialist."
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "In hypothetical/unreal conditional sentences, 'were' is used for all subjects (not 'was'), making 'If I were you' the grammatically correct subjunctive form.",
     "section": "English",
     "num": 16
@@ -224,12 +224,12 @@ window.MM.fpsc_past_3 = [
   {
     "q": "Choose the one word for: 'A place where books are kept for lending or reference.'",
     "opts": [
-      "Archive",
       "Library",
+      "Archive",
       "Bookstore",
       "Museum"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "A LIBRARY is a building or room containing collections of books and other materials kept for reading, reference, or lending.",
     "section": "English",
     "num": 18
@@ -250,12 +250,12 @@ window.MM.fpsc_past_3 = [
   {
     "q": "Choose the correctly punctuated sentence:",
     "opts": [
-      "The results, however were inconclusive.",
       "The results, however, were inconclusive.",
+      "The results, however were inconclusive.",
       "The results however, were inconclusive.",
       "The results however were, inconclusive."
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "A parenthetical adverb like 'however' placed mid-sentence must be set off by commas on both sides: 'The results, however, were inconclusive.'",
     "section": "English",
     "num": 20
@@ -303,12 +303,12 @@ window.MM.fpsc_past_3 = [
     "q": "The transpyloric plane (L1) is used to identify which of the following structures?",
     "opts": [
       "Bifurcation of the aorta",
-      "Origin of the superior mesenteric artery and hilum of kidneys",
+      "Hepatic flexure of colon",
       "Ileocaecal junction",
-      "Hepatic flexure of colon"
+      "Origin of the SMA and renal hila"
     ],
-    "ans": 1,
-    "exp": "The transpyloric plane lies at the level of L1, midway between the jugular notch and pubic symphysis. Key structures at this plane include: the pylorus, fundus of gallbladder, neck of pancreas, origin of the superior mesenteric artery, hilum of kidneys, and termination of the spinal cord (conus medullaris). Aortic bifurcation (A) is at L4. The ileocaecal junction (C) and hepatic flexure (D) are lower and more variable.",
+    "ans": 3,
+    "exp": "The transpyloric plane lies at the level of L1, midway between the jugular notch and pubic symphysis. Key structures at this plane include: the pylorus, fundus of gallbladder, neck of pancreas, origin of the superior mesenteric artery, hilum of kidneys, and termination of the spinal cord (conus medullaris). Aortic bifurcation (A) is at L4. The ileocaecal junction (C) and hepatic flexure (B) are lower and more variable.",
     "section": "Basic Sciences",
     "num": 24
   },
@@ -317,7 +317,7 @@ window.MM.fpsc_past_3 = [
     "opts": [
       "Stroke volume decreases as end-diastolic volume increases",
       "Cardiac output is independent of venous return",
-      "The force of myocardial contraction increases with greater ventricular filling",
+      "Contraction force increases with greater filling",
       "Heart rate is the primary determinant of stroke volume"
     ],
     "ans": 2,
@@ -382,24 +382,24 @@ window.MM.fpsc_past_3 = [
     "opts": [
       "Erythromycin",
       "Ciprofloxacin",
-      "Vancomycin",
-      "Rifampicin"
+      "Rifampicin",
+      "Vancomycin"
     ],
-    "ans": 2,
-    "exp": "Vancomycin is a glycopeptide antibiotic that inhibits bacterial cell wall synthesis by binding to the D-Ala-D-Ala terminus of peptidoglycan precursors, physically blocking transglycosylation. This mechanism is distinct from beta-lactam antibiotics and confers activity against MRSA. Erythromycin (A) inhibits the 50S ribosomal subunit. Ciprofloxacin (B) inhibits DNA gyrase (topoisomerase II). Rifampicin (D) inhibits bacterial RNA polymerase.",
+    "ans": 3,
+    "exp": "Vancomycin is a glycopeptide antibiotic that inhibits bacterial cell wall synthesis by binding to the D-Ala-D-Ala terminus of peptidoglycan precursors, physically blocking transglycosylation. This mechanism is distinct from beta-lactam antibiotics and confers activity against MRSA. Erythromycin (A) inhibits the 50S ribosomal subunit. Ciprofloxacin (B) inhibits DNA gyrase (topoisomerase II). Rifampicin (C) inhibits bacterial RNA polymerase.",
     "section": "Basic Sciences",
     "num": 30
   },
   {
     "q": "Metformin's primary mechanism of action in type 2 diabetes is:",
     "opts": [
-      "Stimulating pancreatic beta cell insulin secretion",
       "Inhibiting hepatic gluconeogenesis via AMPK activation",
+      "Stimulating pancreatic beta cell insulin secretion",
       "Increasing renal glucose excretion",
       "Blocking intestinal glucose absorption"
     ],
-    "ans": 1,
-    "exp": "Metformin primarily activates AMPK (AMP-activated protein kinase) in hepatocytes, which inhibits hepatic gluconeogenesis and reduces fasting glucose. Katzung's Basic and Clinical Pharmacology presents this hepatic mechanism as the dominant action, while peripheral insulin sensitisation and reduced intestinal absorption contribute secondarily. It does not stimulate insulin secretion (A), so it does not cause hypoglycaemia when used alone. Renal glucose excretion (C) is the mechanism of SGLT-2 inhibitors. Intestinal alpha-glucosidase inhibition is the mechanism of acarbose (D).",
+    "ans": 0,
+    "exp": "Metformin primarily activates AMPK (AMP-activated protein kinase) in hepatocytes, which inhibits hepatic gluconeogenesis and reduces fasting glucose. Katzung's Basic and Clinical Pharmacology presents this hepatic mechanism as the dominant action, while peripheral insulin sensitisation and reduced intestinal absorption contribute secondarily. It does not stimulate insulin secretion (B), so it does not cause hypoglycaemia when used alone. Renal glucose excretion (C) is the mechanism of SGLT-2 inhibitors. Intestinal alpha-glucosidase inhibition is the mechanism of acarbose (D).",
     "section": "Basic Sciences",
     "num": 31
   },
@@ -408,7 +408,7 @@ window.MM.fpsc_past_3 = [
     "opts": [
       "H2 receptor blockade",
       "Antacid neutralisation of gastric acid",
-      "Irreversible inhibition of the H+/K+ ATPase proton pump",
+      "Irreversible H+/K+ ATPase inhibition",
       "Prostaglandin analogue cytoprotection"
     ],
     "ans": 2,
@@ -421,11 +421,11 @@ window.MM.fpsc_past_3 = [
     "opts": [
       "Morphine: NMDA receptor antagonist",
       "Atropine: beta-1 adrenergic blocker",
-      "Digoxin: inhibits Na+/K+ ATPase in cardiac myocytes",
-      "Salbutamol: alpha-1 adrenergic agonist"
+      "Salbutamol: alpha-1 adrenergic agonist",
+      "Digoxin: inhibits Na+/K+ ATPase in cardiac myocytes"
     ],
-    "ans": 2,
-    "exp": "Digoxin inhibits the Na+/K+ ATPase pump in cardiac myocytes, increasing intracellular Na+ which reduces Na+/Ca2+ exchanger activity, thereby increasing intracellular Ca2+ and enhancing myocardial contractility (positive inotropy). Morphine (A) acts on mu-opioid receptors, not NMDA. Atropine (B) is a muscarinic (not beta-1) receptor antagonist. Salbutamol (D) is a selective beta-2 adrenergic agonist used in asthma.",
+    "ans": 3,
+    "exp": "Digoxin inhibits the Na+/K+ ATPase pump in cardiac myocytes, increasing intracellular Na+ which reduces Na+/Ca2+ exchanger activity, thereby increasing intracellular Ca2+ and enhancing myocardial contractility (positive inotropy). Morphine (A) acts on mu-opioid receptors, not NMDA. Atropine (B) is a muscarinic (not beta-1) receptor antagonist. Salbutamol (C) is a selective beta-2 adrenergic agonist used in asthma.",
     "section": "Basic Sciences",
     "num": 33
   },
@@ -458,12 +458,12 @@ window.MM.fpsc_past_3 = [
   {
     "q": "In demography, the term 'dependency ratio' refers to the ratio of:",
     "opts": [
+      "Dependents to working-age population ratio",
       "Males to females in a population",
-      "The economically dependent population (under 15 and over 64) to the working-age population",
       "Urban to rural population",
       "Literate to illiterate population"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "The dependency ratio compares the number of dependents (children and the elderly, typically under 15 and 65+) to the working-age population (15–64), reflecting the economic burden on productive age groups, consistent with Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 36
@@ -472,11 +472,11 @@ window.MM.fpsc_past_3 = [
     "q": "Vertical health programmes, as opposed to horizontal (integrated) programmes, are characterized by:",
     "opts": [
       "Being fully integrated into general health services",
-      "Targeting a single specific disease with dedicated staff and resources",
+      "Requiring no central coordination",
       "Focusing on multiple diseases simultaneously through general health workers",
-      "Requiring no central coordination"
+      "Targeting a single specific disease with dedicated staff and resources"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Vertical programmes are disease-specific initiatives (e.g., a dedicated TB control programme) run with their own dedicated staff, funding and management, as opposed to horizontal programmes integrated into general health services, as detailed in Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 37
@@ -484,12 +484,12 @@ window.MM.fpsc_past_3 = [
   {
     "q": "Which of the following is an example of secondary prevention?",
     "opts": [
+      "Mammographic screening in asymptomatic women",
       "Vaccination against measles",
-      "Screening for breast cancer via mammography in asymptomatic women",
       "Rehabilitation after a stroke",
       "Health education on smoking cessation"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Secondary prevention aims to detect disease early through screening (e.g., mammography) before symptoms appear, enabling earlier treatment. Vaccination and health education are primary prevention; rehabilitation is tertiary prevention, consistent with Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 38
@@ -497,12 +497,12 @@ window.MM.fpsc_past_3 = [
   {
     "q": "The most commonly used measure to describe the age structure of a population, useful for health planning, is the:",
     "opts": [
-      "Sex ratio",
       "Population pyramid",
+      "Sex ratio",
       "Literacy rate",
       "Gross domestic product"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "A population pyramid graphically displays the age and sex distribution of a population, helping planners anticipate future healthcare needs such as maternal, child, or geriatric services, consistent with Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 39
@@ -524,11 +524,11 @@ window.MM.fpsc_past_3 = [
     "q": "A criticism often raised against health systems that overemphasize 'Cure' is that they:",
     "opts": [
       "Reduce the total cost of healthcare delivery",
-      "Divert limited resources toward expensive treatment for the few, at the expense of affordable prevention for the many",
+      "Require no trained specialists",
       "Automatically reduce disease incidence",
-      "Require no trained specialists"
+      "Diverts resources from prevention to expensive treatment"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "An excessive focus on curative ('Cure') services tends to consume a disproportionate share of limited health budgets on advanced treatment for relatively few patients, leaving less funding available for cost-effective preventive ('Care') services that could benefit far larger populations, as detailed in Park's Textbook of Preventive and Social Medicine.",
     "section": "Care vs Cure",
     "num": 41
@@ -550,7 +550,7 @@ window.MM.fpsc_past_3 = [
     "q": "The National Health Policy of Pakistan, revised periodically, primarily aims to:",
     "opts": [
       "Set the exchange rate for medical imports",
-      "Provide a strategic framework and priorities for the country's health sector",
+      "Provide a strategic framework for the health sector",
       "Regulate university admission criteria",
       "Determine judicial appointments"
     ],
@@ -562,12 +562,12 @@ window.MM.fpsc_past_3 = [
   {
     "q": "Provincial Health Departments in Pakistan gained primary responsibility for most public health service delivery following:",
     "opts": [
-      "The 1973 Constitution's original text",
       "The 18th Constitutional Amendment (2010)",
+      "The 1973 Constitution's original text",
       "The Alma-Ata Declaration (1978)",
       "The creation of Pakistan in 1947"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "The 18th Amendment devolved health as a subject to the provinces in 2010, making Provincial Health Departments primarily responsible for planning and delivering most public health services, as detailed in Pakistan's National Health Vision 2016-2025.",
     "section": "Health Policies of Govt",
     "num": 44
@@ -575,7 +575,7 @@ window.MM.fpsc_past_3 = [
   {
     "q": "A key stated objective of Pakistan's National Health Vision 2016–2025 is to:",
     "opts": [
-      "Achieve Universal Health Coverage and improve access to quality essential health services",
+      "Achieve Universal Health Coverage",
       "Eliminate all private hospitals",
       "Focus solely on urban tertiary care expansion",
       "Reduce the number of registered doctors"
@@ -588,7 +588,7 @@ window.MM.fpsc_past_3 = [
   {
     "q": "Weak health information and management systems (HMIS) in parts of Pakistan's health sector are a major challenge primarily because they:",
     "opts": [
-      "Hinder accurate disease surveillance and evidence-based health planning",
+      "Hinder disease surveillance and health planning",
       "Have no bearing on outbreak response",
       "Are unrelated to resource allocation",
       "Only affect administrative staff salaries"
@@ -602,7 +602,7 @@ window.MM.fpsc_past_3 = [
     "q": "Vaccine hesitancy and resistance to immunization campaigns in some communities in Pakistan pose a major challenge chiefly because they:",
     "opts": [
       "Have no impact on disease eradication efforts",
-      "Threaten the achievement of herd immunity and hinder disease eradication goals (e.g., polio)",
+      "Threaten herd immunity and eradication goals (e.g. polio)",
       "Only affect adult vaccination programmes",
       "Are fully compensated for by improved sanitation"
     ],
@@ -614,12 +614,12 @@ window.MM.fpsc_past_3 = [
   {
     "q": "The shortage of specialized healthcare professionals (e.g., cardiologists, oncologists) outside major cities in Pakistan primarily results in:",
     "opts": [
+      "Long travel or forgoing specialist care",
       "Improved rural health outcomes",
-      "Patients travelling long distances or forgoing specialist care altogether",
       "No measurable effect on patient outcomes",
       "Reduced need for referral systems"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "The concentration of specialists in major urban centres forces rural patients to travel long distances for specialist care, and many forgo it entirely due to cost and distance, worsening health outcomes and inequity, as Pakistan's National Health Vision 2016-2025 describes.",
     "section": "Major Challenges to Healthcare",
     "num": 48
@@ -640,13 +640,13 @@ window.MM.fpsc_past_3 = [
   {
     "q": "A 40-year-old woman presents with fatigue, weight gain, cold intolerance, constipation, and a puffy face. TSH is elevated and free T4 is low. Most likely diagnosis is:",
     "opts": [
-      "Hyperthyroidism",
       "Hypothyroidism",
+      "Hyperthyroidism",
       "Cushing syndrome",
       "Addison disease"
     ],
-    "ans": 1,
-    "exp": "The clinical picture of fatigue, weight gain, cold intolerance, constipation, periorbital puffiness, with elevated TSH and low free T4 is the classic presentation of primary hypothyroidism, most commonly due to Hashimoto's thyroiditis in women of this age group. Elevated TSH confirms pituitary compensation for insufficient thyroid hormone. Hyperthyroidism (A) presents with weight loss, heat intolerance, and low TSH. Cushing syndrome (C) causes weight gain with hypercortisolaemia. Addison disease (D) causes weight loss with hypocortisolaemia.",
+    "ans": 0,
+    "exp": "The clinical picture of fatigue, weight gain, cold intolerance, constipation, periorbital puffiness, with elevated TSH and low free T4 is the classic presentation of primary hypothyroidism, most commonly due to Hashimoto's thyroiditis in women of this age group. Elevated TSH confirms pituitary compensation for insufficient thyroid hormone. Hyperthyroidism (B) presents with weight loss, heat intolerance, and low TSH. Cushing syndrome (C) causes weight gain with hypercortisolaemia. Addison disease (D) causes weight loss with hypocortisolaemia.",
     "section": "Medicine",
     "num": 50
   },
@@ -666,13 +666,13 @@ window.MM.fpsc_past_3 = [
   {
     "q": "A 65-year-old man presents with progressive dysphagia, first to solids then to liquids, significant weight loss, and regurgitation. He is a chronic smoker. Most likely diagnosis is:",
     "opts": [
-      "Achalasia cardia",
       "Oesophageal carcinoma",
+      "Achalasia cardia",
       "Oesophageal stricture from GERD",
       "Foreign body obstruction"
     ],
-    "ans": 1,
-    "exp": "Progressive dysphagia beginning with solids then progressing to liquids over weeks to months, combined with significant weight loss and a chronic smoking history in an older male, is highly suspicious for oesophageal carcinoma until proven otherwise. Davidson's lists this symptom progression alongside weight loss as alarm features mandating urgent endoscopy. Squamous cell carcinoma predominates in smokers. Achalasia (A) is a motility disorder affecting both solids and liquids equally from onset, without weight loss as a prominent feature. Peptic stricture (C) occurs in younger patients with reflux history. Foreign body (D) causes acute onset dysphagia.",
+    "ans": 0,
+    "exp": "Progressive dysphagia beginning with solids then progressing to liquids over weeks to months, combined with significant weight loss and a chronic smoking history in an older male, is highly suspicious for oesophageal carcinoma until proven otherwise. Davidson's lists this symptom progression alongside weight loss as alarm features mandating urgent endoscopy. Squamous cell carcinoma predominates in smokers. Achalasia (B) is a motility disorder affecting both solids and liquids equally from onset, without weight loss as a prominent feature. Peptic stricture (C) occurs in younger patients with reflux history. Foreign body (D) causes acute onset dysphagia.",
     "section": "Medicine",
     "num": 52
   },
@@ -694,11 +694,11 @@ window.MM.fpsc_past_3 = [
     "opts": [
       "Acute myocardial infarction",
       "Pulmonary embolism",
-      "Aortic dissection",
-      "Oesophageal rupture"
+      "Oesophageal rupture",
+      "Aortic dissection"
     ],
-    "ans": 2,
-    "exp": "Acute aortic dissection classically presents with a sudden-onset severe tearing or ripping chest pain radiating to the back, with inter-arm blood pressure differential exceeding 20 mmHg due to involvement of subclavian artery origins. Davidson's Medicine identifies hypertension as the single most important modifiable risk factor, alongside connective tissue disorders and bicuspid aortic valve. This is a cardiovascular emergency requiring immediate imaging and surgical consultation. AMI (A) causes crushing central chest pain without inter-arm BP differential. PE (B) causes pleuritic chest pain with dyspnoea. Oesophageal rupture (D) follows forceful vomiting.",
+    "ans": 3,
+    "exp": "Acute aortic dissection classically presents with a sudden-onset severe tearing or ripping chest pain radiating to the back, with inter-arm blood pressure differential exceeding 20 mmHg due to involvement of subclavian artery origins. Davidson's Medicine identifies hypertension as the single most important modifiable risk factor, alongside connective tissue disorders and bicuspid aortic valve. This is a cardiovascular emergency requiring immediate imaging and surgical consultation. AMI (A) causes crushing central chest pain without inter-arm BP differential. PE (B) causes pleuritic chest pain with dyspnoea. Oesophageal rupture (C) follows forceful vomiting.",
     "section": "Medicine",
     "num": 54
   },
@@ -718,12 +718,12 @@ window.MM.fpsc_past_3 = [
   {
     "q": "A 68-year-old man with atrial fibrillation is on warfarin. His INR is found to be 6.5 with no active bleeding. What is the most appropriate initial management?",
     "opts": [
-      "Continue warfarin at the same dose",
       "Withhold warfarin and consider oral vitamin K",
+      "Continue warfarin at the same dose",
       "Immediately give fresh frozen plasma",
       "Double the warfarin dose"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "In a patient with a significantly elevated INR (>5) but no active bleeding, the appropriate step is to withhold warfarin and consider low-dose oral vitamin K to reduce the INR, reserving FFP or prothrombin complex concentrate for active major bleeding, consistent with Kumar and Clark's Clinical Medicine.",
     "section": "Medicine",
     "num": 56
@@ -745,11 +745,11 @@ window.MM.fpsc_past_3 = [
     "q": "A patient with chronic kidney disease develops secondary hyperparathyroidism. What is the primary underlying mechanism?",
     "opts": [
       "Excess vitamin D production by failing kidneys",
-      "Reduced renal activation of vitamin D leading to hypocalcaemia and compensatory PTH rise",
+      "Excess dietary calcium intake",
       "Autoimmune destruction of the parathyroid glands",
-      "Excess dietary calcium intake"
+      "Reduced vitamin D activation causing hypocalcaemia"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Failing kidneys cannot adequately convert vitamin D to its active form, leading to reduced calcium absorption and hypocalcaemia, which in turn stimulates a compensatory rise in parathyroid hormone (secondary hyperparathyroidism) (Harrison's Principles of Internal Medicine).",
     "section": "Medicine",
     "num": 58
@@ -771,12 +771,12 @@ window.MM.fpsc_past_3 = [
     "q": "A patient presents with sudden onset of severe colicky loin-to-groin pain with haematuria. KUB X-ray shows a radio-opaque shadow in the line of the ureter. Most likely diagnosis is:",
     "opts": [
       "Renal cell carcinoma",
-      "Ureteric calculus",
+      "Transitional cell carcinoma of the ureter",
       "Acute pyelonephritis",
-      "Transitional cell carcinoma of the ureter"
+      "Ureteric calculus"
     ],
-    "ans": 1,
-    "exp": "Classic ureteric colic presents with sudden severe colicky loin-to-groin pain (following the course of the ureter), microscopic or macroscopic haematuria, and a radio-opaque shadow on KUB in the ureteric line. Calcium oxalate and calcium phosphate stones (approximately 80%) are radio-opaque on plain X-ray. Renal cell carcinoma (A) causes haematuria and loin mass without colic. Pyelonephritis (C) causes dull loin pain with fever and dysuria. TCC (D) causes painless haematuria.",
+    "ans": 3,
+    "exp": "Classic ureteric colic presents with sudden severe colicky loin-to-groin pain (following the course of the ureter), microscopic or macroscopic haematuria, and a radio-opaque shadow on KUB in the ureteric line. Calcium oxalate and calcium phosphate stones (approximately 80%) are radio-opaque on plain X-ray. Renal cell carcinoma (A) causes haematuria and loin mass without colic. Pyelonephritis (C) causes dull loin pain with fever and dysuria. TCC (B) causes painless haematuria.",
     "section": "Surgery",
     "num": 60
   },
@@ -784,12 +784,12 @@ window.MM.fpsc_past_3 = [
     "q": "A 65-year-old man presents with straining to urinate, poor stream, and nocturia. Digital rectal examination reveals a symmetrically enlarged, smooth, firm prostate. PSA is 3.5 ng/mL. Most likely diagnosis is:",
     "opts": [
       "Carcinoma of the prostate",
-      "Benign prostatic hyperplasia",
+      "Bladder neck obstruction",
       "Prostatitis",
-      "Bladder neck obstruction"
+      "Benign prostatic hyperplasia"
     ],
-    "ans": 1,
-    "exp": "Benign prostatic hyperplasia typically presents in older men with lower urinary tract symptoms (LUTS) including hesitancy, poor stream, terminal dribbling, and nocturia. DRE reveals a symmetrically enlarged, smooth, rubbery or firm prostate. PSA below 4 ng/mL makes malignancy less likely. Prostate carcinoma (A) typically produces a nodular or irregular prostate on DRE with elevated PSA. Prostatitis (C) presents with pain and fever. Bladder neck obstruction (D) presents identically but DRE is normal.",
+    "ans": 3,
+    "exp": "Benign prostatic hyperplasia typically presents in older men with lower urinary tract symptoms (LUTS) including hesitancy, poor stream, terminal dribbling, and nocturia. DRE reveals a symmetrically enlarged, smooth, rubbery or firm prostate. PSA below 4 ng/mL makes malignancy less likely. Prostate carcinoma (A) typically produces a nodular or irregular prostate on DRE with elevated PSA. Prostatitis (C) presents with pain and fever. Bladder neck obstruction (B) presents identically but DRE is normal.",
     "section": "Surgery",
     "num": 61
   },
@@ -797,7 +797,7 @@ window.MM.fpsc_past_3 = [
     "q": "Which of the following is the most appropriate initial management of a tension pneumothorax in a haemodynamically unstable patient?",
     "opts": [
       "Chest X-ray confirmation followed by intercostal drain",
-      "Immediate needle decompression at the 2nd intercostal space, mid-clavicular line",
+      "Needle decompression, 2nd ICS mid-clavicular line",
       "CT chest for definitive imaging",
       "Observation and high-flow oxygen"
     ],
@@ -823,12 +823,12 @@ window.MM.fpsc_past_3 = [
     "q": "Which of the following is the most common cause of small bowel obstruction in adults in Pakistan?",
     "opts": [
       "Colorectal carcinoma",
-      "Adhesions from previous surgery",
+      "Intussusception",
       "Incarcerated inguinal hernia",
-      "Intussusception"
+      "Adhesions from previous surgery"
     ],
-    "ans": 1,
-    "exp": "Post-operative adhesions are the most common cause of small bowel obstruction in adults in developed and developing countries alike, accounting for approximately 60–70% of cases. Previous abdominal surgery leads to fibrous adhesion formation that can kink or compress bowel loops. Hernias (C) are the second most common cause globally and the most common cause in those without prior surgery. Colorectal carcinoma (A) more commonly causes large bowel obstruction. Intussusception (D) is predominantly a paediatric condition.",
+    "ans": 3,
+    "exp": "Post-operative adhesions are the most common cause of small bowel obstruction in adults in developed and developing countries alike, accounting for approximately 60–70% of cases. Previous abdominal surgery leads to fibrous adhesion formation that can kink or compress bowel loops. Hernias (C) are the second most common cause globally and the most common cause in those without prior surgery. Colorectal carcinoma (A) more commonly causes large bowel obstruction. Intussusception (B) is predominantly a paediatric condition.",
     "section": "Surgery",
     "num": 64
   },
@@ -848,12 +848,12 @@ window.MM.fpsc_past_3 = [
   {
     "q": "A 30-year-old man sustains a deep laceration to the palm with inability to flex the distal interphalangeal joint of the index finger. Which structure is most likely injured?",
     "opts": [
-      "Flexor digitorum superficialis tendon",
       "Flexor digitorum profundus tendon",
+      "Flexor digitorum superficialis tendon",
       "Extensor digitorum tendon",
       "Median nerve only"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "The flexor digitorum profundus tendon is solely responsible for flexion at the distal interphalangeal joint; its division results in inability to flex that joint even though proximal interphalangeal flexion (via flexor digitorum superficialis) may be preserved, a point emphasised in Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 66
@@ -862,7 +862,7 @@ window.MM.fpsc_past_3 = [
     "q": "A 3-year-old child presents with a painless, reducible bulge in the groin that increases with crying. What is the most likely diagnosis?",
     "opts": [
       "Femoral hernia",
-      "Indirect inguinal hernia due to a patent processus vaginalis",
+      "Indirect inguinal hernia",
       "Direct inguinal hernia",
       "Hydrocele of the cord only"
     ],
@@ -875,11 +875,11 @@ window.MM.fpsc_past_3 = [
     "q": "A patient develops sudden severe pain and swelling in the calf after prolonged bed rest following major surgery. What is the most likely diagnosis?",
     "opts": [
       "Cellulitis",
-      "Deep vein thrombosis (DVT)",
+      "Compartment syndrome",
       "Muscle strain",
-      "Compartment syndrome"
+      "Deep vein thrombosis (DVT)"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Sudden calf pain and swelling following a period of immobility (such as post-operative bed rest) is highly suggestive of deep vein thrombosis, a well-recognized complication of prolonged immobilization after surgery (Bailey and Love's Short Practice of Surgery).",
     "section": "Surgery",
     "num": 68
@@ -927,11 +927,11 @@ window.MM.fpsc_past_3 = [
     "q": "Shirodkar suture (cervical cerclage) is performed for:",
     "opts": [
       "Placenta praevia",
-      "Cervical incompetence causing recurrent mid-trimester pregnancy loss",
+      "Ovarian hyperstimulation syndrome",
       "Postpartum haemorrhage",
-      "Ovarian hyperstimulation syndrome"
+      "Cervical incompetence"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Cervical cerclage (Shirodkar or McDonald technique) is a surgical procedure placing a purse-string suture around the cervix to reinforce an incompetent (weakened) cervix, preventing painless dilatation and mid-trimester miscarriage or preterm delivery. It is typically performed between 12 and 14 weeks. Cervical incompetence is characterised by recurrent second-trimester losses without painful contractions. The other options are unrelated to cervical cerclage.",
     "section": "O&G",
     "num": 72
@@ -941,11 +941,11 @@ window.MM.fpsc_past_3 = [
     "opts": [
       "Ovary",
       "Interstitial portion of the fallopian tube",
-      "Ampullary portion of the fallopian tube",
-      "Abdominal cavity"
+      "Abdominal cavity",
+      "Ampullary portion of the fallopian tube"
     ],
-    "ans": 2,
-    "exp": "Approximately 70–80% of ectopic pregnancies implant in the ampullary portion of the fallopian tube, making it by far the most common site. The ampulla is the widest and longest portion of the tube. Isthmic implantation (not listed) accounts for 10–12% and ruptures earlier due to the narrow lumen. Interstitial (cornual) implantation (B) is rare (2%) but carries higher mortality due to rich vascular supply. Ovarian (A) and abdominal (D) ectopics are uncommon.",
+    "ans": 3,
+    "exp": "Approximately 70–80% of ectopic pregnancies implant in the ampullary portion of the fallopian tube, making it by far the most common site. The ampulla is the widest and longest portion of the tube. Isthmic implantation (not listed) accounts for 10–12% and ruptures earlier due to the narrow lumen. Interstitial (cornual) implantation (B) is rare (2%) but carries higher mortality due to rich vascular supply. Ovarian (A) and abdominal (C) ectopics are uncommon.",
     "section": "O&G",
     "num": 73
   },
@@ -1045,11 +1045,11 @@ window.MM.fpsc_past_3 = [
     "opts": [
       "Acute asthma",
       "Right-sided pneumonia",
-      "Foreign body inhalation",
-      "Bronchiolitis"
+      "Bronchiolitis",
+      "Foreign body inhalation"
     ],
-    "ans": 2,
-    "exp": "Sudden onset of respiratory distress with unilateral wheeze and reduced air entry in a child without fever is classic for foreign body aspiration, which most commonly lodges in the right main bronchus due to its more vertical orientation. The absence of fever helps distinguish this from infective causes. Asthma (A) is typically bilateral and has a history of recurrent episodes. Pneumonia (B) causes fever and crackles. Bronchiolitis (D) affects infants under 2 years with bilateral wheeze and features of a viral prodrome.",
+    "ans": 3,
+    "exp": "Sudden onset of respiratory distress with unilateral wheeze and reduced air entry in a child without fever is classic for foreign body aspiration, which most commonly lodges in the right main bronchus due to its more vertical orientation. The absence of fever helps distinguish this from infective causes. Asthma (A) is typically bilateral and has a history of recurrent episodes. Pneumonia (B) causes fever and crackles. Bronchiolitis (C) affects infants under 2 years with bilateral wheeze and features of a viral prodrome.",
     "section": "ENT",
     "num": 81
   },
@@ -1058,7 +1058,7 @@ window.MM.fpsc_past_3 = [
     "opts": [
       "Open surgical biopsy",
       "CT scan of the neck",
-      "Ultrasound-guided fine needle aspiration cytology (FNAC)",
+      "Ultrasound-guided FNAC",
       "MRI of the neck"
     ],
     "ans": 2,
@@ -1082,13 +1082,13 @@ window.MM.fpsc_past_3 = [
   {
     "q": "Bitemporal hemianopia is caused by a lesion at the:",
     "opts": [
-      "Optic nerve",
       "Optic chiasm",
+      "Optic nerve",
       "Optic tract",
       "Visual cortex"
     ],
-    "ans": 1,
-    "exp": "A lesion compressing the optic chiasm (most commonly a pituitary adenoma growing superiorly or a craniopharyngioma) interrupts the crossing nasal fibres from both eyes, which carry temporal visual field information, producing bitemporal hemianopia (tunnel vision with loss of both temporal fields). Optic nerve lesions (A) cause monocular visual loss. Optic tract lesions (C) cause contralateral homonymous hemianopia. Visual cortex lesions (D) cause contralateral homonymous hemianopia with macular sparing.",
+    "ans": 0,
+    "exp": "A lesion compressing the optic chiasm (most commonly a pituitary adenoma growing superiorly or a craniopharyngioma) interrupts the crossing nasal fibres from both eyes, which carry temporal visual field information, producing bitemporal hemianopia (tunnel vision with loss of both temporal fields). Optic nerve lesions (B) cause monocular visual loss. Optic tract lesions (C) cause contralateral homonymous hemianopia. Visual cortex lesions (D) cause contralateral homonymous hemianopia with macular sparing.",
     "section": "Ophthalmology",
     "num": 84
   },
@@ -1096,25 +1096,25 @@ window.MM.fpsc_past_3 = [
     "q": "A 70-year-old patient with known diabetes and hypertension develops acute painless loss of vision with relative afferent pupillary defect (RAPD). Fundoscopy shows a pale, swollen disc. Diagnosis is:",
     "opts": [
       "Optic neuritis",
-      "Anterior ischaemic optic neuropathy",
+      "Papilloedema",
       "Central retinal artery occlusion",
-      "Papilloedema"
+      "Anterior ischaemic optic neuropathy"
     ],
-    "ans": 1,
-    "exp": "Anterior ischaemic optic neuropathy (AION) presents with sudden painless visual loss, pale swollen optic disc, altitudinal field defect, and RAPD in patients with vasculopathic risk factors (diabetes, hypertension, hyperlipidaemia). It results from infarction of the short posterior ciliary arteries supplying the optic nerve head. Optic neuritis (A) is painful, occurs in younger patients, and is associated with MS. CRAO (C) shows a cherry-red spot at the macula. Papilloedema (D) is bilateral with raised ICP and is not acutely painful or associated with sudden visual loss.",
+    "ans": 3,
+    "exp": "Anterior ischaemic optic neuropathy (AION) presents with sudden painless visual loss, pale swollen optic disc, altitudinal field defect, and RAPD in patients with vasculopathic risk factors (diabetes, hypertension, hyperlipidaemia). It results from infarction of the short posterior ciliary arteries supplying the optic nerve head. Optic neuritis (A) is painful, occurs in younger patients, and is associated with MS. CRAO (C) shows a cherry-red spot at the macula. Papilloedema (B) is bilateral with raised ICP and is not acutely painful or associated with sudden visual loss.",
     "section": "Ophthalmology",
     "num": 85
   },
   {
     "q": "The drug of first choice for acute angle-closure glaucoma is:",
     "opts": [
+      "Pilocarpine plus IV acetazolamide",
       "Timolol eye drops alone",
-      "Pilocarpine eye drops combined with IV acetazolamide",
       "Atropine eye drops",
       "Latanoprost eye drops"
     ],
-    "ans": 1,
-    "exp": "Acute angle-closure glaucoma is a medical emergency. Parson's outlines the initial treatment approach: a miotic agent (pilocarpine 2–4% to constrict the pupil and open the drainage angle), IV or oral acetazolamide (to reduce aqueous production), topical beta-blockers (timolol), and systemic hyperosmotic agents if needed. Atropine (C) is absolutely contraindicated as it dilates the pupil and worsens angle closure. Latanoprost (D) alone is insufficient for an acute attack. Timolol alone (A) addresses only one component of the attack.",
+    "ans": 0,
+    "exp": "Acute angle-closure glaucoma is a medical emergency. Parson's outlines the initial treatment approach: a miotic agent (pilocarpine 2–4% to constrict the pupil and open the drainage angle), IV or oral acetazolamide (to reduce aqueous production), topical beta-blockers (timolol), and systemic hyperosmotic agents if needed. Atropine (C) is absolutely contraindicated as it dilates the pupil and worsens angle closure. Latanoprost (D) alone is insufficient for an acute attack. Timolol alone (B) addresses only one component of the attack.",
     "section": "Ophthalmology",
     "num": 86
   },
@@ -1163,7 +1163,7 @@ window.MM.fpsc_past_3 = [
       "Reduced FVC with normal FEV1/FVC ratio",
       "Reduced FEV1, reduced FVC, raised FEV1/FVC ratio",
       "Normal FVC with raised FEV1",
-      "Reduced FEV1 with FEV1/FVC ratio below 0.70 that does not fully reverse with bronchodilator"
+      "Reduced FEV1 with FEV1/FVC below 0.70, not fully reversible"
     ],
     "ans": 3,
     "exp": "COPD is defined by a post-bronchodilator FEV1/FVC ratio persistently below 0.70, indicating fixed airflow obstruction that does not fully reverse with bronchodilators, the defining spirometric criterion, as reinforced in Davidson's Principles and Practice of Medicine. FEV1 is reduced proportionally more than FVC. Option A describes a restrictive pattern (e.g., pulmonary fibrosis). Option B incorrectly states that FEV1/FVC is raised in obstruction. Option C is not a recognised pattern of pathology.",
@@ -1186,13 +1186,13 @@ window.MM.fpsc_past_3 = [
   {
     "q": "Which of the following is the most common cause of community-acquired pneumonia in adults?",
     "opts": [
-      "Haemophilus influenzae",
       "Streptococcus pneumoniae",
+      "Haemophilus influenzae",
       "Staphylococcus aureus",
       "Mycoplasma pneumoniae"
     ],
-    "ans": 1,
-    "exp": "Streptococcus pneumoniae (pneumococcus) remains the most common causative organism of community-acquired pneumonia in adults worldwide, responsible for approximately 30–50% of cases. It presents with a lobar consolidation pattern, productive cough with rust-coloured sputum, pleuritic chest pain, and fever. Haemophilus influenzae (A) is common in COPD patients. Staphylococcus aureus (C) follows influenza infection. Mycoplasma (D) causes atypical pneumonia in younger adults.",
+    "ans": 0,
+    "exp": "Streptococcus pneumoniae (pneumococcus) remains the most common causative organism of community-acquired pneumonia in adults worldwide, responsible for approximately 30–50% of cases. It presents with a lobar consolidation pattern, productive cough with rust-coloured sputum, pleuritic chest pain, and fever. Haemophilus influenzae (B) is common in COPD patients. Staphylococcus aureus (C) follows influenza infection. Mycoplasma (D) causes atypical pneumonia in younger adults.",
     "section": "Pulmonology",
     "num": 92
   },
@@ -1214,7 +1214,7 @@ window.MM.fpsc_past_3 = [
     "opts": [
       "Bone metastases releasing calcium",
       "Ectopic PTH secretion",
-      "Ectopic PTHrP secretion by squamous cell carcinoma",
+      "Ectopic PTHrP from squamous cell carcinoma",
       "Sarcoid-related hypercalcaemia"
     ],
     "ans": 2,
@@ -1240,7 +1240,7 @@ window.MM.fpsc_past_3 = [
     "opts": [
       "Haloperidol",
       "Diazepam",
-      "Selective serotonin reuptake inhibitor (SSRI)",
+      "SSRI",
       "Lithium"
     ],
     "ans": 2,
@@ -1252,12 +1252,12 @@ window.MM.fpsc_past_3 = [
     "q": "A 45-year-old woman describes feeling that the world around her is unreal, dreamlike, and distant, although she knows she is not dreaming. This symptom is called:",
     "opts": [
       "Depersonalisation",
-      "Derealisation",
+      "Illusion",
       "Hallucination",
-      "Illusion"
+      "Derealisation"
     ],
-    "ans": 1,
-    "exp": "Derealisation is the perception that the external world is unreal, foggy, or dreamlike, despite intact reality testing (the patient is aware the experience is abnormal). It is distinct from depersonalisation (A), in which the individual feels detached from or outside their own body. The Shorter Oxford Textbook of Psychiatry draws this distinction carefully, as both symptoms frequently co-occur and are easily conflated. Hallucination (C) is a perception in the absence of an external stimulus. Illusion (D) is a misperception of a real stimulus. Both are features of dissociative disorders, panic disorder, and temporal lobe epilepsy.",
+    "ans": 3,
+    "exp": "Derealisation is the perception that the external world is unreal, foggy, or dreamlike, despite intact reality testing (the patient is aware the experience is abnormal). It is distinct from depersonalisation (A), in which the individual feels detached from or outside their own body. The Shorter Oxford Textbook of Psychiatry draws this distinction carefully, as both symptoms frequently co-occur and are easily conflated. Hallucination (C) is a perception in the absence of an external stimulus. Illusion (B) is a misperception of a real stimulus. Both are features of dissociative disorders, panic disorder, and temporal lobe epilepsy.",
     "section": "Psychiatry",
     "num": 97
   },
@@ -1291,7 +1291,7 @@ window.MM.fpsc_past_3 = [
     "q": "Which of the following medications is used in the management of alcohol withdrawal to prevent seizures and delirium tremens?",
     "opts": [
       "Haloperidol",
-      "Chlordiazepoxide (benzodiazepine)",
+      "Chlordiazepoxide",
       "Naltrexone",
       "Disulfiram"
     ],
