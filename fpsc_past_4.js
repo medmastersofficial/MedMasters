@@ -30,12 +30,12 @@ window.MM.fpsc_past_4 = [
     "q": "The chief of surgery was known for his _____ manner during rounds: he conveyed complex diagnoses with such _____ that even junior students grasped them immediately.",
     "opts": [
       "recondite / opacity",
+      "perfunctory / thoroughness",
       "pellucid / clarity",
-      "obsequious / deference",
-      "perfunctory / thoroughness"
+      "obsequious / deference"
     ],
-    "ans": 1,
-    "exp": "The sentence requires two words that together describe someone who communicates complex information clearly and accessibly. PELLUCID means translucently clear, and CLARITY is the quality of being clear and easily understood. These reinforce each other perfectly. RECONDITE / OPACITY (A) would mean obscure/darkness, the opposite of the intended meaning. OBSEQUIOUS / DEFERENCE (C) describe servile behaviour, unrelated to communication. PERFUNCTORY / THOROUGHNESS (D) is self-contradictory since perfunctory means done with minimal effort.",
+    "ans": 2,
+    "exp": "The sentence requires two words that together describe someone who communicates complex information clearly and accessibly. PELLUCID means translucently clear, and CLARITY is the quality of being clear and easily understood. These reinforce each other perfectly. RECONDITE / OPACITY (A) would mean obscure/darkness, the opposite of the intended meaning. OBSEQUIOUS / DEFERENCE (D) describe servile behaviour, unrelated to communication. PERFUNCTORY / THOROUGHNESS (B) is self-contradictory since perfunctory means done with minimal effort.",
     "section": "English",
     "num": 3
   },
@@ -44,24 +44,24 @@ window.MM.fpsc_past_4 = [
     "opts": [
       "The committee has",
       "reached a",
-      "decision which all of its",
-      "member agrees with"
+      "member agrees with",
+      "decision which all of its"
     ],
-    "ans": 3,
-    "exp": "The error is in option D: 'member' should be 'members' to agree with 'all of its,' which requires the plural form. When 'all' refers to a plural noun, that noun must be plural. 'The committee has' (A) is correct subject-verb agreement since 'committee' is treated as a single unit. 'Reached a' (B) is grammatically sound. 'Decision which all of its' (C) is correctly constructed.",
+    "ans": 2,
+    "exp": "The error is in option D: 'member' should be 'members' to agree with 'all of its,' which requires the plural form. When 'all' refers to a plural noun, that noun must be plural. 'The committee has' (A) is correct subject-verb agreement since 'committee' is treated as a single unit. 'Reached a' (B) is grammatically sound. 'Decision which all of its' (D) is correctly constructed.",
     "section": "English",
     "num": 4
   },
   {
     "q": "Which word is closest in meaning to FUGACIOUS?",
     "opts": [
-      "Tenacious",
       "Ephemeral",
+      "Redolent",
       "Perspicacious",
-      "Redolent"
+      "Tenacious"
     ],
-    "ans": 1,
-    "exp": "FUGACIOUS means fleeting, passing quickly out of memory or existence. EPHEMERAL is the closest synonym, meaning lasting for only a very short time. TENACIOUS (A) means holding firm, the opposite of fleeting. PERSPICACIOUS (C) means having a ready insight into things; having a sharp ability to understand. REDOLENT (D) means strongly reminiscent of or suggestive of something, or having a strong smell.",
+    "ans": 0,
+    "exp": "FUGACIOUS means fleeting, passing quickly out of memory or existence. EPHEMERAL is the closest synonym, meaning lasting for only a very short time. TENACIOUS (D) means holding firm, the opposite of fleeting. PERSPICACIOUS (C) means having a ready insight into things; having a sharp ability to understand. REDOLENT (B) means strongly reminiscent of or suggestive of something, or having a strong smell.",
     "section": "English",
     "num": 5
   },
@@ -107,12 +107,12 @@ window.MM.fpsc_past_4 = [
   {
     "q": "Choose the correctly structured sentence:",
     "opts": [
-      "Hardly he had reached office when the phone rang.",
       "Hardly had he reached office when the phone rang.",
+      "Hardly he had reached office when the phone rang.",
       "Hardly he reached had office when the phone rang.",
       "He hardly had reached office when the phone rang."
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "'Hardly...when' requires inversion of subject and auxiliary at the start of the sentence: 'Hardly had he reached office...'",
     "section": "English",
     "num": 9
@@ -133,10 +133,10 @@ window.MM.fpsc_past_4 = [
   {
     "q": "Choose the best combination: 'The ward was short-staffed. Patient care did not suffer.'",
     "opts": [
-      "The ward was short-staffed, so patient care did not suffer.",
+      "Patient care did not suffer, but the ward was short-staffed.",
       "Although the ward was short-staffed, patient care did not suffer.",
       "The ward was short-staffed because patient care did not suffer.",
-      "Patient care did not suffer, but the ward was short-staffed."
+      "The ward was short-staffed, so patient care did not suffer."
     ],
     "ans": 1,
     "exp": "'Although' correctly introduces the contrast: despite being short-staffed, care did not suffer. 'So' and 'because' would incorrectly imply a causal rather than contrastive relationship.",
@@ -173,11 +173,11 @@ window.MM.fpsc_past_4 = [
     "q": "PAINTER : BRUSH :: WRITER : ?",
     "opts": [
       "Book",
-      "Pen",
+      "Library",
       "Paper",
-      "Library"
+      "Pen"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "A painter's characteristic tool is a brush; similarly, a writer's characteristic tool is a pen. The relationship tested is 'profession : primary tool'.",
     "section": "English",
     "num": 14
@@ -186,11 +186,11 @@ window.MM.fpsc_past_4 = [
     "q": "The word 'CANDOUR' most nearly means:",
     "opts": [
       "Deception",
-      "Openness and honesty in expression",
+      "Excessive caution",
       "Extreme anger",
-      "Excessive caution"
+      "Openness and honesty"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "CANDOUR refers to the quality of being open, honest, and straightforward in speech or expression.",
     "section": "English",
     "num": 15
@@ -199,11 +199,11 @@ window.MM.fpsc_past_4 = [
     "q": "Identify the grammatically correct sentence:",
     "opts": [
       "Each of the interns are required to submit a logbook.",
-      "Each of the interns is required to submit a logbook.",
+      "Each of interns are required to submit a logbook.",
       "Each of the intern is required to submit logbooks.",
-      "Each of interns are required to submit a logbook."
+      "Each of the interns is required to submit a logbook."
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "'Each' always takes a singular verb, regardless of the plural noun following it ('of the interns'), so 'is required' is correct.",
     "section": "English",
     "num": 16
@@ -225,11 +225,11 @@ window.MM.fpsc_past_4 = [
     "q": "Choose the one word for: 'A person who looks on the bright side of things.'",
     "opts": [
       "Pessimist",
-      "Optimist",
+      "Cynic",
       "Realist",
-      "Cynic"
+      "Optimist"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "An OPTIMIST is a person who tends to expect the best possible outcome and see the positive side of situations.",
     "section": "English",
     "num": 18
@@ -238,11 +238,11 @@ window.MM.fpsc_past_4 = [
     "q": "By next month, the new wing of the hospital _____ completed.",
     "opts": [
       "will be",
-      "will have been",
+      "was",
       "is",
-      "was"
+      "will have been"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "An action that will be finished before a specific future point requires the future perfect tense: 'will have been completed'.",
     "section": "English",
     "num": 19
@@ -302,38 +302,38 @@ window.MM.fpsc_past_4 = [
   {
     "q": "The brachial plexus is formed by the anterior rami of which spinal nerve roots?",
     "opts": [
-      "C4-C8",
       "C5-T1",
+      "C4-C8",
       "C5-T2",
       "C4-T1"
     ],
-    "ans": 1,
-    "exp": "The brachial plexus is formed by the anterior primary rami of C5, C6, C7, C8, and T1. In some individuals, a prefixed plexus includes C4, and a postfixed plexus includes T2, but the classical and consistently tested composition is C5 to T1. C4-C8 (A) omits the essential T1 contribution. C5-T2 (C) extends the plexus too far caudally.",
+    "ans": 0,
+    "exp": "The brachial plexus is formed by the anterior primary rami of C5, C6, C7, C8, and T1. In some individuals, a prefixed plexus includes C4, and a postfixed plexus includes T2, but the classical and consistently tested composition is C5 to T1. C4-C8 (B) omits the essential T1 contribution. C5-T2 (C) extends the plexus too far caudally.",
     "section": "Basic Sciences",
     "num": 24
   },
   {
     "q": "A patient in the ICU has the following arterial blood gas values: pH 7.28, PaCO2 52 mmHg, HCO3 24 mEq/L. What is the primary acid-base disturbance?",
     "opts": [
-      "Metabolic acidosis",
       "Respiratory acidosis",
+      "Metabolic acidosis",
       "Metabolic alkalosis",
       "Respiratory alkalosis"
     ],
-    "ans": 1,
-    "exp": "pH 7.28 indicates acidosis. The elevated PaCO2 (52 mmHg; normal 35-45) identifies the respiratory system as the primary cause. HCO3 of 24 mEq/L is within the normal range (22-26), confirming no metabolic compensation has yet occurred, making this an acute respiratory acidosis. Metabolic acidosis (A) would show low HCO3. Metabolic alkalosis (C) and respiratory alkalosis (D) would both show elevated pH.",
+    "ans": 0,
+    "exp": "pH 7.28 indicates acidosis. The elevated PaCO2 (52 mmHg; normal 35-45) identifies the respiratory system as the primary cause. HCO3 of 24 mEq/L is within the normal range (22-26), confirming no metabolic compensation has yet occurred, making this an acute respiratory acidosis. Metabolic acidosis (B) would show low HCO3. Metabolic alkalosis (C) and respiratory alkalosis (D) would both show elevated pH.",
     "section": "Basic Sciences",
     "num": 25
   },
   {
     "q": "The Frank-Starling mechanism of the heart states that:",
     "opts": [
-      "Heart rate increases proportionally with venous return",
+      "Contraction force increases with end-diastolic volume, up to a limit",
       "Stroke volume decreases as preload increases beyond a critical point only in disease",
-      "The force of cardiac contraction increases as end-diastolic volume increases, up to a physiological limit",
+      "Heart rate increases proportionally with venous return",
       "Cardiac output is independent of ventricular filling pressure"
     ],
-    "ans": 2,
+    "ans": 0,
     "exp": "The Frank-Starling law states that within physiological limits, the force of cardiac muscle contraction and therefore stroke volume increase proportionally with the degree of end-diastolic stretch (preload). This allows the heart to match output to venous return. Option A confuses heart rate with contractility. Option B describes the descending limb seen only in pathological over-distension. Option D is the direct opposite of the Frank-Starling mechanism.",
     "section": "Basic Sciences",
     "num": 26
@@ -342,12 +342,12 @@ window.MM.fpsc_past_4 = [
     "q": "A 28-year-old woman presents with polyuria, polydipsia, and a urine osmolality of 120 mOsm/kg despite a serum osmolality of 310 mOsm/kg. Plasma ADH levels are markedly elevated. The most likely diagnosis is:",
     "opts": [
       "Central diabetes insipidus",
-      "Nephrogenic diabetes insipidus",
+      "Syndrome of inappropriate ADH secretion",
       "Primary polydipsia",
-      "Syndrome of inappropriate ADH secretion"
+      "Nephrogenic diabetes insipidus"
     ],
-    "ans": 1,
-    "exp": "High serum osmolality with dilute urine indicates an inability to concentrate urine despite appropriate ADH stimulus. Markedly elevated plasma ADH with failure of renal response confirms nephrogenic diabetes insipidus, where the kidney's V2 receptors or aquaporin-2 system is non-functional despite adequate ADH. Central DI (A) would show low or absent ADH. Primary polydipsia (C) would show suppressed ADH and normal osmolality responses. SIADH (D) causes low serum osmolality with concentrated urine.",
+    "ans": 3,
+    "exp": "High serum osmolality with dilute urine indicates an inability to concentrate urine despite appropriate ADH stimulus. Markedly elevated plasma ADH with failure of renal response confirms nephrogenic diabetes insipidus, where the kidney's V2 receptors or aquaporin-2 system is non-functional despite adequate ADH. Central DI (A) would show low or absent ADH. Primary polydipsia (C) would show suppressed ADH and normal osmolality responses. SIADH (B) causes low serum osmolality with concentrated urine.",
     "section": "Basic Sciences",
     "num": 27
   },
@@ -355,12 +355,12 @@ window.MM.fpsc_past_4 = [
     "q": "Which of the following correctly describes the role of the juxtaglomerular apparatus (JGA) in regulating GFR?",
     "opts": [
       "It secretes aldosterone in response to low sodium delivery",
-      "It releases renin in response to reduced renal perfusion pressure, initiating the RAAS cascade",
+      "It detects changes in blood glucose and adjusts filtration accordingly",
       "It directly controls aquaporin-2 insertion in the collecting duct",
-      "It detects changes in blood glucose and adjusts filtration accordingly"
+      "Releases renin in response to reduced perfusion pressure"
     ],
-    "ans": 1,
-    "exp": "The juxtaglomerular cells of the JGA release renin in response to reduced stretch (low perfusion pressure), low tubular sodium at the macula densa, and sympathetic stimulation. Renin cleaves angiotensinogen to angiotensin I, initiating the renin-angiotensin-aldosterone cascade that restores perfusion pressure and GFR. Aldosterone is produced by the adrenal cortex, not the JGA (A). Aquaporin-2 regulation (C) is an ADH effect on the collecting duct. Glucose sensing (D) is not a JGA function.",
+    "ans": 3,
+    "exp": "The juxtaglomerular cells of the JGA release renin in response to reduced stretch (low perfusion pressure), low tubular sodium at the macula densa, and sympathetic stimulation. Renin cleaves angiotensinogen to angiotensin I, initiating the renin-angiotensin-aldosterone cascade that restores perfusion pressure and GFR. Aldosterone is produced by the adrenal cortex, not the JGA (A). Aquaporin-2 regulation (C) is an ADH effect on the collecting duct. Glucose sensing (B) is not a JGA function.",
     "section": "Basic Sciences",
     "num": 28
   },
@@ -369,7 +369,7 @@ window.MM.fpsc_past_4 = [
     "opts": [
       "Administer fresh frozen plasma",
       "Give intravenous vitamin K 10 mg",
-      "Withhold warfarin and give low-dose oral vitamin K 1-2.5 mg",
+      "Withhold warfarin, give low-dose oral vitamin K",
       "Start heparin infusion and monitor"
     ],
     "ans": 2,
@@ -381,7 +381,7 @@ window.MM.fpsc_past_4 = [
     "q": "Which of the following best describes the mechanism by which aminoglycosides cause nephrotoxicity?",
     "opts": [
       "Inhibition of renal prostaglandin synthesis causing vasoconstriction",
-      "Accumulation in proximal tubular cells causing mitochondrial dysfunction and cell death",
+      "Accumulates in proximal tubules, causing mitochondrial dysfunction",
       "Blockade of renal aldosterone receptors reducing sodium reabsorption",
       "Crystallisation in renal tubules causing obstructive uropathy"
     ],
@@ -395,7 +395,7 @@ window.MM.fpsc_past_4 = [
     "opts": [
       "Rifampicin increases contraceptive efficacy by inhibiting CYP3A4",
       "The interaction is clinically insignificant",
-      "Rifampicin is a potent CYP450 inducer that reduces OCP plasma levels, necessitating additional contraception",
+      "Potent CYP450 inducer; reduces OCP levels",
       "The OCP inhibits rifampicin and may reduce TB treatment efficacy"
     ],
     "ans": 2,
@@ -406,13 +406,13 @@ window.MM.fpsc_past_4 = [
   {
     "q": "Which of the following antiepileptic drugs acts primarily by prolonging the inactivated state of voltage-gated sodium channels?",
     "opts": [
-      "Ethosuximide",
       "Phenytoin",
+      "Ethosuximide",
       "Valproate",
       "Vigabatrin"
     ],
-    "ans": 1,
-    "exp": "Phenytoin acts by binding to and prolonging the inactivated state of voltage-gated sodium channels, preventing rapid repetitive firing of action potentials in epileptic foci. Ethosuximide (A) blocks T-type calcium channels and is specific to absence seizures. Valproate (C) has multiple mechanisms including sodium channel blockade but is not primarily characterised by this action; it also enhances GABA activity and blocks T-type calcium channels. Vigabatrin (D) irreversibly inhibits GABA transaminase, increasing synaptic GABA.",
+    "ans": 0,
+    "exp": "Phenytoin acts by binding to and prolonging the inactivated state of voltage-gated sodium channels, preventing rapid repetitive firing of action potentials in epileptic foci. Ethosuximide (B) blocks T-type calcium channels and is specific to absence seizures. Valproate (C) has multiple mechanisms including sodium channel blockade but is not primarily characterised by this action; it also enhances GABA activity and blocks T-type calcium channels. Vigabatrin (D) irreversibly inhibits GABA transaminase, increasing synaptic GABA.",
     "section": "Basic Sciences",
     "num": 32
   },
@@ -421,11 +421,11 @@ window.MM.fpsc_past_4 = [
     "opts": [
       "It stimulates insulin secretion from pancreatic beta cells",
       "It causes hypoglycaemia as a common side effect",
-      "It acts primarily by activating AMPK, reducing hepatic glucose output",
-      "It is the drug of choice in diabetic ketoacidosis"
+      "It is the drug of choice in diabetic ketoacidosis",
+      "It acts primarily by activating AMPK, reducing hepatic glucose output"
     ],
-    "ans": 2,
-    "exp": "Metformin activates AMP-activated protein kinase (AMPK), which inhibits hepatic gluconeogenesis and glycogenolysis, reducing fasting blood glucose. It also improves peripheral insulin sensitivity. Unlike sulphonylureas, metformin does not stimulate insulin release (A) and therefore does not cause hypoglycaemia when used alone (B is false). Metformin is absolutely contraindicated in DKA (D) and in significant renal impairment due to lactic acidosis risk.",
+    "ans": 3,
+    "exp": "Metformin activates AMP-activated protein kinase (AMPK), which inhibits hepatic gluconeogenesis and glycogenolysis, reducing fasting blood glucose. It also improves peripheral insulin sensitivity. Unlike sulphonylureas, metformin does not stimulate insulin release (A) and therefore does not cause hypoglycaemia when used alone (B is false). Metformin is absolutely contraindicated in DKA (C) and in significant renal impairment due to lactic acidosis risk.",
     "section": "Basic Sciences",
     "num": 33
   },
@@ -446,11 +446,11 @@ window.MM.fpsc_past_4 = [
     "q": "The 'Rule of Halves' in hypertension epidemiology illustrates that:",
     "opts": [
       "Half of all hypertensive patients are cured within a year",
-      "Only half of hypertensives are diagnosed, half of those are treated, and only half of those are controlled",
+      "Half of all deaths are due to hypertension",
       "Hypertension affects exactly half of any given population",
-      "Half of all deaths are due to hypertension"
+      "Only half diagnosed, half of those treated, half of those controlled"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "The Rule of Halves describes the classic gap in chronic disease management: roughly half of hypertensives are undiagnosed, of those diagnosed only half are treated, and of those treated only half achieve adequate control, highlighting major gaps in the care cascade (Park's Textbook of Preventive and Social Medicine).",
     "section": "Community Medicine",
     "num": 35
@@ -459,11 +459,11 @@ window.MM.fpsc_past_4 = [
     "q": "Which of the following best defines 'incidence' in epidemiology?",
     "opts": [
       "The total number of existing cases of a disease at a given time",
-      "The number of new cases of a disease occurring in a population during a specified time period",
+      "The proportion of a population that is immune",
       "The number of deaths due to a disease",
-      "The proportion of a population that is immune"
+      "New cases occurring in a population over a time period"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Incidence measures new cases arising over a defined period, distinguishing it from prevalence, which measures all existing cases (new and old) at a given point in time, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 36
@@ -471,12 +471,12 @@ window.MM.fpsc_past_4 = [
   {
     "q": "A community health worker distributing oral rehydration salts (ORS) to prevent dehydration deaths from diarrhoea is practising which level of prevention?",
     "opts": [
-      "Primary prevention",
       "Secondary prevention",
+      "Primary prevention",
       "Tertiary prevention",
       "Quaternary prevention"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Since diarrhoea has already occurred, giving ORS to prevent progression to severe dehydration and death is secondary prevention: limiting the consequences of an existing condition rather than preventing its onset, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 37
@@ -498,7 +498,7 @@ window.MM.fpsc_past_4 = [
     "q": "The World Health Organization's definition of health encompasses:",
     "opts": [
       "Only the absence of disease",
-      "Complete physical, mental, and social well-being, not merely the absence of disease",
+      "Complete physical, mental, social well-being",
       "Only physical fitness",
       "Only access to hospital care"
     ],
@@ -510,12 +510,12 @@ window.MM.fpsc_past_4 = [
   {
     "q": "Investing in clean drinking water and sanitation infrastructure to reduce diarrhoeal disease is an example of:",
     "opts": [
+      "Care-oriented, upstream prevention",
       "Cure-oriented intervention",
-      "Care-oriented, upstream preventive intervention",
       "Tertiary rehabilitation",
       "Palliative care"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Improving water and sanitation addresses the root cause of disease before it occurs, a classic 'Care'-oriented, upstream preventive strategy, as opposed to treating diarrhoeal illness after it develops, consistent with Park's Textbook of Preventive and Social Medicine.",
     "section": "Care vs Cure",
     "num": 40
@@ -524,11 +524,11 @@ window.MM.fpsc_past_4 = [
     "q": "A district that spends most of its health budget importing advanced dialysis machines, while its Basic Health Units lack even basic medicines, reflects:",
     "opts": [
       "An appropriate balance of Care and Cure",
-      "A skew toward Cure at the expense of Care",
+      "No relevance to the Care vs Cure debate",
       "A skew toward Care at the expense of Cure",
-      "No relevance to the Care vs Cure debate"
+      "A skew toward Cure at the expense of Care"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Prioritizing expensive curative technology for the few while neglecting basic preventive and primary care for the many is a textbook example of over-emphasizing 'Cure' at the expense of 'Care', consistent with Pakistan's National Health Vision 2016-2025.",
     "section": "Care vs Cure",
     "num": 41
@@ -536,12 +536,12 @@ window.MM.fpsc_past_4 = [
   {
     "q": "School-based deworming programmes for children are best classified under which approach?",
     "opts": [
+      "Care (preventive)",
       "Cure",
-      "Care (preventive, population-based)",
       "Rehabilitation",
       "Palliation"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Deworming programmes are preventive, delivered to whole populations of children before serious illness develops, exemplifying the 'Care' approach to health management, as detailed in Park's Textbook of Preventive and Social Medicine.",
     "section": "Care vs Cure",
     "num": 42
@@ -549,12 +549,12 @@ window.MM.fpsc_past_4 = [
   {
     "q": "The Provincial Healthcare Commissions established in Pakistan's provinces are primarily responsible for:",
     "opts": [
+      "Licensing healthcare establishments",
       "Setting import tariffs on medicines",
-      "Regulating and licensing healthcare establishments to ensure minimum service standards",
       "Managing the national budget",
       "Conducting medical entrance examinations"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Provincial Healthcare Commissions (e.g., Punjab Healthcare Commission) are regulatory bodies responsible for licensing healthcare establishments and enforcing minimum quality and safety standards across public and private facilities, a point emphasised in Pakistan's National Health Vision 2016-2025.",
     "section": "Health Policies of Govt",
     "num": 43
@@ -563,11 +563,11 @@ window.MM.fpsc_past_4 = [
     "q": "Pakistan's Expanded Programme on Immunization (EPI) policy targets full immunization coverage of children primarily by:",
     "opts": [
       "18 months of age",
-      "12 months of age",
+      "Birth only",
       "5 years of age",
-      "Birth only"
+      "12 months of age"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "EPI policy in Pakistan aims for children to complete their full primary immunization schedule by 12 months of age, covering diseases such as TB, polio, diphtheria, pertussis, tetanus, hepatitis B, and measles, as Pakistan's National Health Vision 2016-2025 describes.",
     "section": "Health Policies of Govt",
     "num": 44
@@ -576,7 +576,7 @@ window.MM.fpsc_past_4 = [
     "q": "The 'Prime Minister's National Health Programme' (an earlier name associated with the Sehat Sahulat initiative) was primarily designed to:",
     "opts": [
       "Fund medical research grants only",
-      "Extend free hospitalization insurance coverage to low-income and underprivileged families",
+      "Free hospitalisation insurance",
       "Subsidize private medical college fees",
       "Regulate pharmaceutical exports"
     ],
@@ -589,11 +589,11 @@ window.MM.fpsc_past_4 = [
     "q": "High maternal mortality in remote areas of Pakistan is largely attributed to which combination of factors, often called the 'Three Delays' model?",
     "opts": [
       "Delay in disease onset, delay in diagnosis, delay in discharge",
-      "Delay in deciding to seek care, delay in reaching a facility, and delay in receiving adequate care once there",
+      "Delay in medical education, delay in licensing, delay in specialization",
       "Delay in vaccine delivery, delay in staff recruitment, delay in budget approval",
-      "Delay in medical education, delay in licensing, delay in specialization"
+      "Delays in seeking, reaching, and receiving care"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "The 'Three Delays' model explains preventable maternal deaths through delays in deciding to seek care, in reaching an appropriate health facility, and in receiving adequate care once there, a framework widely used to analyse maternal health challenges in low-resource settings, consistent with Pakistan's National Health Vision 2016-2025.",
     "section": "Major Challenges to Healthcare",
     "num": 46
@@ -602,7 +602,7 @@ window.MM.fpsc_past_4 = [
     "q": "The high cost of medicines relative to household income in Pakistan is worsened primarily by:",
     "opts": [
       "Excess government subsidy on all medicines",
-      "Limited health insurance coverage forcing most drug costs to be paid out-of-pocket",
+      "Limited insurance forces out-of-pocket drug costs",
       "Free provision of all medicines nationwide",
       "Overproduction of generic drugs"
     ],
@@ -615,7 +615,7 @@ window.MM.fpsc_past_4 = [
     "q": "Frequent natural disasters and climate-related events (floods, heatwaves) pose a growing challenge to Pakistan's health system chiefly by:",
     "opts": [
       "Having no effect on disease patterns",
-      "Disrupting health infrastructure and increasing the burden of waterborne and vector-borne diseases",
+      "Disrupts infrastructure and raises infectious disease burden",
       "Reducing the need for emergency preparedness",
       "Eliminating the need for vaccination programmes"
     ],
@@ -667,25 +667,25 @@ window.MM.fpsc_past_4 = [
     "q": "A patient with known rheumatoid arthritis develops new onset haematuria, proteinuria, and a serum creatinine of 320 micromol/L. He has been on gold therapy for 3 years. The most likely renal pathology is:",
     "opts": [
       "Focal segmental glomerulosclerosis",
-      "Membranous nephropathy",
+      "Rapidly progressive glomerulonephritis",
       "IgA nephropathy",
-      "Rapidly progressive glomerulonephritis"
+      "Membranous nephropathy"
     ],
-    "ans": 1,
-    "exp": "Gold therapy (as well as penicillamine, another DMARD used in rheumatoid arthritis) is a recognised cause of membranous nephropathy, characterised by subepithelial immune complex deposition causing proteinuria (often nephrotic range) and progressive renal impairment. The combination of RA, gold therapy, proteinuria, and haematuria should prompt renal biopsy to confirm. IgA nephropathy (C) is not drug-associated. FSGS (A) and rapidly progressive GN (D) have different clinical associations.",
+    "ans": 3,
+    "exp": "Gold therapy (as well as penicillamine, another DMARD used in rheumatoid arthritis) is a recognised cause of membranous nephropathy, characterised by subepithelial immune complex deposition causing proteinuria (often nephrotic range) and progressive renal impairment. The combination of RA, gold therapy, proteinuria, and haematuria should prompt renal biopsy to confirm. IgA nephropathy (C) is not drug-associated. FSGS (A) and rapidly progressive GN (B) have different clinical associations.",
     "section": "Medicine",
     "num": 52
   },
   {
     "q": "Which of the following features would MOST help distinguish a transudative from an exudative pleural effusion using Light's criteria?",
     "opts": [
-      "Pleural fluid LDH greater than two-thirds the upper limit of normal serum LDH",
+      "Pleural fluid lymphocyte count greater than 50%",
       "Pleural fluid glucose less than 3.3 mmol/L",
       "Pleural fluid protein greater than 20 g/L",
-      "Pleural fluid lymphocyte count greater than 50%"
+      "Pleural fluid LDH > two-thirds upper normal serum LDH"
     ],
-    "ans": 0,
-    "exp": "Light's criteria define an exudate when any one of three conditions is met: pleural fluid protein to serum protein ratio greater than 0.5, pleural fluid LDH to serum LDH ratio greater than 0.6, or pleural fluid LDH greater than two-thirds the upper limit of normal serum LDH. Option A directly corresponds to one of Light's three criteria. Pleural glucose below 3.3 mmol/L (B) suggests infection, rheumatoid arthritis, or malignancy but is not a Light's criterion. Protein above 20 g/L (C) alone is not the standard threshold; 30 g/L is more commonly used. Lymphocyte predominance (D) guides aetiology but does not distinguish transudate from exudate.",
+    "ans": 3,
+    "exp": "Light's criteria define an exudate when any one of three conditions is met: pleural fluid protein to serum protein ratio greater than 0.5, pleural fluid LDH to serum LDH ratio greater than 0.6, or pleural fluid LDH greater than two-thirds the upper limit of normal serum LDH. Option A directly corresponds to one of Light's three criteria. Pleural glucose below 3.3 mmol/L (B) suggests infection, rheumatoid arthritis, or malignancy but is not a Light's criterion. Protein above 20 g/L (C) alone is not the standard threshold; 30 g/L is more commonly used. Lymphocyte predominance (A) guides aetiology but does not distinguish transudate from exudate.",
     "section": "Medicine",
     "num": 53
   },
@@ -718,7 +718,7 @@ window.MM.fpsc_past_4 = [
   {
     "q": "A 60-year-old man with long-standing type 2 diabetes presents with a painless ulcer on the sole of his foot. What is the most important underlying contributing factor?",
     "opts": [
-      "Peripheral neuropathy causing loss of protective sensation",
+      "Peripheral neuropathy",
       "Excess vitamin intake",
       "Overactive thyroid",
       "Low blood pressure"
@@ -744,12 +744,12 @@ window.MM.fpsc_past_4 = [
   {
     "q": "A 45-year-old man with chronic hepatitis B is found on ultrasound to have a new liver mass with elevated alpha-fetoprotein (AFP). What is the most likely diagnosis?",
     "opts": [
-      "Hepatic adenoma",
       "Hepatocellular carcinoma",
+      "Hepatic adenoma",
       "Simple liver cyst",
       "Hepatic haemangioma"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Chronic hepatitis B is a major risk factor for hepatocellular carcinoma, and a new liver mass with elevated AFP (a tumour marker for HCC) in this context strongly suggests hepatocellular carcinoma (Kumar and Clark's Clinical Medicine).",
     "section": "Medicine",
     "num": 58
@@ -772,7 +772,7 @@ window.MM.fpsc_past_4 = [
     "opts": [
       "Excisional biopsy of the lymph node immediately",
       "Fine needle aspiration cytology of the lymph node",
-      "Panendoscopy (laryngoscopy, oesophagoscopy, bronchoscopy) with targeted biopsies",
+      "Panendoscopy with targeted biopsies",
       "CT neck and chest followed by PET scan if CT is negative"
     ],
     "ans": 2,
@@ -809,7 +809,7 @@ window.MM.fpsc_past_4 = [
   {
     "q": "Which of the following findings on a plain abdominal X-ray is MOST specific for small bowel obstruction?",
     "opts": [
-      "Dilated loops of bowel in the centre of the abdomen with valvulae conniventes visible",
+      "Central dilated loops with valvulae conniventes",
       "Dilated loops of bowel in the periphery with haustra visible",
       "Air under the diaphragm bilaterally",
       "Ground-glass opacity throughout the abdomen"
@@ -823,11 +823,11 @@ window.MM.fpsc_past_4 = [
     "q": "During an inguinal hernia repair, the surgeon encounters a hernia sac that enters the inguinal canal through the deep inguinal ring and runs parallel to the spermatic cord. This is classified as:",
     "opts": [
       "Direct inguinal hernia",
-      "Indirect inguinal hernia",
+      "Spigelian hernia",
       "Femoral hernia",
-      "Spigelian hernia"
+      "Indirect inguinal hernia"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "An indirect inguinal hernia enters the inguinal canal through the deep inguinal ring (lateral to the inferior epigastric vessels) and travels within the spermatic cord, potentially descending into the scrotum. Bailey and Love describes this as the hernia following the path of testicular descent, making it the most common type in younger males. A direct hernia (A) protrudes through Hesselbach's triangle, medial to the inferior epigastric vessels, without traversing the deep ring.",
     "section": "Surgery",
     "num": 64
@@ -862,11 +862,11 @@ window.MM.fpsc_past_4 = [
     "q": "A 28-year-old man presents 30 minutes after a road traffic accident with a rigid, distended abdomen and hypotension unresponsive to initial fluid resuscitation. What is the most appropriate next step?",
     "opts": [
       "Discharge with outpatient follow-up",
-      "Emergency laparotomy",
+      "Observation for 24 hours",
       "CT abdomen with oral contrast only, no urgency",
-      "Observation for 24 hours"
+      "Emergency laparotomy"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "A rigid, distended abdomen with hypotension unresponsive to fluids after trauma indicates ongoing intra-abdominal haemorrhage requiring emergency laparotomy without delay for further imaging, consistent with Sabiston Textbook of Surgery.",
     "section": "Surgery",
     "num": 67
@@ -887,12 +887,12 @@ window.MM.fpsc_past_4 = [
   {
     "q": "A 28-year-old primigravida at 32 weeks gestation presents with sudden onset severe headache, visual disturbances, and a blood pressure of 160/110 mmHg. Urine dipstick shows 3+ proteinuria. She then has a generalised tonic-clonic seizure. The diagnosis is:",
     "opts": [
-      "Severe pre-eclampsia",
       "Eclampsia",
+      "Severe pre-eclampsia",
       "HELLP syndrome",
       "Epilepsy in pregnancy"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Eclampsia is defined as the occurrence of one or more generalised convulsions in a woman with pre-eclampsia, in the absence of other neurological conditions. The background of hypertension (above 160/110 mmHg) and significant proteinuria (3+) before the seizure confirms pre-eclampsia as the underlying condition, and the seizure defines eclampsia. HELLP syndrome (C) is a variant characterised by haemolysis, elevated liver enzymes, and low platelets, which may coexist but is not defined by seizures. Management involves IV magnesium sulphate and antihypertensives as per Ten Teachers.",
     "section": "O&G",
     "num": 69
@@ -926,13 +926,13 @@ window.MM.fpsc_past_4 = [
   {
     "q": "A 24-year-old woman presents at 36 weeks gestation with painless antepartum haemorrhage. Examination reveals a soft, non-tender uterus and the presenting part is high and unengaged. The MOST likely diagnosis is:",
     "opts": [
-      "Placental abruption",
       "Placenta praevia",
+      "Placental abruption",
       "Vasa praevia",
       "Cervical ectropion"
     ],
-    "ans": 1,
-    "exp": "Placenta praevia is characterised by painless antepartum haemorrhage (the uterus is not irritated as no retroplacental clot forms), a soft non-tender uterus, abnormal fetal lie or high presenting part (because the placenta occupies the lower segment), and the fetal head unable to engage. This is the classic teaching from Ten Teachers. Placental abruption (A) causes painful haemorrhage with a tense, tender uterus. Vasa praevia (C) causes fetal vessel rupture with catastrophic fetal haemorrhage at membrane rupture. Crucially, digital vaginal examination is contraindicated when placenta praevia is suspected.",
+    "ans": 0,
+    "exp": "Placenta praevia is characterised by painless antepartum haemorrhage (the uterus is not irritated as no retroplacental clot forms), a soft non-tender uterus, abnormal fetal lie or high presenting part (because the placenta occupies the lower segment), and the fetal head unable to engage. This is the classic teaching from Ten Teachers. Placental abruption (B) causes painful haemorrhage with a tense, tender uterus. Vasa praevia (C) causes fetal vessel rupture with catastrophic fetal haemorrhage at membrane rupture. Crucially, digital vaginal examination is contraindicated when placenta praevia is suspected.",
     "section": "O&G",
     "num": 72
   },
@@ -980,11 +980,11 @@ window.MM.fpsc_past_4 = [
     "opts": [
       "Long-term prophylactic amoxicillin",
       "Adenoidectomy alone",
-      "Tonsillectomy",
-      "Watchful waiting for another 12 months"
+      "Watchful waiting for another 12 months",
+      "Tonsillectomy"
     ],
-    "ans": 2,
-    "exp": "The Scottish Intercollegiate Guidelines (and Dhingra's ENT) recognise frequent recurrent tonsillitis (Paradise criteria: 7 or more episodes per year, or 5 per year for 2 years, or 3 per year for 3 years) as a clear indication for tonsillectomy. This child meets the threshold with 6 episodes per year for 2 years. Long-term antibiotics (A) do not address the underlying tonsillar pathology. Adenoidectomy alone (B) addresses upper airway obstruction but not recurrent infection. Watchful waiting (D) is inappropriate when established criteria for surgery are met.",
+    "ans": 3,
+    "exp": "The Scottish Intercollegiate Guidelines (and Dhingra's ENT) recognise frequent recurrent tonsillitis (Paradise criteria: 7 or more episodes per year, or 5 per year for 2 years, or 3 per year for 3 years) as a clear indication for tonsillectomy. This child meets the threshold with 6 episodes per year for 2 years. Long-term antibiotics (A) do not address the underlying tonsillar pathology. Adenoidectomy alone (B) addresses upper airway obstruction but not recurrent infection. Watchful waiting (C) is inappropriate when established criteria for surgery are met.",
     "section": "ENT",
     "num": 76
   },
@@ -993,10 +993,10 @@ window.MM.fpsc_past_4 = [
     "opts": [
       "Right-sided sensorineural hearing loss",
       "Left-sided sensorineural hearing loss",
-      "Right-sided conductive hearing loss",
-      "Bilateral sensorineural hearing loss"
+      "Bilateral sensorineural hearing loss",
+      "Right-sided conductive hearing loss"
     ],
-    "ans": 2,
+    "ans": 3,
     "exp": "Rinne negative (BC > AC) on the right indicates conductive hearing loss in the right ear, as bone conduction bypasses the defective air conduction pathway. Weber lateralises to the affected side in conductive hearing loss because the impaired ear is not distracted by ambient noise. Together, these findings confirm right-sided conductive hearing loss, which with a normal tympanic membrane may be due to ossicular chain pathology such as otosclerosis. In sensorineural loss, Rinne is positive (AC > BC) and Weber lateralises to the better ear.",
     "section": "ENT",
     "num": 77
@@ -1017,13 +1017,13 @@ window.MM.fpsc_past_4 = [
   {
     "q": "A 45-year-old woman presents with a pulsatile tinnitus and conductive hearing loss. Otoscopy shows a reddish-blue mass behind the intact tympanic membrane. The MOST likely diagnosis is:",
     "opts": [
-      "Cholesteatoma",
       "Glomus jugulare tumour",
+      "Cholesteatoma",
       "Cerumen impaction",
       "Otosclerosis"
     ],
-    "ans": 1,
-    "exp": "A glomus jugulare (paraganglioma) is a highly vascular benign tumour arising from chemoreceptor cells in the jugular bulb. It presents with pulsatile tinnitus, progressive conductive hearing loss, and the classic 'rising sun' or red-blue pulsating mass visible through the tympanic membrane. Cholesteatoma (A) appears white or grey and does not pulsate. Otosclerosis (D) causes conductive hearing loss but no visible mass. This entity is covered in detail in Dhingra's Diseases of Ear, Nose and Throat.",
+    "ans": 0,
+    "exp": "A glomus jugulare (paraganglioma) is a highly vascular benign tumour arising from chemoreceptor cells in the jugular bulb. It presents with pulsatile tinnitus, progressive conductive hearing loss, and the classic 'rising sun' or red-blue pulsating mass visible through the tympanic membrane. Cholesteatoma (B) appears white or grey and does not pulsate. Otosclerosis (D) causes conductive hearing loss but no visible mass. This entity is covered in detail in Dhingra's Diseases of Ear, Nose and Throat.",
     "section": "ENT",
     "num": 79
   },
@@ -1032,7 +1032,7 @@ window.MM.fpsc_past_4 = [
     "opts": [
       "Right-sided pneumonia",
       "Right-sided pleural effusion",
-      "Foreign body aspiration in the right main bronchus",
+      "Foreign body in the right main bronchus",
       "Congenital lobar emphysema"
     ],
     "ans": 2,
@@ -1045,7 +1045,7 @@ window.MM.fpsc_past_4 = [
     "opts": [
       "Voice rest for 4 weeks and reassess",
       "Speech therapy referral",
-      "Urgent direct laryngoscopy under anaesthesia with biopsy",
+      "Urgent direct laryngoscopy with biopsy",
       "Lateral soft tissue neck X-ray"
     ],
     "ans": 2,
@@ -1056,13 +1056,13 @@ window.MM.fpsc_past_4 = [
   {
     "q": "In acute bacterial rhinosinusitis, the MOST common causative organism is:",
     "opts": [
-      "Staphylococcus aureus",
       "Streptococcus pneumoniae",
+      "Staphylococcus aureus",
       "Pseudomonas aeruginosa",
       "Moraxella catarrhalis"
     ],
-    "ans": 1,
-    "exp": "Streptococcus pneumoniae accounts for approximately 30-40% of acute bacterial rhinosinusitis, making it the single most common causative organism, followed by Haemophilus influenzae (approximately 20%) and Moraxella catarrhalis (approximately 10-15%). Staphylococcus aureus (A) is more commonly implicated in chronic or complicated sinusitis and in cases involving orbital or intracranial extension. Pseudomonas aeruginosa (C) is characteristic of sinusitis in immunocompromised patients and cystic fibrosis.",
+    "ans": 0,
+    "exp": "Streptococcus pneumoniae accounts for approximately 30-40% of acute bacterial rhinosinusitis, making it the single most common causative organism, followed by Haemophilus influenzae (approximately 20%) and Moraxella catarrhalis (approximately 10-15%). Staphylococcus aureus (B) is more commonly implicated in chronic or complicated sinusitis and in cases involving orbital or intracranial extension. Pseudomonas aeruginosa (C) is characteristic of sinusitis in immunocompromised patients and cystic fibrosis.",
     "section": "ENT",
     "num": 82
   },
@@ -1084,11 +1084,11 @@ window.MM.fpsc_past_4 = [
     "opts": [
       "Age-related macular degeneration",
       "Diabetic retinopathy",
-      "Primary open-angle glaucoma",
-      "Anterior ischaemic optic neuropathy"
+      "Anterior ischaemic optic neuropathy",
+      "Primary open-angle glaucoma"
     ],
-    "ans": 2,
-    "exp": "Primary open-angle glaucoma (POAG) is a chronic, painless optic neuropathy characterised by elevated IOP (above 21 mmHg), progressive optic disc cupping (cup-to-disc ratio above 0.7), and characteristic visual field defects including arcuate (Bjerrum) scotomas, nasal steps, and eventually tunnel vision in advanced disease. As described in Parson's Disease of the Eye, this is the most common cause of irreversible blindness globally. AMD (A) affects central vision with macular changes. Diabetic retinopathy (B) shows retinal vascular changes. AION (D) produces altitudinal field loss.",
+    "ans": 3,
+    "exp": "Primary open-angle glaucoma (POAG) is a chronic, painless optic neuropathy characterised by elevated IOP (above 21 mmHg), progressive optic disc cupping (cup-to-disc ratio above 0.7), and characteristic visual field defects including arcuate (Bjerrum) scotomas, nasal steps, and eventually tunnel vision in advanced disease. As described in Parson's Disease of the Eye, this is the most common cause of irreversible blindness globally. AMD (A) affects central vision with macular changes. Diabetic retinopathy (B) shows retinal vascular changes. AION (C) produces altitudinal field loss.",
     "section": "Ophthalmology",
     "num": 84
   },
@@ -1096,11 +1096,11 @@ window.MM.fpsc_past_4 = [
     "q": "A 15-year-old boy presents with myopia of -6 dioptres. He asks about the risk of retinal complications. Which statement is MOST accurate?",
     "opts": [
       "High myopia is associated with reduced risk of retinal detachment",
-      "High myopia (above -6 D) carries increased risk of retinal detachment, lattice degeneration, and macular degeneration",
+      "Myopia has no association with posterior segment complications",
       "Myopia in teenagers never progresses beyond -6 dioptres",
-      "Myopia has no association with posterior segment complications"
+      "High myopia raises retinal detachment and degeneration risk"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "High myopia (typically above -6 dioptres) is associated with axial elongation of the globe and stretching of the retina, predisposing to lattice degeneration, retinal holes and tears, rhegmatogenous retinal detachment, myopic macular degeneration (including choroidal neovascularisation), and posterior staphyloma. These complications are covered in detail in Parson's Disease of the Eye. Periodic dilated fundus examination is mandatory in highly myopic patients for early detection and prophylactic treatment of retinal lesions.",
     "section": "Ophthalmology",
     "num": 85
@@ -1108,13 +1108,13 @@ window.MM.fpsc_past_4 = [
   {
     "q": "A 30-year-old man presents with a red, painful eye, tearing, and photophobia. There is no discharge. Slit-lamp examination reveals a branching dendritic ulcer on the cornea that stains with fluorescein. Diagnosis and treatment:",
     "opts": [
-      "Bacterial keratitis; topical ciprofloxacin",
-      "Acanthamoeba keratitis; topical polyhexamethylene biguanide",
       "Herpes simplex keratitis; topical acyclovir",
+      "Acanthamoeba keratitis; topical polyhexamethylene biguanide",
+      "Bacterial keratitis; topical ciprofloxacin",
       "Fungal keratitis; topical natamycin"
     ],
-    "ans": 2,
-    "exp": "A branching (dendritic) corneal ulcer staining with fluorescein is pathognomonic of herpes simplex keratitis (epithelial type). The branching pattern is characteristic of HSV's cytopathic effect on corneal epithelium. Treatment is topical acyclovir 3% ointment or ganciclovir gel 5 times daily for 10-14 days. Topical steroids are absolutely contraindicated as they promote viral replication and can cause geographic ulceration. Bacterial keratitis (A) produces stromal infiltrate without branching pattern. Acanthamoeba (B) is associated with contact lens use and produces perineural infiltrates.",
+    "ans": 0,
+    "exp": "A branching (dendritic) corneal ulcer staining with fluorescein is pathognomonic of herpes simplex keratitis (epithelial type). The branching pattern is characteristic of HSV's cytopathic effect on corneal epithelium. Treatment is topical acyclovir 3% ointment or ganciclovir gel 5 times daily for 10-14 days. Topical steroids are absolutely contraindicated as they promote viral replication and can cause geographic ulceration. Bacterial keratitis (C) produces stromal infiltrate without branching pattern. Acanthamoeba (B) is associated with contact lens use and produces perineural infiltrates.",
     "section": "Ophthalmology",
     "num": 86
   },
@@ -1123,7 +1123,7 @@ window.MM.fpsc_past_4 = [
     "opts": [
       "Central retinal artery occlusion",
       "Optic neuritis",
-      "Non-arteritic anterior ischaemic optic neuropathy",
+      "NAION",
       "Papilloedema"
     ],
     "ans": 2,
@@ -1161,11 +1161,11 @@ window.MM.fpsc_past_4 = [
     "q": "A 45-year-old woman presents with increasing exertional dyspnoea, non-productive cough, and fatigue over 8 months. She takes no medications. Spirometry shows FEV1 88% predicted, FVC 65% predicted, FEV1/FVC 0.95. Total lung capacity is reduced. The pattern is:",
     "opts": [
       "Obstructive",
-      "Restrictive",
+      "Normal",
       "Mixed obstructive and restrictive",
-      "Normal"
+      "Restrictive"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "A reduced FVC with a normal or elevated FEV1/FVC ratio is the hallmark of restrictive lung disease, a pattern Davidson's Medicine identifies as distinct from obstruction precisely because the ratio is preserved or elevated while absolute volumes are reduced. Here, FVC is 65% predicted (below 80%, confirming restriction), FEV1/FVC is 0.95 (well above 0.70, excluding obstruction), and total lung capacity is reduced, which is the definitive criterion for restriction. Restrictive patterns include interstitial lung diseases (IPF, sarcoidosis), pleural disease, chest wall deformity, and neuromuscular disease. Obstructive disease (A) requires FEV1/FVC below 0.70.",
     "section": "Pulmonology",
     "num": 90
@@ -1188,7 +1188,7 @@ window.MM.fpsc_past_4 = [
     "opts": [
       "Serum ESR",
       "Tuberculin skin test (Mantoux)",
-      "Sputum smear for acid-fast bacilli (AFB) on 3 consecutive days",
+      "Sputum AFB smear, 3 consecutive days",
       "High-resolution CT chest"
     ],
     "ans": 2,
@@ -1200,11 +1200,11 @@ window.MM.fpsc_past_4 = [
     "q": "A patient with lung cancer develops facial oedema, distended neck veins with no respiratory variation, and prominent venous collaterals over the chest wall. The MOST likely complication is:",
     "opts": [
       "Pulmonary embolism",
-      "Superior vena cava syndrome",
+      "Bilateral pleural effusion",
       "Cardiac tamponade",
-      "Bilateral pleural effusion"
+      "Superior vena cava syndrome"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Superior vena cava (SVC) syndrome results from obstruction of venous return through the SVC, most commonly by external compression or invasion from right-sided lung tumours or lymphomas. It manifests as facial and arm oedema, distended non-pulsatile neck veins, dyspnoea, and collateral vessel formation on the chest wall as venous drainage seeks alternative pathways. It is a clinical emergency if the airway is compromised. Cardiac tamponade (C) causes pulsus paradoxus and Beck's triad but not facial oedema or chest wall collaterals.",
     "section": "Pulmonology",
     "num": 93
@@ -1227,7 +1227,7 @@ window.MM.fpsc_past_4 = [
     "opts": [
       "Radical radiotherapy alone",
       "CT-guided percutaneous biopsy followed by surveillance",
-      "Surgical resection (lobectomy) with hilar and mediastinal lymph node sampling",
+      "Lobectomy with lymph node sampling",
       "Empirical chemotherapy"
     ],
     "ans": 2,
@@ -1238,13 +1238,13 @@ window.MM.fpsc_past_4 = [
   {
     "q": "A 17-year-old girl is brought by her parents. She has lost 14 kg over 5 months. She believes she is overweight despite BMI of 15.2 kg/m2 and is terrified of gaining weight. She has had no menstrual periods for 4 months. On examination, she has lanugo hair and parotid swelling. The diagnosis is:",
     "opts": [
-      "Bulimia nervosa",
       "Anorexia nervosa",
+      "Bulimia nervosa",
       "Avoidant/restrictive food intake disorder",
       "Major depressive disorder"
     ],
-    "ans": 1,
-    "exp": "Anorexia nervosa is characterised by restriction of energy intake leading to significantly low body weight (BMI below 17.5 kg/m2 in adults, or failure to gain expected weight in adolescents), an intense fear of gaining weight, and a distorted body image. Secondary amenorrhoea (loss of periods for 3 or more months) results from hypothalamic-pituitary-gonadal axis suppression. Lanugo hair (fine downy body hair) and parotid enlargement are physical signs of severe malnutrition and compensatory behaviour. Bulimia nervosa (A) involves binge-purge cycles with typically normal weight.",
+    "ans": 0,
+    "exp": "Anorexia nervosa is characterised by restriction of energy intake leading to significantly low body weight (BMI below 17.5 kg/m2 in adults, or failure to gain expected weight in adolescents), an intense fear of gaining weight, and a distorted body image. Secondary amenorrhoea (loss of periods for 3 or more months) results from hypothalamic-pituitary-gonadal axis suppression. Lanugo hair (fine downy body hair) and parotid enlargement are physical signs of severe malnutrition and compensatory behaviour. Bulimia nervosa (B) involves binge-purge cycles with typically normal weight.",
     "section": "Psychiatry",
     "num": 96
   },
@@ -1252,11 +1252,11 @@ window.MM.fpsc_past_4 = [
     "q": "A 35-year-old man presents with a 2-year history of recurrent, brief episodes lasting 5-10 minutes, characterised by intense fear, palpitations, chest tightness, shortness of breath, and dread of dying, occurring without an obvious trigger. Full cardiovascular and thyroid workup is normal. The MOST likely diagnosis is:",
     "opts": [
       "Generalised anxiety disorder",
-      "Panic disorder",
+      "Acute stress reaction",
       "Social anxiety disorder",
-      "Acute stress reaction"
+      "Panic disorder"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Panic disorder is characterised by recurrent unexpected panic attacks: discrete episodes of intense fear peaking within minutes and including at least 4 somatic or cognitive symptoms (palpitations, chest pain, dyspnoea, dizziness, derealization, fear of dying or losing control). The Shorter Oxford Textbook of Psychiatry describes the interictal period of persistent anticipatory anxiety as what distinguishes panic disorder from isolated panic episodes. Between attacks, there is persistent concern about further attacks or their consequences. The 2-year chronicity and absence of a specific trigger (as would be seen in phobias) distinguish this from social anxiety (C). GAD (A) involves chronic, diffuse worry rather than discrete episodic attacks. Negative medical workup is essential before diagnosis.",
     "section": "Psychiatry",
     "num": 97
@@ -1278,7 +1278,7 @@ window.MM.fpsc_past_4 = [
     "q": "A 25-year-old medical student reports intrusive, ego-dystonic thoughts about harming his patients, which he finds repugnant. He performs repetitive hand washing rituals to neutralise the anxiety these thoughts cause. He recognises the thoughts as irrational but cannot control them. The MOST appropriate first-line treatment is:",
     "opts": [
       "Haloperidol",
-      "Exposure and response prevention (ERP) therapy",
+      "ERP therapy",
       "Lithium",
       "Alprazolam"
     ],
