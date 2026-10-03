@@ -1,17 +1,18 @@
 window.MM = window.MM || {};
 window.MM.fpsc_past_5 = [
   {
-    "q": "Choose the word most SIMILAR in meaning to RECONDITE.",
+    "q": "Convert to indirect speech: The nurse said, \"The patient's blood pressure is stable.\"",
     "opts": [
-      "Arcane",
-      "Accessible",
-      "Manifest",
-      "Prosaic"
+      "The nurse said that the patient's blood pressure is stable.",
+      "The nurse said that the patient's blood pressure was stable.",
+      "The nurse says that the patient's blood pressure was stable.",
+      "The nurse said that the patient's blood pressure had been stable."
     ],
-    "ans": 0,
-    "exp": "RECONDITE means little known, abstruse, or dealing with obscure subject matter. ARCANE is its closest synonym, meaning understood by few; mysterious or secret. ACCESSIBLE (A) is the opposite, meaning easy to understand. MANIFEST (C) means clear and obvious, the antonym of recondite. PROSAIC (D) means lacking imagination or ordinary, which is unrelated to obscurity of knowledge.",
+    "ans": 1,
+    "exp": "When the reporting verb is past tense ('said'), a present-tense statement ('is stable') shifts back to past tense ('was stable') in indirect speech. 'Is stable' (A) wrongly retains the present tense. 'Says' (C) changes the reporting verb's own tense. 'Had been stable' (D) over-shifts to past perfect, which is not required for a simple present-tense original.",
     "section": "English",
-    "num": 1
+    "num": 1,
+    "difficulty": "moderate"
   },
   {
     "q": "Choose the word most OPPOSITE in meaning to MENDACIOUS.",
@@ -27,17 +28,18 @@ window.MM.fpsc_past_5 = [
     "num": 2
   },
   {
-    "q": "The hospital administrator was praised for her _____ in navigating the budget crisis: she showed neither _____ nor capitulation but found a principled middle path.",
+    "q": "Convert to indirect speech: The surgeon asked, \"Have you signed the consent form?\"",
     "opts": [
-      "timidity / resolve",
-      "obduracy / flexibility",
-      "vacillation / firmness",
-      "judiciousness / obstinacy"
+      "The surgeon asked if I signed the consent form.",
+      "The surgeon asked whether I have signed the consent form.",
+      "The surgeon asked that I have signed the consent form.",
+      "The surgeon asked if I had signed the consent form."
     ],
     "ans": 3,
-    "exp": "The sentence describes someone who avoided two extremes and found a principled middle path. JUDICIOUSNESS means the quality of having good judgement, and OBSTINACY means stubborn refusal to yield. The sentence says she showed neither obstinacy nor capitulation, meaning she avoided both extremes, which fits perfectly. TIMIDITY / RESOLVE (A) is contradictory as praise. OBDURACY / FLEXIBILITY (B) is self-defeating. VACILLATION / FIRMNESS (D) implies indecision, not praise.",
+    "exp": "A reported yes/no question uses 'if' or 'whether' with the subject-verb order of a statement (no inversion), and the present perfect ('have signed') shifts back to past perfect ('had signed'). 'Signed' alone (A) under-shifts the tense. Option C misuses 'that' with a question and fails to shift tense. Option B fails to shift the tense at all.",
     "section": "English",
-    "num": 3
+    "num": 3,
+    "difficulty": "moderate"
   },
   {
     "q": "LEXICON : WORDS :: PHARMACOPOEIA : ?",
@@ -53,95 +55,102 @@ window.MM.fpsc_past_5 = [
     "num": 4
   },
   {
-    "q": "In the sentence below, identify the portion that contains an error. 'Neither the [A] senior consultants nor the [B] registrar were [C] available to attend [D] the emergency review.'",
+    "q": "Convert to indirect speech: The consultant said to the resident, \"Don't discharge the patient today.\"",
     "opts": [
-      "registrar were",
-      "senior consultants nor the",
-      "available to attend",
-      "the emergency review"
+      "The consultant told the resident not to discharge the patient that day.",
+      "The consultant said to the resident don't discharge the patient today.",
+      "The consultant told the resident to not discharging the patient today.",
+      "The consultant ordered the resident didn't discharge the patient that day."
     ],
     "ans": 0,
-    "exp": "With neither/nor constructions, the verb agrees with the noun closest to it. Here, 'registrar' (singular) is closest to the verb, so the verb should be 'was' not 'were.' This is the proximity rule for subject-verb agreement with correlative conjunctions. Option A is grammatically correct. Options C and D are correctly constructed with no errors.",
+    "exp": "A negative imperative in direct speech ('Don't discharge...') is reported using 'told + object + not + to-infinitive': 'told the resident not to discharge'. The time reference 'today' also shifts to 'that day' since the reporting may occur later. Option B simply retains direct-speech punctuation and wording. Option C uses an ungrammatical '-ing' form after 'not to'. Option D uses an ungrammatical finite clause after 'ordered'.",
     "section": "English",
-    "num": 5
+    "num": 5,
+    "difficulty": "moderate"
   },
   {
-    "q": "ENDEMIC : REGION :: PANDEMIC : ?",
+    "q": "Convert to indirect speech: The patient asked the doctor, \"Why do I need to take this medicine twice a day instead of once, like before?\"",
     "opts": [
-      "Hospital",
-      "Country",
-      "Community",
-      "Globe"
+      "The patient asked the doctor why does he need to take this medicine twice a day instead of once, like before.",
+      "The patient asked the doctor why did he need to take this medicine twice a day instead of once, like before.",
+      "The patient asked the doctor why he needed to take that medicine twice a day instead of once, like before.",
+      "The patient asked the doctor why he needs to take that medicine twice a day instead of once, like before."
+    ],
+    "ans": 2,
+    "exp": "A reported WH-question drops the inversion used in the direct question ('why do I need' becomes 'why he needed'), and the present tense ('do...need') backshifts to past ('needed') since the reporting verb 'asked' is past tense. The demonstrative 'this' shifts to 'that' as the deictic centre moves away from the moment of speaking. Option A wrongly retains both the inversion ('why does he') and the present tense. Option B wrongly retains an inverted auxiliary ('did he need') inside the reported clause, which must read as a statement, not a question. Option D correctly drops inversion but fails to backshift the tense.",
+    "section": "English",
+    "num": 6,
+    "difficulty": "extreme"
+  },
+  {
+    "q": "Convert to indirect speech: The specialist told the family, \"I will review the scans again tomorrow morning and call you if anything has changed.\"",
+    "opts": [
+      "The specialist told the family that she will review the scans again tomorrow morning and will call them if anything has changed.",
+      "The specialist told the family that she would review the scans again tomorrow morning and would call them if anything changed.",
+      "The specialist told the family she would have reviewed the scans again the next morning and would have called them if anything had changed.",
+      "The specialist told the family that she would review the scans again the next morning and would call them if anything had changed."
     ],
     "ans": 3,
-    "exp": "ENDEMIC describes a disease consistently present within a particular REGION or population. A PANDEMIC describes a disease that has spread across the entire GLOBE, affecting multiple countries and continents. EPIDEMIC would relate to a country or region with unusual prevalence, but pandemic specifically implies global spread. HOSPITAL (A) and COMMUNITY (D) are too localised. COUNTRY (B) fits the definition of epidemic rather than pandemic.",
+    "exp": "Both future-tense verbs ('will review', 'will call') backshift to 'would' after the past-tense reporting verb 'told', the time expression 'tomorrow' shifts to 'the next morning', and the present perfect condition ('has changed') backshifts to past perfect ('had changed') within the reported conditional clause. Option A fails to backshift anything. Option B correctly handles the main verbs but wrongly leaves 'tomorrow' unshifted and fails to backshift 'changed' to 'had changed'. Option C incorrectly over-shifts both verbs to the conditional perfect ('would have reviewed'), which misrepresents a simple future action as a hypothetical unfulfilled one.",
     "section": "English",
-    "num": 6
+    "num": 7,
+    "difficulty": "extreme"
   },
   {
-    "q": "The board members could not reach an agreement, _____ delayed the final decision.",
+    "q": "Convert to indirect speech: The committee chairman insisted, \"Every department must submit its report by Friday, no exceptions.\"",
     "opts": [
-      "that",
-      "which",
-      "who",
-      "whom"
+      "The committee chairman insisted that every department must submit its report by Friday, no exceptions.",
+      "The committee chairman insisted that every department submit its report by that Friday, with no exceptions.",
+      "The committee chairman insisted that every department submitted its report by that Friday, with no exceptions.",
+      "The committee chairman insisted that every department would submit its report by that Friday, with no exceptions."
     ],
     "ans": 1,
-    "exp": "'Which' is used to introduce a non-restrictive relative clause referring to the entire preceding clause ('could not reach an agreement'), not a specific noun.",
+    "exp": "After a verb of insistence or demand ('insisted that'), the subjunctive base form of the verb is used ('submit'), and this mandative subjunctive does not take the usual backshifted or modal form, even though the reporting verb is past tense; only the time reference 'Friday' shifts to 'that Friday' since the deictic centre has moved. Option A fails to convert the direct-speech structure at all, wrongly keeping 'must' and leaving 'Friday' unshifted. Option C wrongly uses the ordinary past tense ('submitted') instead of the required subjunctive. Option D wrongly uses 'would', treating the demand as a simple future prediction rather than a directive.",
     "section": "English",
-    "num": 7
+    "num": 8,
+    "difficulty": "extreme"
   },
   {
-    "q": "I would rather you _____ the results confidential for now.",
+    "q": "Convert to indirect speech: She exclaimed, \"What a relief it is that the biopsy came back benign!\"",
     "opts": [
-      "keep",
-      "kept",
-      "keeping",
-      "to keep"
+      "She exclaimed what a relief it was that the biopsy came back benign.",
+      "She exclaimed that what a relief it is that the biopsy had come back benign.",
+      "She exclaimed that it was a great relief that the biopsy had come back benign.",
+      "She exclaimed that it was a relief what the biopsy had come back benign."
+    ],
+    "ans": 2,
+    "exp": "An exclamatory sentence in indirect speech loses its exclamatory structure ('What a relief it is') and is rephrased as a statement ('that it was a great relief'), the present tense ('is') backshifts to past ('was'), and the simple past describing the completed event ('came back') backshifts to past perfect ('had come back') since it happened before the exclamation was reported. Option A retains the ungrammatical exclamatory word order inside indirect speech. Option B keeps the exclamatory 'what' structure nested under 'that', which is ungrammatical, and fails to backshift 'is'. Option D garbles the clause structure by using 'what' where a relative or result clause is needed.",
+    "section": "English",
+    "num": 9,
+    "difficulty": "extreme"
+  },
+  {
+    "q": "Choose the correct passive form: 'The lab technician will have completed the analysis by noon.'",
+    "opts": [
+      "The analysis will be completed by noon by the lab technician.",
+      "The analysis will have being completed by noon by the lab technician.",
+      "The analysis has been completed by noon by the lab technician.",
+      "The analysis will have been completed by noon by the lab technician."
+    ],
+    "ans": 3,
+    "exp": "The active sentence is in future perfect tense ('will have completed'), so the passive must preserve this: 'will have been + past participle' → 'will have been completed'. Option A drops to simple future, losing the sense of completion before a deadline. Option B uses the ungrammatical 'will have being'. Option C wrongly shifts to present perfect, losing the future reference entirely.",
+    "section": "English",
+    "num": 10,
+    "difficulty": "moderate"
+  },
+  {
+    "q": "Choose the correct passive form: 'The hospital board must review the proposal before Monday.'",
+    "opts": [
+      "The proposal must have been reviewed by the hospital board before Monday.",
+      "The proposal must be reviewed by the hospital board before Monday.",
+      "The proposal must review the hospital board before Monday.",
+      "The proposal is must be reviewed by the hospital board before Monday."
     ],
     "ans": 1,
-    "exp": "After 'would rather you', the past subjunctive form is used even when referring to present/future time: 'would rather you kept'.",
+    "exp": "With a modal verb ('must') in the active voice, the passive is formed as 'modal + be + past participle': 'must be reviewed'. Option A wrongly adds a perfect aspect not present in the original. Option C reverses subject and object illogically. Option D inserts an extra, ungrammatical 'is' before the modal.",
     "section": "English",
-    "num": 8
-  },
-  {
-    "q": "Choose the correctly structured sentence:",
-    "opts": [
-      "Seldom the department receives such positive feedback.",
-      "Seldom does the department receive such positive feedback.",
-      "Seldom the department does receive such positive feedback.",
-      "The department seldom does receive such feedback."
-    ],
-    "ans": 1,
-    "exp": "Negative adverbs like 'seldom' placed at the start of a sentence require subject-auxiliary inversion: 'Seldom does the department receive...'",
-    "section": "English",
-    "num": 9
-  },
-  {
-    "q": "Rearrange to form a meaningful sentence: (1) the findings (2) peer-reviewed (3) were (4) before publication (5) carefully.",
-    "opts": [
-      "1-3-5-2-4",
-      "1-2-3-5-4",
-      "3-1-2-5-4",
-      "1-3-2-5-4"
-    ],
-    "ans": 0,
-    "exp": "The correct order is 'The findings were carefully peer-reviewed before publication': subject (1), verb (3), adverb (5), participle (2), then the phrase (4).",
-    "section": "English",
-    "num": 10
-  },
-  {
-    "q": "Choose the best combination: 'The trial was promising. It was halted due to funding issues.'",
-    "opts": [
-      "The trial was promising, so it was halted due to funding issues.",
-      "Although the trial was promising, it was halted due to funding issues.",
-      "The trial was promising because it was halted due to funding issues.",
-      "It was halted due to funding issues, so the trial was promising."
-    ],
-    "ans": 1,
-    "exp": "'Although' correctly signals the contrast: the trial showed promise, yet was still halted. The other options misstate the logical relationship between the two facts.",
-    "section": "English",
-    "num": 11
+    "num": 11,
+    "difficulty": "moderate"
   },
   {
     "q": "Choose the synonym of ASTUTE:",
@@ -160,11 +169,11 @@ window.MM.fpsc_past_5 = [
     "q": "Choose the antonym of DILIGENT:",
     "opts": [
       "Hardworking",
-      "Lazy",
+      "Thorough",
       "Careful",
-      "Thorough"
+      "Lazy"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "DILIGENT means showing care and effort in one's work; its opposite is LAZY, meaning unwilling to work or use energy.",
     "section": "English",
     "num": 13
@@ -183,93 +192,99 @@ window.MM.fpsc_past_5 = [
     "num": 14
   },
   {
-    "q": "The word 'CIRCUMSPECT' most nearly means:",
+    "q": "Choose the correct passive form: 'They had the physiotherapist assess the patient's mobility before discharge.'",
     "opts": [
-      "Reckless",
-      "Cautious and wary",
-      "Extremely talkative",
-      "Highly confident"
+      "They had the physiotherapist assessed the patient's mobility before discharge.",
+      "The patient's mobility was had assessed by the physiotherapist before discharge.",
+      "They had the patient's mobility assessed by the physiotherapist before discharge.",
+      "They had the patient's mobility being assessed by the physiotherapist before discharge."
     ],
-    "ans": 1,
-    "exp": "CIRCUMSPECT describes someone wary and careful to consider all circumstances and possible consequences before acting.",
+    "ans": 2,
+    "exp": "This is a causative construction ('have someone do something'), whose passive equivalent is 'have something done (by someone)': the object of the original causative ('the patient's mobility', what gets assessed) becomes the focus, with the verb converted to a past participle: 'had the patient's mobility assessed'. Option A keeps 'the physiotherapist' as the one 'had', but wrongly inflects the verb as finite past ('assessed') rather than restructuring the causative. Option B produces an ungrammatical double-auxiliary structure. Option D wrongly inserts the continuous '-ing' form where a past participle is required.",
     "section": "English",
-    "num": 15
+    "num": 15,
+    "difficulty": "extreme"
   },
   {
-    "q": "Identify the grammatically correct sentence:",
+    "q": "Choose the correct passive form: 'People generally believe that the new vaccine prevents severe illness.'",
     "opts": [
-      "Everybody are required to wear their ID badges.",
-      "Everybody is required to wear their ID badge.",
-      "Everybody were required to wear ID badges.",
-      "Everybody is required to wearing ID badge."
+      "The new vaccine is generally believed that it prevents severe illness.",
+      "It is generally believed the new vaccine to prevent severe illness.",
+      "The new vaccine generally is believed preventing severe illness.",
+      "The new vaccine is generally believed to prevent severe illness."
     ],
-    "ans": 1,
-    "exp": "'Everybody' is grammatically singular and takes a singular verb ('is required'), even though 'their' is commonly used as a gender-neutral possessive.",
+    "ans": 3,
+    "exp": "With reporting verbs like 'believe' followed by a that-clause, one passive option promotes the subject of the that-clause to become the main subject, followed by a to-infinitive: 'The new vaccine is generally believed to prevent...'. (The alternative impersonal passive 'It is generally believed that the new vaccine prevents...' is also correct but is not offered here.) Option A incorrectly combines both structures, leaving a stray 'that it' clause after the infinitive-style passive has already begun. Option B garbles the impersonal passive by inserting the vaccine as an object before an infinitive, which is ungrammatical. Option C incorrectly uses the '-ing' form instead of the required to-infinitive.",
     "section": "English",
-    "num": 16
+    "num": 16,
+    "difficulty": "extreme"
   },
   {
-    "q": "_____ the traffic, the ambulance arrived at the hospital within minutes.",
+    "q": "Choose the correct passive form: 'The research team has been monitoring the trial participants closely for adverse effects.'",
     "opts": [
-      "Despite",
-      "Because of",
-      "So that",
-      "Provided that"
+      "The trial participants have been being monitored closely for adverse effects by the research team.",
+      "The trial participants are being monitored closely for adverse effects by the research team.",
+      "The trial participants have been monitored closely for adverse effects by the research team.",
+      "The trial participants had been monitored closely for adverse effects by the research team."
+    ],
+    "ans": 2,
+    "exp": "English avoids the grammatically possible but extremely awkward 'have been being + past participle' passive form for the present perfect continuous; standard usage instead uses the simple present perfect passive, 'have been monitored', to convey the same ongoing-up-to-now sense without the doubled auxiliary. Option A is technically constructible but is considered stylistically unacceptable and is avoided by virtually all usage authorities. Option B shifts the meaning to present continuous only, losing the 'up to now, over a period' sense of the original. Option D wrongly shifts the tense to past perfect, placing the monitoring entirely in a completed past period rather than continuing to the present.",
+    "section": "English",
+    "num": 17,
+    "difficulty": "extreme"
+  },
+  {
+    "q": "Choose the correct passive form: 'The ambulance crew rushed the patient to the emergency ward.'",
+    "opts": [
+      "The patient was rushed to the emergency ward by the ambulance crew.",
+      "The patient had rushed to the emergency ward by the ambulance crew.",
+      "The patient was rushing to the emergency ward by the ambulance crew.",
+      "The emergency ward was rushed to the patient by the ambulance crew."
     ],
     "ans": 0,
-    "exp": "'Despite' introduces a contrast: the ambulance arrived quickly even though there was traffic. 'Because of' would incorrectly suggest traffic helped the ambulance arrive faster.",
+    "exp": "The active sentence is simple past ('rushed'), so the passive requires 'was/were + past participle': 'was rushed'. Option B wrongly uses the active past perfect form 'had rushed' instead of a passive participle. Option C wrongly uses the continuous form 'was rushing', which is active in meaning, not passive. Option D illogically swaps the object and the location, reversing the real-world meaning of the sentence.",
     "section": "English",
-    "num": 17
+    "num": 18,
+    "difficulty": "moderate"
   },
   {
-    "q": "Choose the one word for: 'A person who is unable to read or write.'",
+    "q": "Choose the correct passive form: 'The hospital gave the discharged patient a three-month supply of medication.'",
     "opts": [
-      "Illegible",
-      "Illiterate",
-      "Incoherent",
-      "Ineligible"
+      "The discharged patient was given a three-month supply of medication by the hospital.",
+      "A three-month supply of medication was given the discharged patient by the hospital.",
+      "The discharged patient was given by the hospital a three-month supply of medication.",
+      "A three-month supply of medication was given to the discharged patient was by the hospital."
     ],
-    "ans": 1,
-    "exp": "ILLITERATE describes a person who is unable to read or write. 'Illegible' refers to handwriting that cannot be read, not a person.",
+    "ans": 0,
+    "exp": "A ditransitive verb with two objects ('gave the patient medication') allows the indirect object to become the passive subject directly, without needing 'to': 'The discharged patient was given...'. Option B incorrectly drops the required preposition 'to' before the retained object when the direct object becomes the subject instead. Option C produces an awkward, non-standard word order by placing 'by the hospital' before the retained direct object. Option D is doubly ungrammatical, containing both a stray 'was' and a disordered structure.",
     "section": "English",
-    "num": 18
+    "num": 19,
+    "difficulty": "extreme"
   },
   {
-    "q": "By the time the new policy takes effect, the pilot programme _____ for two years.",
+    "q": "Choose the correct passive form: 'People say that overcrowding worsens hospital infection rates.'",
     "opts": [
-      "will run",
-      "will have been running",
-      "runs",
-      "ran"
+      "It is said overcrowding worsens hospital infection rates by people.",
+      "Overcrowding is said that it worsens hospital infection rates.",
+      "It says that overcrowding is worsened by hospital infection rates.",
+      "It is said that overcrowding worsens hospital infection rates."
     ],
-    "ans": 1,
-    "exp": "An action continuing up to a specific point in the future requires the future perfect continuous tense: 'will have been running'.",
+    "ans": 3,
+    "exp": "With a reporting verb like 'say' followed by a that-clause and an impersonal subject ('people'), the standard passive uses the impersonal construction 'It is said that...', keeping the that-clause intact and simply dropping the vague agent. Option A keeps 'by people' unnecessarily, which is both ungrammatical in this structure and redundant, since the impersonal passive exists precisely to omit a vague agent. Option B wrongly promotes 'overcrowding' to subject while still retaining a stray 'that it' clause, producing a double-subject structure. Option C wrongly makes 'it' the subject of an active verb while also reversing the real relationship between overcrowding and infection rates.",
     "section": "English",
-    "num": 19
-  },
-  {
-    "q": "Choose the correctly punctuated sentence:",
-    "opts": [
-      "The findings, in fact were quite surprising.",
-      "The findings, in fact, were quite surprising.",
-      "The findings in fact, were quite surprising.",
-      "The findings in fact were, quite surprising."
-    ],
-    "ans": 1,
-    "exp": "The parenthetical phrase 'in fact' placed mid-sentence must be set off by commas on both sides: 'The findings, in fact, were quite surprising.'",
-    "section": "English",
-    "num": 20
+    "num": 20,
+    "difficulty": "extreme"
   },
   {
     "q": "A 40-year-old woman presents with weakness of her right hand after a supracondylar fracture of the humerus. She is unable to flex the distal phalanx of her index finger and has loss of sensation over the palmar surface of her index and middle fingers. Which nerve is injured?",
     "opts": [
-      "Radial nerve",
+      "Median nerve",
       "Ulnar nerve",
       "Musculocutaneous nerve",
-      "Median nerve"
+      "Radial nerve"
     ],
-    "ans": 3,
-    "exp": "The median nerve supplies the flexor digitorum profundus to the index and middle fingers (specifically the anterior interosseous branch) and the flexor pollicis longus. Loss of flexion at the distal interphalangeal joint of the index finger (flexor digitorum profundus), combined with sensory loss over the palmar surfaces of the lateral three and a half fingers (thumb, index, middle, and lateral half of ring finger), is the classic presentation of median nerve injury. The radial nerve (A) supplies extensors and provides sensation to the dorsum of the hand. The ulnar nerve (B) supplies the medial two fingers and intrinsic hand muscles. Musculocutaneous nerve (D) supplies the arm flexors and lateral forearm sensation. As Moore's Clinically Oriented Anatomy notes, the median nerve is particularly vulnerable at the elbow during supracondylar fractures.",
+    "ans": 0,
+    "exp": "The median nerve supplies the flexor digitorum profundus to the index and middle fingers (specifically the anterior interosseous branch) and the flexor pollicis longus. Loss of flexion at the distal interphalangeal joint of the index finger (flexor digitorum profundus), combined with sensory loss over the palmar surfaces of the lateral three and a half fingers (thumb, index, middle, and lateral half of ring finger), is the classic presentation of median nerve injury. The radial nerve (D) supplies extensors and provides sensation to the dorsum of the hand. The ulnar nerve (B) supplies the medial two fingers and intrinsic hand muscles. Musculocutaneous nerve (C) supplies the arm flexors and lateral forearm sensation. As Moore's Clinically Oriented Anatomy notes, the median nerve is particularly vulnerable at the elbow during supracondylar fractures.",
     "section": "Basic Sciences",
     "num": 21
   },
@@ -282,20 +297,20 @@ window.MM.fpsc_past_5 = [
       "Within the hepatoduodenal ligament"
     ],
     "ans": 0,
-    "exp": "The portal vein is formed by the union of the superior mesenteric vein and the splenic vein posterior to the neck of the pancreas, at approximately the level of L2. This is a standard topographical landmark in surgical anatomy. It then ascends in the free edge of the lesser omentum (hepatoduodenal ligament, option D) as it travels to the liver, but the formation point is posterior to the pancreatic neck. The first part of the duodenum (A) and the IVC at L2 (C) are not the site of portal vein formation.",
+    "exp": "The portal vein is formed by the union of the superior mesenteric vein and the splenic vein posterior to the neck of the pancreas, at approximately the level of L2. This is a standard topographical landmark in surgical anatomy. It then ascends in the free edge of the lesser omentum (hepatoduodenal ligament, option D) as it travels to the liver, but the formation point is posterior to the pancreatic neck. The first part of the duodenum (B) and the IVC at L2 (C) are not the site of portal vein formation.",
     "section": "Basic Sciences",
     "num": 22
   },
   {
     "q": "A patient sustains a midshaft fracture of the humerus. On examination, wrist drop and loss of sensation over the anatomical snuffbox are found. Which nerve is damaged?",
     "opts": [
-      "Median nerve",
+      "Radial nerve",
       "Ulnar nerve",
       "Axillary nerve",
-      "Radial nerve"
+      "Median nerve"
     ],
-    "ans": 3,
-    "exp": "Wrist drop results from paralysis of the wrist extensors (extensor carpi radialis longus and brevis, extensor carpi ulnaris), all supplied by the radial nerve. The radial nerve winds around the posterior aspect of the humeral shaft in the spiral groove and is classically injured in midshaft humeral fractures. Sensory loss over the anatomical snuffbox (dorsal web space between the thumb and index finger) is supplied by the superficial branch of the radial nerve. The median nerve (A) causes wrist flexion weakness and thenar atrophy. The ulnar nerve (B) causes clawing and intrinsic weakness. The axillary nerve (D) supplies the deltoid and is injured in shoulder dislocations.",
+    "ans": 0,
+    "exp": "Wrist drop results from paralysis of the wrist extensors (extensor carpi radialis longus and brevis, extensor carpi ulnaris), all supplied by the radial nerve. The radial nerve winds around the posterior aspect of the humeral shaft in the spiral groove and is classically injured in midshaft humeral fractures. Sensory loss over the anatomical snuffbox (dorsal web space between the thumb and index finger) is supplied by the superficial branch of the radial nerve. The median nerve (D) causes wrist flexion weakness and thenar atrophy. The ulnar nerve (B) causes clawing and intrinsic weakness. The axillary nerve (C) supplies the deltoid and is injured in shoulder dislocations.",
     "section": "Basic Sciences",
     "num": 23
   },
@@ -321,7 +336,7 @@ window.MM.fpsc_past_5 = [
       "Peripheral vasoconstriction increasing venous return"
     ],
     "ans": 0,
-    "exp": "At high altitude, reduced partial pressure of oxygen stimulates peripheral chemoreceptors in the carotid bodies and directly activates HIF-1alpha in the kidneys, increasing erythropoietin (EPO) secretion. EPO stimulates erythroid progenitor cells in the bone marrow, raising red cell mass and haematocrit over days to weeks. This is the primary long-term haematological adaptation to hypoxia as described in Guyton and Hall. The Bainbridge reflex (A) responds to venous distension, not hypoxia. Splenic release (C) is a rapid but minor short-term mechanism. Vasoconstriction (D) does not directly increase red cell mass.",
+    "exp": "At high altitude, reduced partial pressure of oxygen stimulates peripheral chemoreceptors in the carotid bodies and directly activates HIF-1alpha in the kidneys, increasing erythropoietin (EPO) secretion. EPO stimulates erythroid progenitor cells in the bone marrow, raising red cell mass and haematocrit over days to weeks. This is the primary long-term haematological adaptation to hypoxia as described in Guyton and Hall. The Bainbridge reflex (B) responds to venous distension, not hypoxia. Splenic release (C) is a rapid but minor short-term mechanism. Vasoconstriction (D) does not directly increase red cell mass.",
     "section": "Basic Sciences",
     "num": 25
   },
@@ -347,7 +362,7 @@ window.MM.fpsc_past_5 = [
       "Patellar (knee jerk) reflex"
     ],
     "ans": 3,
-    "exp": "The patellar reflex (knee jerk) is mediated through spinal segments L2, L3, and L4, which are below T10 but remain intact as they are caudal to the lesion. A complete cord transection at T10 disconnects segments above from those below but does not destroy the lower cord segments themselves. The lower motor neurons for the patellar reflex are intact and the reflex arc is preserved, though it may initially be suppressed in spinal shock. Abdominal reflexes (A) are mediated at T8-T12 and lost above the level. Voluntary bladder control (B) requires supraspinal pathways disrupted by the lesion. The cremasteric reflex (D) is mediated at L1-L2 and is present, but the question requires a reflex definitively caudal to T10.",
+    "exp": "The patellar reflex (knee jerk) is mediated through spinal segments L2, L3, and L4, which are below T10 but remain intact as they are caudal to the lesion. A complete cord transection at T10 disconnects segments above from those below but does not destroy the lower cord segments themselves. The lower motor neurons for the patellar reflex are intact and the reflex arc is preserved, though it may initially be suppressed in spinal shock. Abdominal reflexes (A) are mediated at T8-T12 and lost above the level. Voluntary bladder control (B) requires supraspinal pathways disrupted by the lesion. The cremasteric reflex (C) is mediated at L1-L2 and is present, but the question requires a reflex definitively caudal to T10.",
     "section": "Basic Sciences",
     "num": 27
   },
@@ -360,14 +375,14 @@ window.MM.fpsc_past_5 = [
       "Glucose in a normal fasting individual"
     ],
     "ans": 3,
-    "exp": "Clearance = (U × V) / P. Glucose is freely filtered at the glomerulus but in a fasting individual with normal plasma glucose, it is completely reabsorbed by the proximal tubule via SGLT2 transporters. Therefore the urine concentration of glucose is zero, and clearance = 0, which is far below GFR. Creatinine (A) has a clearance slightly above GFR due to tubular secretion. PAH (B) is both filtered and secreted, giving clearance approaching renal plasma flow (~600 mL/min). Urea (D) is filtered and partially reabsorbed, giving a clearance of about 70 mL/min, which is below GFR but not zero. The question asks which is significantly lower, and glucose at clearance of 0 is the clearest example.",
+    "exp": "Clearance = (U × V) / P. Glucose is freely filtered at the glomerulus but in a fasting individual with normal plasma glucose, it is completely reabsorbed by the proximal tubule via SGLT2 transporters. Therefore the urine concentration of glucose is zero, and clearance = 0, which is far below GFR. Creatinine (A) has a clearance slightly above GFR due to tubular secretion. PAH (B) is both filtered and secreted, giving clearance approaching renal plasma flow (~600 mL/min). Urea (C) is filtered and partially reabsorbed, giving a clearance of about 70 mL/min, which is below GFR but not zero. The question asks which is significantly lower, and glucose at clearance of 0 is the clearest example.",
     "section": "Basic Sciences",
     "num": 28
   },
   {
     "q": "A patient taking isoniazid for tuberculosis develops peripheral neuropathy. The mechanism of this adverse effect is:",
     "opts": [
-      "Competitive inhibition of pyridoxal kinase causing functional pyridoxine deficiency",
+      "Competitive inhibition of pyridoxal kinase, causing pyridoxine deficiency",
       "Direct axonal toxicity from isoniazid metabolites",
       "Autoimmune demyelination triggered by isoniazid",
       "Inhibition of folate synthesis causing neuronal dysfunction"
@@ -380,13 +395,13 @@ window.MM.fpsc_past_5 = [
   {
     "q": "A 45-year-old man on long-term corticosteroid therapy for asthma presents with new-onset hyperglycaemia, proximal muscle weakness, and central obesity. Which receptor mediates these metabolic effects of corticosteroids?",
     "opts": [
-      "Glucocorticoid receptor acting as a nuclear transcription factor",
+      "Glucocorticoid receptor as nuclear transcription factor",
       "Mineralocorticoid receptor in the kidney",
       "Beta-adrenergic receptor via cAMP",
       "Insulin receptor downregulation"
     ],
     "ans": 0,
-    "exp": "Glucocorticoids exert their metabolic effects primarily by binding to intracellular glucocorticoid receptors (GR), which are ligand-activated transcription factors. On steroid binding, the GR-ligand complex translocates to the nucleus, where it binds glucocorticoid response elements (GREs) and alters transcription of genes governing gluconeogenesis, protein catabolism, and fat redistribution. This produces hyperglycaemia (increased hepatic glucose output), proximal myopathy (muscle protein catabolism), and central fat redistribution. The mineralocorticoid receptor (A) mediates sodium and potassium effects. Beta-adrenergic signalling (C) is not the primary pathway. Insulin receptor downregulation (D) is a secondary consequence, not the primary mechanism.",
+    "exp": "Glucocorticoids exert their metabolic effects primarily by binding to intracellular glucocorticoid receptors (GR), which are ligand-activated transcription factors. On steroid binding, the GR-ligand complex translocates to the nucleus, where it binds glucocorticoid response elements (GREs) and alters transcription of genes governing gluconeogenesis, protein catabolism, and fat redistribution. This produces hyperglycaemia (increased hepatic glucose output), proximal myopathy (muscle protein catabolism), and central fat redistribution. The mineralocorticoid receptor (B) mediates sodium and potassium effects. Beta-adrenergic signalling (C) is not the primary pathway. Insulin receptor downregulation (D) is a secondary consequence, not the primary mechanism.",
     "section": "Basic Sciences",
     "num": 30
   },
@@ -412,7 +427,7 @@ window.MM.fpsc_past_5 = [
       "Metronidazole"
     ],
     "ans": 3,
-    "exp": "Metronidazole is a potent inhibitor of CYP2C9, the primary enzyme responsible for the metabolism of the more potent S-warfarin enantiomer. Inhibition of CYP2C9 by metronidazole dramatically reduces warfarin metabolism, leading to accumulation and a sharp rise in INR with bleeding risk. This is one of the most clinically dangerous drug interactions with warfarin. Katzung's pharmacology lists metronidazole as a high-risk CYP2C9 inhibitor. Azithromycin (A) has a modest interaction. Ciprofloxacin (B) has a moderate interaction via CYP1A2. Doxycycline (D) has minimal interaction.",
+    "exp": "Metronidazole is a potent inhibitor of CYP2C9, the primary enzyme responsible for the metabolism of the more potent S-warfarin enantiomer. Inhibition of CYP2C9 by metronidazole dramatically reduces warfarin metabolism, leading to accumulation and a sharp rise in INR with bleeding risk. This is one of the most clinically dangerous drug interactions with warfarin. Katzung's pharmacology lists metronidazole as a high-risk CYP2C9 inhibitor. Azithromycin (A) has a modest interaction. Ciprofloxacin (B) has a moderate interaction via CYP1A2. Doxycycline (C) has minimal interaction.",
     "section": "Basic Sciences",
     "num": 32
   },
@@ -438,19 +453,19 @@ window.MM.fpsc_past_5 = [
       "Hydralazine"
     ],
     "ans": 3,
-    "exp": "Hydralazine is one of the classic drugs associated with drug-induced lupus erythematosus (DILE), along with procainamide and isoniazid. The mechanism involves hydralazine inhibiting DNA methylation in T-cells, leading to autoimmune activation. Clinical features include arthralgia, serositis, and a positive ANA (often anti-histone antibodies), but unlike idiopathic SLE, renal and CNS involvement are rare and the condition typically resolves on stopping the drug. Amlodipine (A), losartan (B), and furosemide (D) are not recognised causes of DILE.",
+    "exp": "Hydralazine is one of the classic drugs associated with drug-induced lupus erythematosus (DILE), along with procainamide and isoniazid. The mechanism involves hydralazine inhibiting DNA methylation in T-cells, leading to autoimmune activation. Clinical features include arthralgia, serositis, and a positive ANA (often anti-histone antibodies), but unlike idiopathic SLE, renal and CNS involvement are rare and the condition typically resolves on stopping the drug. Amlodipine (A), losartan (B), and furosemide (C) are not recognised causes of DILE.",
     "section": "Basic Sciences",
     "num": 34
   },
   {
     "q": "The 'Sullivan's index' or Healthy Life Expectancy is a composite health indicator that combines:",
     "opts": [
+      "Life expectancy and disability-free years",
       "Literacy rate and income level",
-      "Life expectancy and quality of life/disability-free years",
       "Birth rate and death rate only",
       "Vaccination coverage and hospital beds"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Healthy Life Expectancy (Sullivan's method) combines mortality data with morbidity/disability data to estimate the number of years a person can expect to live in full health, giving a more complete picture than life expectancy alone, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 35
@@ -459,7 +474,7 @@ window.MM.fpsc_past_5 = [
     "q": "Which of the following best describes 'prevalence' in epidemiology?",
     "opts": [
       "The number of new cases occurring over a defined period",
-      "The total number of existing cases (new and old) in a population at a given point in time",
+      "Total existing cases (new and old) at a given point in time",
       "The number of deaths attributable to a disease",
       "The rate of disease transmission between individuals"
     ],
@@ -472,11 +487,11 @@ window.MM.fpsc_past_5 = [
     "q": "Pakistan's routine (EPI) immunization coverage, as reported in national health planning documents, has historically remained around what level, well below the target needed for full protection?",
     "opts": [
       "Around 90%",
-      "Around 54%",
+      "Around 20%",
       "Around 99%",
-      "Around 20%"
+      "Around 54%"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Pakistan's National Health Vision 2016-2025 document reports routine immunization coverage remaining at an unacceptably low level of around 54%, well short of the coverage needed to fully protect the child population and interrupt disease transmission.",
     "section": "Community Medicine",
     "num": 37
@@ -485,11 +500,11 @@ window.MM.fpsc_past_5 = [
     "q": "Pakistan is officially recognised as one of the few remaining countries in the world where which disease remains endemic, despite decades of eradication efforts?",
     "opts": [
       "Measles",
-      "Poliomyelitis",
+      "Diphtheria",
       "Smallpox",
-      "Diphtheria"
+      "Poliomyelitis"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Pakistan remains one of the last countries where wild poliovirus transmission is still endemic, alongside Afghanistan, despite a long-running national polio eradication programme, a point emphasised in Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 38
@@ -498,7 +513,7 @@ window.MM.fpsc_past_5 = [
     "q": "The term 'double burden of disease', used to describe Pakistan's current epidemiological situation, refers to:",
     "opts": [
       "Two separate health ministries managing the same disease",
-      "The simultaneous presence of a high burden of communicable diseases alongside a rising burden of non-communicable diseases",
+      "Rising NCDs alongside a persisting communicable disease burden",
       "Diseases that only affect double the expected population",
       "A billing term used in health insurance"
     ],
@@ -511,11 +526,11 @@ window.MM.fpsc_past_5 = [
     "q": "Nutritional supplementation programmes for children under five to prevent stunting are best classified under:",
     "opts": [
       "Cure",
-      "Care (preventive)",
+      "Palliative care",
       "Tertiary rehabilitation",
-      "Palliative care"
+      "Care (preventive)"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Preventing malnutrition and stunting through supplementation before disease/deficiency sets in is a population-level preventive strategy, exemplifying the 'Care' approach, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Care vs Cure",
     "num": 40
@@ -524,11 +539,11 @@ window.MM.fpsc_past_5 = [
     "q": "Pakistan's National Health Vision notes that most of the health budget allocated to secondary and tertiary care leaves only a small share for preventive and primary care; this imbalance is a real-world example of the health system leaning toward:",
     "opts": [
       "Care over Cure",
-      "Cure over Care",
+      "Neither Care nor Cure",
       "Equal balance of Care and Cure",
-      "Neither Care nor Cure"
+      "Cure over Care"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Official Pakistani health planning documents note that the bulk of health financing is consumed by secondary and tertiary (curative) care, leaving only a small fraction for preventive and primary health services, a documented real-world skew toward 'Cure' over 'Care', consistent with Pakistan's National Health Vision 2016-2025.",
     "section": "Care vs Cure",
     "num": 41
@@ -537,7 +552,7 @@ window.MM.fpsc_past_5 = [
     "q": "A government campaign providing iron and folic acid supplementation to adolescent girls, aiming to prevent anaemia before it develops, is best classified under which approach?",
     "opts": [
       "Cure",
-      "Care (preventive, population-based)",
+      "Care (preventive)",
       "Rehabilitation",
       "Palliation"
     ],
@@ -615,11 +630,11 @@ window.MM.fpsc_past_5 = [
     "q": "Pakistan's Sehat Sahulat Program (universal health insurance initiative) is widely cited as a major step toward addressing which specific challenge in the health system?",
     "opts": [
       "Excess hospital bed capacity",
-      "Catastrophic out-of-pocket health expenditure for low-income families",
       "Overproduction of doctors",
+      "Catastrophic out-of-pocket spending",
       "Surplus of health financing"
     ],
-    "ans": 1,
+    "ans": 2,
     "exp": "The Sehat Sahulat Program is recognised as one of Pakistan's most significant health financing reforms, aiming to reduce catastrophic out-of-pocket expenditure by providing free hospitalization insurance coverage to low-income families, a point emphasised in Pakistan's National Health Vision 2016-2025.",
     "section": "Major Challenges to Healthcare",
     "num": 48
@@ -633,20 +648,20 @@ window.MM.fpsc_past_5 = [
       "Neisseria meningitidis"
     ],
     "ans": 3,
-    "exp": "Neisseria meningitidis (meningococcus) is the classic cause of bacterial meningitis in adolescents and young adults, and is uniquely associated with a rapidly spreading non-blanching petechial or purpuric rash due to meningococcaemia causing small vessel vasculitis and disseminated intravascular coagulation. This rash is pathognomonic and represents a medical emergency requiring immediate IV benzylpenicillin. Streptococcus pneumoniae (A) is the most common cause in adults overall but rarely causes purpuric rash. Haemophilus influenzae (B) is now rare due to vaccination. Listeria (D) affects neonates, elderly, and immunocompromised individuals.",
+    "exp": "Neisseria meningitidis (meningococcus) is the classic cause of bacterial meningitis in adolescents and young adults, and is uniquely associated with a rapidly spreading non-blanching petechial or purpuric rash due to meningococcaemia causing small vessel vasculitis and disseminated intravascular coagulation. This rash is pathognomonic and represents a medical emergency requiring immediate IV benzylpenicillin. Streptococcus pneumoniae (A) is the most common cause in adults overall but rarely causes purpuric rash. Haemophilus influenzae (B) is now rare due to vaccination. Listeria (C) affects neonates, elderly, and immunocompromised individuals.",
     "section": "Medicine",
     "num": 49
   },
   {
     "q": "A 60-year-old man with type 2 diabetes presents with progressive painless loss of vision in one eye over 6 months. Fundoscopy reveals new blood vessels on the retinal surface, flame haemorrhages, and cotton wool spots. The MOST likely diagnosis is:",
     "opts": [
-      "Central retinal vein occlusion",
       "Proliferative diabetic retinopathy",
+      "Central retinal vein occlusion",
       "Hypertensive retinopathy grade IV",
       "Age-related macular degeneration"
     ],
-    "ans": 1,
-    "exp": "Proliferative diabetic retinopathy (PDR) is characterised by retinal ischaemia stimulating VEGF-driven growth of new, fragile blood vessels (neovascularisation) on the retinal surface or optic disc. This causes vitreous haemorrhage, traction retinal detachment, and progressive painless visual loss. Cotton wool spots (nerve fibre layer infarcts) and flame haemorrhages are background features of diabetic retinopathy that precede proliferative disease. PDR is a leading cause of blindness in working-age adults in Pakistan and globally. Davidson's Medicine distinguishes PDR from non-proliferative stages by the presence of new vessel formation. Central retinal vein occlusion (A) causes sudden rather than progressive loss.",
+    "ans": 0,
+    "exp": "Proliferative diabetic retinopathy (PDR) is characterised by retinal ischaemia stimulating VEGF-driven growth of new, fragile blood vessels (neovascularisation) on the retinal surface or optic disc. This causes vitreous haemorrhage, traction retinal detachment, and progressive painless visual loss. Cotton wool spots (nerve fibre layer infarcts) and flame haemorrhages are background features of diabetic retinopathy that precede proliferative disease. PDR is a leading cause of blindness in working-age adults in Pakistan and globally. Davidson's Medicine distinguishes PDR from non-proliferative stages by the presence of new vessel formation. Central retinal vein occlusion (B) causes sudden rather than progressive loss.",
     "section": "Medicine",
     "num": 50
   },
@@ -659,7 +674,7 @@ window.MM.fpsc_past_5 = [
       "V/Q scan"
     ],
     "ans": 2,
-    "exp": "The clinical presentation : severe tearing pain radiating to the back, hypertension, widened mediastinum, and a normal ECG : is the classic presentation of aortic dissection until proven otherwise. CT aortography (CT angiography of the aorta) is the investigation of choice: it is rapid, non-invasive, sensitive, and specific, and allows classification (Stanford A or B) to guide surgical or medical management. Echocardiography (A) may be used if the patient is too unstable for CT and can visualise a Type A dissection but is less comprehensive. Coronary angiography (C) is inappropriate as a first test and may delay life-saving surgical intervention. V/Q scan (D) is for pulmonary embolism.",
+    "exp": "The clinical presentation : severe tearing pain radiating to the back, hypertension, widened mediastinum, and a normal ECG : is the classic presentation of aortic dissection until proven otherwise. CT aortography (CT angiography of the aorta) is the investigation of choice: it is rapid, non-invasive, sensitive, and specific, and allows classification (Stanford A or B) to guide surgical or medical management. Echocardiography (A) may be used if the patient is too unstable for CT and can visualise a Type A dissection but is less comprehensive. Coronary angiography (B) is inappropriate as a first test and may delay life-saving surgical intervention. V/Q scan (D) is for pulmonary embolism.",
     "section": "Medicine",
     "num": 51
   },
@@ -667,11 +682,11 @@ window.MM.fpsc_past_5 = [
     "q": "A 38-year-old woman presents with bilateral symmetric joint swelling of the small joints of her hands, morning stiffness lasting more than an hour, elevated ESR, and a positive rheumatoid factor. X-ray shows periarticular osteopenia. The MOST appropriate initial DMARD therapy is:",
     "opts": [
       "Hydroxychloroquine",
-      "Methotrexate",
       "Sulfasalazine",
+      "Methotrexate",
       "Leflunomide"
     ],
-    "ans": 1,
+    "ans": 2,
     "exp": "Methotrexate is the anchor DMARD and the first-line choice in rheumatoid arthritis, supported by decades of evidence for efficacy, tolerability, and cost-effectiveness. It inhibits dihydrofolate reductase, suppressing rapidly dividing immune cells. Davidson's Medicine recommends methotrexate as the initial DMARD in most patients with RA unless contraindicated (significant renal impairment, active liver disease, pregnancy, or severe pulmonary disease). Hydroxychloroquine (A) and sulfasalazine (B) are less potent and used in mild disease or combination therapy. Leflunomide (D) is an alternative when methotrexate is contraindicated.",
     "section": "Medicine",
     "num": 52
@@ -685,7 +700,7 @@ window.MM.fpsc_past_5 = [
       "Plasmodium ovale"
     ],
     "ans": 0,
-    "exp": "Plasmodium falciparum is the only species that produces banana-shaped (crescentic) gametocytes, which are pathognomonic on blood smear. P. falciparum causes malignant tertian malaria with irregular or quotidian fever rather than a strict 72-hour cycle, unlike P. malariae which causes quartan (72-hour) malaria. However, the distinctive banana-shaped gametocytes immediately point to P. falciparum regardless of cycle pattern. P. vivax (A) and P. ovale (D) show Schuffner's dots and oval red cells. P. malariae (B) produces band-form trophozoites and a strict 72-hour quartan cycle.",
+    "exp": "Plasmodium falciparum is the only species that produces banana-shaped (crescentic) gametocytes, which are pathognomonic on blood smear. P. falciparum causes malignant tertian malaria with irregular or quotidian fever rather than a strict 72-hour cycle, unlike P. malariae which causes quartan (72-hour) malaria. However, the distinctive banana-shaped gametocytes immediately point to P. falciparum regardless of cycle pattern. P. vivax (B) and P. ovale (D) show Schuffner's dots and oval red cells. P. malariae (C) produces band-form trophozoites and a strict 72-hour quartan cycle.",
     "section": "Medicine",
     "num": 53
   },
@@ -693,7 +708,7 @@ window.MM.fpsc_past_5 = [
     "q": "A 55-year-old male smoker presents with haemoptysis, weight loss, and hoarseness of voice. CXR shows a hilar mass. The combination of haemoptysis and hoarseness is best explained by:",
     "opts": [
       "Vocal cord polyp secondary to chronic cough",
-      "Invasion of the left recurrent laryngeal nerve by the hilar tumour",
+      "Invasion of the left recurrent laryngeal nerve",
       "Metastatic spread to the thyroid gland",
       "Mediastinal lymph node compression of the trachea"
     ],
@@ -718,7 +733,7 @@ window.MM.fpsc_past_5 = [
   {
     "q": "A 55-year-old man with long-standing atrial fibrillation suddenly develops severe abdominal pain out of proportion to physical findings. What is the most likely diagnosis?",
     "opts": [
-      "Acute mesenteric ischaemia due to embolism",
+      "Mesenteric ischaemia from embolism",
       "Acute appendicitis",
       "Peptic ulcer disease",
       "Irritable bowel syndrome"
@@ -732,11 +747,11 @@ window.MM.fpsc_past_5 = [
     "q": "A 30-year-old woman presents with fatigue, joint pain, a malar rash, and proteinuria. ANA is positive with high anti-dsDNA titres. What is the most likely diagnosis?",
     "opts": [
       "Rheumatoid arthritis",
-      "Systemic lupus erythematosus",
+      "Fibromyalgia",
       "Psoriatic arthritis",
-      "Fibromyalgia"
+      "Systemic lupus erythematosus"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "A malar (butterfly) rash, joint pain, renal involvement (proteinuria), and a positive ANA with high anti-dsDNA titres are classic features of systemic lupus erythematosus (SLE), with anti-dsDNA being highly specific for the disease, consistent with Davidson's Principles and Practice of Medicine.",
     "section": "Medicine",
     "num": 57
@@ -745,11 +760,11 @@ window.MM.fpsc_past_5 = [
     "q": "A 60-year-old man with COPD presents with worsening dyspnoea, and arterial blood gas shows a compensated respiratory acidosis. What does this indicate?",
     "opts": [
       "An acute process with no renal compensation yet",
-      "Chronic CO2 retention with renal compensation via bicarbonate retention",
+      "Complete absence of any acid-base disturbance",
       "Acute metabolic alkalosis",
-      "Complete absence of any acid-base disturbance"
+      "Chronic CO2 retention with renal bicarbonate compensation"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "In chronic CO2 retainers (such as COPD patients), the kidneys compensate over time by retaining bicarbonate to normalize pH despite persistently elevated CO2, termed compensated respiratory acidosis, distinguishing it from an acute, uncompensated picture, as Davidson's Principles and Practice of Medicine describes.",
     "section": "Medicine",
     "num": 58
@@ -763,33 +778,33 @@ window.MM.fpsc_past_5 = [
       "Acute cholangitis"
     ],
     "ans": 0,
-    "exp": "Painless obstructive jaundice with a palpable, non-tender gallbladder is described by Courvoisier's law: if the gallbladder is palpable and non-tender in a jaundiced patient, the cause is unlikely to be gallstones (which cause a chronically fibrosed, non-distensible gallbladder) and is most likely malignant obstruction. Carcinoma of the head of the pancreas is the most common cause of this presentation, producing progressive painless jaundice, weight loss, and Courvoisier's sign. As Bailey and Love notes, this is an important surgical clinical sign. CBD stones (A) usually cause painful jaundice with fever in cholangitis. PBC (C) is a chronic autoimmune cholestatic liver disease.",
+    "exp": "Painless obstructive jaundice with a palpable, non-tender gallbladder is described by Courvoisier's law: if the gallbladder is palpable and non-tender in a jaundiced patient, the cause is unlikely to be gallstones (which cause a chronically fibrosed, non-distensible gallbladder) and is most likely malignant obstruction. Carcinoma of the head of the pancreas is the most common cause of this presentation, producing progressive painless jaundice, weight loss, and Courvoisier's sign. As Bailey and Love notes, this is an important surgical clinical sign. CBD stones (B) usually cause painful jaundice with fever in cholangitis. PBC (C) is a chronic autoimmune cholestatic liver disease.",
     "section": "Surgery",
     "num": 59
   },
   {
     "q": "A 30-year-old man presents with a 3-day history of severe perianal pain and swelling. Examination reveals a tense, fluctuant, exquisitely tender swelling lateral to the anus. Temperature is 38.4°C. The MOST appropriate management is:",
     "opts": [
-      "Oral antibiotics and review in 48 hours",
       "Urgent incision and drainage",
+      "Oral antibiotics and review in 48 hours",
       "CT scan of the pelvis before any intervention",
       "High-fibre diet and warm sitz baths"
     ],
-    "ans": 1,
-    "exp": "A tense, fluctuant, tender perianal swelling with fever is a perianal abscess until proven otherwise and requires urgent surgical incision and drainage. Delay in drainage risks progression to ischiorectal or supralevator abscess, fistula formation, or life-threatening sepsis (particularly in diabetics and immunocompromised patients). Antibiotics alone (A) are insufficient and do not treat the underlying collection. CT scanning (C) delays definitive treatment and is unnecessary for a straightforward superficial perianal abscess. Symptomatic measures (D) are wholly inappropriate for an established abscess.",
+    "ans": 0,
+    "exp": "A tense, fluctuant, tender perianal swelling with fever is a perianal abscess until proven otherwise and requires urgent surgical incision and drainage. Delay in drainage risks progression to ischiorectal or supralevator abscess, fistula formation, or life-threatening sepsis (particularly in diabetics and immunocompromised patients). Antibiotics alone (B) are insufficient and do not treat the underlying collection. CT scanning (C) delays definitive treatment and is unnecessary for a straightforward superficial perianal abscess. Symptomatic measures (D) are wholly inappropriate for an established abscess.",
     "section": "Surgery",
     "num": 60
   },
   {
     "q": "A 55-year-old man is admitted with an acutely tender, irreducible swelling in the right groin. The swelling is below and lateral to the pubic tubercle. The MOST likely diagnosis is:",
     "opts": [
-      "Indirect inguinal hernia",
       "Femoral hernia",
+      "Saphena varix",
       "Direct inguinal hernia",
-      "Saphena varix"
+      "Indirect inguinal hernia"
     ],
-    "ans": 1,
-    "exp": "The location below and lateral to the pubic tubercle is the anatomical position of the femoral canal and identifies a femoral hernia. Inguinal hernias (direct and indirect) emerge above and medial to the pubic tubercle through the inguinal canal. Femoral hernias are more common in women, have the narrowest neck of all abdominal hernias, and carry the highest risk of strangulation. This is an acute surgical emergency. Bailey and Love emphasises that femoral hernias have a higher strangulation rate than inguinal hernias because of the rigid femoral ring. A saphena varix (D) is a saphenofemoral junction dilation that is soft, compressible, and disappears on lying flat.",
+    "ans": 0,
+    "exp": "The location below and lateral to the pubic tubercle is the anatomical position of the femoral canal and identifies a femoral hernia. Inguinal hernias (direct and indirect) emerge above and medial to the pubic tubercle through the inguinal canal. Femoral hernias are more common in women, have the narrowest neck of all abdominal hernias, and carry the highest risk of strangulation. This is an acute surgical emergency. Bailey and Love emphasises that femoral hernias have a higher strangulation rate than inguinal hernias because of the rigid femoral ring. A saphena varix (B) is a saphenofemoral junction dilation that is soft, compressible, and disappears on lying flat.",
     "section": "Surgery",
     "num": 61
   },
@@ -848,7 +863,7 @@ window.MM.fpsc_past_5 = [
   {
     "q": "A 22-year-old man presents with a swelling below the angle of the mandible that enlarges and becomes painful specifically while eating. What is the most likely diagnosis?",
     "opts": [
-      "Submandibular gland stone (sialolithiasis)",
+      "Submandibular stone (sialolithiasis)",
       "Thyroglossal duct cyst",
       "Branchial cyst",
       "Lipoma"
@@ -862,11 +877,11 @@ window.MM.fpsc_past_5 = [
     "q": "A 45-year-old woman presents with right upper quadrant pain after fatty meals, and ultrasound shows gallstones with a thickened gallbladder wall. What is the most appropriate definitive management?",
     "opts": [
       "Lifelong dietary modification only",
-      "Laparoscopic cholecystectomy",
+      "Observation with no intervention",
       "Oral dissolution therapy only",
-      "Observation with no intervention"
+      "Laparoscopic cholecystectomy"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Symptomatic gallstone disease with a thickened gallbladder wall (suggesting cholecystitis) is best managed definitively with laparoscopic cholecystectomy, the gold-standard treatment for symptomatic cholelithiasis, a point emphasised in Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 67
@@ -888,7 +903,7 @@ window.MM.fpsc_past_5 = [
     "q": "A 28-year-old primigravida at 10 weeks gestation presents with nausea, vomiting, and a blood pressure of 90/60 mmHg. Serum TSH is undetectable with mildly elevated free T4. She has no history of thyroid disease. The MOST likely cause of the biochemical thyroid abnormality is:",
     "opts": [
       "Graves' disease triggered by pregnancy",
-      "Hyperemesis gravidarum causing gestational transient thyrotoxicosis",
+      "Hyperemesis gravidarum causing gestational thyrotoxicosis",
       "Subacute thyroiditis unrelated to pregnancy",
       "Toxic multinodular goitre coinciding with pregnancy"
     ],
@@ -900,13 +915,13 @@ window.MM.fpsc_past_5 = [
   {
     "q": "A 32-year-old woman presents at 38 weeks gestation with sudden onset severe epigastric pain, nausea, and jaundice. Laboratory tests reveal elevated transaminases, low platelets (75,000/microL), and a raised LDH. BP is 158/102 mmHg. The diagnosis is:",
     "opts": [
-      "Acute fatty liver of pregnancy",
-      "Intrahepatic cholestasis of pregnancy",
       "HELLP syndrome",
+      "Intrahepatic cholestasis of pregnancy",
+      "Acute fatty liver of pregnancy",
       "Viral hepatitis complicating pregnancy"
     ],
-    "ans": 2,
-    "exp": "HELLP syndrome (Haemolysis, Elevated Liver enzymes, Low Platelets) is a severe variant of pre-eclampsia characterised by the combination of microangiopathic haemolytic anaemia (elevated LDH, low haemoglobin), hepatocellular injury (raised AST/ALT), and thrombocytopaenia. The coexisting hypertension confirms the pre-eclampsia spectrum. Delivery is the definitive treatment. Acute fatty liver of pregnancy (A) also presents with jaundice and liver dysfunction but is characterised by microvesicular hepatic steatosis with hypoglycaemia and coagulopathy out of proportion to thrombocytopaenia. Intrahepatic cholestasis (B) presents with pruritus and raised bile acids without transaminase elevation of this magnitude.",
+    "ans": 0,
+    "exp": "HELLP syndrome (Haemolysis, Elevated Liver enzymes, Low Platelets) is a severe variant of pre-eclampsia characterised by the combination of microangiopathic haemolytic anaemia (elevated LDH, low haemoglobin), hepatocellular injury (raised AST/ALT), and thrombocytopaenia. The coexisting hypertension confirms the pre-eclampsia spectrum. Delivery is the definitive treatment. Acute fatty liver of pregnancy (C) also presents with jaundice and liver dysfunction but is characterised by microvesicular hepatic steatosis with hypoglycaemia and coagulopathy out of proportion to thrombocytopaenia. Intrahepatic cholestasis (B) presents with pruritus and raised bile acids without transaminase elevation of this magnitude.",
     "section": "O&G",
     "num": 70
   },
@@ -932,7 +947,7 @@ window.MM.fpsc_past_5 = [
       "Blood transfusion"
     ],
     "ans": 0,
-    "exp": "The blood picture shows microcytic, hypochromic anaemia (low Hb, low MCV) with depleted iron stores (low serum ferritin), confirming iron deficiency anaemia, the most common cause of anaemia in pregnancy. Oral ferrous sulphate (200 mg three times daily) is the first-line treatment. Iron requirements increase substantially in pregnancy due to fetal demands, placental needs, and expanding red cell mass. Vitamin B12 (A) and folic acid (B) treat macrocytic anaemia (high MCV). Blood transfusion (D) is reserved for severe symptomatic anaemia with haemodynamic compromise.",
+    "exp": "The blood picture shows microcytic, hypochromic anaemia (low Hb, low MCV) with depleted iron stores (low serum ferritin), confirming iron deficiency anaemia, the most common cause of anaemia in pregnancy. Oral ferrous sulphate (200 mg three times daily) is the first-line treatment. Iron requirements increase substantially in pregnancy due to fetal demands, placental needs, and expanding red cell mass. Vitamin B12 (C) and folic acid (B) treat macrocytic anaemia (high MCV). Blood transfusion (D) is reserved for severe symptomatic anaemia with haemodynamic compromise.",
     "section": "O&G",
     "num": 72
   },
@@ -958,7 +973,7 @@ window.MM.fpsc_past_5 = [
       "Complete androgen insensitivity syndrome"
     ],
     "ans": 3,
-    "exp": "Complete androgen insensitivity syndrome (CAIS, formerly testicular feminisation) presents with primary amenorrhoea in a phenotypically female individual with 46,XY karyotype, absent uterus and fallopian tubes (because Mullerian inhibiting factor is secreted normally), rudimentary or absent gonads (testes in the inguinal canal or labia), normal or elevated breast development (due to peripheral aromatisation of testosterone to oestrogen), and absent or sparse pubic and axillary hair (because androgen receptor mutation prevents androgenic effects). Turner syndrome (A) is 45,XO with short stature and streak gonads. Kallmann syndrome (B) causes hypogonadotrophic hypogonadism with anosmia. CAH (D) causes virilisation, not feminisation.",
+    "exp": "Complete androgen insensitivity syndrome (CAIS, formerly testicular feminisation) presents with primary amenorrhoea in a phenotypically female individual with 46,XY karyotype, absent uterus and fallopian tubes (because Mullerian inhibiting factor is secreted normally), rudimentary or absent gonads (testes in the inguinal canal or labia), normal or elevated breast development (due to peripheral aromatisation of testosterone to oestrogen), and absent or sparse pubic and axillary hair (because androgen receptor mutation prevents androgenic effects). Turner syndrome (A) is 45,XO with short stature and streak gonads. Kallmann syndrome (B) causes hypogonadotrophic hypogonadism with anosmia. CAH (C) causes virilisation, not feminisation.",
     "section": "O&G",
     "num": 74
   },
@@ -967,7 +982,7 @@ window.MM.fpsc_past_5 = [
     "opts": [
       "Serum CA-125",
       "Pelvic MRI",
-      "Transvaginal ultrasound and endometrial biopsy",
+      "Transvaginal ultrasound, endometrial biopsy",
       "Diagnostic laparoscopy"
     ],
     "ans": 2,
@@ -978,25 +993,25 @@ window.MM.fpsc_past_5 = [
   {
     "q": "A 35-year-old man presents with sudden onset vertigo, nausea, and vomiting lasting 48 hours. He denies hearing loss or tinnitus. Dix-Hallpike manoeuvre is positive on the right side, reproducing rotatory nystagmus that fatigues on repeat testing. The MOST likely diagnosis is:",
     "opts": [
-      "Benign paroxysmal positional vertigo",
+      "BPPV",
       "Vestibular neuritis",
       "Meniere's disease",
       "Acoustic neuroma"
     ],
     "ans": 0,
-    "exp": "Benign paroxysmal positional vertigo (BPPV) is characterised by brief episodes of vertigo triggered by changes in head position, a positive Dix-Hallpike test producing torsional nystagmus toward the affected (lower) ear, and fatigability of the response on repeated testing. It is caused by displaced otoconia in the posterior semicircular canal. Crucially, hearing is preserved. Meniere's disease (A) causes the triad of episodic vertigo, fluctuating sensorineural hearing loss, and tinnitus. Vestibular neuritis (B) causes prolonged spontaneous vertigo (days) without positional component or hearing loss. Acoustic neuroma (D) causes progressive unilateral SNHL with imbalance. Dhingra's ENT describes BPPV as the most common cause of vertigo in clinical practice.",
+    "exp": "Benign paroxysmal positional vertigo (BPPV) is characterised by brief episodes of vertigo triggered by changes in head position, a positive Dix-Hallpike test producing torsional nystagmus toward the affected (lower) ear, and fatigability of the response on repeated testing. It is caused by displaced otoconia in the posterior semicircular canal. Crucially, hearing is preserved. Meniere's disease (C) causes the triad of episodic vertigo, fluctuating sensorineural hearing loss, and tinnitus. Vestibular neuritis (B) causes prolonged spontaneous vertigo (days) without positional component or hearing loss. Acoustic neuroma (D) causes progressive unilateral SNHL with imbalance. Dhingra's ENT describes BPPV as the most common cause of vertigo in clinical practice.",
     "section": "ENT",
     "num": 76
   },
   {
     "q": "A 50-year-old man presents with progressive conductive hearing loss in the right ear. Audiogram shows a notch at 2 kHz with an absent stapedial reflex. Otoscopy reveals a pinkish mass behind an intact tympanic membrane. The MOST likely diagnosis is:",
     "opts": [
-      "Chronic suppurative otitis media",
-      "Otosclerosis",
       "Glomus tympanicum tumour",
+      "Otosclerosis",
+      "Chronic suppurative otitis media",
       "Cholesteatoma"
     ],
-    "ans": 2,
+    "ans": 0,
     "exp": "A glomus tympanicum is a paraganglioma (chemodectoma) arising from the glomus bodies on the promontory of the middle ear. The classic presentation is pulsatile tinnitus and conductive hearing loss with a reddish-blue or pink vascular mass visible through an intact tympanic membrane ('rising sun' appearance). The absent stapedial reflex indicates middle ear abnormality. Otosclerosis (B) also causes conductive hearing loss and absent stapedial reflex but shows no visible mass. The 2 kHz notch on audiogram in otosclerosis (Carhart's notch) is a feature that overlaps, but the visible mass clinches the glomus diagnosis. Cholesteatoma (D) appears pearly white. Dhingra's ENT describes glomus tumours as the most common benign tumours of the middle ear.",
     "section": "ENT",
     "num": 77
@@ -1005,7 +1020,7 @@ window.MM.fpsc_past_5 = [
     "q": "A 12-year-old boy presents with recurrent epistaxis from the anterior nasal septum. On examination, a cluster of visible blood vessels is seen at the anteroinferior septum. This anatomical area is known as:",
     "opts": [
       "Woodruff's plexus",
-      "Little's area (Kiesselbach's plexus)",
+      "Little's area",
       "Sinus of Morgagni",
       "Cottle's zone"
     ],
@@ -1031,12 +1046,12 @@ window.MM.fpsc_past_5 = [
     "q": "A 6-year-old child presents with a 2-day history of right otalgia, fever, and reduced hearing. Otoscopy reveals a bulging, hyperaemic tympanic membrane with loss of light reflex. The MOST likely diagnosis and first-line treatment are:",
     "opts": [
       "Otitis externa: topical acetic acid drops",
-      "Acute otitis media: oral amoxicillin",
+      "Acute mastoiditis: IV ceftriaxone",
       "Otitis media with effusion: watchful waiting",
-      "Acute mastoiditis: IV ceftriaxone"
+      "Acute otitis media: oral amoxicillin"
     ],
-    "ans": 1,
-    "exp": "Acute otitis media (AOM) presents in young children with otalgia, fever, and conductive hearing loss. The pathognomonic otoscopic finding is a bulging, hyperaemic tympanic membrane with loss of the normal light reflex, indicating middle ear inflammation with effusion under pressure. The most common causative organisms are Streptococcus pneumoniae, Haemophilus influenzae, and Moraxella catarrhalis. First-line antibiotic therapy is oral amoxicillin for 5-7 days. Otitis media with effusion (glue ear, option C) shows a dull, retracted TM without acute signs. Mastoiditis (D) causes post-auricular swelling, tenderness, and proptosis of the pinna.",
+    "ans": 3,
+    "exp": "Acute otitis media (AOM) presents in young children with otalgia, fever, and conductive hearing loss. The pathognomonic otoscopic finding is a bulging, hyperaemic tympanic membrane with loss of the normal light reflex, indicating middle ear inflammation with effusion under pressure. The most common causative organisms are Streptococcus pneumoniae, Haemophilus influenzae, and Moraxella catarrhalis. First-line antibiotic therapy is oral amoxicillin for 5-7 days. Otitis media with effusion (glue ear, option C) shows a dull, retracted TM without acute signs. Mastoiditis (B) causes post-auricular swelling, tenderness, and proptosis of the pinna.",
     "section": "ENT",
     "num": 80
   },
@@ -1045,7 +1060,7 @@ window.MM.fpsc_past_5 = [
     "opts": [
       "Oral prednisolone for 2 weeks during the season",
       "Surgical inferior turbinate reduction",
-      "Intranasal corticosteroid spray and non-sedating antihistamine",
+      "Intranasal steroid spray and non-sedating antihistamine",
       "Ipratropium bromide nasal spray alone"
     ],
     "ans": 2,
@@ -1070,25 +1085,25 @@ window.MM.fpsc_past_5 = [
     "q": "A 65-year-old woman notices a gradual painless loss of peripheral vision in both eyes over 2 years. Intraocular pressure is 26 mmHg bilaterally. Fundoscopy shows increased cup-to-disc ratio (0.8) with inferior rim thinning. The MOST likely diagnosis is:",
     "opts": [
       "Acute angle-closure glaucoma",
-      "Primary open-angle glaucoma",
+      "Retinitis pigmentosa",
       "Hypertensive retinopathy",
-      "Retinitis pigmentosa"
+      "Primary open-angle glaucoma"
     ],
-    "ans": 1,
-    "exp": "Primary open-angle glaucoma (POAG) is characterised by chronic, painless, slowly progressive peripheral visual field loss (arcuate scotomas progressing to tunnel vision), elevated intraocular pressure (above 21 mmHg), and characteristic optic disc changes: increased cup-to-disc ratio with inferior or superior neuroretinal rim thinning (inferior rim thinning is affected first in POAG). It is bilateral but often asymmetric. Acute angle-closure glaucoma (A) presents acutely with severe eye pain, redness, nausea, and markedly elevated IOP. Retinitis pigmentosa (D) causes peripheral field loss with night blindness in younger patients and shows pigmentary retinal changes. Parsons' Disease of the Eye describes IOP and optic disc changes as the key diagnostic parameters.",
+    "ans": 3,
+    "exp": "Primary open-angle glaucoma (POAG) is characterised by chronic, painless, slowly progressive peripheral visual field loss (arcuate scotomas progressing to tunnel vision), elevated intraocular pressure (above 21 mmHg), and characteristic optic disc changes: increased cup-to-disc ratio with inferior or superior neuroretinal rim thinning (inferior rim thinning is affected first in POAG). It is bilateral but often asymmetric. Acute angle-closure glaucoma (A) presents acutely with severe eye pain, redness, nausea, and markedly elevated IOP. Retinitis pigmentosa (B) causes peripheral field loss with night blindness in younger patients and shows pigmentary retinal changes. Parsons' Disease of the Eye describes IOP and optic disc changes as the key diagnostic parameters.",
     "section": "Ophthalmology",
     "num": 83
   },
   {
     "q": "A 70-year-old man presents with sudden painless loss of vision in the right eye described as a 'curtain coming down.' Fundoscopy shows a grey, elevated retina with a horse-shoe shaped tear superiorly. The MOST appropriate management is:",
     "opts": [
-      "Oral acetazolamide and intraocular pressure monitoring",
-      "Topical pilocarpine and urgent referral",
       "Urgent surgical retinal reattachment",
+      "Topical pilocarpine and urgent referral",
+      "Oral acetazolamide and intraocular pressure monitoring",
       "Intravitreal anti-VEGF injection"
     ],
-    "ans": 2,
-    "exp": "Rhegmatogenous retinal detachment presents with a sudden 'curtain' or 'shadow' descending across the visual field, preceded by photopsia (flashes) and floaters. A horseshoe-shaped tear allows vitreous fluid to track under the neurosensory retina, separating it from the pigment epithelium. This is a surgical emergency requiring urgent reattachment by scleral buckling, pneumatic retinopexy, or vitrectomy depending on the extent and location. Anti-VEGF therapy (D) is for neovascular (wet) age-related macular degeneration, not retinal detachment. Acetazolamide (A) reduces IOP and has no role in retinal detachment. Parsons' Disease of the Eye emphasises that visual acuity is most efficiently preserved the earlier surgical reattachment is performed.",
+    "ans": 0,
+    "exp": "Rhegmatogenous retinal detachment presents with a sudden 'curtain' or 'shadow' descending across the visual field, preceded by photopsia (flashes) and floaters. A horseshoe-shaped tear allows vitreous fluid to track under the neurosensory retina, separating it from the pigment epithelium. This is a surgical emergency requiring urgent reattachment by scleral buckling, pneumatic retinopexy, or vitrectomy depending on the extent and location. Anti-VEGF therapy (D) is for neovascular (wet) age-related macular degeneration, not retinal detachment. Acetazolamide (C) reduces IOP and has no role in retinal detachment. Parsons' Disease of the Eye emphasises that visual acuity is most efficiently preserved the earlier surgical reattachment is performed.",
     "section": "Ophthalmology",
     "num": 84
   },
@@ -1135,12 +1150,12 @@ window.MM.fpsc_past_5 = [
     "q": "On fundoscopy, flame-shaped haemorrhages and papilloedema are seen in all four quadrants, with a 'blood and thunder' appearance. The MOST likely diagnosis is:",
     "opts": [
       "Branch retinal artery occlusion",
-      "Central retinal vein occlusion",
+      "Hypertensive retinopathy grade III",
       "Non-proliferative diabetic retinopathy",
-      "Hypertensive retinopathy grade III"
+      "Central retinal vein occlusion"
     ],
-    "ans": 1,
-    "exp": "Central retinal vein occlusion (CRVO) is characterised by the classic 'blood and thunder' fundus: diffuse flame-shaped haemorrhages in all four quadrants following the distribution of all retinal veins, disc oedema, dilated tortuous veins, and cotton wool spots. It results from thrombosis of the central retinal vein at or behind the lamina cribrosa. Branch retinal artery occlusion (A) causes a wedge-shaped area of retinal whitening limited to one quadrant. Non-proliferative diabetic retinopathy (C) shows dot and blot haemorrhages distributed more centrally without the quadrant-spanning pattern. Hypertensive retinopathy grade III (D) shows AV nipping, flame haemorrhages, and cotton wool spots but the haemorrhages are less dramatic and widespread.",
+    "ans": 3,
+    "exp": "Central retinal vein occlusion (CRVO) is characterised by the classic 'blood and thunder' fundus: diffuse flame-shaped haemorrhages in all four quadrants following the distribution of all retinal veins, disc oedema, dilated tortuous veins, and cotton wool spots. It results from thrombosis of the central retinal vein at or behind the lamina cribrosa. Branch retinal artery occlusion (A) causes a wedge-shaped area of retinal whitening limited to one quadrant. Non-proliferative diabetic retinopathy (C) shows dot and blot haemorrhages distributed more centrally without the quadrant-spanning pattern. Hypertensive retinopathy grade III (B) shows AV nipping, flame haemorrhages, and cotton wool spots but the haemorrhages are less dramatic and widespread.",
     "section": "Ophthalmology",
     "num": 88
   },
@@ -1148,12 +1163,12 @@ window.MM.fpsc_past_5 = [
     "q": "A 60-year-old woman notices distortion of straight lines and a central scotoma in her right eye while reading. OCT imaging shows subretinal fluid and choroidal neovascularisation under the fovea. The MOST appropriate treatment is:",
     "opts": [
       "Laser photocoagulation of the fovea",
-      "Intravitreal anti-VEGF injection",
       "Oral zinc and antioxidant supplementation",
+      "Intravitreal anti-VEGF injection",
       "Surgical removal of the subretinal membrane"
     ],
-    "ans": 1,
-    "exp": "Neovascular (wet) age-related macular degeneration presents with sudden central visual distortion (metamorphopsia), central scotoma, and subretinal fluid with choroidal neovascularisation on OCT. The current standard of care is repeated intravitreal injections of anti-VEGF agents (ranibizumab, bevacizumab, or aflibercept), which inhibit VEGF-driven choroidal neovascular growth and dramatically reduce the risk of severe visual loss compared to the natural history. Laser photocoagulation (A) can cause immediate scotoma and is only used for extrafoveal lesions. Oral AREDS supplements (C) are for intermediate dry AMD to slow progression. Surgical membrane removal (D) is not standard therapy.",
+    "ans": 2,
+    "exp": "Neovascular (wet) age-related macular degeneration presents with sudden central visual distortion (metamorphopsia), central scotoma, and subretinal fluid with choroidal neovascularisation on OCT. The current standard of care is repeated intravitreal injections of anti-VEGF agents (ranibizumab, bevacizumab, or aflibercept), which inhibit VEGF-driven choroidal neovascular growth and dramatically reduce the risk of severe visual loss compared to the natural history. Laser photocoagulation (A) can cause immediate scotoma and is only used for extrafoveal lesions. Oral AREDS supplements (B) are for intermediate dry AMD to slow progression. Surgical membrane removal (D) is not standard therapy.",
     "section": "Ophthalmology",
     "num": 89
   },
@@ -1161,12 +1176,12 @@ window.MM.fpsc_past_5 = [
     "q": "A 35-year-old woman presents with a 3-month history of progressive exertional dyspnoea, dry cough, and bilateral crackles at both lung bases. CXR shows bilateral diffuse reticulonodular infiltrates. Spirometry shows an FVC of 60% predicted and FEV1/FVC ratio of 0.85. The MOST likely diagnosis is:",
     "opts": [
       "Chronic obstructive pulmonary disease",
-      "Pulmonary sarcoidosis",
       "Idiopathic pulmonary fibrosis",
+      "Pulmonary sarcoidosis",
       "Extrinsic allergic alveolitis"
     ],
-    "ans": 2,
-    "exp": "The clinical picture : bilateral basal crackles, progressive dyspnoea, and a restrictive spirometry pattern (reduced FVC with preserved or elevated FEV1/FVC ratio above 0.70) with bilateral reticulonodular infiltrates : is consistent with interstitial lung disease. In a 35-year-old without occupational or exposure history, idiopathic pulmonary fibrosis is the leading diagnosis. However, IPF is primarily a disease of older adults (above 60). The question pattern here points to restrictive disease. COPD (A) causes obstruction (low FEV1/FVC). Sarcoidosis (B) typically shows bilateral hilar lymphadenopathy and is more common in young women. Extrinsic allergic alveolitis (D) requires an identifiable antigen exposure.",
+    "ans": 1,
+    "exp": "The clinical picture : bilateral basal crackles, progressive dyspnoea, and a restrictive spirometry pattern (reduced FVC with preserved or elevated FEV1/FVC ratio above 0.70) with bilateral reticulonodular infiltrates : is consistent with interstitial lung disease. In a 35-year-old without occupational or exposure history, idiopathic pulmonary fibrosis is the leading diagnosis. However, IPF is primarily a disease of older adults (above 60). The question pattern here points to restrictive disease. COPD (A) causes obstruction (low FEV1/FVC). Sarcoidosis (C) typically shows bilateral hilar lymphadenopathy and is more common in young women. Extrinsic allergic alveolitis (D) requires an identifiable antigen exposure.",
     "section": "Pulmonology",
     "num": 90
   },
@@ -1186,13 +1201,13 @@ window.MM.fpsc_past_5 = [
   {
     "q": "A 28-year-old man presents with episodic wheeze, nocturnal cough, and chest tightness that improve with salbutamol. Peak flow monitoring shows greater than 20% diurnal variation. The MOST appropriate step-up from salbutamol alone would be:",
     "opts": [
-      "Add a long-acting beta-2 agonist alone",
       "Start low-dose inhaled corticosteroid",
+      "Add a leukotriene receptor antagonist alone",
       "Start oral prednisolone",
-      "Add a leukotriene receptor antagonist alone"
+      "Add a long-acting beta-2 agonist alone"
     ],
-    "ans": 1,
-    "exp": "This presentation is consistent with partly controlled asthma (BTS/NICE Step 1 currently on SABA alone). The first step-up in asthma management is introduction of a regular low-dose inhaled corticosteroid (ICS), which is the most effective preventer therapy, reducing airway inflammation, symptom frequency, and exacerbation risk. Adding a LABA alone without ICS (A) is contraindicated in asthma as LABA monotherapy is associated with increased asthma-related mortality. Oral prednisolone (C) is for acute exacerbations or step-up after failed ICS. Leukotriene receptor antagonist alone (D) is a less effective alternative for patients intolerant of ICS.",
+    "ans": 0,
+    "exp": "This presentation is consistent with partly controlled asthma (BTS/NICE Step 1 currently on SABA alone). The first step-up in asthma management is introduction of a regular low-dose inhaled corticosteroid (ICS), which is the most effective preventer therapy, reducing airway inflammation, symptom frequency, and exacerbation risk. Adding a LABA alone without ICS (D) is contraindicated in asthma as LABA monotherapy is associated with increased asthma-related mortality. Oral prednisolone (C) is for acute exacerbations or step-up after failed ICS. Leukotriene receptor antagonist alone (B) is a less effective alternative for patients intolerant of ICS.",
     "section": "Pulmonology",
     "num": 92
   },
@@ -1213,12 +1228,12 @@ window.MM.fpsc_past_5 = [
     "q": "A 45-year-old woman with known rheumatoid arthritis presents with progressive dyspnoea, dry cough, and bilateral fine inspiratory crackles. Chest CT shows honeycombing and traction bronchiectasis in the periphery of both lower lobes. Spirometry shows a restrictive pattern. The MOST likely pulmonary complication is:",
     "opts": [
       "Bronchiolitis obliterans",
-      "Usual interstitial pneumonia pattern fibrosis",
+      "Lymphocytic interstitial pneumonitis",
       "Pulmonary vasculitis",
-      "Lymphocytic interstitial pneumonitis"
+      "Usual interstitial pneumonia pattern fibrosis"
     ],
-    "ans": 1,
-    "exp": "Rheumatoid arthritis is associated with several forms of interstitial lung disease. The most common and most severe pattern is usual interstitial pneumonia (UIP), histologically and radiologically identical to idiopathic pulmonary fibrosis, presenting with bilateral basal honeycombing and traction bronchiectasis on HRCT with a restrictive spirometry pattern. This pattern carries the worst prognosis among RA-associated ILDs. Bronchiolitis obliterans (A) causes obstruction and is associated with methotrexate therapy. Pulmonary vasculitis (C) is rare. LIP (D) is more commonly associated with Sjogren syndrome. Davidson's Medicine details RA-associated ILD as an important extra-articular manifestation.",
+    "ans": 3,
+    "exp": "Rheumatoid arthritis is associated with several forms of interstitial lung disease. The most common and most severe pattern is usual interstitial pneumonia (UIP), histologically and radiologically identical to idiopathic pulmonary fibrosis, presenting with bilateral basal honeycombing and traction bronchiectasis on HRCT with a restrictive spirometry pattern. This pattern carries the worst prognosis among RA-associated ILDs. Bronchiolitis obliterans (A) causes obstruction and is associated with methotrexate therapy. Pulmonary vasculitis (C) is rare. LIP (B) is more commonly associated with Sjogren syndrome. Davidson's Medicine details RA-associated ILD as an important extra-articular manifestation.",
     "section": "Pulmonology",
     "num": 94
   },
@@ -1239,11 +1254,11 @@ window.MM.fpsc_past_5 = [
     "q": "A 45-year-old man is brought by his family after he has not slept for 3 days, is spending large sums of money on business ventures he cannot afford, is speaking very rapidly, and is telling everyone he has discovered a new technology that will make him a billionaire. His wife states his mood has never been this elevated before and he has no previous psychiatric history. The MOST likely diagnosis is:",
     "opts": [
       "Hypomanic episode",
-      "Manic episode",
+      "Substance-induced mood disorder",
       "Cyclothymia",
-      "Substance-induced mood disorder"
+      "Manic episode"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "A manic episode is characterised by a distinct period of abnormally and persistently elevated or irritable mood with markedly increased energy lasting at least 7 days, accompanied by at least three of: grandiosity, decreased need for sleep, pressured speech, flight of ideas, distractibility, goal-directed activity, and impulsive high-risk behaviour. Here, 3 days without sleep, grandiose delusions (believing he has made a billion-dollar discovery), pressured speech, and reckless financial behaviour are consistent with mania. Crucially, this patient is showing psychotic features (grandiose delusions) and severe functional impairment, distinguishing mania from hypomania (A), which by definition does not cause marked functional impairment or psychosis. As the Shorter Oxford Textbook of Psychiatry notes, a first manic episode in a 45-year-old without prior history warrants thorough medical investigation to exclude organic causes.",
     "section": "Psychiatry",
     "num": 96
@@ -1277,7 +1292,7 @@ window.MM.fpsc_past_5 = [
   {
     "q": "A 55-year-old man presents with alcohol dependence. He drinks approximately 30 units per day and has decided to stop completely. He is medically stable. The MOST appropriate pharmacological management to prevent withdrawal seizures is:",
     "opts": [
-      "Oral diazepam in a reducing regimen",
+      "Oral diazepam",
       "Naltrexone",
       "Disulfiram",
       "Oral haloperidol"
