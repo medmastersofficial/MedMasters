@@ -43,11 +43,11 @@ window.MM.fpsc_past_1 = [
     "q": "BENEVOLENT : BENIGN ::",
     "opts": [
       "benign : indifferent",
-      "selfish : egoistic",
       "indifferent : caring",
+      "selfish : egoistic",
       "egoistic : selfless"
     ],
-    "ans": 1,
+    "ans": 2,
     "exp": "'Benevolent' and 'benign' are synonyms (both mean kind/gentle). The correct pair must also be synonyms. 'Selfish' and 'egoistic' are nearest in meaning among the choices. A and C are not synonym pairs, and D is an antonym pair.",
     "section": "English",
     "num": 4
@@ -95,11 +95,11 @@ window.MM.fpsc_past_1 = [
     "q": "Neither the consultant nor the residents _____ aware of the schedule change.",
     "opts": [
       "was",
-      "were",
+      "has been",
       "is",
-      "has been"
+      "were"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "With 'neither...nor', the verb agrees with the subject nearer to it: here 'residents' (plural), so 'were' is correct.",
     "section": "English",
     "num": 8
@@ -159,12 +159,12 @@ window.MM.fpsc_past_1 = [
   {
     "q": "Choose the synonym of OBSTINATE:",
     "opts": [
-      "Flexible",
       "Stubborn",
+      "Flexible",
       "Generous",
       "Timid"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "OBSTINATE means refusing to change one's opinion or behaviour, which is closest in meaning to 'Stubborn'.",
     "section": "English",
     "num": 13
@@ -186,11 +186,11 @@ window.MM.fpsc_past_1 = [
     "q": "DOCTOR : STETHOSCOPE :: CARPENTER : ?",
     "opts": [
       "Wood",
-      "Hammer",
+      "Workshop",
       "Nail",
-      "Workshop"
+      "Hammer"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "A doctor's characteristic tool is a stethoscope; similarly, a carpenter's characteristic tool is a hammer. The relationship is 'profession : primary tool'.",
     "section": "English",
     "num": 15
@@ -212,11 +212,11 @@ window.MM.fpsc_past_1 = [
     "q": "Identify the grammatically correct sentence:",
     "opts": [
       "Each of the candidates were given a form.",
-      "Each of the candidates was given a form.",
       "Each of the candidate were given a form.",
+      "Each of the candidates was given a form.",
       "Each of candidates was given a forms."
     ],
-    "ans": 1,
+    "ans": 2,
     "exp": "'Each' is always followed by a singular verb regardless of the plural noun that follows it ('of the candidates'), so 'was given' is correct.",
     "section": "English",
     "num": 17
@@ -238,11 +238,11 @@ window.MM.fpsc_past_1 = [
     "q": "Choose the one word for: 'A person who can speak more than one language.'",
     "opts": [
       "Linguist",
-      "Polyglot",
+      "Bilingual",
       "Interpreter",
-      "Bilingual"
+      "Polyglot"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "A POLYGLOT is a person who knows and can use several languages. 'Linguist' refers to someone who studies language scientifically, not necessarily someone who speaks many languages.",
     "section": "English",
     "num": 19
@@ -393,12 +393,12 @@ window.MM.fpsc_past_1 = [
   {
     "q": "The antidote for organophosphate poisoning is:",
     "opts": [
-      "Naloxone",
       "Atropine",
+      "Naloxone",
       "Flumazenil",
       "Vitamin K"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Organophosphates irreversibly inhibit acetylcholinesterase, causing excessive muscarinic stimulation. Atropine competitively blocks muscarinic receptors and reverses the SLUDGE syndrome. A (naloxone) reverses opioid toxicity, C (flumazenil) reverses benzodiazepine toxicity, and D (vitamin K) is used for warfarin-related bleeding.",
     "section": "Basic Sciences",
     "num": 31
@@ -458,12 +458,12 @@ window.MM.fpsc_past_1 = [
   {
     "q": "The Alma-Ata Declaration, which established Primary Health Care as the key strategy for achieving 'Health for All', was adopted in:",
     "opts": [
-      "1968",
       "1978",
+      "1968",
       "1988",
       "1998"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "The International Conference on Primary Health Care held in Alma-Ata (then USSR, now Kazakhstan) in 1978 produced the Alma-Ata Declaration, a landmark document in global public health, as detailed in Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 36
@@ -485,11 +485,11 @@ window.MM.fpsc_past_1 = [
     "q": "The ability of a screening test to correctly identify individuals who truly have the disease is called its:",
     "opts": [
       "Specificity",
-      "Sensitivity",
+      "Negative predictive value",
       "Positive predictive value",
-      "Negative predictive value"
+      "Sensitivity"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Sensitivity is the proportion of people who actually have the disease who are correctly identified as positive by the test (true positive rate). Specificity, by contrast, measures correct identification of those without the disease, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 38
@@ -498,11 +498,11 @@ window.MM.fpsc_past_1 = [
     "q": "The crude birth rate is defined as the number of live births per:",
     "opts": [
       "100 population per year",
-      "1,000 population per year",
+      "100,000 population per year",
       "10,000 population per year",
-      "100,000 population per year"
+      "1,000 population per year"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Crude birth rate = (total live births in a year ÷ mid-year population) × 1,000, expressed as births per 1,000 population per year, a standard demographic indicator used in vital statistics, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 39
@@ -511,11 +511,11 @@ window.MM.fpsc_past_1 = [
     "q": "The concept of 'Care vs Cure' in health management primarily emphasizes:",
     "opts": [
       "Expanding expensive tertiary-care hospitals as the main strategy",
-      "Shifting focus and resources toward cost-effective prevention and primary care rather than costly curative treatment",
+      "Prioritizing private-sector hospitals over public ones",
       "Replacing all doctors with community health workers",
-      "Prioritizing private-sector hospitals over public ones"
+      "Shifting focus and resources toward cost-effective prevention and primary care rather than costly curative treatment"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "The 'Care vs Cure' debate in health policy centres on the argument that investing in prevention, health education, and primary-level care ('Care') yields far better population health outcomes per rupee spent than an over-reliance on expensive curative, hospital-based treatment ('Cure'), a point emphasised in Park's Textbook of Preventive and Social Medicine.",
     "section": "Care vs Cure",
     "num": 40
@@ -550,11 +550,11 @@ window.MM.fpsc_past_1 = [
     "q": "The Sehat Sahulat Program (Universal Health Insurance Programme) launched by the Government of Pakistan primarily aims to:",
     "opts": [
       "Provide free medical education to doctors",
-      "Provide free secondary and tertiary care health insurance coverage to eligible families",
+      "Regulate the pricing of pharmaceutical companies",
       "Fund research grants for medical universities",
-      "Regulate the pricing of pharmaceutical companies"
+      "Provide free secondary and tertiary care health insurance coverage to eligible families"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "The Sehat Sahulat Program provides government-funded health insurance cards to eligible families, covering the cost of hospitalization for secondary and tertiary care at empanelled public and private hospitals, as Pakistan's National Health Vision 2016-2025 describes.",
     "section": "Health Policies of Govt",
     "num": 43
@@ -563,11 +563,11 @@ window.MM.fpsc_past_1 = [
     "q": "Pakistan's National Health Vision, outlining the country's key health-sector priorities and reforms, covers the period:",
     "opts": [
       "2001–2010",
-      "2016–2025",
+      "2010–2015",
       "1990–2000",
-      "2010–2015"
+      "2016–2025"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "The National Health Vision Pakistan 2016–2025 is the federal government's guiding health policy framework, setting priorities such as universal health coverage, maternal and child health, and health system strengthening.",
     "section": "Health Policies of Govt",
     "num": 44
@@ -810,12 +810,12 @@ window.MM.fpsc_past_1 = [
     "q": "Most common cause of intestinal obstruction worldwide is:",
     "opts": [
       "Tumor",
-      "Adhesions",
       "Hernia",
+      "Adhesions",
       "Volvulus"
     ],
-    "ans": 1,
-    "exp": "Postoperative peritoneal adhesions are the leading cause of intestinal obstruction globally, accounting for up to 60,70% of cases in developed countries. Bailey & Love's Surgery consistently highlights this. Hernias (C) are the second most common cause, more prevalent in populations with limited access to surgery.",
+    "ans": 2,
+    "exp": "Postoperative peritoneal adhesions are the leading cause of intestinal obstruction globally, accounting for up to 60,70% of cases in developed countries. Bailey & Love's Surgery consistently highlights this. Hernias (B) are the second most common cause, more prevalent in populations with limited access to surgery.",
     "section": "Surgery",
     "num": 63
   },
@@ -849,11 +849,11 @@ window.MM.fpsc_past_1 = [
     "q": "A 45-year-old woman presents with a firm, painless, mobile lump in the upper outer quadrant of the right breast. What is the single most important next investigation?",
     "opts": [
       "Chest X-ray",
-      "Mammography and/or ultrasound with triple assessment",
       "Blood culture",
+      "Mammography and/or ultrasound with triple assessment",
       "CT abdomen"
     ],
-    "ans": 1,
+    "ans": 2,
     "exp": "Any new breast lump requires 'triple assessment': clinical examination, imaging (mammography/ultrasound depending on age), and tissue sampling (FNAC/core biopsy), to reliably distinguish benign from malignant disease, a point emphasised in Sabiston Textbook of Surgery.",
     "section": "Surgery",
     "num": 66
@@ -875,11 +875,11 @@ window.MM.fpsc_past_1 = [
     "q": "A 35-year-old man presents with sudden onset severe colicky loin-to-groin pain and microscopic hematuria. What is the most likely diagnosis?",
     "opts": [
       "Acute pyelonephritis",
-      "Renal/ureteric colic due to a calculus",
+      "Acute appendicitis",
       "Testicular torsion",
-      "Acute appendicitis"
+      "Renal/ureteric colic due to a calculus"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Sudden severe colicky pain radiating from the loin to the groin, accompanied by hematuria, is the classic presentation of renal or ureteric colic caused by a urinary tract stone obstructing the ureter, consistent with Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 68
@@ -927,11 +927,11 @@ window.MM.fpsc_past_1 = [
     "q": "A 30-year-old pregnant woman presents with painless vaginal bleeding in the third trimester. Ultrasound confirms placenta previa. Which of the following is contraindicated in her management?",
     "opts": [
       "Speculum examination",
-      "Vaginal examination",
       "Ultrasound monitoring",
+      "Vaginal examination",
       "Bed rest"
     ],
-    "ans": 1,
+    "ans": 2,
     "exp": "Digital vaginal examination is strictly contraindicated in confirmed placenta previa because it can precipitate catastrophic hemorrhage. This critical safety principle is repeatedly emphasized in Ten Teachers Obstetrics. Speculum examination may be performed cautiously to assess bleeding, while ultrasound monitoring and bed rest are standard components of management.",
     "section": "O&G",
     "num": 72
@@ -966,12 +966,12 @@ window.MM.fpsc_past_1 = [
     "q": "A 27-year-old woman presents with gradual abdominal enlargement. On examination, uterus is enlarged to 14-week size and has an irregular contour. She has no pain or bleeding complaints. What is the most likely diagnosis?",
     "opts": [
       "Endometriosis",
-      "Fibroid uterus",
+      "Uterine malignancy",
       "Early pregnancy",
-      "Uterine malignancy"
+      "Fibroid uterus"
     ],
-    "ans": 1,
-    "exp": "Uterine fibroids (leiomyomas) classically present as painless, irregular uterine enlargement and are often asymptomatic in early stages, a presentation emphasized in Ten Teachers Gynaecology. Endometriosis (A) characteristically causes pain, pregnancy (C) produces smooth and uniform enlargement, and malignancy (D) typically presents with abnormal bleeding and systemic features.",
+    "ans": 3,
+    "exp": "Uterine fibroids (leiomyomas) classically present as painless, irregular uterine enlargement and are often asymptomatic in early stages, a presentation emphasized in Ten Teachers Gynaecology. Endometriosis (A) characteristically causes pain, pregnancy (C) produces smooth and uniform enlargement, and malignancy (B) typically presents with abnormal bleeding and systemic features.",
     "section": "O&G",
     "num": 75
   },
@@ -1057,11 +1057,11 @@ window.MM.fpsc_past_1 = [
     "q": "During parotid surgery, which nerve is most at risk?",
     "opts": [
       "Glossopharyngeal nerve",
-      "Facial nerve",
+      "Hypoglossal nerve",
       "Vagus nerve",
-      "Hypoglossal nerve"
+      "Facial nerve"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "The facial nerve divides within the substance of the parotid gland into its five terminal branches (temporal, zygomatic, buccal, marginal mandibular, cervical), making it the nerve most at risk during parotidectomy. Injury causes ipsilateral facial muscle paralysis with significant functional and cosmetic consequences. The other listed nerves are not embedded within parotid tissue.",
     "section": "ENT",
     "num": 82
@@ -1122,12 +1122,12 @@ window.MM.fpsc_past_1 = [
     "q": "A patient presents with gradual peripheral vision loss, raised intraocular pressure, and optic disc cupping. The most characteristic diagnosis is:",
     "opts": [
       "Cataract",
-      "Glaucoma",
       "Retinitis pigmentosa",
+      "Glaucoma",
       "Conjunctivitis"
     ],
-    "ans": 1,
-    "exp": "The combination of peripheral visual field loss, raised IOP, and optic disc cupping is diagnostic of glaucoma. Although retinitis pigmentosa (C) also causes peripheral vision loss ('tunnel vision'), it does not raise IOP or cause disc cupping; these two features together point firmly to glaucoma. Cataract (A) primarily impairs central vision, and conjunctivitis (D) does not affect visual fields.",
+    "ans": 2,
+    "exp": "The combination of peripheral visual field loss, raised IOP, and optic disc cupping is diagnostic of glaucoma. Although retinitis pigmentosa (B) also causes peripheral vision loss ('tunnel vision'), it does not raise IOP or cause disc cupping; these two features together point firmly to glaucoma. Cataract (A) primarily impairs central vision, and conjunctivitis (D) does not affect visual fields.",
     "section": "Ophthalmology",
     "num": 87
   },
@@ -1147,12 +1147,12 @@ window.MM.fpsc_past_1 = [
   {
     "q": "Most common refractive error worldwide is:",
     "opts": [
-      "Hypermetropia",
       "Myopia",
+      "Hypermetropia",
       "Astigmatism",
       "Presbyopia"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Myopia (short-sightedness) is the most prevalent refractive error globally and is rapidly increasing in prevalence, particularly in East Asian populations and young people with increased near-work activity. It results from excessive axial length or increased corneal curvature, causing light to focus anterior to the retina. It is corrected with concave (minus) lenses.",
     "section": "Ophthalmology",
     "num": 89
@@ -1200,12 +1200,12 @@ window.MM.fpsc_past_1 = [
     "q": "On chest examination, stony dullness is found. Diagnosis is:",
     "opts": [
       "Pneumothorax",
-      "Pleural effusion",
+      "Asthma",
       "Consolidation",
-      "Asthma"
+      "Pleural effusion"
     ],
-    "ans": 1,
-    "exp": "Stony dull percussion note is pathognomonic of fluid in the pleural space. The density of pleural fluid absorbs percussive vibrations more completely than consolidated lung, producing this characteristic note. Pneumothorax (A) gives hyperresonance, consolidation (C) gives simple dullness without the stony quality, and asthma (D) gives hyperresonant or normal percussion.",
+    "ans": 3,
+    "exp": "Stony dull percussion note is pathognomonic of fluid in the pleural space. The density of pleural fluid absorbs percussive vibrations more completely than consolidated lung, producing this characteristic note. Pneumothorax (A) gives hyperresonance, consolidation (C) gives simple dullness without the stony quality, and asthma (B) gives hyperresonant or normal percussion.",
     "section": "Pulmonology",
     "num": 93
   },
@@ -1252,12 +1252,12 @@ window.MM.fpsc_past_1 = [
     "q": "A 30-year-old female repeatedly checks whether doors are locked despite knowing they are secure. She finds it distressing but cannot stop. Diagnosis is:",
     "opts": [
       "Generalized anxiety disorder",
-      "Obsessive-compulsive disorder",
+      "Phobia",
       "Panic disorder",
-      "Phobia"
+      "Obsessive-compulsive disorder"
     ],
-    "ans": 1,
-    "exp": "The defining features here are intrusive, unwanted thoughts (obsessions) and repetitive behaviors (compulsions) performed to neutralize anxiety, even while the patient recognizes their irrationality. The Shorter Oxford Textbook of Psychiatry identifies this preserved insight as a key distinguishing feature of OCD from psychotic disorders. GAD (A) involves pervasive worry without rituals, panic disorder (C) has episodic attacks, and phobia (D) is linked to a specific trigger.",
+    "ans": 3,
+    "exp": "The defining features here are intrusive, unwanted thoughts (obsessions) and repetitive behaviors (compulsions) performed to neutralize anxiety, even while the patient recognizes their irrationality. The Shorter Oxford Textbook of Psychiatry identifies this preserved insight as a key distinguishing feature of OCD from psychotic disorders. GAD (A) involves pervasive worry without rituals, panic disorder (C) has episodic attacks, and phobia (B) is linked to a specific trigger.",
     "section": "Psychiatry",
     "num": 97
   },
