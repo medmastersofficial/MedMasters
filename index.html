@@ -9549,7 +9549,9 @@ function _fpscPastShowResult(n,res){
   document.getElementById('fpast-res-wrong').textContent=res.wrong;
   document.getElementById('fpast-res-skipped').textContent=res.skipped;
   // Percentile (normative approximation, same formula style used elsewhere on the site)
-  const z=(res.pct-65)/10;
+  // Raised the assumed average from 65 to 70 at Raza's request — a tougher bar,
+  // so a 70% score now lands at the 50th percentile instead of the 67th.
+  const z=(res.pct-70)/10;
   const percentile=Math.max(1,Math.min(99,Math.round(50+(z*34))));
   const pBox=document.getElementById('fpast-res-percentile');
   if(res.pct>=50){
