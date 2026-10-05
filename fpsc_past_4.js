@@ -27,17 +27,18 @@ window.MM.fpsc_past_4 = [
     "num": 2
   },
   {
-    "q": "The chief of surgery was known for his _____ manner during rounds: he conveyed complex diagnoses with such _____ that even junior students grasped them immediately.",
+    "q": "He is responsible _____ his actions.",
     "opts": [
-      "recondite / opacity",
-      "perfunctory / thoroughness",
-      "pellucid / clarity",
-      "obsequious / deference"
+      "about",
+      "in",
+      "for",
+      "to"
     ],
     "ans": 2,
-    "exp": "The sentence requires two words that together describe someone who communicates complex information clearly and accessibly. PELLUCID means translucently clear, and CLARITY is the quality of being clear and easily understood. These reinforce each other perfectly. RECONDITE / OPACITY (A) would mean obscure/darkness, the opposite of the intended meaning. OBSEQUIOUS / DEFERENCE (D) describe servile behaviour, unrelated to communication. PERFUNCTORY / THOROUGHNESS (B) is self-contradictory since perfunctory means done with minimal effort.",
+    "exp": "\"Responsible for\" is the standard expression meaning accountable for something.",
     "section": "English",
-    "num": 3
+    "num": 3,
+    "src": "mcqsquestions Preposition Set 1"
   },
   {
     "q": "In the sentence below, identify the underlined portion that contains an error. 'The [A] committee has [B] reached a [C] decision which all of its [D] member agrees with.'",
@@ -118,30 +119,32 @@ window.MM.fpsc_past_4 = [
     "num": 9
   },
   {
-    "q": "Rearrange to form a meaningful sentence: (1) the vaccine (2) was (3) approved (4) after extensive trials (5) finally.",
+    "q": "Change into active voice: \"Let him be told to do it.\"",
     "opts": [
-      "1-2-5-3-4",
-      "1-2-3-4-5",
-      "5-1-2-3-4",
-      "1-5-2-3-4"
+      "Tell him to do it.",
+      "He should be told to do it.",
+      "He is told to do it.",
+      "Tell him about doing it."
     ],
     "ans": 0,
-    "exp": "The correct order is 'The vaccine was finally approved after extensive trials': subject (1), verb (2), adverb (5), participle (3), then the remaining phrase (4).",
+    "exp": "A passive imperative of the form \"Let ... be + past participle\" converts back to a plain active imperative: \"Tell him to do it\". The other options keep passive wording, change the meaning (\"about doing it\"), or become statements.",
     "section": "English",
-    "num": 10
+    "num": 10,
+    "src": "Active-passive MCQ lists (competitive English)"
   },
   {
-    "q": "Choose the best combination: 'The ward was short-staffed. Patient care did not suffer.'",
+    "q": "I apologize _____ the inconvenience caused.",
     "opts": [
-      "Patient care did not suffer, but the ward was short-staffed.",
-      "Although the ward was short-staffed, patient care did not suffer.",
-      "The ward was short-staffed because patient care did not suffer.",
-      "The ward was short-staffed, so patient care did not suffer."
+      "of",
+      "for",
+      "about",
+      "in"
     ],
     "ans": 1,
-    "exp": "'Although' correctly introduces the contrast: despite being short-staffed, care did not suffer. 'So' and 'because' would incorrectly imply a causal rather than contrastive relationship.",
+    "exp": "\"Apologise for\" is used with the thing that caused the inconvenience or harm.",
     "section": "English",
-    "num": 11
+    "num": 11,
+    "src": "mcqsquestions Preposition Set 1"
   },
   {
     "q": "Choose the synonym of TENACIOUS:",
@@ -235,30 +238,32 @@ window.MM.fpsc_past_4 = [
     "num": 18
   },
   {
-    "q": "By next month, the new wing of the hospital _____ completed.",
+    "q": "Convert to indirect speech: He said, \"Will you listen to such a man?\"",
     "opts": [
-      "will be",
-      "was",
-      "is",
-      "will have been"
+      "He asked them whether they will listen to such a man.",
+      "He asked them will you listen to such a man.",
+      "He asked them would they listen to such a man.",
+      "He asked them whether they would listen to such a man."
     ],
     "ans": 3,
-    "exp": "An action that will be finished before a specific future point requires the future perfect tense: 'will have been completed'.",
+    "exp": "A yes/no question in reported speech takes \"asked + whether/if\" with statement word order, and \"will\" backshifts to \"would\". The distractors keep the question order or leave \"will\" unshifted.",
     "section": "English",
-    "num": 19
+    "num": 19,
+    "src": "mcqsquestions Set 7"
   },
   {
-    "q": "Choose the correctly punctuated sentence:",
+    "q": "Change the voice: \"Have you received the prize?\"",
     "opts": [
-      "The consultant, Dr. Ahmed said the surgery went well.",
-      "The consultant, Dr. Ahmed, said the surgery went well.",
-      "The consultant Dr. Ahmed, said the surgery went well.",
-      "The consultant Dr Ahmed said, the surgery went well."
+      "Have the prize been received by you?",
+      "Has the prize been received by you?",
+      "Had the prize been received by you?",
+      "Is the prize received by you?"
     ],
     "ans": 1,
-    "exp": "'Dr. Ahmed' is an appositive renaming 'the consultant' and must be set off by commas on both sides: 'The consultant, Dr. Ahmed, said...'",
+    "exp": "A present perfect question becomes \"Has/Have + subject + been + past participle + by ...?\", and the singular subject \"the prize\" takes \"has\". The distractors break agreement, use the simple present, or shift to the past perfect.",
     "section": "English",
-    "num": 20
+    "num": 20,
+    "src": "Testpoint"
   },
   {
     "q": "A surgeon performing a right hemicolectomy inadvertently ligates the vessel supplying the ascending colon. Which artery has most likely been injured?",

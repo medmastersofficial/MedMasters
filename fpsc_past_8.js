@@ -27,17 +27,18 @@ window.MM.fpsc_past_8 = [
     "num": 2
   },
   {
-    "q": "SCALPEL : SURGEON :: GAVEL : ?",
+    "q": "You have to divide it _____ five equal parts.",
     "opts": [
-      "Lawyer",
-      "Journalist",
-      "Police officer",
-      "Judge"
+      "of",
+      "at",
+      "with",
+      "into"
     ],
     "ans": 3,
-    "exp": "A SCALPEL is the defining precision tool of a SURGEON. A GAVEL is the defining instrument used by a JUDGE to maintain order in a courtroom. A lawyer (A) argues cases but does not use a gavel. Police officers (C) and journalists (B) have no association with a gavel.",
+    "exp": "\"Divide into\" shows the parts that result from splitting something.",
     "section": "English",
-    "num": 3
+    "num": 3,
+    "src": "mcqsquestions Preposition Set 1"
   },
   {
     "q": "Choose the SYNONYM of TACITURN.",
@@ -196,17 +197,18 @@ window.MM.fpsc_past_8 = [
     "num": 15
   },
   {
-    "q": "Choose the sentence that correctly uses 'fewer' rather than 'less':",
+    "q": "Convert to indirect speech: Shahid's brother said to him, \"Please wait for me.\"",
     "opts": [
-      "The clinic saw less patients than expected this week.",
-      "The clinic saw fewer patients than expected this week.",
-      "The clinic saw a fewer number of patients this week.",
-      "The clinic saw a less number of patients this week."
+      "Shahid's brother said to him to wait for me.",
+      "Shahid's brother requested him to wait for him.",
+      "Shahid's brother ordered him to wait for him.",
+      "Shahid's brother requested him please to wait for him."
     ],
     "ans": 1,
-    "exp": "'Fewer' is used with countable nouns (patients can be counted individually), while 'less' is used with uncountable quantities (e.g., 'less time'). 'Fewer patients' is therefore correct.",
+    "exp": "\"Please\" marks a polite request, so the report uses \"requested + object + to-infinitive\" and \"me\" becomes \"him\". \"Ordered\" misstates the tone, and the other options keep the direct wording or add \"please\".",
     "section": "English",
-    "num": 16
+    "num": 16,
+    "src": "PPSC Junior Clerk 2018 / mcqsquestions Set 7"
   },
   {
     "q": "Which of the following sentences avoids a dangling modifier?",
@@ -222,17 +224,18 @@ window.MM.fpsc_past_8 = [
     "num": 17
   },
   {
-    "q": "Choose the best synonym for the word 'ANOMALY' as used in: 'The lab result was flagged as an anomaly requiring further review.'",
+    "q": "She was shocked _____ the news.",
     "opts": [
-      "A deviation from the expected pattern",
-      "A routine finding",
-      "A confirmed diagnosis",
-      "A calibration error"
+      "at",
+      "in",
+      "of",
+      "on"
     ],
     "ans": 0,
-    "exp": "An ANOMALY is something that deviates from what is standard, normal, or expected: here, a lab result that does not fit the expected pattern, warranting further review, not necessarily a confirmed error or diagnosis.",
+    "exp": "\"Shocked at\" is the usual collocation for a strong reaction to news or an event.",
     "section": "English",
-    "num": 18
+    "num": 18,
+    "src": "mcqsquestions Preposition Set 1"
   },
   {
     "q": "Which version correctly uses the passive voice to emphasise the report over its author?",

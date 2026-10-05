@@ -1,18 +1,19 @@
 window.MM = window.MM || {};
 window.MM.fpsc_past_5 = [
   {
-    "q": "Convert to indirect speech: The nurse said, \"The patient's blood pressure is stable.\"",
+    "q": "My friend said to me, \"Will you take me to my office?\"",
     "opts": [
-      "The nurse said that the patient's blood pressure is stable.",
-      "The nurse said that the patient's blood pressure was stable.",
-      "The nurse says that the patient's blood pressure was stable.",
-      "The nurse said that the patient's blood pressure had been stable."
+      "My friend said to me if I will take him to his office.",
+      "My friend asked me if I would take him to his office.",
+      "My friend asked me if I would take me to my office.",
+      "My friend told me if I would take him to his office."
     ],
     "ans": 1,
-    "exp": "When the reporting verb is past tense ('said'), a present-tense statement ('is stable') shifts back to past tense ('was stable') in indirect speech. 'Is stable' (A) wrongly retains the present tense. 'Says' (C) changes the reporting verb's own tense. 'Had been stable' (D) over-shifts to past perfect, which is not required for a simple present-tense original.",
+    "exp": "A yes/no question is reported with \"asked + if\", the modal \"will\" backshifts to \"would\", and the pronouns change to match the reporter (\"me/my\" become \"him/his\"). \"Told\" does not suit a question, \"will\" is left unshifted in one option, and the last option leaves the pronouns unchanged.",
     "section": "English",
     "num": 1,
-    "difficulty": "moderate"
+    "difficulty": "moderate",
+    "src": "mcqsquestions Set 7"
   },
   {
     "q": "Choose the word most OPPOSITE in meaning to MENDACIOUS.",
@@ -42,115 +43,123 @@ window.MM.fpsc_past_5 = [
     "difficulty": "moderate"
   },
   {
-    "q": "LEXICON : WORDS :: PHARMACOPOEIA : ?",
+    "q": "MISER : STINGY ::",
     "opts": [
-      "Physicians",
-      "Hospitals",
-      "Drugs",
-      "Diseases"
+      "Sage : docile",
+      "Rebel : idle",
+      "Loner : solitary",
+      "Porter : strong"
     ],
     "ans": 2,
-    "exp": "A LEXICON is an official or systematic collection of WORDS in a language. The analogy requires what a PHARMACOPOEIA is a systematic official collection of. A pharmacopoeia is an official publication listing drugs, their standards, and preparations. Therefore DRUGS completes the analogy. PHYSICIANS (A), HOSPITALS (B), and DISEASES (D) are not the subject matter that a pharmacopoeia catalogues.",
+    "exp": "A miser is, by definition, stingy, so the pair links a person to the trait that defines him. A loner is, by definition, solitary. The other pairs name traits that are not defining: a porter need not be strong, a sage need not be docile, and a rebel is not idle by nature.",
     "section": "English",
-    "num": 4
+    "num": 4,
+    "src": "NTS GAT General past paper (recalled)"
   },
   {
-    "q": "Convert to indirect speech: The consultant said to the resident, \"Don't discharge the patient today.\"",
+    "q": "He said to his servant, \"Why are you so lazy today?\"",
     "opts": [
-      "The consultant told the resident not to discharge the patient that day.",
-      "The consultant said to the resident don't discharge the patient today.",
-      "The consultant told the resident to not discharging the patient today.",
-      "The consultant ordered the resident didn't discharge the patient that day."
+      "He asked his servant why he was so lazy that day.",
+      "He asked his servant why he is so lazy today.",
+      "He asked his servant why was he so lazy that day.",
+      "He told his servant why he was so lazy that day."
     ],
     "ans": 0,
-    "exp": "A negative imperative in direct speech ('Don't discharge...') is reported using 'told + object + not + to-infinitive': 'told the resident not to discharge'. The time reference 'today' also shifts to 'that day' since the reporting may occur later. Option B simply retains direct-speech punctuation and wording. Option C uses an ungrammatical '-ing' form after 'not to'. Option D uses an ungrammatical finite clause after 'ordered'.",
+    "exp": "A wh-question is reported with \"asked\", the question word is kept, and the clause takes statement order: \"are\" becomes \"was\" and \"today\" becomes \"that day\". One distractor keeps the inverted order, one keeps the present tense and \"today\", and \"told\" does not fit a question.",
     "section": "English",
     "num": 5,
-    "difficulty": "moderate"
+    "difficulty": "moderate",
+    "src": "mcqsquestions Set 7"
   },
   {
-    "q": "Convert to indirect speech: The patient asked the doctor, \"Why do I need to take this medicine twice a day instead of once, like before?\"",
+    "q": "My friend said, \"Had I known, I would certainly have helped you.\"",
     "opts": [
-      "The patient asked the doctor why does he need to take this medicine twice a day instead of once, like before.",
-      "The patient asked the doctor why did he need to take this medicine twice a day instead of once, like before.",
-      "The patient asked the doctor why he needed to take that medicine twice a day instead of once, like before.",
-      "The patient asked the doctor why he needs to take that medicine twice a day instead of once, like before."
+      "My friend said that if I had known, I would certainly have helped him.",
+      "My friend said that had he known, he will certainly have helped me.",
+      "My friend said that if he had known, he would certainly have helped me.",
+      "My friend said that if he knew, he would certainly help me."
     ],
     "ans": 2,
-    "exp": "A reported WH-question drops the inversion used in the direct question ('why do I need' becomes 'why he needed'), and the present tense ('do...need') backshifts to past ('needed') since the reporting verb 'asked' is past tense. The demonstrative 'this' shifts to 'that' as the deictic centre moves away from the moment of speaking. Option A wrongly retains both the inversion ('why does he') and the present tense. Option B wrongly retains an inverted auxiliary ('did he need') inside the reported clause, which must read as a statement, not a question. Option D correctly drops inversion but fails to backshift the tense.",
+    "exp": "\"Had I known\" is an inverted conditional meaning \"If I had known\". The verb forms are already past (past perfect and \"would have helped\"), so they do not change; only the pronouns shift (\"I\" to \"he\", \"you\" to \"me\"). The distractors flatten the tenses, mix in \"will\", or leave the pronouns unchanged.",
     "section": "English",
     "num": 6,
-    "difficulty": "extreme"
+    "difficulty": "extreme",
+    "src": "Testpoint"
   },
   {
-    "q": "Convert to indirect speech: The specialist told the family, \"I will review the scans again tomorrow morning and call you if anything has changed.\"",
+    "q": "The policeman shouted to the man, \"Stop or I will shoot you.\"",
     "opts": [
-      "The specialist told the family that she will review the scans again tomorrow morning and will call them if anything has changed.",
-      "The specialist told the family that she would review the scans again tomorrow morning and would call them if anything changed.",
-      "The specialist told the family she would have reviewed the scans again the next morning and would have called them if anything had changed.",
-      "The specialist told the family that she would review the scans again the next morning and would call them if anything had changed."
+      "The policeman ordered the man to stop and added that he would not shoot him.",
+      "The policeman asked the man to stop and added that otherwise he will shoot him.",
+      "The policeman ordered the man to stop or that he would shoot him.",
+      "The policeman ordered the man to stop and threatened that otherwise he would shoot him."
     ],
     "ans": 3,
-    "exp": "Both future-tense verbs ('will review', 'will call') backshift to 'would' after the past-tense reporting verb 'told', the time expression 'tomorrow' shifts to 'the next morning', and the present perfect condition ('has changed') backshifts to past perfect ('had changed') within the reported conditional clause. Option A fails to backshift anything. Option B correctly handles the main verbs but wrongly leaves 'tomorrow' unshifted and fails to backshift 'changed' to 'had changed'. Option C incorrectly over-shifts both verbs to the conditional perfect ('would have reviewed'), which misrepresents a simple future action as a hypothetical unfulfilled one.",
+    "exp": "The sentence combines a command (\"Stop\") with a threat (\"or I will shoot you\"). It is reported as \"ordered ... to stop and threatened that otherwise he would shoot him\", with \"will\" backshifted to \"would\" and \"I/you\" changed to \"he/him\". The distractors keep \"will\", break the structure with \"or that\", or reverse the meaning.",
     "section": "English",
     "num": 7,
-    "difficulty": "extreme"
+    "difficulty": "extreme",
+    "src": "mcqsquestions Set 7"
   },
   {
-    "q": "Convert to indirect speech: The committee chairman insisted, \"Every department must submit its report by Friday, no exceptions.\"",
+    "q": "My father said, \"All that glitters is not gold.\"",
     "opts": [
-      "The committee chairman insisted that every department must submit its report by Friday, no exceptions.",
-      "The committee chairman insisted that every department submit its report by that Friday, with no exceptions.",
-      "The committee chairman insisted that every department submitted its report by that Friday, with no exceptions.",
-      "The committee chairman insisted that every department would submit its report by that Friday, with no exceptions."
+      "My father said that all that glittered was not gold.",
+      "My father said that all that glitters is not gold.",
+      "My father said that all that had glittered is not gold.",
+      "My father told that all that glitters is not gold."
     ],
     "ans": 1,
-    "exp": "After a verb of insistence or demand ('insisted that'), the subjunctive base form of the verb is used ('submit'), and this mandative subjunctive does not take the usual backshifted or modal form, even though the reporting verb is past tense; only the time reference 'Friday' shifts to 'that Friday' since the deictic centre has moved. Option A fails to convert the direct-speech structure at all, wrongly keeping 'must' and leaving 'Friday' unshifted. Option C wrongly uses the ordinary past tense ('submitted') instead of the required subjunctive. Option D wrongly uses 'would', treating the demand as a simple future prediction rather than a directive.",
+    "exp": "A proverb is a universal truth, so its present tense does not change in indirect speech even after a past reporting verb. \"Told\" needs an object, and shifting the verbs to the past or past perfect wrongly turns a timeless saying into a past event.",
     "section": "English",
     "num": 8,
-    "difficulty": "extreme"
+    "difficulty": "extreme",
+    "src": "mcqsquestions Set 7 (key corrected)"
   },
   {
-    "q": "Convert to indirect speech: She exclaimed, \"What a relief it is that the biopsy came back benign!\"",
+    "q": "Ahsan said, \"Don't forget to water the plants.\"",
     "opts": [
-      "She exclaimed what a relief it was that the biopsy came back benign.",
-      "She exclaimed that what a relief it is that the biopsy had come back benign.",
-      "She exclaimed that it was a great relief that the biopsy had come back benign.",
-      "She exclaimed that it was a relief what the biopsy had come back benign."
+      "Ahsan said that I don't forget to water the plants.",
+      "Ahsan said me not to forget to water the plants.",
+      "Ahsan reminded me not to forget to water the plants.",
+      "Ahsan told that don't forget to water the plants."
     ],
     "ans": 2,
-    "exp": "An exclamatory sentence in indirect speech loses its exclamatory structure ('What a relief it is') and is rephrased as a statement ('that it was a great relief'), the present tense ('is') backshifts to past ('was'), and the simple past describing the completed event ('came back') backshifts to past perfect ('had come back') since it happened before the exclamation was reported. Option A retains the ungrammatical exclamatory word order inside indirect speech. Option B keeps the exclamatory 'what' structure nested under 'that', which is ungrammatical, and fails to backshift 'is'. Option D garbles the clause structure by using 'what' where a relative or result clause is needed.",
+    "exp": "A negative imperative that serves as a reminder is reported with \"reminded + object + not + to-infinitive\", with the direct-speech punctuation dropped. The other versions keep the direct imperative inside a \"that\" clause, use \"told\" without an object, or misuse \"said me\".",
     "section": "English",
     "num": 9,
-    "difficulty": "extreme"
+    "difficulty": "extreme",
+    "src": "Testpoint"
   },
   {
-    "q": "Choose the correct passive form: 'The lab technician will have completed the analysis by noon.'",
+    "q": "Change the voice: \"Everyone must read this book.\"",
     "opts": [
-      "The analysis will be completed by noon by the lab technician.",
-      "The analysis will have being completed by noon by the lab technician.",
-      "The analysis has been completed by noon by the lab technician.",
-      "The analysis will have been completed by noon by the lab technician."
+      "This book must read by everyone.",
+      "This book is must be read by everyone.",
+      "This book must have been read by everyone.",
+      "This book must be read by everyone."
     ],
     "ans": 3,
-    "exp": "The active sentence is in future perfect tense ('will have completed'), so the passive must preserve this: 'will have been + past participle' → 'will have been completed'. Option A drops to simple future, losing the sense of completion before a deadline. Option B uses the ungrammatical 'will have being'. Option C wrongly shifts to present perfect, losing the future reference entirely.",
+    "exp": "A modal keeps its modal in the passive: \"must + be + past participle\". The object \"this book\" becomes the subject and \"everyone\" follows \"by\". The distractors drop \"be\", add an extra \"is\", or add a perfect aspect that the original does not have.",
     "section": "English",
     "num": 10,
-    "difficulty": "moderate"
+    "difficulty": "moderate",
+    "src": "youthforpakistan past-paper list"
   },
   {
-    "q": "Choose the correct passive form: 'The hospital board must review the proposal before Monday.'",
+    "q": "Change into active voice: \"All the broken bridges are being repaired by the engineers.\"",
     "opts": [
-      "The proposal must have been reviewed by the hospital board before Monday.",
-      "The proposal must be reviewed by the hospital board before Monday.",
-      "The proposal must review the hospital board before Monday.",
-      "The proposal is must be reviewed by the hospital board before Monday."
+      "The engineers were repairing all the broken bridges.",
+      "The engineers are repairing all the broken bridges.",
+      "The engineers are being repaired all the broken bridges.",
+      "The engineers have repaired all the broken bridges."
     ],
     "ans": 1,
-    "exp": "With a modal verb ('must') in the active voice, the passive is formed as 'modal + be + past participle': 'must be reviewed'. Option A wrongly adds a perfect aspect not present in the original. Option C reverses subject and object illogically. Option D inserts an extra, ungrammatical 'is' before the modal.",
+    "exp": "A present continuous passive (\"are being repaired\") converts to a present continuous active (\"are repairing\"), with the agent \"the engineers\" becoming the subject. The others change the tense or aspect, or keep a passive form after an active subject.",
     "section": "English",
     "num": 11,
-    "difficulty": "moderate"
+    "difficulty": "moderate",
+    "src": "Testpoint"
   },
   {
     "q": "Choose the synonym of ASTUTE:",
@@ -192,46 +201,49 @@ window.MM.fpsc_past_5 = [
     "num": 14
   },
   {
-    "q": "Choose the correct passive form: 'They had the physiotherapist assess the patient's mobility before discharge.'",
+    "q": "Change the voice: \"They were laughing at her.\"",
     "opts": [
-      "They had the physiotherapist assessed the patient's mobility before discharge.",
-      "The patient's mobility was had assessed by the physiotherapist before discharge.",
-      "They had the patient's mobility assessed by the physiotherapist before discharge.",
-      "They had the patient's mobility being assessed by the physiotherapist before discharge."
+      "She was being laughed by them.",
+      "She had been laughed at by them.",
+      "She was being laughed at by them.",
+      "She was laughed at by them."
     ],
     "ans": 2,
-    "exp": "This is a causative construction ('have someone do something'), whose passive equivalent is 'have something done (by someone)': the object of the original causative ('the patient's mobility', what gets assessed) becomes the focus, with the verb converted to a past participle: 'had the patient's mobility assessed'. Option A keeps 'the physiotherapist' as the one 'had', but wrongly inflects the verb as finite past ('assessed') rather than restructuring the causative. Option B produces an ungrammatical double-auxiliary structure. Option D wrongly inserts the continuous '-ing' form where a past participle is required.",
+    "exp": "The past continuous active becomes \"was/were being + past participle\" in the passive, and the preposition of the phrasal verb \"laugh at\" stays after the participle. The distractors lose the continuous sense, shift to the past perfect, or drop the preposition \"at\".",
     "section": "English",
     "num": 15,
-    "difficulty": "extreme"
+    "difficulty": "extreme",
+    "src": "Testpoint"
   },
   {
-    "q": "Choose the correct passive form: 'People generally believe that the new vaccine prevents severe illness.'",
+    "q": "Change the voice: \"Who teaches you English?\"",
     "opts": [
-      "The new vaccine is generally believed that it prevents severe illness.",
-      "It is generally believed the new vaccine to prevent severe illness.",
-      "The new vaccine generally is believed preventing severe illness.",
-      "The new vaccine is generally believed to prevent severe illness."
+      "By whom were you taught English?",
+      "By whom has English been taught?",
+      "English is taught by whom?",
+      "By whom are you taught English?"
     ],
     "ans": 3,
-    "exp": "With reporting verbs like 'believe' followed by a that-clause, one passive option promotes the subject of the that-clause to become the main subject, followed by a to-infinitive: 'The new vaccine is generally believed to prevent...'. (The alternative impersonal passive 'It is generally believed that the new vaccine prevents...' is also correct but is not offered here.) Option A incorrectly combines both structures, leaving a stray 'that it' clause after the infinitive-style passive has already begun. Option B garbles the impersonal passive by inserting the vaccine as an object before an infinitive, which is ungrammatical. Option C incorrectly uses the '-ing' form instead of the required to-infinitive.",
+    "exp": "A wh-question with \"who\" as the subject is passivised by starting with \"By whom\" and keeping the simple present: \"are you taught\". The distractors change the tense, lose the question word order, or alter the object.",
     "section": "English",
     "num": 16,
-    "difficulty": "extreme"
+    "difficulty": "extreme",
+    "src": "Testpoint"
   },
   {
-    "q": "Choose the correct passive form: 'The research team has been monitoring the trial participants closely for adverse effects.'",
+    "q": "Change the voice: \"Do you imitate others?\"",
     "opts": [
-      "The trial participants have been being monitored closely for adverse effects by the research team.",
-      "The trial participants are being monitored closely for adverse effects by the research team.",
-      "The trial participants have been monitored closely for adverse effects by the research team.",
-      "The trial participants had been monitored closely for adverse effects by the research team."
+      "Were others imitated by you?",
+      "Is others imitated by you?",
+      "Are others imitated by you?",
+      "Do others imitated by you?"
     ],
     "ans": 2,
-    "exp": "English avoids the grammatically possible but extremely awkward 'have been being + past participle' passive form for the present perfect continuous; standard usage instead uses the simple present perfect passive, 'have been monitored', to convey the same ongoing-up-to-now sense without the doubled auxiliary. Option A is technically constructible but is considered stylistically unacceptable and is avoided by virtually all usage authorities. Option B shifts the meaning to present continuous only, losing the 'up to now, over a period' sense of the original. Option D wrongly shifts the tense to past perfect, placing the monitoring entirely in a completed past period rather than continuing to the present.",
+    "exp": "A simple present question becomes \"Is/Are + subject + past participle + by ...?\". The plural subject \"others\" takes \"are\", and the auxiliary \"do\" disappears. The distractors keep \"do\", break agreement with \"is\", or shift to the past.",
     "section": "English",
     "num": 17,
-    "difficulty": "extreme"
+    "difficulty": "extreme",
+    "src": "Testpoint"
   },
   {
     "q": "Choose the correct passive form: 'The ambulance crew rushed the patient to the emergency ward.'",
@@ -248,32 +260,34 @@ window.MM.fpsc_past_5 = [
     "difficulty": "moderate"
   },
   {
-    "q": "Choose the correct passive form: 'The hospital gave the discharged patient a three-month supply of medication.'",
+    "q": "Change the voice: \"Nobody has touched this box.\"",
     "opts": [
-      "The discharged patient was given a three-month supply of medication by the hospital.",
-      "A three-month supply of medication was given the discharged patient by the hospital.",
-      "The discharged patient was given by the hospital a three-month supply of medication.",
-      "A three-month supply of medication was given to the discharged patient was by the hospital."
+      "This box has not been touched by anybody.",
+      "This box is not touched by anybody.",
+      "This box has not touched by anybody.",
+      "This box had not been touched by anybody."
     ],
     "ans": 0,
-    "exp": "A ditransitive verb with two objects ('gave the patient medication') allows the indirect object to become the passive subject directly, without needing 'to': 'The discharged patient was given...'. Option B incorrectly drops the required preposition 'to' before the retained object when the direct object becomes the subject instead. Option C produces an awkward, non-standard word order by placing 'by the hospital' before the retained direct object. Option D is doubly ungrammatical, containing both a stray 'was' and a disordered structure.",
+    "exp": "A negative subject like \"nobody\" becomes \"not ... by anybody\" in the passive, and the present perfect \"has touched\" becomes \"has been touched\". The distractors change the tense or leave out \"been\".",
     "section": "English",
     "num": 19,
-    "difficulty": "extreme"
+    "difficulty": "extreme",
+    "src": "Testpoint (key adjusted)"
   },
   {
-    "q": "Choose the correct passive form: 'People say that overcrowding worsens hospital infection rates.'",
+    "q": "Change the voice: \"Let me do this.\"",
     "opts": [
-      "It is said overcrowding worsens hospital infection rates by people.",
-      "Overcrowding is said that it worsens hospital infection rates.",
-      "It says that overcrowding is worsened by hospital infection rates.",
-      "It is said that overcrowding worsens hospital infection rates."
+      "Let me be done this.",
+      "Let us do this.",
+      "Let this done by me.",
+      "Let this be done by me."
     ],
     "ans": 3,
-    "exp": "With a reporting verb like 'say' followed by a that-clause and an impersonal subject ('people'), the standard passive uses the impersonal construction 'It is said that...', keeping the that-clause intact and simply dropping the vague agent. Option A keeps 'by people' unnecessarily, which is both ungrammatical in this structure and redundant, since the impersonal passive exists precisely to omit a vague agent. Option B wrongly promotes 'overcrowding' to subject while still retaining a stray 'that it' clause, producing a double-subject structure. Option C wrongly makes 'it' the subject of an active verb while also reversing the real relationship between overcrowding and infection rates.",
+    "exp": "An imperative with \"let\" is passivised as \"Let + object + be + past participle\", so the thing done becomes the focus: \"Let this be done by me\". The distractors change the meaning, omit \"be\", or scramble the object.",
     "section": "English",
     "num": 20,
-    "difficulty": "extreme"
+    "difficulty": "extreme",
+    "src": "youthforpakistan past-paper list"
   },
   {
     "q": "A 40-year-old woman presents with weakness of her right hand after a supracondylar fracture of the humerus. She is unable to flex the distal phalanx of her index finger and has loss of sensation over the palmar surface of her index and middle fingers. Which nerve is injured?",

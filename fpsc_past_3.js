@@ -66,30 +66,32 @@ window.MM.fpsc_past_3 = [
     "num": 5
   },
   {
-    "q": "The government launched a new initiative to _____ the spread of infectious diseases in rural areas.",
+    "q": "A place where clothes are washed is called a:",
     "opts": [
-      "curtail",
-      "expedite",
-      "perpetuate",
-      "amplify"
+      "Laundry",
+      "Pantry",
+      "Bakery",
+      "Dairy"
     ],
     "ans": 0,
-    "exp": "The phrase 'launched a new initiative' implies positive, corrective action against disease spread. CURTAIL means to reduce or limit, making it the only contextually coherent choice for controlling disease. EXPEDITE (B) means to speed up, which would worsen spread. PERPETUATE (C) means to cause something to continue indefinitely, and AMPLIFY (D) means to increase, both of which are opposite to the intended meaning.",
+    "exp": "The one word for a place where clothes are washed is \"laundry\". A dairy handles milk products, a bakery makes bread, and a pantry stores food.",
     "section": "English",
-    "num": 6
+    "num": 6,
+    "src": "Testpoint one-word substitution"
   },
   {
-    "q": "Scarcely _____ the doctor entered the ward when the patient's condition suddenly worsened.",
+    "q": "Convert to indirect speech: He said to me, \"I may not be able to reach the court in time.\"",
     "opts": [
-      "did",
-      "had",
-      "has",
-      "was"
+      "He asked me that he might not be able to reach the court in time.",
+      "He told me that he might not be able to reach the court in time.",
+      "He said to me that he may not be able to reach the court in time.",
+      "He told me that he may not be able to reach the court in time."
     ],
     "ans": 1,
-    "exp": "'Scarcely...when' requires inversion with the past perfect: 'Scarcely had the doctor entered...when'. This structure emphasizes that one action happened immediately after another.",
+    "exp": "After a past reporting verb the modal \"may\" backshifts to \"might\", and \"I\" becomes \"he\". \"Told\" takes an object (\"me\"). The distractors leave \"may\" unshifted or use \"asked\" for a statement.",
     "section": "English",
-    "num": 7
+    "num": 7,
+    "src": "mcqsquestions Set 7"
   },
   {
     "q": "The committee insisted that the report _____ submitted before Friday.",
@@ -131,17 +133,18 @@ window.MM.fpsc_past_3 = [
     "num": 10
   },
   {
-    "q": "Choose the best combination: 'The results were delayed. The lab had a staff shortage.'",
+    "q": "Change the voice: \"People speak English all over the world.\"",
     "opts": [
-      "The results were delayed because the lab had a staff shortage.",
-      "The results were delayed, but the lab had a staff shortage.",
-      "The lab had a staff shortage, so the results were not delayed.",
-      "The results were delayed although the lab had a staff shortage."
+      "English is spoken all over the world.",
+      "English was spoken all over the world.",
+      "English is speaking all over the world.",
+      "English has spoken all over the world by people."
     ],
     "ans": 0,
-    "exp": "'Because' correctly shows the causal relationship: the staff shortage caused the delay. The other options either contradict the logic or fail to connect cause and effect.",
+    "exp": "The active verb \"speak\" is simple present, so the passive is \"is/are + past participle\": \"is spoken\". The vague doer \"people\" is dropped. The distractors change the tense, use an active participle, or add an unnecessary agent.",
     "section": "English",
-    "num": 11
+    "num": 11,
+    "src": "Testpoint"
   },
   {
     "q": "Choose the synonym of PRAGMATIC:",
@@ -170,17 +173,18 @@ window.MM.fpsc_past_3 = [
     "num": 13
   },
   {
-    "q": "SURGEON : SCALPEL :: ARTIST : ?",
+    "q": "NEST : BIRD :: PALACE : ?",
     "opts": [
-      "Paintbrush",
-      "Gallery",
-      "Canvas",
-      "Museum"
+      "King",
+      "Car",
+      "Air",
+      "Sword"
     ],
     "ans": 0,
-    "exp": "A surgeon's characteristic instrument is a scalpel; similarly, an artist's characteristic instrument is a paintbrush. The relationship tested is 'profession : primary tool'.",
+    "exp": "A nest is the dwelling of a bird, and a palace is the dwelling of a king, so the relation is dwelling to its occupant. A car, air and a sword do not live in a palace.",
     "section": "English",
-    "num": 14
+    "num": 14,
+    "src": "Analogy MCQs (SSC/competitive lists, recalled)"
   },
   {
     "q": "The word 'INADVERTENT' most nearly means:",
@@ -196,30 +200,32 @@ window.MM.fpsc_past_3 = [
     "num": 15
   },
   {
-    "q": "Identify the grammatically correct sentence:",
+    "q": "I am worried _____ the exam.",
     "opts": [
-      "If I were you, I would consult a specialist.",
-      "If I was you, I would consult a specialist.",
-      "If I am you, I would consult a specialist.",
-      "If I would be you, I would consult a specialist."
+      "about",
+      "in",
+      "on",
+      "of"
     ],
     "ans": 0,
-    "exp": "In hypothetical/unreal conditional sentences, 'were' is used for all subjects (not 'was'), making 'If I were you' the grammatically correct subjunctive form.",
+    "exp": "\"Worried about\" is the standard collocation for anxiety over something.",
     "section": "English",
-    "num": 16
+    "num": 16,
+    "src": "mcqsquestions Preposition Set 1"
   },
   {
-    "q": "_____ the medication was expensive, the patient decided to continue the treatment.",
+    "q": "It differs _____ their last suggestion.",
     "opts": [
-      "Even though",
-      "Because",
-      "So that",
-      "In order to"
+      "from",
+      "about",
+      "in",
+      "of"
     ],
     "ans": 0,
-    "exp": "'Even though' introduces a contrast: the patient continued despite the cost, which fits the sentence's logic. 'Because' would incorrectly suggest the cost was the reason for continuing.",
+    "exp": "\"Differ from\" is used to say that one thing is unlike another.",
     "section": "English",
-    "num": 17
+    "num": 17,
+    "src": "mcqsquestions Preposition Set 1"
   },
   {
     "q": "Choose the one word for: 'A place where books are kept for lending or reference.'",
@@ -235,17 +241,18 @@ window.MM.fpsc_past_3 = [
     "num": 18
   },
   {
-    "q": "The clinic _____ closed for renovations by the time we arrived.",
+    "q": "Convert to indirect speech: The teacher said, \"Water boils at 100 degrees Celsius.\"",
     "opts": [
-      "is",
-      "was already",
-      "will be",
-      "has been"
+      "The teacher said that water would boil at 100 degrees Celsius.",
+      "The teacher said that water boils at 100 degrees Celsius.",
+      "The teacher told that water boils at 100 degrees Celsius.",
+      "The teacher said that water had boiled at 100 degrees Celsius."
     ],
     "ans": 1,
-    "exp": "'Was already closed' correctly uses past perfect-style phrasing to show the closure happened before the arrival (a past event before another past event).",
+    "exp": "A scientific fact keeps its simple present tense in indirect speech even after a past reporting verb. The past perfect and \"would boil\" change the meaning, and \"told\" needs an object.",
     "section": "English",
-    "num": 19
+    "num": 19,
+    "src": "Testpoint"
   },
   {
     "q": "Choose the correctly punctuated sentence:",

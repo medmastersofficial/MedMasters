@@ -40,17 +40,18 @@ window.MM.fpsc_past_6 = [
     "num": 3
   },
   {
-    "q": "QUARANTINE : CONTAGION :: TRIAGE : ?",
+    "q": "GOOSE : GANDER ::",
     "opts": [
-      "Infection",
-      "Urgency",
-      "Diagnosis",
-      "Surgery"
+      "Doe : Stag",
+      "Dog : Pup",
+      "Sheep : Hock",
+      "Horse : Bridle"
     ],
-    "ans": 1,
-    "exp": "QUARANTINE is the procedure used to manage and limit the spread of CONTAGION. The analogy requires what TRIAGE manages or assesses. TRIAGE is the process of sorting patients based on the severity and URGENCY of their condition to prioritise treatment. INFECTION (A) is managed by treatment, not triage. DIAGNOSIS (C) is a process, not what triage directly manages. SURGERY (D) is a type of treatment.",
+    "ans": 0,
+    "exp": "A gander is a male goose, so the pair is female to male. A doe is a female deer and a stag is a male deer. The other pairs link a young animal to its parent, an animal to a body part, or an animal to its equipment.",
     "section": "English",
-    "num": 4
+    "num": 4,
+    "src": "MAT / competitive analogy lists (recalled)"
   },
   {
     "q": "In the sentence below, identify the portion that contains an error. 'The data [A] collected from the three [B] clinics were [C] clearly showing [D] a rising trend.'",
@@ -66,27 +67,28 @@ window.MM.fpsc_past_6 = [
     "num": 5
   },
   {
-    "q": "PROPHYLAXIS : DISEASE :: ARBITRATION : ?",
+    "q": "FISH : AQUARIUM ::",
     "opts": [
-      "Conflict",
-      "Punishment",
-      "Legislation",
-      "Judgement"
+      "Bee : Apiary",
+      "Child : School",
+      "Teacher : Hostel",
+      "Horse : Saddle"
     ],
     "ans": 0,
-    "exp": "PROPHYLAXIS is the preventive measure or action taken to prevent DISEASE. ARBITRATION is the process of resolving a CONFLICT through a neutral third party. The relationship is: an intervention that prevents or resolves the second term. PUNISHMENT (B) follows wrongdoing rather than preventing or resolving a dispute. LEGISLATION (C) creates law but is not what arbitration resolves. JUDGEMENT (D) is an outcome of arbitration, not what it addresses.",
+    "exp": "An aquarium is the enclosure in which fish are kept, and an apiary is the place where bees are kept. The other pairs do not link a creature to the place built to keep it.",
     "section": "English",
-    "num": 6
+    "num": 6,
+    "src": "Analogous-pair MCQs (PPSC/FPSC/NTS lists, recalled)"
   },
   {
     "q": "The two departments could not agree on the budget, _____ led to weeks of delay.",
     "opts": [
       "that",
-      "which",
+      "whose",
       "who",
-      "whose"
+      "which"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "'Which' introduces a non-restrictive clause referring back to the entire preceding idea ('could not agree'), a construction 'that' cannot be used for.",
     "section": "English",
     "num": 7
@@ -108,50 +110,52 @@ window.MM.fpsc_past_6 = [
     "q": "Choose the correctly structured sentence:",
     "opts": [
       "Rarely he complains about his workload.",
-      "Rarely does he complain about his workload.",
+      "He rarely does complain about his workload.",
       "Rarely he does complain about his workload.",
-      "He rarely does complain about his workload."
+      "Rarely does he complain about his workload."
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Negative-frequency adverbs like 'rarely' at the start of a sentence require subject-auxiliary inversion: 'Rarely does he complain...'",
     "section": "English",
     "num": 9
   },
   {
-    "q": "Rearrange to form a meaningful sentence: (1) the vaccine (2) distributed (3) was (4) to remote areas (5) equitably.",
+    "q": "The book you are looking for can be found _____ the top shelf.",
     "opts": [
-      "1-3-5-2-4",
-      "1-2-3-5-4",
-      "3-1-2-5-4",
-      "1-3-2-5-4"
+      "on",
+      "under",
+      "with",
+      "at"
     ],
     "ans": 0,
-    "exp": "The correct order is 'The vaccine was equitably distributed to remote areas': subject (1), verb (3), adverb (5), participle (2), then the phrase (4).",
+    "exp": "\"On\" is used with a surface: the book rests on the shelf.",
     "section": "English",
-    "num": 10
+    "num": 10,
+    "src": "mcqsquestions Preposition Set 1"
   },
   {
-    "q": "Choose the best combination: 'The clinic was newly built. It lacked basic equipment.'",
+    "q": "He was embarrassed because everybody was laughing _____ him.",
     "opts": [
-      "The clinic was newly built, so it lacked basic equipment.",
-      "Although the clinic was newly built, it lacked basic equipment.",
-      "The clinic was newly built because it lacked basic equipment.",
-      "It lacked basic equipment, so the clinic was newly built."
+      "in",
+      "on",
+      "at",
+      "to"
     ],
-    "ans": 1,
-    "exp": "'Although' correctly signals the contrast: despite being newly built, the clinic still lacked equipment. The other options misstate the logical relationship.",
+    "ans": 2,
+    "exp": "\"Laugh at someone\" is the fixed collocation meaning to mock or ridicule them.",
     "section": "English",
-    "num": 11
+    "num": 11,
+    "src": "mcqsquestions Preposition Set 1"
   },
   {
     "q": "Choose the synonym of PRUDENT:",
     "opts": [
-      "Reckless",
       "Sensible and cautious",
+      "Reckless",
       "Careless",
       "Impulsive"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "PRUDENT means acting with or showing care and thought for the future; sensible and cautious in practical matters.",
     "section": "English",
     "num": 12
@@ -160,37 +164,38 @@ window.MM.fpsc_past_6 = [
     "q": "Choose the antonym of BENEVOLENT:",
     "opts": [
       "Kind",
-      "Malicious",
+      "Charitable",
       "Generous",
-      "Charitable"
+      "Malicious"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "BENEVOLENT means well-meaning and kindly; its opposite is MALICIOUS, meaning having or showing intention to harm.",
     "section": "English",
     "num": 13
   },
   {
-    "q": "ARCHITECT : BLUEPRINT :: SURGEON : ?",
+    "q": "Change the voice: \"Open the window.\"",
     "opts": [
-      "Scalpel",
-      "Operative plan",
-      "Hospital",
-      "Anaesthetic"
+      "Let the window is been opened.",
+      "Let the window be opened.",
+      "Let the window will be opened.",
+      "Let the window was opened."
     ],
     "ans": 1,
-    "exp": "An architect works from a blueprint before building; similarly, a surgeon works from an operative plan before operating. The relationship tested is 'planning document used before the main task'.",
+    "exp": "An imperative becomes passive with \"Let + object + be + past participle\": \"Let the window be opened\". The distractors add an incorrect verb form after \"Let\".",
     "section": "English",
-    "num": 14
+    "num": 14,
+    "src": "Testpoint"
   },
   {
     "q": "The word 'INNOCUOUS' most nearly means:",
     "opts": [
       "Harmful",
-      "Not harmful or offensive",
       "Extremely toxic",
+      "Not harmful or offensive",
       "Highly contagious"
     ],
-    "ans": 1,
+    "ans": 2,
     "exp": "INNOCUOUS means not harmful or offensive; harmless.",
     "section": "English",
     "num": 15
@@ -251,11 +256,11 @@ window.MM.fpsc_past_6 = [
     "q": "Choose the correctly punctuated sentence:",
     "opts": [
       "The director, unfortunately could not attend the ceremony.",
-      "The director, unfortunately, could not attend the ceremony.",
+      "The director unfortunately could not, attend the ceremony.",
       "The director unfortunately, could not attend the ceremony.",
-      "The director unfortunately could not, attend the ceremony."
+      "The director, unfortunately, could not attend the ceremony."
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "The parenthetical adverb 'unfortunately' placed mid-sentence must be set off by commas on both sides: 'The director, unfortunately, could not attend...'",
     "section": "English",
     "num": 20
@@ -264,11 +269,11 @@ window.MM.fpsc_past_6 = [
     "q": "A 28-year-old man sustains a stab wound to the posterior triangle of the neck. He develops weakness of shoulder shrugging and inability to turn his head to the opposite side against resistance. Which nerve is most likely injured?",
     "opts": [
       "Phrenic nerve",
-      "Accessory nerve (CN XI)",
+      "Greater auricular nerve",
       "Hypoglossal nerve (CN XII)",
-      "Greater auricular nerve"
+      "Accessory nerve (CN XI)"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "The accessory nerve (CN XI) travels through the posterior triangle of the neck, making it the most vulnerable cranial nerve to penetrating neck injuries in this region. It supplies the sternocleidomastoid (turning head to opposite side) and trapezius (shoulder shrugging and scapular elevation). Injury produces weakness of these specific movements as described. As Snell's Clinical Anatomy notes, the accessory nerve is superficially placed in the posterior triangle, crossing it from the posterior border of the sternocleidomastoid to the anterior border of the trapezius. The phrenic nerve (A) is in the anterior triangle and causes hemidiaphragm paralysis. Hypoglossal nerve (C) supplies tongue muscles.",
     "section": "Basic Sciences",
     "num": 21
@@ -277,12 +282,12 @@ window.MM.fpsc_past_6 = [
     "q": "A 45-year-old woman has a parotid gland tumour requiring surgical excision. During the procedure, the surgeon must identify and preserve a nerve that runs through the substance of the parotid gland. Which nerve is this?",
     "opts": [
       "Trigeminal nerve (CN V)",
-      "Facial nerve (CN VII)",
+      "Auriculotemporal nerve",
       "Glossopharyngeal nerve (CN IX)",
-      "Auriculotemporal nerve"
+      "Facial nerve (CN VII)"
     ],
-    "ans": 1,
-    "exp": "The facial nerve (CN VII) exits the stylomastoid foramen and enters the posterior aspect of the parotid gland, dividing within it into its five terminal branches: temporal, zygomatic, buccal, marginal mandibular, and cervical. Parotidectomy carries the risk of facial nerve injury causing ipsilateral facial palsy. Identification and preservation of the facial nerve is the central technical challenge of this operation. The trigeminal nerve (A) provides sensory supply to the face. The glossopharyngeal nerve (C) provides parasympathetic supply to the parotid via the lesser petrosal nerve but does not traverse the gland itself. The auriculotemporal nerve (D) is a branch of CN V3 carrying postganglionic secretomotor fibres.",
+    "ans": 3,
+    "exp": "The facial nerve (CN VII) exits the stylomastoid foramen and enters the posterior aspect of the parotid gland, dividing within it into its five terminal branches: temporal, zygomatic, buccal, marginal mandibular, and cervical. Parotidectomy carries the risk of facial nerve injury causing ipsilateral facial palsy. Identification and preservation of the facial nerve is the central technical challenge of this operation. The trigeminal nerve (A) provides sensory supply to the face. The glossopharyngeal nerve (C) provides parasympathetic supply to the parotid via the lesser petrosal nerve but does not traverse the gland itself. The auriculotemporal nerve (B) is a branch of CN V3 carrying postganglionic secretomotor fibres.",
     "section": "Basic Sciences",
     "num": 22
   },
@@ -328,7 +333,7 @@ window.MM.fpsc_past_6 = [
   {
     "q": "A researcher is studying the Frank-Starling mechanism in an isolated heart preparation. When preload is increased by raising end-diastolic volume, which of the following best explains the resulting increase in stroke volume?",
     "opts": [
-      "Increased calcium release from the sarcoplasmic reticulum due to greater myofilament stretch",
+      "Increased calcium release from stretched myofilaments",
       "Activation of the sympathetic nervous system increasing heart rate",
       "Increased systemic vascular resistance reducing afterload",
       "Reduced parasympathetic tone allowing greater contractility"
@@ -381,12 +386,12 @@ window.MM.fpsc_past_6 = [
     "q": "A 45-year-old woman with rheumatoid arthritis is treated with methotrexate. She is also prescribed folic acid supplementation. What is the rationale for co-prescribing folic acid with methotrexate in this context?",
     "opts": [
       "Folic acid enhances the anti-inflammatory effect of methotrexate",
-      "Folic acid replenishes stores depleted by methotrexate's inhibition of dihydrofolate reductase",
+      "Folic acid acts as a prodrug that is converted to methotrexate intracellularly",
       "Folic acid prevents renal clearance of methotrexate",
-      "Folic acid acts as a prodrug that is converted to methotrexate intracellularly"
+      "Folic acid replenishes stores depleted by methotrexate"
     ],
-    "ans": 1,
-    "exp": "Methotrexate inhibits dihydrofolate reductase (DHFR), preventing the conversion of dihydrofolate to tetrahydrofolate, which is required for purine and thymidylate synthesis. This leads to depletion of folate cofactors. In low-dose use for rheumatoid arthritis, co-prescribed folic acid bypasses DHFR and replenishes folate stores, reducing mucositis, nausea, hepatotoxicity, and macrocytic anaemia without significantly diminishing the anti-inflammatory effect (which occurs through other mechanisms including adenosine pathway modulation). Folic acid does not enhance anti-inflammatory effects (A), does not affect renal clearance (C), and is not a prodrug for methotrexate (D).",
+    "ans": 3,
+    "exp": "Methotrexate inhibits dihydrofolate reductase (DHFR), preventing the conversion of dihydrofolate to tetrahydrofolate, which is required for purine and thymidylate synthesis. This leads to depletion of folate cofactors. In low-dose use for rheumatoid arthritis, co-prescribed folic acid bypasses DHFR and replenishes folate stores, reducing mucositis, nausea, hepatotoxicity, and macrocytic anaemia without significantly diminishing the anti-inflammatory effect (which occurs through other mechanisms including adenosine pathway modulation). Folic acid does not enhance anti-inflammatory effects (A), does not affect renal clearance (C), and is not a prodrug for methotrexate (B).",
     "section": "Basic Sciences",
     "num": 30
   },
@@ -394,7 +399,7 @@ window.MM.fpsc_past_6 = [
     "q": "A 55-year-old man with type 2 diabetes is started on metformin. He is warned about a rare but serious adverse effect. Which of the following best describes the mechanism of the most serious adverse effect of metformin?",
     "opts": [
       "Hypoglycaemia due to excessive insulin secretion",
-      "Lactic acidosis due to inhibition of mitochondrial complex I and impaired lactate clearance",
+      "Lactic acidosis from mitochondrial complex I inhibition",
       "Nephrotoxicity due to direct tubular damage",
       "Hepatotoxicity due to reactive oxygen species generation"
     ],
@@ -406,13 +411,13 @@ window.MM.fpsc_past_6 = [
   {
     "q": "A 28-year-old woman with epilepsy well-controlled on sodium valproate discovers she is 6 weeks pregnant. Her neurologist is most concerned about which teratogenic effect of sodium valproate?",
     "opts": [
+      "Neural tube defects and developmental delay",
       "Limb reduction defects",
-      "Neural tube defects and neurodevelopmental delay",
       "Cardiac septal defects",
       "Cleft palate"
     ],
-    "ans": 1,
-    "exp": "Sodium valproate is a well-established teratogen, with the highest teratogenic risk of all antiepileptic drugs. Its major teratogenic effects include neural tube defects (spina bifida, anencephaly) due to folate antagonism, and significant neurodevelopmental delay, cognitive impairment, and autism spectrum disorder in exposed offspring. The absolute risk of major congenital malformations is approximately 10% with valproate, compared to 2-3% in the general population. Valproate is now subject to the Pregnancy Prevention Programme in many countries. Limb reduction defects (A) are associated with thalidomide. Cardiac septal defects (C) and cleft palate (D) are associated with other antiepileptics but are not the primary concern with valproate.",
+    "ans": 0,
+    "exp": "Sodium valproate is a well-established teratogen, with the highest teratogenic risk of all antiepileptic drugs. Its major teratogenic effects include neural tube defects (spina bifida, anencephaly) due to folate antagonism, and significant neurodevelopmental delay, cognitive impairment, and autism spectrum disorder in exposed offspring. The absolute risk of major congenital malformations is approximately 10% with valproate, compared to 2-3% in the general population. Valproate is now subject to the Pregnancy Prevention Programme in many countries. Limb reduction defects (B) are associated with thalidomide. Cardiac septal defects (C) and cleft palate (D) are associated with other antiepileptics but are not the primary concern with valproate.",
     "section": "Basic Sciences",
     "num": 32
   },
@@ -433,12 +438,12 @@ window.MM.fpsc_past_6 = [
     "q": "A 35-year-old HIV-positive patient on antiretroviral therapy develops peripheral neuropathy. His regimen includes stavudine (d4T). What is the mechanism of stavudine-induced peripheral neuropathy?",
     "opts": [
       "Direct toxic effect on myelin basic protein",
-      "Mitochondrial toxicity due to inhibition of mitochondrial DNA polymerase gamma",
       "Autoimmune demyelination triggered by immune reconstitution",
+      "Mitochondrial DNA polymerase gamma inhibition",
       "Vitamin B12 depletion caused by stavudine metabolism"
     ],
-    "ans": 1,
-    "exp": "Stavudine (d4T) is a nucleoside reverse transcriptase inhibitor (NRTI). NRTIs can inhibit mitochondrial DNA polymerase gamma, which is responsible for replicating mitochondrial DNA in peripheral neurons. This results in mitochondrial dysfunction and depletion in dorsal root ganglion neurons and peripheral nerves, causing the length-dependent sensorimotor peripheral neuropathy seen with stavudine, didanosine, and zalcitabine. This is also the mechanism behind lipoatrophy with thymidine analogues. Direct myelin toxicity (A) is not the mechanism. Immune reconstitution inflammatory syndrome (C) can cause neuropathy but is a different mechanism. Vitamin B12 depletion (D) is not a known effect of stavudine.",
+    "ans": 2,
+    "exp": "Stavudine (d4T) is a nucleoside reverse transcriptase inhibitor (NRTI). NRTIs can inhibit mitochondrial DNA polymerase gamma, which is responsible for replicating mitochondrial DNA in peripheral neurons. This results in mitochondrial dysfunction and depletion in dorsal root ganglion neurons and peripheral nerves, causing the length-dependent sensorimotor peripheral neuropathy seen with stavudine, didanosine, and zalcitabine. This is also the mechanism behind lipoatrophy with thymidine analogues. Direct myelin toxicity (A) is not the mechanism. Immune reconstitution inflammatory syndrome (B) can cause neuropathy but is a different mechanism. Vitamin B12 depletion (D) is not a known effect of stavudine.",
     "section": "Basic Sciences",
     "num": 34
   },
@@ -446,11 +451,11 @@ window.MM.fpsc_past_6 = [
     "q": "In emergency and primary care history-taking, the 'SAMPLE' mnemonic (Signs/Symptoms, Allergies, Medications, Past history, Last oral intake, Events) is primarily used to:",
     "opts": [
       "Calculate drug dosages",
-      "Rapidly and systematically gather a focused patient history",
+      "Classify diseases by severity",
       "Record laboratory results",
-      "Classify diseases by severity"
+      "Rapidly gather a focused patient history"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "The SAMPLE history is a widely used structured framework for quickly and systematically gathering the essential elements of a patient's history in emergency and primary care settings, ensuring no critical detail is missed under time pressure, a point emphasised in Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 35
@@ -484,12 +489,12 @@ window.MM.fpsc_past_6 = [
   {
     "q": "Pakistan is reported to carry the world's how many highest burden of tuberculosis, according to WHO Global TB Report data cited in national health planning documents?",
     "opts": [
-      "1st highest",
       "5th highest",
+      "1st highest",
       "15th highest",
       "30th highest"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Pakistan is cited in national health policy documents as having the 5th highest tuberculosis burden in the world, according to WHO Global TB Report data, making TB control a continuing national health priority, as Park's Textbook of Preventive and Social Medicine describes.",
     "section": "Community Medicine",
     "num": 38
@@ -497,12 +502,12 @@ window.MM.fpsc_past_6 = [
   {
     "q": "The concept of 'vertical' immunization and disease control programmes, as distinct from integrated primary healthcare delivery, refers to:",
     "opts": [
+      "Disease-specific programmes with separate staff and management",
       "Programmes delivered exclusively in tall buildings",
-      "Disease-specific programmes run with their own dedicated staff and management structure, separate from general health services",
       "Programmes that only treat vertical (spinal) conditions",
       "A method of measuring population height"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Vertical programmes (e.g., a dedicated polio eradication programme) are run with dedicated staff, funding, and management focused on a single disease, as distinct from horizontal, integrated delivery through general primary health services, consistent with Park's Textbook of Preventive and Social Medicine.",
     "section": "Community Medicine",
     "num": 39
@@ -537,11 +542,11 @@ window.MM.fpsc_past_6 = [
     "q": "Community-based diarrhoeal disease prevention through improved water and sanitation is an example of which approach?",
     "opts": [
       "Cure",
-      "Care (preventive, upstream intervention)",
+      "Palliative care",
       "Tertiary rehabilitation",
-      "Palliative care"
+      "Care (upstream prevention)"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Preventing disease at its root cause (contaminated water/poor sanitation) before illness occurs is a classic upstream 'Care' intervention, contrasted with treating diarrhoeal illness after it has already developed, as detailed in Park's Textbook of Preventive and Social Medicine.",
     "section": "Care vs Cure",
     "num": 42
@@ -602,7 +607,7 @@ window.MM.fpsc_past_6 = [
     "q": "High rates of hypertension in Pakistan's adult population, cited as roughly 1 in 4 adults over 18, pose a major challenge primarily because:",
     "opts": [
       "Hypertension has no long-term health consequences",
-      "It significantly raises the risk of stroke, heart disease, and kidney disease across a large share of the adult population",
+      "Raises risk of stroke, heart disease, and kidney disease",
       "It only affects the elderly",
       "It is fully preventable through vaccination"
     ],
@@ -615,11 +620,11 @@ window.MM.fpsc_past_6 = [
     "q": "Persistently high smoking prevalence among men in Pakistan, cited at around 38% in national health data, is considered a major challenge chiefly because it:",
     "opts": [
       "Has no impact on national disease burden",
-      "Substantially drives the burden of COPD, cardiovascular disease, and cancers, straining the health system",
+      "Is already fully addressed through existing policy",
       "Only affects smokers' personal finances",
-      "Is already fully addressed through existing policy"
+      "Drives COPD, cardiovascular disease, and cancer burden"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "High male smoking prevalence is a major contributor to Pakistan's growing burden of chronic obstructive pulmonary disease, cardiovascular disease, and various cancers, adding significant long-term pressure on an already stretched health system (Pakistan's National Health Vision 2016-2025).",
     "section": "Major Challenges to Healthcare",
     "num": 48
@@ -628,12 +633,12 @@ window.MM.fpsc_past_6 = [
     "q": "A 58-year-old man presents to a government hospital in Karachi with progressive exertional dyspnoea, bilateral pitting oedema up to the knees, raised JVP, and a third heart sound on auscultation. Chest X-ray shows cardiomegaly with upper lobe venous diversion. What is the most likely diagnosis?",
     "opts": [
       "Constrictive pericarditis",
-      "Congestive cardiac failure",
+      "Liver cirrhosis with portal hypertension",
       "Nephrotic syndrome",
-      "Liver cirrhosis with portal hypertension"
+      "Congestive cardiac failure"
     ],
-    "ans": 1,
-    "exp": "The combination of exertional dyspnoea, bilateral pitting oedema, raised JVP, third heart sound (S3 gallop), and cardiomegaly with upper lobe venous diversion on chest X-ray is the classic presentation of congestive cardiac failure (CCF). The raised JVP reflects elevated right-sided filling pressures. The S3 gallop arises from rapid ventricular filling into a dilated, non-compliant ventricle. Upper lobe blood diversion on CXR indicates elevated pulmonary venous pressure causing redistribution from lower to upper lobes. Constrictive pericarditis (A) can mimic CCF but typically shows a normal heart size with pericardial calcification. Nephrotic syndrome (C) causes oedema without raised JVP or cardiac signs. Cirrhosis (D) causes ascites predominantly rather than this cardiac picture.",
+    "ans": 3,
+    "exp": "The combination of exertional dyspnoea, bilateral pitting oedema, raised JVP, third heart sound (S3 gallop), and cardiomegaly with upper lobe venous diversion on chest X-ray is the classic presentation of congestive cardiac failure (CCF). The raised JVP reflects elevated right-sided filling pressures. The S3 gallop arises from rapid ventricular filling into a dilated, non-compliant ventricle. Upper lobe blood diversion on CXR indicates elevated pulmonary venous pressure causing redistribution from lower to upper lobes. Constrictive pericarditis (A) can mimic CCF but typically shows a normal heart size with pericardial calcification. Nephrotic syndrome (C) causes oedema without raised JVP or cardiac signs. Cirrhosis (B) causes ascites predominantly rather than this cardiac picture.",
     "section": "Medicine",
     "num": 49
   },
@@ -653,13 +658,13 @@ window.MM.fpsc_past_6 = [
   {
     "q": "A 65-year-old man with a 40-pack-year smoking history is found to have a fasting blood glucose of 7.4 mmol/L on two separate occasions. He is asymptomatic. Which of the following is the most appropriate first-line management?",
     "opts": [
+      "Lifestyle changes; re-check HbA1c in 3 months",
       "Commence insulin therapy immediately",
-      "Lifestyle modification with dietary counselling and exercise, and re-check HbA1c in 3 months",
       "Start metformin immediately without any lifestyle advice",
       "Refer for bariatric surgery"
     ],
-    "ans": 1,
-    "exp": "Two fasting glucose readings of 7.0 mmol/L or above confirm a diagnosis of type 2 diabetes mellitus. In an asymptomatic patient with newly diagnosed type 2 DM, lifestyle intervention (dietary modification, regular physical activity, weight management) is the essential foundation of management and should always accompany or precede pharmacological therapy unless HbA1c is significantly elevated. Metformin is the first-line pharmacological agent when lifestyle measures alone are insufficient or HbA1c remains above target. Insulin (A) is not first-line in asymptomatic type 2 DM. Starting metformin without lifestyle advice (C) is incomplete practice. Bariatric surgery (D) may be considered in selected obese patients but is not the immediate first-line step.",
+    "ans": 0,
+    "exp": "Two fasting glucose readings of 7.0 mmol/L or above confirm a diagnosis of type 2 diabetes mellitus. In an asymptomatic patient with newly diagnosed type 2 DM, lifestyle intervention (dietary modification, regular physical activity, weight management) is the essential foundation of management and should always accompany or precede pharmacological therapy unless HbA1c is significantly elevated. Metformin is the first-line pharmacological agent when lifestyle measures alone are insufficient or HbA1c remains above target. Insulin (B) is not first-line in asymptomatic type 2 DM. Starting metformin without lifestyle advice (C) is incomplete practice. Bariatric surgery (D) may be considered in selected obese patients but is not the immediate first-line step.",
     "section": "Medicine",
     "num": 51
   },
@@ -706,11 +711,11 @@ window.MM.fpsc_past_6 = [
     "q": "A 55-year-old hypertensive woman presents with sudden-onset severe headache described as 'the worst headache of my life,' followed by neck stiffness and photophobia. CT head is normal. What is the next most appropriate investigation?",
     "opts": [
       "MRI brain with gadolinium",
-      "Lumbar puncture for CSF xanthochromia",
+      "EEG",
       "Cerebral angiography",
-      "EEG"
+      "Lumbar puncture for CSF xanthochromia"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "A thunderclap headache (sudden-onset, maximum severity at onset, 'worst headache of life') with meningism (neck stiffness, photophobia) in the absence of focal neurological signs is the classic presentation of subarachnoid haemorrhage (SAH). A normal CT does not exclude SAH: CT sensitivity is approximately 98% within 6 hours but falls to below 90% by 24 hours. When CT is negative, lumbar puncture is mandatory and the finding of xanthochromia (yellow discolouration of CSF due to haemoglobin breakdown products) or uniform blood that does not clear confirms SAH. As Davidson's Medicine emphasises, LP should be performed at least 12 hours after headache onset to allow time for xanthochromia to develop.",
     "section": "Medicine",
     "num": 55
@@ -745,11 +750,11 @@ window.MM.fpsc_past_6 = [
     "q": "During adult cardiopulmonary resuscitation (CPR) by a single rescuer, what is the recommended ratio of chest compressions to rescue breaths?",
     "opts": [
       "15:2",
-      "30:2",
+      "10:1",
       "5:1",
-      "10:1"
+      "30:2"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Current resuscitation guidelines recommend a compression-to-ventilation ratio of 30:2 for adult CPR performed by a single rescuer, prioritizing high-quality, largely uninterrupted chest compressions to maintain circulation (Davidson's Principles and Practice of Medicine).",
     "section": "Medicine",
     "num": 58
@@ -758,12 +763,12 @@ window.MM.fpsc_past_6 = [
     "q": "A 25-year-old motorcyclist is brought to the emergency department after a road traffic accident. He has guarding and rigidity across the entire abdomen. His blood pressure is 88/60 mmHg and heart rate is 128/min. FAST ultrasound shows free fluid in Morrison's pouch and the pelvis. What is the most appropriate immediate management?",
     "opts": [
       "CT abdomen with contrast to identify the source of bleeding",
-      "Emergency exploratory laparotomy",
+      "Diagnostic peritoneal lavage",
       "IV fluid resuscitation until BP normalises followed by observation",
-      "Diagnostic peritoneal lavage"
+      "Emergency exploratory laparotomy"
     ],
-    "ans": 1,
-    "exp": "This patient has haemodynamic instability (hypotension and tachycardia) with peritonism and FAST-confirmed intra-abdominal free fluid, indicating significant intra-abdominal haemorrhage. In a haemodynamically unstable patient with blunt abdominal trauma and positive FAST, the immediate management is emergency exploratory laparotomy. CT (A) requires a haemodynamically stable patient; transporting an unstable patient to CT is dangerous and wastes critical time. Fluid resuscitation alone (C) is inappropriate as the bleeding source requires surgical control; permissive hypotension targeting SBP 80-90 mmHg is preferred over aggressive resuscitation in penetrating trauma. DPL (D) has largely been superseded by FAST and is not the most appropriate step here.",
+    "ans": 3,
+    "exp": "This patient has haemodynamic instability (hypotension and tachycardia) with peritonism and FAST-confirmed intra-abdominal free fluid, indicating significant intra-abdominal haemorrhage. In a haemodynamically unstable patient with blunt abdominal trauma and positive FAST, the immediate management is emergency exploratory laparotomy. CT (A) requires a haemodynamically stable patient; transporting an unstable patient to CT is dangerous and wastes critical time. Fluid resuscitation alone (C) is inappropriate as the bleeding source requires surgical control; permissive hypotension targeting SBP 80-90 mmHg is preferred over aggressive resuscitation in penetrating trauma. DPL (B) has largely been superseded by FAST and is not the most appropriate step here.",
     "section": "Surgery",
     "num": 59
   },
@@ -796,13 +801,13 @@ window.MM.fpsc_past_6 = [
   {
     "q": "A 70-year-old man with a long history of GORD presents with progressive dysphagia initially to solids then liquids, weight loss of 8 kg over 3 months, and iron deficiency anaemia. What is the most likely diagnosis?",
     "opts": [
-      "Achalasia",
       "Oesophageal carcinoma",
+      "Achalasia",
       "Peptic stricture",
       "Pharyngeal pouch"
     ],
-    "ans": 1,
-    "exp": "Progressive dysphagia initially to solids then to liquids (indicating a mechanical, progressive obstruction rather than a neuromuscular cause), significant weight loss, iron deficiency anaemia, and a background of chronic GORD (a risk factor for Barrett's oesophagus and adenocarcinoma) in a 70-year-old man is the classic presentation of oesophageal carcinoma. Adenocarcinoma of the lower oesophagus is strongly associated with chronic GORD and Barrett's oesophagus. Achalasia (A) causes dysphagia to both solids and liquids from the outset due to failure of lower oesophageal sphincter relaxation. Peptic stricture (C) from chronic GORD is possible but tends not to cause this degree of weight loss. Pharyngeal pouch (D) causes regurgitation of undigested food, halitosis, and is proximal.",
+    "ans": 0,
+    "exp": "Progressive dysphagia initially to solids then to liquids (indicating a mechanical, progressive obstruction rather than a neuromuscular cause), significant weight loss, iron deficiency anaemia, and a background of chronic GORD (a risk factor for Barrett's oesophagus and adenocarcinoma) in a 70-year-old man is the classic presentation of oesophageal carcinoma. Adenocarcinoma of the lower oesophagus is strongly associated with chronic GORD and Barrett's oesophagus. Achalasia (B) causes dysphagia to both solids and liquids from the outset due to failure of lower oesophageal sphincter relaxation. Peptic stricture (C) from chronic GORD is possible but tends not to cause this degree of weight loss. Pharyngeal pouch (D) causes regurgitation of undigested food, halitosis, and is proximal.",
     "section": "Surgery",
     "num": 62
   },
@@ -837,7 +842,7 @@ window.MM.fpsc_past_6 = [
     "opts": [
       "Aspirin 300 mg daily for 6 weeks",
       "Compression stockings only",
-      "Therapeutic anticoagulation with a direct oral anticoagulant (DOAC)",
+      "Therapeutic anticoagulation with a DOAC",
       "Inferior vena cava filter insertion"
     ],
     "ans": 2,
@@ -861,12 +866,12 @@ window.MM.fpsc_past_6 = [
   {
     "q": "A 60-year-old man presents with sudden onset of severe, tearing back pain and a pulsatile abdominal mass that has become tender. What is the most likely diagnosis?",
     "opts": [
+      "Ruptured or rapidly expanding AAA",
       "Stable abdominal aortic aneurysm",
-      "Ruptured or rapidly expanding abdominal aortic aneurysm",
       "Renal colic",
       "Acute pancreatitis"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "A previously stable pulsatile abdominal mass that becomes suddenly tender with severe tearing pain suggests rupture or rapid expansion of an abdominal aortic aneurysm, a surgical emergency requiring immediate intervention, as detailed in Bailey and Love's Short Practice of Surgery.",
     "section": "Surgery",
     "num": 67
@@ -875,11 +880,11 @@ window.MM.fpsc_past_6 = [
     "q": "A 50-year-old woman undergoes a mastectomy with axillary lymph node dissection for breast cancer. Postoperatively, she develops arm swelling. Which structure's disruption is most responsible for this complication?",
     "opts": [
       "Axillary artery",
-      "Lymphatic drainage channels of the axilla",
+      "Brachial plexus",
       "Long thoracic nerve",
-      "Brachial plexus"
+      "Lymphatic drainage channels"
     ],
-    "ans": 1,
+    "ans": 3,
     "exp": "Disruption of the axillary lymphatic drainage channels during axillary lymph node dissection commonly leads to lymphoedema of the arm, a well-recognized complication of breast cancer surgery involving axillary clearance, as Bailey and Love's Short Practice of Surgery describes.",
     "section": "Surgery",
     "num": 68
@@ -901,7 +906,7 @@ window.MM.fpsc_past_6 = [
     "q": "A 32-year-old woman presents to antenatal clinic at 28 weeks. Her random blood glucose is 9.8 mmol/L. A subsequent 75g OGTT shows fasting glucose of 5.4 mmol/L and 2-hour glucose of 8.9 mmol/L. How should she be managed?",
     "opts": [
       "No action required as values are within normal limits",
-      "Dietary modification and blood glucose monitoring; start insulin if targets not met",
+      "Diet and glucose monitoring; insulin if targets not met",
       "Immediate caesarean section",
       "Start oral metformin as first-line pharmacological treatment"
     ],
@@ -913,12 +918,12 @@ window.MM.fpsc_past_6 = [
   {
     "q": "A 38-year-old multigravida (G4 P3) delivers a healthy baby at term. Immediately after delivery of the placenta, she develops profuse per-vaginal bleeding. The uterus feels soft and 'boggy' on abdominal palpation. What is the most likely cause of this haemorrhage?",
     "opts": [
-      "Retained placental fragments",
       "Uterine atony",
+      "Retained placental fragments",
       "Cervical laceration",
       "Coagulopathy"
     ],
-    "ans": 1,
+    "ans": 0,
     "exp": "Primary postpartum haemorrhage (PPH) is defined as blood loss of 500 mL or more within 24 hours of vaginal delivery. The four Ts mnemonic covers the causes: Tone (uterine atony), Trauma (lacerations), Tissue (retained placenta/membranes), Thrombin (coagulopathy). Uterine atony (soft, boggy uterus that fails to contract) is by far the most common cause, accounting for approximately 70-80% of all PPH cases. Risk factors include multiparity, prolonged labour, overdistension of the uterus, and oxytocin augmentation. Management begins with bimanual uterine compression and uterotonic agents (oxytocin, ergometrine, misoprostol). As outlined in Ten Teachers, this pattern of a soft uterus immediately post-delivery is pathognomonic for atony.",
     "section": "O&G",
     "num": 71
@@ -940,12 +945,12 @@ window.MM.fpsc_past_6 = [
     "q": "A 25-year-old woman presents with profuse, frothy, yellow-green vaginal discharge with a fishy odour and vulval pruritus. Wet mount microscopy reveals motile, pear-shaped, flagellated organisms. What is the first-line treatment?",
     "opts": [
       "Fluconazole 150 mg single oral dose",
-      "Metronidazole 400 mg twice daily for 5-7 days",
+      "Clindamycin vaginal cream",
       "Azithromycin 1 g single dose",
-      "Clindamycin vaginal cream"
+      "Metronidazole 400 mg twice daily for 5-7 days"
     ],
-    "ans": 1,
-    "exp": "The clinical features of profuse frothy yellow-green vaginal discharge, vulval pruritus, and the characteristic motile flagellated pear-shaped organisms on wet mount microscopy are diagnostic of Trichomonas vaginalis infection, a sexually transmitted protozoal infection. The first-line treatment is metronidazole, which targets anaerobic and protozoal organisms. The regimen is either 400-500 mg twice daily for 5-7 days or a single 2 g dose. Partner notification and treatment are essential as it is sexually transmitted. Fluconazole (A) is used for Candida vulvovaginitis (thick white curd-like discharge). Azithromycin (C) treats Chlamydia and Mycoplasma. Clindamycin (D) treats bacterial vaginosis.",
+    "ans": 3,
+    "exp": "The clinical features of profuse frothy yellow-green vaginal discharge, vulval pruritus, and the characteristic motile flagellated pear-shaped organisms on wet mount microscopy are diagnostic of Trichomonas vaginalis infection, a sexually transmitted protozoal infection. The first-line treatment is metronidazole, which targets anaerobic and protozoal organisms. The regimen is either 400-500 mg twice daily for 5-7 days or a single 2 g dose. Partner notification and treatment are essential as it is sexually transmitted. Fluconazole (A) is used for Candida vulvovaginitis (thick white curd-like discharge). Azithromycin (C) treats Chlamydia and Mycoplasma. Clindamycin (B) treats bacterial vaginosis.",
     "section": "O&G",
     "num": 73
   },
@@ -953,12 +958,12 @@ window.MM.fpsc_past_6 = [
     "q": "A 45-year-old woman presents with secondary amenorrhoea for 8 months, hot flushes, night sweats, and vaginal dryness. FSH is 68 IU/L and LH is 52 IU/L. Serum oestradiol is low. What is the most appropriate management for her vasomotor symptoms if she has no contraindications?",
     "opts": [
       "Combined oral contraceptive pill",
-      "Systemic hormone replacement therapy (HRT)",
+      "Selective serotonin reuptake inhibitor (SSRI) alone as first-line",
       "Clomiphene citrate",
-      "Selective serotonin reuptake inhibitor (SSRI) alone as first-line"
+      "Systemic hormone replacement therapy (HRT)"
     ],
-    "ans": 1,
-    "exp": "The clinical picture of secondary amenorrhoea, vasomotor symptoms (hot flushes, night sweats), vaginal dryness, elevated FSH above 40 IU/L, and low oestradiol in a 45-year-old woman confirms premature ovarian insufficiency (POI)/menopause. Systemic hormone replacement therapy (HRT), oestrogen with progestogen in women with an intact uterus, is the most effective treatment for vasomotor symptoms and also protects against the consequences of oestrogen deficiency including osteoporosis and cardiovascular disease. The COCP (A) could be used but is not the preferred HRT preparation for menopause management. Clomiphene (C) is an ovulation induction agent used in subfertility. SSRIs (D) may provide some benefit for vasomotor symptoms but are second-line to HRT.",
+    "ans": 3,
+    "exp": "The clinical picture of secondary amenorrhoea, vasomotor symptoms (hot flushes, night sweats), vaginal dryness, elevated FSH above 40 IU/L, and low oestradiol in a 45-year-old woman confirms premature ovarian insufficiency (POI)/menopause. Systemic hormone replacement therapy (HRT), oestrogen with progestogen in women with an intact uterus, is the most effective treatment for vasomotor symptoms and also protects against the consequences of oestrogen deficiency including osteoporosis and cardiovascular disease. The COCP (A) could be used but is not the preferred HRT preparation for menopause management. Clomiphene (C) is an ovulation induction agent used in subfertility. SSRIs (B) may provide some benefit for vasomotor symptoms but are second-line to HRT.",
     "section": "O&G",
     "num": 74
   },
@@ -979,12 +984,12 @@ window.MM.fpsc_past_6 = [
     "q": "A 4-year-old child is brought to the ENT clinic with a 6-month history of bilateral hearing loss, snoring, and recurrent mouth breathing. Otoscopy shows bilateral dull, retracted tympanic membranes with no light reflex. Tympanometry reveals bilateral type B (flat) curves. What is the most likely diagnosis?",
     "opts": [
       "Acute otitis media",
-      "Otitis media with effusion (glue ear)",
+      "Sensorineural hearing loss",
       "Chronic suppurative otitis media",
-      "Sensorineural hearing loss"
+      "Otitis media with effusion (glue ear)"
     ],
-    "ans": 1,
-    "exp": "The combination of bilateral conductive hearing loss, dull retracted tympanic membranes, absent light reflex, and flat (type B) tympanograms in a child with mouth breathing and snoring is the classic presentation of otitis media with effusion (OME), commonly known as glue ear. Type B tympanogram indicates no peak pressure, consistent with fluid in the middle ear causing reduced tympanic membrane mobility. OME is the most common cause of acquired hearing loss in children in Pakistan and worldwide. Associated adenoid hypertrophy contributes to the mouth breathing and snoring. Acute otitis media (A) presents with pain, fever, and a bulging red tympanic membrane. CSOM (C) involves chronic otorrhoea through a perforation. Sensorineural loss (D) shows a normal tympanogram.",
+    "ans": 3,
+    "exp": "The combination of bilateral conductive hearing loss, dull retracted tympanic membranes, absent light reflex, and flat (type B) tympanograms in a child with mouth breathing and snoring is the classic presentation of otitis media with effusion (OME), commonly known as glue ear. Type B tympanogram indicates no peak pressure, consistent with fluid in the middle ear causing reduced tympanic membrane mobility. OME is the most common cause of acquired hearing loss in children in Pakistan and worldwide. Associated adenoid hypertrophy contributes to the mouth breathing and snoring. Acute otitis media (A) presents with pain, fever, and a bulging red tympanic membrane. CSOM (C) involves chronic otorrhoea through a perforation. Sensorineural loss (B) shows a normal tympanogram.",
     "section": "ENT",
     "num": 76
   },
@@ -1005,12 +1010,12 @@ window.MM.fpsc_past_6 = [
     "q": "A 10-year-old boy presents with a three-day history of right-sided otalgia, hearing loss, and fever. On examination, the pinna is pushed forward and downward, and the post-auricular groove is obliterated. The tympanic membrane cannot be adequately visualised. What is the most likely diagnosis?",
     "opts": [
       "Otitis externa",
-      "Mastoiditis",
+      "Referred otalgia from dental caries",
       "Cholesteatoma",
-      "Referred otalgia from dental caries"
+      "Mastoiditis"
     ],
-    "ans": 1,
-    "exp": "Mastoiditis is a complication of acute otitis media in which infection spreads from the middle ear to the mastoid air cells. The classic signs are post-auricular erythema, tenderness, and swelling causing the pinna to be displaced forward and downward with obliteration of the post-auricular crease. This represents a surgical emergency requiring urgent IV antibiotics and cortical mastoidectomy if the abscess is not resolving. Dhingra's ENT emphasises that a displaced pinna with post-auricular swelling following AOM is mastoiditis until proven otherwise. Otitis externa (A) causes pinna tenderness on movement and tragus tenderness without post-auricular swelling or pinna displacement. Cholesteatoma (C) has a gradual onset with foul-smelling discharge. Dental otalgia (D) does not cause pinna displacement.",
+    "ans": 3,
+    "exp": "Mastoiditis is a complication of acute otitis media in which infection spreads from the middle ear to the mastoid air cells. The classic signs are post-auricular erythema, tenderness, and swelling causing the pinna to be displaced forward and downward with obliteration of the post-auricular crease. This represents a surgical emergency requiring urgent IV antibiotics and cortical mastoidectomy if the abscess is not resolving. Dhingra's ENT emphasises that a displaced pinna with post-auricular swelling following AOM is mastoiditis until proven otherwise. Otitis externa (A) causes pinna tenderness on movement and tragus tenderness without post-auricular swelling or pinna displacement. Cholesteatoma (C) has a gradual onset with foul-smelling discharge. Dental otalgia (B) does not cause pinna displacement.",
     "section": "ENT",
     "num": 78
   },
@@ -1018,12 +1023,12 @@ window.MM.fpsc_past_6 = [
     "q": "A 22-year-old woman presents with recurrent episodes of nasal obstruction, watery rhinorrhoea, sneezing attacks in the morning, and itching of the eyes and palate, especially in spring. Anterior rhinoscopy shows pale, oedematous, bluish-grey inferior turbinates. What is the first-line pharmacological treatment?",
     "opts": [
       "Systemic oral corticosteroids",
-      "Intranasal corticosteroid spray",
       "Systemic antihistamine alone",
+      "Intranasal corticosteroid spray",
       "Ipratropium bromide nasal spray"
     ],
-    "ans": 1,
-    "exp": "The clinical features of seasonal nasal obstruction, watery rhinorrhoea, sneezing, nasal and ocular pruritus, with pale bluish-grey oedematous inferior turbinates (classical endoscopic appearance of allergic rhinitis) are diagnostic of allergic rhinitis. For persistent or moderate-severe allergic rhinitis, intranasal corticosteroid (INCS) sprays (such as mometasone furoate or fluticasone) are the most effective first-line pharmacological treatment, superior to antihistamines alone in reducing all nasal symptoms. They reduce mucosal eosinophilic inflammation. Systemic corticosteroids (A) are not appropriate for long-term management of allergic rhinitis. Antihistamines alone (C) are effective for itching and rhinorrhoea but less effective for nasal blockage. Ipratropium (D) targets rhinorrhoea but not obstruction or sneezing.",
+    "ans": 2,
+    "exp": "The clinical features of seasonal nasal obstruction, watery rhinorrhoea, sneezing, nasal and ocular pruritus, with pale bluish-grey oedematous inferior turbinates (classical endoscopic appearance of allergic rhinitis) are diagnostic of allergic rhinitis. For persistent or moderate-severe allergic rhinitis, intranasal corticosteroid (INCS) sprays (such as mometasone furoate or fluticasone) are the most effective first-line pharmacological treatment, superior to antihistamines alone in reducing all nasal symptoms. They reduce mucosal eosinophilic inflammation. Systemic corticosteroids (A) are not appropriate for long-term management of allergic rhinitis. Antihistamines alone (B) are effective for itching and rhinorrhoea but less effective for nasal blockage. Ipratropium (D) targets rhinorrhoea but not obstruction or sneezing.",
     "section": "ENT",
     "num": 79
   },
@@ -1031,25 +1036,25 @@ window.MM.fpsc_past_6 = [
     "q": "A 55-year-old male smoker presents with progressive hoarseness of voice for 4 months. There is no dysphagia, odynophagia, or neck swelling. Indirect laryngoscopy reveals a white patch on the left vocal cord that does not wipe off. What is the most appropriate next step?",
     "opts": [
       "Reassurance and voice rest for 4 weeks",
-      "Microlaryngoscopy and biopsy of the lesion",
+      "Course of antibiotics and review in 6 weeks",
       "Empirical antifungal therapy",
-      "Course of antibiotics and review in 6 weeks"
+      "Microlaryngoscopy and biopsy of the lesion"
     ],
-    "ans": 1,
-    "exp": "Progressive hoarseness lasting more than 3 weeks in a smoker with a white patch (leukoplakia) on the vocal cord that cannot be wiped off must be considered malignant until proven otherwise. Leukoplakia of the vocal cord can represent dysplasia or squamous cell carcinoma in situ. The standard management is microlaryngoscopy under general anaesthesia with biopsy of the lesion for histopathological diagnosis. Any delay in diagnosis risks missing early glottic carcinoma, which has an excellent prognosis when detected early. Reassurance (A) and antibiotics (D) are inappropriate in the absence of infective features. Antifungal therapy (C) is for oral or laryngeal candidiasis, which typically presents as white plaques in an immunocompromised patient and can be wiped off.",
+    "ans": 3,
+    "exp": "Progressive hoarseness lasting more than 3 weeks in a smoker with a white patch (leukoplakia) on the vocal cord that cannot be wiped off must be considered malignant until proven otherwise. Leukoplakia of the vocal cord can represent dysplasia or squamous cell carcinoma in situ. The standard management is microlaryngoscopy under general anaesthesia with biopsy of the lesion for histopathological diagnosis. Any delay in diagnosis risks missing early glottic carcinoma, which has an excellent prognosis when detected early. Reassurance (A) and antibiotics (B) are inappropriate in the absence of infective features. Antifungal therapy (C) is for oral or laryngeal candidiasis, which typically presents as white plaques in an immunocompromised patient and can be wiped off.",
     "section": "ENT",
     "num": 80
   },
   {
     "q": "A 6-year-old child is brought to a Lahore clinic with recurrent tonsillitis: 7 documented episodes in the past year. Parents report snoring, poor sleep, and daytime fatigue. What is the recommended management?",
     "opts": [
-      "Long-term prophylactic oral penicillin",
       "Tonsillectomy",
+      "Long-term prophylactic oral penicillin",
       "Adenoidectomy alone",
       "Watchful waiting for another year"
     ],
-    "ans": 1,
-    "exp": "The Paradise criteria define the indications for tonsillectomy: 7 or more episodes in 1 year, or 5 or more per year for 2 consecutive years, or 3 or more per year for 3 consecutive years, each episode documented and requiring treatment. This child meets the absolute indication with 7 episodes in one year. The additional features of snoring, poor sleep quality, and daytime fatigue suggest obstructive sleep-disordered breathing from tonsillar hypertrophy, which is a further indication. Tonsillectomy is the definitive treatment. Long-term prophylactic penicillin (A) is not standard practice for recurrent tonsillitis. Adenoidectomy alone (C) addresses nasopharyngeal obstruction but not tonsillar pathology. Watchful waiting (D) is not appropriate when Paradise criteria are met.",
+    "ans": 0,
+    "exp": "The Paradise criteria define the indications for tonsillectomy: 7 or more episodes in 1 year, or 5 or more per year for 2 consecutive years, or 3 or more per year for 3 consecutive years, each episode documented and requiring treatment. This child meets the absolute indication with 7 episodes in one year. The additional features of snoring, poor sleep quality, and daytime fatigue suggest obstructive sleep-disordered breathing from tonsillar hypertrophy, which is a further indication. Tonsillectomy is the definitive treatment. Long-term prophylactic penicillin (B) is not standard practice for recurrent tonsillitis. Adenoidectomy alone (C) addresses nasopharyngeal obstruction but not tonsillar pathology. Watchful waiting (D) is not appropriate when Paradise criteria are met.",
     "section": "ENT",
     "num": 81
   },
@@ -1109,7 +1114,7 @@ window.MM.fpsc_past_6 = [
     "q": "A 35-year-old man with poorly controlled type 1 diabetes presents with floaters, reduced vision, and sees a 'red haze.' Fundoscopy is difficult due to hazy media. B-scan ultrasound confirms haemorrhage in the vitreous cavity. What is the most likely underlying cause?",
     "opts": [
       "Posterior vitreous detachment",
-      "Proliferative diabetic retinopathy with vitreous haemorrhage",
+      "PDR with vitreous haemorrhage",
       "Terson syndrome",
       "Sickle cell retinopathy"
     ],
@@ -1122,12 +1127,12 @@ window.MM.fpsc_past_6 = [
     "q": "A neonate born at term presents with a white reflex (leucocoria) in the left eye noticed by the mother on photographs. The child appears otherwise well. What is the most important diagnosis to exclude?",
     "opts": [
       "Congenital cataract",
-      "Retinoblastoma",
+      "Persistent fetal vasculature",
       "Coats disease",
-      "Persistent fetal vasculature"
+      "Retinoblastoma"
     ],
-    "ans": 1,
-    "exp": "Leucocoria (white pupillary reflex) in an infant must be considered retinoblastoma until proven otherwise, as it is the most common primary intraocular malignancy of childhood and a life-threatening diagnosis. Early diagnosis is critical because retinoblastoma can metastasise via the optic nerve to the brain and via the blood to bone marrow and other organs. Any child presenting with leucocoria must have urgent ophthalmological assessment including dilated fundoscopy under general anaesthesia if necessary. While congenital cataract (A), Coats disease (C), and persistent fetal vasculature (D) can also cause leucocoria, the priority is to exclude retinoblastoma given its malignant nature and the consequences of delayed diagnosis. Parsons' Diseases of the Eye identifies leucocoria as a red flag sign requiring urgent assessment.",
+    "ans": 3,
+    "exp": "Leucocoria (white pupillary reflex) in an infant must be considered retinoblastoma until proven otherwise, as it is the most common primary intraocular malignancy of childhood and a life-threatening diagnosis. Early diagnosis is critical because retinoblastoma can metastasise via the optic nerve to the brain and via the blood to bone marrow and other organs. Any child presenting with leucocoria must have urgent ophthalmological assessment including dilated fundoscopy under general anaesthesia if necessary. While congenital cataract (A), Coats disease (C), and persistent fetal vasculature (B) can also cause leucocoria, the priority is to exclude retinoblastoma given its malignant nature and the consequences of delayed diagnosis. Parsons' Diseases of the Eye identifies leucocoria as a red flag sign requiring urgent assessment.",
     "section": "Ophthalmology",
     "num": 87
   },
@@ -1135,12 +1140,12 @@ window.MM.fpsc_past_6 = [
     "q": "A 50-year-old man presents with dull aching right eye pain, blurred vision, halos around lights particularly at night, and mild headache. His IOP is 28 mmHg in the right eye and 16 mmHg in the left. Gonioscopy shows open anterior chamber angles bilaterally. Visual field testing reveals an arcuate scotoma in the right eye. What is the most likely diagnosis?",
     "opts": [
       "Acute angle-closure glaucoma",
-      "Primary open-angle glaucoma",
+      "Normal-tension glaucoma",
       "Ocular hypertension without glaucoma",
-      "Normal-tension glaucoma"
+      "Primary open-angle glaucoma"
     ],
-    "ans": 1,
-    "exp": "Primary open-angle glaucoma (POAG) is characterised by chronically elevated IOP with open drainage angles on gonioscopy, progressive optic nerve damage with characteristic cupping (increased cup-to-disc ratio), and corresponding visual field defects (arcuate scotoma, nasal step, tunnel vision in advanced disease). Halos around lights can occur due to corneal oedema from raised IOP. POAG is typically asymptomatic until late stages, though this patient has symptoms suggesting moderately advanced disease. Acute angle-closure glaucoma (A) presents with severe pain, nausea, corneal oedema, and a fixed mid-dilated pupil on a closed angle. Ocular hypertension (C) has elevated IOP without optic nerve damage or field loss. Normal-tension glaucoma (D) has glaucomatous changes with IOP within normal range.",
+    "ans": 3,
+    "exp": "Primary open-angle glaucoma (POAG) is characterised by chronically elevated IOP with open drainage angles on gonioscopy, progressive optic nerve damage with characteristic cupping (increased cup-to-disc ratio), and corresponding visual field defects (arcuate scotoma, nasal step, tunnel vision in advanced disease). Halos around lights can occur due to corneal oedema from raised IOP. POAG is typically asymptomatic until late stages, though this patient has symptoms suggesting moderately advanced disease. Acute angle-closure glaucoma (A) presents with severe pain, nausea, corneal oedema, and a fixed mid-dilated pupil on a closed angle. Ocular hypertension (C) has elevated IOP without optic nerve damage or field loss. Normal-tension glaucoma (B) has glaucomatous changes with IOP within normal range.",
     "section": "Ophthalmology",
     "num": 88
   },
@@ -1148,12 +1153,12 @@ window.MM.fpsc_past_6 = [
     "q": "A 25-year-old medical student notices that her distance vision has become progressively blurred over the past year, but near vision remains excellent. Retinoscopy under cycloplegia shows a refractive error of -3.5 dioptres in both eyes. What is the correct type of lens for her spectacle correction?",
     "opts": [
       "Convex (converging) lens",
-      "Concave (diverging) lens",
+      "Bifocal lens",
       "Cylindrical lens",
-      "Bifocal lens"
+      "Concave (diverging) lens"
     ],
-    "ans": 1,
-    "exp": "The clinical picture of blurred distance vision with preserved near vision, and a negative (minus) refractive error on retinoscopy, confirms myopia (short-sightedness). In myopia, the parallel light rays from distant objects are focused anterior to the retina because the eyeball is relatively too long or the lens too powerful. Correction requires a concave (diverging) lens, which diverges the incoming light before it enters the eye, moving the focal point back onto the retina. The prescription is expressed as a negative dioptre value. A convex (converging) lens (A) is used for hypermetropia (long-sightedness) and presbyopia. Cylindrical lenses (C) correct astigmatism. Bifocals (D) are used for presbyopia requiring both distance and near correction.",
+    "ans": 3,
+    "exp": "The clinical picture of blurred distance vision with preserved near vision, and a negative (minus) refractive error on retinoscopy, confirms myopia (short-sightedness). In myopia, the parallel light rays from distant objects are focused anterior to the retina because the eyeball is relatively too long or the lens too powerful. Correction requires a concave (diverging) lens, which diverges the incoming light before it enters the eye, moving the focal point back onto the retina. The prescription is expressed as a negative dioptre value. A convex (converging) lens (A) is used for hypermetropia (long-sightedness) and presbyopia. Cylindrical lenses (C) correct astigmatism. Bifocals (B) are used for presbyopia requiring both distance and near correction.",
     "section": "Ophthalmology",
     "num": 89
   },
@@ -1162,7 +1167,7 @@ window.MM.fpsc_past_6 = [
     "opts": [
       "Bronchial asthma",
       "Pulmonary tuberculosis",
-      "Chronic obstructive pulmonary disease (COPD)",
+      "COPD",
       "Bronchiectasis"
     ],
     "ans": 2,
@@ -1175,7 +1180,7 @@ window.MM.fpsc_past_6 = [
     "opts": [
       "Two months of isoniazid and rifampicin, followed by four months of isoniazid alone",
       "Six months of isoniazid, rifampicin, pyrazinamide, and ethambutol throughout",
-      "Two months of isoniazid, rifampicin, pyrazinamide, and ethambutol, followed by four months of isoniazid and rifampicin",
+      "2 months HRZE, then 4 months of isoniazid and rifampicin",
       "Three months of isoniazid, rifampicin, and streptomycin"
     ],
     "ans": 2,
@@ -1187,12 +1192,12 @@ window.MM.fpsc_past_6 = [
     "q": "A 32-year-old woman with known asthma is admitted with acute severe asthma. She is tachypnoeic at 32 breaths/minute, cannot complete a sentence, has widespread bilateral wheeze, and her PEFR is 38% of predicted. Oxygen saturations are 94% on air. She has received two nebulised salbutamol treatments. What is the next most important addition to her management?",
     "opts": [
       "Intravenous theophylline as the first priority",
-      "Oral or intravenous corticosteroids",
+      "Nebulised ipratropium bromide as monotherapy",
       "Immediate intubation and mechanical ventilation",
-      "Nebulised ipratropium bromide as monotherapy"
+      "Oral or intravenous corticosteroids"
     ],
-    "ans": 1,
-    "exp": "In acute severe asthma (PEFR 33-50%, respiratory rate above 25, inability to complete sentences, heart rate above 110), management requires supplemental oxygen, repeated bronchodilators (salbutamol and ipratropium nebulisers), and systemic corticosteroids. Corticosteroids (oral prednisolone 40-50 mg or IV hydrocortisone) are essential to suppress the underlying airway inflammation and reduce the risk of deterioration and relapse. They take 4-6 hours to act. After adequate bronchodilator use, systemic corticosteroids represent the next critical intervention. IV theophylline (A) is a second-line add-on, not the next priority. Immediate intubation (C) is for life-threatening or near-fatal asthma. Ipratropium as monotherapy (D) is incorrect; it should be added to salbutamol, not used instead of it.",
+    "ans": 3,
+    "exp": "In acute severe asthma (PEFR 33-50%, respiratory rate above 25, inability to complete sentences, heart rate above 110), management requires supplemental oxygen, repeated bronchodilators (salbutamol and ipratropium nebulisers), and systemic corticosteroids. Corticosteroids (oral prednisolone 40-50 mg or IV hydrocortisone) are essential to suppress the underlying airway inflammation and reduce the risk of deterioration and relapse. They take 4-6 hours to act. After adequate bronchodilator use, systemic corticosteroids represent the next critical intervention. IV theophylline (A) is a second-line add-on, not the next priority. Immediate intubation (C) is for life-threatening or near-fatal asthma. Ipratropium as monotherapy (B) is incorrect; it should be added to salbutamol, not used instead of it.",
     "section": "Pulmonology",
     "num": 92
   },
@@ -1201,7 +1206,7 @@ window.MM.fpsc_past_6 = [
     "opts": [
       "Primary lung adenocarcinoma",
       "Metastatic deposit",
-      "Benign granuloma (likely old TB or histoplasmosis)",
+      "Benign granuloma (old TB or histoplasmosis)",
       "Carcinoid tumour"
     ],
     "ans": 2,
@@ -1212,7 +1217,7 @@ window.MM.fpsc_past_6 = [
   {
     "q": "A 40-year-old woman is admitted to a Karachi hospital with sudden onset pleuritic chest pain, dyspnoea, and haemoptysis 5 days after a total abdominal hysterectomy. Her heart rate is 118/min and oxygen saturation is 90% on room air. D-dimer is markedly elevated. CT pulmonary angiography confirms bilateral pulmonary emboli. She has no contraindications to anticoagulation. What is the most appropriate initial treatment?",
     "opts": [
-      "Subcutaneous low-molecular-weight heparin followed by oral anticoagulation",
+      "Subcutaneous LMWH followed by oral anticoagulation",
       "Thrombolytic therapy with alteplase as first-line",
       "Inferior vena cava filter insertion alone",
       "Aspirin and observation"
@@ -1226,12 +1231,12 @@ window.MM.fpsc_past_6 = [
     "q": "A 28-year-old man presents with dry cough, fever, bilateral hilar lymphadenopathy on CXR, and erythema nodosum on his shins. Serum ACE level is elevated. Bronchoscopy with BAL shows lymphocytosis with CD4:CD8 ratio of 5:1. What is the most likely diagnosis?",
     "opts": [
       "Pulmonary tuberculosis",
-      "Sarcoidosis",
+      "Hypersensitivity pneumonitis",
       "Lymphoma with pulmonary involvement",
-      "Hypersensitivity pneumonitis"
+      "Sarcoidosis"
     ],
-    "ans": 1,
-    "exp": "The combination of bilateral hilar lymphadenopathy (BHL), erythema nodosum, elevated serum ACE, and BAL lymphocytosis with a high CD4:CD8 ratio is the classic presentation of sarcoidosis. Lofgren's syndrome (BHL + erythema nodosum + arthralgia + fever) is a specific presentation with a good prognosis. Sarcoidosis is a multisystem granulomatous disease of unknown aetiology characterised by non-caseating granulomas. Elevated ACE (produced by granuloma macrophages) is a useful but non-specific marker. TB (A) would show caseating granulomas, AFB positivity, and a different clinical pattern. Lymphoma (C) typically has mediastinal involvement and systemic B symptoms. Hypersensitivity pneumonitis (D) follows antigen exposure and shows CD8 lymphocytosis in BAL. Davidson's Medicine identifies this constellation as characteristic of sarcoidosis.",
+    "ans": 3,
+    "exp": "The combination of bilateral hilar lymphadenopathy (BHL), erythema nodosum, elevated serum ACE, and BAL lymphocytosis with a high CD4:CD8 ratio is the classic presentation of sarcoidosis. Lofgren's syndrome (BHL + erythema nodosum + arthralgia + fever) is a specific presentation with a good prognosis. Sarcoidosis is a multisystem granulomatous disease of unknown aetiology characterised by non-caseating granulomas. Elevated ACE (produced by granuloma macrophages) is a useful but non-specific marker. TB (A) would show caseating granulomas, AFB positivity, and a different clinical pattern. Lymphoma (C) typically has mediastinal involvement and systemic B symptoms. Hypersensitivity pneumonitis (B) follows antigen exposure and shows CD8 lymphocytosis in BAL. Davidson's Medicine identifies this constellation as characteristic of sarcoidosis.",
     "section": "Pulmonology",
     "num": 95
   },
@@ -1239,12 +1244,12 @@ window.MM.fpsc_past_6 = [
     "q": "A 28-year-old woman is brought to a psychiatry clinic by her family. They report that for the past 3 weeks she has been sleeping only 2-3 hours per night, spending large sums of money on unnecessary items, speaking very rapidly, and believing she has been chosen by God to lead the country. On examination, she is distractible, euphoric, and shows flight of ideas. She has no prior psychiatric history. What is the most likely diagnosis?",
     "opts": [
       "Schizophrenia",
-      "Manic episode",
+      "Borderline personality disorder",
       "Substance-induced mood disorder",
-      "Borderline personality disorder"
+      "Manic episode"
     ],
-    "ans": 1,
-    "exp": "The clinical picture of reduced sleep without tiredness, pressured speech, flight of ideas, grandiose delusions (chosen by God to lead), distractibility, and elevated mood lasting 3 weeks is the prototypical presentation of a manic episode. A manic episode requires elevated or irritable mood with at least three of: increased goal-directed activity, decreased need for sleep, pressured speech, grandiosity, flight of ideas, distractibility, and excessive involvement in pleasurable high-risk activities, lasting at least 1 week and causing marked functional impairment. Schizophrenia (A) would typically show negative symptoms, flat affect, and hallucinations without this degree of mood elevation. Substance-induced disorder (C) requires a relevant history. Borderline personality disorder (D) shows impulsivity and emotional dysregulation but not sustained manic episodes.",
+    "ans": 3,
+    "exp": "The clinical picture of reduced sleep without tiredness, pressured speech, flight of ideas, grandiose delusions (chosen by God to lead), distractibility, and elevated mood lasting 3 weeks is the prototypical presentation of a manic episode. A manic episode requires elevated or irritable mood with at least three of: increased goal-directed activity, decreased need for sleep, pressured speech, grandiosity, flight of ideas, distractibility, and excessive involvement in pleasurable high-risk activities, lasting at least 1 week and causing marked functional impairment. Schizophrenia (A) would typically show negative symptoms, flat affect, and hallucinations without this degree of mood elevation. Substance-induced disorder (C) requires a relevant history. Borderline personality disorder (B) shows impulsivity and emotional dysregulation but not sustained manic episodes.",
     "section": "Psychiatry",
     "num": 96
   },
@@ -1264,13 +1269,13 @@ window.MM.fpsc_past_6 = [
   {
     "q": "A 60-year-old man is brought to a psychiatric unit by his family with a 6-month gradual decline in memory, particularly forgetting recent events while remote memory is relatively preserved, getting lost in familiar surroundings, difficulty with daily tasks, and personality changes. His MMSE score is 19/30. CT brain shows generalised cortical atrophy with hippocampal volume loss. What is the most likely diagnosis?",
     "opts": [
-      "Vascular dementia",
       "Alzheimer's dementia",
+      "Vascular dementia",
       "Frontotemporal dementia",
       "Delirium"
     ],
-    "ans": 1,
-    "exp": "Alzheimer's dementia (AD) is the most common cause of dementia worldwide and in Pakistan. It presents insidiously with progressive anterograde amnesia (inability to form new memories) while remote memory is relatively preserved early on. Patients develop difficulty with orientation (getting lost in familiar environments), instrumental activities of daily living, and personality and behavioural changes. CT/MRI shows generalised atrophy with disproportionate hippocampal atrophy. MMSE below 24 indicates cognitive impairment. The Shorter Oxford Textbook of Psychiatry identifies this gradual, memory-first, hippocampal-predominant pattern as characteristic of AD. Vascular dementia (A) has a stepwise decline with a history of cerebrovascular events and periventricular white matter changes. Frontotemporal dementia (C) presents with personality and behavioural changes preceding memory loss. Delirium (D) is acute, fluctuating, and has an identifiable cause.",
+    "ans": 0,
+    "exp": "Alzheimer's dementia (AD) is the most common cause of dementia worldwide and in Pakistan. It presents insidiously with progressive anterograde amnesia (inability to form new memories) while remote memory is relatively preserved early on. Patients develop difficulty with orientation (getting lost in familiar environments), instrumental activities of daily living, and personality and behavioural changes. CT/MRI shows generalised atrophy with disproportionate hippocampal atrophy. MMSE below 24 indicates cognitive impairment. The Shorter Oxford Textbook of Psychiatry identifies this gradual, memory-first, hippocampal-predominant pattern as characteristic of AD. Vascular dementia (B) has a stepwise decline with a history of cerebrovascular events and periventricular white matter changes. Frontotemporal dementia (C) presents with personality and behavioural changes preceding memory loss. Delirium (D) is acute, fluctuating, and has an identifiable cause.",
     "section": "Psychiatry",
     "num": 98
   },

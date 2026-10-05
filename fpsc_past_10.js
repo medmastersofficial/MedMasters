@@ -71,32 +71,34 @@ window.MM.fpsc_past_10 = [
     "difficulty": "easy"
   },
   {
-    "q": "Identify the error: 'The data [A] clearly shows [B] that vaccination rates [C] have improved [D].'",
+    "q": "What did you make _____ the lecture?",
     "opts": [
-      "clearly shows",
-      "The data",
-      "that vaccination rates",
-      "have improved"
+      "of",
+      "in",
+      "about",
+      "on"
     ],
     "ans": 0,
-    "exp": "'Data' is the plural of 'datum' and requires a plural verb in formal usage. The correct form is 'clearly show.' Options B, C, and D are grammatically correct.",
+    "exp": "\"What did you make of ...?\" asks for an opinion or impression, using the idiom \"make of\".",
     "section": "English",
     "num": 6,
-    "difficulty": "moderate"
+    "difficulty": "moderate",
+    "src": "mcqsquestions Preposition Set 1"
   },
   {
-    "q": "PHYSICIAN : STETHOSCOPE :: JUDGE : ?",
+    "q": "THERMOMETER : TEMPERATURE :: BAROMETER : ?",
     "opts": [
-      "Bench",
-      "Robe",
-      "Wig",
-      "Gavel"
+      "Humidity",
+      "Rainfall",
+      "Wind",
+      "Pressure"
     ],
     "ans": 3,
-    "exp": "A stethoscope is the defining functional instrument of a physician. A gavel is the defining functional instrument of a judge. A wig and robe (A, C) are ceremonial dress, not instruments.",
+    "exp": "A thermometer measures temperature and a barometer measures atmospheric pressure. Humidity, wind and rainfall are measured by other instruments (hygrometer, anemometer, rain gauge).",
     "section": "English",
     "num": 7,
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "src": "Analogy MCQs (SSC/competitive lists, recalled)"
   },
   {
     "q": "He _____ his stage fright and delivered a flawless presentation to the board.",
@@ -267,18 +269,19 @@ window.MM.fpsc_past_10 = [
     "difficulty": "moderate"
   },
   {
-    "q": "The clinic has been operating without incident _____ its opening five years ago.",
+    "q": "Nafeesa is afraid _____ spiders.",
     "opts": [
-      "for",
-      "from",
-      "since",
-      "during"
+      "in",
+      "about",
+      "of",
+      "from"
     ],
     "ans": 2,
-    "exp": "'Since' is used with a specific point in time ('its opening five years ago') marking the start of a continuing state. 'For' would be used with a duration instead, e.g. 'for five years'.",
+    "exp": "\"Afraid of\" is the standard collocation for fear of something.",
     "section": "English",
     "num": 20,
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "src": "mcqsquestions Preposition Set 1"
   },
   {
     "q": "A patient on an ACE inhibitor for hypertension is also prescribed trimethoprim for a UTI. Potassium rises dangerously to 6.2 mEq/L. What best explains this?",

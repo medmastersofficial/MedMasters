@@ -92,17 +92,18 @@ window.MM.fpsc_past_7 = [
     "num": 7
   },
   {
-    "q": "In the phrase 'the most experienced surgeon in the department,' which degree of adjective is used?",
+    "q": "Convert to indirect speech: The police officer said to a culprit, \"Don't try to be clever.\"",
     "opts": [
-      "Positive degree",
-      "Comparative degree",
-      "Superlative degree",
-      "Adverbial degree"
+      "The police officer called the culprit not to try to be clever.",
+      "The police officer told the culprit that he doesn't try to be clever.",
+      "The police officer ordered a culprit not to try to be clever.",
+      "The police officer ordered to culprit that not to try to be clever."
     ],
     "ans": 2,
-    "exp": "The superlative degree compares three or more things and shows the highest quality, typically formed with 'most' or '-est'. It is almost always preceded by 'the', as in 'the most experienced'.",
+    "exp": "A command from an authority is reported with \"ordered + object + not + to-infinitive\". The other options use an unsuitable reporting verb, an ungrammatical structure, or turn the order into a statement.",
     "section": "English",
-    "num": 8
+    "num": 8,
+    "src": "mcqsquestions Set 7"
   },
   {
     "q": "In the sentence 'She carefully reviewed the file,' what part of speech is 'carefully'?",
@@ -157,17 +158,18 @@ window.MM.fpsc_past_7 = [
     "num": 12
   },
   {
-    "q": "In the sentence 'Alas! The patient did not survive,' what part of speech is 'Alas'?",
+    "q": "She cares _____ the environment.",
     "opts": [
-      "Adverb",
-      "Conjunction",
-      "Interjection",
-      "Preposition"
+      "on",
+      "in",
+      "about",
+      "of"
     ],
     "ans": 2,
-    "exp": "An interjection expresses sudden or strong emotion and is grammatically independent from the rest of the sentence, usually followed by an exclamation mark. 'Alas' specifically expresses grief or regret.",
+    "exp": "The verb \"care\" is followed by \"about\" when something matters to someone.",
     "section": "English",
-    "num": 13
+    "num": 13,
+    "src": "mcqsquestions Preposition Set 1"
   },
   {
     "q": "Which of the following is a demonstrative pronoun?",
@@ -235,17 +237,18 @@ window.MM.fpsc_past_7 = [
     "num": 18
   },
   {
-    "q": "_____ the shortage of staff, the ward continued to function smoothly.",
+    "q": "Throw this pen _____ the dustbin.",
     "opts": [
-      "Despite",
-      "Because of",
-      "So that",
-      "In order to"
+      "into",
+      "on",
+      "for",
+      "with"
     ],
     "ans": 0,
-    "exp": "'Despite' introduces a contrast: the ward functioned smoothly even though there was a staff shortage. 'Because of' would incorrectly suggest the shortage helped the ward function.",
+    "exp": "\"Into\" shows movement from outside to the inside of something.",
     "section": "English",
-    "num": 19
+    "num": 19,
+    "src": "mcqsquestions Preposition Set 1"
   },
   {
     "q": "Choose the one word for: 'A place where historical or valuable objects are kept and displayed.'",

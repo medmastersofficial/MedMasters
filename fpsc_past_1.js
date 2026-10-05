@@ -92,30 +92,32 @@ window.MM.fpsc_past_1 = [
     "num": 7
   },
   {
-    "q": "Neither the consultant nor the residents _____ aware of the schedule change.",
+    "q": "Correct the following: A white and black dog is barking.",
     "opts": [
-      "was",
-      "has been",
-      "is",
-      "were"
+      "A white and a black dog is barking.",
+      "A white and black dogs is barking.",
+      "A white and black dog are barking.",
+      "A white and black dog is barking."
     ],
     "ans": 3,
-    "exp": "With 'neither...nor', the verb agrees with the subject nearer to it: here 'residents' (plural), so 'were' is correct.",
+    "exp": "\"A white and black dog\" names one dog with two colours, so both the noun and the verb stay singular: \"is barking\". Repeating the article (\"a white and a black dog\") would signal two dogs and call for \"are\", and the other options mismatch the number of the noun or the verb.",
     "section": "English",
-    "num": 8
+    "num": 8,
+    "src": "pastmcqs.pk (sentence correction)"
   },
   {
-    "q": "The patient was diagnosed _____ a rare autoimmune disorder.",
+    "q": "He is interested _____ history.",
     "opts": [
-      "with",
+      "in",
       "of",
-      "for",
-      "by"
+      "about",
+      "on"
     ],
     "ans": 0,
-    "exp": "'Diagnosed with' is the standard fixed preposition used when stating the condition a person has been diagnosed as having.",
+    "exp": "The adjective \"interested\" takes the preposition \"in\" before a subject or activity. \"About\", \"of\" and \"on\" do not form the standard collocation.",
     "section": "English",
-    "num": 9
+    "num": 9,
+    "src": "mcqsquestions Preposition Set 1"
   },
   {
     "q": "Choose the correct passive form: 'The board will announce the results tomorrow.'",
@@ -183,17 +185,18 @@ window.MM.fpsc_past_1 = [
     "num": 14
   },
   {
-    "q": "DOCTOR : STETHOSCOPE :: CARPENTER : ?",
+    "q": "CAT : MOUSE ::",
     "opts": [
-      "Wood",
-      "Workshop",
-      "Nail",
-      "Hammer"
+      "Lion : Cage",
+      "Trap : Cheese",
+      "Horse : Stable",
+      "Bird : Worm"
     ],
     "ans": 3,
-    "exp": "A doctor's characteristic tool is a stethoscope; similarly, a carpenter's characteristic tool is a hammer. The relationship is 'profession : primary tool'.",
+    "exp": "A cat hunts a mouse as prey, so the relationship is predator to prey. A bird hunts a worm in the same way. The other pairs link an animal to its home, its bait or its cage, not to its prey.",
     "section": "English",
-    "num": 15
+    "num": 15,
+    "src": "Analogous-pair MCQs (PPSC/FPSC/NTS lists, recalled)"
   },
   {
     "q": "The word AMBIGUOUS most nearly means:",
@@ -248,17 +251,18 @@ window.MM.fpsc_past_1 = [
     "num": 19
   },
   {
-    "q": "She has been working at this hospital _____ 2019.",
+    "q": "Amanda hasn't seen her older sister _____ April.",
     "opts": [
-      "for",
+      "in",
       "since",
-      "from",
-      "during"
+      "on",
+      "for"
     ],
     "ans": 1,
-    "exp": "'Since' is used with a specific point in time (2019) to indicate when a continuing action started. 'For' would be used with a duration (e.g., 'for six years').",
+    "exp": "\"Since\" is used with a fixed starting point in time (April) for a situation that continues up to now. \"For\" is used with a length of time, not a starting point.",
     "section": "English",
-    "num": 20
+    "num": 20,
+    "src": "mcqsquestions Preposition Set 1"
   },
   {
     "q": "The anatomical structure that forms the roof of the orbit is:",

@@ -79,17 +79,18 @@ window.MM.fpsc_past_2 = [
     "num": 6
   },
   {
-    "q": "By the time the ambulance arrived, the patient _____ into a critical condition.",
+    "q": "A place where bread is made is called a:",
     "opts": [
-      "had already deteriorated",
-      "has already deteriorated",
-      "was already deteriorating",
-      "will already deteriorate"
+      "Bakery",
+      "Dairy",
+      "Restaurant",
+      "Brewery"
     ],
     "ans": 0,
-    "exp": "An action completed before another past action (ambulance arriving) requires the past perfect tense: 'had already deteriorated'.",
+    "exp": "The one word for a place where bread is baked is \"bakery\". A restaurant serves meals, a dairy deals with milk products, and a brewery makes beer.",
     "section": "English",
-    "num": 7
+    "num": 7,
+    "src": "Testpoint one-word substitution"
   },
   {
     "q": "The board decided to _____ the meeting until further notice.",
@@ -105,30 +106,32 @@ window.MM.fpsc_past_2 = [
     "num": 8
   },
   {
-    "q": "Choose the correctly punctuated sentence:",
+    "q": "Which one of the following sentences is correctly punctuated?",
     "opts": [
-      "The doctor said, 'the patient is stable.'",
-      "The doctor said, \"The patient is stable.\"",
-      "The doctor said the patient is stable\".",
-      "The doctor said \"the patient is stable\""
+      "The weather this winter has been: windy, wet and unpredictable.",
+      "The weather this winter has been windy, wet and unpredictable.",
+      "The weather this winter has been windy wet and, unpredictable.",
+      "The weather this winter has been, windy, wet and unpredictable."
     ],
     "ans": 1,
-    "exp": "Direct speech requires double quotation marks, and the first word inside the quotation must be capitalized: \"The patient is stable.\"",
+    "exp": "A list of adjectives after \"has been\" takes commas only between its items. A colon or comma straight after \"been\" interrupts the verb and its complement, and a comma before the last word breaks the series.",
     "section": "English",
-    "num": 9
+    "num": 9,
+    "src": "PPSC Assistant (BPS-16) 2016 (pastmcqs.pk)"
   },
   {
-    "q": "She is one of the few doctors who _____ fluent in three languages.",
+    "q": "Which sentence is correct?",
     "opts": [
-      "are",
-      "is",
-      "was",
-      "has been"
+      "I kindly requested her to help me.",
+      "I requested her kindly for to help me.",
+      "I requested her, kindly to help me.",
+      "I requested to her kindly help me."
     ],
     "ans": 0,
-    "exp": "In the construction 'one of the + plural noun + who', the relative clause verb agrees with the plural antecedent ('doctors'), so 'are' is correct.",
+    "exp": "The adverb \"kindly\" sits before the main verb it modifies, giving \"I kindly requested her to help me\". The other versions misplace the adverb, put a comma in the wrong place, or add an unnecessary \"to\" or \"for to\".",
     "section": "English",
-    "num": 10
+    "num": 10,
+    "src": "pastmcqs.pk (sentence correction)"
   },
   {
     "q": "Choose the best combination: 'He finished his shift. He went straight to the library.'",
@@ -144,17 +147,18 @@ window.MM.fpsc_past_2 = [
     "num": 11
   },
   {
-    "q": "Convert to indirect speech: The consultant said, \"I have reviewed the case files.\"",
+    "q": "Convert to indirect speech: Zaira's mother said to her, \"Cook the food properly.\"",
     "opts": [
-      "The consultant said that he has reviewed the case files.",
-      "The consultant said he will review the case files.",
-      "The consultant says that he reviewed the case files.",
-      "The consultant said that he had reviewed the case files."
+      "Zaira's mother asked her if she could cook the food properly.",
+      "Zaira's mother order her to cook the food properly.",
+      "Zaira's mother ordered her that to cook the food properly.",
+      "Zaira's mother ordered her to cook the food properly."
     ],
     "ans": 3,
-    "exp": "When the reporting verb is past tense ('said'), the present perfect ('have reviewed') shifts back to past perfect ('had reviewed') in indirect speech.",
+    "exp": "A command is reported with \"ordered + object + to-infinitive\". The other options turn the command into a question, add a stray \"that\", or use the wrong verb form (\"order\").",
     "section": "English",
-    "num": 12
+    "num": 12,
+    "src": "mcqsquestions Set 7"
   },
   {
     "q": "Choose the synonym of METICULOUS:",
@@ -183,17 +187,18 @@ window.MM.fpsc_past_2 = [
     "num": 14
   },
   {
-    "q": "NURSE : HOSPITAL :: TEACHER : ?",
+    "q": "PEN : WRITE :: KNIFE : ?",
     "opts": [
-      "Book",
-      "Student",
-      "Chalk",
-      "School"
+      "Sharpen",
+      "Eat",
+      "Fold",
+      "Cut"
     ],
     "ans": 3,
-    "exp": "A nurse's typical workplace is a hospital; similarly, a teacher's typical workplace is a school. The relationship being tested is 'profession : place of work'.",
+    "exp": "A pen is a tool whose main function is to write; a knife is a tool whose main function is to cut. Eating, sharpening and folding are not the primary function of a knife.",
     "section": "English",
-    "num": 15
+    "num": 15,
+    "src": "Tool-function analogy (recalled)"
   },
   {
     "q": "The word 'PROLIFIC' most nearly means:",
@@ -209,30 +214,32 @@ window.MM.fpsc_past_2 = [
     "num": 16
   },
   {
-    "q": "Identify the grammatically correct sentence:",
+    "q": "\"Abdul knew the conditions in England like the _____ of his hand.\"",
     "opts": [
-      "The number of patients admitted have increased.",
-      "The number of patients admitted has increased.",
-      "A number of patient admitted has increased.",
-      "The numbers of patients admitted has increase."
+      "Lines",
+      "Back",
+      "Hair",
+      "Skin"
     ],
     "ans": 1,
-    "exp": "'The number of' takes a singular verb ('has increased'), whereas 'A number of' would take a plural verb. Here, 'The number of patients... has increased' is correct.",
+    "exp": "The idiom is \"to know something like the back of one's hand\", meaning to know it extremely well.",
     "section": "English",
-    "num": 17
+    "num": 17,
+    "src": "pastmcqs.pk (sentence correction)"
   },
   {
-    "q": "_____ the heavy rain, the surgery proceeded as scheduled.",
+    "q": "Unfortunately, we had to cancel it owing _____ the bad weather.",
     "opts": [
-      "Despite",
-      "Because of",
-      "Due to",
-      "Since"
+      "to",
+      "in",
+      "about",
+      "of"
     ],
     "ans": 0,
-    "exp": "'Despite' introduces a contrast: the surgery went ahead even though there was heavy rain. 'Because of' and 'Due to' would incorrectly suggest the rain caused the surgery to proceed.",
+    "exp": "\"Owing to\" is a fixed prepositional phrase meaning \"because of\". The other prepositions cannot follow \"owing\" in this sense.",
     "section": "English",
-    "num": 18
+    "num": 18,
+    "src": "mcqsquestions Preposition Set 1"
   },
   {
     "q": "Choose the one word for: 'A place where weapons and ammunition are stored.'",
@@ -248,17 +255,18 @@ window.MM.fpsc_past_2 = [
     "num": 19
   },
   {
-    "q": "The hospital has been running short-staffed _____ the beginning of this year.",
+    "q": "He is proud _____ his riches.",
     "opts": [
-      "since",
-      "for",
-      "from",
-      "during"
+      "of",
+      "over",
+      "on",
+      "by"
     ],
     "ans": 0,
-    "exp": "'Since' is used with a specific starting point in time ('the beginning of this year') for an action continuing to the present. 'For' would instead be used with a duration, such as 'for six months'.",
+    "exp": "\"Proud of\" is the standard collocation for pride in a person, quality or possession.",
     "section": "English",
-    "num": 20
+    "num": 20,
+    "src": "mcqsquestions Preposition Set 1"
   },
   {
     "q": "The nerve that supplies the diaphragm is:",

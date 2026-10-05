@@ -14,17 +14,18 @@ window.MM.fpsc_past_9 = [
     "num": 1
   },
   {
-    "q": "The hospital was praised for its METICULOUS record-keeping. The underlined word is closest in meaning to the OPPOSITE of:",
+    "q": "He is married _____ my cousin.",
     "opts": [
-      "Precise",
-      "Careful",
-      "Careless",
-      "Detailed"
+      "on",
+      "about",
+      "to",
+      "in"
     ],
     "ans": 2,
-    "exp": "METICULOUS means showing great attention to detail; very careful and precise. Its antonym is CARELESS, meaning lacking attention or thoroughness. PRECISE (A), CAREFUL (B), and DETAILED (D) are all synonyms of meticulous.",
+    "exp": "\"Married to\" is the standard form when naming the spouse.",
     "section": "English",
-    "num": 2
+    "num": 2,
+    "src": "mcqsquestions Preposition Set 1"
   },
   {
     "q": "Scarcely had the tribunal reconvened _____ the primary witness withdrew her testimony.",
@@ -79,17 +80,18 @@ window.MM.fpsc_past_9 = [
     "num": 6
   },
   {
-    "q": "Which sentence correctly distinguishes between 'discreet' and 'discrete' in context?",
+    "q": "I am good _____ tennis.",
     "opts": [
-      "The two discreet variables were analysed separately; the consultant remained discrete about the findings.",
-      "The two discrete variables were analysed separately; the consultant remained discrete about the findings.",
-      "The two discrete variables were analysed separately; the consultant remained discreet about the findings.",
-      "The two discreet variables were analysed separately; the consultant remained discreet about the findings."
+      "of",
+      "on",
+      "at",
+      "about"
     ],
     "ans": 2,
-    "exp": "'Discrete' means separate or distinct (used for the variables), while 'discreet' means careful or circumspect in speech/behaviour (used for the consultant's conduct). Only option C applies each word correctly.",
+    "exp": "\"Good at\" is the collocation used for ability or skill.",
     "section": "English",
-    "num": 7
+    "num": 7,
+    "src": "mcqsquestions Preposition Set 1"
   },
   {
     "q": "Identify the sentence exhibiting correct use of the past perfect subjunctive in an unreal past conditional:",
