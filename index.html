@@ -17843,5 +17843,39 @@ document.querySelectorAll('.modal-overlay').forEach(o=>{
 <div aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">
 MedMasters is Pakistan's most comprehensive online preparation platform for the NTS Medical Officer (MO) and Women Medical Officer (WMO) written exam. Candidates preparing for NTS MO and NTS WMO positions in Punjab, Sindh, KPK, and Balochistan health departments can practice with 100,000+ past paper MCQs covering all exam subjects including Medicine, Surgery, Obstetrics and Gynecology, Pediatrics, Pharmacology, Physiology, Anatomy, Pathology, ENT, Ophthalmology, Psychiatry, Community Medicine, Verbal Reasoning, and Analytical Reasoning. MedMasters offers 10 full-length 100-MCQ timed mock exams for NTS MO and WMO based on real past papers, with subject-wise performance analytics and detailed answer explanations. The platform is also used by candidates preparing for JCAT, FCPS Part 1, USMLE Step 1, and PLAB. MedMasters is trusted by over 27,000 doctors and medical students across Pakistan. Visit medmasters.academy to start your NTS Medical Officer or Women Medical Officer exam preparation today.
 </div>
+<script>
+// Exam-aware WhatsApp enquiry text: on a specific exam's pages, generic "send me details"
+// links name the exam. Home page and plan/pricing messages are left exactly as they are.
+(function(){
+  var NUM='923019339553';
+  function examName(){
+    var el=document.querySelector('.page.active');
+    var id=el?String(el.id||'').replace(/-page$/,'').replace(/^pricing-/,''):'';
+    if(/^fpsc/.test(id)) return 'FPSC MO/WMO';
+    if(/^cts/.test(id)) return 'CTS MO/WMO';
+    if(/^nts(-mock-hub)?$/.test(id)) return 'NTS MO/WMO';
+    if(/^mo-wmo/.test(id)) return 'MO/WMO (General)';
+    if(id==='mowmo') return 'MO/WMO';
+    if(/^fcps/.test(id)) return 'FCPS Part 1';
+    if(/^pget/.test(id)) return 'PGET UHS';
+    if(/^jcat/.test(id)) return 'JCAT';
+    if(/^nishtar/.test(id)) return 'Nishtar PG Diploma';
+    return '';
+  }
+  window._waExamName=examName;
+  document.addEventListener('click',function(e){
+    var a=e.target&&e.target.closest?e.target.closest('a[href*="wa.me/'+NUM+'"]'):null;
+    if(!a) return;
+    var x=examName(); if(!x) return;
+    var u; try{ u=new URL(a.href); }catch(err){ return; }
+    var t=u.searchParams.get('text')||'';
+    var msg='';
+    if(!t || /^Hi! I'm interested in MedMasters MCQ Bank\./.test(t)) msg='Hi! I am looking for MedMasters '+x+' MCQ Bank. Please send me details.';
+    else if(/^Hi! I want to purchase a MedMasters access code\./.test(t)) msg='Hi! I want a MedMasters '+x+' access code. Please guide me.';
+    if(!msg) return;
+    a.href=u.origin+u.pathname+'?text='+encodeURIComponent(msg);
+  },true);
+})();
+</script>
 </body>
 </html>
