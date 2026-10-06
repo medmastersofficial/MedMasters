@@ -18010,12 +18010,16 @@ MedMasters is Pakistan's most comprehensive online preparation platform for the 
   var box=document.getElementById('wa-float'); if(!box) return;
   var KEY='mm_wa_float_closed';
   function closed(){ try{ return sessionStorage.getItem(KEY)==='1'; }catch(e){ return false; } }
+  function pageId(){ var el=document.querySelector('.page.active'); return el?String(el.id||'').replace(/-page$/,''):''; }
   function studying(){
     try{ if(window._examActive) return true; }catch(e){}
-    var el=document.querySelector('.page.active'); var id=el?String(el.id||'').replace(/-page$/,''):'';
-    return id==='mcq'||id==='prac-mcq'||/^nts-mock\d+$/.test(id)||id==='revision-sprint-exam'||id==='fpsc-past-exam';
+    var id=pageId();
+    return id==='mcq'||id==='prac-mcq'||id==='study'||/^nts-mock\d+$/.test(id)||id==='revision-sprint-exam'||id==='fpsc-past-exam';
   }
-  function refresh(){ box.style.display=(closed()||studying())?'none':'block'; }
+  function allowed(){
+    return pageId()==='home';   // home page only; every other page already has its own WhatsApp prompts
+  }
+  function refresh(){ box.style.display=(closed()||studying()||!allowed())?'none':'block'; }
   document.getElementById('wa-float-x').addEventListener('click',function(){ try{ sessionStorage.setItem(KEY,'1'); }catch(e){} refresh(); });
   try{ new MutationObserver(refresh).observe(document.body,{subtree:true,attributes:true,attributeFilter:['class']}); }catch(e){}
   refresh();
