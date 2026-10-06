@@ -17998,7 +17998,21 @@ MedMasters is Pakistan's most comprehensive online preparation platform for the 
   document.addEventListener('click',function(e){
     var a=e.target&&e.target.closest?e.target.closest('a[href*="wa.me/'+NUM+'"]'):null;
     if(!a) return;
-    var x=examName(); if(!x) return;
+    var x=examName();
+    try{
+      if(typeof gtag==='function'){
+        var cur=document.querySelector('.page.active'); var t0='';
+        try{ t0=new URL(a.href).searchParams.get('text')||''; }catch(e0){}
+        gtag('event','whatsapp_click',{
+          exam:x||'General',
+          page_id:cur?String(cur.id||'').replace(/-page$/,''):'unknown',
+          message_type:/access code/i.test(t0)?'access_code':(/purchase|subscribe/i.test(t0)?'plan_purchase':'enquiry'),
+          link_label:(a.className&&String(a.className).indexOf('wa-float-link')>-1)?'floating_button':String(a.textContent||'').replace(/\s+/g,' ').trim().slice(0,40),
+          transport_type:'beacon'
+        });
+      }
+    }catch(e1){}
+    if(!x) return;
     var u; try{ u=new URL(a.href); }catch(err){ return; }
     var t=u.searchParams.get('text')||'';
     var msg='';
