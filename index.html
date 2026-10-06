@@ -17844,13 +17844,14 @@ document.querySelectorAll('.modal-overlay').forEach(o=>{
 MedMasters is Pakistan's most comprehensive online preparation platform for the NTS Medical Officer (MO) and Women Medical Officer (WMO) written exam. Candidates preparing for NTS MO and NTS WMO positions in Punjab, Sindh, KPK, and Balochistan health departments can practice with 100,000+ past paper MCQs covering all exam subjects including Medicine, Surgery, Obstetrics and Gynecology, Pediatrics, Pharmacology, Physiology, Anatomy, Pathology, ENT, Ophthalmology, Psychiatry, Community Medicine, Verbal Reasoning, and Analytical Reasoning. MedMasters offers 10 full-length 100-MCQ timed mock exams for NTS MO and WMO based on real past papers, with subject-wise performance analytics and detailed answer explanations. The platform is also used by candidates preparing for JCAT, FCPS Part 1, USMLE Step 1, and PLAB. MedMasters is trusted by over 27,000 doctors and medical students across Pakistan. Visit medmasters.academy to start your NTS Medical Officer or Women Medical Officer exam preparation today.
 </div>
 <script>
-// Exam-aware WhatsApp enquiry text: on a specific exam's pages, generic "send me details"
-// links name the exam. Home page and plan/pricing messages are left exactly as they are.
+// Exam-aware WhatsApp enquiry text: while a visitor is inside a specific exam (hub, papers,
+// categories, locked-category prompt), generic "send me details" / "access code" links name
+// that exam. Home page and plan/pricing messages are left exactly as they are.
 (function(){
   var NUM='923019339553';
-  function examName(){
-    var el=document.querySelector('.page.active');
-    var id=el?String(el.id||'').replace(/-page$/,'').replace(/^pricing-/,''):'';
+  var sticky='';
+  function fromId(id){
+    id=String(id||'').replace(/-page$/,'').replace(/^pricing-/,'');
     if(/^fpsc/.test(id)) return 'FPSC MO/WMO';
     if(/^cts/.test(id)) return 'CTS MO/WMO';
     if(/^nts(-mock-hub)?$/.test(id)) return 'NTS MO/WMO';
@@ -17862,7 +17863,34 @@ MedMasters is Pakistan's most comprehensive online preparation platform for the 
     if(/^nishtar/.test(id)) return 'Nishtar PG Diploma';
     return '';
   }
+  function fromKey(k){
+    k=String(k||'');
+    if(/^fcps/.test(k)) return 'FCPS Part 1';
+    if(/^pget/.test(k)) return 'PGET UHS';
+    if(/^jcat/.test(k)) return 'JCAT';
+    return '';
+  }
+  function remember(){
+    var el=document.querySelector('.page.active'); if(!el) return;
+    var id=String(el.id||'').replace(/-page$/,'');
+    if(id==='home'||id==='dashboard'){ sticky=''; return; }
+    var x=fromId(id); if(x) sticky=x;
+  }
+  function examName(){
+    if(sticky) return sticky;
+    var bc=''; try{ bc=(typeof _browseContext!=='undefined'&&_browseContext)?String(_browseContext).split(':')[0]:''; }catch(e){}
+    var x=fromKey(bc); if(x) return x;
+    try{ x=fromKey(S&&S.subject); if(x) return x; }catch(e){}
+    var el=document.querySelector('.page.active');
+    return fromId(el?el.id:'');
+  }
   window._waExamName=examName;
+  try{
+    new MutationObserver(function(ms){
+      for(var i=0;i<ms.length;i++){ var t=ms[i].target; if(t.classList&&t.classList.contains('page')&&t.classList.contains('active')){ remember(); return; } }
+    }).observe(document.body,{subtree:true,attributes:true,attributeFilter:['class']});
+  }catch(e){}
+  remember();
   document.addEventListener('click',function(e){
     var a=e.target&&e.target.closest?e.target.closest('a[href*="wa.me/'+NUM+'"]'):null;
     if(!a) return;
@@ -17871,7 +17899,7 @@ MedMasters is Pakistan's most comprehensive online preparation platform for the 
     var t=u.searchParams.get('text')||'';
     var msg='';
     if(!t || /^Hi! I'm interested in MedMasters MCQ Bank\./.test(t)) msg='Hi! I am looking for MedMasters '+x+' MCQ Bank. Please send me details.';
-    else if(/^Hi! I want to purchase a MedMasters access code\./.test(t)) msg='Hi! I want a MedMasters '+x+' access code. Please guide me.';
+    else if(/^Hi! I want to purchase a MedMasters access code\./.test(t)) msg='Hi! I want to purchase a MedMasters '+x+' access code. Please guide me.';
     if(!msg) return;
     a.href=u.origin+u.pathname+'?text='+encodeURIComponent(msg);
   },true);
