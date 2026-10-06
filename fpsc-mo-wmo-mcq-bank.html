@@ -674,5 +674,14 @@ document.querySelectorAll('.toggle-all').forEach(function(box){
   });
 });
 </script>
+<script>
+// WhatsApp click tracking (Google Analytics event). No personal data is sent.
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[href*="wa.me/"]'):null;
+  if(!a||typeof gtag!=='function') return;
+  var t='';try{ t=new URL(a.href).searchParams.get('text')||''; }catch(x){}
+  try{ gtag('event','whatsapp_click',{exam:'FPSC MO/WMO',page_id:'landing',message_type:/purchase|subscribe/i.test(t)?'plan_purchase':'enquiry',link_label:String(a.textContent||'').replace(/\s+/g,' ').trim().slice(0,40),transport_type:'beacon'}); }catch(x2){}
+},true);
+</script>
 </body>
 </html>
