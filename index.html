@@ -4835,12 +4835,19 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
     #fpsc-preview-page .pv-tag{font-size:0.6em;font-weight:600;color:var(--gold);letter-spacing:0.3px;margin-left:6px;white-space:nowrap;}
     #fpsc-preview-page .pv-banner{background:rgba(212,175,55,0.07);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:16px;margin-bottom:20px;text-align:center;font-size:13px;line-height:1.7;color:var(--cream);}
     #fpsc-preview-page .pv-wa{display:inline-block;margin-top:12px;padding:12px 22px;border-radius:10px;background:#25D366;color:#06281F;font-weight:800;font-size:14px;text-decoration:none;}
+    #fpsc-preview-page .page-header.centered-title>div{max-width:62%;}
+    #fpsc-preview-page .ph-sub{text-align:center;}
+    @media(max-width:600px){
+      #fpsc-preview-page .page-header.centered-title{flex-direction:column;align-items:center;gap:10px;}
+      #fpsc-preview-page .page-header.centered-title .back-btn{position:static;transform:none;align-self:flex-start;}
+      #fpsc-preview-page .page-header.centered-title>div{max-width:100%;}
+    }
     #fpsc-preview-page .pv-lockchip{cursor:pointer;border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:14px;}
   </style>
-  <div class="page-header" style="border-bottom:1px solid var(--border);background:var(--card);">
+  <div class="page-header centered-title" style="border-bottom:1px solid var(--border);background:var(--card);">
     <button class="back-btn" onclick="openMOWMOPage()">← MO/WMO</button>
     <div>
-      <div class="ph-title">Your Dashboard<span class="pv-tag">(Preview)</span></div>
+      <div class="ph-title" style="text-align:center;">Your Dashboard<span class="pv-tag">(Preview)</span></div>
       <div class="ph-sub">FPSC PIMS MO/WMO</div>
     </div>
   </div>
