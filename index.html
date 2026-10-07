@@ -2291,7 +2291,7 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
 <!-- ══════════════ FPSC MO/WMO PAGE ══════════════ -->
 <div id="fpsc-mo-wmo-page" class="page">
   <div class="page-header">
-    <button class="back-btn" onclick="_showPage('mowmo');setHash('#mowmo');">← MO/WMO</button>
+    <button class="back-btn" onclick="fpscCatBack()">← MO/WMO</button>
     <div style="flex:1;text-align:center;">
       <div class="ph-title" style="text-align:center;">🏦 FPSC PIMS MO/WMO MCQ Bank</div>
     </div>
@@ -4829,9 +4829,100 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
 </div>
 
 <!-- ══════════════ FPSC PAST PAPERS: HUB ══════════════ -->
+<!-- ══════════════ FPSC PREVIEW (visitors without FPSC access) ══════════════ -->
+<div id="fpsc-preview-page" class="page">
+  <style>
+    #fpsc-preview-page .pv-tag{font-size:0.6em;font-weight:600;color:var(--gold);letter-spacing:0.3px;margin-left:6px;white-space:nowrap;}
+    #fpsc-preview-page .pv-banner{background:rgba(212,175,55,0.07);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:16px;margin-bottom:20px;text-align:center;font-size:13px;line-height:1.7;color:var(--cream);}
+    #fpsc-preview-page .pv-wa{display:inline-block;margin-top:12px;padding:12px 22px;border-radius:10px;background:#25D366;color:#06281F;font-weight:800;font-size:14px;text-decoration:none;}
+    #fpsc-preview-page .pv-lockchip{cursor:pointer;border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:14px;}
+  </style>
+  <div class="page-header" style="border-bottom:1px solid var(--border);background:var(--card);">
+    <button class="back-btn" onclick="openMOWMOPage()">← MO/WMO</button>
+    <div>
+      <div class="ph-title">Your Dashboard<span class="pv-tag">(Preview)</span></div>
+      <div class="ph-sub">FPSC PIMS MO/WMO</div>
+    </div>
+  </div>
+  <div class="dash-wrap">
+    <div class="pv-banner">
+      This is how your dashboard looks after you subscribe.<br>
+      <a class="pv-wa" href="https://wa.me/923019339553?text=Hi!%20I%27m%20interested%20in%20MedMasters%20MCQ%20Bank.%20Please%20send%20me%20details." target="_blank" rel="noopener">💬 Get access on WhatsApp</a>
+    </div>
+    <div class="dash-actions">
+      <div class="dash-action-btn" onclick="openFPSCCategories()">
+        <div class="dash-action-icon">📚</div>
+        <div class="dash-action-title">FPSC PIMS MO/WMO MCQ Bank</div>
+        <div class="dash-action-sub">25,000+ MCQs · All Categories</div>
+      </div>
+      <div class="dash-action-btn" onclick="openFPSCPastHub()" style="border-color:rgba(217,119,6,0.65);background:linear-gradient(135deg,rgba(217,119,6,0.16),rgba(217,119,6,0.04));">
+        <div class="dash-action-icon">⚕️</div>
+        <div class="dash-action-title">Past &amp; Mocks FPSC</div>
+        <div class="dash-action-sub">10 Papers · 100 MCQs · Timed · Negative Marking</div>
+      </div>
+      <div class="dash-action-btn" onclick="openCodeModal(null)">
+        <div class="dash-action-icon">⚡</div>
+        <div class="dash-action-title">Practice &amp; Assess</div>
+        <div class="dash-action-sub">🔒 All Categories · Timed · Scored</div>
+      </div>
+    </div>
+    <div class="dash-circles">
+      <div class="dash-circle-card" onclick="openCodeModal(null)" style="cursor:pointer;">
+        <svg class="drc-svg" width="100" height="100" viewBox="0 0 100 100">
+          <circle class="drc-track" cx="50" cy="50" r="43"/>
+          <text class="drc-val" x="50" y="50" text-anchor="middle" dominant-baseline="middle">&#x1F512;</text>
+        </svg>
+        <div class="drc-lbl">MCQs Studied</div>
+      </div>
+      <div class="dash-circle-card" onclick="openCodeModal(null)" style="cursor:pointer;">
+        <svg class="drc-svg" width="100" height="100" viewBox="0 0 100 100">
+          <circle class="drc-track" cx="50" cy="50" r="43"/>
+          <text class="drc-val" x="50" y="50" text-anchor="middle" dominant-baseline="middle">&#x1F512;</text>
+        </svg>
+        <div class="drc-lbl">Practice Accuracy</div>
+      </div>
+      <div class="dash-circle-card" onclick="openCodeModal(null)" style="cursor:pointer;">
+        <svg class="drc-svg" width="100" height="100" viewBox="0 0 100 100">
+          <circle class="drc-track" cx="50" cy="50" r="43"/>
+          <text class="drc-val" x="50" y="50" text-anchor="middle" dominant-baseline="middle">&#x1F512;</text>
+        </svg>
+        <div class="drc-lbl">Day Streak</div>
+      </div>
+      <div class="dash-circle-card" onclick="openCodeModal(null)" style="cursor:pointer;">
+        <svg class="drc-svg" width="100" height="100" viewBox="0 0 100 100">
+          <circle class="drc-track" cx="50" cy="50" r="43"/>
+          <text class="drc-val" x="50" y="50" text-anchor="middle" dominant-baseline="middle">&#x1F512;</text>
+        </svg>
+        <div class="drc-lbl">Favourites</div>
+      </div>
+      <div class="dash-circle-card" onclick="openCodeModal(null)" style="cursor:pointer;">
+        <svg class="drc-svg" width="100" height="100" viewBox="0 0 100 100">
+          <circle class="drc-track" cx="50" cy="50" r="43"/>
+          <text class="drc-val" x="50" y="50" text-anchor="middle" dominant-baseline="middle">&#x1F512;</text>
+        </svg>
+        <div class="drc-lbl">Study Pace</div>
+      </div>
+      <div class="dash-circle-card" onclick="openCodeModal(null)" style="cursor:pointer;">
+        <svg class="drc-svg" width="100" height="100" viewBox="0 0 100 100">
+          <circle class="drc-track" cx="50" cy="50" r="43"/>
+          <text class="drc-val" x="50" y="50" text-anchor="middle" dominant-baseline="middle">&#x1F512;</text>
+        </svg>
+        <div class="drc-lbl">To-Do</div>
+      </div>
+    </div>
+    <div class="dash-progress-wrap">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+        <div class="dash-progress-title" style="margin-bottom:0;">📊 Progress by Subject</div>
+        <span class="pv-lockchip" onclick="openCodeModal(null)">🔒</span>
+      </div>
+      <div id="fpsc-preview-progress"></div>
+    </div>
+  </div>
+</div>
+
 <div id="fpsc-past-hub-page" class="page">
   <div class="page-header centered-title">
-    <button class="back-btn" onclick="_showPage('dashboard');setHash('#dashboard');loadDashboard();">← Dashboard</button>
+    <button class="back-btn" onclick="fpscPastBack()">← Dashboard</button>
     <div>
       <div class="ph-title">⚕️ Past & Mocks FPSC</div>
       <div class="ph-sub">FPSC PIMS MO/WMO · 10 Timed Papers</div>
@@ -6580,7 +6671,7 @@ const HASH_MAP = {
   '#pricing-fpsc-mo-wmo': ()=>_showPage('pricing-fpsc-mo-wmo'),
   '#pricing-nishtar-pg-diploma': ()=>_showPage('pricing-nishtar-pg-diploma'),
   '#mo-wmo':       ()=>{ if(_hubTierGuard('mo-wmo')) return; _showPage('mo-wmo'); },
-  '#fpsc-mo-wmo':  ()=>{ if(_hubTierGuard('fpsc-mo-wmo')) return; _showPage('fpsc-mo-wmo'); },
+  '#fpsc-mo-wmo':  ()=>{ if(_hubTierGuard('fpsc-mo-wmo')) return; if(_fpscHasAccess()) _showPage('fpsc-mo-wmo'); else _showFPSCPreview(); },
   '#cts-english':    ()=>{ if(S.auth&&hasCTSAccess()){ openCTSEnglish(); } else { S.pendingResumeHash='#cts-english'; _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
   '#mo-wmo-english': ()=>{ if(S.auth&&hasMOWMOAccess()){ openMOWMOEnglish(); } else { S.pendingResumeHash='#mo-wmo-english'; _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
   '#fpsc-english':   ()=>{ if(S.auth&&hasFPSCAccess()){ openFPSCEnglish(); } else { S.pendingResumeHash='#fpsc-english'; _showPage('mowmo'); setTimeout(()=>openCodeModal('nts'),150); } },
@@ -7018,9 +7109,23 @@ function openMOWMOPage(){
   _showPage('mo-wmo'); setHash('#mo-wmo');
 }
 // FPSC MO/WMO wrappers — same MCQ bank as MO/WMO (General), minus VAQ
+function _fpscHasAccess(){ return !!(S.auth && hasFPSCAccess()); }
 function openFPSCPage(){
   if(_hubTierGuard('fpsc-mo-wmo')) return;
+  if(!_fpscHasAccess()){ _showFPSCPreview(); setHash('#fpsc-mo-wmo'); return; }
   _showPage('fpsc-mo-wmo'); setHash('#fpsc-mo-wmo');
+}
+function openFPSCCategories(){ _showPage('fpsc-mo-wmo'); setHash('#fpsc-mo-wmo'); }
+function fpscCatBack(){ if(_fpscHasAccess()){ _showPage('mowmo'); setHash('#mowmo'); } else { openFPSCPage(); } }
+function fpscPastBack(){ if(_fpscHasAccess()){ _showPage('dashboard'); setHash('#dashboard'); loadDashboard(); } else { openFPSCPage(); } }
+function _showFPSCPreview(){ _renderFpscPreview(); _showPage('fpsc-preview'); }
+function _renderFpscPreview(){
+  var el=document.getElementById('fpsc-preview-progress'); if(!el) return;
+  // Category totals mirror the subscriber dashboard (FPSC MO/WMO). Update both places if a bank size changes.
+  var cats=[['✍️','English','linear-gradient(90deg,#16A085,#1ABC9C)',1600],['🔬','Basic Sciences','linear-gradient(90deg,var(--gold),var(--gold-bright))',7100],['❤️','Medicine','linear-gradient(90deg,#3498DB,#5DADE2)',5129],['🔪','Surgery','linear-gradient(90deg,#E74C3C,#E67E22)',2000],['🧬','Psychiatry','linear-gradient(90deg,#8E44AD,#BB8FCE)',1100],['📋','10 Categories MCQs','linear-gradient(90deg,#E67E22,#F39C12)',3019],['🏛️','Health Policies of Govt','linear-gradient(90deg,#2E86C1,#5DADE2)',200],['⚕️','Care vs Cure','linear-gradient(90deg,#16A085,#48C9B0)',100],['⚠️','Major Challenges for Health Sector','linear-gradient(90deg,#C0392B,#E74C3C)',200],['📚','Edition 1 · 1–3000','linear-gradient(90deg,#27AE60,#2ECC71)',3000],['📖','Edition 2 · 3001–6000','linear-gradient(90deg,#27AE60,#2ECC71)',3000],['📝','Edition 3 · 6001–7000','linear-gradient(90deg,#27AE60,#2ECC71)',1100]];
+  var rows=cats.map(function(c){ return '<div class="subj-progress-row"><div class="spr-label">'+c[0]+' '+c[1]+'</div><div class="spr-bar-wrap"><div class="spr-bar" style="width:0%;background:'+c[2]+';"></div></div><div class="spr-count">0/'+c[3]+'</div></div>'; }).join('');
+  var papers=''; for(var n=1;n<=10;n++){ papers+='<div class="subj-progress-row"><div class="spr-label">📄 Paper '+n+'</div><div style="flex:1;"></div><div style="font-size:12px;color:var(--text);opacity:0.5;min-width:70px;text-align:right;">Not attempted</div></div>'; }
+  el.innerHTML=_sectionHeader('📊 FPSC MO/WMO — Progress by Category','var(--gold)')+rows+_sectionHeader('📝 Marks in Past & Mocks','var(--gold)')+papers;
 }
 // Smart back navigation — routes to correct hub based on user's plan
 function _goToDashboard(){
