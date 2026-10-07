@@ -7138,7 +7138,7 @@ function _renderFpscPreview(){
   var cats=[['✍️','English','linear-gradient(90deg,#16A085,#1ABC9C)',1600],['🔬','Basic Sciences','linear-gradient(90deg,var(--gold),var(--gold-bright))',7100],['❤️','Medicine','linear-gradient(90deg,#3498DB,#5DADE2)',5129],['🔪','Surgery','linear-gradient(90deg,#E74C3C,#E67E22)',2000],['🧬','Psychiatry','linear-gradient(90deg,#8E44AD,#BB8FCE)',1100],['📋','10 Categories MCQs','linear-gradient(90deg,#E67E22,#F39C12)',3019],['🏛️','Health Policies of Govt','linear-gradient(90deg,#2E86C1,#5DADE2)',200],['⚕️','Care vs Cure','linear-gradient(90deg,#16A085,#48C9B0)',100],['⚠️','Major Challenges for Health Sector','linear-gradient(90deg,#C0392B,#E74C3C)',200],['📚','Edition 1 · 1–3000','linear-gradient(90deg,#27AE60,#2ECC71)',3000],['📖','Edition 2 · 3001–6000','linear-gradient(90deg,#27AE60,#2ECC71)',3000],['📝','Edition 3 · 6001–7000','linear-gradient(90deg,#27AE60,#2ECC71)',1100]];
   var rows=cats.map(function(c){ return '<div class="subj-progress-row"><div class="spr-label">'+c[0]+' '+c[1]+'</div><div class="spr-bar-wrap"><div class="spr-bar" style="width:0%;background:'+c[2]+';"></div></div><div class="spr-count">0/'+c[3]+'</div></div>'; }).join('');
   var papers=''; for(var n=1;n<=10;n++){ papers+='<div class="subj-progress-row"><div class="spr-label">📄 Paper '+n+'</div><div style="flex:1;"></div><div style="font-size:12px;color:var(--text);opacity:0.5;min-width:70px;text-align:right;">Not attempted</div></div>'; }
-  el.innerHTML=_sectionHeader('📊 FPSC MO/WMO — Progress by Category','var(--gold)')+rows+_sectionHeader('📝 Marks in Past & Mocks','var(--gold)')+papers;
+  el.innerHTML=rows+_sectionHeader('📝 Marks in Past & Mocks','var(--gold)')+papers;
 }
 // Smart back navigation — routes to correct hub based on user's plan
 function _goToDashboard(){
@@ -11693,7 +11693,8 @@ function renderSubjectProgressDash(prog, isNTS, isFCPS, isCTS, isMockNTS, isMOWM
       }
       fpscPastRows = _sectionHeader('📝 Marks in Past & Mocks','var(--gold)') + scoreRows.join('');
     }
-    wrap.innerHTML = _sectionHeader(`📊 ${isCTS?'CTS':isFPSC?'FPSC':isMOWMO?'MO/WMO':'NTS'} MO/WMO — Progress by Category`,'var(--gold)') + rows + fpscPastRows;
+    // FPSC: no inner heading (it repeated the "Progress by Subject" card title); NTS/CTS/MO-WMO keep theirs
+    wrap.innerHTML = (isFPSC ? '' : _sectionHeader(`📊 ${isCTS?'CTS':isMOWMO?'MO/WMO':'NTS'} MO/WMO — Progress by Category`,'var(--gold)')) + rows + fpscPastRows;
     return;
   }
 
