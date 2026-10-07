@@ -9551,7 +9551,7 @@ function _fpscPastRenderStatus(n){
     } else {
       statusEl.textContent='● Live — Available Now';
       statusEl.style.color='#2ECC71';
-      countEl.textContent='Unlocked: '+cfg.date+' · 7 PM PKT';
+      countEl.textContent='';   // the date already shows under the paper title
     }
     if(cardEl) cardEl.style.opacity='1';
   } else {
@@ -9564,10 +9564,11 @@ function _fpscPastRenderStatus(n){
     } else {
       statusEl.textContent='🔒 Upcoming';
       statusEl.style.color='#F39C12';
-      countEl.textContent='Unlocks: '+cfg.date+' · 7:00 PM PKT';
+      countEl.textContent='';   // the date already shows under the paper title
     }
     if(cardEl) cardEl.style.opacity='0.8';
   }
+  countEl.style.display = countEl.textContent ? '' : 'none';
 }
 function _fpscPastRenderAllStatuses(){ for(let n=1;n<=10;n++) _fpscPastRenderStatus(n); }
 function _fpscPastStartHubCountdowns(){
