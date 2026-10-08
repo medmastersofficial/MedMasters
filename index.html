@@ -4836,16 +4836,22 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:40px 5%
     #fpsc-preview-page .pv-banner{background:rgba(212,175,55,0.07);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:16px;margin-bottom:20px;text-align:center;font-size:13px;line-height:1.7;color:var(--cream);}
     #fpsc-preview-page .pv-wa{display:inline-block;margin-top:12px;padding:12px 22px;border-radius:10px;background:#25D366;color:#06281F;font-weight:800;font-size:14px;text-decoration:none;}
     #fpsc-preview-page .page-header.centered-title>div{max-width:62%;}
+    #fpsc-preview-page .pv-navrow{display:contents;}
+    #fpsc-preview-page .page-header.centered-title .share-btn{position:absolute;right:5%;top:50%;transform:translateY(-50%);margin-left:0;}
     #fpsc-preview-page .ph-sub{text-align:center;}
     @media(max-width:600px){
       #fpsc-preview-page .page-header.centered-title{flex-direction:column;align-items:center;gap:10px;}
-      #fpsc-preview-page .page-header.centered-title .back-btn{position:static;transform:none;align-self:flex-start;order:2;}
+      #fpsc-preview-page .page-header.centered-title .back-btn,#fpsc-preview-page .page-header.centered-title .share-btn{position:static;transform:none;}
       #fpsc-preview-page .page-header.centered-title>div{max-width:100%;order:1;}
+      #fpsc-preview-page .page-header.centered-title>.pv-navrow{display:flex;justify-content:space-between;align-items:center;width:100%;max-width:100%;order:2;}
     }
     #fpsc-preview-page .pv-lockchip{cursor:pointer;border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:14px;}
   </style>
   <div class="page-header centered-title" style="border-bottom:1px solid var(--border);background:var(--card);">
-    <button class="back-btn" onclick="openMOWMOPage()">← MO/WMO</button>
+    <div class="pv-navrow">
+      <button class="back-btn" onclick="openMOWMOPage()">← MO/WMO</button>
+      <button class="share-btn" id="share-fpsc-preview" onclick="sharePreviewLink('share-fpsc-preview')">🔗 Share</button>
+    </div>
     <div>
       <div class="ph-title" style="text-align:center;">Your Dashboard<span class="pv-tag">(Preview)</span></div>
       <div class="ph-sub">FPSC PIMS MO/WMO</div>
@@ -7131,6 +7137,15 @@ function openFPSCPage(){
 function openFPSCCategories(){ _showPage('fpsc-mo-wmo'); setHash('#fpsc-mo-wmo'); }
 function fpscCatBack(){ if(_fpscHasAccess()){ _showPage('mowmo'); setHash('#mowmo'); } else { openFPSCPage(); } }
 function fpscPastBack(){ if(_fpscHasAccess()){ _showPage('dashboard'); setHash('#dashboard'); loadDashboard(); } else { openFPSCPage(); } }
+function sharePreviewLink(btnId){
+  var url='https://www.medmasters.academy/#fpsc-mo-wmo';
+  var btn=document.getElementById(btnId);
+  function done(){ if(btn){ btn.textContent='✓ Copied!'; btn.classList.add('copied'); setTimeout(function(){ btn.innerHTML='🔗 Share'; btn.classList.remove('copied'); },2000); } }
+  if(navigator.share){ navigator.share({ title: document.title, url: url }).catch(function(){}); return; }
+  if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(url).then(done).catch(function(){ _fallbackCopy(url); done(); }); }
+  else { _fallbackCopy(url); done(); }
+}
+function _fallbackCopy(t){ var ta=document.createElement('textarea'); ta.value=t; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); }
 function _showFPSCPreview(){ _renderFpscPreview(); _showPage('fpsc-preview'); }
 function _renderFpscPreview(){
   var el=document.getElementById('fpsc-preview-progress'); if(!el) return;
@@ -9551,7 +9566,7 @@ function _fpscPastRenderStatus(n){
     } else {
       statusEl.textContent='● Live — Available Now';
       statusEl.style.color='#2ECC71';
-      countEl.textContent='';   // the date already shows under the paper title
+      countEl.textContent='🔓 Unlocked';
     }
     if(cardEl) cardEl.style.opacity='1';
   } else {
